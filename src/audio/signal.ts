@@ -1,6 +1,11 @@
 export const BAND_NAMES = ['bass', 'midrange', 'treble'] as const
 export type BandName = typeof BAND_NAMES[number]
 export type BandValues = Record<BandName, number>
+export const SIX_BAND_NAMES = ['subBass', 'bass', 'lowMids', 'highMids', 'presence', 'air'] as const
+export type SixBandName = typeof SIX_BAND_NAMES[number]
+export type SixBandValues = Record<SixBandName, number>
+export const emptySixBands = (): SixBandValues => ({ subBass: 0, bass: 0, lowMids: 0, highMids: 0, presence: 0, air: 0 })
+
 export interface AudioSignal {
   // Compatibility values: fast bands and slow overall intensity.
   bass: number
@@ -13,6 +18,7 @@ export interface AudioSignal {
   slow: BandValues
   transient: BandValues
   flux: BandValues
+  sixBands: SixBandValues // independently normalized fast energy, low to high
   atmosphere: number
   updatedAt: number
   updateHz: number
@@ -23,7 +29,7 @@ export function silentSignal(): AudioSignal {
   return {
     bass: 0, midrange: 0, treble: 0, intensity: 0, isPlaying: false,
     levels: emptyBands(), fast: emptyBands(), slow: emptyBands(), transient: emptyBands(), flux: emptyBands(),
-    atmosphere: 0, updatedAt: 0, updateHz: 0,
+    sixBands: emptySixBands(), atmosphere: 0, updatedAt: 0, updateHz: 0,
   }
 }
 export function resetSignal(signal: AudioSignal) {
@@ -31,6 +37,7 @@ export function resetSignal(signal: AudioSignal) {
     signal[band] = signal.levels[band] = signal.fast[band] = signal.slow[band] = signal.transient[band] = 0
     signal.flux[band] = 0
   }
+  for (const band of SIX_BAND_NAMES) signal.sixBands[band] = 0
   signal.intensity = signal.atmosphere = signal.updatedAt = signal.updateHz = 0
   signal.isPlaying = false
 }

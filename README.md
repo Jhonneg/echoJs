@@ -2,7 +2,7 @@
 
 **Your music. Another world.**
 
-A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks is a static visual preview. ECHO branding and the selected scene name appear initially. Source and scene settings live in the compact chooser opened by the scene name at the bottom left; selecting a local file also shows a compact player on the landscape.
+A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks previews sideways mountain motion driven by six frequency bands. ECHO branding and the selected scene name appear initially. Source and scene settings live in the compact chooser opened by the scene name at the bottom left; selecting a local file also shows a compact player on the landscape.
 
 ## Run locally
 
@@ -24,8 +24,8 @@ Click the scene name to open the chooser, or focus it with Tab and press Space/E
 - **Share a tab:** choose a permitted browser tab and enable Share tab audio in the native picker. Keep playback in that tab. The browser also requests video; ECHO does not read or display it.
 - **Open audio file:** select a local browser-supported file, then use the on-scene Play/Pause/Replay and volume controls. Volume affects local playback only.
 - **Disconnect / Cancel sharing:** release the selected source or cancel ECHO's pending sharing request. Close a pending native picker yourself too.
-- **Landscape:** switch between Bloom and the static Lavender Peaks preview without stopping audio. The choice lasts for the page session.
-- **Reactivity:** changes Bloom's visual amplitude, not sound volume. It is unavailable in Lavender Peaks until that scene gains audio response.
+- **Landscape:** switch between Bloom and the Lavender Peaks motion preview without stopping audio. The choice lasts for the page session.
+- **Reactivity:** changes Bloom’s visual amplitude or Lavender Peaks’ travel speed, not sound volume. Lavender Peaks gives each ridge its own band: 20–80, 80–250, 250–800, 800–2,500, 2,500–6,000 and 6,000–20,000 Hz, from back to front.
 - **Graphics quality:** Standard preserves the existing drawing resolution; Low is softer and renders fewer pixels. The choice lasts for the page session.
 - **Enter/Exit fullscreen:** expands the landscape and chooser using the browser's native API. Native Escape remains available.
 

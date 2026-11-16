@@ -1,10 +1,12 @@
 import { Component, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import { Color, Group, OrthographicCamera, ShaderMaterial, Mesh, MeshStandardMaterial, Shape, Vector2, Vector3 } from 'three'
 import type { AudioSignal } from '../../audio/signal'
 import { createBloomResponse, updateBloomResponse, updateFragmentResponse } from './reactivity'
-import { createBassMotion, resetBassMotion, updateBassMotion } from './bassMotion'
-import { QUALITY_DPR, type GraphicsQuality } from '../../engine/quality'
+import { createBassMotion, resetBassMotion, updateBassMotion } from '../../engine/bassMotion'
+import type { GraphicsQuality } from '../../engine/quality'
+import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
+import { bassMotionVariant } from '../../engine/bassMotionVariant'
 import './bloom.css'
 
 const vertex = `varying vec2 vUv;
@@ -99,13 +101,7 @@ const arcs = [
 ]
 const arcPivots = arcs.map(([, length]) => new Vector3(Math.cos(length / 2) * 1.58, Math.sin(length / 2) * 1.58, 0))
 
-type BassMotionVariant = 'off' | 'halo' | 'camera' | 'both'
-// Set VITE_BASS_MOTION_VARIANT=off, halo or camera when starting Vite to compare builds.
-const requestedMotionVariant = import.meta.env.VITE_BASS_MOTION_VARIANT
-const bassMotionVariant: BassMotionVariant = requestedMotionVariant === 'off' || requestedMotionVariant === 'halo' || requestedMotionVariant === 'camera'
-  ? requestedMotionVariant : 'both'
 const haloMotionLimit = 24 * Math.PI / 180
-const cameraMotionLimit = 1 * Math.PI / 180
 
 function Halo({ groupRef }: { groupRef: RefObject<Group | null> }) {
   return (
@@ -137,11 +133,10 @@ function Composition({ reducedMotion, signal, reactivity, onRenderTime }: { redu
   const lake = useRef<ShaderMaterial>(null)
   const skyMaterial = useRef<ShaderMaterial>(null)
   const response = useRef(createBloomResponse())
-  const bassMotion = useRef(createBassMotion())
   const haloBassMotion = useRef(createBassMotion())
   const elapsed = useRef(0)
   const fragmentResponse = useRef({ x: 0, y: 0, rotation: 0, highlight: 0 })
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (!halo.current || !lake.current || !skyMaterial.current) return
     const dt = Math.min(delta, 0.05)
     const now = performance.now()
@@ -150,13 +145,10 @@ function Composition({ reducedMotion, signal, reactivity, onRenderTime }: { redu
     const audio = response.current
     const motionEnabled = !reducedMotion && reactivity > 0 && bassMotionVariant !== 'off'
     if (!motionEnabled) {
-      resetBassMotion(bassMotion.current)
       resetBassMotion(haloBassMotion.current)
     }
-    const motion = motionEnabled ? updateBassMotion(bassMotion.current, audio.bass, dt) : 0
     const haloMotion = motionEnabled ? updateBassMotion(haloBassMotion.current, audio.bass, dt, 8) : 0
     const haloRotation = bassMotionVariant === 'halo' || bassMotionVariant === 'both' ? haloMotion * haloMotionLimit : 0
-    state.camera.rotation.z = bassMotionVariant === 'camera' || bassMotionVariant === 'both' ? -motion * cameraMotionLimit : 0
     // Reduced motion freezes drift/ripple phases and suppresses reactive geometry.
     if (!reducedMotion) elapsed.current += dt
     const time = elapsed.current
@@ -227,9 +219,9 @@ export default function BloomScene({ signal, onRenderTime, reactivity, quality }
   return (
     <section className="bloom-stage" aria-label="Bloom: a luminous fragmented halo over a tranquil lake at twilight">
       <SceneBoundary>
-        <Canvas orthographic camera={{ position: [0, 0, 20], zoom: 80, near: 0.1, far: 60 }} frameloop="always" dpr={QUALITY_DPR[quality]} gl={{ antialias: true }} fallback={<p className="bloom-fallback">Bloom needs WebGL to display. You can still use the Bloom menu to choose audio.</p>}>
+        <LandscapeCanvas signal={signal} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="bloom-fallback">Bloom needs WebGL to display. You can still use the Bloom menu to choose audio.</p>}>
           <Composition reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} onRenderTime={onRenderTime} />
-        </Canvas>
+        </LandscapeCanvas>
       </SceneBoundary>
       <div className="bloom-brand" aria-hidden="true">ECHO</div>
     </section>

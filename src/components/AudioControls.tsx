@@ -130,9 +130,9 @@ export function AudioControls(props: Props) {
               <option value="lavender-peaks">Lavender Peaks · Preview</option>
             </select>
           </div>
-          {props.scene === 'lavender-peaks' && <p className="source-help">Lavender Peaks is a visual preview. Audio response will follow after the landscape is reviewed.</p>}
+          {props.scene === 'lavender-peaks' && <p className="source-help">Lavender Peaks motion preview: each mountain follows its own frequency band, from deep bass at the back to high treble at the front.</p>}
           <label className="slider-control">Reactivity
-            <input type="range" min="0" max="1" step="0.01" value={props.reactivity} disabled={props.scene !== 'bloom'} onChange={(event) => props.onReactivity(Number(event.currentTarget.value))} />
+            <input type="range" min="0" max="1" step="0.01" value={props.reactivity} onChange={(event) => props.onReactivity(Number(event.currentTarget.value))} />
             <output>{Math.round(props.reactivity * 100)}%</output>
           </label>
           <div className="quality-control">

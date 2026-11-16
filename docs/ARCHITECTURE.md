@@ -21,6 +21,7 @@ interface AudioSignal {
   slow: BandValues;
   transient: BandValues;
   flux: BandValues; // independently calibrated positive spectral-change accent
+  sixBands: { subBass: number; bass: number; lowMids: number; highMids: number; presence: number; air: number };
   atmosphere: number;
   updatedAt: number; // performance clock, last feature computation
   updateHz: number; // feature callback cadence, 1-second window
@@ -54,7 +55,7 @@ One previous magnitude spectrum and scratch changes are overwritten each update;
 
 ## Scene strategy
 
-L01 adds a second, static scene selected in App. App retains the audio controllers and analysis graph while the visible scene Canvas changes, so a scene switch does not disconnect or restart playback. Bloom alone consumes `AudioSignal`; Lavender Peaks is a demand-rendered procedural preview with no audio mapping. Both use the existing quality setting. Reactivity is unavailable in the Lavender Peaks view and retains its value for Bloom. Scene choice is in memory only; no scene registry or plugin framework is introduced.
+L01 added a second scene selected in App. App retains audio controllers and analysis while the visible Canvas changes. L02 passes the shared AudioSignal and Reactivity to Lavender Peaks: its six ridges form back/bass, middle/midrange and front/treble groups. Their periodic terrain moves horizontally using ref-held offsets and speeds, without React frame updates or capture APIs. It renders continuously for live response, switching to demand rendering at zero Reactivity or reduced motion. Both scenes share quality and reactivity settings; scene choice remains in memory only. Reentering Lavender Peaks starts at the authored position.
 
 
 Current visitor UI (M05, with later local-player refinement) supersedes the M01–M03 layout notes below: App renders one full-viewport experience containing Bloom and a native details/summary chooser, toggled by the Bloom scene label. ECHO is the only other visible landscape label before a local file is selected. AudioControls owns disclosure dismissal/focus; source selection and scene/fullscreen settings remain in the chooser, while a selected local file exposes Play/Pause/Replay and volume in a compact on-scene player. Page overflow is disabled while the panel has bounded internal scrolling. Root adapters and ordinary settings retain their existing lifetimes; closing the chooser does not stop playback. Native fullscreen targets this same container. No developer/query access is implemented.
@@ -78,3 +79,13 @@ Aim for 60 FPS on a documented reference desktop, low-quality mode near/above 30
 - https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaElementSource
 - https://r3f.docs.pmnd.rs/advanced/pitfalls
 Consult official/version-matched documentation during implementation. These are reference starting points, not tested claims about the user's machine.
+
+### L03 — six independent frequency energies
+
+`AudioSignal.sixBands` is a stable normalized energy object with subBass/bass/lowMids/highMids/presence/air keys. The same analyser bins feed six half-open ranges: 20–80, 80–250, 250–800, 800–2500, 2500–6000 and 6000–20000 Hz, clipped to Nyquist. `sixBands.ts` precomputes ranges once per input and independently normalizes L2 magnitudes using reference 0.1 and sensitivities 4/4/3/3/4/5. Attack/release values in ms are 5/80, 5/80, 8/100, 8/100, 3/60 and 3/60. These fixed visual calibrations are provisional; there is no AGC or instrument separation. Pause/suspension feeds silence and decays; teardown/source replacement resets all six values in place.
+
+Lavender Peaks L03 uses one ridge per band instead of L02 pairs. Existing three-band energy, flux and Bloom mappings remain intact. FFT size/sample rate/output routing and source adapters are unchanged; finite FFT resolution may spread actual tone energy across adjacent bands, especially near boundaries.
+
+### Shared landscape camera host
+
+All scene Canvases now use `src/engine/LandscapeCanvas.tsx`, which installs the shared bass-driven camera roll by default. Future landscapes use this host to inherit quality, the authored orthographic camera defaults and tilt. A scene can opt out with `cameraTilt={false}`; Lavender Peaks explicitly opts out at the owner's request. Bloom retains the original ±1° camera roll and its independent halo movement. Generic spring math now lives in `src/engine/bassMotion.ts`; the internal comparison variant also lives in engine. Reduced motion, zero Reactivity and disabled camera variants reset the camera/spring. Scenes must not also write camera roll. No audio source or frame-rate React state is introduced.

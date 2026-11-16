@@ -98,3 +98,19 @@ Owner approved the first new landscape as a static selectable preview, using the
 - Compose a distinct pale sky and layered mountain scene with procedural geometry/gradients. The reference JPEG remains conceptual and is not a runtime asset. No halo, lake, central prop, animation or audio mapping.
 - Show the selected scene name on the closed chooser. Label Lavender Peaks as a visual preview and disable Reactivity while selected, preserving its value for Bloom.
 - Acceptance: owner reviews desktop and portrait composition against the reference; scene switching, keyboard controls and audio continuity work; relevant tests, typecheck, lint and build pass. Record any unavailable browser/manual checks. Stop before reactive work.
+
+## L02 — Lavender Peaks sideways audio layers
+
+Owner explicitly approved this experiment after choosing front/treble, middle/mids, back/bass and continuous sideways drift.
+
+- Group the six ridges into three pairs; use band energy for smooth rightward speed, with front/middle/back maxima 0.6/0.4/0.25 world units/s. Stop in place after silence.
+- Repeat terrain seamlessly; preserve palette and fixed camera. Enable Reactivity; zero Reactivity/reduced motion freeze in place. Keep source playback independent of scene selection.
+- Acceptance: isolate each band, verify timing/bounds/wrapping and responsiveness; run tests/typecheck/lint/build and available browser checks. Owner reviews actual music before tuning. No additional effects or audio processing changes.
+
+## L03 — six frequency bands for six mountains
+
+Owner approved six independently driven mountains after reviewing the proposed ranges. Add a parallel six-band normalized signal to the existing analyser: 20–80, 80–250, 250–800, 800–2500, 2500–6000 and 6000–20000 Hz. Assign one ridge to each, back to front. Preserve current travel speeds/smoothing, Bloom's three-band behavior and audio source lifecycle. Verify isolated FFT bands, boundaries/Nyquist, reset/silence and browser tones where available; owner reviews musical response. No instrument separation, dependency or new effect.
+
+## L04 — shared landscape camera tilt
+
+Owner requested a universal camera effect, then explicitly opted Lavender Peaks out. Use one LandscapeCanvas host for camera roll, enabled by default for future scenes and Bloom; Lavender Peaks stays level. Preserve Bloom's camera/halo response and verify zero/reduced-motion resets, existing tests and browser behavior where available. No audio processing, dependency or new visitor control.

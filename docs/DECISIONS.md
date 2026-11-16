@@ -72,3 +72,21 @@
 
 2026-11-16 earlier owner direction: stop iterative audio/motion tuning and move forward. Retain implemented separation work, defer remaining chopped-motion feedback as a known limitation, and do not implement the proposed additional motion pass. The later explicit approval of D30 supersedes this only for the bounded comparison; it does not fabricate perceptual acceptance or a production-readiness result.
 Exact reflection technique, asset source, browser/OS coverage beyond reference Chrome, final UI, production framework, precise frequency normalization and performance targets after measurement. Do not treat open decisions as blockers before their relevant tasks. Record new decisions with ID/date, alternatives, rationale, status and affected docs; do not silently rewrite earlier choices.
+
+## D33 — Lavender Peaks depth motion — 2026-11-16
+
+Owner approved continuous sideways drift with front/treble, middle/midrange and back/bass. Use the existing fast energy bands to drive rightward speed, with 120/300 ms acceleration/deceleration and periodic geometry for endless travel. Speed, rather than position, follows energy so sustained sound keeps layers travelling. Freeze in place for zero Reactivity/reduced motion. Owner musical/visual acceptance remains pending; no new analysis, effect or dependency.
+
+2026-11-16: owner requested faster Lavender Peaks mountain travel. Double all three speed limits to back/middle/front 0.5/0.8/1.2 world units/s, preserving relative speeds and acceleration/deceleration. Perceptual review pending.
+
+## D34 — six bands for six mountains — 2026-11-16
+
+Owner approved assigning one independent frequency band to each ridge, low to high from back to front. Extend the stable AudioSignal with six independently normalized energy values using the existing FFT, preserving Bloom's original features. Keep faster travel limits as two ridges each at 0.5/0.8/1.2 world units/s. Fixed per-band sensitivity is provisional, with a modest presence/air boost. This is frequency separation, not instrument separation; FFT leakage near boundaries remains possible.
+
+2026-11-16: fix owner-reported flat terrain during travel by filling sparse intervals with periodic lower peaks. Seam continuity alone was insufficient: each repeating section must retain broad mountain variation across its full width. Existing hero peaks, motion and six-band mapping retained.
+
+## D35 — shared camera roll, Lavender Peaks opt-out — 2026-11-16
+
+Owner requested universal camera tilt, then explicitly removed it from Lavender Peaks before the task finished. Introduce a shared LandscapeCanvas with default-on camera roll for Bloom/future landscapes and a scene opt-out. Lavender Peaks sets that opt-out. Move generic spring math to engine, preserve Bloom's original camera response and halo spring, and reset shared roll on disable/unmount. No visitor setting or audio change.
+
+2026-11-16: owner clarified that the original large mountain pattern must repeat, rather than transition into added small hills. Remove the continuation-hill generator and shorten the repeat from 40 to 24 world units, covering the authored peaks without a long filler interval. Keep independent ridge motion and periodic joins. This supersedes the earlier filler decision.

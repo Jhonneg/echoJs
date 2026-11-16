@@ -42,7 +42,7 @@ export default function App() {
         <h1 className="sr-only">ECHO — Your music. Another world.</h1>
         {scene === 'bloom'
           ? <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
-          : <LavenderPeaksScene quality={quality} />}
+          : <LavenderPeaksScene quality={quality} signal={analysis.signal} reactivity={reactivity} />}
         <AudioControls source={source} capture={capture} local={local} analysis={analysis}
           scene={scene} onScene={setScene}
           fullscreenControl={<FullscreenControls target={experience} />}
