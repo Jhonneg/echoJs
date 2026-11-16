@@ -94,3 +94,51 @@ Owner requested universal camera tilt, then explicitly removed it from Lavender 
 2026-11-16: owner requested a faint fixed sun hidden behind Lavender Peaks’ first large mountain. Draw it procedurally within the existing sky shader so opaque ridge depth provides occlusion. No texture, glow postprocessing or new audio mapping is needed.
 
 2026-11-16: owner requested slower distant Lavender Peaks layers. Replace paired speed caps with six distinct increasing limits from background to foreground: 0.15/0.25/0.45/0.65/0.9/1.2 world units/s. Preserve independent audio energy, smoothing and foreground maximum.
+
+## D36 — Crimson Horizon composition preview — 2026-11-16
+
+Owner selected the dark sun valley reference, named it Crimson Horizon and approved static artwork first with shared tilt retained. Add original procedural sun/terrain/facets, four depth layers, a black/pink/crimson palette and an in-memory chooser entry. Reference rights remain unverified, so its JPEG is not used at runtime. Scene-specific animation/audio mapping waits for owner composition review. Existing audio source/controllers remain in App across scene switches.
+
+## D37 — full 3D Crimson Horizon and gentle mouse viewpoint — 2026-11-16
+
+Owner requested 3D terrain and mouse-following camera, selected a gentle viewpoint shift with smooth return, and asked to match the dark sun valley reference. Replace C01's flat silhouette/facet layers with solid procedural triangulated terrain and a spherical sun; use a perspective camera and bounded local pointer response. Preserve shared bass roll by updating the base camera before the shared effect. Camera configuration becomes an optional LandscapeCanvas capability, keeping other scenes' defaults. No new dependency, texture, source integration or scene-specific audio mapping.
+
+2026-11-16: owner requested Lavender Peaks sun pulsation on bass. Add a bounded shader uniform driven by existing bass energy/accent features and scene-only 40/220 ms smoothing. Scale size and local contrast without moving the sun or adding global exposure flashes. Honor Reactivity and reduced motion; retain terrain depth masking.
+
+## D38 — quieter terrain and stronger sun hierarchy — 2026-11-16
+
+Owner found Crimson Horizon's jagged floor flat and distracting. Replace fine terrain serrations/per-face color variation with broad ridges/folds and smooth vertex normals, keeping the solid 3D geometry. Suppress low-ground accents, reveal raised mountain volume with cool fill, and enlarge the sun ~16% in radius. Preserve pointer and bass camera effects. This revises the initial faceted art treatment based on owner feedback.
+
+## D39 — ridged 3D art composition before audio — 2026-11-16
+
+Owner rejected both the smooth terrain appearance and a proposed 2.5D replacement. Approved full 3D with ridged multifractal noise, asymmetric wide-valley shaping and custom near-black/crimson directional material. Keep mouse perspective movement; opt Crimson out of bass tilt during the art gate. Use original deterministic CPU noise (four octaves, separate bank seeds 3157/9283) and shader ridge-mask attributes without dependencies. One finite terrain region is sufficient for the existing bounded camera; continuous travel/chunks are deferred. The static composition is subject to owner reference approval, not an automated aesthetics gate.
+
+## D40 — music-driven endless Crimson Horizon — 2026-11-16
+
+Owner explicitly requested and approved forward travel, band-count sun brightness, more visible terrain and a nightshade sky. This advances beyond D39's static restriction while preserving the true 3D reference target; it does not imply C03 aesthetic approval. Use four worker-generated world-sampled chunks with matching normals/masks and local rendering rebases. Bound the pool, dispose retired geometry and stop safely when generation is late. No new dependency or media processing.
+
+Separate music energy (speed) from active-band count (sun), using existing six bands with hysteresis. Stop immediately on pause/stale input, ease out connected silence, preserve mouse movement while idle, and keep the sun at a fixed horizon distance. Reactivity scales travel/brightness; reduced motion freezes the camera with slower brightness changes. Reentry resets travel. Brighter charcoal and blue-purple nightshade improve readability while retaining selective crimson highlights.
+
+## D41 — visible idle sun and wider travel range — 2026-11-16
+
+Owner found the stopped sun invisible and requested greater slow/fast speed separation. Retain 5.5% of the full sun color at idle, independent of audio activity, while preserving the existing brightness response. Replace the linear 0.5–4 speed range with 0.2 + 7.8 × RMS-energy^1.7 (scaled by Reactivity). Quiet passages remain slow while strong full-spectrum passages can reach 8 world units/s. Existing smoothing, stop behavior and streamed-terrain safety limit remain.
+
+## D42 — shared Lavender Peaks mountain motion — 2026-11-16
+
+Owner removed the individual sound-layer assignments, requesting all mountains move together while preserving speed hierarchy. Use existing overall music intensity for every ridge; keep far-to-near speed limits 0.15/0.25/0.45/0.65/0.9/1.2 and shared acceleration/release timing. Preserve terrain looping, level camera and bass sun pulse. Keep six-band audio analysis for Crimson Horizon; remove only Lavender's per-mountain mapping.
+
+## D43 — shared high/low-frequency Lavender speed — 2026-11-16
+
+Owner requested speed follow whether the song plays high or low. Interpret high notes as faster and low notes as slower, preserving shared motion and depth hierarchy. Use the power-weighted balance of existing normalized six-band levels to scale shared intensity between 25% and 100%. This provides a bounded spectral-brightness approximation without pitch detection, new analysis, or separate mountain mappings. Keep existing smoothing, maximum speeds, silence/freeze behavior and bass sun pulse.
+
+## D44 — Crimson sun pulse on strong bass — 2026-11-16
+
+Interpret the owner's “high bass” as strong bass hits. Reuse broad fast bass to gate existing transient/flux accents, with 40/220 ms pulse smoothing. Add bounded sun/glow scale and brightness modulation independently of the active-band-count brightness. Keep idle visibility and forward travel unchanged; reduced motion/zero Reactivity disable the pulse. No new audio analysis, artificial beat oscillator or dependency.
+
+## D45 — faster Crimson travel — 2026-11-16
+
+Owner requested increased movement speed after the Crimson sun refinement. Double forward travel across the energy curve (0.4–16 world units/s at full Reactivity), preserving the energy exponent, easing, stop/freeze behavior and streamed-terrain safety. Sun pulse and other landscapes remain unchanged.
+
+## D46 — partial Lavender sun at initial load — 2026-11-16
+
+Owner requested a smaller first large mountain so the sun starts partially revealed. Reduce that peak's amplitude from 4.8 to 3.7, keeping width, base, sun and all other terrain unchanged. Original repeating pattern carries the same revised peak on subsequent loops.

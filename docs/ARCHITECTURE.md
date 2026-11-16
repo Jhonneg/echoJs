@@ -89,3 +89,33 @@ Lavender Peaks L03 uses one ridge per band instead of L02 pairs. Existing three-
 ### Shared landscape camera host
 
 All scene Canvases now use `src/engine/LandscapeCanvas.tsx`, which installs the shared bass-driven camera roll by default. Future landscapes use this host to inherit quality, the authored orthographic camera defaults and tilt. A scene can opt out with `cameraTilt={false}`; Lavender Peaks explicitly opts out at the owner's request. Bloom retains the original ±1° camera roll and its independent halo movement. Generic spring math now lives in `src/engine/bassMotion.ts`; the internal comparison variant also lives in engine. Reduced motion, zero Reactivity and disabled camera variants reset the camera/spring. Scenes must not also write camera roll. No audio source or frame-rate React state is introduced.
+
+### C01 — Crimson Horizon
+
+SceneId adds `crimson-horizon` and App selects its independent scene component through the existing chooser. It shares LandscapeCanvas, quality, signal and Reactivity; only the common camera effect consumes audio. Four authored terrain silhouettes and face polygons are declarative Shape geometries; the background shader draws sun and localized glow. No image assets, render targets, frame-rate React updates or scene-specific audio processing. Terrain and sky coverage extend beyond the camera view for bounded roll. Reduced motion/zero Reactivity use demand rendering; artwork stays static.
+
+### C02 — full 3D Crimson Horizon and pointer viewpoint
+
+Crimson Horizon now uses a perspective camera, solid procedural terrain and an emissive shader sphere for the sun. Terrain data is created once per scene mount, with explicit position/normal/color buffers and closed sides/base; declarative geometry/material ownership handles teardown. Static face colors and lighting provide crimson accents without textures or shadow maps.
+
+LandscapeCanvas adds optional `projection` (`orthographic` default, `perspective` for Crimson Horizon) and `camera` props using Fiber's camera type. Other scenes retain previous defaults. A scene-local CameraView updates position/lookAt at frame priority −1; shared camera roll runs afterward. Only this scene handles mouse position. Viewpoint target and smoothing state live in refs, with no frame-rate React updates. Mouse leave/window blur reset the target, touch is ignored, and reduced motion restores the centered camera. Reactivity scales bass roll, not pointer movement; this scene renders continuously for pointer smoothing even at zero Reactivity, using demand rendering only for reduced motion. No capture or analysis changes.
+
+Crimson Horizon visual refinement: terrain now uses continuous height-derived vertex normals/colors instead of flat face shading, with 64×80 top grid cells plus closed side/base triangles (~11,104 terrain triangles). Broad outer ridges and foreground folds add relief. No frame-time geometry work, postprocessing or dependency is added.
+
+### C03 — ridged terrain and custom stylized material
+
+Crimson Horizon now uses original seeded gradient noise and four feedback-weighted ridged multifractal octaves. A quiet valley mask, independent left/right seeds, bounded coordinate warping, broad elevation/depth envelopes and foreground/distant ridge shaping control composition. All height/mask/normal samples use logical world coordinates. The first milestone uses one closed 96×96-cell terrain region (~19,584 triangles); there is no forward travel or chunk lifecycle. Future chunks would require matching boundary geometry, masks and normals, not simply modulo resets.
+
+Geometry emits normals and a vec4 `terrainFeatures` attribute: primary ridge signal, secondary ridge signal, bank mask and highlight selection. Custom ShaderMaterial replaces physical lighting/materials: limited dark directional bands, screen-antialiased selected crimson crests, quiet foreground fold accents and world/distance-based haze. No runtime noise generation or geometry mutation occurs in the frame loop. Terrain stays a real surface with side/base closure; sun remains spherical. Camera height/framing now starts at (0,3.5,24), looking toward (0,4.2,−35), with existing local pointer smoothing. Shared bass camera tilt is opted out only for Crimson Horizon; Reactivity is temporarily disabled for that preview, retaining its value for other scenes.
+
+### C04 — streamed 3D terrain and journey state
+
+C04 replaces the finite C03 region with 48-unit chunks across a 128-unit width (128×64 cells, 16,384 triangles each). A dedicated module worker generates original ridged terrain from logical world coordinates and transfers position/normal/feature/fold typed arrays only. Adjacent chunks share sampled boundary heights, normals and masks; longitudinal caps are omitted. Floor folds vary along the journey instead of fading after the initial view.
+
+`terrainStream.ts` owns one worker and a four-chunk window (current−1 through current+2), rejects stale replies and terminates on failure/unmount. The frame loop reads its safe distance limit and stops before terrain ends, beyond the shader's 108-unit haze cutoff. A loading status or recoverable Retry landscape action handles delays/errors. Declarative geometry ownership releases retired GPU resources. No audio/media data enters the worker.
+
+`journey.ts` keeps band hysteresis, smoothed speed/brightness and logical distance outside React state. `Composition` rebases camera/chunk render coordinates each 48 units, preserving logical sampling without growing GPU coordinates. Sun/glow/sky track forward position and shader uniforms update imperatively. React updates occur for chunk arrivals, window changes and status transitions, not each frame. The camera-relative sky and terrain distance fade share the same nightshade shader color. Custom charcoal/crimson shading remains nonphysical; activity modulates sun and selected illumination. Reduced motion retains rendering for slow brightness changes. Other landscapes and source/analysis contracts are unchanged.
+
+Lavender Peaks shared-response refinement (2026-11-16): ridge motion reads existing overall `AudioSignal.intensity` rather than `sixBands`; six transforms retain their depth speed multipliers and identical smoothing. No analyser change: six-band analysis remains available to Crimson Horizon. Sun pulse still uses its existing bass features.
+
+Lavender high/low refinement: shared ridge drive now multiplies overall intensity by a power-weighted six-band brightness factor (0.25–1). Every mountain receives the same factor; no individual spectral assignment returns. Existing normalized analysis is reused without changes.

@@ -85,3 +85,33 @@ Authored-pattern repeat correction (2026-11-16): supersedes the continuation-hil
 Lavender Peaks sun (2026-11-16): a fixed faint disc is drawn in the sky shader behind all six ridges. It has no independent animation or audio response; the far mountain’s existing sub-bass travel reveals it. Terrain looping covers it again naturally.
 
 Depth-speed refinement (2026-11-16): owner requested slower distant layers. Speed limits now rise strictly from back to front: 0.15/0.25/0.45/0.65/0.9/1.2 world units/s. Each layer still responds independently to its own band; this is the depth ordering at equal energy, not a guarantee of observed ordering when band energies differ.
+
+## Crimson Horizon C01 — composition preview
+
+The sun, sky, terrain and crimson highlights are static. LandscapeCanvas provides the existing shared bass-driven ±1° roll; Reactivity scales that shared response. Zero Reactivity/reduced motion reset the camera and leave the static composition. No scrolling terrain or scene-specific music response is introduced in C01.
+
+## Crimson Horizon C02 — mouse viewpoint in a 3D valley
+
+Owner approved gentle viewpoint shift rather than orbit/exploration, retaining the reference's graphic dark/crimson look. Camera starts at (0, 5.5, 20), looks toward (0, 3.2, −35) and follows normalized mouse position with maximum offsets ±1.6 horizontally and ±0.85 vertically. Use exponential 180 ms smoothing and a 50 ms resumed-frame delta cap. Leave/blur smoothly return the target to center; touch has no effect. Reduced motion centers the camera and removes pointer/bass movement. The existing ±1° shared bass roll is layered after the position/lookAt update; zero Reactivity removes bass roll while pointer movement remains. Terrain and sun have no new audio mappings.
+
+Lavender Peaks bass-sun pulse (2026-11-16): owner requested the sun pulsate with bass. Use the existing broad bass features (20% fast energy + 80% max(transient, flux)), scaled by Reactivity, with a 40 ms attack and 220 ms release in the sky uniform. Pulse expands the disc/haze up to 20%, increases disc blend from 0.38 to at most 0.46 and haze strength from 0.055 to 0.075. Reduced motion and zero Reactivity immediately reset the pulse. The sun center stays fixed behind the terrain; mountain depth occlusion remains natural. This supersedes the earlier static-sun behavior; no audio processing change.
+
+## Crimson Horizon C03 — visual gate before audio
+
+Keep the perspective mouse camera and its ±1.6/±0.85 offsets, 180 ms smoothing, leave/blur return and reduced-motion behavior. Neutral viewpoint moves to (0,3.5,24), aimed at (0,4.2,−35) for a lower, wider composition. Crimson Horizon opts out of shared bass roll and disables its Reactivity control during visual review; other landscapes retain their current audio/motion behavior. Terrain, sun, haze and ridge shader contain no animation/audio response. Continuous forward travel is deferred; one stationary terrain region is used for approval.
+
+## Crimson Horizon C04 — endless forward travel
+
+C04 supersedes the C03 motion pause. The existing six normalized band levels drive two separate responses: their RMS energy sets forward speed (0.4–16 world units/s at full Reactivity while bands are active, with an energy exponent of 1.7 to separate quiet walking from fast travel), and their active count sets sun brightness (count/6). Bands activate at 0.12 and release below 0.08 after 150 ms, preventing threshold flicker. Speed eases with 350 ms attack/200 ms release; sun brightness uses 250 ms attack/800 ms release. Silence eases travel to rest; pause/end/disconnect or signal age above 250 ms stops travel immediately. No elapsed-time catch-up occurs.
+
+The sun keeps its size and stays 88 units ahead of the forward camera position. Idle brightness is barely visible; no disc scale pulse or camera roll is added. Mouse offsets/return remain available while silent, independently of Reactivity. Zero Reactivity stops forward movement and dims the sun. Reduced motion freezes forward and pointer movement while allowing sun brightness to change over 1.5 s. Leaving/reentering the scene resets the journey; pause retains its distance. A delayed terrain chunk stops travel before exposed bounds and resumes when ready.
+
+## Lavender Peaks — shared mountain response (2026-11-16)
+
+Owner replaced the individual frequency mappings with one shared music response. Every mountain now consumes the existing overall `signal.intensity`, so all layers accelerate and decelerate together. Keep speed limits from back to front at 0.15/0.25/0.45/0.65/0.9/1.2 world units/s, preserving the depth hierarchy at every shared input level. Keep 120/300 ms smoothing, rightward 24-unit looping and freeze-in-place on zero Reactivity/reduced motion. This supersedes L03's frequency-to-ridge assignment and independent band histories. The separately requested bass-pulsing sun remains unchanged.
+
+Lavender high/low speed refinement (2026-11-16): all mountains share a frequency-balance factor as well as overall intensity. Compute a power-weighted mean of the existing six normalized band indices (0 at sub-bass, 1 at air); scale shared intensity by 0.25 + 0.75 × balance. Low-frequency passages therefore travel at one-quarter the high-frequency speed at equal intensity. Mixed audio blends continuously, using existing 120/300 ms speed smoothing. This estimates spectral brightness, not musical pitch or note recognition. No band is assigned to an individual mountain; depth limits and bass sun remain unchanged. Silence/zero/reduced-motion behavior remains.
+
+Crimson strong-bass sun pulse (2026-11-16): owner requested pulsation when strong bass plays. Use existing broad fast bass above 0.5, remapped to 0–1, multiplied by max(bass transient, bass flux) and Reactivity. Smooth with 40 ms attack/220 ms release. This produces an onset-driven expansion up to 8%, glow expansion up to 12%, disc brightness lift up to 20% and bounded glow lift; sustained bass settles without an artificial oscillation. Preserve active-band-count base brightness, fixed sun center/horizon distance and the faint idle disc. Pause/stale input releases pulse; zero Reactivity/reduced motion clears it immediately. This supersedes C04's constant-size restriction only for the requested bass pulse.
+
+Crimson travel-speed increase (2026-11-16): owner requested faster movement. Double the full energy-speed curve to 0.4 + 15.6 × RMS-energy^1.7, up to 16 world units/s at full Reactivity. Preserve the slow/fast ratio, smoothing, loaded-terrain limit and all sun/pointer behavior.

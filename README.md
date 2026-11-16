@@ -2,7 +2,7 @@
 
 **Your music. Another world.**
 
-A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks previews sideways mountain motion driven by six frequency bands. ECHO branding and the selected scene name appear initially. Source and scene settings live in the compact chooser opened by the scene name at the bottom left; selecting a local file also shows a compact player on the landscape.
+A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks previews sideways mountain motion driven by shared music intensity and frequency balance and a bass-pulsing sun. Crimson Horizon travels forward through an endless 3D ridged valley while music plays, with a gentle mouse-following viewpoint. Its pink sun brightens as more frequency bands become active and pulses on strong bass hits, against a nightshade sky. Silence stops travel and dims the sun. ECHO branding and the selected scene name appear initially. Source and scene settings live in the compact chooser opened by the scene name at the bottom left; selecting a local file also shows a compact player on the landscape.
 
 ## Run locally
 
@@ -24,8 +24,8 @@ Click the scene name to open the chooser, or focus it with Tab and press Space/E
 - **Share a tab:** choose a permitted browser tab and enable Share tab audio in the native picker. Keep playback in that tab. The browser also requests video; ECHO does not read or display it.
 - **Open audio file:** select a local browser-supported file, then use the on-scene Play/Pause/Replay and volume controls. Volume affects local playback only.
 - **Disconnect / Cancel sharing:** release the selected source or cancel ECHO's pending sharing request. Close a pending native picker yourself too.
-- **Landscape:** switch between Bloom and the Lavender Peaks motion preview without stopping audio. The choice lasts for the page session.
-- **Reactivity:** changes Bloom’s visual amplitude or Lavender Peaks’ travel speed, not sound volume. Lavender Peaks gives each ridge its own band: 20–80, 80–250, 250–800, 800–2,500, 2,500–6,000 and 6,000–20,000 Hz, from back to front.
+- **Landscape:** switch between Bloom, Lavender Peaks and the Crimson Horizon 3D preview without stopping audio. The choice lasts for the page session.
+- **Reactivity:** changes Bloom’s visual amplitude or Lavender Peaks’ travel speed and sun pulse, not sound volume. Lavender Peaks moves all six ridges together: low-frequency passages move slower and high-frequency passages move faster, with overall intensity controlling strength. Distant layers remain slower than the foreground. In Crimson Horizon, Reactivity scales forward travel and sun brightness. Music energy controls speed; the number of active bands controls the sun. Mouse movement shifts its viewpoint even during silence; leaving the landscape returns it to center. Reduced motion freezes the camera and slows sun brightness changes.
 - **Graphics quality:** Standard preserves the existing drawing resolution; Low is softer and renders fewer pixels. The choice lasts for the page session.
 - **Enter/Exit fullscreen:** expands the landscape and chooser using the browser's native API. Native Escape remains available.
 

@@ -11,7 +11,7 @@ Prove audio capture and lifecycle first on desktop Chrome (Linux reference envir
 ## MVP after POC approval (proposed, not implementation permission)
 Tab audio and local files; immersive Bloom scene, fullscreen, reactivity and graphics quality controls, clear source connection/disconnection and graceful errors. Microphone is optional later. Additional landscapes, browser extension/system capture, catalog, accounts and sharing remain future ideas, not commitments. Obtain explicit approval before widening scope.
 
-The owner later approved one bounded extension, L01: a static selectable Lavender Peaks preview. The owner subsequently approved L02, a bounded sideways band-driven mountain-motion experiment. L03 subsequently extends that experiment to six bands, one per mountain. Other reference directions remain separate.
+The owner later approved one bounded extension, L01: a static selectable Lavender Peaks preview. The owner subsequently approved L02, a bounded sideways band-driven mountain-motion experiment. L03 subsequently extends that experiment to six bands, one per mountain. C01 adds the owner-approved Crimson Horizon composition preview, with static artwork and shared camera tilt. Other reference directions remain separate.
 
 ## Design pillars
 Atmosphere over realism; meaningful audio response over decoration; distinct compositions over recolored copies; simple geometry and selective effects; privacy by design; accessible controls; performance and token efficiency. A junior-feasible project and a reusable AI-assisted development methodology are co-equal learning goals.

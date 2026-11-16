@@ -1,5 +1,6 @@
 import BloomScene from './scenes/bloom/BloomScene'
 import LavenderPeaksScene from './scenes/lavender-peaks/LavenderPeaksScene'
+import CrimsonHorizonScene from './scenes/crimson-horizon/CrimsonHorizonScene'
 import type { SceneId } from './scenes/scene'
 import { useEffect, useRef, useState } from 'react'
 import { createLocalFile, type LocalFileState } from './audio/localFile'
@@ -42,7 +43,9 @@ export default function App() {
         <h1 className="sr-only">ECHO — Your music. Another world.</h1>
         {scene === 'bloom'
           ? <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
-          : <LavenderPeaksScene quality={quality} signal={analysis.signal} reactivity={reactivity} />}
+          : scene === 'lavender-peaks'
+            ? <LavenderPeaksScene quality={quality} signal={analysis.signal} reactivity={reactivity} />
+            : <CrimsonHorizonScene quality={quality} signal={analysis.signal} reactivity={reactivity} />}
         <AudioControls source={source} capture={capture} local={local} analysis={analysis}
           scene={scene} onScene={setScene}
           fullscreenControl={<FullscreenControls target={experience} />}

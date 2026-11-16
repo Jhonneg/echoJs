@@ -31,3 +31,11 @@ P04 (2026-11-16): same original procedural scene; added original `reactivity.ts`
 P03a static and P03b motion were owner accepted; P04 was accepted as passable after tuning. P05 preserves those visuals. Current procedural Bloom sources total 14,326 bytes; no runtime texture/image/model/font/audio payload. Measurement UI/probe has no visual art assets. Generated 45-second WAV is written to the OS temporary directory for tests and is not a captured or bundled production asset.
 
 Production build totals 1,162,425 raw bytes / 316,683 gzip level 9 bytes including rendering libraries and the standalone HTML tone fixture. Installed runtime/peer license labels are MIT except ieee754 (BSD-3-Clause); no root LICENSE file found. Inventory details and actual measurement environments are in `docs/EVALUATION.md`. This records provenance, not a publication licensing audit.
+
+## C01 Crimson Horizon — 2026-11-16
+
+Original repository-authored `src/scenes/crimson-horizon/CrimsonHorizonScene.tsx` geometry/GLSL and local CSS. The owner approved using the `rblopP` JPEG as a conceptual direction only. No runtime texture/model/font/image payload or new third-party art license. Reference provenance remains unverified; the JPEG is not loaded by ECHO.
+
+C02 replaces Crimson Horizon's flat procedural terrain with original closed triangulated surfaces, generated face colors/normals and a sphere sun. No external models, textures or reference JPEGs are loaded. New scene-local terrain and camera-motion helpers are repository-authored; ownership/disposal stays local to the mounted scene.
+
+C03 adds original repository-authored seeded 2D gradient/ridged multifractal noise and a custom artistic GLSL terrain material. No copied library source, texture/model asset or new runtime dependency; the supplied JPEG remains reference-only. Ridged multifractal feedback follows the general method described in libnoise documentation, implemented locally rather than importing its C++ code.

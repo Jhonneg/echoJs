@@ -114,3 +114,37 @@ Owner approved six independently driven mountains after reviewing the proposed r
 ## L04 — shared landscape camera tilt
 
 Owner requested a universal camera effect, then explicitly opted Lavender Peaks out. Use one LandscapeCanvas host for camera roll, enabled by default for future scenes and Bloom; Lavender Peaks stays level. Preserve Bloom's camera/halo response and verify zero/reduced-motion resets, existing tests and browser behavior where available. No audio processing, dependency or new visitor control.
+
+## C01 — Crimson Horizon composition preview
+
+Owner approved the dark sun valley direction, scene name Crimson Horizon, static composition first and inherited shared camera tilt.
+
+- Add a third selectable scene with black sky, low pale pink sun, four asymmetric terrain layers and selective crimson edge/face highlights. Partially obscure the sun with distant ridges; use restrained localized glow and procedural assets only.
+- Use LandscapeCanvas with default camera tilt. Keep terrain/lighting/sun static and describe Reactivity as controlling shared tilt for this preview. Preserve Bloom default and source playback across scene changes.
+- Verify desktop/portrait/wide composition, tilt coverage, quality/fullscreen, zero/reduced motion and local playback continuity. Run tests/typecheck/lint/build and stop for owner visual review. No additional audio mappings or dependencies.
+
+## C02 — true 3D Crimson Horizon with mouse camera
+
+Owner requested solid 3D terrain and mouse-following camera movement, choosing gentle viewpoint shift/return and fidelity to the supplied reference.
+
+- Replace flat layers with a solid triangulated valley and 3D pink sun. Preserve black/crimson art direction; add perspective, lighting and bounded camera parallax without dependencies or an explorable camera.
+- Keep pointer motion local to Crimson Horizon; reset on leave/blur, ignore touch and honor reduced motion. Retain shared bass roll and audio source behavior.
+- Extend LandscapeCanvas with optional projection/camera configuration while preserving other scenes' defaults. Test geometry integrity and pointer smoothing, plus desktop/portrait/wide browser rendering, controls and playback continuity. Stop for owner visual review.
+
+## C03 — ridged 3D composition gate
+
+Owner approved the revised terrain/material strategy with “lets go.” Preserve genuine 3D and perspective mouse movement; reject static 2.5D silhouettes. Prioritize reference identity and stop before further audio reactivity.
+
+- Replace Gaussian mountain summation with deterministic four-octave ridged multifractal terrain, asymmetric bank envelopes, bounded domain warping and a wide quiet valley. Retain real geometry/closure and foreground/distant ridge depth.
+- Use custom near-black directional shading, selected thin crimson crests and distance/sun-centered red haze. Preserve the bright pink sphere and generous negative space; adapt framing across viewports without stretching.
+- Disable only Crimson Horizon's bass roll/reactivity while retaining mouse movement, quality and source continuity. Keep other landscapes unchanged; no dependency, texture or forward-travel/chunk system.
+- Verify deterministic noise/height/bounds/normals/closed geometry, neutral and pointer-extreme desktop/portrait/wide renders, controls and source continuity. Owner approval of static composition is required before any next audio milestone.
+
+## C04 — endless Crimson Horizon journey
+
+Owner explicitly approved forward travel during music, a sun driven by the number of active frequency layers, brighter terrain and a nightshade sky. This authorizes travel/reactivity beyond C03; it does not record aesthetic acceptance of C03.
+
+- Stream genuine 3D ridged terrain with matching boundaries, a bounded four-chunk window and local coordinate rebasing. Preserve the wide valley and mouse perspective camera.
+- Music energy controls eased forward speed; pause/end/disconnect/stale input stops it. Silence dims the sun; six active-band states determine brightness. Keep the sun distant with constant size.
+- Retain mouse movement while silent; reduced motion freezes camera travel/pointer. Reactivity scales travel and sun. Preserve other scenes and audio processing.
+- Implemented with test/build/browser evidence in PROGRESS. Owner visual/musical review remains pending; no subsequent milestone approved.

@@ -128,9 +128,11 @@ export function AudioControls(props: Props) {
             <select id="scene-select" value={props.scene} onChange={(event) => props.onScene(event.currentTarget.value as SceneId)}>
               <option value="bloom">Bloom</option>
               <option value="lavender-peaks">Lavender Peaks · Preview</option>
+              <option value="crimson-horizon">Crimson Horizon · Preview</option>
             </select>
           </div>
-          {props.scene === 'lavender-peaks' && <p className="source-help">Lavender Peaks motion preview: each mountain follows its own frequency band, from deep bass at the back to high treble at the front.</p>}
+          {props.scene === 'lavender-peaks' && <p className="source-help">Lavender Peaks motion preview: all mountains move together, slower on low notes and faster on high notes. Distant ridges stay slower than the foreground.</p>}
+          {props.scene === 'crimson-horizon' && <p className="source-help">Music carries you forward. More active frequency bands brighten the sun; silence stops travel. Move the mouse to look around.</p>}
           <label className="slider-control">Reactivity
             <input type="range" min="0" max="1" step="0.01" value={props.reactivity} onChange={(event) => props.onReactivity(Number(event.currentTarget.value))} />
             <output>{Math.round(props.reactivity * 100)}%</output>

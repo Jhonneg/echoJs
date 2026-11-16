@@ -7,3 +7,5 @@ If using images/model/audio in production, confirm provenance/license, document 
 ## Owner-added landscape references — 2026-11-16
 
 Three JPEGs were added under this folder. The file beginning `h4Wq72` shows pale, layered lavender mountains and guides the static Lavender Peaks preview. The file beginning `rblopP` shows a graphic dark magenta sun valley; the file beginning `svH0FW` shows a pink sun reflected on water. The latter two are possible directions for separately approved landscapes, not specifications for L01. Their origin and runtime-use rights have not been recorded, so all three remain conceptual references only.
+
+C01: the owner selected the dark magenta sun valley reference (filename beginning `rblopP`) for Crimson Horizon. It remains conceptual only; the runtime composition is original procedural geometry and GLSL. Licensing/provenance for the reference JPEG remains unverified.

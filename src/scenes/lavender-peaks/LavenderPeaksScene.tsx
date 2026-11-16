@@ -1,10 +1,10 @@
 import { Component, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { Color, Group, OrthographicCamera, Shape } from 'three'
+import { Color, Group, OrthographicCamera, ShaderMaterial, Shape } from 'three'
 import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import type { AudioSignal } from '../../audio/signal'
-import { createLayerMotion, updateLayerMotion, ridgeHeight, TERRAIN_PERIOD } from './motion'
+import { createLayerMotion, updateLayerMotion, updateSunPulse, ridgeHeight, TERRAIN_PERIOD } from './motion'
 import { ridges, type Ridge } from './terrain'
 import './lavender-peaks.css'
 
@@ -12,6 +12,7 @@ const vertex = `varying vec2 vPosition;
 void main() { vPosition = position.xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`
 
 const skyFragment = `varying vec2 vPosition;
+uniform float sunPulse;
 void main() {
   float height = smoothstep(-5.8, 5.8, vPosition.y);
   vec3 cream = vec3(1.0, 0.87, 0.84);
@@ -20,10 +21,10 @@ void main() {
   float halo = exp(-pow(vPosition.x / 5.8, 2.0) - pow((vPosition.y + 0.9) / 3.7, 2.0));
   color = mix(color, vec3(1.0, 0.94, 0.86), halo * 0.55);
   // Fixed behind the first large peak; opaque ridges reveal it as they travel.
-  float sunDistance = length(vPosition - vec2(1.6, 1.9));
+  float sunDistance = length(vPosition - vec2(1.6, 1.9)) / (1.0 + sunPulse * 0.2);
   float sunDisc = 1.0 - smoothstep(0.68, 0.75, sunDistance);
-  float sunHaze = exp(-pow(sunDistance / 1.1, 2.0)) * 0.055;
-  color = mix(color, vec3(1.0, 0.94, 0.83), sunDisc * 0.38 + sunHaze);
+  float sunHaze = exp(-pow(sunDistance / 1.1, 2.0)) * (0.055 + sunPulse * 0.02);
+  color = mix(color, vec3(1.0, 0.94, 0.83), sunDisc * (0.38 + sunPulse * 0.08) + sunHaze);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`
@@ -78,6 +79,8 @@ function Framing() {
 type MotionProps = { signal: AudioSignal, reactivity: number, reducedMotion: boolean }
 
 function Composition({ signal, reactivity, reducedMotion }: MotionProps) {
+  const sky = useRef<ShaderMaterial>(null)
+  const skyUniforms = useMemo(() => ({ sunPulse: { value: 0 } }), [])
   const groups = useRef<(Group | null)[]>([])
   const motion = useRef(ridges.map(() => createLayerMotion()))
   const size = useThree(state => state.size)
@@ -87,6 +90,10 @@ function Composition({ signal, reactivity, reducedMotion }: MotionProps) {
   const skyWidth = Math.max(40, size.width / zoom + 2)
   const skyHeight = Math.max(40, size.height / zoom + 2)
   useFrame((_, delta) => {
+    if (sky.current) {
+      const pulse = sky.current.uniforms.sunPulse
+      pulse.value = updateSunPulse(pulse.value, signal, reactivity, reducedMotion, delta)
+    }
     for (let depth = 0; depth < ridges.length; depth++) {
       updateLayerMotion(motion.current[depth], signal, depth, reactivity, reducedMotion, delta)
       const group = groups.current[depth]
@@ -95,7 +102,7 @@ function Composition({ signal, reactivity, reducedMotion }: MotionProps) {
   })
   return <>
     <Framing />
-    <mesh position={[0, 0, -10]}><planeGeometry args={[skyWidth, skyHeight]} /><shaderMaterial vertexShader={vertex} fragmentShader={skyFragment} toneMapped={false} /></mesh>
+    <mesh position={[0, 0, -10]}><planeGeometry args={[skyWidth, skyHeight]} /><shaderMaterial ref={sky} uniforms={skyUniforms} vertexShader={vertex} fragmentShader={skyFragment} toneMapped={false} /></mesh>
     {ridges.map((ridge, index) => <group key={index} ref={group => { groups.current[index] = group }}>
       <RidgeLayer ridge={ridge} index={index} halfWidth={halfWidth} />
     </group>)}

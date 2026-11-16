@@ -2,11 +2,10 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { SIX_BAND_NAMES, silentSignal, resetSignal, binRange } from '../src/audio/signal.ts'
 import { createSixBandAnalysis, SIX_BAND_SETTINGS } from '../src/audio/sixBands.ts'
-import { createLayerMotion, updateLayerMotion } from '../src/scenes/lavender-peaks/motion.ts'
 
 const frequencies = [47, 141, 469, 1500, 4000, 10000]
 
-test('six isolated FFT tones reach only their mountain across supported sample rates', () => {
+test('six isolated FFT tones reach only their analysis band across supported sample rates', () => {
   for (const sampleRate of [16000, 44100, 48000, 96000]) {
     const fftSize = sampleRate > 48000 ? 4096 : 2048
     for (let band = 0; band < 6; band++) {
@@ -16,10 +15,8 @@ test('six isolated FFT tones reach only their mountain across supported sample r
       const bins = new Float32Array(fftSize / 2).fill(-Infinity)
       bins[Math.round(frequencies[band] * fftSize / sampleRate)] = -30
       processor.update(bins, 0.1, signal.sixBands)
-      for (let mountain = 0; mountain < 6; mountain++) {
-        const motion = createLayerMotion()
-        updateLayerMotion(motion, signal, mountain, 1, false, 1 / 60)
-        assert.equal(motion.offset > 0, mountain === band)
+      for (const [index, name] of SIX_BAND_NAMES.entries()) {
+        assert.equal(signal.sixBands[name] > 0, index === band)
       }
       assert.equal(signal.fast.bass, 0) // Parallel analysis leaves Bloom's features alone.
     }

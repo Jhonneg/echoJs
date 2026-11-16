@@ -1,0 +1,7 @@
+.crimson-stage { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #221a32; }
+.crimson-stage canvas { display: block; width: 100%; height: 100%; }
+.crimson-brand { position: absolute; top: max(var(--scene-gutter), env(safe-area-inset-top)); left: max(var(--scene-gutter), env(safe-area-inset-left)); color: #f4c6d8; font-size: 1.05rem; letter-spacing: 0.4em; pointer-events: none; }
+.crimson-fallback { position: absolute; top: 40%; left: var(--scene-gutter); right: var(--scene-gutter); max-width: 28rem; margin: 0 auto; padding: 1rem; background: #20121d; color: #f8dbe6; border-radius: 0.5rem; }
+
+.crimson-status { position: absolute; top: calc(max(var(--scene-gutter), env(safe-area-inset-top)) + 2rem); left: var(--scene-gutter); right: var(--scene-gutter); color: #c3b5d2; font-size: 0.75rem; }
+.crimson-status button { margin-left: 0.5rem; }
