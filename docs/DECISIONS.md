@@ -40,5 +40,18 @@
 
 | D23 | 2026-11-16: owner approved bounded feature refinement after ECHO/GLASS audit: integrated spectral power, fixed per-band sensitivities, independent fast/slow/transient/atmosphere signals, direct scene mappings | Audit found double-smoothed mids/treble and single-bin peak aggregation. Preserve adapters, 96 kHz/FFT window, graph, artistic bounds and one Reactivity control. No beat classifier, extra analyser, AudioWorklet, dependency or landscape redesign. Native/manual acceptance pending. |
 
+| D24 | 2026-11-16: owner approved parallel positive spectral flux, distinct spatial mappings and isolated visual debug after separation audit | Retain accepted energy/atmosphere, graph, adapters, FFT/rate and cutoffs. Use bin-first L2 positive differences with independent references and leaky accumulation; compare L1 in tests. Combined accents take max rather than sum. Bass owns size, mids fragment translation/local rotation, treble selected emission. Debug affects rendering and invalidates non-default benchmarks. No beat classifier, dependency, rolling AGC or media persistence. Automated checks passed; owner perceptual acceptance pending. |
+
+| D25 | 2026-11-16: owner approved M01 source-and-controls interface | Present tab/file selection and playback status in a responsive bar below Bloom; group Disconnect, local-only playback/volume and Reactivity. Collapse optional diagnostics/debug/performance together. Lift ordinary settings to App; preserve adapters and all audio/motion processing. No dependency, landscape redesign, fullscreen or graphics-quality feature. Keyboard and headless functional checks passed; owner interface/native review pending. |
+
+| D26 | 2026-11-16: owner approved M02 native Fullscreen API controls for Bloom plus the audio bar | Use the existing experience container; sync state from fullscreenchange rather than optimistic clicks. Keep native Escape behavior, usable keyboard focus, unavailable/rejection feedback and short-screen scrolling. Diagnostics stay outside and require exit. Invalidate active benchmarks on transitions. No audio/motion changes or dependencies. Real headless enter/exit and playback continuity passed; owner subsequently confirmed native Escape/audible continuity with "it works". M02 accepted. |
+
+| D27 | 2026-11-16: owner approved M03 Standard/Low graphics-quality control | Preserve default DPR range 1..1.5; Low fixes render DPR at 0.75 to reduce pixels even on 1× displays. Keep Canvas/audio alive, all geometry/motion/shaders unchanged, and setting in memory. Include preset plus actual DPR in results and invalidate changed runs. Browser resolution/continuity/fullscreen checks and real software result metadata passed; owner confirmed normal/fullscreen switching and audio continuity with "it works". M03 accepted. No adaptive quality, persistence, dependency or hardware FPS claim. |
+
 ## Open decisions
+
+
+
+
+2026-11-16 owner direction: stop iterative audio/motion tuning and move forward. Retain implemented separation work, defer remaining chopped-motion feedback as a known limitation, and do not implement the proposed additional motion pass. Present bounded M01 interface scope before source changes; this direction does not fabricate perceptual acceptance or a production-readiness result.
 Exact reflection technique, asset source, browser/OS coverage beyond reference Chrome, final UI, production framework, precise frequency normalization and performance targets after measurement. Do not treat open decisions as blockers before their relevant tasks. Record new decisions with ID/date, alternatives, rationale, status and affected docs; do not silently rewrite earlier choices.

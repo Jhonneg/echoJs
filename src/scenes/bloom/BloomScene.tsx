@@ -1,10 +1,11 @@
-import { Component, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
+import { Component, useEffect, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Color, Group, OrthographicCamera, ShaderMaterial, Mesh, MeshStandardMaterial, Shape, Vector2 } from 'three'
+import { Color, Group, OrthographicCamera, ShaderMaterial, Mesh, MeshStandardMaterial, Shape, Vector2, Vector3 } from 'three'
 import type { AudioSignal } from '../../audio/signal'
-import { createBloomResponse, updateBloomResponse } from './reactivity'
+import { createBloomResponse, updateBloomResponse, updateFragmentResponse, type BloomDebug } from './reactivity'
 import { PerformanceProbe } from '../../components/PerformanceProbe'
 import type { PerformanceMeasurement } from '../../engine/performance'
+import { QUALITY_DPR, type GraphicsQuality } from '../../engine/quality'
 import './bloom.css'
 
 const vertex = `varying vec2 vUv;
@@ -96,12 +97,14 @@ const arcs = [
   [0.06, 0.73], [0.87, 0.47], [1.40, 0.66], [2.15, 0.54],
   [2.82, 0.84], [3.79, 0.68], [4.57, 0.62], [5.33, 0.75],
 ]
+const arcPivots = arcs.map(([, length]) => new Vector3(Math.cos(length / 2) * 1.58, Math.sin(length / 2) * 1.58, 0))
 
 function Halo({ groupRef }: { groupRef: RefObject<Group | null> }) {
   return (
     <group ref={groupRef} position={[0.6, 1.95, 0]} rotation={[0.06, -0.23, 0.12]}>
       {arcs.map(([start, length], i) => (
         <group name="halo-fragment" key={start} rotation={[0, 0, start]} position={[0, 0, i % 3 === 0 ? 0.05 : 0]}>
+          <group name="fragment-pivot" pivot={arcPivots[i]}>
           <mesh name="halo-body">
             <torusGeometry args={[1.58, 0.075, 6, 48, length]} />
             <meshStandardMaterial color="#81769E" emissive="#C69AB7" emissiveIntensity={0.28} roughness={0.4} metalness={0.35} />
@@ -114,40 +117,46 @@ function Halo({ groupRef }: { groupRef: RefObject<Group | null> }) {
             <torusGeometry args={[1.57, 0.14, 12, 48, length]} />
             <meshBasicMaterial color="#C69AB7" transparent opacity={0.07} depthWrite={false} />
           </mesh>
+          </group>
         </group>
       ))}
     </group>
   )
 }
 
-function Composition({ reducedMotion, signal, reactivity, onRenderTime }: { reducedMotion: boolean, signal: AudioSignal, reactivity: number, onRenderTime: (now: number) => void }) {
+function Composition({ reducedMotion, signal, reactivity, onRenderTime, debug }: { reducedMotion: boolean, signal: AudioSignal, reactivity: number, onRenderTime: (now: number) => void, debug: BloomDebug }) {
   const halo = useRef<Group>(null)
   const lake = useRef<ShaderMaterial>(null)
   const skyMaterial = useRef<ShaderMaterial>(null)
   const response = useRef(createBloomResponse())
   const elapsed = useRef(0)
+  const fragmentResponse = useRef({ x: 0, y: 0, rotation: 0, highlight: 0 })
   useFrame((_, delta) => {
     if (!halo.current || !lake.current || !skyMaterial.current) return
     const dt = Math.min(delta, 0.05)
-    onRenderTime(performance.now())
-    updateBloomResponse(response.current, signal, reactivity)
+    const now = performance.now()
+    onRenderTime(now)
+    updateBloomResponse(response.current, signal, reactivity, debug, now)
     const audio = response.current
     // Reduced motion freezes drift/ripple phases and suppresses reactive geometry.
-    if (!reducedMotion) elapsed.current += dt
-    const time = elapsed.current
+    if (!reducedMotion && debug.ambient) elapsed.current += dt
+    const time = debug.ambient ? elapsed.current : 0
     const x = Math.sin(time * 0.40) * 0.13
     const y = Math.sin(time * 0.50) * 0.14
     const scale = reducedMotion ? 1 : 1 + audio.bass * 0.20
     halo.current.position.set(0.6 + x, 1.95 + y, 0)
     halo.current.scale.setScalar(scale)
     halo.current.children.forEach((fragment, i) => {
-      const drift = reducedMotion ? 0 : audio.midrange * 0.12
-      // Tangential motion keeps mids from masquerading as a bass size pulse.
-      fragment.position.x = -Math.sin(arcs[i][0]) * drift
-      fragment.position.y = Math.cos(arcs[i][0]) * drift
+      updateFragmentResponse(fragmentResponse.current, arcs[i][0] + arcs[i][1] / 2, i,
+        reducedMotion ? 0 : audio.midrange, reducedMotion ? 0 : audio.treble)
+      const motion = fragmentResponse.current
+      fragment.position.x = motion.x
+      fragment.position.y = motion.y
+      const pivot = fragment.getObjectByName('fragment-pivot')
+      if (pivot) pivot.rotation.z = motion.rotation
       const body = fragment.getObjectByName('halo-body') as Mesh | undefined
       if (body?.material instanceof MeshStandardMaterial) {
-        body.material.emissiveIntensity = 0.28 + audio.glow * 0.55 + audio.midrange * (reducedMotion ? 0 : 0.65)
+        body.material.emissiveIntensity = 0.28 + audio.glow * 0.55 + motion.highlight
       }
     })
     const uniforms = lake.current.uniforms
@@ -192,24 +201,27 @@ function subscribeReducedMotion(onChange: () => void) {
 }
 function getReducedMotion() { return window.matchMedia(motionQuery).matches }
 
-export default function BloomScene({ signal, onRenderTime, measurement }: { signal: AudioSignal, onRenderTime: (now: number) => void, measurement: PerformanceMeasurement }) {
-  const [reactivity, setReactivity] = useState(1)
+export default function BloomScene({ signal, onRenderTime, measurement, reactivity, debug, quality }: { signal: AudioSignal, onRenderTime: (now: number) => void, measurement: PerformanceMeasurement, reactivity: number, debug: BloomDebug, quality: GraphicsQuality }) {
+  const debugActive = debug.band !== 'all' || debug.synthetic || !debug.ambient || debug.accent !== 'combined'
+  useEffect(() => { measurement.invalidate('Visual debug settings changed. Repeat the run with debug defaults.') }, [measurement, debug])
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
   return (
+    <>
     <section className="bloom-stage" aria-label="Bloom: a luminous fragmented halo over a tranquil lake at twilight">
       <SceneBoundary>
-        <Canvas orthographic camera={{ position: [0, 0, 20], zoom: 80, near: 0.1, far: 60 }} frameloop="always" dpr={[1, 1.5]} gl={{ antialias: true }} fallback={<p className="bloom-fallback">WebGL is unavailable. Audio diagnostics are available below.</p>}>
-          <PerformanceProbe measurement={measurement} reactivity={reactivity} reducedMotion={reducedMotion} />
-          <Composition reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} onRenderTime={onRenderTime} />
+        <Canvas orthographic camera={{ position: [0, 0, 20], zoom: 80, near: 0.1, far: 60 }} frameloop="always" dpr={QUALITY_DPR[quality]} gl={{ antialias: true }} fallback={<p className="bloom-fallback">WebGL is unavailable. Audio diagnostics are available below.</p>}>
+          <PerformanceProbe measurement={measurement} reactivity={reactivity} reducedMotion={reducedMotion} debugActive={debugActive} quality={quality} />
+          <Composition reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} onRenderTime={onRenderTime} debug={debug} />
         </Canvas>
       </SceneBoundary>
       <div className="bloom-brand" aria-hidden="true">ECHO<span>Your music. Another world.</span></div>
-      <label className="bloom-reactivity">Reactivity
-        <input aria-label="Reactivity" type="range" min="0" max="1" step="0.01" value={reactivity} onChange={(event) => setReactivity(Number(event.currentTarget.value))} />
-        <output>{Math.round(reactivity * 100)}%</output>
-      </label>
+
       <div className="bloom-caption"><span>01 / BLOOM</span><p>A quiet place between sound and stillness.</p></div>
-      <a className="bloom-audio-link" href="#diagnostics-heading">Audio diagnostics ↓</a>
+      <a className="bloom-audio-link" href="#audio-controls">Choose audio ↓</a>
+      {debugActive &&
+        <p className="bloom-debug-status">Visual debug: {debug.band} · {debug.synthetic ? 'synthetic pulse' : debug.accent} · ambient {debug.ambient ? 'on' : 'off'}</p>}
     </section>
+
+    </>
   )
 }

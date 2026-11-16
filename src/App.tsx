@@ -6,6 +6,11 @@ import { createLocalFile, type LocalFileState } from './audio/localFile'
 import { createAnalysis } from './audio/analysis'
 import { SignalDiagnostics } from './components/SignalDiagnostics'
 import { createTabCapture, type CaptureState } from './audio/tabCapture'
+import { AudioControls } from './components/AudioControls'
+import { BloomDebugControls } from './components/BloomDebugControls'
+import { defaultBloomDebug, type BloomDebug } from './scenes/bloom/reactivity'
+import { FullscreenControls } from './components/FullscreenControls'
+import type { GraphicsQuality } from './engine/quality'
 
 export default function App() {
   const [capture, setCapture] = useState<CaptureState>({
@@ -13,10 +18,15 @@ export default function App() {
   })
   const [local, setLocal] = useState<LocalFileState>({ status: 'empty', name: '', message: 'Select a permitted local audio file.' })
   const [source, setSource] = useState<'tab' | 'file'>('tab')
+  const [reactivity, setReactivity] = useState(1)
+  const [quality, setQuality] = useState<GraphicsQuality>('standard')
+  const [volume, setVolume] = useState(0.5)
+  const [debug, setDebug] = useState<BloomDebug>({ ...defaultBloomDebug })
   const localController = useRef<ReturnType<typeof createLocalFile> | null>(null)
   const [measurement] = useState(createPerformanceMeasurement)
   const [analysis] = useState(createAnalysis)
   const controller = useRef<ReturnType<typeof createTabCapture> | null>(null)
+  const experience = useRef<HTMLElement>(null)
   useEffect(() => {
     const active = createTabCapture(setCapture, analysis)
     controller.current = active
@@ -32,61 +42,54 @@ export default function App() {
 
   return (
     <>
-      <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} measurement={measurement} />
-      <main>
-      <header>
-        <p className="eyebrow">Proof of concept</p>
-        <h1>ECHO</h1>
-        <p>Your music. Another world.</p>
-      </header>
-      <section aria-labelledby="diagnostics-heading">
-        <h2 id="diagnostics-heading">Audio diagnostics</h2>
-        <dl>
-          <div><dt>Source</dt><dd>{source === 'file' ? 'Local file' : capture.status === 'connected' ? 'Shared browser source' : 'None selected'}</dd></div>
-          <div><dt>Connection</dt><dd>{source === 'file' ? local.status : capture.status}</dd></div>
-          <div><dt>Audio tracks</dt><dd>{source === 'file' ? '—' : capture.audioTracks}</dd></div>
-
-        </dl>
-        <SignalDiagnostics analysis={analysis} />
-        <p>Choose a browser tab in the native picker and enable Share tab audio.
-          The browser also shares video; ECHO does not read or display it.</p>
-        <div className="controls">
-          <button onClick={() => {
+      <a className="skip-link" href="#audio-controls">Skip to audio controls</a>
+      <main className="experience" ref={experience}>
+        <h1 className="sr-only">ECHO — Your music. Another world.</h1>
+        <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} measurement={measurement} reactivity={reactivity} debug={debug} quality={quality} />
+        <AudioControls source={source} capture={capture} local={local} analysis={analysis}
+          fullscreenControl={<FullscreenControls target={experience} onChange={() => measurement.invalidate('Fullscreen changed. Repeat the performance measurement.')} />}
+          reactivity={reactivity} volume={volume} onReactivity={setReactivity}
+          quality={quality} onQuality={(value) => {
+            measurement.invalidate('Graphics quality changed. Repeat the performance measurement.')
+            setQuality(value)
+          }}
+          onShare={() => {
             if (source === 'file') localController.current?.clear()
             setSource('tab')
             void controller.current?.connect()
           }}
-            disabled={capture.status === 'connecting' || capture.status === 'connected'}>Connect</button>
-          <button onClick={() => {
-            if (source === 'file') localController.current?.clear()
-            else controller.current?.disconnect()
-          }}
-            disabled={source === 'file' ? local.status === 'empty' : capture.status !== 'connecting' && capture.status !== 'connected'}>Disconnect</button>
-        </div>
-        <p role="status">{source === 'file' ? local.message : capture.message}</p>
-        <fieldset>
-          <legend>Local audio (stays on this device)</legend>
-          <label>Audio file <input type="file" accept="audio/*" onChange={(event) => {
-            const selected = event.currentTarget.files?.[0]
-            event.currentTarget.value = ''
-            if (!selected) return
+          onFile={(selected) => {
             controller.current?.disconnect()
             setSource('file')
             localController.current?.select(selected)
-          }} /></label>
-          <p>{local.name || 'No local file selected'}</p>
-          <div className="controls">
-            <button disabled={source !== 'file' || local.status === 'empty' || local.status === 'error' || local.status === 'playing'} onClick={() => void localController.current?.play()}>Play</button>
-            <button disabled={source !== 'file' || local.status !== 'playing'} onClick={() => localController.current?.pause()}>Pause</button>
-            <label>Volume <input type="range" min="0" max="1" step="0.01" defaultValue="0.5" onChange={(event) => localController.current?.setVolume(Number(event.currentTarget.value))} /></label>
-          </div>
-        </fieldset>
-        <p>Disconnect while the picker is open cancels ECHO's request; close the native picker yourself.
-          Any stream returned afterwards is immediately stopped.</p>
-        <p><a href="/tone-fixture.html" target="_blank" rel="noreferrer">Open permitted test tone tab</a></p>
-      </section>
-        <PerformancePanel measurement={measurement} analysis={analysis} source={source === 'file' ? `local file / ${local.status}` : `tab / ${capture.status}`} />
+          }}
+          onDisconnect={() => {
+            if (source === 'file') localController.current?.clear()
+            else controller.current?.disconnect()
+          }}
+          onPlay={() => { void localController.current?.play() }}
+          onPause={() => localController.current?.pause()}
+          onVolume={(value) => { setVolume(value); localController.current?.setVolume(value) }} />
       </main>
+      <div className="tools-container">
+        <details id="audio-tools" className="developer-tools">
+          <summary>Diagnostics &amp; development tools</summary>
+          <p>Optional inspection tools. Your source and playback controls stay above.</p>
+          <section aria-labelledby="diagnostics-heading">
+            <h2 id="diagnostics-heading">Audio diagnostics</h2>
+            <dl>
+              <div><dt>Source</dt><dd>{source === 'file' ? 'Local file' : capture.status === 'connected' ? 'Shared browser source' : 'None selected'}</dd></div>
+              <div><dt>Connection</dt><dd>{source === 'file' ? local.status : capture.status}</dd></div>
+              <div><dt>Audio tracks</dt><dd>{source === 'file' ? '—' : capture.audioTracks}</dd></div>
+            </dl>
+            <SignalDiagnostics analysis={analysis} />
+            <p>Choose a browser tab and enable Share tab audio. The browser also shares video; ECHO does not read or display it.</p>
+            <p><a href="/tone-fixture.html" target="_blank" rel="noreferrer">Open permitted test tone tab</a></p>
+          </section>
+          <BloomDebugControls debug={debug} setDebug={setDebug} />
+          <PerformancePanel measurement={measurement} analysis={analysis} source={source === 'file' ? `local file / ${local.status}` : `tab / ${capture.status}`} />
+        </details>
+      </div>
     </>
   )
 }

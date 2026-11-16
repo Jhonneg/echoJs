@@ -25,6 +25,10 @@ Use agreed composition at reference desktop viewport (e.g. 1440×900, record act
 
 ## P05 performance procedure
 
+M03 quality review: compare Standard and Low with permitted audio playing in normal and fullscreen views. Low should look softer; switching should retain playback and the selected preset across fullscreen transitions. Repeated switches must retain the same Canvas/source. Check keyboard and narrow-screen access. Performance results must include both preset and actual render DPR, and selection changes must invalidate active runs. Compare hardware performance only with the same viewport/source/settings and separately recorded environment; automated buffer-size or software-browser checks are not a hardware speed claim.
+
+M02 fullscreen review: while permitted audio plays, enter fullscreen, confirm Bloom and the audio bar remain usable, then exit with the button and with native Escape. Repeat/resizing must not restart playback or duplicate sound; confirm the button follows browser state. Diagnostics are reached after exit. Browser mocks of denial/unsupported APIs do not establish native fullscreen support; headless Escape handling may require a manual normal-browser check. Any fullscreen transition invalidates an active performance run.
+
 Use a production build (`npm run build`, then `npm run preview -- --host 127.0.0.1 --port 4173 --strictPort`). At the agreed viewport, disconnect audio and use Performance measurement. Start returns to the scene; keep the page visible for 5 seconds warm-up plus 30 seconds sampling. Return to the results below diagnostics and copy the result block.
 
 Repeat during local playback using `npm run fixture -- --long` and the printed 45-second generated WAV. Start playback before measurement. Do not pause, change source/reactivity/reduced-motion, resize, or hide the page during a run; these invalidate it. Keep the scene in view. Add physical CPU/GPU model if known and note any visual or audible problem. Do not send recorded media.

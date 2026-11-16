@@ -12,6 +12,7 @@ export interface AudioSignal {
   fast: BandValues
   slow: BandValues
   transient: BandValues
+  flux: BandValues
   atmosphere: number
   updatedAt: number
   updateHz: number
@@ -21,13 +22,14 @@ export const emptyBands = (): BandValues => ({ bass: 0, midrange: 0, treble: 0 }
 export function silentSignal(): AudioSignal {
   return {
     bass: 0, midrange: 0, treble: 0, intensity: 0, isPlaying: false,
-    levels: emptyBands(), fast: emptyBands(), slow: emptyBands(), transient: emptyBands(),
+    levels: emptyBands(), fast: emptyBands(), slow: emptyBands(), transient: emptyBands(), flux: emptyBands(),
     atmosphere: 0, updatedAt: 0, updateHz: 0,
   }
 }
 export function resetSignal(signal: AudioSignal) {
   for (const band of BAND_NAMES) {
     signal[band] = signal.levels[band] = signal.fast[band] = signal.slow[band] = signal.transient[band] = 0
+    signal.flux[band] = 0
   }
   signal.intensity = signal.atmosphere = signal.updatedAt = signal.updateHz = 0
   signal.isPlaying = false

@@ -1,5 +1,6 @@
 import { bandLevel, bandMagnitude, binRange, emptyBands, resetSignal, silentSignal, smooth, type SignalTiming } from './signal'
 import { updateSignalFeatures } from './features'
+import { createSpectralFlux } from './flux'
 
 export function createAnalysis() {
   const signal = silentSignal()
@@ -13,6 +14,7 @@ export function createAnalysis() {
   let message = 'Not active'
   let previous = 0
   let usingDefaultRate = false
+  let flux: ReturnType<typeof createSpectralFlux> | undefined
 
   function stop() {
     cancelAnimationFrame(frame)
@@ -21,6 +23,8 @@ export function createAnalysis() {
     analyser?.disconnect()
     source = undefined
     analyser = undefined
+    flux?.reset()
+    flux = undefined
     const closing = context
     context = undefined
     if (closing && closing.state !== 'closed') void closing.close().catch(() => {})
@@ -72,6 +76,7 @@ export function createAnalysis() {
       const bass = binRange(20, 250, current.sampleRate, analyser.fftSize)
       const mid = binRange(250, 4000, current.sampleRate, analyser.fftSize)
       const treble = binRange(4000, 20000, current.sampleRate, analyser.fftSize)
+      flux = createSpectralFlux(bins.length, { bass, midrange: mid, treble })
       const bars = Array.from(spectrum, (_, i) => binRange(
         20 * (1000 ** (i / spectrum.length)),
         20 * (1000 ** ((i + 1) / spectrum.length)), current.sampleRate, analyser!.fftSize,
@@ -90,6 +95,7 @@ export function createAnalysis() {
         raw.midrange = bandMagnitude(bins, ...mid)
         raw.treble = bandMagnitude(bins, ...treble)
         updateSignalFeatures(signal, raw, delta, now)
+        flux?.update(bins, delta, running && (!element || (!element.paused && !element.ended)), signal.flux)
         updates++
         if (now - rateStart >= 1000) {
           signal.updateHz = updates * 1000 / (now - rateStart)

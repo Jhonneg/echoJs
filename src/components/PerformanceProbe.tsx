@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import type { PerformanceMeasurement } from '../engine/performance'
+import type { GraphicsQuality } from '../engine/quality'
 
-export function PerformanceProbe({ measurement, reactivity, reducedMotion }: {
-  measurement: PerformanceMeasurement, reactivity: number, reducedMotion: boolean
+export function PerformanceProbe({ measurement, reactivity, reducedMotion, debugActive, quality }: {
+  measurement: PerformanceMeasurement, reactivity: number, reducedMotion: boolean, debugActive: boolean, quality: GraphicsQuality
 }) {
   const { gl, size, viewport } = useThree()
   useEffect(() => {
@@ -13,9 +14,9 @@ export function PerformanceProbe({ measurement, reactivity, reducedMotion }: {
       width: size.width, height: size.height,
       renderDpr: gl.getPixelRatio(), deviceDpr: window.devicePixelRatio,
       renderer: String(context.getParameter(debug ? debug.UNMASKED_RENDERER_WEBGL : context.RENDERER)),
-      reactivity, reducedMotion,
+      reactivity, reducedMotion, quality,
     })
-  }, [measurement, gl, size.width, size.height, viewport.dpr, reactivity, reducedMotion])
+  }, [measurement, gl, size.width, size.height, viewport.dpr, reactivity, reducedMotion, quality])
   useEffect(() => {
     const lost = () => measurement.invalidate('WebGL context was lost. Repeat after recovery.')
     gl.domElement.addEventListener('webglcontextlost', lost)
@@ -25,6 +26,9 @@ export function PerformanceProbe({ measurement, reactivity, reducedMotion }: {
     }
   }, [gl, measurement])
   // Use actual frame timestamps, not Bloom's capped animation delta.
-  useFrame(() => measurement.frame(performance.now()))
+  useFrame(() => {
+    if (debugActive) measurement.invalidate('Reset visual debug before measuring performance.')
+    else measurement.frame(performance.now())
+  })
   return null
 }

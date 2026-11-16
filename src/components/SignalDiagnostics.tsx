@@ -10,7 +10,7 @@ export function SignalDiagnostics({ analysis }: { analysis: Analysis }) {
     const signal = analysis.signal
     return {
       ...signal, levels: { ...signal.levels }, fast: { ...signal.fast },
-      slow: { ...signal.slow }, transient: { ...signal.transient },
+      slow: { ...signal.slow }, transient: { ...signal.transient }, flux: { ...signal.flux },
       ...analysis.format, renderAgeMs: analysis.timing.renderAgeMs, message: analysis.message,
     }
   }
@@ -19,7 +19,7 @@ export function SignalDiagnostics({ analysis }: { analysis: Analysis }) {
     const timer = window.setInterval(() => {
       const signal = analysis.signal
       setTelemetry({ ...signal, levels: { ...signal.levels }, fast: { ...signal.fast }, slow: { ...signal.slow },
-        transient: { ...signal.transient }, ...analysis.format, renderAgeMs: analysis.timing.renderAgeMs, message: analysis.message })
+        transient: { ...signal.transient }, flux: { ...signal.flux }, ...analysis.format, renderAgeMs: analysis.timing.renderAgeMs, message: analysis.message })
     }, 200)
     let frame = 0
     const drawing = canvas.current?.getContext('2d')
@@ -50,13 +50,13 @@ export function SignalDiagnostics({ analysis }: { analysis: Analysis }) {
       <p>{telemetry.usingDefaultRate
         ? '96 kHz was not supported; using the browser default analysis rate.'
         : 'Analysis requests 96 kHz. This does not change the source recording or capture rate.'}</p>
-      <p>Bands below show independent normalized level, fast envelope, slow baseline and transient accent. Intensity is the slow atmosphere. These values are not kick/beat labels.</p>
+      <p>Bands below compare normalized energy envelopes with positive spectral-flux accents. Flux detects rising bins before aggregation; pitch movement can also excite it. Intensity is slow atmosphere. These are not kick/beat labels.</p>
       <table className="signal-features">
         <caption>Audio feature envelopes</caption>
-        <thead><tr><th scope="col">Band</th><th scope="col">Level</th><th scope="col">Fast</th><th scope="col">Slow</th><th scope="col">Transient</th></tr></thead>
+        <thead><tr><th scope="col">Band</th><th scope="col">Level</th><th scope="col">Fast</th><th scope="col">Slow</th><th scope="col">Transient</th><th scope="col">Flux</th></tr></thead>
         <tbody>{BAND_NAMES.map((band) => <tr key={band}><th scope="row">{band}</th>
           <td>{telemetry.levels[band].toFixed(3)}</td><td>{telemetry.fast[band].toFixed(3)}</td>
-          <td>{telemetry.slow[band].toFixed(3)}</td><td>{telemetry.transient[band].toFixed(3)}</td></tr>)}</tbody>
+          <td>{telemetry.slow[band].toFixed(3)}</td><td>{telemetry.transient[band].toFixed(3)}</td><td>{telemetry.flux[band].toFixed(3)}</td></tr>)}</tbody>
       </table>
       <canvas ref={canvas} width="640" height="120" aria-label="Live spectrum, low to high frequency" role="img" />
       <p>Levels are normalized visual magnitudes, not calibrated loudness.

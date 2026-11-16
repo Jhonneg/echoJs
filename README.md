@@ -119,6 +119,22 @@ Refresh ECHO and open `/tone-fixture.html` in a separate tab. Choose **Bass puls
 
 For a local comparison, `npm run fixture -- --bass-pulses` generates `/tmp/echo-permitted-bass-pulses.wav`. A native shared-tab delay cannot be ruled out by generated-stream automation. The scene tracks bass energy, not detected musical beats; sustained bass can hold the halo expanded.
 
+## Everyday controls (M01)
+
+**Enter fullscreen** expands Bloom together with its audio controls. Use **Exit fullscreen** or the browser's native Escape shortcut to return. The button follows actual browser fullscreen events. Diagnostics are available after exit. Short screens may scroll vertically so every control remains reachable. Unsupported browsers show a disabled button and explanation; rejected requests show a message without interrupting playback. Changing fullscreen invalidates an in-progress performance measurement.
+
+The control bar below Bloom offers **Share a tab** and **Open audio file**. When sharing, select a browser tab and enable Share tab audio in the native picker; keep playback in that tab. When opening a local file, use **Play / Pause / Replay** and **Volume** in ECHO. **Disconnect** releases the current source; while the picker is pending, **Cancel sharing** cancels ECHO's request (close the browser picker too). Reactivity changes visual amplitude only.
+
+**Diagnostics & tools** opens the collapsed development area containing signal diagnostics, frequency-band visual debug, the permitted tone-fixture link and performance measurement. The keyboard skip link jumps to audio controls; ranges support normal arrow/Home/End keys. Audio and motion are unchanged by M01–M03; known chopped-motion limitations remain deferred.
+
+**Graphics quality** offers **Standard** (the existing resolution, DPR 1..1.5) and **Low** (DPR 0.75, intentionally softer). Switching affects drawing resolution only, without restarting the scene or audio. Standard is the default; the selection lasts for this page session and survives fullscreen changes. No automatic quality switching or saved preference. Performance results include the preset and actual render DPR; changing quality invalidates an active measurement. Fewer rendered pixels do not guarantee higher FPS on every device.
+
+## Frequency-band separation review
+
+Open **Diagnostics & tools**, then expand **Frequency-band visual debug**. Turn off **Ambient motion and glow**, select Bass/Mids/Treble, enable **Synthetic visual input**, then **Pulse selected band**. Bass changes overall size; mids move and locally rotate fragments in different directions; treble accents selected halo surfaces and water highlights. Synthetic pulses test motion only. Reactivity zero and reduced motion still apply.
+
+Disable synthetic input, reconnect permitted audio, and compare **Energy transient**, **Spectral flux**, and **Combined** under **Accent method**. The accepted energy features are preserved; flux detects rising bins before aggregation with separate calibration. Held tones should lose flux accents; pitch movement may excite them. Compare quiet/loud bass pulses, mid/high tones and music, then local playback, pause and source switching. Playback is never band-filtered by these controls. **Reset visual debug** restores normal rendering and is required before performance measurement. Native shared-tab response and perceptual separation need owner acceptance for this revision.
+
 ## Fast/transient signal refinement review
 
 Reload the page and reconnect/reselect your permitted source. Audio diagnostics now show **Level / Fast / Slow / Transient**, feature updates per second, and signal age at rendering. The update rate is a main-thread frame callback rate, not the 96 kHz audio sample rate. Signal age is not native capture latency.

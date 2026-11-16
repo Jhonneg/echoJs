@@ -13,7 +13,9 @@
   .bloom-audio-link { right: auto; left: 1.5rem; bottom: 1.5rem; }
 }
 
-.bloom-reactivity { position: absolute; right: 3rem; top: 2.5rem; display: flex; align-items: center; gap: 0.7rem; color: #c4b6cf; font-size: 0.75rem; }
-.bloom-reactivity input { width: 7rem; accent-color: #c69ab7; }
-.bloom-reactivity output { min-width: 2.5rem; }
-@media (max-width: 600px) { .bloom-reactivity { top: 6rem; left: 1.5rem; right: auto; } }
+.bloom-debug { margin: 1rem 0; padding: 1rem; border: 1px solid #45445f; border-radius: 0.5rem; }
+.bloom-debug summary { cursor: pointer; }
+.bloom-debug .controls { flex-wrap: wrap; }
+.bloom-debug label { display: inline-flex; align-items: center; gap: 0.5rem; }
+.bloom-debug-status { position: absolute; top: 7rem; left: 1.5rem; right: 1.5rem; color: #f6d5ec; font-size: 0.75rem; pointer-events: none; }
+@media (max-width: 600px) { .bloom-debug-status { top: 9rem; } }

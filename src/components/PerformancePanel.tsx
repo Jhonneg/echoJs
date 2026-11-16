@@ -39,6 +39,7 @@ export function PerformancePanel({ measurement, analysis, source }: {
       <p role="status">{active ? `${snapshot.phase}: ${snapshot.elapsedSeconds.toFixed(0)} / ${snapshot.phase === 'warming' ? 5 : 30} seconds` : snapshot.phase === 'invalid' ? snapshot.reason : snapshot.phase === 'complete' ? 'Measurement complete.' : 'Ready when the scene is loaded.'}</p>
       {result && <>
         <dl>
+          <div><dt>Graphics quality / render DPR</dt><dd>{result.environment.quality === 'low' ? 'Low' : 'Standard'} / {result.environment.renderDpr.toFixed(2)}</dd></div>
           <div><dt>Average FPS</dt><dd>{result.fps.toFixed(1)}</dd></div>
           <div><dt>Median / p95 frame time</dt><dd>{result.p50FrameMs.toFixed(2)} / {result.p95FrameMs.toFixed(2)} ms</dd></div>
           <div><dt>Longest frame interval</dt><dd>{result.maxFrameMs.toFixed(2)} ms</dd></div>

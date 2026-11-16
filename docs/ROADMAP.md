@@ -39,3 +39,33 @@ Owner manually validates real permitted browser tab capture with audible source,
 
 ## G2 — Production go/no-go
 Owner reviews visual quality, actual audio responsiveness, performance, workflow and effort. If approved, plan MVP UI/quality/fullscreen/accessibility in a new roadmap revision. Additional worlds, microphone, native capture and production architecture not authorized by this POC plan.
+
+## M01 — Source and controls interface
+
+Owner requested moving forward on 2026-11-16 with current motion limitations deferred and explicitly approved this exact task. This is bounded interface work, not automatic production-readiness approval or authorization for all MVP work. Actual implementation/review status is in PROGRESS.
+
+- Make choosing a shared tab or local file the primary user flow, with concise connection, waiting/silent, denied/error and ended feedback using existing adapter states.
+- Group source selection, Disconnect, Reactivity and local-only playback/volume controls into a coherent responsive interface. Keep the existing Bloom composition and audio behavior.
+- Put detailed signal diagnostics, visual debug and performance tools behind collapsed development details so they remain available without dominating normal use.
+- Verify keyboard access, labels, narrow-screen layout, source switching and teardown, using existing automated checks and applicable browser checks. Report native/manual limitations separately.
+- Boundaries: no further audio/motion tuning, new landscape, adapter rewrite, dependency, backend, account or deployment. Fullscreen and graphics quality are separate later tasks, not part of M01.
+- Acceptance: both existing source flows remain reachable and understandable; controls accurately reflect source state; diagnostics remain accessible; typecheck/lint/build and relevant tests pass. Stop for owner review.
+
+## M02 — Fullscreen controls
+
+Owner explicitly approved this scope after M01 acceptance on 2026-11-16.
+
+- Add Enter/Exit fullscreen for Bloom and its existing audio controls, synchronized with browser fullscreen changes, including native exit via Escape.
+- Handle unsupported browsers and rejected requests clearly; preserve keyboard access and resize behavior.
+- Verify layout and continuous playback across transitions. Keep audio processing, adapters, motion and quality settings unchanged; no dependency or production deployment.
+- Acceptance: actual fullscreen API targets the scene/control container, state reflects browser events, controls remain reachable on narrow/short screens, checks pass, and owner confirms native Escape plus audible playback continuity. Stop for review; actual status is in PROGRESS.
+
+## M03 — Graphics-quality control
+
+Owner explicitly approved this exact scope on 2026-11-16. Actual implementation/review status is in PROGRESS.
+
+- Add Standard / Low graphics-quality selection beside existing experience controls, available in normal and fullscreen views. Standard preserves the current device-pixel-ratio range 1..1.5; Low uses render DPR 0.75, deliberately trading sharpness for fewer rendered pixels even on 1× screens. Keep Standard as the default and settings in memory only.
+- Change drawing resolution without remounting Canvas or restarting audio. Preserve scene geometry, palette, motion, sample rate, FFT, frame cadence and source adapters. No automatic adaptation, higher-resolution mode, new effects or dependencies.
+- Include selected preset alongside actual render DPR in performance results; invalidate active measurement when selection changes. Do not infer a hardware FPS improvement from pixel-count reduction.
+- Verify backing-buffer resolution, repeated switches, keyboard/mobile/fullscreen access, ongoing generated playback, unchanged source lifecycle and relevant existing checks. Record any owner hardware comparison separately.
+- Acceptance: preset changes only render resolution, survives fullscreen transitions within the session, reports truthful measurement settings, and handles normal/narrow layouts without console errors. Stop for owner review.

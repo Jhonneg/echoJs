@@ -1,3 +1,5 @@
+import type { GraphicsQuality } from './quality.ts'
+
 export interface RenderEnvironment {
   width: number
   height: number
@@ -6,6 +8,7 @@ export interface RenderEnvironment {
   renderer: string
   reactivity: number
   reducedMotion: boolean
+  quality: GraphicsQuality
 }
 export interface RunEnvironment {
   browser: string

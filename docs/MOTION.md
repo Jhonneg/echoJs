@@ -45,4 +45,17 @@ Transient target uses positive difference d = max(0, fast - slow), emphasized as
 
 Bloom maps features directly, with no second interpolation stage: bass response = 20% fast + 80% transient; mids = 25% fast + 75% transient; treble = 10% fast + 90% transient; glow = atmosphere. The global Reactivity slider scales reactive amplitudes only. Existing movement/material bounds, fixed camera, palette, tangential mid drift and reflection alignment are retained. Ambient phases remain independent of sound. Reduced motion freezes ambient phases and suppresses reactive geometry/highlights while retaining slow glow.
 
-The current FFT window is still ~42.7 ms at 96k/4096. This refinement does not remove native capture delay or guarantee GLASS-like event recognition. Manual shared-tab/local review remains pending; earlier P05 acceptance applies to the prior feature pipeline.
+The current FFT window is still ~42.7 ms at 96k/4096. This refinement does not remove native capture delay or guarantee GLASS-like event recognition. Owner accepted the feature refinement after reporting "Response and switching look right" on 2026-11-16; earlier P05 performance measurements still apply only to their original build.
+
+Feature envelopes use actual elapsed audio-update time. The renderer caps only ambient phase advancement after stalls; reactive envelopes are no longer additionally slowed by that scene delta cap. Feature updates remain frame-cadence limited, with timing exposed for diagnosis.
+
+## Approved band-separation refinement — 2026-11-16 (manual acceptance pending)
+
+Default accent = `max(energy transient, flux)` per band, preserving the accepted energy response without adding duplicate attacks. Original fast/accent weights remain bass 20/80%, mid 25/75%, treble 10/90%. Debug compares energy-only and flux-only accents; the modest fast-energy contribution remains in both. Atmosphere is unchanged.
+
+- Bass retains global halo scale 1..1.20 and existing water response.
+- Mids displace fragments tangentially with alternating direction and authored weights (0.6/0.8/1), bounded at 0.12 world units, plus local midpoint rotation up to ±0.045 radians (~2.6°). Different fragment motions share a common mid envelope; no separate instruments are identified. Mids no longer brighten every body.
+- Treble adds up to 0.65 body emission only to fragments 0/3/6, retaining existing water highlights. No exposure changes, flash triggers or extra geometry. Slow glow still affects all bodies.
+- Reduced motion suppresses reactive geometry/highlights and freezes ambient phase, retaining only slow glow. Reactivity zero removes all reactive amplitude.
+
+A collapsed panel below Bloom isolates All/Bass/Mids/Treble in the scene bridge, optionally suppresses ambient motion/glow, and supplies a 120 ms exponential synthetic visual pulse without touching audio features. Synthetic mode is labeled in the scene; diagnostics continue unchanged. Reset restores defaults. Non-default visual debug invalidates performance runs; reset before benchmarking. These tools establish visual isolation, not source separation or native capture latency.

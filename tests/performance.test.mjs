@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { createPerformanceMeasurement } from '../src/engine/performance.ts'
-const render = { width: 1440, height: 900, renderDpr: 1, deviceDpr: 1, renderer: 'Test renderer', reactivity: 1, reducedMotion: false }
+const render = { width: 1440, height: 900, renderDpr: 1, deviceDpr: 1, renderer: 'Test renderer', reactivity: 1, reducedMotion: false, quality: 'standard' }
 const environment = { browser: 'Test browser', logicalCores: 8, build: 'production', source: 'tab / disconnected', sampleRate: null, fftSize: null }
 function ready() { const run = createPerformanceMeasurement(); run.setRenderEnvironment(render); return run }
 
@@ -20,6 +20,7 @@ test('warm-up is excluded and a 30-second run reports correct FPS and percentile
   assert.ok(Math.abs(result.p95FrameMs - 1000 / 60) < 1e-8)
   assert.equal(result.environment.renderer, render.renderer)
   assert.equal(result.environment.build, 'production')
+  assert.equal(result.environment.quality, 'standard')
 })
 test('long frames are retained rather than capped or discarded', () => {
   const run = ready()
@@ -59,4 +60,17 @@ test('cannot measure before renderer is ready', () => {
   run.start(environment, 0)
   run.frame(5000)
   assert.equal(run.snapshot.phase, 'idle')
+})
+test('quality-only changes invalidate a run and subsequent results retain preset and actual DPR', () => {
+  const run = ready()
+  run.start(environment, 0)
+  run.setRenderEnvironment({ ...render, quality: 'low' })
+  assert.equal(run.snapshot.phase, 'invalid')
+  assert.equal(run.snapshot.result, null)
+  run.setRenderEnvironment({ ...render, quality: 'low', renderDpr: 0.75 })
+  run.start(environment, 100)
+  run.frame(5100)
+  run.frame(35100)
+  assert.equal(run.snapshot.result.environment.quality, 'low')
+  assert.equal(run.snapshot.result.environment.renderDpr, 0.75)
 })
