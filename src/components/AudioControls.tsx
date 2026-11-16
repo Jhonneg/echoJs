@@ -3,6 +3,7 @@ import type { createAnalysis } from '../audio/analysis'
 import type { CaptureState } from '../audio/tabCapture'
 import type { LocalFileState } from '../audio/localFile'
 import type { GraphicsQuality } from '../engine/quality'
+import { sceneNames, type SceneId } from '../scenes/scene'
 
 type Props = {
   source: 'tab' | 'file'
@@ -13,6 +14,8 @@ type Props = {
   volume: number
   fullscreenControl: ReactNode
   quality: GraphicsQuality
+  scene: SceneId
+  onScene(value: SceneId): void
   onQuality(value: GraphicsQuality): void
   onShare(): void
   onFile(file: File): void
@@ -75,6 +78,7 @@ export function AudioControls(props: Props) {
   const hasFile = source === 'file' && local.status !== 'empty'
   const canPlay = hasFile && local.status !== 'error' && local.status !== 'playing'
   const playing = hasFile && local.status === 'playing'
+  const showPlayer = hasFile && local.status !== 'error'
   const connected = source === 'file' ? playing : capture.status === 'connected'
   const suspended = connected && activity.suspended
   const title = source === 'file' && local.status !== 'empty' ? 'Local audio'
@@ -86,9 +90,10 @@ export function AudioControls(props: Props) {
         : capture.status === 'disconnected' ? 'Choose a shared tab or a local audio file.' : capture.message
 
   return (
+    <>
     <details ref={chooser} className="audio-chooser">
-      <summary ref={trigger} className="chooser-trigger" aria-label="Bloom — audio and scene controls" title="Open audio and scene controls">
-        Bloom
+      <summary ref={trigger} className="chooser-trigger" aria-label={`${sceneNames[props.scene]} — audio and scene controls`} title="Open audio and scene controls">
+        {sceneNames[props.scene]}
         <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4" /></svg>
       </summary>
       <section id="audio-controls" className="audio-controls" aria-labelledby="source-heading">
@@ -111,13 +116,6 @@ export function AudioControls(props: Props) {
             }} />
           </label>
         </div>
-        {hasFile && <div className="local-playback" role="group" aria-label="Local playback">
-          <button disabled={!playing && !canPlay} onClick={playing ? props.onPause : props.onPlay}>{playing ? 'Pause' : local.status === 'ended' ? 'Replay' : 'Play'}</button>
-          <label className="slider-control">Volume
-            <input type="range" min="0" max="1" step="0.01" value={props.volume} onChange={(event) => props.onVolume(Number(event.currentTarget.value))} />
-            <output>{Math.round(props.volume * 100)}%</output>
-          </label>
-        </div>}
         {suspended && <button onClick={analysis.resume}>Resume audio</button>}
         {source === 'tab' && capture.status === 'connecting' && <p className="source-help">Choose a tab and enable Share tab audio. Cancel here ends ECHO’s request; close the browser picker too.</p>}
         {canDisconnect && <button className="disconnect-button" onClick={() => {
@@ -125,8 +123,16 @@ export function AudioControls(props: Props) {
           props.onDisconnect()
         }}>{capture.status === 'connecting' && source === 'tab' ? 'Cancel sharing' : 'Disconnect'}</button>}
         <div className="experience-settings">
+          <div className="quality-control">
+            <label htmlFor="scene-select">Landscape</label>
+            <select id="scene-select" value={props.scene} onChange={(event) => props.onScene(event.currentTarget.value as SceneId)}>
+              <option value="bloom">Bloom</option>
+              <option value="lavender-peaks">Lavender Peaks · Preview</option>
+            </select>
+          </div>
+          {props.scene === 'lavender-peaks' && <p className="source-help">Lavender Peaks is a visual preview. Audio response will follow after the landscape is reviewed.</p>}
           <label className="slider-control">Reactivity
-            <input type="range" min="0" max="1" step="0.01" value={props.reactivity} onChange={(event) => props.onReactivity(Number(event.currentTarget.value))} />
+            <input type="range" min="0" max="1" step="0.01" value={props.reactivity} disabled={props.scene !== 'bloom'} onChange={(event) => props.onReactivity(Number(event.currentTarget.value))} />
             <output>{Math.round(props.reactivity * 100)}%</output>
           </label>
           <div className="quality-control">
@@ -141,5 +147,16 @@ export function AudioControls(props: Props) {
         <p className="privacy-note">Audio stays on your device. Nothing is recorded or uploaded. Close this panel to enjoy the scene; Disconnect ends the source.</p>
       </section>
     </details>
+    {showPlayer && <div className="scene-player" role="group" aria-label="Local audio player">
+      <span className="scene-player-title" title={local.name}>{local.name}</span>
+      <div className="scene-player-actions">
+        <button disabled={!playing && !canPlay} onClick={playing ? props.onPause : props.onPlay}>{playing ? 'Pause' : local.status === 'ended' ? 'Replay' : 'Play'}</button>
+        <label className="slider-control">Volume
+          <input type="range" min="0" max="1" step="0.01" value={props.volume} onChange={(event) => props.onVolume(Number(event.currentTarget.value))} />
+          <output>{Math.round(props.volume * 100)}%</output>
+        </label>
+      </div>
+    </div>}
+    </>
   )
 }

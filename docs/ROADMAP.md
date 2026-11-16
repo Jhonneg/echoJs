@@ -89,3 +89,12 @@ Owner approved the revised scope: no developer access, full-screen landscape, an
 - Remove diagnostics, visual debug and benchmarks from the interface entirely. No developer-access mode or query opt-in. Existing verification utilities may remain unmounted in source; no new developer feature.
 - Preserve privacy, source teardown, reduced motion, native fullscreen and keyboard/mobile access. Keep the page free of scrolling; allow internal chooser scrolling on short screens. Verify closing the chooser preserves playback and focus returns coherently.
 - Acceptance: closed view contains the full landscape, ECHO and Bloom only; all existing end-user functionality is reachable through the chooser. Run relevant checks, report limitations and stop for owner visual/functional review. No dependency, hosting or publishing.
+
+## L01 — Lavender Peaks static landscape
+
+Owner approved the first new landscape as a static selectable preview, using the misty lavender mountain reference. This is one bounded task; motion, audio response and the other reference directions need separate review.
+
+- Keep Bloom as the default and add Lavender Peaks as a second in-memory scene choice inside the existing chooser. Switching scenes must preserve audio source, playback, fullscreen and settings.
+- Compose a distinct pale sky and layered mountain scene with procedural geometry/gradients. The reference JPEG remains conceptual and is not a runtime asset. No halo, lake, central prop, animation or audio mapping.
+- Show the selected scene name on the closed chooser. Label Lavender Peaks as a visual preview and disable Reactivity while selected, preserving its value for Bloom.
+- Acceptance: owner reviews desktop and portrait composition against the reference; scene switching, keyboard controls and audio continuity work; relevant tests, typecheck, lint and build pass. Record any unavailable browser/manual checks. Stop before reactive work.

@@ -11,6 +11,8 @@ Prove audio capture and lifecycle first on desktop Chrome (Linux reference envir
 ## MVP after POC approval (proposed, not implementation permission)
 Tab audio and local files; immersive Bloom scene, fullscreen, reactivity and graphics quality controls, clear source connection/disconnection and graceful errors. Microphone is optional later. Additional landscapes, browser extension/system capture, catalog, accounts and sharing remain future ideas, not commitments. Obtain explicit approval before widening scope.
 
+The owner later approved one bounded extension, L01: a static selectable Lavender Peaks preview. This does not approve reactive behavior for that scene or the other reference directions.
+
 ## Design pillars
 Atmosphere over realism; meaningful audio response over decoration; distinct compositions over recolored copies; simple geometry and selective effects; privacy by design; accessible controls; performance and token efficiency. A junior-feasible project and a reusable AI-assisted development methodology are co-equal learning goals.
 

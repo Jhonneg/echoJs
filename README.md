@@ -2,7 +2,7 @@
 
 **Your music. Another world.**
 
-A client-side audio visualizer built around Bloom: a full-viewport, atmospheric landscape. The scene starts with ambient motion; audio is optional. Only ECHO branding and the Bloom scene label remain on the landscape. All controls live in the compact chooser opened by **Bloom** at the bottom left.
+A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks is a static visual preview. ECHO branding and the selected scene name appear initially. Source and scene settings live in the compact chooser opened by the scene name at the bottom left; selecting a local file also shows a compact player on the landscape.
 
 ## Run locally
 
@@ -15,18 +15,21 @@ npm run dev -- --host 127.0.0.1
 
 Open the URL printed by Vite (normally http://127.0.0.1:5173/).
 
+For the temporary bass-motion comparison, restart the dev server with `VITE_BASS_MOTION_VARIANT=off`, `halo`, or `camera` before `npm run dev`. With no setting, the halo and camera move together (`both`). This setting is internal; it does not add a visitor control.
+
 ## Use ECHO
 
-Click **Bloom** to open the chooser, or focus it with Tab and press Space/Enter.
+Click the scene name to open the chooser, or focus it with Tab and press Space/Enter. Bloom is selected initially.
 
 - **Share a tab:** choose a permitted browser tab and enable Share tab audio in the native picker. Keep playback in that tab. The browser also requests video; ECHO does not read or display it.
-- **Open audio file:** select a local browser-supported file, then Play/Pause/Replay. Volume affects local playback only.
+- **Open audio file:** select a local browser-supported file, then use the on-scene Play/Pause/Replay and volume controls. Volume affects local playback only.
 - **Disconnect / Cancel sharing:** release the selected source or cancel ECHO's pending sharing request. Close a pending native picker yourself too.
-- **Reactivity:** changes visual amplitude, not sound volume.
+- **Landscape:** switch between Bloom and the static Lavender Peaks preview without stopping audio. The choice lasts for the page session.
+- **Reactivity:** changes Bloom's visual amplitude, not sound volume. It is unavailable in Lavender Peaks until that scene gains audio response.
 - **Graphics quality:** Standard preserves the existing drawing resolution; Low is softer and renders fewer pixels. The choice lasts for the page session.
 - **Enter/Exit fullscreen:** expands the landscape and chooser using the browser's native API. Native Escape remains available.
 
-Close the chooser using its close button, the Bloom label, Escape or a click on the landscape. Closing it keeps playback running. On small/short screens the chooser scrolls internally; the landscape remains full-screen without page scrolling. Reduced-motion preferences remain supported.
+Close the chooser using its close button, the scene label, Escape or a click on the landscape. Closing it keeps playback running. On small/short screens the chooser scrolls internally; the landscape remains full-screen without page scrolling. Reduced-motion preferences remain supported.
 
 Audio stays on your device. ECHO does not record or upload it. The reference environment is desktop Brave on Arch Linux; other browser/OS combinations and mobile capture remain unverified. Browser capture restrictions apply; this is not a streaming-provider integration or arbitrary system-audio capture tool.
 

@@ -1,7 +1,60 @@
 # ECHO — current checkpoint
 
+## L01 Lavender Peaks static landscape — 2026-11-16
+
+- Owner approved a first new landscape: static selectable Lavender Peaks, guided by the misty mountain JPEG. Added a procedural pale sky and six layered ridges with a fixed responsive orthographic view, plus a chooser scene select. Bloom remains default. Audio controllers/analysis remain in App across scene switches; Lavender Peaks is labeled Preview and Reactivity is disabled there while its Bloom value is retained. The other two new JPEGs remain conceptual only. No runtime image asset, new dependency, audio processing change, or commit.
+- Changed App and AudioControls, added `src/scenes/scene.ts` and `src/scenes/lavender-peaks/`, and updated README, roadmap, art direction, vision, architecture, verification, decisions and reference documentation. Existing workspace edits and owner-added images were preserved.
+- Passed: `npm test` (8 files), `npm run typecheck`, `npm run lint`, `npm run build`, `git diff --check`. The existing large-chunk build warning remains. Context7 React Three Fiber v9.8.2 docs confirmed demand rendering and Canvas camera/DPR APIs.
+- Browser/manual pending: the local Vite server started, but headless Brave timed out without a screenshot; no rendered composition, keyboard selection, playback continuity, fullscreen or portrait result is claimed. Owner should review desktop/portrait composition against the JPEG and test scene switching with permitted audio before approving L01 appearance. No hardware performance claim.
+- Next action: owner visual/functional review of L01. Add motion/audio mapping only in a separately approved task. Suggested focused commit after review: `Add Lavender Peaks static landscape`.
+
+## Remove mouse movement — 2026-11-16
+
+- Owner requested removal of mouse movement. Removed scene pointer handlers, pointer state/smoothing and the window-blur listener from `BloomScene.tsx`. Larger halo, ambient drift, bass tilt and matching reflection remain. Existing workspace edits preserved.
+- Passed: `npm test` (8 files), lint, build including typecheck. Existing chunk warning remains. Browser/manual review not run; the browser harness previously failed. No commit/push.
+- Next action: owner reviews audio-driven motion. Suggested commit: `Remove Bloom mouse movement`.
+
+## Pronounced bass back-and-forth — 2026-11-16
+
+- Owner requested a much more pronounced back-and-forth halo tilt. Raised its rotation bound from 12° to 24° and halved halo spring damping from 16/s to 8/s. Camera retains its separate original spring; mouse response and reflection alignment remain intact.
+- Changed `BloomScene.tsx`, `bassMotion.ts`, its existing test and motion/decision/checkpoint docs. Preserved existing workspace edits.
+- Passed: `npm test` (8 files), lint, build including typecheck. New synthetic pulse checks at 30/60/120 Hz confirm normalized forward swing >0.8, opposite swing <−0.4, bounded angles and settling within 0.001 after one second. These are motion-math checks, not real-music validation. Existing chunk warning remains.
+- Browser/manual pending: owner reviews pronounced tilt with permitted music; previously unavailable browser harness not rerun. No commit/push. Suggested commit: `Strengthen Bloom bass swing and rebound`.
+
+## Stronger halo bass tilt — 2026-11-16
+
+- Owner requested more halo tilt on bass hits. Increased the bass rotation limit from 5° to 12° (2.4× amplitude) in `BloomScene.tsx`; existing spring timing, mouse response, camera roll and reduced-motion handling remain unchanged. Reflection uses the same rotation.
+- Passed: `npm test` (8 files), `npm run lint`, `npm run build` (includes typecheck). Existing chunk-size warning remains. Visual/music acceptance is manual pending; the previously failing browser harness was not rerun.
+- Next action: owner checks stronger bass tilt with permitted music. No commit/push. Suggested commit: `Increase Bloom halo bass tilt`.
+
+## Larger halo and mouse interaction — 2026-11-16
+
+- Owner requested a more imposing prop and mouse interaction. Halo base scale is now 1.25, center raised from 1.95 to 2.25 world units; narrow framing reserves 6.8 rather than 5.6 world units of width. Lake reflection size, center, displacement and roll follow the halo's approximation.
+- Mouse position across the scene adds bounded horizontal/vertical pull and up to ~6.9° roll, smoothed with a 180 ms response. Pointer leave/window blur reset its target; reduced motion suppresses mouse movement. Touch is ignored and playback controls keep their normal behavior. Existing bass motion remains layered on top.
+- Changed `src/scenes/bloom/BloomScene.tsx` and motion/decision/checkpoint docs. Preserved existing workspace edits. Context7 React ref documentation consulted; project implement-phase skill remains unavailable.
+- Passed: `npm test` (8 files), `npm run lint`, `npm run build` (includes typecheck). Existing chunk-size warning remains. Browser/manual pending: larger composition at desktop/portrait sizes, pointer return, control interaction and reduced motion need visual review; the previously failing browser harness was not rerun. No aesthetic or hardware-performance claim.
+- Next action: owner reviews the larger prop and mouse response. No commit/push. Suggested focused commit after review: `Enlarge Bloom halo and add pointer response`.
+
+## Stronger combined bass motion and local player — 2026-11-16
+
+- Owner found the first halo/camera tilts barely noticeable and requested stronger motion together, plus player controls. Default `both` now runs one damped bass impulse through ±5° halo rotation and ±1° camera roll; `off`, `halo` and `camera` remain internal comparison builds. Halo reflection follows the new rotation. Reduced motion and zero Reactivity still reset it.
+- A compact on-scene local player appears after file selection with Play/Pause/Replay, file name and volume. The controls moved out of the Bloom chooser; source selection, settings and fullscreen remain there. Shared-tab audio remains controlled in its source tab. No audio adapter/analysis or dependency changed.
+- Files: `BloomScene.tsx`, `AudioControls.tsx`, `index.css`, README and relevant motion/interface/checkpoint docs, in addition to the prior experiment's `bassMotion.ts` and test. Pre-existing user documentation edits preserved.
+- Passed: `npm test` (8 files), `npm run typecheck`, `npm run lint`, `npm run build`, `git diff --check`. The existing large-chunk warning remains.
+- Browser/manual pending: Playwright MCP unavailable. A minimal headless Brave smoke test timed out before loading even a data URL, so no current browser render, player interaction, native audio, aesthetics or hardware cadence is claimed. Owner should compare `off`, `halo`, `camera`, `both` with the same permitted music, and check player behavior on desktop/narrow/fullscreen. No aesthetic acceptance yet.
+- Next action: owner visual and functional review; retain or revise the chosen motion/player layout after feedback. No commit or push created; G2 remains unapproved.
+
+## Approved bass motion comparison — 2026-11-16
+
+- Owner approved the halo-then-camera comparison. Implemented three internal build variants: `VITE_BASS_MOTION_VARIANT=off`, default `halo`, and `camera`. No visitor control, audio analysis/capture change, new dependency or commit.
+- Bass rises push a bounded, damped back-and-forth response in scene refs. Halo rotation is capped at 1.5° and its approximate lake reflection follows; camera roll is capped at 0.25°. Reduced motion and zero Reactivity reset the new response.
+- Files: `src/scenes/bloom/BloomScene.tsx`, `src/scenes/bloom/bassMotion.ts`, `tests/bassMotion.test.mjs`, `docs/MOTION.md`, `docs/DECISIONS.md`, this checkpoint. Existing unrelated documentation edits were preserved.
+- Passed: `npm test` (8 files), `npm run typecheck`, `npm run lint`, `git diff --check`, and production builds for off/camera/halo. A local HTTP request fetched the halo preview page. The existing Vite large-chunk warning remains.
+- Browser/manual pending: Playwright MCP is unavailable; headless Brave did not complete a page load, so real rendered motion, permitted-music timing, aesthetics, native capture and hardware cadence were not verified. Owner should compare off, halo and camera on permitted bass pulses/music and select a preferred variant or reject both. No variant is accepted yet.
+- Next action: owner visual comparison; then retain only the chosen motion or return to the baseline in a separately reviewed change. G2 remains unapproved.
+
 - Date: 2026-11-16.
-- Current approved task: revised M05 landscape-first portfolio interface. Owner explicitly approved full-screen landscape, only ECHO/scene name outside a compact chooser, and no developer access. Implementation complete; owner visual/functional review pending. This supersedes the earlier proposed Add audio/fullscreen buttons and query-access idea. M04 fixes preserved; audio/motion tuning remains deferred.
+- Previous approved task: revised M05 landscape-first portfolio interface. Owner explicitly approved full-screen landscape, only ECHO/scene name outside a compact chooser, and no developer access. Complete and visually accepted: owner reported "looks great, exactly what i wanted." This confirms the layout/art direction; no new native audio-flow result is inferred. This supersedes the earlier proposed Add audio/fullscreen buttons and query-access idea. M04 fixes preserved; audio/motion tuning was deferred until the newly approved comparison above.
 - Visitor layout: one full-viewport experience, with ECHO and Bloom only when closed. Bloom is a native details/summary chooser trigger. All source selection, local playback/volume, Disconnect/Cancel, Reactivity, Standard/Low quality and native fullscreen are inside. No bottom bar, extra caption/tagline, public tools or page scrolling; panel scrolls internally on short screens.
 - Behavior/accessibility: native keyboard disclosure, close button, Escape and outside-click dismissal; return focus to Bloom. Existing M04 source-control focus restoration retained. Closing chooser keeps playback/sharing running. Native fullscreen Escape is not prevented. Existing file/tab adapters, privacy, signal/features, geometry/shaders and accepted default response/ambient motion are preserved. No dependency, storage, autoplay or new sample audio.
 - Runtime tools: App no longer mounts/imports diagnostics, visual debug, performance panels or measurement host; Bloom no longer mounts PerformanceProbe or accepts debug settings. Historical source utilities/tests remain unmounted; there is no developer mode/query opt-in. Scene uses the accepted default combined response. Audio timing metadata/API remains internal and unchanged.
@@ -10,8 +63,9 @@
 - Browser: Playwright MCP unavailable; installed headless Brave/CDP fallback. Full viewport/no page overflow, ECHO/Bloom-only closed view, native keyboard opening, Escape/close/outside dismissal, named controls, focus return, permitted generated local play/pause/volume/end/replay and closed-chooser playback continuity passed. Canvas and audio element identities retained; Disconnect/Cancel restore source-control focus. Real fullscreen enter/exit and Low DPR0.75/selection retention passed. Simulated sharing denial, invalid WAV recovery and fullscreen rejection/unsupported feedback verified; no native picker bypass or new captured-media inspection.
 - Responsive/reduced motion: 390×844, 320×844 and 844×390 passed normal/fullscreen page/panel bounds; chooser scrolls internally when needed. 200% root-font resize at 640 px passed. Reduced-motion closed scene screenshots stayed pixel-identical over time. Desktop/mobile screenshots inspected in `/tmp`. `?debug=1` exposes no developer UI. Console zero errors; existing Three.Clock warning.
 - Build: JS ~1,157.32 kB minified / 318.95 kB gzip; CSS ~4.28 kB / 1.55 kB gzip. Existing large-chunk warning remains. No new hardware performance claim; historical P05 measurements belong to their original builds.
-- Documentation: README and RELEASE_CHECKLIST now describe the visitor chooser. Earlier phase layout/benchmark notes are historical, not public functionality. Screen-reader/native menu-flow and owner aesthetic acceptance remain manual pending. No hosting/deployment configured or authorized.
-- Next action: owner reviews the full-viewport appearance and clicks Bloom to verify the chooser/audio/fullscreen flow. Stop here; no further UI/audio tuning or feature authorized. No commit/push created. Suggested commit after review: `Make Bloom immersive with a compact scene chooser`; include pending M04 fixes and the release checklist in a reviewed checkpoint.
+- Documentation: README and RELEASE_CHECKLIST now describe the visitor chooser. Earlier phase layout/benchmark notes are historical, not public functionality. Owner aesthetic/layout acceptance is recorded; screen-reader/native menu-flow release checks remain separate. No hosting/deployment configured or authorized.
+- Owner acceptance: "looks great, exactly what i wanted" on 2026-11-16. M05 visual scope accepted; automated functional evidence remains as recorded, with native menu-flow/screen-reader release checks separate.
+- Next action: create a reviewed Git checkpoint including M04/M05 and the new release checklist, then plan deployment separately if requested. Stop here; no further feature/tuning authorized. No commit/push created. Suggested commit: `Make Bloom immersive with a compact scene chooser`.
 
 ## Owner recording review — 2026-11-16
 

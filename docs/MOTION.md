@@ -1,5 +1,7 @@
 # Motion & reactivity — Bloom
 
+Current prop refinement (2026-11-16, owner visual review pending): base halo size is 125%, with a raised center and matching approximate reflection. Mouse-driven movement was removed at the owner’s request. Ambient drift and the pronounced bass-driven tilt remain.
+
 Three layers: (1) ambient motion independent of playback, (2) real-time response to audio, (3) slow atmospheric evolution from a sustained energy envelope. Do not make the entire scene jump on every beat.
 
 | Signal | Primary | Secondary |
@@ -59,3 +61,7 @@ Default accent = `max(energy transient, flux)` per band, preserving the accepted
 - Reduced motion suppresses reactive geometry/highlights and freezes ambient phase, retaining only slow glow. Reactivity zero removes all reactive amplitude.
 
 A collapsed panel below Bloom isolates All/Bass/Mids/Treble in the scene bridge, optionally suppresses ambient motion/glow, and supplies a 120 ms exponential synthetic visual pulse without touching audio features. Synthetic mode is labeled in the scene; diagnostics continue unchanged. Reset restores defaults. Non-default visual debug invalidates performance runs; reset before benchmarking. These tools establish visual isolation, not source separation or native capture latency.
+
+## Bass motion comparison — 2026-11-16 (manual acceptance pending)
+
+An internal Vite build setting compares `off`, `halo`, `camera`, and `both` (default) without adding visitor motion controls. Rising bass response gives a damped rotational impulse, followed by a brief opposite swing and decay; held bass does not create a continuous shake. The halo variant adds at most ±24° to its authored rotation and rotates the approximate reflection mask with it. The camera variant rolls the entire composition by at most ±1°. `both` drives separate halo and camera springs from the same bass rise in the same scene, with camera roll opposite the halo's world rotation so both move in the same screen direction. Halo damping is 8/s versus the camera’s existing 16/s, retaining a more visible opposite swing while keeping camera timing unchanged. Reduced motion and zero Reactivity reset this added motion. Audio features, existing bass scale/ripples, and mid/treble mapping are unchanged. Owner comparison with permitted music is pending.

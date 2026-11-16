@@ -1,11 +1,11 @@
 # Portfolio preview readiness — M05
 
-Date: 2026-11-16. Current candidate is the approved landscape-first interface; owner visual/functional review is pending. **Nothing is published.** M05 supersedes M04's control-bar/tools layout. The M04 isolated-build evidence remains historical in EVALUATION.
+Date: 2026-11-16. Current candidate is the landscape-first interface, visually accepted by the owner ("looks great, exactly what i wanted"). Native menu-flow and screen-reader release checks remain separate. **Nothing is published.** M05 supersedes M04's control-bar/tools layout. The M04 isolated-build evidence remains historical in EVALUATION.
 
 ## Visitor experience and privacy
 
-- Bloom fills the viewport immediately, without audio or permission prompts. Only ECHO and the Bloom scene-name toggle appear over the closed landscape.
-- Click Bloom (or Tab then Space/Enter) to open the compact chooser. All source, playback, volume, Disconnect/Cancel, Reactivity, quality and fullscreen controls are inside. Closing the chooser keeps audio playing/sharing until explicitly disconnected.
+- Bloom fills the viewport immediately, without audio or permission prompts. Only ECHO and the Bloom scene-name toggle appear before a local file is selected; a compact player then appears on the landscape.
+- Click Bloom (or Tab then Space/Enter) to open the compact chooser. Source selection, Disconnect/Cancel, Reactivity, quality and fullscreen controls are inside. Local Play/Pause/Replay and volume are on the landscape after file selection. Closing the chooser keeps audio playing/sharing until explicitly disconnected.
 - The page does not scroll. The chooser scrolls internally on short screens. Close it with its close button, Bloom, Escape or a click outside. Native fullscreen Escape is not prevented by app code.
 - Diagnostics, debug and benchmarks are absent from the interface. No developer-access mode or query opt-in exists. Historical utility components remain unmounted in source.
 - Reference: desktop Brave on Arch Linux. Owner previously accepted the source adapters, native fullscreen/Escape and quality behavior in M01–M03. That evidence is separate from M05's pending native/menu review. Other browsers/OS combinations and mobile native capture remain unverified.
@@ -14,8 +14,11 @@ Date: 2026-11-16. Current candidate is the approved landscape-first interface; o
 
 ## Verification evidence
 
+The M05 rows below describe the earlier layout build. They do not verify the later combined tilt or on-scene player.
+
 | Check | Status | Evidence / limits |
 |---|---|---|
+| Combined tilt and on-scene player refinement | Automated checks passed; browser/manual pending | Eight test files, typecheck, lint and build pass. Headless Brave timed out even on a data URL, so current rendered motion and player interactions are unverified. |
 | Tests/typecheck/lint/build | Passed | All seven existing test files and all scripts. No dependency/lockfile change. Existing large-chunk warning. |
 | Full-viewport composition | Passed in software browser | Canvas matches viewport; no horizontal/vertical page overflow; closed interface contains ECHO/Bloom only. Desktop/mobile screenshots inspected. |
 | Chooser access/dismissal | Passed in software browser | Native keyboard disclosure, close button, Escape, outside click and trigger focus return. Named primary controls. |
@@ -30,8 +33,8 @@ Date: 2026-11-16. Current candidate is the approved landscape-first interface; o
 
 ## Before publication
 
-- Owner reviews M05's full-screen appearance and chooser flow, including ordinary-browser sharing/audio continuity and fullscreen Escape.
+- Earlier M05 layout appearance is owner accepted. The stronger combined tilt and on-scene player need new owner review; ordinary-browser sharing/audio continuity and fullscreen Escape remain release checks.
 - Real screen-reader usability and broader browser/OS coverage remain unverified; accessibility-tree checks are not conformance certification. Responsive layout does not establish mobile capture support.
-- Owner deferred chopped-motion/perceptual refinement; it is not reopened by this UI task. Existing chunk-size and Clock warnings remain.
+- The owner reopened bass motion for a bounded comparison; perceptual acceptance remains pending. Existing chunk-size and Clock warnings remain.
 - Committed checkpoint 130a99e passed a fresh locked install/tests/build in isolated `/tmp/echo-m04-checkout-6nbky35a` under Node24.11.0/npm11.6.1. M04/M05 changes still require a new reviewed checkpoint; this is not a clean-checkout build claim for uncommitted M05.
 - Deployment target/HTTPS/static configuration and publishing require separate authorization. No service, host or deployment configured. See README for current local commands and EVALUATION for historical evidence.

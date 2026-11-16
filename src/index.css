@@ -36,8 +36,11 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .file-button { position: relative; display: inline-flex; align-items: center; overflow: hidden; cursor: pointer; }
 .file-button input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
 .file-button:focus-within { outline: 2px solid #f6d5ec; outline-offset: 3px; }
-.local-playback { display: grid; gap: 0.75rem; margin-top: 0.75rem; }
-.local-playback > button { justify-self: start; }
+.scene-player { position: absolute; z-index: 2; right: max(var(--scene-gutter), env(safe-area-inset-right)); bottom: max(var(--scene-gutter), env(safe-area-inset-bottom)); width: min(20rem, calc(100vw - var(--scene-gutter) - var(--scene-gutter))); display: grid; gap: 0.45rem; padding: 0.65rem 0.75rem; border: 1px solid #65546f; border-radius: 0.75rem; background: rgb(18 19 31 / 88%); box-shadow: 0 8px 32px rgb(0 0 0 / 22%); font-size: 0.75rem; }
+.scene-player-title { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #f6d5ec; }
+.scene-player-actions { display: flex; align-items: center; gap: 0.65rem; }
+.scene-player-actions .slider-control { flex: 1; min-width: 0; }
+.scene-player-actions .slider-control output { min-width: 2rem; }
 .disconnect-button { margin-top: 0.75rem; }
 .experience-settings { display: grid; gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #454056; }
 .slider-control { display: flex; align-items: center; gap: 0.6rem; color: #d2c5da; }
@@ -49,3 +52,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .fullscreen-message:empty { display: none; }
 .audio-controls .privacy-note { margin-top: 1rem; color: #a99db6; font-size: 0.7rem; }
 @media (max-width: 360px) { .audio-controls { padding: 0.8rem; } }
+@media (max-width: 740px) {
+  .scene-player { left: max(var(--scene-gutter), env(safe-area-inset-left)); right: auto; bottom: calc(max(var(--scene-gutter), env(safe-area-inset-bottom)) + 3.5rem); }
+  .audio-chooser[open] ~ .scene-player { display: none; }
+}

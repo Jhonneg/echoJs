@@ -1,4 +1,6 @@
 import BloomScene from './scenes/bloom/BloomScene'
+import LavenderPeaksScene from './scenes/lavender-peaks/LavenderPeaksScene'
+import type { SceneId } from './scenes/scene'
 import { useEffect, useRef, useState } from 'react'
 import { createLocalFile, type LocalFileState } from './audio/localFile'
 import { createAnalysis } from './audio/analysis'
@@ -15,6 +17,7 @@ export default function App() {
   const [source, setSource] = useState<'tab' | 'file'>('tab')
   const [reactivity, setReactivity] = useState(1)
   const [quality, setQuality] = useState<GraphicsQuality>('standard')
+  const [scene, setScene] = useState<SceneId>('bloom')
   const [volume, setVolume] = useState(0.5)
   const localController = useRef<ReturnType<typeof createLocalFile> | null>(null)
   const [analysis] = useState(createAnalysis)
@@ -37,8 +40,11 @@ export default function App() {
     <>
       <main className="experience" ref={experience}>
         <h1 className="sr-only">ECHO — Your music. Another world.</h1>
-        <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
+        {scene === 'bloom'
+          ? <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
+          : <LavenderPeaksScene quality={quality} />}
         <AudioControls source={source} capture={capture} local={local} analysis={analysis}
+          scene={scene} onScene={setScene}
           fullscreenControl={<FullscreenControls target={experience} />}
           reactivity={reactivity} volume={volume} onReactivity={setReactivity}
           quality={quality} onQuality={setQuality}

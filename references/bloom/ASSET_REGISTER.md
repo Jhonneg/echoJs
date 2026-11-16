@@ -3,8 +3,11 @@
 | File | Origin | Status / intended use |
 |---|---|---|
 | bloom-comparison-concept.png | Generated earlier in this ChatGPT project conversation | Concept reference only; not a runtime asset |
+| Owner-added JPEGs beginning `h4Wq72`, `rblopP`, `svH0FW` | Added by owner; creator, license and runtime rights not yet recorded | Concept references only; not loaded by ECHO. `h4Wq72` guides Lavender Peaks. |
 
 No external runtime images, music or models included. Before adding any, record source URL/creator, license and attribution, modifications, file size and approval. Use only permitted test audio, preferably generated local tones or owner-authorized files. Never bundle captured content.
+
+L01 adds original repository-authored `src/scenes/lavender-peaks/LavenderPeaksScene.tsx` geometry/GLSL and local CSS. It loads none of the JPEGs at runtime; no third-party art asset or new license is involved.
 
 ## P03a procedural runtime composition — 2026-11-16
 

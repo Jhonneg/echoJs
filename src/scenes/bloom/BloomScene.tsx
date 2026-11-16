@@ -3,6 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Color, Group, OrthographicCamera, ShaderMaterial, Mesh, MeshStandardMaterial, Shape, Vector2, Vector3 } from 'three'
 import type { AudioSignal } from '../../audio/signal'
 import { createBloomResponse, updateBloomResponse, updateFragmentResponse } from './reactivity'
+import { createBassMotion, resetBassMotion, updateBassMotion } from './bassMotion'
 import { QUALITY_DPR, type GraphicsQuality } from '../../engine/quality'
 import './bloom.css'
 
@@ -33,6 +34,7 @@ uniform vec3 rose;
 uniform float time;
 uniform vec2 haloOffset;
 uniform float haloScale;
+uniform float haloRotation;
 uniform float bass;
 uniform float treble;
 uniform float atmosphere;
@@ -43,9 +45,9 @@ void main() {
   color += rose * atmosphere * 0.035 * exp(-depth * 0.4);
   float distortion = sin(depth * 94.0 - time * 1.7) * 0.035 + sin(depth * 43.0 + time * 0.95) * 0.045;
   distortion *= 1.0 + bass * 2.5;
-  vec2 ring = vec2(p.x - 0.6 - haloOffset.x + distortion, (p.y + 1.65 + haloOffset.y * 0.82) / 0.82) / haloScale;
+  vec2 ring = vec2(p.x - 0.6 - haloOffset.x + distortion, (p.y + 1.90 + haloOffset.y * 0.82) / 0.82) / haloScale;
   float distanceToRing = abs(length(ring) - 1.54);
-  float broken = smoothstep(-0.65, -0.1, sin(atan(ring.y, ring.x) * 7.0 + 0.4));
+  float broken = smoothstep(-0.65, -0.1, sin((atan(ring.y, ring.x) + haloRotation) * 7.0 + 0.4));
   float bands = 0.45 + 0.55 * pow(0.5 + 0.5 * sin(depth * 110.0 - time * 1.35), 3.0);
   float reflection = exp(-distanceToRing * 52.0) * bands * (1.0 - broken * 0.75);
   float glow = exp(-distanceToRing * 5.0) * 0.10;
@@ -65,7 +67,7 @@ function Framing() {
     const camera = get().camera
     if (camera instanceof OrthographicCamera) {
       // Hold the vertical composition; reveal more landscape on wider screens.
-      camera.zoom = Math.min(size.height / 10, size.width / 5.6)
+      camera.zoom = Math.min(size.height / 10, size.width / 6.8)
       camera.updateProjectionMatrix()
       invalidate()
     }
@@ -97,6 +99,14 @@ const arcs = [
 ]
 const arcPivots = arcs.map(([, length]) => new Vector3(Math.cos(length / 2) * 1.58, Math.sin(length / 2) * 1.58, 0))
 
+type BassMotionVariant = 'off' | 'halo' | 'camera' | 'both'
+// Set VITE_BASS_MOTION_VARIANT=off, halo or camera when starting Vite to compare builds.
+const requestedMotionVariant = import.meta.env.VITE_BASS_MOTION_VARIANT
+const bassMotionVariant: BassMotionVariant = requestedMotionVariant === 'off' || requestedMotionVariant === 'halo' || requestedMotionVariant === 'camera'
+  ? requestedMotionVariant : 'both'
+const haloMotionLimit = 24 * Math.PI / 180
+const cameraMotionLimit = 1 * Math.PI / 180
+
 function Halo({ groupRef }: { groupRef: RefObject<Group | null> }) {
   return (
     <group ref={groupRef} position={[0.6, 1.95, 0]} rotation={[0.06, -0.23, 0.12]}>
@@ -127,22 +137,34 @@ function Composition({ reducedMotion, signal, reactivity, onRenderTime }: { redu
   const lake = useRef<ShaderMaterial>(null)
   const skyMaterial = useRef<ShaderMaterial>(null)
   const response = useRef(createBloomResponse())
+  const bassMotion = useRef(createBassMotion())
+  const haloBassMotion = useRef(createBassMotion())
   const elapsed = useRef(0)
   const fragmentResponse = useRef({ x: 0, y: 0, rotation: 0, highlight: 0 })
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     if (!halo.current || !lake.current || !skyMaterial.current) return
     const dt = Math.min(delta, 0.05)
     const now = performance.now()
     onRenderTime(now)
     updateBloomResponse(response.current, signal, reactivity)
     const audio = response.current
+    const motionEnabled = !reducedMotion && reactivity > 0 && bassMotionVariant !== 'off'
+    if (!motionEnabled) {
+      resetBassMotion(bassMotion.current)
+      resetBassMotion(haloBassMotion.current)
+    }
+    const motion = motionEnabled ? updateBassMotion(bassMotion.current, audio.bass, dt) : 0
+    const haloMotion = motionEnabled ? updateBassMotion(haloBassMotion.current, audio.bass, dt, 8) : 0
+    const haloRotation = bassMotionVariant === 'halo' || bassMotionVariant === 'both' ? haloMotion * haloMotionLimit : 0
+    state.camera.rotation.z = bassMotionVariant === 'camera' || bassMotionVariant === 'both' ? -motion * cameraMotionLimit : 0
     // Reduced motion freezes drift/ripple phases and suppresses reactive geometry.
     if (!reducedMotion) elapsed.current += dt
     const time = elapsed.current
     const x = Math.sin(time * 0.40) * 0.13
     const y = Math.sin(time * 0.50) * 0.14
-    const scale = reducedMotion ? 1 : 1 + audio.bass * 0.20
-    halo.current.position.set(0.6 + x, 1.95 + y, 0)
+    const scale = 1.25 * (reducedMotion ? 1 : 1 + audio.bass * 0.20)
+    halo.current.position.set(0.6 + x, 2.25 + y, 0)
+    halo.current.rotation.z = 0.12 + haloRotation
     halo.current.scale.setScalar(scale)
     halo.current.children.forEach((fragment, i) => {
       updateFragmentResponse(fragmentResponse.current, arcs[i][0] + arcs[i][1] / 2, i,
@@ -161,6 +183,7 @@ function Composition({ reducedMotion, signal, reactivity, onRenderTime }: { redu
     uniforms.time.value = time
     uniforms.haloOffset.value.set(x, y)
     uniforms.haloScale.value = scale
+    uniforms.haloRotation.value = haloRotation
     uniforms.bass.value = reducedMotion ? 0 : audio.bass
     uniforms.treble.value = reducedMotion ? 0 : audio.treble
     uniforms.atmosphere.value = audio.glow
@@ -168,7 +191,7 @@ function Composition({ reducedMotion, signal, reactivity, onRenderTime }: { redu
 
   })
   const sky = useMemo(() => ({ atmosphere: { value: 0 }, midnight: { value: new Color('#101322') }, lavender: { value: new Color('#81769E') }, rose: { value: new Color('#C69AB7') } }), [])
-  const water = useMemo(() => ({ bass: { value: 0 }, treble: { value: 0 }, atmosphere: { value: 0 }, haloScale: { value: 1 }, time: { value: 0 }, haloOffset: { value: new Vector2() }, midnight: { value: new Color('#101322') }, indigo: { value: new Color('#353451') }, moonlight: { value: new Color('#F6D5EC') }, rose: { value: new Color('#C69AB7') } }), [])
+  const water = useMemo(() => ({ bass: { value: 0 }, treble: { value: 0 }, atmosphere: { value: 0 }, haloScale: { value: 1 }, haloRotation: { value: 0 }, time: { value: 0 }, haloOffset: { value: new Vector2() }, midnight: { value: new Color('#101322') }, indigo: { value: new Color('#353451') }, moonlight: { value: new Color('#F6D5EC') }, rose: { value: new Color('#C69AB7') } }), [])
   return (
     <>
       <Framing />
