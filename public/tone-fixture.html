@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>ECHO — Permitted tone fixture</title></head>
+<body>
+  <h1>Permitted test tone</h1>
+  <p>This locally generated tone contains no recorded media. Start at low speaker volume.</p>
+  <label>Frequency <select id="frequency">
+    <option value="100">Low — 100 Hz</option>
+    <option value="1000" selected>Mid — 1000 Hz</option>
+    <option value="8000">High — 8000 Hz</option>
+  </select></label>
+  <button id="start">Start tone</button>
+  <button id="stop" disabled>Stop tone</button>
+  <p role="status" id="status">Stopped</p>
+  <script type="module">
+    let context
+    let oscillator
+    const frequency = document.querySelector('#frequency')
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+    const status = document.querySelector('#status')
+    function stopTone() {
+      oscillator?.stop()
+      oscillator = undefined
+      void context?.close()
+      context = undefined
+      start.disabled = false
+      stop.disabled = true
+      status.textContent = 'Stopped'
+    }
+    start.onclick = async () => {
+      start.disabled = true
+      try {
+        const starting = new AudioContext()
+        context = starting
+        await starting.resume()
+        if (context !== starting) return
+        oscillator = context.createOscillator()
+        const gain = context.createGain()
+        gain.gain.value = 0.03
+        oscillator.frequency.value = Number(frequency.value)
+        oscillator.connect(gain).connect(context.destination)
+        oscillator.start()
+        stop.disabled = false
+        status.textContent = `Playing ${frequency.value} Hz tone`
+      } catch {
+        stopTone()
+        status.textContent = 'Could not start audio. Retry in desktop Chrome.'
+      }
+    }
+    frequency.onchange = () => {
+      if (oscillator) {
+        oscillator.frequency.value = Number(frequency.value)
+        status.textContent = `Playing ${frequency.value} Hz tone`
+      }
+    }
+    stop.onclick = stopTone
+    window.addEventListener('pagehide', stopTone)
+  </script>
+</body>
+</html>

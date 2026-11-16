@@ -2,7 +2,7 @@
 
 **Your music. Another world.**
 
-A browser-first audio visualizer that transforms permitted audio into living, atmospheric landscapes. The POC provides browser tab capture controls and lifecycle diagnostics. Live level, spectrum, and band diagnostics are available; scene rendering is pending later roadmap tasks.
+A browser-first audio visualizer that transforms permitted audio into living, atmospheric landscapes. The POC provides browser tab capture and local file playback with lifecycle diagnostics. Live level, spectrum, and band diagnostics are available; scene rendering is pending later roadmap tasks.
 
 ## Start here (human)
 1. Extract these files into the root of a new ECHO repository (keep `.agents/`). Do not overwrite existing files without reviewing changes.
@@ -58,4 +58,15 @@ Record actual OS/browser and results in `docs/PROGRESS.md`. Automated tests use 
 
 While sharing the fixture tab with audio, switch between Low (100 Hz), Mid (1000 Hz), and High (8000 Hz). The matching band and spectrum region should rise; prior bands should decay. Stop the tone: values should approach zero within a few seconds while connection stays connected. Restart the tone, then disconnect or use the browser's stop-sharing control: all diagnostics should reset. Confirm the source remains audible without duplication throughout. Report OS/Chrome version and results; generated-stream automation does not establish real tab capture.
 
-Analysis uses FFT size 2048 and the actual context sample rate. Bands are 20–250, 250–4000, and 4000–20000 Hz, capped at Nyquist. FFT dB values convert to linear amplitude; each band uses its peak above a -80 dB floor, divided by a 0.1 amplitude reference and clamped to 0..1. This tuning preserves narrow tones and is not calibrated loudness or instrument recognition. Band attack/release is 100/300 ms; intensity uses the maximum band with 200/500 ms smoothing. `isPlaying` means the running input has signal above a small threshold, not proof of audible sound. Signal and spectrum buffers stay outside React state; UI telemetry updates at 5 Hz. Capture feeds only the analyser, with no destination connection; teardown cancels analysis and closes its context.
+Analysis uses FFT size 2048 and the actual context sample rate. Bands are 20–250, 250–4000, and 4000–20000 Hz, capped at Nyquist. FFT dB values convert to linear amplitude; each band uses its peak above a -80 dB floor, divided by a 0.1 amplitude reference and clamped to 0..1. This tuning preserves narrow tones and is not calibrated loudness or instrument recognition. Band attack/release is 100/300 ms; intensity uses the maximum band with 200/500 ms smoothing. `isPlaying` means active local playback, or a running tab input with signal above a small threshold; it is not proof of audible sound. Signal and spectrum buffers stay outside React state; UI telemetry updates at 5 Hz. Tab capture feeds only the analyser, with no destination connection; local playback routes its media element through the analyser to the destination exactly once; teardown cancels analysis and closes its context.
+
+## P02c local file check
+
+Run `npm run fixture` to generate `/tmp/echo-permitted-tones.wav` (or the OS temporary-directory path printed by the command). It contains two seconds each of 100 Hz, 1000 Hz, and 8000 Hz, followed by one second of silence; no recorded media is used.
+
+1. Select it using Audio file. It should wait for Play, then play once with matching band responses. Test Pause, Play, volume, end, and replay.
+2. Select the same file again and another supported local file. Previous playback should stop; only the current file should play. Try an unsupported file and recover by selecting the generated WAV.
+3. While sharing the permitted tone tab, select a local file: sharing must stop. While playing a local file, click Connect: local playback must stop before tab capture begins. Also select a file while the native picker is pending, then finish/close that picker; a late stream must not replace the file.
+4. Disconnect: local playback must stop and diagnostics reset. Repeat source switches and confirm no orphan sharing indicator or duplicate playback.
+
+Files stay on the device using temporary object URLs; ECHO does not upload or persist file content. Each selection owns a fresh audio element, and Play/Pause/replay reuse its single media-source node. Replacement/disconnect releases the element, object URL, audio context and analyser. Report manual results and OS/browser in PROGRESS; G1 requires explicit owner sign-off after local input verification.
