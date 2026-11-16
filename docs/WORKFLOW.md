@@ -1,7 +1,7 @@
 # Agent workflow & token efficiency
 
 ## Tools
-Codex VS Code extension, Git, Context7 (reported working), Playwright MCP (browser execution pending). Do not install duplicate tools or overwrite global config. Optional smoke prompts:
+Codex VS Code extension, Git, Context7 and Playwright MCP (verified 2026-11-16; evidence in PROGRESS.md). Do not install duplicate tools or overwrite global config. Optional smoke prompts:
 - Context7: retrieve version-relevant R3F useFrame docs; identify tool used; no changes.
 - Playwright: open https://example.com, report title/console, capture ECHO-independent smoke screenshot only if allowed; no repo edits. If browser executable missing, locate existing Chromium/Chrome via shell and configure appropriate executable path per official Playwright MCP documentation, or ask owner to install compatible browser. No sudo/secret requests to agent. Report failure honestly.
 

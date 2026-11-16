@@ -7,7 +7,7 @@ A browser-first audio visualizer that transforms permitted audio into living, at
 ## Start here (human)
 1. Extract these files into the root of a new ECHO repository (keep `.agents/`). Do not overwrite existing files without reviewing changes.
 2. Open that folder in VS Code; initialize Git if you want version-controlled checkpoints. Open a new Codex session so repository skills can be discovered.
-3. Context7 has been reported working by the owner. Playwright MCP is installed but browser launch is still unverified; see `docs/WORKFLOW.md` for a smoke test. No global config or secrets are supplied.
+3. Context7 and Playwright MCP have been verified successfully; see `docs/PROGRESS.md` for evidence and `docs/WORKFLOW.md` for smoke procedures. No global config or secrets are supplied.
 4. Paste the contents of `START_HERE.md` into Codex. Review its proposed plan before approving any implementation.
 5. After each approved task review results, update/commit the checkpoint, then ask Codex to resume using `$implement-phase`.
 
@@ -40,6 +40,6 @@ npm run build
 npm run preview -- --host 127.0.0.1
 ```
 
-`build` checks TypeScript and creates `dist/`; `preview` serves that build locally. Dependencies are locked in `package-lock.json`; use `npm ls --depth=0` to inspect installed versions. Browser smoke verification is pending because Playwright's configured Chrome binary is unavailable.
+`build` checks TypeScript and creates `dist/`; `preview` serves that build locally. Dependencies are locked in `package-lock.json`; use `npm ls --depth=0` to inspect installed versions. P01 browser smoke passed in Playwright Chrome; owner approved P01 on 2026-11-16. Local Playwright artifacts are excluded from Git.
 
 Reference art is conceptual, not licensed production assets.

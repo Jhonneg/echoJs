@@ -1,15 +1,16 @@
 # ECHO — current checkpoint
 
 - Date: 2026-11-16.
-- Current task: P01 — scaffold implemented; browser smoke and owner review pending. P02a is not approved or started.
+- Current task: P01 — complete and approved by owner on 2026-11-16. P02a is not approved or started.
 - Changes: minimal Vite/React/TypeScript app, static diagnostics placeholder, strict TypeScript config, Oxlint config, npm scripts, lockfile, ignore rules, and README run instructions. Existing instructions, reference art, and specification docs preserved; no audio or 3D code added.
 - Environment: Node 24.11.0, npm 11.6.1, Linux. Installed: React/React DOM 19.3.1, Vite 8.3.8, @vitejs/plugin-react 6.3.0, TypeScript 7.0.2, Oxlint 1.93.0, @types/node 24.19.2, @types/react and @types/react-dom 19.3.0. Generated from create-vite 9.3.4 react-ts template.
-- Passed: `npm run typecheck`, `npm run lint`, `npm run build`; `npm install` reported zero vulnerabilities. Dev server started at http://127.0.0.1:5173/ and `curl --fail` returned the ECHO HTML. Local port binding required sandbox escalation after EPERM; HTTP response does not verify React rendering.
-- Tool status: Context7 returned official Vite scaffold documentation during planning. Playwright MCP reached during implementation but browser launch failed: Chrome absent at `/opt/google/chrome/chrome`. No browser installation or global configuration changed.
-- Manual pending: open the app in target Chrome and confirm diagnostics visible; browser console/functional smoke not run. No real media capture, sound, graphics, or performance verified.
+- Passed: `npm run typecheck`, `npm run lint`, `npm run build`; `npm install` reported zero vulnerabilities. Dev server started at http://127.0.0.1:5173/ and `curl --fail` returned the ECHO HTML. Local port binding required sandbox escalation after EPERM. Follow-up checks on 2026-11-16: typecheck, lint, and build passed again; Playwright opened localhost, title ECHO — Diagnostics, with Source: None selected, Connection: Disconnected, Analysis: Not active rendered and diagnostics visible. Browser: HeadlessChrome 159.0.0.0 on Linux x86_64. Fixed missing favicon request using an empty data favicon; fresh navigation returned zero console errors and warnings.
+- Tool status: Context7 MCP successfully resolved `/vitejs/vite` and returned official Vite scaffold/Node requirements/template documentation during planning. Playwright MCP successfully navigated to https://example.com/ on 2026-11-16: title Example Domain, multilingual documentation notices and Learn more link inspected, full-page screenshot captured, zero console errors/warnings. Earlier missing-Chrome failure is resolved in the current MCP environment; no browser installation or global config changed by this task.
+- Artifacts: `.playwright-mcp/` excluded by `.gitignore`, with no tracked files under that directory. Moved the generated root `example-com.png` into `.playwright-mcp/example-com.png`; screenshots and snapshots remain local evidence.
+- Approval: owner accepted P01 on 2026-11-16. Automated browser smoke passed; no separate manual target-browser result was supplied. Real capture, sound, graphics, and hardware performance remain unverified.
 - Skill discrepancy: `.agents/` and `.codex/` are empty; named project `implement-phase` skill is missing. Used repository roadmap/workflow requirements for the approved P01 task; no skills were created or removed.
-- Next action: owner checks the diagnostics page and reviews P01. Once P01 is accepted, plan and seek approval for P02a — browser tab permission and lifecycle. G1 remains required before 3D.
-- Commit: none created; suggested focused commit: `Scaffold ECHO diagnostics app (P01)`.
+- Next action: plan and seek approval for P02a — browser tab permission and lifecycle. P02a implementation is not yet authorized. G1 remains required before 3D.
+- Checkpoint: P01 approval, verification evidence, favicon correction, and exclusion of browser artifacts included in `Complete P01 scaffold checkpoint`. See Git history for the checkpoint hash.
 
 ## Update convention
 Replace current status with concrete facts after each approved task: task ID/status, summary and files changed, checks passed/failed/not run with evidence, manual approval pending, blockers and next exact task. Add date/commit if available; do not invent data. Maintain concise checkpoint rather than an endless transcript. Significant decisions belong in DECISIONS.md.
