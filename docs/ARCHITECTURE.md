@@ -9,16 +9,24 @@ React + TypeScript + Vite; Web Audio API and standard media APIs; later Three.js
 - `src/scenes/bloom/`: scene-specific assets and behavior; no direct media APIs. Future scenes may not have props/water.
 - `src/components/`: diagnostics and later controls. `public/` for local licensed assets if needed; `tests/` where appropriate. Create folders only as needed.
 
-Proposed contract (adapt naming only with rationale):
+Current contract (extended in the approved audio-response refinement):
 ```ts
+type BandValues = { bass: number; midrange: number; treble: number };
 interface AudioSignal {
-  bass: number; // normalized 0..1
-  midrange: number;
-  treble: number;
-  intensity: number;
-  isPlaying: boolean; // input active / local playback, not proof of audible sound
+  bass: number; midrange: number; treble: number; // aliases of fast bands
+  intensity: number; // alias of slow atmosphere
+  isPlaying: boolean; // input activity / local playback; not proof of audibility
+  levels: BandValues;
+  fast: BandValues;
+  slow: BandValues;
+  transient: BandValues;
+  atmosphere: number;
+  updatedAt: number; // performance clock, last feature computation
+  updateHz: number; // feature callback cadence, 1-second window
 }
 ```
+All feature values are normalized to 0..1. Keep the top-level signal and nested band objects stable; mutate/reset in place. Frame-rate values remain outside React state. Diagnostic snapshots copy nested values only at 5 Hz. A separate render-time callback updates signal-age telemetry without exposing capture objects to scenes.
+
 Expose current signal through a stable ref or imperative getter; use low-rate UI telemetry rather than a state setter per frame. Track connection and permission states separately. Keep native resources out of serializable UI state. Use one active adapter and one active analysis graph. No media content persistence. Start with simple interfaces only as required by the two sources; no plugin framework.
 
 ## Tab capture (highest risk)
@@ -33,7 +41,7 @@ Expose current signal through a stable ref or imperative getter; use low-rate UI
 Use user-selected file with object URL and HTMLAudioElement, media element source → analyser → destination for audible playback exactly once. Handle play/pause/end, invalid format, source switching, object URL revocation and cleanup. A MediaElementAudioSourceNode must not be repeatedly created for the same element. Do not silently reuse a closed AudioContext. Test file permissions and autoplay. No upload. Allow local browser-supported formats (MP3/WAV examples; actual support varies).
 
 ## Signal processing
-Use AnalyserNode FFT bins, frequency boundaries based on actual sample rate and FFT size, clamp indices to Nyquist. Current owner-requested processing target is 96 kHz with interactive latency; fall back to device default only when that rate is unsupported and report actual rate/fallback. Use FFT 4096 above 48 kHz and 2048 at/below 48 kHz; 96k/4096 preserves the bin spacing/window duration of 48k/2048. Source/capture rate may differ and require resampling; this setting does not imply additional source detail. Convert dB/bin data to bounded magnitudes consistently; define normalized band energy and overall intensity; silence should reach near zero. Document chosen method and normalization, avoid assuming FFT bytes represent linear amplitudes. Smooth with elapsed time and separate slow intensity envelope. Test synthetic signals and edge cases; use stable typed buffers, avoid per-frame allocations. Do not implement beat detection or track classification.
+Use AnalyserNode FFT bins, frequency boundaries based on actual sample rate and FFT size, clamp indices to Nyquist. Current owner-requested processing target is 96 kHz with interactive latency; fall back to device default only when that rate is unsupported and report actual rate/fallback. Use FFT 4096 above 48 kHz and 2048 at/below 48 kHz; 96k/4096 preserves the bin spacing/window duration of 48k/2048. Source/capture rate may differ and require resampling; this setting does not imply additional source detail. Convert dB bins to power and integrate each band, then take its square root (L2 spectral magnitude, not calibrated acoustic RMS). Ignore bins at/below -80 dB; preserve unclamped band magnitude until feature normalization. With magnitude m, reference r and sensitivity s, normalized level is `(m*s/r)/(1+m*s/r)`. Fixed per-band references are 0.1, sensitivities bass 4 / mid 3 / treble 3. These are initial visual calibration settings, not rolling AGC or musical labels. `src/audio/features.ts` owns independently timed fast, slow-baseline and positive-change envelopes plus overall atmosphere. See MOTION for timing/mappings. Overall atmosphere uses combined band magnitude rather than the maximum band. Silence should approach zero; teardown resets all objects in place. Feature computation remains requestAnimationFrame-driven, and diagnostics distinguish its cadence from the audio sample rate. Signal age is time since feature computation, not end-to-end capture latency. Test synthetic signals and edge cases; use stable typed buffers, avoid per-frame allocations. Do not implement beat detection or track classification.
 
 ## Scene strategy
 One active Canvas, fixed authored camera with optional restrained drift, layered sky and distant mountains, simple 3D halo, reflective plane (approximation acceptable), sparse terrain/particles/fog. Reuse assets and scene primitives only when useful. Reflection choices: cheap mirrored/reflected artwork and geometry first, real planar reflection only if justified. Use limited DPR, optional effects, lightweight textures; avoid complex physics/volumetric simulations. React Three Fiber `useFrame` can mutate mesh/material refs using delta; no React state updates in the hot path. Avoid resource creation per frame; release textures/geometries/render targets when owned/unmounted.

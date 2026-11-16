@@ -14,7 +14,7 @@ These frequency bands are initial tuning values, not fixed perceptual standards;
 
 Dormant, awake and radiant are conceptual points on a continuous spectrum, not mandatory discrete state machines. Test silence, low/mid/high bands separately with permitted fixtures, then actual music. Do not equate simulated signals with real audio validation. Future scenes choose their own mapping using the shared signal contract.
 
-## P04 implemented mapping (2026-11-16)
+## Historical P04/P05 mapping (before feature refinement)
 
 The scene consumes the stable AudioSignal, never capture APIs. Visual response targets use `gain * clamp(signal) / (1 + (gain - 1) * clamp(signal)) * Reactivity`, gain 12 for bass and 6 for other responses; this gain does not change audio volume or analysis normalization. Bass response now uses the analyser 25/90 ms envelope directly, with contrast exponent 1.5 applied to the gain-12 soft-knee value; there is no second scene bass temporal filter; other scene bands use 100 ms attack / 300 ms release; atmospheric glow uses 1.5 s attack / 2 s release, after the analyser's own smoothing. Frame delta is capped for pause/background recovery.
 
@@ -30,3 +30,19 @@ P04 bass correction followed owner feedback that response was weak. The soft kne
 Quiet/loud contrast correction: removed square-root lifting, which emphasized low levels. Linear-magnitude soft-knee targets keep quieter inputs subdued; the wider halo bound preserves ordinary bass visibility and leaves more room for loud hits. Sample rate, analysis normalization, fast bass timing and audible volume are unchanged.
 
 P05 correction: midrange radial drift previously made non-bass content look like a size pulse; tangential drift removes that confound. Bass follows the existing analysis envelope directly and uses `pow(12*b/(1+11*b), 1.5) * Reactivity`, with b clamped to 0..1. This expands quiet/loud contrast; it does not detect beats, classify instruments or compensate unknown native capture latency. Owner confirmed native shared-tab pulse timing/contrast looked right on 2026-11-16; this is perceptual validation, not a numeric latency measurement.
+
+## Current approved feature refinement — 2026-11-16
+
+The audio layer now owns all response envelopes. Raw band magnitudes and normalization are specified in ARCHITECTURE. The following initial per-band constants live in `src/audio/features.ts`:
+
+| Feature | Bass attack/release | Mid attack/release | Treble attack/release |
+|---|---|---|---|
+| Fast energy | 5 / 80 ms | 8 / 100 ms | 3 / 60 ms |
+| Slow baseline | 250 / 800 ms | 250 / 800 ms | 250 / 800 ms |
+| Transient accent | 3 / 80 ms | 3 / 70 ms | 2 / 50 ms |
+
+Transient target uses positive difference d = max(0, fast - slow), emphasized as `2*d/(1+d)`. A held tone keeps fast/slow energy and loses its transient accent. This is energy-change emphasis, not kick recognition, tempo prediction or beat tracking. Atmosphere uses combined band magnitude, fixed sensitivity 3 / reference 0.1, and a single 1 s attack / 2 s release envelope.
+
+Bloom maps features directly, with no second interpolation stage: bass response = 20% fast + 80% transient; mids = 25% fast + 75% transient; treble = 10% fast + 90% transient; glow = atmosphere. The global Reactivity slider scales reactive amplitudes only. Existing movement/material bounds, fixed camera, palette, tangential mid drift and reflection alignment are retained. Ambient phases remain independent of sound. Reduced motion freezes ambient phases and suppresses reactive geometry/highlights while retaining slow glow.
+
+The current FFT window is still ~42.7 ms at 96k/4096. This refinement does not remove native capture delay or guarantee GLASS-like event recognition. Manual shared-tab/local review remains pending; earlier P05 acceptance applies to the prior feature pipeline.
