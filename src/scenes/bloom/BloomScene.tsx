@@ -1,10 +1,8 @@
-import { Component, useEffect, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
+import { Component, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Color, Group, OrthographicCamera, ShaderMaterial, Mesh, MeshStandardMaterial, Shape, Vector2, Vector3 } from 'three'
 import type { AudioSignal } from '../../audio/signal'
-import { createBloomResponse, updateBloomResponse, updateFragmentResponse, type BloomDebug } from './reactivity'
-import { PerformanceProbe } from '../../components/PerformanceProbe'
-import type { PerformanceMeasurement } from '../../engine/performance'
+import { createBloomResponse, updateBloomResponse, updateFragmentResponse } from './reactivity'
 import { QUALITY_DPR, type GraphicsQuality } from '../../engine/quality'
 import './bloom.css'
 
@@ -124,7 +122,7 @@ function Halo({ groupRef }: { groupRef: RefObject<Group | null> }) {
   )
 }
 
-function Composition({ reducedMotion, signal, reactivity, onRenderTime, debug }: { reducedMotion: boolean, signal: AudioSignal, reactivity: number, onRenderTime: (now: number) => void, debug: BloomDebug }) {
+function Composition({ reducedMotion, signal, reactivity, onRenderTime }: { reducedMotion: boolean, signal: AudioSignal, reactivity: number, onRenderTime: (now: number) => void }) {
   const halo = useRef<Group>(null)
   const lake = useRef<ShaderMaterial>(null)
   const skyMaterial = useRef<ShaderMaterial>(null)
@@ -136,11 +134,11 @@ function Composition({ reducedMotion, signal, reactivity, onRenderTime, debug }:
     const dt = Math.min(delta, 0.05)
     const now = performance.now()
     onRenderTime(now)
-    updateBloomResponse(response.current, signal, reactivity, debug, now)
+    updateBloomResponse(response.current, signal, reactivity)
     const audio = response.current
     // Reduced motion freezes drift/ripple phases and suppresses reactive geometry.
-    if (!reducedMotion && debug.ambient) elapsed.current += dt
-    const time = debug.ambient ? elapsed.current : 0
+    if (!reducedMotion) elapsed.current += dt
+    const time = elapsed.current
     const x = Math.sin(time * 0.40) * 0.13
     const y = Math.sin(time * 0.50) * 0.14
     const scale = reducedMotion ? 1 : 1 + audio.bass * 0.20
@@ -190,7 +188,7 @@ function Composition({ reducedMotion, signal, reactivity, onRenderTime, debug }:
 class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false }
   static getDerivedStateFromError() { return { failed: true } }
-  render() { return this.state.failed ? <p className="bloom-fallback">Bloom could not render. Audio diagnostics are available below.</p> : this.props.children }
+  render() { return this.state.failed ? <p className="bloom-fallback">Bloom could not render. You can still choose audio from the Bloom menu, or reload to try again.</p> : this.props.children }
 }
 
 const motionQuery = '(prefers-reduced-motion: reduce)'
@@ -201,27 +199,16 @@ function subscribeReducedMotion(onChange: () => void) {
 }
 function getReducedMotion() { return window.matchMedia(motionQuery).matches }
 
-export default function BloomScene({ signal, onRenderTime, measurement, reactivity, debug, quality }: { signal: AudioSignal, onRenderTime: (now: number) => void, measurement: PerformanceMeasurement, reactivity: number, debug: BloomDebug, quality: GraphicsQuality }) {
-  const debugActive = debug.band !== 'all' || debug.synthetic || !debug.ambient || debug.accent !== 'combined'
-  useEffect(() => { measurement.invalidate('Visual debug settings changed. Repeat the run with debug defaults.') }, [measurement, debug])
+export default function BloomScene({ signal, onRenderTime, reactivity, quality }: { signal: AudioSignal, onRenderTime: (now: number) => void, reactivity: number, quality: GraphicsQuality }) {
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
   return (
-    <>
     <section className="bloom-stage" aria-label="Bloom: a luminous fragmented halo over a tranquil lake at twilight">
       <SceneBoundary>
-        <Canvas orthographic camera={{ position: [0, 0, 20], zoom: 80, near: 0.1, far: 60 }} frameloop="always" dpr={QUALITY_DPR[quality]} gl={{ antialias: true }} fallback={<p className="bloom-fallback">WebGL is unavailable. Audio diagnostics are available below.</p>}>
-          <PerformanceProbe measurement={measurement} reactivity={reactivity} reducedMotion={reducedMotion} debugActive={debugActive} quality={quality} />
-          <Composition reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} onRenderTime={onRenderTime} debug={debug} />
+        <Canvas orthographic camera={{ position: [0, 0, 20], zoom: 80, near: 0.1, far: 60 }} frameloop="always" dpr={QUALITY_DPR[quality]} gl={{ antialias: true }} fallback={<p className="bloom-fallback">Bloom needs WebGL to display. You can still use the Bloom menu to choose audio.</p>}>
+          <Composition reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} onRenderTime={onRenderTime} />
         </Canvas>
       </SceneBoundary>
-      <div className="bloom-brand" aria-hidden="true">ECHO<span>Your music. Another world.</span></div>
-
-      <div className="bloom-caption"><span>01 / BLOOM</span><p>A quiet place between sound and stillness.</p></div>
-      <a className="bloom-audio-link" href="#audio-controls">Choose audio ↓</a>
-      {debugActive &&
-        <p className="bloom-debug-status">Visual debug: {debug.band} · {debug.synthetic ? 'synthetic pulse' : debug.accent} · ambient {debug.ambient ? 'on' : 'off'}</p>}
+      <div className="bloom-brand" aria-hidden="true">ECHO</div>
     </section>
-
-    </>
   )
 }

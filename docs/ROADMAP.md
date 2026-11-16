@@ -69,3 +69,23 @@ Owner explicitly approved this exact scope on 2026-11-16. Actual implementation/
 - Include selected preset alongside actual render DPR in performance results; invalidate active measurement when selection changes. Do not infer a hardware FPS improvement from pixel-count reduction.
 - Verify backing-buffer resolution, repeated switches, keyboard/mobile/fullscreen access, ongoing generated playback, unchanged source lifecycle and relevant existing checks. Record any owner hardware comparison separately.
 - Acceptance: preset changes only render resolution, survives fullscreen transitions within the session, reports truthful measurement settings, and handles normal/narrow layouts without console errors. Stop for owner review.
+
+## M04 — Accessibility and release-readiness review
+
+M01–M03 are accepted. Owner explicitly approved this exact scope after creating checkpoint 130a99e. Actual implementation/review status is in PROGRESS.
+
+- Review the complete existing experience for keyboard/focus access, labels/status announcements, mobile overflow and usable unsupported/error states, including fullscreen and graphics quality. Limit fixes to concrete interface defects found in these areas.
+- Verify the committed source builds from an isolated checkout and run existing relevant checks plus applicable browser regression checks. Preserve source adapters, audio processing, scene composition and deferred motion behavior; do not reopen audio tuning.
+- Consolidate supported-browser instructions, privacy behavior and known limitations into a concise release checklist with passed/manual-pending evidence. Do not infer hardware performance from automation.
+- Boundaries: no new product feature, dependency, service, scene, hosting setup or deployment. Publishing requires a separate plan and authorization.
+- Acceptance: report review findings and bounded fixes, reproducible build/check evidence, remaining manual checks and a recommendation on proceeding to deployment planning. Stop for owner review.
+
+## M05 — Landscape-first portfolio interface
+
+Owner approved the revised scope: no developer access, full-screen landscape, and only ECHO branding plus the scene name outside one compact chooser. This supersedes the earlier proposed standalone Add audio/fullscreen buttons and developer-mode idea. Preserve M04 fixes/evidence; deployment planning is deferred.
+
+- Bloom fills the complete viewport immediately with ambient motion and no source/permission requirement. Preserve geometry, palette, camera/framing logic and audio/motion processing.
+- Use the Bloom scene label as the compact chooser toggle. Keep source selection, local playback/volume, Disconnect/Cancel, Reactivity, Standard/Low quality and native fullscreen inside it. No permanent control bar or other landscape controls.
+- Remove diagnostics, visual debug and benchmarks from the interface entirely. No developer-access mode or query opt-in. Existing verification utilities may remain unmounted in source; no new developer feature.
+- Preserve privacy, source teardown, reduced motion, native fullscreen and keyboard/mobile access. Keep the page free of scrolling; allow internal chooser scrolling on short screens. Verify closing the chooser preserves playback and focus returns coherently.
+- Acceptance: closed view contains the full landscape, ECHO and Bloom only; all existing end-user functionality is reachable through the chooser. Run relevant checks, report limitations and stop for owner visual/functional review. No dependency, hosting or publishing.

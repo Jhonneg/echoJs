@@ -2,9 +2,8 @@ import { useEffect, useId, useRef, useState, type RefObject } from 'react'
 
 const failureMessage = 'Fullscreen could not change. Try again, or press Escape to leave fullscreen.'
 
-export function FullscreenControls({ target, onChange }: {
+export function FullscreenControls({ target }: {
   target: RefObject<HTMLElement | null>
-  onChange(): void
 }) {
   const [active, setActive] = useState(false)
   const supported = Boolean(document.fullscreenEnabled && typeof HTMLElement.prototype.requestFullscreen === 'function')
@@ -17,7 +16,6 @@ export function FullscreenControls({ target, onChange }: {
     const changed = () => {
       setActive(document.fullscreenElement === target.current)
       setError('')
-      onChange()
     }
     const failed = () => setError(failureMessage)
     document.addEventListener('fullscreenchange', changed)
@@ -26,7 +24,7 @@ export function FullscreenControls({ target, onChange }: {
       document.removeEventListener('fullscreenchange', changed)
       document.removeEventListener('fullscreenerror', failed)
     }
-  }, [target, onChange])
+  }, [target])
 
   async function toggle() {
     const element = target.current
@@ -54,7 +52,7 @@ export function FullscreenControls({ target, onChange }: {
         onClick={() => { void toggle() }}>
         {active ? 'Exit fullscreen' : 'Enter fullscreen'}
       </button>
-      {active && <span className="fullscreen-hint">Escape to exit · exit for diagnostics</span>}
+      {active && <span className="fullscreen-hint">Escape to exit</span>}
       <p id={messageId} role="status" className="fullscreen-message">{message}</p>
     </div>
   )

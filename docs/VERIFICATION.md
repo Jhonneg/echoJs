@@ -21,6 +21,10 @@ Record manual evidence in PROGRESS.md (OS/browser, source fixture, actual result
 4. Select local fixture, play/pause/end and switch sources. Confirm no orphan streams or duplicate output. Report actual results; seek owner G1 sign-off.
 
 ## Visual gate
+
+Current M05 review: the closed page must show only the full-viewport landscape, ECHO and the Bloom chooser trigger, with no page scrolling. Use Tab/Space/Enter to open Bloom; test close-button, Escape and outside-click dismissal. Test Share/File/Disconnect, local Play/Pause/Replay/volume, Reactivity, quality and fullscreen inside the chooser. Closing must keep playback running; Cancel/Disconnect should restore source-control focus. On portrait/short landscape screens, chooser bounds must stay within the viewport and scroll internally. Confirm query parameters expose no developer tools. Earlier diagnostic/benchmark procedures below are historical; those panels are no longer in the interface.
+
+M04 focus regression: use the keyboard to activate Share a tab, then Cancel sharing while pending. Focus should return to Share a tab. Select a generated file, then Disconnect; focus should return to Open audio file, also in fullscreen. The browser title should identify ECHO as an audio visualizer. Verify named native controls/polite status regions in the accessibility tree; actual screen-reader usability remains a separate manual check. See RELEASE_CHECKLIST for the current review evidence and supported-use limits.
 Use agreed composition at reference desktop viewport (e.g. 1440×900, record actual), compare to art direction and available reference. Check focal hierarchy, reflective water, negative space, palette, motion restraint, sparse details and relevant resize/reduced-motion behavior. Capture only authorized ECHO UI screenshots; human approves beauty. For performance record browser, OS, GPU if known, viewport, DPR, settings, sampling interval and actual FPS/asset bytes. Targets are guidelines until hardware baseline exists.
 
 ## P05 performance procedure

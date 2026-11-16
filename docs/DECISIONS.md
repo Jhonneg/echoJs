@@ -48,7 +48,13 @@
 
 | D27 | 2026-11-16: owner approved M03 Standard/Low graphics-quality control | Preserve default DPR range 1..1.5; Low fixes render DPR at 0.75 to reduce pixels even on 1× displays. Keep Canvas/audio alive, all geometry/motion/shaders unchanged, and setting in memory. Include preset plus actual DPR in results and invalidate changed runs. Browser resolution/continuity/fullscreen checks and real software result metadata passed; owner confirmed normal/fullscreen switching and audio continuity with "it works". M03 accepted. No adaptive quality, persistence, dependency or hardware FPS claim. |
 
+| D28 | 2026-11-16: owner approved M04 bounded accessibility/release-readiness review | Fresh locked install and committed build passed in an isolated archive of 130a99e. Fix only reproduced Cancel/Disconnect focus loss and stale Diagnostics page title; preserve audio/motion/adapters. Record software-browser evidence separately from native owner acceptance and unverified screen-reader/platform coverage. Recommend limited desktop-preview deployment planning, with no hosting/deployment performed or authorized. Owner M04 review pending. |
+
+| D29 | 2026-11-16: owner approved revised M05 portfolio interface: full-viewport Bloom, only ECHO and scene name outside one compact chooser, no developer access | Bloom summary toggles a native disclosure; all audio, settings and fullscreen controls stay inside, with internal scrolling, keyboard/outside dismissal and focus restoration. Remove public diagnostics/debug/benchmarks and runtime probe imports; retain historical utilities/tests unmounted rather than rewrite the engine. Preserve accepted default response, geometry, privacy and adapters. Software browser checks passed; owner visual/functional review pending. No publishing or dependency. |
+
 ## Open decisions
+
+
 
 
 
