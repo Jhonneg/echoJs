@@ -90,3 +90,7 @@ Owner approved assigning one independent frequency band to each ridge, low to hi
 Owner requested universal camera tilt, then explicitly removed it from Lavender Peaks before the task finished. Introduce a shared LandscapeCanvas with default-on camera roll for Bloom/future landscapes and a scene opt-out. Lavender Peaks sets that opt-out. Move generic spring math to engine, preserve Bloom's original camera response and halo spring, and reset shared roll on disable/unmount. No visitor setting or audio change.
 
 2026-11-16: owner clarified that the original large mountain pattern must repeat, rather than transition into added small hills. Remove the continuation-hill generator and shorten the repeat from 40 to 24 world units, covering the authored peaks without a long filler interval. Keep independent ridge motion and periodic joins. This supersedes the earlier filler decision.
+
+2026-11-16: owner requested a faint fixed sun hidden behind Lavender Peaks’ first large mountain. Draw it procedurally within the existing sky shader so opaque ridge depth provides occlusion. No texture, glow postprocessing or new audio mapping is needed.
+
+2026-11-16: owner requested slower distant Lavender Peaks layers. Replace paired speed caps with six distinct increasing limits from background to foreground: 0.15/0.25/0.45/0.65/0.9/1.2 world units/s. Preserve independent audio energy, smoothing and foreground maximum.

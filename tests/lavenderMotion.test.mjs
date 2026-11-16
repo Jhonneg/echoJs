@@ -11,7 +11,7 @@ function advance(signal, depth, seconds, hz = 60) {
 }
 
 test('isolated energy moves only its assigned depth, within the chosen speed limit', () => {
-  for (const [band, depth, limit] of [['subBass', 0, 0.5], ['bass', 1, 0.5], ['lowMids', 2, 0.8], ['highMids', 3, 0.8], ['presence', 4, 1.2], ['air', 5, 1.2]]) {
+  for (const [band, depth, limit] of [['subBass', 0, 0.15], ['bass', 1, 0.25], ['lowMids', 2, 0.45], ['highMids', 3, 0.65], ['presence', 4, 0.9], ['air', 5, 1.2]]) {
     const signal = silentSignal()
     signal.sixBands[band] = 1
     for (let group = 0; group < 6; group++) {
@@ -97,5 +97,17 @@ test('authored sequences keep broad variation and continuous seams over their wh
     const before = (height(edge) - height(edge - epsilon)) / epsilon
     const after = (height(-edge + epsilon) - height(-edge)) / epsilon
     assert.ok(Math.abs(before - after) < 0.002)
+  }
+})
+
+
+test('equal band energy makes every foreground ridge travel faster than the ridge behind it', () => {
+  const signal = silentSignal()
+  for (const band of Object.keys(signal.sixBands)) signal.sixBands[band] = 0.6
+  let previous = 0
+  for (let depth = 0; depth < 6; depth++) {
+    const motion = advance(signal, depth, 2)
+    assert.ok(motion.offset > previous)
+    previous = motion.offset
   }
 })

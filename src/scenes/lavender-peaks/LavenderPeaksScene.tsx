@@ -19,6 +19,11 @@ void main() {
   vec3 color = mix(cream, lavender, height);
   float halo = exp(-pow(vPosition.x / 5.8, 2.0) - pow((vPosition.y + 0.9) / 3.7, 2.0));
   color = mix(color, vec3(1.0, 0.94, 0.86), halo * 0.55);
+  // Fixed behind the first large peak; opaque ridges reveal it as they travel.
+  float sunDistance = length(vPosition - vec2(1.6, 1.9));
+  float sunDisc = 1.0 - smoothstep(0.68, 0.75, sunDistance);
+  float sunHaze = exp(-pow(sunDistance / 1.1, 2.0)) * 0.055;
+  color = mix(color, vec3(1.0, 0.94, 0.83), sunDisc * 0.38 + sunHaze);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`
@@ -114,7 +119,7 @@ class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean
 export default function LavenderPeaksScene({ quality, signal, reactivity }: { quality: GraphicsQuality, signal: AudioSignal, reactivity: number }) {
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
   return (
-    <section className="lavender-stage" aria-label="Lavender Peaks: layered mountains fading into a pale lavender sky">
+    <section className="lavender-stage" aria-label="Lavender Peaks: layered mountains revealing a faint sun in a pale lavender sky">
       <SceneBoundary>
         <LandscapeCanvas cameraTilt={false} signal={signal} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} frameloop={reducedMotion || reactivity === 0 ? 'demand' : 'always'} fallback={<p className="lavender-fallback">Lavender Peaks needs WebGL to display. You can still use the scene menu to choose audio.</p>}>
           <Composition signal={signal} reactivity={reactivity} reducedMotion={reducedMotion} />

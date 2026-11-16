@@ -3,7 +3,8 @@ import { clampSignal, type AudioSignal, SIX_BAND_NAMES } from '../../audio/signa
 // Repeat the authored mountain sequence without a long filler interval.
 export const TERRAIN_PERIOD = 24
 export const DEPTH_BANDS = SIX_BAND_NAMES
-const maximumSpeeds = [0.5, 0.5, 0.8, 0.8, 1.2, 1.2]
+// Back to front: each nearer ridge has a higher travel-speed limit.
+const maximumSpeeds = [0.15, 0.25, 0.45, 0.65, 0.9, 1.2]
 export const createLayerMotion = () => ({ offset: 0, speed: 0 })
 
 export function updateLayerMotion(motion: ReturnType<typeof createLayerMotion>, signal: AudioSignal,

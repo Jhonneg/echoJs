@@ -1,5 +1,18 @@
 # ECHO — current checkpoint
 
+## Slower distant mountain layers — 2026-11-16
+
+- Owner requested depth-dependent speeds. Set six distinct travel limits from farthest to nearest: 0.15/0.25/0.45/0.65/0.9/1.2 world units/s. Foreground keeps its current maximum; deeper ridges move progressively slower at equal energy. Independent band responses, smoothing, sun, terrain repetition and level camera retained. Preserved existing workspace edits.
+- Changed motion helper, existing motion tests, MOTION and DECISIONS. Passed tests (11 files), lint, build including typecheck and diff whitespace. New equal-energy check confirms every nearer ridge travels faster. Existing chunk warning remains. Browser not rerun for speed-constant adjustment; owner music review pending. No commit/push.
+- Next action: owner checks the depth-speed balance. Suggested commit: `Slow distant Lavender Peaks layers`.
+
+## Faint sun behind the first large mountain — 2026-11-16
+
+- Owner requested a faint background sun initially covered by the large mountain and revealed as it moves. Added a fixed warm cream disc with softly feathered edges and faint haze in Lavender Peaks’ existing sky shader, centered at (1.6, 1.9), radius ~0.75 world units. Opaque ridges naturally occlude it. Updated scene description, ART_DIRECTION, MOTION and DECISIONS. Audio/motion/camera and existing workspace changes preserved; no new asset/dependency, commit or push.
+- Passed: tests (11 files), lint, build including typecheck and diff whitespace. Existing chunk warning remains.
+- Browser: headless Brave/CDP software WebGL at 1798×686; moved only the far ridge to offsets 0/1.5/3/24. Inspected initial and revealed screenshots: the sun is covered at zero and visible at offset 3. Wrapped offset 24 matches the initial screenshot exactly, covering it again. Evidence: `/tmp/echo-peaks-sun-*.png`. These static-offset checks establish occlusion, not new live-audio/performance evidence. Playwright unavailable; owner aesthetic review pending.
+- Next action: owner reviews sun subtlety and reveal with permitted music. Suggested commit: `Add a faint sun behind Lavender Peaks`.
+
 ## Repeat the original mountain pattern — 2026-11-16
 
 - Owner clarified the initial recognizable mountains must recur indefinitely. Replaced the earlier 40-unit authored-plus-filler loop with a 24-unit repeat of the actual authored peaks, removing the added continuation hills. Every ridge retains its own six-band motion and faster speed; camera stays level. Shared terrain configuration extracted for regression checks against all six real profiles. Existing workspace changes preserved.
