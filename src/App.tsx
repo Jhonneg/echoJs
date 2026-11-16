@@ -1,3 +1,6 @@
+import { createPerformanceMeasurement } from './engine/performance'
+import { PerformancePanel } from './components/PerformancePanel'
+import BloomScene from './scenes/bloom/BloomScene'
 import { useEffect, useRef, useState } from 'react'
 import { createLocalFile, type LocalFileState } from './audio/localFile'
 import { createAnalysis } from './audio/analysis'
@@ -11,6 +14,7 @@ export default function App() {
   const [local, setLocal] = useState<LocalFileState>({ status: 'empty', name: '', message: 'Select a permitted local audio file.' })
   const [source, setSource] = useState<'tab' | 'file'>('tab')
   const localController = useRef<ReturnType<typeof createLocalFile> | null>(null)
+  const [measurement] = useState(createPerformanceMeasurement)
   const [analysis] = useState(createAnalysis)
   const controller = useRef<ReturnType<typeof createTabCapture> | null>(null)
   useEffect(() => {
@@ -27,7 +31,9 @@ export default function App() {
   }, [analysis])
 
   return (
-    <main>
+    <>
+      <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} measurement={measurement} />
+      <main>
       <header>
         <p className="eyebrow">Proof of concept</p>
         <h1>ECHO</h1>
@@ -79,6 +85,8 @@ export default function App() {
           Any stream returned afterwards is immediately stopped.</p>
         <p><a href="/tone-fixture.html" target="_blank" rel="noreferrer">Open permitted test tone tab</a></p>
       </section>
-    </main>
+        <PerformancePanel measurement={measurement} analysis={analysis} source={source === 'file' ? `local file / ${local.status}` : `tab / ${capture.status}`} />
+      </main>
+    </>
   )
 }

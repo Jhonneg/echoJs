@@ -9,20 +9,30 @@
     <option value="1000" selected>Mid — 1000 Hz</option>
     <option value="8000">High — 8000 Hz</option>
   </select></label>
+  <label>Pattern <select id="pattern">
+    <option value="steady">Steady tone</option>
+    <option value="pulses">Bass pulses — four quiet, four loud</option>
+  </select></label>
   <button id="start">Start tone</button>
   <button id="stop" disabled>Stop tone</button>
   <p role="status" id="status">Stopped</p>
   <script type="module">
     let context
     let oscillator
+    let gainNode
+    let pulseTimer
+    const pattern = document.querySelector('#pattern')
     const frequency = document.querySelector('#frequency')
     const start = document.querySelector('#start')
     const stop = document.querySelector('#stop')
     const status = document.querySelector('#status')
     function stopTone() {
+      clearInterval(pulseTimer)
+      pulseTimer = undefined
+      gainNode = undefined
       oscillator?.stop()
       oscillator = undefined
-      void context?.close()
+      void context?.close().catch(() => {})
       context = undefined
       start.disabled = false
       stop.disabled = true
@@ -36,13 +46,34 @@
         await starting.resume()
         if (context !== starting) return
         oscillator = context.createOscillator()
-        const gain = context.createGain()
-        gain.gain.value = 0.03
-        oscillator.frequency.value = Number(frequency.value)
-        oscillator.connect(gain).connect(context.destination)
+        gainNode = context.createGain()
+        const pulses = pattern.value === 'pulses'
+        gainNode.gain.value = pulses ? 0 : 0.03
+        oscillator.frequency.value = pulses ? 60 : Number(frequency.value)
+        oscillator.connect(gainNode).connect(context.destination)
         oscillator.start()
         stop.disabled = false
-        status.textContent = `Playing ${frequency.value} Hz tone`
+        if (pulses) {
+          let next = context.currentTime + 0.05
+          let count = 0
+          const schedule = () => {
+            if (!context || !gainNode) return
+            while (next < context.currentTime + 0.2) {
+              const amplitude = count % 8 < 4 ? 0.008 : 0.12
+              gainNode.gain.setValueAtTime(0, next)
+              gainNode.gain.linearRampToValueAtTime(amplitude, next + 0.005)
+              gainNode.gain.exponentialRampToValueAtTime(amplitude * 0.001, next + 0.1)
+              gainNode.gain.linearRampToValueAtTime(0, next + 0.12)
+              next += 0.5
+              count++
+            }
+          }
+          schedule()
+          pulseTimer = setInterval(schedule, 50)
+          status.textContent = 'Playing 60 Hz bass pulses: four quiet, four loud, repeating every four seconds.'
+        } else {
+          status.textContent = `Playing ${frequency.value} Hz tone`
+        }
       } catch {
         stopTone()
         status.textContent = 'Could not start audio. Retry in desktop Chrome.'
@@ -53,6 +84,10 @@
         oscillator.frequency.value = Number(frequency.value)
         status.textContent = `Playing ${frequency.value} Hz tone`
       }
+    }
+    pattern.onchange = () => {
+      stopTone()
+      frequency.disabled = pattern.value === 'pulses'
     }
     stop.onclick = stopTone
     window.addEventListener('pagehide', stopTone)

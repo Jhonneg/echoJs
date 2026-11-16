@@ -22,3 +22,11 @@ Record manual evidence in PROGRESS.md (OS/browser, source fixture, actual result
 
 ## Visual gate
 Use agreed composition at reference desktop viewport (e.g. 1440×900, record actual), compare to art direction and available reference. Check focal hierarchy, reflective water, negative space, palette, motion restraint, sparse details and relevant resize/reduced-motion behavior. Capture only authorized ECHO UI screenshots; human approves beauty. For performance record browser, OS, GPU if known, viewport, DPR, settings, sampling interval and actual FPS/asset bytes. Targets are guidelines until hardware baseline exists.
+
+## P05 performance procedure
+
+Use a production build (`npm run build`, then `npm run preview -- --host 127.0.0.1 --port 4173 --strictPort`). At the agreed viewport, disconnect audio and use Performance measurement. Start returns to the scene; keep the page visible for 5 seconds warm-up plus 30 seconds sampling. Return to the results below diagnostics and copy the result block.
+
+Repeat during local playback using `npm run fixture -- --long` and the printed 45-second generated WAV. Start playback before measurement. Do not pause, change source/reactivity/reduced-motion, resize, or hide the page during a run; these invalidate it. Keep the scene in view. Add physical CPU/GPU model if known and note any visual or audible problem. Do not send recorded media.
+
+The reported FPS is sampled scene-frame cadence, not GPU execution time or a hardware guarantee. Long frame intervals are retained; warm-up is excluded. Renderer strings may identify software rendering, and privacy settings can hide GPU details. Automated/headless results must be labeled separately from owner Brave results. No G2 sign-off with required evidence missing.

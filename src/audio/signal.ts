@@ -1,16 +1,38 @@
+export const BAND_NAMES = ['bass', 'midrange', 'treble'] as const
+export type BandName = typeof BAND_NAMES[number]
+export type BandValues = Record<BandName, number>
 export interface AudioSignal {
+  // Compatibility values: fast bands and slow overall intensity.
   bass: number
   midrange: number
   treble: number
   intensity: number
   isPlaying: boolean
+  levels: BandValues
+  fast: BandValues
+  slow: BandValues
+  transient: BandValues
+  atmosphere: number
+  updatedAt: number
+  updateHz: number
 }
-
+export interface SignalTiming { renderAgeMs: number | null }
+export const emptyBands = (): BandValues => ({ bass: 0, midrange: 0, treble: 0 })
 export function silentSignal(): AudioSignal {
-  return { bass: 0, midrange: 0, treble: 0, intensity: 0, isPlaying: false }
+  return {
+    bass: 0, midrange: 0, treble: 0, intensity: 0, isPlaying: false,
+    levels: emptyBands(), fast: emptyBands(), slow: emptyBands(), transient: emptyBands(),
+    atmosphere: 0, updatedAt: 0, updateHz: 0,
+  }
 }
-
-const clamp = (value: number) => Math.max(0, Math.min(1, value))
+export function resetSignal(signal: AudioSignal) {
+  for (const band of BAND_NAMES) {
+    signal[band] = signal.levels[band] = signal.fast[band] = signal.slow[band] = signal.transient[band] = 0
+  }
+  signal.intensity = signal.atmosphere = signal.updatedAt = signal.updateHz = 0
+  signal.isPlaying = false
+}
+export const clampSignal = (value: number) => Number.isFinite(value) ? Math.max(0, Math.min(1, value)) : 0
 
 // FFT index k represents k * sampleRate / fftSize Hz. Upper bound is exclusive.
 export function binRange(low: number, high: number, sampleRate: number, fftSize: number): [number, number] {
@@ -20,18 +42,21 @@ export function binRange(low: number, high: number, sampleRate: number, fftSize:
   return [start, Math.max(start, Math.min(count, Math.ceil(high * fftSize / sampleRate)))]
 }
 
-// Peak linear amplitude in a band preserves narrow test tones regardless of band width.
-// -80 dB floor, 0.1 amplitude reference (-20 dB) -> 1; this is visual tuning, not loudness.
-export function bandLevel(bins: Float32Array, start: number, end: number): number {
-  let peak = 0
+// L2 spectral magnitude integrates bin power. This is not calibrated acoustic RMS.
+// Keep this unclamped until feature extraction, preserving stronger input changes.
+export function bandMagnitude(bins: Float32Array, start: number, end: number): number {
+  let power = 0
   for (let i = Math.max(0, start); i < Math.min(end, bins.length); i++) {
     const db = bins[i]
-    if (Number.isFinite(db) && db > -80) peak = Math.max(peak, 10 ** (db / 20))
+    if (Number.isFinite(db) && db > -80) power += 10 ** (Math.min(db, 0) / 10)
   }
-  return clamp(peak / 0.1)
+  return Math.sqrt(power)
 }
-
+// Display spectrum uses a bounded reference; feature extraction uses raw magnitude.
+export function bandLevel(bins: Float32Array, start: number, end: number): number {
+  return clampSignal(bandMagnitude(bins, start, end) / 0.1)
+}
 export function smooth(current: number, target: number, delta: number, attack = 0.1, release = 0.3) {
   const seconds = target > current ? attack : release
-  return clamp(current + (target - current) * (1 - Math.exp(-Math.max(0, delta) / seconds)))
+  return clampSignal(current + (target - current) * (1 - Math.exp(-Math.max(0, delta) / seconds)))
 }

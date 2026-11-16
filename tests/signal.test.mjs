@@ -37,3 +37,13 @@ test('smoothing uses elapsed time, bounded attack and decay toward silence', () 
   assert.ok(smooth(1, 0, 3) < 0.001)
   assert.equal(smooth(0, 1, 0), 0)
 })
+
+test('96 kHz with larger FFT preserves low-frequency bin coverage', () => {
+  for (const [low, high] of [[20, 250], [250, 4000], [4000, 20000]]) {
+    assert.deepEqual(binRange(low, high, 96000, 4096), binRange(low, high, 48000, 2048))
+  }
+  const bins = new Float32Array(2048).fill(-Infinity)
+  bins[Math.round(50 * 4096 / 96000)] = -30
+  assert.ok(bandLevel(bins, ...binRange(20, 250, 96000, 4096)) > 0)
+  assert.equal(bandLevel(bins, ...binRange(250, 4000, 96000, 4096)), 0)
+})

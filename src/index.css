@@ -31,3 +31,8 @@ meter { width: 6rem; vertical-align: middle; }
 
 fieldset { margin-top: 1.5rem; border: 1px solid #879ac4; min-width: 0; }
 input[type="file"] { max-width: 100%; }
+
+.performance-result { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.8rem; }
+
+.signal-features { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.signal-features th, .signal-features td { text-align: left; padding: 0.25rem; border-bottom: 1px solid #394356; }

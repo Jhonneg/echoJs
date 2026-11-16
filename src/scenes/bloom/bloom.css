@@ -1,0 +1,19 @@
+.bloom-stage { position: relative; width: 100%; height: 100svh; min-height: 540px; max-height: 1100px; margin: 0; padding: 0; overflow: hidden; background: #101322; border: 0; border-radius: 0; }
+.bloom-stage canvas { margin: 0; background: transparent; }
+.bloom-brand { position: absolute; top: 2.5rem; left: 3rem; color: #f6d5ec; font-size: 1.15rem; letter-spacing: 0.4em; pointer-events: none; }
+.bloom-brand span { display: block; margin-top: 0.65rem; color: #c4b6cf; font-size: 0.65rem; letter-spacing: 0.13em; }
+.bloom-caption { position: absolute; left: 3rem; bottom: 2.5rem; pointer-events: none; }
+.bloom-caption span { color: #f6d5ec; font-size: 0.75rem; letter-spacing: 0.3em; }
+.bloom-caption p { margin-top: 0.5rem; color: #b2a5bd; font-size: 0.8rem; }
+.bloom-audio-link { position: absolute; right: 3rem; bottom: 2.8rem; font-size: 0.75rem; color: #c4b6cf; text-decoration: none; }
+.bloom-fallback { padding: 8rem 3rem; }
+@media (max-width: 600px) {
+  .bloom-brand { top: 1.5rem; left: 1.5rem; }
+  .bloom-caption { left: 1.5rem; bottom: 4.5rem; }
+  .bloom-audio-link { right: auto; left: 1.5rem; bottom: 1.5rem; }
+}
+
+.bloom-reactivity { position: absolute; right: 3rem; top: 2.5rem; display: flex; align-items: center; gap: 0.7rem; color: #c4b6cf; font-size: 0.75rem; }
+.bloom-reactivity input { width: 7rem; accent-color: #c69ab7; }
+.bloom-reactivity output { min-width: 2.5rem; }
+@media (max-width: 600px) { .bloom-reactivity { top: 6rem; left: 1.5rem; right: auto; } }
