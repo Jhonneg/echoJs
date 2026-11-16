@@ -1,3 +1,5 @@
+import { NOCTURNE_ALL_ON } from './scenes/nocturne/lighting'
+import NocturneScene from './scenes/nocturne/NocturneScene'
 import BloomScene from './scenes/bloom/BloomScene'
 import LavenderPeaksScene from './scenes/lavender-peaks/LavenderPeaksScene'
 import CrimsonHorizonScene from './scenes/crimson-horizon/CrimsonHorizonScene'
@@ -18,6 +20,7 @@ export default function App() {
   const [source, setSource] = useState<'tab' | 'file'>('tab')
   const [reactivity, setReactivity] = useState(1)
   const [quality, setQuality] = useState<GraphicsQuality>('standard')
+  const [nocturneLighting, setNocturneLighting] = useState(NOCTURNE_ALL_ON)
   const [scene, setScene] = useState<SceneId>('bloom')
   const [volume, setVolume] = useState(0.5)
   const localController = useRef<ReturnType<typeof createLocalFile> | null>(null)
@@ -45,9 +48,12 @@ export default function App() {
           ? <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
           : scene === 'lavender-peaks'
             ? <LavenderPeaksScene quality={quality} signal={analysis.signal} reactivity={reactivity} />
-            : <CrimsonHorizonScene quality={quality} signal={analysis.signal} reactivity={reactivity} />}
+            : scene === 'nocturne'
+              ? <NocturneScene signal={analysis.signal} quality={quality} lighting={nocturneLighting} />
+              : <CrimsonHorizonScene quality={quality} signal={analysis.signal} reactivity={reactivity} />}
         <AudioControls source={source} capture={capture} local={local} analysis={analysis}
           scene={scene} onScene={setScene}
+          nocturneLighting={nocturneLighting} onNocturneLighting={setNocturneLighting}
           fullscreenControl={<FullscreenControls target={experience} />}
           reactivity={reactivity} volume={volume} onReactivity={setReactivity}
           quality={quality} onQuality={setQuality}

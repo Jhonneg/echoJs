@@ -142,3 +142,31 @@ Owner requested increased movement speed after the Crimson sun refinement. Doubl
 ## D46 — partial Lavender sun at initial load — 2026-11-16
 
 Owner requested a smaller first large mountain so the sun starts partially revealed. Reduce that peak's amplitude from 4.8 to 3.7, keeping width, base, sun and all other terrain unchanged. Original repeating pattern carries the same revised peak on subsequent loops.
+
+## D47 — brighter Crimson terrain independent of playback — 2026-11-16
+
+Owner found Crimson too dark after previous tuning. Lift linear terrain base from (0.0065,0.0085,0.014) to (0.02,0.022,0.034), strengthen stepped directional shading, add normal-based cool sky fill, and raise idle crest strength from 55% to 75% of its full level. Change terrain material only, preserving sky/sun behavior, geometry, motion and other landscapes.
+
+## D48 — correct gray terrain wash — 2026-11-16
+
+Owner rejected D47's gray appearance. Replace its cool base/fill with burgundy-tinted dark terrain and warm directional shading; increase selected crimson highlight strength. Retain readability through hue/contrast while preserving nightshade sky and sun. Only terrain shader colors change.
+
+## Nocturne N01 — 2026-11-16
+
+Use the existing LandscapeCanvas perspective option with cameraTilt disabled and demand rendering for the stationary blockout. Procedural box geometry and neutral rough materials establish proportions without dependencies. Owner selected dim neutral review fill; colored fixtures, reflections, atmosphere and audio mappings wait for their own phases. Shared audio controllers remain in App; disable only Nocturne’s Reactivity input and preserve its stored value.
+
+## Nocturne pointer camera — 2026-11-16
+
+Owner approved matching Crimson's mouse camera. Reuse its existing pure cameraMotion helper without changing Crimson; keep Nocturne geometry/framing/Z and audio behavior intact. Use continuous rendering for eased movement, reset target on leave/blur and center under reduced motion. This supersedes the N01 demand-rendering/fixed-pointer choice.
+
+## Nocturne subtle parallax — 2026-11-16
+
+Owner rejected the full Crimson world-space range as too strong. Nearby alley walls amplify perceived motion; multiply only Nocturne's final displacement by 0.25 while retaining the existing smoothing helper and view target.
+
+## Nocturne N02 static detail — 2026-11-16
+
+Batch repeated box details into six instanced finish groups with explicit bounds after matrix updates, per Three r186 documentation. Model door recesses with projecting jambs around inset leaves rather than boolean cuts or a new dependency. Use non-emissive fixture/glass surfaces for this gate; reserve lighting assignments and manual isolation for N03. Pipes/cables use low-segment cylinder/tube geometry; no texture/image assets.
+
+## Nocturne N03 — 2026-11-16
+
+Owner approved independent manual lighting before reflections/audio. Split instanced emitter finishes into magenta, cyan and violet, sharing each level with two corresponding bounded point lights. Keep all lights mounted at zero intensity when disabled to avoid shader light-count recompilation while adjusting controls. Use the existing renderer/materials without dependencies; no bloom needed for this lighting gate. Store manual levels in App for scene-switch retention, expose controls only inside Nocturne's chooser, default all-on. Lighting exposed a panel/vent overlap; relocated/shortened the six small panels within this phase.

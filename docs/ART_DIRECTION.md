@@ -60,3 +60,25 @@ Keep the sun's apparent size stable as terrain passes. Its idle disc retains 5.5
 Crimson sun pulse refinement (2026-11-16): strong bass hits briefly expand the pink sun up to 8% and its restrained glow up to 12%, with a modest brightness lift. Return to its existing size after each accent; retain faint idle visibility, valley occlusion and localized haze. Reduced motion suppresses this pulse.
 
 Lavender initial sun reveal (2026-11-16): lower only the far ridge's large peak at x=1.6 from amplitude 4.8 to 3.7. The upper sun arc should peek above the ridge on load while most of the disc remains hidden. Preserve sun placement/size, other mountains and movement. This supersedes the earlier fully covered initial disc.
+
+Crimson terrain readability correction (2026-11-16): owner still found the landscape too dark. Raise the terrain's charcoal base and directional contrast, add restrained cool sky fill on upward-facing slopes, and keep selected crimson crests more visible at idle. Preserve the nightshade sky, localized red haze and sun hierarchy; no global exposure or diffuse red wash. Terrain must remain readable without music.
+
+Crimson gray-fill correction (2026-11-16): owner rejected the cool brightness lift because the terrain became gray. Replace the blue-gray base/fill with deep burgundy shadows and warm directional shade separation. Strengthen narrow crimson highlights for visibility rather than broad neutral illumination. Nightshade sky, sun and motion remain unchanged. This supersedes the cool-fill choice above; owner palette review remains pending.
+
+Owner acceptance (2026-11-16): “looks good now” confirms the corrected burgundy/crimson terrain palette and readability. Retain this treatment as the current visual baseline.
+
+## Nocturne — Industrial Crossing N01
+
+Owner-supplied Industrial Crossing board guides a genuine 3D narrow industrial alley with a stationary perspective view. N01 uses a 6 m alley, 52 m depth, 14–22 m building masses, camera height 1.6 m/FOV 50°, crossing underside clearance 4.5 m. Dim neutral fill is an approved temporary composition aid. Compare bridge prominence, converging walls, foreground road and distant gate before detail or reactive lighting. Later phases introduce magenta fixtures, cyan windows, violet accents, corresponding wet-floor reflections and atmospheric depth. No camera travel, pointer motion or bass roll.
+
+Nocturne mouse-camera refinement (2026-11-16): owner approved Crimson-style bounded mouse parallax, superseding N01's pointer-motion restriction. Retain the neutral camera framing and fixed forward position; allow ±1.6 m horizontal/±0.85 m vertical displacement with return on leave/blur and centered reduced motion. Architecture remains stationary.
+
+Nocturne parallax reduction (2026-11-16): owner found the full Crimson offsets excessive in the narrow alley. Scale Nocturne camera displacement to 25% (±0.4 m horizontal, ±0.2125 m vertical), retaining the 180 ms smoothing, fixed forward position, neutral target and reduced-motion/return behavior. This supersedes the full-range Nocturne offsets above; Crimson stays unchanged.
+
+## Nocturne N02 — industrial geometry and static materials
+
+Owner approved recessed service door bays/shutters, window matrices, vents, selective pipes/conduit, sagging overhead cables and unlit fixture housings. Add bridge underside ribs, curb drains, gate bars and restrained asphalt repair patches. Use dark rough steel, darker recesses and muted blue-black glass, all non-emissive. Repeated parts are instanced by finish. Preserve accepted alley/camera proportions and subtle parallax; neutral review lighting remains until N03. Wet reflective puddles, haze and postprocessing belong to N04.
+
+## Nocturne N03 — independent manual lighting
+
+Separate emissive magenta fixtures/bridge, cyan windows/panels and thin violet strip surfaces. Each group has independent 0–100% manual control and two bounded point lights for representative local spill (six total, no shadow maps). All groups start at 100% for the lighting preview; all-off leaves only faint neutral architectural readability. Zero group level gives exactly zero emission and point-light intensity; other active groups may still illuminate the inactive fixture surfaces. Emitter diffusers use dark nonmetallic bases to retain saturated color under neighboring light spill. Small cyan panels moved above vents (y=4.75 m) and shortened to clear the overlap revealed by lighting. Keep accepted subtle camera parallax; no bloom, fog, reflections, flicker or audio mapping in N03.

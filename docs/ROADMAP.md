@@ -148,3 +148,16 @@ Owner explicitly approved forward travel during music, a sun driven by the numbe
 - Music energy controls eased forward speed; pause/end/disconnect/stale input stops it. Silence dims the sun; six active-band states determine brightness. Keep the sun distant with constant size.
 - Retain mouse movement while silent; reduced motion freezes camera travel/pointer. Reactivity scales travel and sun. Preserve other scenes and audio processing.
 - Implemented with test/build/browser evidence in PROGRESS. Owner visual/musical review remains pending; no subsequent milestone approved.
+
+## Nocturne — Industrial Crossing
+
+Owner approved N01 and subsequently N02 on 2026-11-16 ("lets move" after the bounded N02 proposal). N02 approval permits progressing from the base composition. Owner subsequently approved the bounded N03 lighting/manual-controls plan; N04–N06 still need separate approval.
+
+- **N01 — Architectural blockout:** selectable stationary perspective 3D alley, building masses, crossing/railings, road and distant gate. Dim neutral review fill; desktop reference comparison and responsive/integration checks. Stop for owner composition review.
+- **N02 — Geometry details and static materials:** recessed doors, windows, columns, selective pipes/cables/vents and fixture housings.
+- **N03 — Independent lighting groups:** manually isolate magenta bass, cyan mids and violet treble lighting. Near-zero inactive emission/spill.
+- **N04 — Reflections, atmosphere and postprocessing:** evaluate reflection techniques within existing renderer; wet asphalt/puddles track active illumination, restrained haze/bloom.
+- **N05 — Audio integration:** existing feature contract/boundaries, independently smoothed light groups and overall atmospheric response; no architecture/camera movement.
+- **N06 — Performance and integration:** responsive behavior, bounded resources, source continuity and target hardware evidence.
+
+N01 follow-up (2026-11-16): owner approved Crimson-style mouse camera with bounded lateral/vertical parallax, smooth return and reduced-motion centering. This supersedes the fixed-view requirement only for pointer interaction; no forward travel or later phase authorized.

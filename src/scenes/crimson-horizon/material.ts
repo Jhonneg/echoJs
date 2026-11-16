@@ -31,13 +31,15 @@ void main() {
   vec3 normal = normalize(vNormal);
   float facing = dot(normal, normalize(sunPosition - vWorld));
   float directional = floor(clamp(facing, 0.0, 0.999) * 3.0) / 2.0;
-  vec3 color = vec3(0.0065, 0.0085, 0.014) + vec3(0.006, 0.004, 0.007) * directional;
+  vec3 color = vec3(0.022, 0.006, 0.012) + vec3(0.045, 0.008, 0.016) * directional;
+  // A restrained warm fill keeps upward slopes readable without washing them gray.
+  color += vec3(0.006, 0.002, 0.005) * smoothstep(0.0, 1.0, normal.y);
   float crests = clamp(ridgeLine(vFeatures.x) + ridgeLine(vFeatures.y) * 0.3, 0.0, 1.0);
   float slopes = 0.4 + 0.6 * smoothstep(0.05, 0.55, 1.0 - abs(normal.y));
   float highlights = crests * pow(vFeatures.z, 1.5) * vFeatures.w * slopes;
   highlights *= 0.35 + 0.65 * smoothstep(-0.15, 0.7, facing);
   float foreground = ridgeLine(vFold) * (1.0 - vFeatures.z) * 0.12;
-  color += vec3(0.65, 0.006, 0.045) * (highlights + foreground) * (0.55 + activity * 0.45);
+  color += vec3(0.8, 0.004, 0.038) * (highlights + foreground) * (0.85 + activity * 0.15);
   vec3 ray = normalize(vWorld - cameraPosition);
   float depth = distance(cameraPosition, vWorld);
   float haze = (1.0 - exp(-depth * 0.018)) * smoothstep(25.0, 85.0, depth);

@@ -1,5 +1,60 @@
 # ECHO — current checkpoint
 
+## N02 Nocturne geometry and static materials — 2026-11-16
+
+- Owner approved the bounded N02 proposal with “lets move,” authorizing progression from N01. Added recessed service door frames/inset leaves, shutter slats, window matrices, louvered vents, junction boxes/conduit, flanged pipes, overhead cables, large fixture/panel/strip housings, bridge ribs and under-deck fixture bodies, gate bars, curb drains/joints and restrained asphalt repair patches. All surfaces remain non-emissive under existing neutral review fill. Accepted camera/proportions retained; other scenes/audio unchanged.
+- Changed new ArchitectureDetails module and Nocturne scene plus art/roadmap/verification/decision/checkpoint docs. Repeated boxes use six instanced finish batches; cylinders/tubes are low-segment geometry. No dependencies, image assets, lighting/audio integration, commit or push. Existing local edits preserved. Missing project implementation/visual-review skills remain unavailable; followed repository workflow. Consulted Context7 Three r186 instancing/bounds guidance against installed 0.186.0.
+- Passed: npm test (13 files), lint, build including typecheck, git diff --check. Existing large bundle warning remains. Browser: Playwright unavailable; headless Brave/CDP production checks passed desktop 1440×810, portrait 390×844 and wide 1798×686 bounds, disabled Nocturne Reactivity and advancing generated local playback across four scenes, with no runtime exceptions. Camera extremes/reduced-motion check also completed without exceptions; inspected both extremes for geometry exposure. No hardware performance/native capture/audible-output claim.
+- Screenshots inspected at /tmp/echo-crimson-nocturne-{desktop,portrait,wide}.png and camera-{left,right}.png. Compared to reference: industrial facade layering, service bays, window groups, overhead structure/cables and gate now supply architectural depth; the scene remains more regular and intentionally lacks the board’s colored illumination, wet reflections and haze. Neutral material/geometry review is pending owner acceptance; N03–N06 remain unapproved.
+- Next: owner reviews N02 geometry/materials. Stop before N03 independent lighting/manual isolation. Suggested focused commit: `Add Nocturne industrial geometry and static materials`.
+
+## Nocturne camera accepted — 2026-11-16
+
+- Owner confirmed “looks good now” after the subtle parallax correction. Camera feel accepted; this feedback does not establish additional performance/audio evidence or explicit approval of the entire N01 composition.
+- Documentation-only checkpoint; prior checks remain as recorded. Next proposed task: N02 geometry details and static materials, subject to owner confirmation of the base composition and approval of its bounded plan. No implementation, commit or push.
+
+## Nocturne subtle camera correction — 2026-11-16
+
+- Owner found mouse movement excessive. Reduced only Nocturne displacement to 25%: ±0.4 m horizontal/±0.2125 m vertical. Retained Crimson smoothing, neutral framing, fixed forward position and return/reduced behavior. Changed Nocturne camera plus motion/art/decision records; existing local edits preserved.
+- Passed lint, build including typecheck, git diff --check. Existing bundle warning remains. Unit suite not repeated for the displacement multiplier; previous 13-file pass applies to preceding build.
+- Headless Brave/CDP production camera check passed with no runtime exceptions. Inspected reduced-range desktop extreme screenshot; reduced-motion screenshots before/after pointer movement remain byte-identical to neutral. Evidence refreshed at /tmp/echo-crimson-nocturne-camera-*.png. No hardware performance claim.
+- Next: owner reviews subtle parallax; stop before N02. No commit/push. Suggested commit: `Reduce Nocturne mouse parallax for subtle depth`.
+
+## Nocturne mouse camera — 2026-11-16
+
+- Owner approved Crimson-style mouse movement. Implemented the same bounded view-motion helper (±1.6/±0.85 m, 180 ms smoothing), leave/blur target reset, ignored touch and centered reduced motion. Retained neutral framing and fixed Z; no audio mapping or forward travel. Continuous rendering now supports smoothing.
+- Changed Nocturne scene, chooser hint and motion/art/roadmap/decision records. Existing workspace edits preserved; no dependencies, commit or push. Project implementation skill remains unavailable. Existing Fiber API guidance from N01 applies.
+- Passed: npm test (13 files, including existing camera bounds/cadence/return/reduced tests), lint, build including typecheck, git diff --check. Existing bundle warning remains.
+- Browser: headless Brave/CDP fallback at 1440×810; inspected both pointer extremes with visible 3D parallax and retained alley/gate. No runtime exceptions. Blur return screenshot approaches neutral (normalized image RMSE ~0.00002 after 2.5 s); reduced-motion screenshots are byte-identical to neutral before/after mouse movement. Evidence /tmp/echo-crimson-nocturne-camera-{neutral,right,left,return,reduced,reduced-moved}.png. Leave/touch handling source-reviewed; not separately browser-exercised. No hardware performance/native capture claim.
+- Next: owner reviews camera feel and N01 composition; stop before N02. Suggested commit: `Add Crimson-style mouse camera to Nocturne`.
+
+## N01 Nocturne architectural blockout — 2026-11-16
+
+- Implemented owner-approved static selectable 3D perspective alley: modular building masses, road/curbs, crossing/deck/railings and distant gate. Fixed camera; no shared tilt, pointer motion or audio mapping. Neutral review fill; Nocturne Reactivity disabled while stored value remains. Existing local edits preserved; no dependency, commit or push.
+- Changed new Nocturne scene/CSS, scene identifiers, App and chooser; documented phase sequence, direction/reference and decision. Project implement-phase/visual-review skills absent; repository workflow followed. Context7 Fiber v9.8.2 camera/demand-rendering docs consulted.
+- Passed: npm test (13 files), lint, build including typecheck, git diff --check. Existing bundle-size warning remains.
+- Browser: Playwright unavailable; headless Brave/CDP production fallback. No runtime exceptions, portrait/wide page overflow, or playback interruption across four scenes with generated local audio. Reactivity disabled in Nocturne. Screenshots: /tmp/echo-crimson-nocturne-desktop.png (1440×810), portrait.png (390×844), wide.png (1798×686), still.png. Inspected desktop/portrait; neutral fill lifted and crossing brought closer after first comparison. Reference has more asymmetry/detail; N01 retains its narrow passage, overhead crossing and distant gate hierarchy.
+- Owner composition approval pending. No native capture, audible-output or hardware performance claim. Next: owner reviews N01 before separately approving N02. Suggested commit: `Add Nocturne industrial alley architectural blockout`.
+
+## Crimson palette accepted — 2026-11-16
+
+- Owner reviewed the burgundy/crimson correction and confirmed “looks good now.” Current terrain palette/readability is visually accepted. This feedback does not establish additional audio, native capture or hardware-performance evidence.
+- Documentation-only checkpoint; no source changes, commit or push. Prior verification remains recorded below. Next action: retain this palette; await the owner's next task.
+
+## Crimson gray-wash correction — 2026-11-16
+
+- Owner rejected the previous brightness lift because terrain became gray. Replaced cool blue-gray base/fill with deep burgundy shadows and warm directional shading, strengthened selected crimson crests, and preserved nightshade sky/sun/motion. Only terrain shader colors changed.
+- Changed material, ART_DIRECTION and D48; previous workspace changes preserved. No dependency/commit/push.
+- Passed: lint, build including typecheck, git diff --check. Existing bundle warning remains. Headless Brave/CDP production smoke passed generated playback/scene continuity, worker, quality/fullscreen/keyboard controls and responsive bounds with no runtime exceptions. Inspected idle/playing screenshots under /tmp/echo-crimson-burgundy-*.png. Unit suite not repeated for color-only constants; previous results belong to the prior build. No aesthetic sign-off/performance/native capture claim.
+- Next action: owner reviews the corrected color/readability balance. Suggested commit after review: `Replace gray Crimson fill with burgundy and crimson shading`.
+
+## Crimson terrain brightness correction — 2026-11-16
+
+- Owner still found Crimson too dark. Increased charcoal terrain base, strengthened directional shade separation, added cool normal-based sky fill and raised selected idle crest strength. Terrain is more visible both idle and during playback. Sky, sun/pulse, geometry, travel and other landscapes unchanged.
+- Changed Crimson material, ART_DIRECTION and D47. Earlier workspace changes preserved. No dependency/commit/push.
+- Passed: npm test (13 files), lint, build including typecheck, git diff --check. Existing application chunk warning remains. Headless Brave/CDP production smoke check passed worker load, generated playback continuity, quality/fullscreen/keyboard controls and responsive bounds with no runtime exceptions. Inspected idle/playing screenshots (/tmp/echo-crimson-brighter-idle.png and brighter-playing.png), confirming brighter terrain and retained nightshade sky. No owner aesthetic approval/native capture/hardware-performance claim.
+- Next action: owner reviews brighter terrain on their display with permitted music. Suggested commit after review: `Brighten Crimson terrain and reveal slope depth`.
+
 ## Lavender partial sun reveal at load — 2026-11-16
 
 - Owner requested lowering the first large mountain enough to show part of the sun initially. Reduced only the far ridge's x=1.6 peak amplitude from 4.8 to 3.7. Its upper sun arc is visible while most of the disc remains behind the mountain. Other peaks, sun placement/pulse and shared travel unchanged.

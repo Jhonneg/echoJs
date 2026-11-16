@@ -119,3 +119,7 @@ C04 replaces the finite C03 region with 48-unit chunks across a 128-unit width (
 Lavender Peaks shared-response refinement (2026-11-16): ridge motion reads existing overall `AudioSignal.intensity` rather than `sixBands`; six transforms retain their depth speed multipliers and identical smoothing. No analyser change: six-band analysis remains available to Crimson Horizon. Sun pulse still uses its existing bass features.
 
 Lavender high/low refinement: shared ridge drive now multiplies overall intensity by a power-weighted six-band brightness factor (0.25–1). Every mountain receives the same factor; no individual spectral assignment returns. Existing normalized analysis is reused without changes.
+
+## Nocturne N03 lighting preview
+
+App holds an in-memory NocturneLighting value (magenta/cyan/violet, each 0–1) independently of audio Reactivity. Nocturne-only chooser controls change it, with All off/All on presets; switching scenes retains the values. The existing instanced surface batches use independent emissive materials, paired with six local point lights. Other scene/render/audio contracts remain unchanged. Manual preview levels are not audio features; N05 will separately integrate the existing audio contract.

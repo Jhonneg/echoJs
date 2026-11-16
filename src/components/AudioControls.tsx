@@ -1,3 +1,5 @@
+import { NocturneLightingControls } from './NocturneLightingControls'
+import type { NocturneLighting } from '../scenes/nocturne/lighting'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import type { createAnalysis } from '../audio/analysis'
 import type { CaptureState } from '../audio/tabCapture'
@@ -6,6 +8,8 @@ import type { GraphicsQuality } from '../engine/quality'
 import { sceneNames, type SceneId } from '../scenes/scene'
 
 type Props = {
+  nocturneLighting: NocturneLighting
+  onNocturneLighting(value: NocturneLighting): void
   source: 'tab' | 'file'
   capture: CaptureState
   local: LocalFileState
@@ -126,6 +130,7 @@ export function AudioControls(props: Props) {
           <div className="quality-control">
             <label htmlFor="scene-select">Landscape</label>
             <select id="scene-select" value={props.scene} onChange={(event) => props.onScene(event.currentTarget.value as SceneId)}>
+              <option value="nocturne">Nocturne · Preview</option>
               <option value="bloom">Bloom</option>
               <option value="lavender-peaks">Lavender Peaks · Preview</option>
               <option value="crimson-horizon">Crimson Horizon · Preview</option>
@@ -133,8 +138,10 @@ export function AudioControls(props: Props) {
           </div>
           {props.scene === 'lavender-peaks' && <p className="source-help">Lavender Peaks motion preview: all mountains move together, slower on low notes and faster on high notes. Distant ridges stay slower than the foreground.</p>}
           {props.scene === 'crimson-horizon' && <p className="source-help">Music carries you forward. More active frequency bands brighten the sun; silence stops travel. Move the mouse to look around.</p>}
+          {props.scene === 'nocturne' && <p className="source-help">Lighting preview. Move the mouse to look around, or isolate the lighting groups below.</p>}
+          {props.scene === 'nocturne' && <NocturneLightingControls lighting={props.nocturneLighting} onChange={props.onNocturneLighting} />}
           <label className="slider-control">Reactivity
-            <input type="range" min="0" max="1" step="0.01" value={props.reactivity} onChange={(event) => props.onReactivity(Number(event.currentTarget.value))} />
+            <input type="range" disabled={props.scene === 'nocturne'} min="0" max="1" step="0.01" value={props.reactivity} onChange={(event) => props.onReactivity(Number(event.currentTarget.value))} />
             <output>{Math.round(props.reactivity * 100)}%</output>
           </label>
           <div className="quality-control">
