@@ -2,7 +2,7 @@
 
 **Your music. Another world.**
 
-A browser-first audio visualizer that transforms permitted audio into living, atmospheric landscapes. This repository starts with a documentation-only proof-of-concept handoff. No application, dependencies, audio assets or runtime tests exist yet.
+A browser-first audio visualizer that transforms permitted audio into living, atmospheric landscapes. The P01 scaffold provides a minimal diagnostics placeholder. Audio capture, analysis, and scene rendering are pending later roadmap tasks.
 
 ## Start here (human)
 1. Extract these files into the root of a new ECHO repository (keep `.agents/`). Do not overwrite existing files without reviewing changes.
@@ -22,4 +22,24 @@ A browser-first audio visualizer that transforms permitted audio into living, at
 - `docs/VERIFICATION.md` — automated and manual checks.
 - `docs/WORKFLOW.md` — prompts, tools and token-efficiency conventions.
 
-No production setup command exists until P01 is implemented. Runtime instructions should be added after scaffolding. Reference art is conceptual, not licensed production assets.
+## Run locally
+
+Use Node.js 24 LTS and npm (verified with Node 24.11.0 and npm 11.6.1).
+
+```sh
+npm ci
+npm run dev -- --host 127.0.0.1
+```
+
+Open the local URL printed by Vite (normally http://127.0.0.1:5173). The page shows source, connection, and analysis placeholders; it does not request media permissions.
+
+```sh
+npm run typecheck
+npm run lint
+npm run build
+npm run preview -- --host 127.0.0.1
+```
+
+`build` checks TypeScript and creates `dist/`; `preview` serves that build locally. Dependencies are locked in `package-lock.json`; use `npm ls --depth=0` to inspect installed versions. Browser smoke verification is pending because Playwright's configured Chrome binary is unavailable.
+
+Reference art is conceptual, not licensed production assets.
