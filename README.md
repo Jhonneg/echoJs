@@ -2,7 +2,7 @@
 
 **Your music. Another world.**
 
-A browser-first audio visualizer that transforms permitted audio into living, atmospheric landscapes. The P01 scaffold provides a minimal diagnostics placeholder. Audio capture, analysis, and scene rendering are pending later roadmap tasks.
+A browser-first audio visualizer that transforms permitted audio into living, atmospheric landscapes. The POC provides browser tab capture controls and lifecycle diagnostics. Live level, spectrum, and band diagnostics are available; scene rendering is pending later roadmap tasks.
 
 ## Start here (human)
 1. Extract these files into the root of a new ECHO repository (keep `.agents/`). Do not overwrite existing files without reviewing changes.
@@ -31,9 +31,10 @@ npm ci
 npm run dev -- --host 127.0.0.1
 ```
 
-Open the local URL printed by Vite (normally http://127.0.0.1:5173). The page shows source, connection, and analysis placeholders; it does not request media permissions.
+Open the local URL printed by Vite (normally http://127.0.0.1:5173). Click Connect to open the native sharing picker. Choose a permitted browser tab and enable Share tab audio. Video is also requested by the browser; ECHO never reads or displays it. Disconnect releases all acquired tracks. Analysis starts with capture. If the audio context is suspended, click Resume analysis. Diagnostics distinguish a connected silent input from ended sharing.
 
 ```sh
+npm test
 npm run typecheck
 npm run lint
 npm run build
@@ -43,3 +44,18 @@ npm run preview -- --host 127.0.0.1
 `build` checks TypeScript and creates `dist/`; `preview` serves that build locally. Dependencies are locked in `package-lock.json`; use `npm ls --depth=0` to inspect installed versions. P01 browser smoke passed in Playwright Chrome; owner approved P01 on 2026-11-16. Local Playwright artifacts are excluded from Git.
 
 Reference art is conceptual, not licensed production assets.
+
+## P02a manual capture check
+
+1. Open `/tone-fixture.html` in a separate local Chrome tab, lower speaker volume, and start a generated tone.
+2. In ECHO, click Connect, select the fixture tab, and enable Share tab audio. Confirm connected status, at least one audio track, and that the original tone remains audible without duplication.
+3. Disconnect and confirm the browser sharing indicator clears. Reconnect, then stop sharing with the browser's own control; ECHO should report ended.
+4. Test picker cancellation, sharing without audio, and retry. Disconnect while the picker is open, then finish or cancel that picker; any late stream must be stopped. Repeat connect/disconnect.
+
+Record actual OS/browser and results in `docs/PROGRESS.md`. Automated tests use fake streams and do not verify native permissions or audible playback. No captured content is recorded, stored, transmitted, or inspected. The fixture synthesizes its own tone and is not a local file input adapter.
+
+## P02b signal check
+
+While sharing the fixture tab with audio, switch between Low (100 Hz), Mid (1000 Hz), and High (8000 Hz). The matching band and spectrum region should rise; prior bands should decay. Stop the tone: values should approach zero within a few seconds while connection stays connected. Restart the tone, then disconnect or use the browser's stop-sharing control: all diagnostics should reset. Confirm the source remains audible without duplication throughout. Report OS/Chrome version and results; generated-stream automation does not establish real tab capture.
+
+Analysis uses FFT size 2048 and the actual context sample rate. Bands are 20–250, 250–4000, and 4000–20000 Hz, capped at Nyquist. FFT dB values convert to linear amplitude; each band uses its peak above a -80 dB floor, divided by a 0.1 amplitude reference and clamped to 0..1. This tuning preserves narrow tones and is not calibrated loudness or instrument recognition. Band attack/release is 100/300 ms; intensity uses the maximum band with 200/500 ms smoothing. `isPlaying` means the running input has signal above a small threshold, not proof of audible sound. Signal and spectrum buffers stay outside React state; UI telemetry updates at 5 Hz. Capture feeds only the analyser, with no destination connection; teardown cancels analysis and closes its context.
