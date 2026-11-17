@@ -1,0 +1,133 @@
+{
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "deviceDpr": 1,
+    "viewport": [
+      1440,
+      810
+    ],
+    "reducedMotion": false,
+    "reactivity": 1,
+    "lightingMode": "audio",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2 NVIDIA 615.78.08)",
+    "driver": "615.78.08"
+  },
+  "results": [
+    {
+      "quality": "standard",
+      "source": "none",
+      "viewport": [
+        1440,
+        810
+      ],
+      "buffer": [
+        1440,
+        810
+      ],
+      "seconds": 29.982299999999814,
+      "frames": 1799,
+      "fps": 60.002067886720205,
+      "p50Ms": 16.699999999254942,
+      "p95Ms": 18.299999999813735,
+      "maxMs": 22.40000000037253,
+      "meanMs": 16.666092273485166,
+      "signalAgeP95": null,
+      "signalAgeMax": null,
+      "staleFrames": 0,
+      "sampleRate": null,
+      "fftSize": null,
+      "audioPaused": null,
+      "audioTimeBefore": null,
+      "audioTimeAfter": null,
+      "invalid": "",
+      "canvasSame": true
+    },
+    {
+      "quality": "low",
+      "source": "none",
+      "viewport": [
+        1440,
+        810
+      ],
+      "buffer": [
+        1080,
+        607
+      ],
+      "seconds": 29.998900000000372,
+      "frames": 1800,
+      "fps": 60.00220008066888,
+      "p50Ms": 16.699999999254942,
+      "p95Ms": 17.5,
+      "maxMs": 19.5,
+      "meanMs": 16.66605555555576,
+      "signalAgeP95": null,
+      "signalAgeMax": null,
+      "staleFrames": 0,
+      "sampleRate": null,
+      "fftSize": null,
+      "audioPaused": null,
+      "audioTimeBefore": null,
+      "audioTimeAfter": null,
+      "invalid": "",
+      "canvasSame": true
+    },
+    {
+      "quality": "standard",
+      "source": "generated mixed tones",
+      "viewport": [
+        1440,
+        810
+      ],
+      "buffer": [
+        1440,
+        810
+      ],
+      "seconds": 29.981800000000746,
+      "frames": 1799,
+      "fps": 60.00306852823898,
+      "p50Ms": 16.699999999254942,
+      "p95Ms": 17.700000000186265,
+      "maxMs": 27.600000000558794,
+      "meanMs": 16.665814341301136,
+      "signalAgeP95": 20.799999999813735,
+      "signalAgeMax": 30.19999999963329,
+      "staleFrames": 0,
+      "sampleRate": 96000,
+      "fftSize": 4096,
+      "audioPaused": false,
+      "audioTimeBefore": 5.528,
+      "audioTimeAfter": 15.509333,
+      "invalid": "",
+      "canvasSame": true
+    },
+    {
+      "quality": "low",
+      "source": "generated mixed tones",
+      "viewport": [
+        1440,
+        810
+      ],
+      "buffer": [
+        1080,
+        607
+      ],
+      "seconds": 29.998600000000557,
+      "frames": 1800,
+      "fps": 60.002800130671645,
+      "p50Ms": 16.699999999254942,
+      "p95Ms": 17.40000000037253,
+      "maxMs": 20,
+      "meanMs": 16.6658888888892,
+      "signalAgeP95": 19.9999999992433,
+      "signalAgeMax": 22.4999999992433,
+      "staleFrames": 0,
+      "sampleRate": 96000,
+      "fftSize": 4096,
+      "audioPaused": false,
+      "audioTimeBefore": 0.533333,
+      "audioTimeAfter": 10.517333,
+      "invalid": "",
+      "canvasSame": true
+    }
+  ]
+}
