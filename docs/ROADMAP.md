@@ -151,7 +151,7 @@ Owner explicitly approved forward travel during music, a sun driven by the numbe
 
 ## Nocturne — Industrial Crossing
 
-Owner approved N01 and subsequently N02 on 2026-11-16 ("lets move" after the bounded N02 proposal). N02 approval permits progressing from the base composition. Owner subsequently approved the bounded N03 lighting/manual-controls plan; N04–N06 still need separate approval.
+Owner approved N01 and subsequently N02 on 2026-11-16 ("lets move" after the bounded N02 proposal). N02 approval permits progressing from the base composition. Owner subsequently approved the bounded N03 lighting/manual-controls plan; Owner approved the bounded N04 shared-reflection/puddles/haze/gate plan on 2026-11-17. Owner approved the bounded N05 existing-audio/manual-mode integration plan on 2026-11-17. Owner approved N06 verification with “go ahead” on 2026-11-17; actual results and remaining manual checks are in PROGRESS and NOCTURNE_N06.md. No later feature or deployment task is authorized.
 
 - **N01 — Architectural blockout:** selectable stationary perspective 3D alley, building masses, crossing/railings, road and distant gate. Dim neutral review fill; desktop reference comparison and responsive/integration checks. Stop for owner composition review.
 - **N02 — Geometry details and static materials:** recessed doors, windows, columns, selective pipes/cables/vents and fixture housings.

@@ -1,3 +1,4 @@
+export type NocturneLightingMode = 'audio' | 'manual'
 export type NocturneLighting = { magenta: number, cyan: number, violet: number }
 export const NOCTURNE_ALL_ON: NocturneLighting = { magenta: 1, cyan: 1, violet: 1 }
 export const NOCTURNE_ALL_OFF: NocturneLighting = { magenta: 0, cyan: 0, violet: 0 }

@@ -1,4 +1,8 @@
-import { NOCTURNE_LIGHT_COLORS, type NocturneLighting } from './lighting'
+import { LightingDriver } from './LightingDriver'
+import { IndustrialBuildings } from './WallSurface'
+import { Atmosphere } from './Atmosphere'
+import { WetGround } from './WetGround'
+import { NOCTURNE_LIGHT_COLORS, type NocturneLighting, type NocturneLightingMode } from './lighting'
 import { Component, useEffect, useRef, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { createViewMotion, updateViewMotion } from '../crimson-horizon/cameraMotion'
@@ -16,16 +20,15 @@ function Block({ position, size, color = '#303940' }: BoxProps) {
 }
 function Architecture() {
   return <>
+    <IndustrialBuildings />
     <color attach="background" args={['#05070b']} />
-    <hemisphereLight args={['#a2b1bd', '#737b81', 0.85]} />
-    <directionalLight position={[-2, 12, 4]} intensity={0.45} color="#bac5cc" />
+    <hemisphereLight args={['#a2b1bd', '#737b81', 2.2]} />
+    <directionalLight position={[-2, 12, 4]} intensity={0.9} color="#bac5cc" />
     <Block position={[0, -0.15, -23]} size={[18, 0.3, 64]} color="#12191e" />
     {[-1, 1].map(side => <group key={side}>
       {[0, 1, 2, 3, 4, 5].map(index => {
-        const height = [18, 22, 16, 20, 14, 19][(index + (side === 1 ? 2 : 0)) % 6]
         const z = 2 - index * 10
         return <group key={index}>
-          <Block position={[side * 6, height / 2, z]} size={[6, height, 9.8]} color={index % 2 ? '#303940' : '#263037'} />
           <Block position={[side * 2.93, 4, z + 4.6]} size={[0.28, 8, 0.45]} color="#1a242c" />
           <Block position={[side * 2.88, 7.6, z]} size={[0.3, 0.28, 9.8]} color="#1a242c" />
         </group>
@@ -41,7 +44,6 @@ function Architecture() {
       {[-0.7, 0, 0.7].map(z => <Block key={z} position={[0, -0.12, z]} size={[6.1, 0.3, 0.12]} color="#1b252d" />)}
     </group>
     <Block position={[0, 9, -layout.depth]} size={[15, 18, 1]} color="#141e27" />
-    <Block position={[0, 1.9, -layout.depth + 0.6]} size={[2.3, 3.8, 0.18]} color="#53616b" />
     {[-1.3, 1.3].map(x => <Block key={x} position={[x, 2, -layout.depth + 0.8]} size={[0.18, 4, 0.3]} color="#283640" />)}
     <Block position={[0, 4, -layout.depth + 0.8]} size={[2.8, 0.2, 0.3]} color="#283640" />
   </>
@@ -69,7 +71,7 @@ class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean
   static getDerivedStateFromError() { return { failed: true } }
   render() { return this.state.failed ? <p className="nocturne-fallback">Nocturne could not render. Choose another landscape or reload.</p> : this.props.children }
 }
-export default function NocturneScene({ signal, quality, lighting }: { signal: AudioSignal, quality: GraphicsQuality, lighting: NocturneLighting }) {
+export default function NocturneScene({ signal, quality, lighting, lightingMode, reactivity }: { signal: AudioSignal, quality: GraphicsQuality, lighting: NocturneLighting, lightingMode: NocturneLightingMode, reactivity: number }) {
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
   const target = useRef({ x: 0, y: 0 })
   useEffect(() => {
@@ -91,15 +93,18 @@ export default function NocturneScene({ signal, quality, lighting }: { signal: A
         fallback={<p className="nocturne-fallback">Nocturne needs WebGL. You can choose another landscape from the scene menu.</p>}>
         <MouseCamera target={target} reducedMotion={reducedMotion} />
         <Architecture />
-        <ArchitectureDetails lighting={lighting} />
+        <ArchitectureDetails />
+        <Atmosphere />
+        <WetGround quality={quality} />
         <group name="nocturne-light-spill">
-          <pointLight name="magenta-fixture-spill" position={[2.1, 2.8, -3]} color={NOCTURNE_LIGHT_COLORS.magenta} intensity={lighting.magenta * 50} distance={13} decay={2} />
-          <pointLight name="magenta-bridge-spill" position={[0, 3.9, -7.1]} color={NOCTURNE_LIGHT_COLORS.magenta} intensity={lighting.magenta * 40} distance={13} decay={2} />
-          <pointLight name="cyan-window-spill" position={[-2.1, 5.8, 0.1]} color={NOCTURNE_LIGHT_COLORS.cyan} intensity={lighting.cyan * 65} distance={14} decay={2} />
-          <pointLight name="cyan-panel-spill" position={[2.1, 4.75, -15]} color={NOCTURNE_LIGHT_COLORS.cyan} intensity={lighting.cyan * 40} distance={12} decay={2} />
-          <pointLight name="violet-near-spill" position={[2.6, 4.8, -4.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={lighting.violet * 12} distance={7} decay={2} />
-          <pointLight name="violet-far-spill" position={[-2.6, 4.8, -14.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={lighting.violet * 12} distance={7} decay={2} />
+          <pointLight name="magenta-fixture-spill" position={[2.1, 2.8, -3]} color={NOCTURNE_LIGHT_COLORS.magenta} intensity={50} distance={13} decay={2} />
+          <pointLight name="magenta-bridge-spill" position={[0, 3.9, -7.1]} color={NOCTURNE_LIGHT_COLORS.magenta} intensity={40} distance={13} decay={2} />
+          <pointLight name="cyan-window-spill" position={[-2.1, 5.8, 0.1]} color={NOCTURNE_LIGHT_COLORS.cyan} intensity={65} distance={14} decay={2} />
+          <pointLight name="cyan-panel-spill" position={[2.1, 4.75, -15]} color={NOCTURNE_LIGHT_COLORS.cyan} intensity={40} distance={12} decay={2} />
+          <pointLight name="violet-near-spill" position={[2.6, 4.8, -4.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={12} distance={7} decay={2} />
+          <pointLight name="violet-far-spill" position={[-2.6, 4.8, -14.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={12} distance={7} decay={2} />
         </group>
+        <LightingDriver signal={signal} mode={lightingMode} manual={lighting} reactivity={reactivity} reducedMotion={reducedMotion} />
       </LandscapeCanvas>
     </SceneBoundary>
     <div className="nocturne-brand" aria-hidden="true">ECHO</div>

@@ -123,3 +123,17 @@ Lavender high/low refinement: shared ridge drive now multiplies overall intensit
 ## Nocturne N03 lighting preview
 
 App holds an in-memory NocturneLighting value (magenta/cyan/violet, each 0–1) independently of audio Reactivity. Nocturne-only chooser controls change it, with All off/All on presets; switching scenes retains the values. The existing instanced surface batches use independent emissive materials, paired with six local point lights. Other scene/render/audio contracts remain unchanged. Manual preview levels are not audio features; N05 will separately integrate the existing audio contract.
+
+## Nocturne N04 reflection and atmosphere
+
+WetGround uses Three r186’s existing WebGL Reflector addon with one shared planar render target and a custom transparent wet-surface shader. Reflection updates through the scene render, so the actual emissive surfaces, light spill, gate and camera determine the reflected image. Static world-space noise masks uneven puddles and weak wet film; five texture samples soften the view. No new dependency/backend/composer.
+
+The reflection texture uses CSS viewport size × 0.7 (Standard) or × 0.4 (Low), capped at 1024/512 per dimension with a 128 minimum and MSAA disabled. Quality/resize updates the existing target without remounting Canvas; Low still incurs the extra scene geometry pass. Allocate scene/target resources in layout effects and explicitly remove/dispose the target, material and geometry on cleanup, including StrictMode.
+
+Atmosphere attaches scene Fog and adds an emissive gate plus a local additive halo. Manual lighting levels supply a weighted active-color sum; cyan is strongest, with no colored gate/halo contribution at all-off. N05 will separately map existing overall audio intensity; N04 does not change the signal contract or band boundaries.
+
+## Nocturne N05 audio lighting bridge
+
+App keeps a persistent in-memory Audio/Manual mode (Audio default) beside the retained manual levels. Reactivity is enabled for Nocturne Audio and disabled for Manual. No source/analysis contract changes. reactivity.ts updates a scene-local mutable response using existing fast bands, accents, atmosphere and updatedAt/isPlaying lifecycle state.
+
+LightingDriver binds emitter materials, six spill lights, gate material, halo uniform and Fog once per mount. Its negative-priority useFrame callback updates those objects before the camera/main render and planar reflection, with no per-frame React state or geometry changes. Atmosphere now mounts stable dark objects; the driver supplies a fixed cyan-weighted atmospheric color scaled by overall energy in Audio, or the previous isolated color mix in Manual. All-zero output retains faint neutral base architecture.

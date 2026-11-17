@@ -170,3 +170,35 @@ Batch repeated box details into six instanced finish groups with explicit bounds
 ## Nocturne N03 — 2026-11-16
 
 Owner approved independent manual lighting before reflections/audio. Split instanced emitter finishes into magenta, cyan and violet, sharing each level with two corresponding bounded point lights. Keep all lights mounted at zero intensity when disabled to avoid shader light-count recompilation while adjusting controls. Use the existing renderer/materials without dependencies; no bloom needed for this lighting gate. Store manual levels in App for scene-switch retention, expose controls only inside Nocturne's chooser, default all-on. Lighting exposed a panel/vent overlap; relocated/shortened the six small panels within this phase.
+
+## Nocturne N04 shared planar reflection — 2026-11-17
+
+Owner approved N04. Use the installed Three r186 Reflector addon: unlike Bloom’s authored halo approximation, the planar target captures Nocturne’s many active emitters, architecture and camera without per-source reflection authoring. Use one target for all procedural wet patches; cap resolution by quality, disable target MSAA, and dispose resources on unmount. This costs an additional scene render and is not a hardware-performance claim.
+
+Prefer a small wet-surface sample filter, distance Fog and a gate-local additive halo over a new full-screen postprocessing pipeline/dependency. During manual review, gate/haze follow the active color levels so isolated group captures remain color-isolated and all-off has no residual colored illumination. Their eventual overall-intensity audio mapping remains N05. Preserve subtle pointer movement and all earlier scenes.
+
+## Nocturne industrial wall finish — 2026-11-17
+
+Owner rejected the uniform fully rough building material as clay-like and approved a focused surface pass. Generate deterministic procedural color and packed bump/roughness maps for metal and concrete (four shared 512×512 RGBA textures total). Map box UVs to world metres to avoid stretching seams on tall buildings. Native standard materials supply local highlights without shader injection, external assets or dependencies; dispose shared maps on scene exit. Building masses retain their existing positions/sizes, and lighting/reflection/camera behavior stays as approved.
+
+## Nocturne N05 — existing audio contract and manual comparison — 2026-11-17
+
+Owner approved N05 after the industrial material correction. Keep the existing analyser ranges and features; add scene-local bounded level/accent mapping and independently smoothed lights. Use updatedAt/isPlaying to release stale/stopped input. Audio becomes the default mode; keep manual values and mode in App across scene switches. Bind renderer targets once and mutate them before the reflected render, following Fiber v9.8.2 negative-priority useFrame guidance. Do not update React state per frame.
+
+Full 1440×810 headless software rendering exceeded the 250 ms stale window (~342 ms signal age observed), suppressing a live generated bass input. Verified the actual analyser-to-emissive path instead at 720×405 Low, without loosening the stale guard or changing the audio engine. N06 must evaluate target hardware/frame cadence and whether an adjusted freshness strategy is needed for very slow devices; current browser functional evidence is not desktop-performance evidence.
+
+## Nocturne attack flashes — 2026-11-17
+
+Owner rejected gradual group lighting. Replace normal-mode brightness envelopes with bounded onset-triggered, fixed-peak flashes (110/90/70 ms) and sharp cutoff. Reuse existing per-band fast/transient/flux values, with a short retrigger interval and hysteresis to avoid repeated flicker from a held accent. Preserve independent smooth atmosphere and a gradual reduced-motion alternative. The scene-local response owns flash timers outside React state; renderer/reflection wiring and audio processing are unchanged.
+
+## Nocturne flash pacing and silent readability — 2026-11-17
+
+Owner found flashes too fast and silence too dark. Lengthen holds and enforce a 650 ms per-group retrigger interval; discard skipped attacks instead of delaying them to the end of the interval. Raise the existing neutral fill lights for idle readability without introducing permanent colored emission or altering the audio engine. Preserve the immediate flash shape and industrial surface treatment.
+
+## Nocturne quick smooth lighting — 2026-11-17
+
+Owner clarified the intended response: smooth illumination with a quicker onset than the first integration. Replace the flash state machine with the original continuous level/accent mapping at faster 25/35/20 ms attack constants and 180/220/140 ms release constants. Preserve reduced motion, smooth overall atmosphere, manual isolation and the brighter idle fill. Tests compare first-frame output against the original envelopes while requiring an intermediate value below full brightness and sustained illumination without timer cutoff.
+
+## Nocturne N06 verification — 2026-11-17
+
+Retain the accepted implementation: automated integration and NVIDIA-accelerated headless cadence checks passed without source changes, including zero stale frames on measured hardware playback. Keep software SwiftShader evidence and compositor-paused native-window trials separate from valid GPU measurements; do not relax freshness guards to accommodate those test environments. Owner/native release checks remain explicit in NOCTURNE_N06.md. No speculative rendering optimization or public diagnostic mode is justified by these results.

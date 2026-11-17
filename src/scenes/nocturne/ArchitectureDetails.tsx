@@ -1,4 +1,4 @@
-import { NOCTURNE_LIGHT_COLORS, type NocturneLighting } from './lighting'
+import { NOCTURNE_LIGHT_COLORS } from './lighting'
 import { useLayoutEffect, useRef } from 'react'
 import { CatmullRomCurve3, InstancedMesh, Object3D, Vector3 } from 'three'
 
@@ -86,7 +86,7 @@ for (const x of [-1.8, 1.8]) {
 // Slender metal gate bars retain the distant focal opening.
 for (let i = 0; i < 10; i++) box('steel', [-1.02 + i * 0.226, 1.9, -51.25], [0.035, 3.65, 0.055])
 
-function Boxes({ finish, lighting }: { finish: Finish, lighting: NocturneLighting }) {
+function Boxes({ finish }: { finish: Finish }) {
   const mesh = useRef<InstancedMesh>(null)
   const items = parts[finish]
   useLayoutEffect(() => {
@@ -108,7 +108,7 @@ function Boxes({ finish, lighting }: { finish: Finish, lighting: NocturneLightin
     <boxGeometry args={[1, 1, 1]} />
     <meshStandardMaterial {...finishes[finish]} color={group ? '#070a0f' : finishes[finish].color}
       metalness={group ? 0 : finishes[finish].metalness} roughness={group ? 0.95 : finishes[finish].roughness} emissive={group ? NOCTURNE_LIGHT_COLORS[group] : '#000000'}
-      emissiveIntensity={group ? lighting[group] * 1.3 : 0} toneMapped={!group} />
+      emissiveIntensity={0} toneMapped={!group} />
   </instancedMesh>
 }
 const cables = [0, 1, 2].map(i => new CatmullRomCurve3([
@@ -117,9 +117,9 @@ const cables = [0, 1, 2].map(i => new CatmullRomCurve3([
   new Vector3(1, 8.4 + i * 0.3, -6.8),
   new Vector3(2.9, 9.6 + i * 0.3, -8),
 ]))
-export function ArchitectureDetails({ lighting }: { lighting: NocturneLighting }) {
+export function ArchitectureDetails() {
   return <group name="nocturne-static-details">
-    {(Object.keys(finishes) as Finish[]).map(finish => <Boxes key={finish} finish={finish} lighting={lighting} />)}
+    {(Object.keys(finishes) as Finish[]).map(finish => <Boxes key={finish} finish={finish} />)}
     {[-1, 1].map(side => <group key={side}>
       {[-4.8, -24.8, -44.8].map(z => <group key={z}>
         <mesh position={[side * 2.72, 4, z]}>
