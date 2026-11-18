@@ -1,0 +1,26 @@
+{
+  "comparison": "Retained baseline vs final fresh browser process, same feature code and fixture corpus",
+  "rowsCompared": 216,
+  "peakGroupsCompared": [
+    "rawPeak",
+    "levelPeak",
+    "fastPeak",
+    "slowPeak",
+    "transientPeak",
+    "fluxPeak",
+    "sixPeak",
+    "sixRawPeak"
+  ],
+  "largestPeakDifference": {
+    "absoluteDifference": 0.00022270345720234487,
+    "fixture": "tone-100hz--12db",
+    "rate": 44100,
+    "cadence": 120,
+    "measurement": "sixPeak",
+    "band": "highMids",
+    "retainedBaseline": 0.003644935643563732,
+    "freshProcess": 0.003867639100766077
+  },
+  "rowsWithDifferentExcursionCounts": 0,
+  "note": "Observed repeatability bound only; not an approved MI02/MI03 quality tolerance."
+}

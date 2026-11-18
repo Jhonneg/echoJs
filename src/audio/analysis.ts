@@ -2,8 +2,11 @@ import { bandLevel, bandMagnitude, binRange, emptyBands, resetSignal, silentSign
 import { updateSignalFeatures } from './features'
 import { createSpectralFlux } from './flux'
 import { createSixBandAnalysis } from './sixBands'
+import { createDiagnosticObserver, type DiagnosticSink } from '../dev/audioLab/diagnostics'
 
-export function createAnalysis() {
+export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
+  const observer = import.meta.env.DEV && options?.diagnostics
+    ? createDiagnosticObserver(options.diagnostics) : undefined
   const signal = silentSignal()
   const timing: SignalTiming = { renderAgeMs: null }
   const raw = emptyBands()
@@ -34,6 +37,7 @@ export function createAnalysis() {
     spectrum.fill(0)
     message = 'Not active'
     usingDefaultRate = false
+    observer?.reset()
   }
 
   function resume() {
@@ -109,6 +113,7 @@ export function createAnalysis() {
         signal.isPlaying = running && (element ? !element.paused && !element.ended : hasSignal)
         bars.forEach(([low, high], i) => { spectrum[i] = smooth(spectrum[i], bandLevel(bins, low, high), delta) })
         message = !running ? 'Suspended — click Resume analysis' : element?.ended ? 'Playback ended' : element?.paused ? 'Playback paused' : hasSignal ? 'Receiving signal' : 'Connected, waiting / silent'
+        observer?.read(analyser, bins, signal, raw, flux, running && (!element || (!element.paused && !element.ended)), now, delta)
         frame = requestAnimationFrame(tick)
       }
       frame = requestAnimationFrame(tick)

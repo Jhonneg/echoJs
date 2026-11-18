@@ -1,0 +1,8 @@
+:root { font-family: system-ui, sans-serif; color: #e9eafa; background: #111322; color-scheme: dark; }
+body { margin: 0; padding: 24px; } main { max-width: 1200px; margin: auto; } h1 { font-size: 1.6rem; }
+p { color: #bfc5df; line-height: 1.5; } section { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+button, select { padding: 9px; font: inherit; } label { display: flex; align-items: center; gap: 8px; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid cyan; }
+canvas { width: 100%; background: #060912; border: 1px solid #414867; } .scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; } th, td { padding: 8px; text-align: left; border-bottom: 1px solid #414867; white-space: nowrap; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; } button:disabled { opacity: .5; }

@@ -161,3 +161,9 @@ Owner approved N01 and subsequently N02 on 2026-11-16 ("lets move" after the bou
 - **N06 — Performance and integration:** responsive behavior, bounded resources, source continuity and target hardware evidence.
 
 N01 follow-up (2026-11-16): owner approved Crimson-style mouse camera with bounded lateral/vertical parallax, smooth return and reduced-motion centering. This supersedes the fixed-view requirement only for pointer interaction; no forward travel or later phase authorized.
+
+## Music Intelligence — shared audio interpretation
+
+See [ECHO_Music_Intelligence_Roadmap.md](ECHO_Music_Intelligence_Roadmap.md) for the owner-supplied application-wide roadmap. MI00 audit and owner-approved MI01 diagnostics/baseline are implemented with evidence in [MI01_BASELINE.md](MI01_BASELINE.md); actual review status is in PROGRESS. MI02 and later phases require separate bounded plans and approval. Preserve the legacy feature path and each landscape's accepted mappings until validated migration is authorized.
+
+MI01 follow-up (2026-11-18): owner approved live tab capture in the separate development lab, reusing the existing adapter with transient diagnostics and synthetic-only exports. Implementation/automated evidence is ready; native sharing and owner review remain pending in PROGRESS. This does not authorize MI02 or change production audio/scene mappings.
