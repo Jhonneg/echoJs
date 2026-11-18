@@ -1,0 +1,115 @@
+{
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "live": "fixture / running · context 96000 Hz / FFT 4096 · window 42.67 ms\nRMS 0.043568 (-27.22 dBFS) · update 62.7 Hz · feature age 16.7 ms · audio time 0.832 s\nAtmosphere 0.0921 · isPlaying true · context is not original media sample rate",
+  "rows": 216,
+  "rangeRows": 81,
+  "rangeAssessment": {
+    "settings": {
+      "minGain": 1,
+      "maxGain": 2,
+      "holdSeconds": 2,
+      "riseSeconds": 5,
+      "reductionSeconds": 0.3,
+      "floorDbfs": -50,
+      "targetRms": 0.25,
+      "rmsAttackSeconds": 0.3,
+      "rmsReleaseSeconds": 5
+    },
+    "targets": {
+      "noise": 0.005,
+      "loudGraceSeconds": 1
+    },
+    "complete": true,
+    "checks": {
+      "bounded": true,
+      "hold": true,
+      "floor": true,
+      "silence": true,
+      "noise": true,
+      "quiet": true,
+      "loud": true,
+      "reset": true
+    },
+    "pass": true,
+    "extraClippingSeconds": 0.4498866213151942,
+    "adaptiveClippingSeconds": 0.4498866213151942,
+    "fixedClippingSeconds": 0,
+    "noiseMax": 0.0018217438489067097,
+    "silenceMax": 0,
+    "quietMaxRatio": 1.9591785970428615,
+    "gainMax": 1.9966826518630598,
+    "extraClippingAfterGraceSeconds": 0,
+    "extraClippingEarlySeconds": 0.4498866213151942,
+    "maxHitGainDip": 0.0530044704888506,
+    "failures": []
+  },
+  "energyRows": 432,
+  "energyAssessment": {
+    "targets": {
+      "calibrationDb": 1,
+      "loudContrast": 0.15,
+      "noise": 0.005
+    },
+    "maxCalibrationErrorDb": 0.4905406256996483,
+    "calibrationPass": true,
+    "curves": [
+      {
+        "curve": "linear",
+        "referenceRms": 0.5,
+        "groups": 81,
+        "monotonic": true,
+        "noiseMax": 0.0010392955689824946,
+        "silenceMax": 0,
+        "smallestContrast": {
+          "hz": 100,
+          "rate": 48000,
+          "cadence": 120,
+          "range": "Six",
+          "difference": 0.3341377841890572
+        },
+        "checks": {
+          "bounded": true,
+          "monotonic": true,
+          "silence": true,
+          "noise": true,
+          "contrast": true
+        }
+      },
+      {
+        "curve": "softKnee",
+        "referenceRms": 0.5,
+        "groups": 81,
+        "monotonic": true,
+        "noiseMax": 0.0010382165551171172,
+        "silenceMax": 0,
+        "smallestContrast": {
+          "hz": 100,
+          "rate": 48000,
+          "cadence": 120,
+          "range": "Six",
+          "difference": 0.1498048270637043
+        },
+        "checks": {
+          "bounded": true,
+          "monotonic": true,
+          "silence": true,
+          "noise": true,
+          "contrast": false
+        }
+      }
+    ]
+  },
+  "repeatedExactly": true,
+  "partialExportComplete": false,
+  "checks": [
+    "fixture playback/pause/reset",
+    "synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution",
+    "responsive UI",
+    "JSON/CSV exports",
+    "full baseline repeated exactly",
+    "partial cancellation",
+    "same synthetic player advances across all four landscapes",
+    "production asset exclusion"
+  ],
+  "errors": []
+}

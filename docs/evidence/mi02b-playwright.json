@@ -1,0 +1,23 @@
+{
+  "input": "Generated range-intro-loud-silence-1000hz, fixture volume 1; no captured source",
+  "live": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.0.0 Safari/537.36",
+    "state": "Gain 1.3000× · target 2.0000× · slow RMS 0.011219 · session 3.78 s\nEligible for slow adaptation · fixed reference 0.5 RMS",
+    "rows": [
+      "bass0.000000.00000",
+      "midrange0.022420.02914",
+      "treble0.000010.00002",
+      "subBass (six)0.000000.00000",
+      "bass (six)0.000000.00000",
+      "lowMids (six)0.000000.00001",
+      "highMids (six)0.022420.02914",
+      "presence (six)0.000000.00000",
+      "air (six)0.000010.00002"
+    ],
+    "noOverflow": true
+  },
+  "paused": {
+    "state": "Gain 1.0000× · target 1.0000× · slow RMS 0.000000 · session 0.00 s\nStartup hold · fixed reference 0.5 RMS",
+    "source": "Playback paused"
+  }
+}
