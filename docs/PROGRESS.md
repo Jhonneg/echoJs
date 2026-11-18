@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## MI03 lab checkpoint accepted — 2026-11-18
+
+- Owner reported “looks good” after the corrected MI03 report and invitation to test. Recorded as acceptance of the lab checkpoint for continuation; no source/browser/track/volume details were supplied, so this adds no specific real-song, native-permission, audibility or hardware evidence. The synthetic core PASS and documented unequal-mixture misses remain unchanged.
+- Documentation-only checkpoint; all pending work preserved. Passed git diff --check; source tests/build/browser not rerun for this status update. Session-handoff skill remains unavailable; followed AGENTS/WORKFLOW. No commit/push/deployment.
+- Next: prepare a bounded MI04 musical-context plan and quantitative acceptance criteria under the original roadmap. MI04 implementation, production promotion and scene refinement still require their own approval.
+
 ## MI03 release correction — synthetic core PASS, owner review pending — 2026-11-18
 
 - Owner approved the proposed focused release-attribution correction (“aprove”). Saved candidate total RMS; reject weak peak-power candidates when the existing confirmation sample shows falling overall energy. Same one-sample latency, numeric settings/criteria/manifests/strength/spacing. Only onsets.ts and its focused unit regression changed in this follow-up; all prior uncommitted work preserved. No production DSP/adapters/scenes/dependencies/backend changes.

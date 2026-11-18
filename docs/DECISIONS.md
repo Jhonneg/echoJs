@@ -249,3 +249,7 @@ The first complete run detects every labeled core attack but emits 29 extra mid 
 ## MI03 confirmation release attribution — 2026-11-18
 
 Owner approved the focused correction after the initial 29-extra failure. Use the already-awaited confirmation's existing falling-energy test plus saved peak band-power share below the existing 5% bound. No extra lookahead, parameter retuning, criterion waiver or backend change. The unchanged core matrix now passes; preserve initial and corrected evidence separately. Native diagnostic unequal mixtures confirm weak attacks under a declining dominant source can still be missed; core PASS does not mean universal musical accuracy or authorize MI04/production/scene promotion. See MI03_CORRECTION.md for measured results and review checkpoint.
+
+## MI03 lab checkpoint accepted — 2026-11-18
+
+Owner's “looks good” accepts the corrected lab checkpoint for continuation while retaining the failed initial baseline and unequal-mixture limitations. No specific test conditions were supplied; do not infer further native/song/hardware validation. Next is a bounded MI04 plan; implementation and later feature/scene gates remain separate.

@@ -1,5 +1,7 @@
 # MI03 — release-attribution correction
 
+Owner checkpoint: subsequently accepted the lab result with “looks good.” Specific test conditions were not supplied; manual-evidence limits below remain. Next is a bounded MI04 plan, with implementation awaiting separate approval.
+
 2026-11-18 · owner approved the focused correction with “aprove.” **The unchanged synthetic core gate now passes.** This is a development-lab checkpoint for owner review, not production promotion or MI04 approval. The [initial failed baseline](MI03_RESULTS.md) and its evidence remain preserved.
 
 The detector saves total RMS alongside each candidate. At the existing one-sample confirmation, it rejects a candidate if total energy is falling under the existing decline test and the candidate band's peak power contributes less than the existing 5% bound to total broad power. This extends release attribution to the confirmation already awaited; it adds no lookahead or event latency. Dominant decaying attacks and weak attacks over a steady bed remain eligible. Rejections use the existing `falling` debug counter.
