@@ -8,9 +8,11 @@ import { energyFixtures, compareEnergy, assessEnergy, type EnergyRow } from './e
 import { ENERGY_REFERENCE_RMS } from './energy'
 import { rangeFixtures, compareRange, assessRange, type RangeRow, type RangeFixture } from './rangeComparison'
 import { RANGE_SETTINGS } from './adaptive'
+import {onsetFixtures,compareOnsets,assessOnsets,type OnsetFixture,type OnsetRow} from './onsetComparison'
+import {ONSET_BANDS,type OnsetBand} from './onsets'
 import './style.css'
 
-const labFixtures = [...fixtures, ...rangeFixtures]
+const labFixtures = [...fixtures, ...rangeFixtures, ...onsetFixtures.filter(f=>f.phaseSeconds===0)]
 
 const root = document.querySelector<HTMLElement>('#lab')!
 root.innerHTML = `<h1>ECHO · Audio lab</h1><p>Development only · live tab diagnostics and synthetic baselines</p>
@@ -33,15 +35,25 @@ root.innerHTML = `<h1>ECHO · Audio lab</h1><p>Development only · live tab diag
 <pre id="range-state"></pre><div class="scroll"><table><thead><tr><th>Band</th><th>Fixed linear</th><th>Adaptive experiment</th></tr></thead><tbody id="range-meters"></tbody></table></div>
 <canvas id="range-plot" width="1100" height="160" aria-label="Fixed, adaptive and shared gain history for selected band"></canvas><p>Selected band: fixed orange · adaptive cyan · shared gain/2 violet. Scale 0–1.</p>
 <p id="range-assessment" role="status">Synthetic range safeguards have not been measured.</p>
-<section><button id="range-baseline">Run range/noise comparison</button><button id="energy-baseline">Run energy comparison</button><button id="baseline">Run all offline baselines</button><button id="cancel" disabled>Cancel after current fixture</button><button id="json" disabled>Export synthetic JSON</button><button id="csv" disabled>Export synthetic CSV</button></section>
+<h2>MI03 · Onset events</h2><p>Experimental frequency-qualified attacks, not beat or instrument recognition. Legacy transient/flux stay unchanged. Core and 20 ms stress results are reported separately.</p>
+<p id="onset-state"></p><label>Onset band <select id="onset-band"><option>low</option><option>mid</option><option>high</option></select></label>
+<canvas id="onset-plot" width="1100" height="160" aria-label="Novelty, adaptive threshold and event markers"></canvas><p>Novelty cyan · threshold orange · emitted event violet. Display is sampled at 5 Hz; the event log retains attacks between display frames. The latest 32 events are shown from the bounded history.</p>
+<div class="scroll"><table><thead><tr><th>Band</th><th>Novelty</th><th>Threshold</th><th>RMS rise</th><th>Decision</th><th>Accepted</th></tr></thead><tbody id="onset-meters"></tbody></table></div>
+<div class="scroll"><table><thead><tr><th>Session / sequence</th><th>Band</th><th>Peak time (s)</th><th>Emission time (s)</th><th>Age (ms)</th><th>Strength</th></tr></thead><tbody id="onset-events"></tbody></table></div>
+<p id="onset-assessment" role="status">MI03 core criteria have not been measured.</p>
+<section><button id="onset-baseline">Run onset comparison</button><button id="range-baseline">Run range/noise comparison</button><button id="energy-baseline">Run energy comparison</button><button id="baseline">Run all offline baselines</button><button id="cancel" disabled>Cancel after current fixture</button><button id="json" disabled>Export synthetic JSON</button><button id="csv" disabled>Export synthetic CSV</button></section>
 <p id="progress" role="status">Offline: 44.1/48/96 kHz × 30/60/120 updates/s. No audible output.</p><pre id="results"></pre>`
 const el = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T
 let latest: DiagnosticSnapshot = createSnapshot(), lastPaint = 0
+const onsetHistory: {time:number,novelty:number,threshold:number}[]=[]
+let onsetSession=0
 const history: { time: number, values: number[] }[] = []
 el('graph-band').onchange = () => { history.length = 0 }
+el('onset-band').onchange = () => { onsetHistory.length=0 }
 const analysis = createAnalysis({ diagnostics: snapshot => {
   latest = snapshot
   if (snapshot.state === 'reset') history.length = 0
+  if (onsetSession!==snapshot.onsets.session) {onsetSession=snapshot.onsets.session;onsetHistory.length=0}
 } })
 let sourceState: LabSourceState = { mode: 'idle', captureStatus: 'disconnected', message: 'Ready' }
 const sources = createLabSources(analysis, state => {
@@ -61,8 +73,9 @@ el('play').onclick = async () => {
 el('pause').onclick = () => sources.pause()
 el('stop').onclick = () => sources.stop()
 el('volume').oninput = () => sources.setVolume(Number(el<HTMLInputElement>('volume').value))
+let onsetRows:OnsetRow[]=[]
 let rangeRows: RangeRow[] = []
-let energyRows: EnergyRow[] = [], suite: 'baseline' | 'energy' | 'range' = 'baseline'
+let energyRows: EnergyRow[] = [], suite: 'baseline' | 'energy' | 'range' | 'onsets' = 'baseline'
 let rows: BaselineRow[] = [], metadata: unknown[] = [], errors: { fixture: string, requestedRate: number, message: string }[] = []
 let cancelled = false, running = false
 let runMetrics = { offlineWallMs: 0, replayWallMs: 0, maxTraceBytes: 0 }
@@ -75,22 +88,25 @@ function updateControls() {
   el<HTMLButtonElement>('resume-tab').disabled = !tab || pending
   el<HTMLButtonElement>('pause').disabled = sourceState.mode !== 'fixture'
   el<HTMLInputElement>('volume').disabled = tab || running
-  el<HTMLButtonElement>('json').disabled = tab || running || (rows.length === 0 && energyRows.length === 0 && rangeRows.length === 0)
-  el<HTMLButtonElement>('csv').disabled = tab || running || (rows.length === 0 && energyRows.length === 0 && rangeRows.length === 0)
+  el<HTMLButtonElement>('json').disabled = tab || running || (rows.length === 0 && energyRows.length === 0 && rangeRows.length === 0 && onsetRows.length === 0)
+  el<HTMLButtonElement>('csv').disabled = tab || running || (rows.length === 0 && energyRows.length === 0 && rangeRows.length === 0 && onsetRows.length === 0)
 }
 updateControls()
 el('cancel').onclick = () => { cancelled = true }
 el('baseline').onclick = () => { void runSuite('baseline') }
 el('energy-baseline').onclick = () => { void runSuite('energy') }
 el('range-baseline').onclick = () => { void runSuite('range') }
-async function runSuite(kind: 'baseline' | 'energy' | 'range') {
+el('onset-baseline').onclick = () => { void runSuite('onsets') }
+async function runSuite(kind: 'baseline' | 'energy' | 'range' | 'onsets') {
   if (running) return
-  running = true; cancelled = false; rows = []; energyRows = []; rangeRows = []; metadata = []; errors = []; suite = kind
-  const corpus = kind === 'range' ? rangeFixtures : kind === 'energy' ? energyFixtures : fixtures
+  running = true; cancelled = false; rows = []; energyRows = []; rangeRows = []; onsetRows=[]; metadata = []; errors = []; suite = kind
+  const corpus = kind === 'onsets' ? onsetFixtures : kind === 'range' ? rangeFixtures : kind === 'energy' ? energyFixtures : fixtures
   sources.stop()
+  if (kind === 'onsets') el('onset-assessment').textContent='MI03 synthetic core and stress measurements running…'
   if (kind === 'range') el('range-assessment').textContent = 'Synthetic range safeguards running…'
   if (kind === 'energy') el('energy-assessment').textContent = 'Synthetic validation running…'
   runMetrics = { offlineWallMs: 0, replayWallMs: 0, maxTraceBytes: 0 }
+  el<HTMLButtonElement>('onset-baseline').disabled = true
   el<HTMLButtonElement>('range-baseline').disabled = true
   el<HTMLButtonElement>('energy-baseline').disabled = true
   el<HTMLButtonElement>('baseline').disabled = true; el<HTMLButtonElement>('play').disabled = true
@@ -101,7 +117,7 @@ async function runSuite(kind: 'baseline' | 'energy' | 'range') {
     for (const requestedRate of [44100, 48000, 96000]) {
       for (const fixture of corpus) {
         if (cancelled) break
-        el('progress').textContent = `Measuring ${fixture.id} at requested ${requestedRate} Hz… (${rows.length + energyRows.length + rangeRows.length} cadence rows)`
+        el('progress').textContent = `Measuring ${fixture.id} at requested ${requestedRate} Hz… (${rows.length + energyRows.length + rangeRows.length + onsetRows.length} cadence rows)`
         try {
           const offlineStart = performance.now()
           const trace = await analyseFixture(fixture, requestedRate)
@@ -110,7 +126,8 @@ async function runSuite(kind: 'baseline' | 'energy' | 'range') {
           metadata.push({ fixture: fixture.id, requestedRate, actualRate: trace.rate, fft: trace.fft, seed: FIXTURE_SEED, inputRms: trace.inputRms, inputPeak: trace.peak, pcm: 'mono Float32 offline / PCM16 live', duration: fixture.duration })
           const replayStart = performance.now()
           for (const cadence of [30, 60, 120]) {
-            if (kind === 'range') rangeRows.push(compareRange(fixture as RangeFixture, trace.rate, trace.fft, trace.frames, cadence))
+            if (kind === 'onsets') onsetRows.push(compareOnsets(fixture as OnsetFixture,trace.rate,trace.fft,trace.frames,cadence))
+            else if (kind === 'range') rangeRows.push(compareRange(fixture as RangeFixture, trace.rate, trace.fft, trace.frames, cadence))
             else if (kind === 'energy') energyRows.push(compareEnergy(fixture, trace.rate, trace.fft, trace.frames, cadence))
             else rows.push(summarize(fixture, trace.rate, trace.fft, trace.frames, cadence))
           }
@@ -124,12 +141,13 @@ async function runSuite(kind: 'baseline' | 'energy' | 'range') {
     }
   } finally {
     running = false
+    el<HTMLButtonElement>('onset-baseline').disabled = false
     el<HTMLButtonElement>('range-baseline').disabled = false
     el<HTMLButtonElement>('energy-baseline').disabled = false
     el<HTMLButtonElement>('baseline').disabled = false; el<HTMLButtonElement>('play').disabled = false
     el<HTMLButtonElement>('cancel').disabled = true
     updateControls()
-    el('progress').textContent = `${cancelled ? 'Cancelled' : 'Completed'}: ${rows.length + energyRows.length + rangeRows.length} cadence rows; ${errors.length} unavailable/failed cases; ${((performance.now() - start) / 1000).toFixed(1)} s. Results describe diagnostic controls, not detected musical onsets.`
+    el('progress').textContent = `${cancelled ? 'Cancelled' : 'Completed'}: ${rows.length + energyRows.length + rangeRows.length + onsetRows.length} cadence rows; ${errors.length} unavailable/failed cases; ${((performance.now() - start) / 1000).toFixed(1)} s. ${kind === 'onsets' ? 'Experimental onset events; core/stress verdicts below.' : 'Diagnostic controls, not detected musical onsets.'}`
     if (kind === 'energy') {
       const assessment = assessEnergy(energyRows)
       const complete = !cancelled && errors.length === 0 && energyRows.length === energyFixtures.length * 9
@@ -145,13 +163,20 @@ async function runSuite(kind: 'baseline' | 'energy' | 'range') {
       el('range-assessment').textContent = !complete ? 'Synthetic validation incomplete; no acceptance result.'
         : `Synthetic range safeguards: ${assessment.pass ? 'PASS' : 'FAIL'}. Noise maximum ${assessment.noiseMax.toFixed(6)}; additional loud clipping after 1 s ${assessment.extraClippingAfterGraceSeconds.toFixed(4)} s. Passing safeguards does not select adaptive scaling.`
     }
-    el('results').textContent = JSON.stringify(kind === 'range'
+    if(kind==='onsets') {
+      const a=assessOnsets(onsetRows),complete=!cancelled&&errors.length===0&&a.complete
+      el('onset-assessment').textContent=!complete?'MI03 incomplete; no acceptance result.':`MI03 core: ${a.pass?'PASS':'FAIL'} · missed ${a.core.missed}, extra ${a.core.extras}, wrong band ${a.core.wrongBand}, release ${a.core.releaseEvents}; strength failures ${a.strengthFailures.length}. 20 ms stress: ${a.stress.matched}/${a.stress.expected} matched, ${a.stress.extras} extra. Stress does not change the core gate.`
+    }
+    el('results').textContent = JSON.stringify(kind === 'onsets' ? {rows:onsetRows.length,errors,assessment:assessOnsets(onsetRows)} : kind === 'range'
       ? {rows:rangeRows.length,errors,assessment:assessRange(rangeRows)} : kind === 'energy'
       ? { rows: energyRows.length, errors, assessment: assessEnergy(energyRows) }
       : { rows: rows.length, errors, example: rows.find(r => r.fixture === 'tone-100hz--12db') }, null, 2)
   }
 }
 function report() {
+  if(suite==='onsets')return {task:'MI03',version:1,generatedAt:new Date().toISOString(),browser:navigator.userAgent,
+    complete:!cancelled&&errors.length===0&&assessOnsets(onsetRows).complete,assessment:assessOnsets(onsetRows),metadata,errors,rows:onsetRows,runMetrics,
+    clock:'Native offline trace seconds; event peak and emission clocks are distinct.',caveats:['Synthetic aggregates only; no live event export.','Core and 20 ms stress are separate.','No production onset feature or scene mapping change.']}
   if (suite === 'range') return {task:'MI02b',version:1,generatedAt:new Date().toISOString(),browser:navigator.userAgent,
     complete:!cancelled&&errors.length===0&&rangeRows.length===rangeFixtures.length*9,
     assessment:assessRange(rangeRows),metadata,errors,rows:rangeRows,runMetrics,
@@ -166,14 +191,19 @@ function report() {
 }
 function download(text: string, extension: string) {
   const url = URL.createObjectURL(new Blob([text], { type: extension === 'json' ? 'application/json' : 'text/csv' }))
-  const a = document.createElement('a'); a.href = url; a.download = `echo-${suite === 'range' ? 'mi02b-range' : suite === 'energy' ? 'mi02a-energy' : 'mi01-baseline'}.${extension}`; a.click()
+  const a = document.createElement('a'); a.href = url; a.download = `echo-${suite === 'onsets' ? 'mi03-onsets' : suite === 'range' ? 'mi02b-range' : suite === 'energy' ? 'mi02a-energy' : 'mi01-baseline'}.${extension}`; a.click()
   setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
 el('json').onclick = () => {
-  if (sourceState.mode !== 'tab' && !running && (rows.length || energyRows.length || rangeRows.length)) download(JSON.stringify(report(), null, 2), 'json')
+  if (sourceState.mode !== 'tab' && !running && (rows.length || energyRows.length || rangeRows.length || onsetRows.length)) download(JSON.stringify(report(), null, 2), 'json')
 }
 el('csv').onclick = () => {
-  if (sourceState.mode === 'tab' || running || (!rows.length && !energyRows.length && !rangeRows.length)) return
+  if (sourceState.mode === 'tab' || running || (!rows.length && !energyRows.length && !rangeRows.length && !onsetRows.length)) return
+  if(suite==='onsets') {
+    const header='fixture,category,stress,phaseSeconds,rate,fft,cadence,expected,detected,matched,missed,extras,wrongBand,releases,precision,recall'
+    const lines=onsetRows.map(r=>[r.fixture,r.category,r.stress,r.phaseSeconds,r.rate,r.fft,r.cadence,r.expected,r.detected,r.matched,r.missed.length,r.extras.length,r.wrongBand,r.releases,r.precision,r.recall].join(','))
+    download([header,...lines].join('\n'),'csv');return
+  }
   if (suite === 'range') {
     const header='fixture,rate,fft,cadence,gainMin,gainMax,noiseMax,silenceMax,quietMaxRatio,extraClippingAfterGraceSeconds,extraClippingEarlySeconds,maxHitGainDip'
     const lines=rangeRows.map(r=>[r.fixture,r.rate,r.fft,r.cadence,r.gainMin,r.gainMax,r.noiseMax,r.silenceMax,r.quietMaxRatio,r.extraClippingAfterGraceSeconds,r.extraClippingEarlySeconds,r.maxHitGainDip].join(','))
@@ -199,6 +229,22 @@ function paint(now: number) {
     el('meters').innerHTML = BAND_NAMES.map(b => `<tr><th>${b}</th>${[latest.raw[b], s.levels[b], s.fast[b], s.slow[b], s.transient[b], s.flux[b]].map(v => `<td>${n(v)}</td>`).join('')}<td>${n(latest.fluxL1[b])}/${n(latest.fluxL2[b])}</td><td>${latest.active[b]}</td></tr>`).join('') + SIX_BAND_NAMES.map(b => `<tr><th>${b} (six)</th><td>${n(latest.sixRaw[b])}</td><td>—</td><td>${n(s.sixBands[b])}</td><td colspan="4">not available</td><td>${Number(s.sixBands[b] > ACTIVITY_THRESHOLD)}</td></tr>`).join('')
     const energy = latest.energy
     el('energy-meters').innerHTML = BAND_NAMES.map(b => `<tr><th>${b}</th><td>${n(energy.rms[b])}</td><td>${n(s.levels[b])}</td><td>${n(energy.linear[b])}</td><td>${n(energy.softKnee[b])}</td></tr>`).join('') + SIX_BAND_NAMES.map(b => `<tr><th>${b} (six)</th><td>${n(energy.six.rms[b])}</td><td>${n(s.sixBands[b])}</td><td>${n(energy.six.linear[b])}</td><td>${n(energy.six.softKnee[b])}</td></tr>`).join('')
+    const onsets=latest.onsets,selected=el<HTMLSelectElement>('onset-band').value as OnsetBand,debug=onsets.debug[selected]
+    el('onset-state').textContent=`Session ${onsets.session} · latest sequence ${onsets.sequence} · ${onsets.primed?'primed':'waiting/cleared'} · ${onsets.events.length}/256 events in latest 10 s. Live clock: performance seconds.`
+    el('onset-meters').innerHTML=ONSET_BANDS.map(b=>{const d=onsets.debug[b];return `<tr><th>${b}</th><td>${d.novelty.toFixed(6)}</td><td>${d.threshold.toFixed(6)}</td><td>${d.rise.toFixed(6)}</td><td>${d.decision}</td><td>${d.accepted}</td></tr>`}).join('')
+    el('onset-events').innerHTML=onsets.events.slice(-32).reverse().map(e=>`<tr><td>${e.session}/${e.sequence}</td><td>${e.band}</td><td>${e.timeSeconds.toFixed(4)}</td><td>${e.emittedAtSeconds.toFixed(4)}</td><td>${Math.max(0,now-e.emittedAtSeconds*1000).toFixed(1)}</td><td>${e.strength.toFixed(5)}</td></tr>`).join('')
+    onsetHistory.push({time:now,novelty:debug.novelty,threshold:debug.threshold})
+    while(onsetHistory.length>151||onsetHistory[0]?.time<now-30000)onsetHistory.shift()
+    const onsetCanvas=el<HTMLCanvasElement>('onset-plot'),onsetCtx=onsetCanvas.getContext('2d')!
+    onsetCtx.clearRect(0,0,onsetCanvas.width,onsetCanvas.height)
+    const onsetScale=Math.max(.0005,...onsetHistory.flatMap(p=>[p.novelty,p.threshold]))
+    for(const [key,color]of [['novelty','#3ffff4'],['threshold','#ffae55']] as const) {
+      onsetCtx.strokeStyle=color;onsetCtx.beginPath()
+      onsetHistory.forEach((p,j)=>{const x=onsetCanvas.width*(1-(now-p.time)/30000),y=onsetCanvas.height*(1-p[key]/onsetScale);if(j)onsetCtx.lineTo(x,y);else onsetCtx.moveTo(x,y)})
+      onsetCtx.stroke()
+    }
+    onsetCtx.strokeStyle='#b27aff'
+    for(const event of onsets.events)if(event.band===selected){const x=onsetCanvas.width*(1-(now-event.emittedAtSeconds*1000)/30000);onsetCtx.beginPath();onsetCtx.moveTo(x,onsetCanvas.height);onsetCtx.lineTo(x,0);onsetCtx.stroke()}
     const adaptive=latest.adaptive
     el('range-state').textContent=`Gain ${adaptive.gain.toFixed(4)}× · target ${adaptive.targetGain.toFixed(4)}× · slow RMS ${adaptive.slowRms.toFixed(6)} · session ${adaptive.elapsed.toFixed(2)} s
 ${adaptive.holding ? 'Startup hold' : adaptive.eligible ? 'Eligible for slow adaptation' : 'Below adaptation floor; returning toward 1×'} · fixed reference ${ENERGY_REFERENCE_RMS} RMS`

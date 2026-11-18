@@ -6,3 +6,4 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 canvas { width: 100%; background: #060912; border: 1px solid #414867; } .scroll { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; } th, td { padding: 8px; text-align: left; border-bottom: 1px solid #414867; white-space: nowrap; }
 pre { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; } button:disabled { opacity: .5; }
+label { min-width: 0; max-width: 100%; } select { min-width: 0; max-width: 100%; }

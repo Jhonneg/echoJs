@@ -1,0 +1,10 @@
+{
+  "settingsEqual": true,
+  "targetsEqual": true,
+  "legacyExcursionsEqual": true,
+  "maxPeakDifferenceSeconds": 0,
+  "maxEmissionDifferenceSeconds": 0,
+  "maxAbsoluteStrengthDifference": 0.0000060140985820300585,
+  "maxRelativeStrengthDifference": 0.00000935076195679128,
+  "note": "Separate native browser processes; identical matched timing, small measured strength variation. Each new run repeated exactly in-process; no cross-process float identity claim."
+}

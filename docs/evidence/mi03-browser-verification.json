@@ -1,0 +1,418 @@
+{
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "live": "fixture / running · context 96000 Hz / FFT 4096 · window 42.67 ms\nRMS 0.043831 (-27.16 dBFS) · update 62.5 Hz · feature age 16.6 ms · audio time 1.003 s\nAtmosphere 0.1339 · isPlaying true · context is not original media sample rate",
+  "onsetCases": 783,
+  "onsetAssessment": {
+    "settings": {
+      "historySeconds": 1,
+      "historyCapacity": 512,
+      "thresholdMad": 3,
+      "noveltyFloor": 0.0005,
+      "rmsFloor": 0.002,
+      "riseFloor": 0.0005,
+      "riseSeconds": 0.05,
+      "noveltyPowerShare": 0.05,
+      "fallFloor": 0.002,
+      "fallFraction": 0.05,
+      "spacingSeconds": 0.12,
+      "rearmFraction": 0.6,
+      "strengthReference": 0.5,
+      "eventSeconds": 10,
+      "eventCapacity": 256,
+      "gapSeconds": 0.25
+    },
+    "targets": {
+      "peakDelaySeconds": 0.1,
+      "emissionDelaySeconds": 0.15
+    },
+    "complete": true,
+    "pass": false,
+    "core": {
+      "cases": 702,
+      "expected": 5157,
+      "detected": 5186,
+      "matched": 5157,
+      "missed": 0,
+      "extras": 29,
+      "wrongBand": 28,
+      "releaseEvents": 29,
+      "maxPeakDelayMs": 52.85714285714249,
+      "maxEmissionDelayMs": 85.91836734693881
+    },
+    "stress": {
+      "cases": 81,
+      "expected": 324,
+      "detected": 324,
+      "matched": 324,
+      "missed": 0,
+      "extras": 0,
+      "wrongBand": 0,
+      "releaseEvents": 0,
+      "maxPeakDelayMs": 36.190476190476105,
+      "maxEmissionDelayMs": 69.47845804988661
+    },
+    "strengthGroups": 1377,
+    "strengthFailures": [],
+    "coreFailures": [
+      {
+        "fixture": "onset-burst-50-100hz-phase7ms",
+        "category": "burst-50",
+        "rate": 44100,
+        "cadence": 60,
+        "missed": 0,
+        "extras": 1,
+        "checks": {
+          "counts": false,
+          "timing": true,
+          "identity": true,
+          "reset": true
+        }
+      },
+      {
+        "fixture": "onset-over-bed-100hz-0.25s-phase7ms",
+        "category": "over-bed",
+        "rate": 44100,
+        "cadence": 60,
+        "missed": 0,
+        "extras": 1,
+        "checks": {
+          "counts": false,
+          "timing": true,
+          "identity": true,
+          "reset": true
+        }
+      },
+      {
+        "fixture": "onset-burst-50-100hz-phase7ms",
+        "category": "burst-50",
+        "rate": 48000,
+        "cadence": 60,
+        "missed": 0,
+        "extras": 2,
+        "checks": {
+          "counts": false,
+          "timing": true,
+          "identity": true,
+          "reset": true
+        }
+      },
+      {
+        "fixture": "onset-burst-100-100hz-phase7ms",
+        "category": "burst-100",
+        "rate": 48000,
+        "cadence": 60,
+        "missed": 0,
+        "extras": 1,
+        "checks": {
+          "counts": false,
+          "timing": true,
+          "identity": true,
+          "reset": true
+        }
+      },
+      {
+        "fixture": "onset-repeat-100hz-0.25s-phase7ms",
+        "category": "repeat",
+        "rate": 48000,
+        "cadence": 60,
+        "missed": 0,
+        "extras": 4,
+        "checks": {
+          "counts": false,
+          "timing": true,
+          "identity": true,
+          "reset": true
+        }
+      },
+      {
+        "fixture": "onset-over-bed-100hz-0.25s-phase7ms",
+        "category": "over-bed",
+        "rate": 48000,
+        "cadence": 60,
+        "missed": 0,
+        "extras": 6,
+        "checks": {
+          "counts": false,
+          "timing": true,
+          "identity": true,
+          "reset": true
+        }
+      },
+      {
+        "fixture": "onset-repeat-100hz-0.5s-phase7ms",
+        "category": "repeat",
+        "rate": 48000,
+        "cadence": 60,
+        "missed": 0,
+        "extras": 6,
+        "checks": {
+          "counts": false,
+          "timing": true,
+          "identity": true,
+          "reset": true
+        }
+      },
+      {
+        "fixture": "onset-over-bed-100hz-0.5s-phase7ms",
+        "category": "over-bed",
+        "rate": 48000,
+        "cadence": 60,
+        "missed": 0,
+        "extras": 8,
+        "checks": {
+          "counts": false,
+          "timing": true,
+          "identity": true,
+          "reset": true
+        }
+      }
+    ],
+    "categories": [
+      {
+        "category": "silence",
+        "cases": 27,
+        "expected": 0,
+        "detected": 0,
+        "matched": 0,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 0,
+        "maxEmissionDelayMs": 0
+      },
+      {
+        "category": "noise",
+        "cases": 27,
+        "expected": 0,
+        "detected": 0,
+        "matched": 0,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 0,
+        "maxEmissionDelayMs": 0
+      },
+      {
+        "category": "sustain",
+        "cases": 81,
+        "expected": 324,
+        "detected": 324,
+        "matched": 324,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 51.88888888888887,
+        "maxEmissionDelayMs": 85.63038548752822
+      },
+      {
+        "category": "burst-50",
+        "cases": 81,
+        "expected": 324,
+        "detected": 327,
+        "matched": 324,
+        "missed": 0,
+        "extras": 3,
+        "wrongBand": 3,
+        "releaseEvents": 3,
+        "maxPeakDelayMs": 52.47845804988671,
+        "maxEmissionDelayMs": 85.17687074829938
+      },
+      {
+        "category": "burst-100",
+        "cases": 81,
+        "expected": 324,
+        "detected": 325,
+        "matched": 324,
+        "missed": 0,
+        "extras": 1,
+        "wrongBand": 0,
+        "releaseEvents": 1,
+        "maxPeakDelayMs": 52.47845804988671,
+        "maxEmissionDelayMs": 85.17687074829938
+      },
+      {
+        "category": "repeat",
+        "cases": 162,
+        "expected": 1944,
+        "detected": 1954,
+        "matched": 1944,
+        "missed": 0,
+        "extras": 10,
+        "wrongBand": 10,
+        "releaseEvents": 10,
+        "maxPeakDelayMs": 52.47845804988671,
+        "maxEmissionDelayMs": 85.91836734693881
+      },
+      {
+        "category": "over-bed",
+        "cases": 162,
+        "expected": 2106,
+        "detected": 2121,
+        "matched": 2106,
+        "missed": 0,
+        "extras": 15,
+        "wrongBand": 15,
+        "releaseEvents": 15,
+        "maxPeakDelayMs": 52.85714285714249,
+        "maxEmissionDelayMs": 85.76643990929699
+      },
+      {
+        "category": "mixture",
+        "cases": 27,
+        "expected": 81,
+        "detected": 81,
+        "matched": 81,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 51.88888888888887,
+        "maxEmissionDelayMs": 83.81632653061222
+      },
+      {
+        "category": "high-only",
+        "cases": 27,
+        "expected": 27,
+        "detected": 27,
+        "matched": 27,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 51.88888888888887,
+        "maxEmissionDelayMs": 83.81632653061222
+      },
+      {
+        "category": "release",
+        "cases": 27,
+        "expected": 27,
+        "detected": 27,
+        "matched": 27,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 51.88888888888887,
+        "maxEmissionDelayMs": 83.81632653061222
+      }
+    ]
+  },
+  "seek": {
+    "before": "Session 1 · latest sequence 1 · primed · 1/256 events in latest 10 s. Live clock: performance seconds.",
+    "after": "Session 4 · latest sequence 0 · primed · 0/256 events in latest 10 s. Live clock: performance seconds."
+  },
+  "rows": 216,
+  "rangeRows": 81,
+  "rangeAssessment": {
+    "settings": {
+      "minGain": 1,
+      "maxGain": 2,
+      "holdSeconds": 2,
+      "riseSeconds": 5,
+      "reductionSeconds": 0.3,
+      "floorDbfs": -50,
+      "targetRms": 0.25,
+      "rmsAttackSeconds": 0.3,
+      "rmsReleaseSeconds": 5
+    },
+    "targets": {
+      "noise": 0.005,
+      "loudGraceSeconds": 1
+    },
+    "complete": true,
+    "checks": {
+      "bounded": true,
+      "hold": true,
+      "floor": true,
+      "silence": true,
+      "noise": true,
+      "quiet": true,
+      "loud": true,
+      "reset": true
+    },
+    "pass": true,
+    "extraClippingSeconds": 0.4498866213151942,
+    "adaptiveClippingSeconds": 0.4498866213151942,
+    "fixedClippingSeconds": 0,
+    "noiseMax": 0.0018213319914197063,
+    "silenceMax": 0,
+    "quietMaxRatio": 1.9591785970428617,
+    "gainMax": 1.9966826518630598,
+    "extraClippingAfterGraceSeconds": 0,
+    "extraClippingEarlySeconds": 0.4498866213151942,
+    "maxHitGainDip": 0.052984594675636876,
+    "failures": []
+  },
+  "energyRows": 432,
+  "energyAssessment": {
+    "targets": {
+      "calibrationDb": 1,
+      "loudContrast": 0.15,
+      "noise": 0.005
+    },
+    "maxCalibrationErrorDb": 0.49250438337657565,
+    "calibrationPass": true,
+    "curves": [
+      {
+        "curve": "linear",
+        "referenceRms": 0.5,
+        "groups": 81,
+        "monotonic": true,
+        "noiseMax": 0.0010390606306347758,
+        "silenceMax": 0,
+        "smallestContrast": {
+          "hz": 100,
+          "rate": 48000,
+          "cadence": 120,
+          "range": "Six",
+          "difference": 0.33406222505861555
+        },
+        "checks": {
+          "bounded": true,
+          "monotonic": true,
+          "silence": true,
+          "noise": true,
+          "contrast": true
+        }
+      },
+      {
+        "curve": "softKnee",
+        "referenceRms": 0.5,
+        "groups": 81,
+        "monotonic": true,
+        "noiseMax": 0.0010379821042948996,
+        "silenceMax": 0,
+        "smallestContrast": {
+          "hz": 100,
+          "rate": 48000,
+          "cadence": 120,
+          "range": "Six",
+          "difference": 0.1497930477795335
+        },
+        "checks": {
+          "bounded": true,
+          "monotonic": true,
+          "silence": true,
+          "noise": true,
+          "contrast": false
+        }
+      }
+    ]
+  },
+  "repeatedExactly": true,
+  "partialExportComplete": false,
+  "checks": [
+    "fixture playback/pause/reset",
+    "synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution",
+    "responsive UI",
+    "JSON/CSV exports",
+    "full baseline repeated exactly",
+    "partial cancellation",
+    "same synthetic player advances across all four landscapes",
+    "production asset exclusion"
+  ],
+  "errors": []
+}

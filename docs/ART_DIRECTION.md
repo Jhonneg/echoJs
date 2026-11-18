@@ -102,3 +102,7 @@ Nocturne idle readability and slower flashes (2026-11-17): owner requested less 
 Nocturne smooth-response clarification (2026-11-17): owner requested quick smooth illumination rather than timed flashing. Band brightness now tracks existing energy/accents continuously with a faster rise than the first N05 response and a soft release. Retain the lifted neutral idle lighting and accepted industrial/wet-ground appearance. No periodic flash holds or retrigger gaps remain.
 
 Owner response acceptance (2026-11-17): “tested, looks good” accepts the current quick smooth lighting response and brighter idle appearance. Retain this treatment as the Nocturne baseline; further response tuning requires a new owner request.
+
+## Planned Crimson-first animation expansion — 2026-11-18
+
+Owner chose expressive/controlled expansion while retaining each landscape's atmosphere. [ANIMATION_REFINEMENT.md](ANIMATION_REFINEMENT.md) records Crimson as pilot with subtle coherent bank deformation, localized ridge/sun accents and slow haze, subject to feature-quality and scene-specific reviews. Preserve the burgundy valley, nightshade sky, pink sun, open corridor and camera character. Other landscapes retain their current identities, including Lavender's silhouettes/shared depth motion and Nocturne's stationary industry/smooth illumination/idle readability. This is a design direction, not evidence of newly implemented or visually accepted effects; no current palette, material or geometry baseline changes here.

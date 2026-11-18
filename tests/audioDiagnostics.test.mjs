@@ -79,7 +79,7 @@ test('live observer enabled/disabled yields identical legacy output and no extra
   }
   let snapshot
   const off = createAnalysis(), on = createAnalysis({ diagnostics: value => { snapshot = structuredClone(value) } })
-  const element = { paused: false, ended: false }
+  const element = Object.assign(new EventTarget(), { paused: false, ended: false })
   off.prepare(); on.prepare(); off.startElement(element); on.startElement(element)
   // Both contexts use performance.now at startup; establish an identical prior tick first.
   const step = now => { const queue = [...callbacks.values()]; callbacks.clear(); queue.forEach(fn => fn(now)) }
@@ -99,11 +99,19 @@ test('live observer enabled/disabled yields identical legacy output and no extra
     }
     assert.equal(reads, 6)
     assert.equal(snapshot.sampleRate, 96000)
+    const beforeSeek = structuredClone(on.signal), session = snapshot.onsets.session
+    element.dispatchEvent(new Event('seeking'))
+    assert.ok(snapshot.onsets.session > session)
+    assert.deepEqual(on.signal, beforeSeek)
+    assert.equal(snapshot.onsets.events.length, 0)
     const ref = on.signal.fast
     off.stop(); on.stop()
     assert.equal(on.signal.fast, ref)
     assert.deepEqual(on.signal, silentSignal())
     assert.equal(snapshot.state, 'reset')
     assert.deepEqual(snapshot.raw, emptyBands())
+    const stoppedSession = snapshot.onsets.session
+    element.dispatchEvent(new Event('seeked'))
+    assert.equal(snapshot.onsets.session, stoppedSession, 'seek listeners removed on stop')
   } finally { performance.now = original }
 })

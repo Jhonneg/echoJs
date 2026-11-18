@@ -14,6 +14,7 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
   let context: AudioContext | undefined
   let source: AudioNode | undefined
   let analyser: AnalyserNode | undefined
+  let removeDiagnosticSeek = () => {}
   let frame = 0
   let message = 'Not active'
   let previous = 0
@@ -21,6 +22,10 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
   let flux: ReturnType<typeof createSpectralFlux> | undefined
 
   function stop() {
+    if (import.meta.env.DEV && observer) {
+      removeDiagnosticSeek()
+      removeDiagnosticSeek = () => {}
+    }
     cancelAnimationFrame(frame)
     frame = 0
     source?.disconnect()
@@ -75,6 +80,12 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
       analyser.smoothingTimeConstant = 0
       source = makeSource(current)
       source.connect(analyser)
+      if (import.meta.env.DEV && observer && element) {
+        const seeking = () => observer.reset((analyser?.fftSize ?? 0) / current.sampleRate)
+        element.addEventListener('seeking', seeking)
+        element.addEventListener('seeked', seeking)
+        removeDiagnosticSeek = () => { element.removeEventListener('seeking', seeking); element.removeEventListener('seeked', seeking) }
+      }
       // Only local playback has an output route. Tab capture remains analysis-only.
       if (element) analyser.connect(current.destination)
       const bins = new Float32Array(analyser.frequencyBinCount)
@@ -113,7 +124,7 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
         signal.isPlaying = running && (element ? !element.paused && !element.ended : hasSignal)
         bars.forEach(([low, high], i) => { spectrum[i] = smooth(spectrum[i], bandLevel(bins, low, high), delta) })
         message = !running ? 'Suspended — click Resume analysis' : element?.ended ? 'Playback ended' : element?.paused ? 'Playback paused' : hasSignal ? 'Receiving signal' : 'Connected, waiting / silent'
-        observer?.read(analyser, bins, signal, raw, flux, running && (!element || (!element.paused && !element.ended)), now, delta)
+        observer?.read(analyser, bins, signal, raw, flux, running && (!element || (!element.paused && !element.ended && !element.seeking)), now, delta)
         frame = requestAnimationFrame(tick)
       }
       frame = requestAnimationFrame(tick)

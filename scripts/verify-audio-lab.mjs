@@ -48,6 +48,7 @@ try {
   const select = (id, value) => evaluate(`document.getElementById(${JSON.stringify(id)}).value=${JSON.stringify(value)}`)
   const screenshot = async name => { const result = await send('Page.captureScreenshot'); await writeFile(join(temporary, `${name}.png`), Buffer.from(result.data, 'base64')) }
   await send('Runtime.enable'); await send('Page.enable')
+  await send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{const NativeAudio=window.Audio;window.__labElements=[];window.Audio=class extends NativeAudio{constructor(...args){super(...args);window.__labElements.push(this)}}})()`})
   await send('Browser.setDownloadBehavior', { behavior: 'allowAndName', downloadPath: temporary, eventsEnabled: true })
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false })
   await send('Page.navigate', { url: `http://127.0.0.1:${port}/audio-lab.html` })
@@ -59,6 +60,15 @@ try {
   await pause(1000)
   const live = await evaluate(`document.getElementById('format').textContent`)
   assert.ok(/RMS 0\.\d+/.test(live)); await screenshot('live')
+  assert.equal(await evaluate(`document.querySelectorAll('#onset-meters tr').length`),3)
+  const beforeSeek=await evaluate(`document.getElementById('onset-state').textContent`)
+  await evaluate(`window.__labElements.at(-1).currentTime=2.12345`)
+  await waitFor(`!window.__labElements.at(-1).seeking`)
+  await pause(350)
+  const afterSeek=await evaluate(`document.getElementById('onset-state').textContent`)
+  assert.ok(Number(afterSeek.match(/Session (\d+)/)[1])>Number(beforeSeek.match(/Session (\d+)/)[1]))
+  assert.ok(afterSeek.includes('latest sequence 0'))
+
   await click('pause')
   await waitFor(`document.getElementById('status').textContent.includes('Playback paused') && document.getElementById('format').textContent.includes('inactive')`,10000)
   await click('stop')
@@ -69,7 +79,7 @@ try {
   }
   const run = async (button = 'baseline') => {
     await click(button)
-    await waitFor(`document.getElementById('progress').textContent.startsWith('Completed:')`)
+    await waitFor(`document.getElementById('progress').textContent.startsWith('Completed:')`,button==='onset-baseline'?360000:180000)
     assert.ok((await evaluate(`document.getElementById('progress').textContent`)).includes('0 unavailable/failed'))
     const before = downloads.length; await click('json')
     await waitFor(`true`, 1000)
@@ -117,6 +127,17 @@ try {
   assert.ok(rangeCsv.startsWith('fixture,rate,fft,cadence,gainMin,gainMax,'))
   assert.equal(rangeCsv.split('\n').length,82)
   assert.equal(await evaluate(`document.querySelectorAll('#range-meters tr').length`),9)
+
+  console.log('Running MI03 core/stress matrix twice; numerical failures remain reported…')
+  const onsetFirst=await run('onset-baseline'),onsetSecond=await run('onset-baseline')
+  assert.equal(onsetFirst.complete,true);assert.equal(onsetFirst.rows.length,783)
+  assert.deepEqual(onsetFirst.rows,onsetSecond.rows);assert.deepEqual(onsetFirst.assessment,onsetSecond.assessment)
+  assert.equal(onsetFirst.assessment.targets.emissionDelaySeconds,.15)
+  assert.ok((await evaluate(`document.getElementById('onset-assessment').textContent`)).includes(onsetFirst.assessment.pass?'MI03 core: PASS':'MI03 core: FAIL'))
+  const beforeOnsetCsv=downloads.length;await click('csv')
+  for(let i=0;downloads.length===beforeOnsetCsv&&i<100;i++)await pause(50)
+  const onsetCsv=await readFile(join(temporary,downloads.at(-1)),'utf8')
+  assert.ok(onsetCsv.startsWith('fixture,category,stress,phaseSeconds,'));assert.equal(onsetCsv.split('\n').length,784)
 
   // Mock the capture API with generated audio only. This does not exercise or bypass
   // native permissions; the browser picker remains a separate owner/manual check.
@@ -196,13 +217,14 @@ try {
   const assets = await readdir('dist/assets')
   for (const asset of assets.filter(name => name.endsWith('.js'))) {
     const contents = await readFile(join('dist/assets', asset), 'utf8')
-    for (const marker of ['rmsDbfs', 'createDiagnosticObserver', 'echo-synthetic.wav', 'noise-60db-peak', 'excursionDelayMs', 'estimatedBroadRms', 'MI02a · Energy comparison', 'extraClippingAfterGraceSeconds', 'MI02b · Range and noise comparison', 'Choose a browser tab and enable Share tab audio. Sound stays in the source tab.']) assert.equal(contents.includes(marker), false, `${asset}: ${marker}`)
+    for (const marker of ['rmsDbfs', 'createDiagnosticObserver', 'echo-synthetic.wav', 'noise-60db-peak', 'excursionDelayMs', 'estimatedBroadRms', 'MI02a · Energy comparison', 'extraClippingAfterGraceSeconds', 'MI02b · Range and noise comparison', 'emittedAtSeconds', 'MI03 · Onset events', 'Choose a browser tab and enable Share tab audio. Sound stays in the source tab.']) assert.equal(contents.includes(marker), false, `${asset}: ${marker}`)
   }
   assert.equal((await readdir('dist')).includes('audio-lab.html'), false)
   assert.deepEqual(errors, [])
+  await writeFile(join(temporary, 'onsets.json'),JSON.stringify(onsetFirst))
   await writeFile(join(temporary, 'range.json'),JSON.stringify(rangeFirst))
   await writeFile(join(temporary, 'energy.json'),JSON.stringify(energyFirst))
   await writeFile(join(temporary, 'baseline.json'), JSON.stringify(first))
-  await writeFile(join(temporary, 'verification.json'), JSON.stringify({ browser: first.browser, live, rows: first.rows.length, rangeRows:rangeFirst.rows.length,rangeAssessment:rangeFirst.assessment,energyRows: energyFirst.rows.length, energyAssessment: energyFirst.assessment, repeatedExactly: true, partialExportComplete: partial.complete, checks: ['fixture playback/pause/reset', 'synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution', 'responsive UI', 'JSON/CSV exports', 'full baseline repeated exactly', 'partial cancellation', 'same synthetic player advances across all four landscapes', 'production asset exclusion'], errors }, null, 2))
-  console.log(`PASS ${first.rows.length} baseline rows and ${energyFirst.rows.length} energy rows and ${rangeFirst.rows.length} range rows repeated; screenshots, numeric baseline and verification: ${temporary}`)
+  await writeFile(join(temporary, 'verification.json'), JSON.stringify({ browser: first.browser, live, onsetCases:onsetFirst.rows.length,onsetAssessment:onsetFirst.assessment,seek:{before:beforeSeek,after:afterSeek},rows: first.rows.length, rangeRows:rangeFirst.rows.length,rangeAssessment:rangeFirst.assessment,energyRows: energyFirst.rows.length, energyAssessment: energyFirst.assessment, repeatedExactly: true, partialExportComplete: partial.complete, checks: ['fixture playback/pause/reset', 'synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution', 'responsive UI', 'JSON/CSV exports', 'full baseline repeated exactly', 'partial cancellation', 'same synthetic player advances across all four landscapes', 'production asset exclusion'], errors }, null, 2))
+  console.log(`PASS ${first.rows.length} baseline rows and ${energyFirst.rows.length} energy rows and ${rangeFirst.rows.length} range rows and ${onsetFirst.rows.length} onset rows repeated (check onsetAssessment for quality); screenshots, numeric baseline and verification: ${temporary}`)
 } finally { ws?.close(); browser.kill(); server.kill() }

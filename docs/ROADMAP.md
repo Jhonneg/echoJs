@@ -173,3 +173,13 @@ MI02a (2026-11-18): owner approved lab-only band-energy calibration and fixed li
 MI02b (2026-11-18): owner approved the lab-only range/noise comparison. [MI02B_RANGE.md](MI02B_RANGE.md) records all safeguards passing but additional early control clipping and gain/history variation; fixed linear remains the recommendation. Owner review and full MI02 energy decision remain pending. No production gain/default/mapping change or MI03 implementation authorized.
 
 MI02 lab checkpoint (2026-11-18): owner accepted MI02a and then MI02b (“it passed”). Retain fixed linear as preferred development candidate; experiment costs/failures remain documented. Next is a bounded MI03 plan with approved event criteria, not an automatic implementation or production migration. Detailed status/manual-evidence limits remain in PROGRESS.
+
+## Animation refinement direction and MI03 proposal — 2026-11-18
+
+Owner selected an expressive but controlled Crimson-first pilot, including bounded subtle terrain deformation and musical/playback transition refinement. [ANIMATION_REFINEMENT.md](ANIMATION_REFINEMENT.md) records the staged MI05/MI06 direction and preservation/performance bounds. This overrides the earlier tentative Nocturne pilot recommendation; other landscapes remain separate reviews. MI03/MI04 and the existing feature-quality gate still precede scene implementation.
+
+The staged plan's first deliverable is ready: [MI03_PLAN.md](MI03_PLAN.md), a bounded lab-only onset-detector proposal and quantitative core/stress acceptance criteria. Criteria require owner approval before MI03 implementation under the Music Intelligence roadmap's measurement rules. This checkpoint contains documentation only; no scene migration, new detector, context implementation or full-roadmap authorization is inferred.
+
+MI03 initial run (2026-11-18): owner approved the implementation criteria with “go ahead.” The lab detector is implemented; [MI03_RESULTS.md](MI03_RESULTS.md) records all labeled core attacks matched but 29 extra release-associated events, so the core gate is FAIL. Review/approve the proposed release-attribution correction before MI04 or any scene changes. The original roadmap's goals/order and frozen criteria remain unchanged.
+
+MI03 focused correction (2026-11-18): owner approved release attribution. [MI03_CORRECTION.md](MI03_CORRECTION.md) records the unchanged synthetic core gate now passing (5,157 matches, zero extras), separate stress passing, and unequal-mixture misses retained as limits. Await owner review; next is a bounded MI04 plan, not automatic implementation or scene migration. Original roadmap order remains unchanged.
