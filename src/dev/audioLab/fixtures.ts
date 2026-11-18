@@ -1,5 +1,5 @@
 export interface Tone { hz: number; db: number; start: number; end: number; edge?: number }
-export interface Fixture { id: string; duration: number; tones: Tone[]; events: { time: number; band: 'bass' | 'midrange' | 'treble' }[]; noise?: number }
+export interface Fixture { id: string; duration: number; tones: Tone[]; events: { time: number; band: 'bass' | 'midrange' | 'treble' }[]; noise?: number; noiseSegments?: { start: number; end: number; db: number }[] }
 const band = (hz: number) => hz < 250 ? 'bass' as const : hz < 4000 ? 'midrange' as const : 'treble' as const
 const tone = (hz: number, db = -12, start = 0.5, end = 3.5): Tone => ({ hz, db, start, end, edge: 0.002 })
 const make = (id: string, tones: Tone[], duration = 4.5): Fixture => ({ id, duration, tones, events: tones.map(t => ({ time: t.start, band: band(t.hz) })) })
@@ -20,9 +20,10 @@ export function generateFixture(fixture: Fixture, sampleRate: number) {
   for (let i = 0; i < samples.length; i++) {
     const t = i / sampleRate
     let value = 0
-    if (fixture.noise !== undefined) {
+    const noiseDb = fixture.noise ?? fixture.noiseSegments?.find(s => t >= s.start && t < s.end)?.db
+    if (noiseDb !== undefined) {
       seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5
-      value = ((seed >>> 0) / 0xffffffff * 2 - 1) * 10 ** (fixture.noise / 20)
+      value = ((seed >>> 0) / 0xffffffff * 2 - 1) * 10 ** (noiseDb / 20)
     }
     for (const tone of fixture.tones) {
       if (t < tone.start || t >= tone.end) continue

@@ -1,5 +1,5 @@
 // Synthetic-only browser verification. Run after npm run build. Uses installed Brave/CDP;
-// Playwright is not available in this workspace. Never opens a capture picker or user file.
+// Repeatable CDP runner; Playwright may also smoke-test the lab. Never opens a capture picker or user file.
 import { spawn } from 'node:child_process'
 import { mkdtemp, readFile, readdir, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -59,16 +59,16 @@ try {
   await pause(1000)
   const live = await evaluate(`document.getElementById('format').textContent`)
   assert.ok(/RMS 0\.\d+/.test(live)); await screenshot('live')
-  await click('pause'); await pause(200)
-  assert.ok((await evaluate(`document.getElementById('format').textContent`)).includes('inactive'))
-  await click('stop'); await pause(200)
-  assert.ok((await evaluate(`document.getElementById('format').textContent`)).includes('RMS 0.000000'))
+  await click('pause')
+  await waitFor(`document.getElementById('status').textContent.includes('Playback paused') && document.getElementById('format').textContent.includes('inactive')`,10000)
+  await click('stop')
+  await waitFor(`document.getElementById('format').textContent.includes('idle / reset') && document.getElementById('format').textContent.includes('RMS 0.000000')`,10000)
   for (const [width, height] of [[390, 844], [1440, 900]]) {
     await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false })
     assert.equal(await evaluate('document.documentElement.scrollWidth <= innerWidth'), true)
   }
-  const run = async () => {
-    await click('baseline')
+  const run = async (button = 'baseline') => {
+    await click(button)
     await waitFor(`document.getElementById('progress').textContent.startsWith('Completed:')`)
     assert.ok((await evaluate(`document.getElementById('progress').textContent`)).includes('0 unavailable/failed'))
     const before = downloads.length; await click('json')
@@ -87,6 +87,37 @@ try {
   const csv = await readFile(join(temporary, downloads.at(-1)), 'utf8')
   assert.ok(csv.startsWith('fixture,rate,fft,cadence,band,'))
   assert.equal(csv.split('\n').length, first.rows.length * 3 + 1)
+  console.log('Running MI02a energy comparison twice…')
+  const energyFirst = await run('energy-baseline'), energySecond = await run('energy-baseline')
+  assert.equal(energyFirst.complete,true); assert.equal(energyFirst.rows.length,432)
+  assert.deepEqual(energyFirst.rows,energySecond.rows); assert.deepEqual(energyFirst.assessment,energySecond.assessment)
+  assert.equal(energyFirst.assessment.targets.loudContrast,.15)
+  assert.ok(energyFirst.rows.every(row=>row.finiteAndBounded))
+  assert.equal(energyFirst.assessment.calibrationPass,true)
+  assert.ok(Object.values(energyFirst.assessment.curves.find(c=>c.curve==='linear').checks).every(Boolean))
+  assert.ok(energyFirst.assessment.curves.every(curve=>curve.checks.silence&&curve.checks.noise))
+  assert.ok((await evaluate(`document.getElementById('energy-assessment').textContent`)).includes('linear: PASS'))
+  await screenshot('energy')
+  const beforeEnergyCsv=downloads.length;await click('csv')
+  for(let i=0;downloads.length===beforeEnergyCsv&&i<100;i++)await pause(50)
+  const energyCsv=await readFile(join(temporary,downloads.at(-1)),'utf8')
+  assert.ok(energyCsv.startsWith('fixture,rate,fft,cadence,hz,peakDbfs,sixBand,'))
+
+  console.log('Running MI02b range/noise comparison twice…')
+  const rangeFirst=await run('range-baseline'),rangeSecond=await run('range-baseline')
+  assert.equal(rangeFirst.complete,true);assert.equal(rangeFirst.rows.length,81)
+  assert.deepEqual(rangeFirst.rows,rangeSecond.rows);assert.deepEqual(rangeFirst.assessment,rangeSecond.assessment)
+  assert.equal(rangeFirst.assessment.settings.maxGain,2)
+  assert.equal(rangeFirst.assessment.settings.holdSeconds,2)
+  assert.equal(rangeFirst.assessment.targets.loudGraceSeconds,1)
+  assert.ok((await evaluate(`document.getElementById('range-assessment').textContent`)).includes(rangeFirst.assessment.pass?'PASS':'FAIL'))
+  const beforeRangeCsv=downloads.length;await click('csv')
+  for(let i=0;downloads.length===beforeRangeCsv&&i<100;i++)await pause(50)
+  const rangeCsv=await readFile(join(temporary,downloads.at(-1)),'utf8')
+  assert.ok(rangeCsv.startsWith('fixture,rate,fft,cadence,gainMin,gainMax,'))
+  assert.equal(rangeCsv.split('\n').length,82)
+  assert.equal(await evaluate(`document.querySelectorAll('#range-meters tr').length`),9)
+
   // Mock the capture API with generated audio only. This does not exercise or bypass
   // native permissions; the browser picker remains a separate owner/manual check.
   await evaluate(`(()=>{
@@ -104,6 +135,7 @@ try {
   })()`)
   await click('share-tab')
   await waitFor(`document.getElementById('format').textContent.includes('tab / running') && document.getElementById('format').textContent.includes('isPlaying true')`)
+  assert.equal(await evaluate(`Number(document.querySelector('#energy-meters tr td').textContent)>0`),true)
   assert.equal(await evaluate(`document.getElementById('json').disabled && document.getElementById('csv').disabled && document.getElementById('volume').disabled`),true)
   const beforeLiveExport=downloads.length; await click('json'); await click('csv'); await pause(100)
   assert.equal(downloads.length,beforeLiveExport)
@@ -113,8 +145,7 @@ try {
   await click('share-tab')
   await evaluate(`window.__labStream.getTracks()[0].dispatchEvent(new Event('ended'))`)
   await waitFor(`document.getElementById('status').textContent.includes('Browser sharing ended')`)
-  await pause(250)
-  assert.equal(await evaluate(`document.getElementById('format').textContent.includes('RMS 0.000000')`),true)
+  await waitFor(`document.getElementById('format').textContent.includes('idle / reset') && document.getElementById('format').textContent.includes('RMS 0.000000')`,10000)
   for(const mode of ['denied','noaudio']) {
     await evaluate(`window.__labCaptureMode=${JSON.stringify(mode)}`);await click('share-tab')
     await waitFor(`!document.getElementById('share-tab').disabled`)
@@ -165,11 +196,13 @@ try {
   const assets = await readdir('dist/assets')
   for (const asset of assets.filter(name => name.endsWith('.js'))) {
     const contents = await readFile(join('dist/assets', asset), 'utf8')
-    for (const marker of ['rmsDbfs', 'createDiagnosticObserver', 'echo-synthetic.wav', 'noise-60db-peak', 'excursionDelayMs', 'Choose a browser tab and enable Share tab audio. Sound stays in the source tab.']) assert.equal(contents.includes(marker), false, `${asset}: ${marker}`)
+    for (const marker of ['rmsDbfs', 'createDiagnosticObserver', 'echo-synthetic.wav', 'noise-60db-peak', 'excursionDelayMs', 'estimatedBroadRms', 'MI02a · Energy comparison', 'extraClippingAfterGraceSeconds', 'MI02b · Range and noise comparison', 'Choose a browser tab and enable Share tab audio. Sound stays in the source tab.']) assert.equal(contents.includes(marker), false, `${asset}: ${marker}`)
   }
   assert.equal((await readdir('dist')).includes('audio-lab.html'), false)
   assert.deepEqual(errors, [])
+  await writeFile(join(temporary, 'range.json'),JSON.stringify(rangeFirst))
+  await writeFile(join(temporary, 'energy.json'),JSON.stringify(energyFirst))
   await writeFile(join(temporary, 'baseline.json'), JSON.stringify(first))
-  await writeFile(join(temporary, 'verification.json'), JSON.stringify({ browser: first.browser, live, rows: first.rows.length, repeatedExactly: true, partialExportComplete: partial.complete, checks: ['fixture playback/pause/reset', 'synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution', 'responsive UI', 'JSON/CSV exports', 'full baseline repeated exactly', 'partial cancellation', 'same synthetic player advances across all four landscapes', 'production asset exclusion'], errors }, null, 2))
-  console.log(`PASS ${first.rows.length} rows × 2; screenshots, numeric baseline and verification: ${temporary}`)
+  await writeFile(join(temporary, 'verification.json'), JSON.stringify({ browser: first.browser, live, rows: first.rows.length, rangeRows:rangeFirst.rows.length,rangeAssessment:rangeFirst.assessment,energyRows: energyFirst.rows.length, energyAssessment: energyFirst.assessment, repeatedExactly: true, partialExportComplete: partial.complete, checks: ['fixture playback/pause/reset', 'synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution', 'responsive UI', 'JSON/CSV exports', 'full baseline repeated exactly', 'partial cancellation', 'same synthetic player advances across all four landscapes', 'production asset exclusion'], errors }, null, 2))
+  console.log(`PASS ${first.rows.length} baseline rows and ${energyFirst.rows.length} energy rows and ${rangeFirst.rows.length} range rows repeated; screenshots, numeric baseline and verification: ${temporary}`)
 } finally { ws?.close(); browser.kill(); server.kill() }
