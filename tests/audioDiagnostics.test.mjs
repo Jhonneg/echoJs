@@ -56,6 +56,10 @@ test('diagnostic reset clears numeric scratch and isolates consumer failures', (
   assert.equal(snapshot.rms, 0)
   assert.equal(snapshot.rmsDbfs, null)
   assert.equal(snapshot.timestamp, 0)
+  assert.equal(snapshot.context.intensity, 0)
+  assert.equal(snapshot.context.brightness, 0)
+  assert.equal(snapshot.context.activity, 0)
+  assert.equal(snapshot.context.eventCount, 0)
 })
 
 // Run the actual analysis module with only Vite's build constant and module URLs resolved.
@@ -100,8 +104,13 @@ test('live observer enabled/disabled yields identical legacy output and no extra
     assert.equal(reads, 6)
     assert.equal(snapshot.sampleRate, 96000)
     const beforeSeek = structuredClone(on.signal), session = snapshot.onsets.session
+    const contextSession = snapshot.context.session
+    assert.ok(snapshot.context.intensity > 0)
     element.dispatchEvent(new Event('seeking'))
     assert.ok(snapshot.onsets.session > session)
+    assert.ok(snapshot.context.session > contextSession)
+    assert.equal(snapshot.context.intensity, 0)
+    assert.equal(snapshot.context.activity, 0)
     assert.deepEqual(on.signal, beforeSeek)
     assert.equal(snapshot.onsets.events.length, 0)
     const ref = on.signal.fast

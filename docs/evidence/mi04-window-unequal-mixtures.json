@@ -1,0 +1,203 @@
+{
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "diagnosticOnly": true,
+  "rate": 48000,
+  "bassPeakDb": -6,
+  "midPeakDb": -30,
+  "rows": [
+    {
+      "declining": false,
+      "offset": 0,
+      "cadence": 30,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 101.33333333333327
+    },
+    {
+      "declining": false,
+      "offset": 0,
+      "cadence": 60,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 85.33333333333326
+    },
+    {
+      "declining": false,
+      "offset": 0,
+      "cadence": 120,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 67.99999999999994
+    },
+    {
+      "declining": false,
+      "offset": 0.007,
+      "cadence": 30,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 99.99999999999997
+    },
+    {
+      "declining": false,
+      "offset": 0.007,
+      "cadence": 60,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 83.99999999999996
+    },
+    {
+      "declining": false,
+      "offset": 0.007,
+      "cadence": 120,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 70.33333333333336
+    },
+    {
+      "declining": false,
+      "offset": 0.017,
+      "cadence": 30,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 116.3333333333334
+    },
+    {
+      "declining": false,
+      "offset": 0.017,
+      "cadence": 60,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 84.33333333333337
+    },
+    {
+      "declining": false,
+      "offset": 0.017,
+      "cadence": 120,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 68.33333333333336
+    },
+    {
+      "declining": true,
+      "offset": 0,
+      "cadence": 30,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 101.33333333333327
+    },
+    {
+      "declining": true,
+      "offset": 0,
+      "cadence": 60,
+      "expected": 2,
+      "matched": 1,
+      "missed": [
+        {
+          "time": 1,
+          "band": "mid",
+          "levelDb": -30,
+          "group": "mid"
+        }
+      ],
+      "extras": [],
+      "maxEmissionDelayMs": 83.99999999999996
+    },
+    {
+      "declining": true,
+      "offset": 0,
+      "cadence": 120,
+      "expected": 2,
+      "matched": 1,
+      "missed": [
+        {
+          "time": 1,
+          "band": "mid",
+          "levelDb": -30,
+          "group": "mid"
+        }
+      ],
+      "extras": [],
+      "maxEmissionDelayMs": 67.99999999999994
+    },
+    {
+      "declining": true,
+      "offset": 0.007,
+      "cadence": 30,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 99.99999999999997
+    },
+    {
+      "declining": true,
+      "offset": 0.007,
+      "cadence": 60,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 83.99999999999996
+    },
+    {
+      "declining": true,
+      "offset": 0.007,
+      "cadence": 120,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 70.33333333333336
+    },
+    {
+      "declining": true,
+      "offset": 0.017,
+      "cadence": 30,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 116.3333333333334
+    },
+    {
+      "declining": true,
+      "offset": 0.017,
+      "cadence": 60,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 83.99999999999996
+    },
+    {
+      "declining": true,
+      "offset": 0.017,
+      "cadence": 120,
+      "expected": 2,
+      "matched": 2,
+      "missed": [],
+      "extras": [],
+      "maxEmissionDelayMs": 68.33333333333336
+    }
+  ]
+}

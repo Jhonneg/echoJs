@@ -35,13 +35,16 @@ test('spacing suppresses close peaks without queueing them and other bands remai
   const x=setup();for(let i=0;i<30;i++)x.step()
   const all=silence();all[4]=all[43]=all[341]=-20
   x.step(all);x.step()
+  assert.equal(x.detector.view.events.length,0)
+  x.step();x.step()
   assert.deepEqual(x.detector.view.events.map(e=>e.band),['low','mid','high'])
-  for(let i=0;i<4;i++)x.step()
+  x.step()
   x.step(all);x.step()
   assert.equal(x.detector.view.events.length,3)
   for(let i=0;i<10;i++)x.step()
   assert.equal(x.detector.view.events.length,3)
   x.step(all);x.step()
+  x.step();x.step()
   assert.equal(x.detector.view.events.length,6)
 })
 test('falling energy and quiet noise do not become attacks; reset/invalid/gap primes without events',()=>{
@@ -59,7 +62,7 @@ test('falling energy and quiet noise do not become attacks; reset/invalid/gap pr
   y.detector.update(silence(),{bass:NaN,midrange:0,treble:0},100)
   assert.equal(y.detector.view.primed,false)
 })
-test('confirmation rejects weak release sidebands but retains dominant decays and weak attacks over a steady bed',()=>{
+test('attack window rejects weak release sidebands but retains dominant decays and weak attacks over a steady bed',()=>{
   function mixture(low,mid){const bins=silence();if(low)bins[4]=20*Math.log10(low);if(mid)bins[43]=20*Math.log10(mid);return bins}
   for(const [peak,confirmationLow,confirmationMid,rejected] of [[.003,.03,.003,true],[.1,.03,.03,false],[.003,.1,.003,false]]){
     const x=setup()
@@ -68,13 +71,50 @@ test('confirmation rejects weak release sidebands but retains dominant decays an
     x.step(mixture(.1,peak))
     assert.equal(x.detector.view.sequence,0)
     x.step(mixture(confirmationLow,confirmationMid))
+    assert.equal(x.detector.view.events.length,0)
+    x.step(mixture(confirmationLow,confirmationMid));x.step(mixture(confirmationLow,confirmationMid))
     assert.equal(x.detector.view.debug.mid.rejected.falling,rejected?1:0)
     assert.equal(x.detector.view.events.filter(e=>e.band==='mid').length,rejected?0:1)
-    if(!rejected)assert.ok(Math.abs(x.detector.view.events[0].emittedAtSeconds-x.detector.view.events[0].timeSeconds-1/60)<1e-10)
+    if(!rejected){const e=x.detector.view.events[0];assert.ok(e.emittedAtSeconds-e.timeSeconds>=.04-1e-10);assert.ok(e.emittedAtSeconds-e.timeSeconds<=.04+1/60)}
   }
   // The first mixture can also represent a genuine weak new mid attack under a
   // declining bass bed. Magnitude-only attribution cannot distinguish the two;
   // its suppression is an explicit limitation, not evidence of music accuracy.
+})
+test('40 ms observation preserves peak identity and uses pre-rise baseline across cadences',()=>{
+  const strengths=[]
+  for(const cadence of [30,60,120]){
+    const d=createOnsetDetector(48000,2048),meter=createEnergyMeter(48000,2048),energy=createEnergy()
+    let firstPeak=null
+    for(let i=0;i<cadence*2;i++){
+      const time=i/cadence,magnitude=time>=.5&&time<1?.1*Math.min(1,((time-.5)/(2/30))**2):0,bins=bin(magnitude)
+      meter.update(bins,energy);const view=d.update(bins,energy.rms,time)
+      if(view.debug.mid.pendingPeak!==null){firstPeak??=view.debug.mid.pendingPeak;assert.equal(view.events.length,0)}
+    }
+    assert.equal(d.view.events.length,1)
+    const e=d.view.events[0];assert.equal(e.timeSeconds,firstPeak);assert.ok(Object.isFrozen(e))
+    assert.ok(e.emittedAtSeconds>=e.timeSeconds+.04-1e-12&&e.emittedAtSeconds<=e.timeSeconds+.04+1/cadence+1e-12)
+    strengths.push(e.strength)
+  }
+  assert.ok(Math.max(...strengths)-Math.min(...strengths)<1e-6)
+})
+test('reset and inactive playback discard pending attacks without a late emission',()=>{
+  for(const inactive of [false,true]){
+    const x=setup();for(let i=0;i<30;i++)x.step()
+    x.step(bin(.1));x.step(bin(.1));assert.notEqual(x.detector.view.debug.mid.pendingPeak,null)
+    if(inactive)x.step(bin(.1),1/60,false);else x.detector.reset()
+    for(let i=0;i<20;i++)x.step(bin(.1))
+    assert.equal(x.detector.view.sequence,0);assert.equal(x.detector.view.debug.mid.pendingPeak,null)
+  }
+})
+test('different bands finishing together on an irregular tick publish chronological peak clocks',()=>{
+  const d=createOnsetDetector(48000,2048),meter=createEnergyMeter(48000,2048),energy=createEnergy()
+  for(const time of [0,.01,.02,.03,.07,.09]){
+    const bins=silence();if(time>=.01)bins[43]=-20;if(time>=.02)bins[4]=-20
+    meter.update(bins,energy);d.update(bins,energy.rms,time)
+  }
+  assert.deepEqual(d.view.events.map(e=>({sequence:e.sequence,peak:e.timeSeconds,emission:e.emittedAtSeconds})),[
+    {sequence:1,peak:.01,emission:.07},{sequence:2,peak:.02,emission:.07}])
 })
 test('event history is bounded while the sequence and counters never replay old events',()=>{
   const x=setup()

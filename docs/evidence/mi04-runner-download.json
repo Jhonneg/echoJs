@@ -1,0 +1,17 @@
+{
+  "input": "Generated MI02b fixture aggregates only",
+  "failure": {
+    "waitSeconds": 5,
+    "jsonDisabled": false,
+    "appErrors": [],
+    "receivedBytes": 158262,
+    "totalBytes": 158262,
+    "lastState": "inProgress"
+  },
+  "correction": {
+    "runnerWaitSeconds": 30,
+    "signalSettingsChanged": false,
+    "focusedRangeReportsRepeatedExactly": true,
+    "focusedEvidence": "/tmp/echo-mi01-uUZs5j"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "pass": false,
+  "complete": true,
+  "rows": 324,
+  "rowFailures": 0,
+  "cadenceFailures": 30,
+  "relationFailures": 0,
+  "maxCadence": {
+    "intensity": 0.005734608404201279,
+    "brightness": 0.01620833912636277,
+    "activity": 0.15698716829758708
+  },
+  "onsets": {
+    "expected": 2295,
+    "matched": 2265,
+    "missed": 30,
+    "extras": 0
+  },
+  "noiseMax": 0.0011068364237979502,
+  "decayMax": 0.0009054711961114997,
+  "oracleError": 0,
+  "minContrast": 0.35085004514773277,
+  "transitionMax": {
+    "intensity": 0.017413089546462868,
+    "brightness": 0.07376979383920379,
+    "activity": 0.24077045572993028
+  },
+  "runMetrics": {
+    "offlineWallMs": 33800.19999999949,
+    "replayWallMs": 16743.0000000007,
+    "maxTraceBytes": 19668992
+  },
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+}

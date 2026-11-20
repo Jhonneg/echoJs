@@ -3,6 +3,7 @@ import { createEnergy, createEnergyMeter, resetEnergy } from './energy.ts'
 import { createAdaptiveScaling, createAdaptiveView, applyAdaptive, resetAdaptiveView } from './adaptive.ts'
 import { createOnsetDetector, createOnsetView } from './onsets.ts'
 import { SIX_BAND_SETTINGS } from '../../audio/sixBands.ts'
+import { createContextView, createMusicalContext } from './context.ts'
 
 export function rms(samples: Float32Array) {
   let sum = 0
@@ -17,7 +18,7 @@ export const SATURATION_THRESHOLD = 0.95
 export function createSnapshot() {
   return { state: 'reset', sampleRate: 0, fftSize: 0, windowMs: 0, audioTime: 0, timestamp: 0, delta: 0,
     rms: 0, rmsDbfs: null as number | null, raw: emptyBands(), sixRaw: emptySixBands(),
-    onsets: createOnsetView(), energy: createEnergy(), adaptive: createAdaptiveView(), fluxL1: emptyBands(), fluxL2: emptyBands(), active: emptyBands(), signal: silentSignal() }
+    context: createContextView(), onsets: createOnsetView(), energy: createEnergy(), adaptive: createAdaptiveView(), fluxL1: emptyBands(), fluxL2: emptyBands(), active: emptyBands(), signal: silentSignal() }
 }
 export type DiagnosticSnapshot = ReturnType<typeof createSnapshot>
 // Reused numeric view, overwritten on each read. Copy when retaining history. No graph nodes or media buffers.
@@ -50,6 +51,7 @@ export function createDiagnosticObserver(sink: DiagnosticSink) {
   let suppressOnsetsUntil = 0
   let detector: ReturnType<typeof createOnsetDetector> | undefined
   let meter: ReturnType<typeof createEnergyMeter> | undefined
+  let context: ReturnType<typeof createMusicalContext> | undefined
   // A broken diagnostic consumer must never interrupt production feature processing.
   const publish = () => { try { sink(view) } catch { /* observer failure is isolated */ } }
   return {
@@ -63,6 +65,7 @@ export function createDiagnosticObserver(sink: DiagnosticSink) {
         meter = createEnergyMeter(analyser.context.sampleRate, analyser.fftSize)
         scaling.reset()
         detector = createOnsetDetector(analyser.context.sampleRate, analyser.fftSize, detector?.view.session ?? view.onsets.session)
+        context = createMusicalContext(analyser.context.sampleRate, analyser.fftSize, view.context.session)
       }
       meter.update(bins, view.energy)
       view.state = active ? 'running' : 'inactive'
@@ -72,6 +75,7 @@ export function createDiagnosticObserver(sink: DiagnosticSink) {
       view.rms = rms(time)
       view.rmsDbfs = dbfs(view.rms)
       view.onsets = detector!.update(bins, view.energy.rms, now / 1000, active && now / 1000 >= suppressOnsetsUntil)
+      view.context = context!.update(bins, view.energy.rms, view.onsets, now / 1000, active && now / 1000 >= suppressOnsetsUntil)
       applyAdaptive(view.energy, scaling.update(view.rms, delta, active), view.adaptive)
       for (const band of BAND_NAMES) {
         view.fluxL1[band] = flux?.l1[band] ?? 0
@@ -83,6 +87,8 @@ export function createDiagnosticObserver(sink: DiagnosticSink) {
       suppressOnsetsUntil = quietSeconds > 0 ? performance.now() / 1000 + quietSeconds : 0
       detector?.reset()
       view.onsets = detector?.view ?? createOnsetView()
+      context?.reset()
+      view.context = context?.view ?? createContextView()
       resetSignal(view.signal)
       resetEnergy(view.energy)
       scaling.reset()

@@ -1,0 +1,58 @@
+{
+  "contextPass": true,
+  "contextRows": 324,
+  "contextRowFailures": 0,
+  "contextCadenceFailures": 0,
+  "maxCadence": {
+    "intensity": 0.0057355203439330635,
+    "brightness": 0.01620833912390149,
+    "activity": 0.0074751958000534025
+  },
+  "expandedOnsets": {
+    "expected": 2295,
+    "matched": 2295,
+    "missed": 0,
+    "extras": 0
+  },
+  "onsetPass": true,
+  "core": {
+    "cases": 702,
+    "expected": 5157,
+    "detected": 5157,
+    "matched": 5157,
+    "missed": 0,
+    "extras": 0,
+    "wrongBand": 0,
+    "releaseEvents": 0,
+    "maxPeakDelayMs": 52.85714285714249,
+    "maxEmissionDelayMs": 119.20634920634932
+  },
+  "stress": {
+    "cases": 81,
+    "expected": 324,
+    "detected": 324,
+    "matched": 324,
+    "missed": 0,
+    "extras": 0,
+    "wrongBand": 0,
+    "releaseEvents": 0,
+    "maxPeakDelayMs": 36.190476190476105,
+    "maxEmissionDelayMs": 102.17687074829928
+  },
+  "strengthFailures": 0,
+  "strengthGroups": 1377,
+  "priorOnsetThresholdsUnchanged": true,
+  "onsetTargetsUnchanged": true,
+  "contextSettingsUnchanged": true,
+  "contextTargetsUnchanged": true,
+  "contextRunMetrics": {
+    "offlineWallMs": 33999.59999999823,
+    "replayWallMs": 16795.80000000121,
+    "maxTraceBytes": 19668992
+  },
+  "onsetRunMetrics": {
+    "offlineWallMs": 31842.800000002142,
+    "replayWallMs": 17544.199999995995,
+    "maxTraceBytes": 16228352
+  }
+}

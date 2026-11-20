@@ -253,3 +253,14 @@ Owner approved the focused correction after the initial 29-extra failure. Use th
 ## MI03 lab checkpoint accepted — 2026-11-18
 
 Owner's “looks good” accepts the corrected lab checkpoint for continuation while retaining the failed initial baseline and unequal-mixture limitations. No specific test conditions were supplied; do not infer further native/song/hardware validation. Next is a bounded MI04 plan; implementation and later feature/scene gates remain separate.
+
+## MI04 context proposal — 2026-11-20
+
+Resume at planning after accepted MI03. Propose reusing the existing lab RMS/FFT/events for slow intensity, power-centroid brightness and a four-second accepted-event strength rate. Keep fixed calibration and MI03 unchanged; activity inherits missed-event limitations. Explicit numerical defaults/criteria in MI04_PLAN.md await approval, not implicit production adoption. Preserve original roadmap/G1 and scene gates; no new backend/dependency or scene-specific context logic.
+
+## MI04 initial context and failed cadence gate — 2026-11-20
+
+Owner approved the lab context scope/defaults/criteria. Implement them unchanged on existing energy/FFT/events, with fixed-capacity timestamped event storage and source-independent lifecycle. Native intensity/brightness and independent context math pass; retain 30 failed activity cadence comparisons rather than relaxing 0.05 or changing activity to ignore strengths. Expanded frequency transitions reveal missed onsets and other cases reveal differing strengths, despite MI03's original core/stress remaining green. Propose one separately approved DEV attack-window follow-up, initially 40 ms, qualifying contribution/strength at observed band-RMS maximum; retain numeric/latency gates and measure added emission delay. No automatic correction, production promotion, G1 or scene migration. See MI04_RESULTS.md.
+## MI04 approved 40 ms onset observation — 2026-11-20
+
+Owner approved the bounded onset-window follow-up. Pre-change generated candidate traces confirmed early sampled strength and falling-global-energy rejection of a rising new band; coarse peak lookback also loses the pre-attack minimum. Retain the existing 50 ms minimum at the start of rising novelty, observe maximum band RMS through 40 ms after the detected peak, and qualify falling energy against contribution at that maximum. Preserve immutable records/observed peak time and use actual later emission; no backdating. Chronologically emit different bands that mature on the same jittered tick using fixed-size selection. All prior numeric thresholds/references/quality targets remain fixed; added decision delay must stay within 150 ms. Synthetic gates now pass, with weak overlapping-attack misses still explicit. No automatic production/G1/scene promotion; see MI04_WINDOW_RESULTS.md for evidence and owner checkpoint.
