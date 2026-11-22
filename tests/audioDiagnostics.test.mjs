@@ -82,19 +82,21 @@ test('live observer enabled/disabled yields identical legacy output and no extra
       getFloatTimeDomainData(time) { reads++; time.fill(.1) } } }
   }
   let snapshot
-  const off = createAnalysis(), on = createAnalysis({ diagnostics: value => { snapshot = structuredClone(value) } })
+  const off = createAnalysis(), on = createAnalysis({ diagnostics: value => { snapshot = structuredClone(value) } }), candidate = createAnalysis({ musicIntelligence: true })
   const element = Object.assign(new EventTarget(), { paused: false, ended: false })
-  off.prepare(); on.prepare(); off.startElement(element); on.startElement(element)
+  off.prepare(); on.prepare(); candidate.prepare(); off.startElement(element); on.startElement(element); candidate.startElement(element)
   // Both contexts use performance.now at startup; establish an identical prior tick first.
   const step = now => { const queue = [...callbacks.values()]; callbacks.clear(); queue.forEach(fn => fn(now)) }
   step(1000); step(1100)
   // Reset both, then control the startup clock for exact parity.
-  off.stop(); on.stop()
+  off.stop(); on.stop(); candidate.stop()
   const original = performance.now; performance.now = () => 0
   try {
-    off.prepare(); on.prepare(); off.startElement(element); on.startElement(element)
+    off.prepare(); on.prepare(); candidate.prepare(); off.startElement(element); on.startElement(element); candidate.startElement(element)
     step(10); step(30); step(100); step(200)
     assert.deepEqual(off.signal, on.signal)
+    assert.deepEqual(off.signal, candidate.signal)
+    assert.equal(candidate.musicFeatures.read().status, 'active')
     const replay = createReplay(96000, 4096)
     const bins = new Float32Array(2048).fill(-Infinity); bins[4] = -30
     for (const time of [.01, .03, .1, .2]) replay.step({ time, bins, rms: .1 })
@@ -105,19 +107,24 @@ test('live observer enabled/disabled yields identical legacy output and no extra
     assert.equal(snapshot.sampleRate, 96000)
     const beforeSeek = structuredClone(on.signal), session = snapshot.onsets.session
     const contextSession = snapshot.context.session
+    const candidateSession = candidate.musicFeatures.read().session
     assert.ok(snapshot.context.intensity > 0)
     element.dispatchEvent(new Event('seeking'))
     assert.ok(snapshot.onsets.session > session)
+    assert.ok(candidate.musicFeatures.read().session > candidateSession)
+    assert.equal(candidate.musicFeatures.read().events.length, 0)
+    assert.equal(candidate.musicFeatures.read().status, 'inactive')
     assert.ok(snapshot.context.session > contextSession)
     assert.equal(snapshot.context.intensity, 0)
     assert.equal(snapshot.context.activity, 0)
     assert.deepEqual(on.signal, beforeSeek)
     assert.equal(snapshot.onsets.events.length, 0)
     const ref = on.signal.fast
-    off.stop(); on.stop()
+    off.stop(); on.stop(); candidate.stop()
     assert.equal(on.signal.fast, ref)
     assert.deepEqual(on.signal, silentSignal())
     assert.equal(snapshot.state, 'reset')
+    assert.equal(candidate.musicFeatures.read().status, 'inactive')
     assert.deepEqual(snapshot.raw, emptyBands())
     const stoppedSession = snapshot.onsets.session
     element.dispatchEvent(new Event('seeked'))

@@ -25,7 +25,7 @@ export default function App() {
   const [scene, setScene] = useState<SceneId>('bloom')
   const [volume, setVolume] = useState(0.5)
   const localController = useRef<ReturnType<typeof createLocalFile> | null>(null)
-  const [analysis] = useState(createAnalysis)
+  const [analysis] = useState(() => createAnalysis({ musicIntelligence: true }))
   const controller = useRef<ReturnType<typeof createTabCapture> | null>(null)
   const experience = useRef<HTMLElement>(null)
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function App() {
             ? <LavenderPeaksScene quality={quality} signal={analysis.signal} reactivity={reactivity} />
             : scene === 'nocturne'
               ? <NocturneScene signal={analysis.signal} quality={quality} lighting={nocturneLighting} lightingMode={nocturneLightingMode} reactivity={reactivity} />
-              : <CrimsonHorizonScene quality={quality} signal={analysis.signal} reactivity={reactivity} />}
+              : <CrimsonHorizonScene pilot={analysis.musicFeatures ? { reader: analysis.musicFeatures, profile: 'candidate' } : undefined} quality={quality} signal={analysis.signal} reactivity={reactivity} />}
         <AudioControls source={source} capture={capture} local={local} analysis={analysis}
           scene={scene} onScene={setScene}
           nocturneLightingMode={nocturneLightingMode} onNocturneLightingMode={setNocturneLightingMode}

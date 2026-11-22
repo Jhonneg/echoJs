@@ -143,3 +143,13 @@ Owner clarified that lights should illuminate smoothly, faster than the first N0
 ## Planned Music Intelligence refinement — 2026-11-18
 
 Owner selected expressive/controlled refinement with Crimson as the future pilot, subtle terrain deformation and transitions within music/playback. [ANIMATION_REFINEMENT.md](ANIMATION_REFINEMENT.md) records the intended feature roles, two-pass Crimson approach, caps and preservation rules. This is a future direction after MI03/MI04 and feature-quality review; it does not replace the implemented response constants or authorize immediate scene changes. Onsets will be discrete, strength-qualified events with identity/timing; camera kicks, BPM claims, random flicker and scene-switch transition work are excluded. Existing scene-specific reduced-motion and zero-Reactivity behavior remains the baseline. The next deliverable/approval is [MI03_PLAN.md](MI03_PLAN.md).
+
+## Crimson bounded vertex pass — 2026-11-21
+
+Owner approved the second MI05 pass. Selected banks now have ≤0.08 world units vertical deformation, with sustained mid/overall energy and proportional mid accents (50/30/20 weighting), 140/600 ms amplitude response and slow context-driven phase (0.25–0.6 rad/s). Central corridor, near camera and distant/high skyline remain fixed through smooth spatial masks. Waves remain continuous across chunks/rebases/phase wrapping. Zero Reactivity/reduced motion clear amplitude/freeze phase; stale/inactive features freeze phase and release amplitude. Sun, camera, journey, audio interpretation and other landscapes remain unchanged. See MI05_VERTEX.md; owner visual/musical acceptance remains separate.
+
+Crimson visibility adjustment (2026-11-21): owner approved raising the initial0.08 cap to0.32 and using a0.7 power on normalized50/30/20 mid/overall/accent drive, then applying Reactivity linearly. Masks,140/600 ms envelope, phase rates, normal handling and motion overrides remain unchanged. This supersedes only the earlier amplitude/linear-drive settings; sun/camera/audio/other worlds remain as accepted.
+
+## Crimson contour lighting replaces deformation — 2026-11-21
+
+Owner reverted all vertex motion. Current terrain positions/normals are authored. Existing lowMids250–800 drive gradual contour illumination (sqrt visual target,320/750 ms); highMids800–2500 rises create550 ms travelling contour highlights. Qualification and strength depend only on high-mid energy, not bass/overall/broad onset events; constant high mids do not continually retrigger. Zero/stale/pause/reset clear streaks, reduced motion suppresses travel and slows low-light response to1.5 s. Existing sun/camera/journey behavior preserved. See CRIMSON_CONTOURS.md for defaults and current evidence; earlier vertex sections are historical.

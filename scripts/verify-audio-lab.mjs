@@ -49,7 +49,7 @@ try {
   const select = (id, value) => evaluate(`document.getElementById(${JSON.stringify(id)}).value=${JSON.stringify(value)}`)
   const screenshot = async name => { const result = await send('Page.captureScreenshot'); await writeFile(join(temporary, `${name}.png`), Buffer.from(result.data, 'base64')) }
   await send('Runtime.enable'); await send('Page.enable')
-  await send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{const NativeAudio=window.Audio;window.__labElements=[];window.Audio=class extends NativeAudio{constructor(...args){super(...args);window.__labElements.push(this)}}})()`})
+  await send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{const NativeAudio=window.Audio;window.__labElements=[];window.Audio=class extends NativeAudio{constructor(...args){super(...args);window.__labElements.push(this)}};const NativeContext=window.AudioContext;window.__labContexts=[];window.AudioContext=class extends NativeContext{constructor(...args){super(...args);window.__labContexts.push(this)}};const revoke=URL.revokeObjectURL;window.__labRevoked=[];URL.revokeObjectURL=value=>{window.__labRevoked.push(value);return revoke.call(URL,value)}})()`})
   await send('Browser.setDownloadBehavior', { behavior: 'allowAndName', downloadPath: temporary, eventsEnabled: true })
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false })
   await send('Page.navigate', { url: `http://127.0.0.1:${port}/audio-lab.html` })
@@ -93,8 +93,78 @@ try {
     if(downloads.length!==before+1){const state=await evaluate(`({progress:document.getElementById('progress').textContent,jsonDisabled:document.getElementById('json').disabled,buttons:Array.from(document.querySelectorAll('button'),b=>({id:b.id,disabled:b.disabled})),results:document.getElementById('results').textContent})`);await writeFile(join(temporary,'download-failure.json'),JSON.stringify({button,state,errors,downloadEvents},null,2));throw Error(`Synthetic export failed; diagnostics: ${temporary}/download-failure.json`)}
     return JSON.parse(await readFile(join(temporary, downloads.at(-1)), 'utf8'))
   }
+  const selectReviewFile=async(invalid=false)=>evaluate(`(async()=>{
+    const {fixtures,generateFixture,wav}=await import('/src/dev/audioLab/fixtures.ts');
+    const original=fixtures.find(f=>f.id==='sustain');const f={...original,duration:20,tones:original.tones.map(t=>({...t,end:19}))};
+    const file=${invalid?"new File(['generated invalid audio'],'generated-invalid.wav',{type:'audio/wav'})":"wav(generateFixture(f,48000),48000)"};
+    const transfer=new DataTransfer();transfer.items.add(file);const input=document.getElementById('review-file');input.files=transfer.files;input.dispatchEvent(new Event('change',{bubbles:true}));
+  })()`)
+  const reviewScreenshot=async name=>{
+    // A viewport capture preserves the actual scrollbar/layout width. Element
+    // clips beyond the viewport can reflow narrow text while Chromium captures.
+    await evaluate(`document.getElementById('review-canvas').scrollIntoView({block:'start'})`);await pause(100)
+    await screenshot(name)
+  }
+  const verifyReview=async(hasReport)=>{
+    await selectReviewFile()
+    assert.equal(await evaluate(`window.__labElements.at(-1).paused`),true,'Selection must not start playback')
+    assert.equal(await evaluate(`document.getElementById('json').disabled&&document.getElementById('csv').disabled`),true)
+    await click('file-play');await waitFor(`document.getElementById('format').textContent.includes('file / running')&&document.getElementById('format').textContent.includes('isPlaying true')`)
+    await pause(800)
+    const before=await evaluate(`({elements:window.__labElements.length,contexts:window.__labContexts.length,time:window.__labElements.at(-1).currentTime,contextState:window.__labContexts.at(-1).state,onsetSession:document.getElementById('onset-state').textContent.match(/Session (\\d+)/)[1],src:window.__labElements.at(-1).src,volume:window.__labElements.at(-1).volume})`)
+    const modes=[]
+    for(const mode of ['legacy','candidate','compare']){
+      await select('review-mode',mode);await evaluate(`document.getElementById('review-mode').dispatchEvent(new Event('change'))`);await pause(250)
+      const current=await evaluate(`({elements:window.__labElements.length,contexts:window.__labContexts.length,time:window.__labElements.at(-1).currentTime,contextState:window.__labContexts.at(-1).state,onsetSession:document.getElementById('onset-state').textContent.match(/Session (\\d+)/)[1],src:window.__labElements.at(-1).src,volume:window.__labElements.at(-1).volume,paused:window.__labElements.at(-1).paused,label:document.getElementById('review-state').textContent})`)
+      assert.equal(current.contextState,'running');assert.equal(current.onsetSession,before.onsetSession);assert.equal(current.elements,before.elements);assert.equal(current.contexts,before.contexts);assert.equal(current.src,before.src);assert.equal(current.volume,before.volume);assert.equal(current.paused,false);assert.ok(current.time>before.time);assert.ok(current.label.includes(`View ${mode}`));modes.push({mode,time:current.time})
+    }
+    const downloadCount=downloadEvents.length
+    // Exercise handler guards as well as disabled buttons with a retained report.
+    await evaluate(`document.getElementById('json').onclick();document.getElementById('csv').onclick()`);await pause(200)
+    assert.equal(downloadEvents.length,downloadCount)
+    if(!hasReport){
+      await reviewScreenshot('g1-desktop')
+      await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});await pause(250)
+      assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true)
+      assert.equal(await evaluate(`document.getElementById('review-canvas').height`),880)
+      const tops=await evaluate(`(async()=>{const values=[];for(let i=0;i<8;i++){const r=document.getElementById('review-canvas').getBoundingClientRect();values.push(r.top+scrollY);await new Promise(resolve=>setTimeout(resolve,100))}return values})()`)
+      assert.ok(Math.max(...tops)-Math.min(...tops)<1,'Portrait chart must not jump with changing readouts')
+      await reviewScreenshot('g1-portrait')
+      await send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false})
+    }
+    await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await pause(250)
+    assert.ok((await evaluate(`document.getElementById('review-state').textContent`)).includes('brief markers hidden'))
+    await send('Emulation.setEmulatedMedia',{features:[]})
+    await click('pause');await waitFor(`document.getElementById('format').textContent.includes('inactive')`)
+    await click('file-play');await waitFor(`!window.__labElements.at(-1).paused`);await pause(250)
+    assert.equal(await evaluate(`window.__labElements.length`),before.elements);assert.equal(await evaluate(`window.__labContexts.length`),before.contexts)
+    await click('stop');await waitFor(`document.getElementById('format').textContent.includes('idle / reset')`)
+    assert.equal(await evaluate(`document.getElementById('review-file').value`),'')
+    assert.equal(await evaluate(`window.__labRevoked.includes(${JSON.stringify(before.src)})`),true)
+    assert.ok((await evaluate(`document.getElementById('review-state').textContent`)).includes('band events 0/0/0'))
+    if(hasReport)assert.equal(await evaluate(`document.getElementById('json').disabled||document.getElementById('csv').disabled`),false)
+    if(!hasReport){await selectReviewFile(true);await click('file-play');await waitFor(`document.getElementById('status').textContent.includes('could not be played')`);assert.equal(await evaluate(`document.getElementById('review-file').value`),'');await click('stop')}
+    return {hasRetainedReport:hasReport,selectionWaited:true,modes,elementAndContextPreserved:true,onsetSessionPreserved:true,volume:before.volume,exportsBlocked:true,reducedMotionLabel:true,resumeAndStop:true}
+  }
+  console.log('Checking generated G1 review controls before native matrices…')
+  const g1Early=await verifyReview(false)
+
+  let first, second, energyFirst, energySecond, rangeFirst, rangeSecond, onsetFirst, onsetSecond
+  if(process.env.ECHO_AUDIO_LAB_RESUME) {
+    // Resume only completed generated numeric matrices after an interrupted long run.
+    // Native/source/UI tests below always run again. Never accepts media or live captures.
+    const cached=[]
+    for(const name of await readdir(process.env.ECHO_AUDIO_LAB_RESUME)) {
+      try { const report=JSON.parse(await readFile(join(process.env.ECHO_AUDIO_LAB_RESUME,name),'utf8'));if(report.complete&&Array.isArray(report.rows)&&['MI01','MI02a','MI02b','MI03'].includes(report.task))cached.push(report) } catch { /* not a numeric JSON report */ }
+    }
+    const pair=(task,count)=>{const rows=cached.filter(report=>report.task===task);assert.equal(rows.length,2,`${task}: exactly two complete cached reports required`);assert.equal(rows[0].rows.length,count);assert.deepEqual(rows[0].rows,rows[1].rows);assert.deepEqual(rows[0].assessment,rows[1].assessment);assert.deepEqual(rows[0].metadata,rows[1].metadata);assert.ok(rows.every(report=>!report.errors?.length));return rows}
+    ;[first,second]=pair('MI01',216);[energyFirst,energySecond]=pair('MI02a',432);[rangeFirst,rangeSecond]=pair('MI02b',81);[onsetFirst,onsetSecond]=pair('MI03',783)
+    assert.ok(first.rows.every(row=>row.resetZero));assert.equal(onsetFirst.assessment.pass,true)
+    assert.equal(energyFirst.assessment.calibrationPass,true);assert.ok(Object.values(energyFirst.assessment.curves.find(c=>c.curve==='linear').checks).every(Boolean))
+    console.log('Validated complete repeated generated MI01–MI03 reports from interrupted run; resuming MI04 and integration…')
+  } else {
   console.log('Running baseline twice for reproducibility…')
-  const first = await run(), second = await run()
+  first = await run(); second = await run()
   assert.equal(first.complete, true); assert.deepEqual(first.rows, second.rows); assert.deepEqual(first.metadata, second.metadata)
   assert.ok(first.rows.every(row => row.resetZero))
   await screenshot('baseline')
@@ -104,7 +174,7 @@ try {
   assert.ok(csv.startsWith('fixture,rate,fft,cadence,band,'))
   assert.equal(csv.split('\n').length, first.rows.length * 3 + 1)
   console.log('Running MI02a energy comparison twice…')
-  const energyFirst = await run('energy-baseline'), energySecond = await run('energy-baseline')
+  energyFirst = await run('energy-baseline'); energySecond = await run('energy-baseline')
   assert.equal(energyFirst.complete,true); assert.equal(energyFirst.rows.length,432)
   assert.deepEqual(energyFirst.rows,energySecond.rows); assert.deepEqual(energyFirst.assessment,energySecond.assessment)
   assert.equal(energyFirst.assessment.targets.loudContrast,.15)
@@ -120,7 +190,7 @@ try {
   assert.ok(energyCsv.startsWith('fixture,rate,fft,cadence,hz,peakDbfs,sixBand,'))
 
   console.log('Running MI02b range/noise comparison twice…')
-  const rangeFirst=await run('range-baseline'),rangeSecond=await run('range-baseline')
+  rangeFirst=await run('range-baseline');rangeSecond=await run('range-baseline')
   assert.equal(rangeFirst.complete,true);assert.equal(rangeFirst.rows.length,81)
   assert.deepEqual(rangeFirst.rows,rangeSecond.rows);assert.deepEqual(rangeFirst.assessment,rangeSecond.assessment)
   assert.equal(rangeFirst.assessment.settings.maxGain,2)
@@ -135,7 +205,7 @@ try {
   assert.equal(await evaluate(`document.querySelectorAll('#range-meters tr').length`),9)
 
   console.log('Running MI03 core/stress matrix twice; numerical failures remain reported…')
-  const onsetFirst=await run('onset-baseline'),onsetSecond=await run('onset-baseline')
+  onsetFirst=await run('onset-baseline');onsetSecond=await run('onset-baseline')
   assert.equal(onsetFirst.complete,true);assert.equal(onsetFirst.rows.length,783)
   assert.deepEqual(onsetFirst.rows,onsetSecond.rows);assert.deepEqual(onsetFirst.assessment,onsetSecond.assessment)
   assert.equal(onsetFirst.assessment.targets.emissionDelaySeconds,.15)
@@ -148,6 +218,7 @@ try {
   assert.ok(onsetCsv.startsWith('fixture,category,stress,phaseSeconds,'));assert.equal(onsetCsv.split('\n').length,784)
 
   assert.equal(onsetFirst.assessment.pass,true,'Accepted MI03 quality must not regress')
+  }
   console.log('Running MI04 context matrix twice; quality verdict remains separate…')
   const contextFirst=await run('context-baseline'),contextSecond=await run('context-baseline')
   assert.equal(contextFirst.complete,true);assert.equal(contextFirst.rows.length,324)
@@ -161,6 +232,7 @@ try {
   assert.equal(contextCsv.split('\n').length,1+contextFirst.rows.reduce((sum,row)=>sum+Math.max(1,row.windows.length),0))
   await evaluate(`document.getElementById('context-state').scrollIntoView({block:'start'})`);await screenshot('context')
 
+  const g1Retained=await verifyReview(true)
   // Mock the capture API with generated audio only. This does not exercise or bypass
   // native permissions; the browser picker remains a separate owner/manual check.
   await evaluate(`(()=>{
@@ -209,6 +281,12 @@ try {
   await waitFor(`window.__labLateStream.getTracks().every(t=>t.readyState==='ended')`)
   await waitFor(`document.getElementById('format').textContent.includes('fixture / running')`)
   await click('stop')
+  await evaluate(`window.__labCaptureMode='pending'`);await click('share-tab');await selectReviewFile()
+  assert.equal(await evaluate(`window.__labElements.at(-1).paused`),true)
+  await evaluate(`window.__labFileLateStream=window.__labMakeStream();window.__labResolveCapture(window.__labFileLateStream)`)
+  await waitFor(`window.__labFileLateStream.getTracks().every(t=>t.readyState==='ended')`)
+  assert.equal(await evaluate(`document.getElementById('file-play').disabled`),false)
+  await click('file-play');await waitFor(`document.getElementById('format').textContent.includes('file / running')`);await click('stop')
   await evaluate(`Promise.all(window.__labCaptureContexts.map(ctx=>ctx.close()))`)
   await click('context-baseline');await click('cancel')
   await waitFor(`document.getElementById('progress').textContent.startsWith('Cancelled:')`)
@@ -252,7 +330,7 @@ try {
   const assets = await readdir('dist/assets')
   for (const asset of assets.filter(name => name.endsWith('.js'))) {
     const contents = await readFile(join('dist/assets', asset), 'utf8')
-    for (const marker of ['rmsDbfs', 'createDiagnosticObserver', 'echo-synthetic.wav', 'noise-60db-peak', 'excursionDelayMs', 'estimatedBroadRms', 'MI02a · Energy comparison', 'extraClippingAfterGraceSeconds', 'MI02b · Range and noise comparison', 'emittedAtSeconds', 'MI03 · Onset events', 'MI04 · Musical context', 'brightnessValid', 'Choose a browser tab and enable Share tab audio. Sound stays in the source tab.']) assert.equal(contents.includes(marker), false, `${asset}: ${marker}`)
+    for (const marker of ['rmsDbfs', 'createDiagnosticObserver', 'echo-synthetic.wav', 'noise-60db-peak', 'excursionDelayMs', 'estimatedBroadRms', 'MI02a · Energy comparison', 'extraClippingAfterGraceSeconds', 'MI02b · Range and noise comparison', 'MI03 · Onset events', 'MI04 · Musical context', 'G1 · Feature-quality review', 'MI05 · Crimson pilot', 'Open Crimson preview', 'mountCrimsonPreview', 'Play / resume local audio', 'Choose a browser tab and enable Share tab audio. Sound stays in the source tab.']) assert.equal(contents.includes(marker), false, `${asset}: ${marker}`)
   }
   assert.equal((await readdir('dist')).includes('audio-lab.html'), false)
   assert.deepEqual(errors, [])
@@ -260,6 +338,6 @@ try {
   await writeFile(join(temporary, 'range.json'),JSON.stringify(rangeFirst))
   await writeFile(join(temporary, 'energy.json'),JSON.stringify(energyFirst))
   await writeFile(join(temporary, 'baseline.json'), JSON.stringify(first))
-  await writeFile(join(temporary, 'verification.json'), JSON.stringify({ browser: first.browser, live, contextSourceParity:{localContextTargets,mockContextTargets,intensityTolerance:.002,brightnessTolerance:.03,note:'Generated inputs; raw targets only. Envelopes have different live timelines; identical-timeline equality is unit tested.'},contextCases:contextFirst.rows.length,contextAssessment:contextFirst.assessment,onsetCases:onsetFirst.rows.length,onsetAssessment:onsetFirst.assessment,seek:{before:beforeSeek,after:afterSeek},rows: first.rows.length, rangeRows:rangeFirst.rows.length,rangeAssessment:rangeFirst.assessment,energyRows: energyFirst.rows.length, energyAssessment: energyFirst.assessment, repeatedExactly: true, partialExportComplete: partial.complete, checks: ['fixture playback/pause/reset', 'synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution', 'responsive UI', 'JSON/CSV exports', 'full baseline repeated exactly', 'partial cancellation', 'same synthetic player advances across all four landscapes', 'production asset exclusion'], errors }, null, 2))
+  await writeFile(join(temporary, 'verification.json'), JSON.stringify({ browser: first.browser,resumedGeneratedMatrices:process.env.ECHO_AUDIO_LAB_RESUME||null, live,g1:{early:g1Early,retained:g1Retained,lateTabReplacement:true,manualReview:'pending'}, contextSourceParity:{localContextTargets,mockContextTargets,intensityTolerance:.002,brightnessTolerance:.03,note:'Generated inputs; raw targets only. Envelopes have different live timelines; identical-timeline equality is unit tested.'},contextCases:contextFirst.rows.length,contextAssessment:contextFirst.assessment,onsetCases:onsetFirst.rows.length,onsetAssessment:onsetFirst.assessment,seek:{before:beforeSeek,after:afterSeek},rows: first.rows.length, rangeRows:rangeFirst.rows.length,rangeAssessment:rangeFirst.assessment,energyRows: energyFirst.rows.length, energyAssessment: energyFirst.assessment, repeatedExactly: true, partialExportComplete: partial.complete, checks: ['fixture playback/pause/reset', 'synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution', 'responsive UI', 'JSON/CSV exports', 'full baseline repeated exactly', 'partial cancellation', 'same synthetic player advances across all four landscapes', 'production asset exclusion'], errors }, null, 2))
   console.log(`PASS ${first.rows.length} baseline rows and ${energyFirst.rows.length} energy rows and ${rangeFirst.rows.length} range rows and ${onsetFirst.rows.length} onset rows and ${contextFirst.rows.length} context rows repeated (check onsetAssessment/contextAssessment for quality); screenshots, numeric baseline and verification: ${temporary}`)
 } finally { ws?.close(); browser.kill(); server.kill() }

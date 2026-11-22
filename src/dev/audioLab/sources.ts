@@ -9,7 +9,7 @@ interface LabAnalysis {
   stop(): void
 }
 export interface LabSourceState {
-  mode: 'idle' | 'fixture' | 'tab'
+  mode: 'idle' | 'fixture' | 'file' | 'tab'
   captureStatus: CaptureStatus
   message: string
 }
@@ -18,8 +18,9 @@ export function createLabSources(analysis: LabAnalysis, onChange: (state: LabSou
   let state: LabSourceState = { mode: 'idle', captureStatus: 'disconnected', message: 'Ready' }
   const publish = () => onChange({ ...state })
   const local = createLocalFile(value => {
-    if (state.mode !== 'fixture') return
+    if (state.mode !== 'fixture' && state.mode !== 'file') return
     state.message = value.message
+    if (state.mode === 'file' && value.status === 'error') state.mode = 'idle'
     publish()
   }, analysis)
   const capture = createTabCapture(value => {
@@ -55,7 +56,13 @@ export function createLabSources(analysis: LabAnalysis, onChange: (state: LabSou
       local.select(file)
       return local.play()
     },
-    pause() { if (state.mode === 'fixture') local.pause() },
+    selectFile(file: File) {
+      stop()
+      state.mode = 'file'
+      local.select(file)
+    },
+    playFile() { return state.mode === 'file' ? local.play() : Promise.resolve() },
+    pause() { if (state.mode === 'fixture' || state.mode === 'file') local.pause() },
     resume() { if (state.mode === 'tab') analysis.resume() },
     setVolume(value: number) { local.setVolume(value) },
     dispose() {

@@ -1,13 +1,14 @@
+import type { MusicPilot } from './musicPilot.ts'
 import { SIX_BAND_NAMES, clampSignal, smooth, type AudioSignal } from '../../audio/signal.ts'
 
 export function createJourney() {
-  return { distance: 0, speed: 0, sun: 0, sunPulse: 0, activeCount: 0, active: SIX_BAND_NAMES.map(() => false),
+  return { distance: 0, speed: 0, sun: 0, sunPulse: 0, legacyPulse: 0, activeCount: 0, active: SIX_BAND_NAMES.map(() => false),
     quiet: SIX_BAND_NAMES.map(() => 0), blocked: false }
 }
 export type Journey = ReturnType<typeof createJourney>
 
 export function updateJourney(state: Journey, signal: AudioSignal, reactivity: number, reducedMotion: boolean,
-  delta: number, now: number, distanceLimit = Infinity) {
+  delta: number, now: number, distanceLimit = Infinity, pilot?: MusicPilot) {
   const dt = Math.max(0, Math.min(Number.isFinite(delta) ? delta : 0, 0.05))
   const gain = clampSignal(reactivity)
   const playing = signal.isPlaying && signal.updatedAt > 0 && now - signal.updatedAt <= 250
@@ -28,7 +29,8 @@ export function updateJourney(state: Journey, signal: AudioSignal, reactivity: n
     if (state.active[index]) count++
   }
   state.activeCount = count
-  const targetSun = count / SIX_BAND_NAMES.length * gain
+  const weight = pilot?.weight ?? 0
+  const targetSun = count / SIX_BAND_NAMES.length * gain * (1 - weight) + (pilot?.sun ?? 0) * weight
   const sunResponse = reducedMotion ? 1.5 : targetSun > state.sun ? 0.25 : 0.8
   state.sun += (targetSun - state.sun) * (1 - Math.exp(-dt / sunResponse))
   if (targetSun === 0 && state.sun < 0.0001) state.sun = 0
@@ -36,16 +38,18 @@ export function updateJourney(state: Journey, signal: AudioSignal, reactivity: n
   const strongBass = clampSignal((clampSignal(signal.fast.bass) - 0.5) / 0.5)
   const bassAccent = Math.max(clampSignal(signal.transient.bass), clampSignal(signal.flux.bass))
   const pulseTarget = playing ? strongBass * bassAccent * gain : 0
-  state.sunPulse = reducedMotion || gain === 0 ? 0 : smooth(state.sunPulse, pulseTarget, dt, 0.04, 0.22)
-  if (pulseTarget === 0 && state.sunPulse < 0.0001) state.sunPulse = 0
+  state.legacyPulse = reducedMotion || gain === 0 ? 0 : smooth(state.legacyPulse, pulseTarget, dt, 0.04, 0.22)
+  if (pulseTarget === 0 && state.legacyPulse < 0.0001) state.legacyPulse = 0
+  state.sunPulse = state.legacyPulse * (1 - weight) + (pilot?.low ?? 0) * weight
   state.blocked = false
-  if (!playing || gain === 0 || reducedMotion) {
+  if ((!playing && !(pilot?.enabled && weight > 0)) || (pilot?.profile === 'candidate' && !pilot.enabled) || gain === 0 || reducedMotion) {
     state.speed = 0
     return
   }
   const energy = Math.sqrt(squares / SIX_BAND_NAMES.length)
-  const targetSpeed = count > 0 ? gain * (0.4 + 15.6 * Math.pow(energy, 1.7)) : 0
-  const response = targetSpeed > state.speed ? 0.35 : 0.2
+  const legacySpeed = count > 0 && playing ? gain * (0.4 + 15.6 * Math.pow(energy, 1.7)) : 0
+  const targetSpeed = legacySpeed * (1 - weight) + (pilot?.speed ?? 0) * weight
+  const response = targetSpeed > state.speed ? 0.35 : 0.2 + .3 * weight
   const decay = Math.exp(-dt / response)
   const travel = targetSpeed * dt + (state.speed - targetSpeed) * response * (1 - decay)
   state.speed = targetSpeed + (state.speed - targetSpeed) * decay

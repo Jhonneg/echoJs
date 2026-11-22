@@ -1,12 +1,14 @@
+import { createMusicAnalysis } from './music/analysis'
 import { bandLevel, bandMagnitude, binRange, emptyBands, resetSignal, silentSignal, smooth, type SignalTiming } from './signal'
 import { updateSignalFeatures } from './features'
 import { createSpectralFlux } from './flux'
 import { createSixBandAnalysis } from './sixBands'
 import { createDiagnosticObserver, type DiagnosticSink } from '../dev/audioLab/diagnostics'
 
-export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
+export function createAnalysis(options?: { diagnostics?: DiagnosticSink; musicIntelligence?: boolean }) {
   const observer = import.meta.env.DEV && options?.diagnostics
     ? createDiagnosticObserver(options.diagnostics) : undefined
+  const music = options?.musicIntelligence ? createMusicAnalysis() : undefined
   const signal = silentSignal()
   const timing: SignalTiming = { renderAgeMs: null }
   const raw = emptyBands()
@@ -22,7 +24,7 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
   let flux: ReturnType<typeof createSpectralFlux> | undefined
 
   function stop() {
-    if (import.meta.env.DEV && observer) {
+    if (observer || music) {
       removeDiagnosticSeek()
       removeDiagnosticSeek = () => {}
     }
@@ -43,6 +45,7 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
     message = 'Not active'
     usingDefaultRate = false
     observer?.reset()
+    music?.reset()
   }
 
   function resume() {
@@ -80,8 +83,11 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
       analyser.smoothingTimeConstant = 0
       source = makeSource(current)
       source.connect(analyser)
-      if (import.meta.env.DEV && observer && element) {
-        const seeking = () => observer.reset((analyser?.fftSize ?? 0) / current.sampleRate)
+      if ((observer || music) && element) {
+        const seeking = () => {
+          const quiet = (analyser?.fftSize ?? 0) / current.sampleRate
+          observer?.reset(quiet); music?.reset(quiet)
+        }
         element.addEventListener('seeking', seeking)
         element.addEventListener('seeked', seeking)
         removeDiagnosticSeek = () => { element.removeEventListener('seeking', seeking); element.removeEventListener('seeked', seeking) }
@@ -124,7 +130,9 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
         signal.isPlaying = running && (element ? !element.paused && !element.ended : hasSignal)
         bars.forEach(([low, high], i) => { spectrum[i] = smooth(spectrum[i], bandLevel(bins, low, high), delta) })
         message = !running ? 'Suspended — click Resume analysis' : element?.ended ? 'Playback ended' : element?.paused ? 'Playback paused' : hasSignal ? 'Receiving signal' : 'Connected, waiting / silent'
-        observer?.read(analyser, bins, signal, raw, flux, running && (!element || (!element.paused && !element.ended && !element.seeking)), now, delta)
+        const active = running && (!element || (!element.paused && !element.ended && !element.seeking))
+        music?.update(bins, current.sampleRate, analyser.fftSize, now, active)
+        observer?.read(analyser, bins, signal, raw, flux, active, now, delta)
         frame = requestAnimationFrame(tick)
       }
       frame = requestAnimationFrame(tick)
@@ -148,7 +156,7 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink }) {
     recordRenderTime(now: number) {
       timing.renderAgeMs = signal.updatedAt > 0 ? Math.max(0, now - signal.updatedAt) : null
     },
-    signal, timing, spectrum, prepare, start, startElement, stop, resume,
+    musicFeatures: music?.reader, signal, timing, spectrum, prepare, start, startElement, stop, resume,
     get message() { return message },
     get format() {
       return { sampleRate: context?.sampleRate ?? null, fftSize: analyser?.fftSize ?? null, usingDefaultRate }

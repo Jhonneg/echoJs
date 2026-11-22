@@ -1,10 +1,13 @@
 import { Component, useEffect, useMemo, useRef, useState, useCallback, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
 import { useFrame } from '@react-three/fiber'
+import type { MusicFeatureReader } from '../../audio/musicFeatures'
+import { createMusicPilot, updateMusicPilot, type CrimsonProfile, type MusicPilot } from './musicPilot'
 import type { AudioSignal } from '../../audio/signal'
 import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
-import { BackSide, Mesh, ShaderMaterial, Vector3 } from 'three'
-import { createJourney, updateJourney } from './journey'
+import { BackSide, Mesh, ShaderMaterial, Vector3, type Scene, type Camera, type WebGLRenderer } from 'three'
+import { contourOrigin } from './contours'
+import { createJourney, updateJourney, type Journey } from './journey'
 import { createTerrainStream, chunkIndexAt, localCameraZ, chunkRenderZ, type TerrainEntry, type TerrainSnapshot } from './terrainStream'
 import { terrainVertex, terrainFragment, nightshade } from './material'
 import { createViewMotion, updateViewMotion } from './cameraMotion'
@@ -42,12 +45,16 @@ void main() {
 }`
 
 type SceneStatus = 'loading' | 'ready' | 'waiting' | 'error'
+export type CrimsonPilotInput = { reader: MusicFeatureReader; profile: CrimsonProfile
+  inspect?: (journey: Journey, music: MusicPilot, scene: Scene, camera: Camera, renderer: WebGLRenderer) => void }
 type CompositionProps = { target: RefObject<{ x: number, y: number }>, reducedMotion: boolean,
-  signal: AudioSignal, reactivity: number, attempt: number, onStatus: (status: SceneStatus) => void }
+  pilot?: CrimsonPilotInput, signal: AudioSignal, reactivity: number, attempt: number, onStatus: (status: SceneStatus) => void }
 
 function TerrainChunk({ entry, meshes, materials }: { entry: TerrainEntry, meshes: RefObject<Map<number, Mesh>>,
   materials: RefObject<Map<number, ShaderMaterial>> }) {
-  const uniforms = useMemo(() => ({ activity: { value: 0 }, sunPosition: { value: new Vector3(0, 6, -64) } }), [])
+  const uniforms = useMemo(() => ({ activity: { value: 0 }, contourLight: { value: 0 }, contourStreak: { value: 0 },
+    contourProgress: { value: 0 }, contourOrigin: { value: contourOrigin(entry.index) },
+    musicHaze: { value: 0 }, musicWeight: { value: 0 }, sunPosition: { value: new Vector3(0, 6, -64) } }), [entry.index])
   return <mesh name={`crimson-chunk-${entry.index}`} ref={mesh => {
     if (mesh) meshes.current.set(entry.index, mesh)
     else meshes.current.delete(entry.index)
@@ -65,10 +72,11 @@ function TerrainChunk({ entry, meshes, materials }: { entry: TerrainEntry, meshe
   </mesh>
 }
 
-function Composition({ target, reducedMotion, signal, reactivity, attempt, onStatus }: CompositionProps) {
+function Composition({ target, reducedMotion, signal, reactivity, attempt, onStatus, pilot }: CompositionProps) {
   const [snapshot, setSnapshot] = useState<TerrainSnapshot>({ chunks: [], error: false, ready: false })
   const stream = useRef<ReturnType<typeof createTerrainStream> | null>(null)
   const journey = useRef(createJourney())
+  const music = useRef(createMusicPilot())
   const view = useRef(createViewMotion())
   const meshes = useRef(new Map<number, Mesh>())
   const materials = useRef(new Map<number, ShaderMaterial>())
@@ -83,6 +91,7 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
   }, [onStatus])
   useEffect(() => {
     journey.current = createJourney()
+    music.current = createMusicPilot()
     started.current = false
     report('loading')
     try {
@@ -98,10 +107,13 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
       report('error')
     }
   }, [attempt, report])
-  useFrame(({ camera }, delta) => {
+  useFrame(({ camera, scene, gl }, delta) => {
     const state = journey.current
     const limit = stream.current?.distanceLimit(state.distance) ?? state.distance
-    updateJourney(state, signal, reactivity, reducedMotion, delta, performance.now(), limit)
+    const now = performance.now()
+    if (pilot) updateMusicPilot(music.current, pilot.reader, pilot.profile, delta, now / 1000, reactivity, reducedMotion)
+    const response = pilot ? music.current : undefined
+    updateJourney(state, signal, reactivity, reducedMotion, delta, now, limit, response)
     stream.current?.requestWindow(chunkIndexAt(state.distance))
     const z = localCameraZ(state.distance)
     updateViewMotion(view.current, target.current, delta, reducedMotion)
@@ -110,11 +122,16 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
     for (const [index, mesh] of meshes.current) mesh.position.z = chunkRenderZ(index, state.distance)
     for (const material of materials.current.values()) {
       material.uniforms.activity.value = state.sun
+      material.uniforms.musicWeight.value = response?.weight ?? 0
+      material.uniforms.contourLight.value = response?.contours.light ?? 0
+      material.uniforms.contourStreak.value = response?.contours.streak ?? 0
+      material.uniforms.contourProgress.value = response?.contours.progress ?? 0
+      material.uniforms.musicHaze.value = response?.haze ?? 0
       material.uniforms.sunPosition.value.set(0, 6, z - 88)
     }
     if (sun.current) {
       sun.current.position.set(0, 6, z - 88)
-      sun.current.scale.setScalar(1 + state.sunPulse * 0.08)
+      sun.current.scale.setScalar(1 + state.sunPulse * (0.1 + .1 * (response?.weight ?? 0)))
     }
     if (glow.current) {
       glow.current.position.set(0, 6, z - 99)
@@ -131,6 +148,7 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
     }
     if (stream.current?.failed) report('error')
     else if (started.current) report(state.blocked ? 'waiting' : 'ready')
+    pilot?.inspect?.(state, music.current, scene, camera, gl)
   }, -1)
   return <>
     <color attach="background" args={['#221A32']} />
@@ -143,7 +161,7 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
       <sphereGeometry args={[9.2, 48, 32]} />
       <shaderMaterial ref={sunMaterial} uniforms={sunUniforms} vertexShader={sunVertex} fragmentShader={sunFragment} toneMapped={false} />
     </mesh>
-    <mesh ref={glow}>
+    <mesh ref={glow} name="crimson-glow">
       <planeGeometry args={[100, 100]} />
       <shaderMaterial ref={glowMaterial} uniforms={glowUniforms} vertexShader={sunVertex} fragmentShader={glowFragment} transparent depthWrite={false} toneMapped={false} />
     </mesh>
@@ -164,7 +182,7 @@ class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean
   render() { return this.state.failed ? <p className="crimson-fallback">Crimson Horizon could not render. Choose another landscape from the scene menu, or reload to try again.</p> : this.props.children }
 }
 
-export default function CrimsonHorizonScene({ signal, reactivity, quality }: { signal: AudioSignal, reactivity: number, quality: GraphicsQuality }) {
+export default function CrimsonHorizonScene({ signal, reactivity, quality, pilot }: { signal: AudioSignal, reactivity: number, quality: GraphicsQuality, pilot?: CrimsonPilotInput }) {
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
   const target = useRef({ x: 0, y: 0 })
   const [status, setStatus] = useState<SceneStatus>('loading')
@@ -187,7 +205,7 @@ export default function CrimsonHorizonScene({ signal, reactivity, quality }: { s
         projection="perspective" camera={{ position: [0, 3.5, 24], fov: 42, near: 0.5, far: 200 }}
         frameloop="always"
         fallback={<p className="crimson-fallback">Crimson Horizon needs WebGL to display. You can still choose audio or another landscape from the scene menu.</p>}>
-        <Composition target={target} reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} attempt={attempt} onStatus={setStatus} />
+        <Composition pilot={pilot} target={target} reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} attempt={attempt} onStatus={setStatus} />
       </LandscapeCanvas>
     </SceneBoundary>
     <div className="crimson-brand" aria-hidden="true">ECHO</div>

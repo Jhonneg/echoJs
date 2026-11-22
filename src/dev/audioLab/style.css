@@ -7,3 +7,10 @@ canvas { width: 100%; background: #060912; border: 1px solid #414867; } .scroll 
 table { border-collapse: collapse; width: 100%; } th, td { padding: 8px; text-align: left; border-bottom: 1px solid #414867; white-space: nowrap; }
 pre { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; } button:disabled { opacity: .5; }
 label { min-width: 0; max-width: 100%; } select { min-width: 0; max-width: 100%; }
+input[type="file"] { min-width: 0; max-width: 100%; font: inherit; }
+#review-canvas { display: block; } #review-checklist { margin: 16px 0 24px; } li { margin-bottom: 8px; color: #bfc5df; }
+
+.crimson-preview-controls { display:flex; flex-wrap:wrap; gap:1rem; margin:1rem 0; }
+.crimson-preview-controls label { display:flex; align-items:center; gap:.5rem; }
+#crimson-viewport { position:relative; width:100%; aspect-ratio:16/9; min-height:300px; --scene-gutter:1rem; }
+@media(max-width:600px) { #crimson-viewport { aspect-ratio:390/844; } }

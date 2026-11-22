@@ -1,0 +1,2833 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Authored buffers and nondeforming shader restored; bass-only no contour drive; low mids rise gradually; high mids travel briefly then stop under sustain",
+    "Zero gain, reduced motion and stale input clear moving streaks; source remains unchanged",
+    "Standard/Low desktop/portrait/wide isolated lighting frames; bounded resources, unchanged buffers and at least ten streamed chunk lengths"
+  ],
+  "screenshots": [
+    {
+      "file": "standard-desktop-off.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.0016340592972801057,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.10860354177318166,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 366,
+          "previousTime": 7.420599999999627,
+          "slowHigh": 0.00044246749611826804,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 4.715040885243592e-9,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.0016340592972801057,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 4.715040885243592e-9,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-desktop-low-mids.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.0012464721552973717,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.08136164904059373,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 379,
+          "previousTime": 7.637099999999627,
+          "slowHigh": 0.00007283527175390012,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 1.9824978446838556e-9,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.0012464721552973717,
+          "contourLight": 0.8,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 1.9824978446838556e-9,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-desktop-high-mids-a.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.0009311753118211255,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.05961083502760263,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 393,
+          "previousTime": 7.8705,
+          "slowHigh": 0.000010414513269133268,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 7.797028350150249e-10,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.0009311753118211255,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.15,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 7.797028350150249e-10,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-desktop-high-mids-b.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.000710218425593778,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.044652219725276214,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 406,
+          "previousTime": 8.087099999999628,
+          "slowHigh": 0.0000017129214104615674,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 3.277046896279329e-10,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.000710218425593778,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.6,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 3.277046896279329e-10,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-portrait-off.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.00044907843667220274,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.027384322733803444,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 428,
+          "previousTime": 8.453800000000745,
+          "slowHigh": 8.065028074730577e-8,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 7.55891584639727e-11,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.00044907843667220274,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 7.55891584639727e-11,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-portrait-low-mids.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.00035712025164535673,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.02144669783947666,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 439,
+          "previousTime": 8.637099999999627,
+          "slowHigh": 1.7507376136358014e-8,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 3.6310714620923334e-11,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.00035712025164535673,
+          "contourLight": 0.8,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 3.6310714620923334e-11,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-portrait-high-mids-a.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.0002840279260263362,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.01679874229106604,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 450,
+          "previousTime": 8.820400000000372,
+          "slowHigh": 3.800460659715657e-9,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 1.7449532654986153e-11,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.0002840279260263362,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.15,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 1.7449532654986153e-11,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-portrait-high-mids-b.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.00022581081894460696,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.013152835375799697,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 461,
+          "previousTime": 9.003800000000744,
+          "slowHigh": 8.243079874665597e-10,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 8.37551749575912e-12,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.00022581081894460696,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.6,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 8.37551749575912e-12,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-wide-off.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.00013414852268588806,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.007547155117682786,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 486,
+          "previousTime": 9.4205,
+          "slowHigh": 2.55859719675602e-11,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 1.582352820586131e-12,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.00013414852268588806,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 1.582352820586131e-12,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-wide-low-mids.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0.00010231666515231287,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.0056532881725187886,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 499,
+          "previousTime": 9.637200000001117,
+          "slowHigh": 4.204733430415754e-12,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 6.650539367887122e-13,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0.00010231666515231287,
+          "contourLight": 0.8,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 6.650539367887122e-13,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-wide-high-mids-a.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.004235228802938885,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 512,
+          "previousTime": 9.853800000000746,
+          "slowHigh": 6.915712460215688e-13,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 2.796302361700185e-13,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.15,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 2.796302361700185e-13,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "standard-wide-high-mids-b.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.003172872577137944,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 525,
+          "previousTime": 10.070400000000372,
+          "slowHigh": 1.1374580487413732e-13,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 1.1757402618810793e-13,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.6,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 1.1757402618810793e-13,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-desktop-off.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.0018206083193560887,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 550,
+          "previousTime": 10.487,
+          "slowHigh": 3.5335375581642685e-15,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 2.2212787694685372e-14,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 2.2212787694685372e-14,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-desktop-low-mids.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.0013942695898519187,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 562,
+          "previousTime": 10.687099999999628,
+          "slowHigh": 6.668431022572236e-16,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 9.97685734383107e-15,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0.8,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 9.97685734383107e-15,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-desktop-high-mids-a.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.0010680529877587618,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 574,
+          "previousTime": 10.887,
+          "slowHigh": 1.260553953422183e-16,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 4.484684490511506e-15,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.15,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 4.484684490511506e-15,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-desktop-high-mids-b.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.0008179429838644301,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 586,
+          "previousTime": 11.087,
+          "slowHigh": 2.3808788786188813e-17,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 2.0142927582488993e-15,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.6,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 2.0142927582488993e-15,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-portrait-off.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.0005016951339369852,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 608,
+          "previousTime": 11.453700000001117,
+          "slowHigh": 1.121000349538521e-18,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 4.648075385427187e-16,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 4.648075385427187e-16,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-portrait-low-mids.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.00039286235113929414,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 619,
+          "previousTime": 11.637099999999627,
+          "slowHigh": 2.431414570045513e-19,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 2.2318999948035507e-16,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0.8,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 2.2318999948035507e-16,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-portrait-high-mids-a.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.0003076386763633559,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 630,
+          "previousTime": 11.820400000000372,
+          "slowHigh": 5.2780584303135266e-20,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 1.0717075722103754e-16,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.15,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 1.0717075722103754e-16,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-portrait-high-mids-b.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.00024096683236089083,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 641,
+          "previousTime": 12.003700000001118,
+          "slowHigh": 1.1457486985973864e-20,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 5.1502143301155476e-17,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.6,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 5.1502143301155476e-17,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-wide-off.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.0001352230944053613,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 667,
+          "previousTime": 12.437,
+          "slowHigh": 3.096880025247864e-22,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 9.101356099164376e-18,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 9.101356099164376e-18,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-wide-low-mids.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0.00010127699613702493,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 680,
+          "previousTime": 12.653700000001118,
+          "slowHigh": 5.089333713276938e-23,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 3.823718675281505e-18,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0.8,
+          "contourStreak": 0,
+          "contourProgress": 0,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 3.823718675281505e-18,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-wide-high-mids-a.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 693,
+          "previousTime": 12.870300000000745,
+          "slowHigh": 8.370653968336228e-24,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 1.6083735070754033e-18,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.15,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 1.6083735070754033e-18,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "file": "low-wide-high-mids-b.png",
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 706,
+          "previousTime": 13.087,
+          "slowHigh": 1.3756119415856558e-24,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 6.759902840877899e-19,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0,
+          "contourStreak": 0.9,
+          "contourProgress": 0.6,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 6.759902840877899e-19,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    }
+  ],
+  "performance": [
+    {
+      "quality": "standard",
+      "samples": 600,
+      "p95": 16.800000000745058,
+      "max": 21.09999999962747,
+      "state": {
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 1337,
+          "previousTime": 23.603200000001117,
+          "slowHigh": 1.1997728105213134e-62,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 3.642754736586813e-37,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0.8,
+          "contourStreak": 0.9,
+          "contourProgress": 1,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 3.642754736586813e-37,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 600
+      }
+    },
+    {
+      "quality": "low",
+      "samples": 600,
+      "p95": 16.90000000037253,
+      "max": 20.59999999962747,
+      "state": {
+        "profile": "candidate",
+        "quality": "low",
+        "gain": 1,
+        "distance": 0.054844449365149775,
+        "speed": 0,
+        "blocked": false,
+        "sun": 0,
+        "pulse": 0,
+        "scale": 1,
+        "glow": 1,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 1967,
+          "previousTime": 34.102700000001114,
+          "slowHigh": 1.2026559644390465e-100,
+          "armed": true,
+          "pending": false,
+          "baseline": 0.021386474840942984,
+          "peak": 0.8,
+          "deadline": 5.848900000000373,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 2.0986029576427877e-55,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 23.94515555063485,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+          "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+          "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+          "a8fadbca-5e19-4704-95b9-6dde2999146a"
+        ],
+        "uniforms": {
+          "activity": 0,
+          "contourLight": 0.8,
+          "contourStreak": 0.9,
+          "contourProgress": 1,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 2.0986029576427877e-55,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 0.75,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 600
+      }
+    }
+  ],
+  "errors": [],
+  "authored": [
+    {
+      "name": "crimson-chunk--1",
+      "positions": true,
+      "normals": true,
+      "deforms": false
+    },
+    {
+      "name": "crimson-chunk-0",
+      "positions": true,
+      "normals": true,
+      "deforms": false
+    },
+    {
+      "name": "crimson-chunk-1",
+      "positions": true,
+      "normals": true,
+      "deforms": false
+    },
+    {
+      "name": "crimson-chunk-2",
+      "positions": true,
+      "normals": true,
+      "deforms": false
+    }
+  ],
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+    "platform": "Linux x86_64"
+  },
+  "bassOnly": {
+    "profile": "candidate",
+    "quality": "standard",
+    "gain": 1,
+    "distance": 0.054079097764283435,
+    "speed": 0.006540890906773517,
+    "blocked": false,
+    "sun": 0.7243265201666601,
+    "pulse": 0,
+    "scale": 1,
+    "glow": 1,
+    "weight": 1,
+    "low": 0,
+    "mid": 0,
+    "high": 0,
+    "contours": {
+      "light": 0,
+      "streak": 0,
+      "progress": 1,
+      "session": 2,
+      "frame": 87,
+      "previousTime": 2.420800000000745,
+      "slowHigh": 0,
+      "armed": true,
+      "pending": false,
+      "baseline": 0,
+      "peak": 0,
+      "deadline": 0,
+      "lastLaunch": null,
+      "strength": 0
+    },
+    "haze": 0.939593212927643,
+    "camera": {
+      "x": 0,
+      "y": 3.5,
+      "z": 23.945920902235716,
+      "type": "PerspectiveCamera"
+    },
+    "buffers": [
+      {
+        "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+        "positions": 0,
+        "normals": 0,
+        "radius": 68.36949068952437
+      },
+      {
+        "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+        "positions": 0,
+        "normals": 0,
+        "radius": 68.4238047906447
+      },
+      {
+        "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+        "positions": 0,
+        "normals": 0,
+        "radius": 68.42003724608047
+      },
+      {
+        "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+        "positions": 0,
+        "normals": 0,
+        "radius": 68.38449169808878
+      }
+    ],
+    "workerCount": 1,
+    "chunks": 4,
+    "meshIds": [
+      "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+      "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+      "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+      "a8fadbca-5e19-4704-95b9-6dde2999146a"
+    ],
+    "uniforms": {
+      "activity": 0.7243265201666601,
+      "contourLight": 0,
+      "contourStreak": 0,
+      "contourProgress": 1,
+      "contourOrigin": 0.16000000000000014,
+      "musicHaze": 0.939593212927643,
+      "musicWeight": 1
+    },
+    "calls": 7,
+    "triangles": 69234,
+    "geometries": 7,
+    "textures": 0,
+    "dpr": 1,
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+    "samples": 0
+  },
+  "lowMids": {
+    "profile": "candidate",
+    "quality": "standard",
+    "gain": 1,
+    "distance": 0.054844449365149775,
+    "speed": 0,
+    "blocked": false,
+    "sun": 0.11342221657046034,
+    "pulse": 0,
+    "scale": 1,
+    "glow": 1,
+    "weight": 1,
+    "low": 0,
+    "mid": 0,
+    "high": 0,
+    "contours": {
+      "light": 0.5941781553877105,
+      "streak": 0,
+      "progress": 1,
+      "session": 2,
+      "frame": 176,
+      "previousTime": 3.904,
+      "slowHigh": 0,
+      "armed": true,
+      "pending": false,
+      "baseline": 0,
+      "peak": 0,
+      "deadline": 0,
+      "lastLaunch": null,
+      "strength": 0
+    },
+    "haze": 0.002489911155703336,
+    "camera": {
+      "x": 0,
+      "y": 3.5,
+      "z": 23.94515555063485,
+      "type": "PerspectiveCamera"
+    },
+    "buffers": [
+      {
+        "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+        "positions": 0,
+        "normals": 0,
+        "radius": 68.36949068952437
+      },
+      {
+        "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+        "positions": 0,
+        "normals": 0,
+        "radius": 68.4238047906447
+      },
+      {
+        "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+        "positions": 0,
+        "normals": 0,
+        "radius": 68.42003724608047
+      },
+      {
+        "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+        "positions": 0,
+        "normals": 0,
+        "radius": 68.38449169808878
+      }
+    ],
+    "workerCount": 1,
+    "chunks": 4,
+    "meshIds": [
+      "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+      "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+      "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+      "a8fadbca-5e19-4704-95b9-6dde2999146a"
+    ],
+    "uniforms": {
+      "activity": 0.11342221657046034,
+      "contourLight": 0.5941781553877105,
+      "contourStreak": 0,
+      "contourProgress": 1,
+      "contourOrigin": 0.16000000000000014,
+      "musicHaze": 0.002489911155703336,
+      "musicWeight": 1
+    },
+    "calls": 7,
+    "triangles": 69234,
+    "geometries": 7,
+    "textures": 0,
+    "dpr": 1,
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+    "samples": 0
+  },
+  "highMids": {
+    "head": {
+      "profile": "candidate",
+      "quality": "standard",
+      "gain": 1,
+      "distance": 0.054844449365149775,
+      "speed": 0,
+      "blocked": false,
+      "sun": 0.10009475480771043,
+      "pulse": 0,
+      "scale": 1,
+      "glow": 1,
+      "weight": 1,
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "contours": {
+        "light": 0.5200088683534789,
+        "streak": 0.6993681904144294,
+        "progress": 0.06999999999999995,
+        "session": 2,
+        "frame": 182,
+        "previousTime": 4.004,
+        "slowHigh": 0.3392410748957522,
+        "armed": false,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0.6,
+        "deadline": 3.965599999999627,
+        "lastLaunch": 3.965599999999627,
+        "strength": 0.6993681904144294
+      },
+      "haze": 0.0016690373605157123,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 23.94515555063485,
+        "type": "PerspectiveCamera"
+      },
+      "buffers": [
+        {
+          "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+          "positions": 0,
+          "normals": 0,
+          "radius": 68.36949068952437
+        },
+        {
+          "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+          "positions": 0,
+          "normals": 0,
+          "radius": 68.4238047906447
+        },
+        {
+          "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+          "positions": 0,
+          "normals": 0,
+          "radius": 68.42003724608047
+        },
+        {
+          "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+          "positions": 0,
+          "normals": 0,
+          "radius": 68.38449169808878
+        }
+      ],
+      "workerCount": 1,
+      "chunks": 4,
+      "meshIds": [
+        "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+        "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+        "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+        "a8fadbca-5e19-4704-95b9-6dde2999146a"
+      ],
+      "uniforms": {
+        "activity": 0.10009475480771043,
+        "contourLight": 0.5200088683534789,
+        "contourStreak": 0.6993681904144294,
+        "contourProgress": 0.06999999999999995,
+        "contourOrigin": 0.16000000000000014,
+        "musicHaze": 0.0016690373605157123,
+        "musicWeight": 1
+      },
+      "calls": 7,
+      "triangles": 69234,
+      "geometries": 7,
+      "textures": 0,
+      "dpr": 1,
+      "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+      "samples": 0
+    },
+    "later": {
+      "profile": "candidate",
+      "quality": "standard",
+      "gain": 1,
+      "distance": 0.054844449365149775,
+      "speed": 0,
+      "blocked": false,
+      "sun": 0.0847319111248008,
+      "pulse": 0,
+      "scale": 1,
+      "glow": 1,
+      "weight": 1,
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "contours": {
+        "light": 0.43533355598609236,
+        "streak": 0.5950840257800372,
+        "progress": 0.31236363636499154,
+        "session": 2,
+        "frame": 190,
+        "previousTime": 4.137400000000373,
+        "slowHigh": 0.5142076659974106,
+        "armed": false,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0.6,
+        "deadline": 3.965599999999627,
+        "lastLaunch": 3.965599999999627,
+        "strength": 0.6993681904144294
+      },
+      "haze": 0.0009792650177294661,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 23.94515555063485,
+        "type": "PerspectiveCamera"
+      },
+      "buffers": [
+        {
+          "id": "38c3cea9-029c-4908-976a-47c2dbb937bd",
+          "positions": 0,
+          "normals": 0,
+          "radius": 68.36949068952437
+        },
+        {
+          "id": "366172cf-f6e5-423a-8cb3-f24662bbc410",
+          "positions": 0,
+          "normals": 0,
+          "radius": 68.4238047906447
+        },
+        {
+          "id": "2044ff66-9e72-4665-81d5-00efb6de365c",
+          "positions": 0,
+          "normals": 0,
+          "radius": 68.42003724608047
+        },
+        {
+          "id": "9c0b7ce8-fe44-4ae7-8d45-a12fac106dc7",
+          "positions": 0,
+          "normals": 0,
+          "radius": 68.38449169808878
+        }
+      ],
+      "workerCount": 1,
+      "chunks": 4,
+      "meshIds": [
+        "126f12cf-8edc-4117-ae0f-32cea21e7bef",
+        "fcf58f95-00a7-4985-aca5-fcee1b849be7",
+        "d8e10c5d-ee1b-4afa-8d4f-dc7f5afbf38d",
+        "a8fadbca-5e19-4704-95b9-6dde2999146a"
+      ],
+      "uniforms": {
+        "activity": 0.0847319111248008,
+        "contourLight": 0.43533355598609236,
+        "contourStreak": 0.5950840257800372,
+        "contourProgress": 0.31236363636499154,
+        "contourOrigin": 0.16000000000000014,
+        "musicHaze": 0.0009792650177294661,
+        "musicWeight": 1
+      },
+      "calls": 7,
+      "triangles": 69234,
+      "geometries": 7,
+      "textures": 0,
+      "dpr": 1,
+      "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+      "samples": 0
+    }
+  },
+  "journey": {
+    "start": 0.054844449365149775,
+    "end": 556.0340444493511,
+    "boundaries": 11
+  },
+  "authoredAfter": [
+    {
+      "name": "crimson-chunk-10",
+      "positions": true,
+      "normals": true,
+      "deforms": false
+    },
+    {
+      "name": "crimson-chunk-11",
+      "positions": true,
+      "normals": true,
+      "deforms": false
+    },
+    {
+      "name": "crimson-chunk-12",
+      "positions": true,
+      "normals": true,
+      "deforms": false
+    },
+    {
+      "name": "crimson-chunk-13",
+      "positions": true,
+      "normals": true,
+      "deforms": false
+    }
+  ],
+  "status": "generated checks passed; owner lighting/artistic review and native hardware remain manual"
+}

@@ -1,0 +1,14 @@
+{
+  "energy": {
+    "unchangedAlgorithm": true,
+    "sha256": "95903037b8dd4820a47e07f000e8c6280f844a5c33795e95e93da651ccead2de"
+  },
+  "onsets": {
+    "unchangedAlgorithm": true,
+    "sha256": "9d5f7d0e62f142fbcdbb7a1cec6bb1d1e10a14aa534532693ec732e8eab3a5d0"
+  },
+  "context": {
+    "unchangedAlgorithm": true,
+    "sha256": "3cfecf96d609fceaff22569749ac37869566b1ba3d164966b37411c7355bce73"
+  }
+}

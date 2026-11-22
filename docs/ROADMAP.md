@@ -191,3 +191,39 @@ MI04 proposal (2026-11-20): resumed planning after pause. [MI04_PLAN.md](MI04_PL
 MI04 implementation (2026-11-20): owner approved the plan with “proceed.” [MI04_RESULTS.md](MI04_RESULTS.md) records intensity/brightness checks passing and 30 activity cadence comparisons failing, with complete repeated synthetic evidence and passing integration. Preserve the failed gate; review the separately proposed onset-window follow-up before changes. Original MI03 core/stress pass; production/landscapes remain unchanged. G1 and Crimson remain pending.
 
 MI04 approved onset-window follow-up (2026-11-20): owner approved 40 ms observation. [MI04_WINDOW_RESULTS.md](MI04_WINDOW_RESULTS.md) records unchanged synthetic MI03/MI04 criteria passing, added emission delay inside 150 ms, all expanded labels matched and remaining diagnostic weak-mixture misses. Await owner review; next is a bounded G1 plan. No production/default/scene migration authorized; original roadmap order unchanged.
+
+G1 proposal (2026-11-20): [G1_PLAN.md](G1_PLAN.md) proposes same-input legacy/candidate review indicators and a local song control in the DEV lab, reusing existing adapters with live-file/tab export locks. Await preparation-scope approval; the original six owner-review rows remain pending. No DSP tuning, G1 acceptance or MI05/scene implementation authorized.
+
+G1 preparation implemented (2026-11-20): owner approved the plan. [G1_REVIEW.md](G1_REVIEW.md) records a tested comparison interface/local-file path, unchanged MI03/MI04 quality and six manual review rows pending. Await owner song/native-source review; do not treat automation as G1 acceptance or start MI05/scene changes automatically.
+
+G1 partial owner verdict (2026-11-21): owner confirms aligned markers and a much better response than legacy. Timing accepted for reviewed material; generated drone/silence subchecks also pass. G1_REVIEW.md retains other judgments as pending; no full gate/MI05 authorization inferred.
+
+G1 attack-strength confirmation (2026-11-21): owner confirms softer hits give lower strengths than stronger hits. Timing/strength row passes for reviewed material; remaining G1 rows stay pending in G1_REVIEW.md. No DSP or scene change authorized.
+
+G1 band-isolation confirmation (2026-11-21): owner confirms generated Mid/High controls trigger only their intended event bands. Isolation row passes; bass-energy contrast, quiet music and equivalent-source/native-output review remain pending. No full G1/MI05 approval inferred.
+
+G1 bass-contrast confirmation (2026-11-21): owner reports the generated bass amplitude sweep passed. Bass-contrast control row passes; quiet-music and equivalent-source/native-output judgments remain pending in G1_REVIEW.md. No full G1/MI05 authorization inferred.
+
+G1 quiet-music confirmation (2026-11-21): owner reports restrained intensity/activity on quiet ambient music. Quiet/silence row passes for reviewed conditions; equivalent local/tab/native-output row remains pending in G1_REVIEW.md. No full gate/MI05 approval inferred.
+
+G1 completed (2026-11-21): owner reports the final directed local/tab/native-output check passed. All six rows in G1_REVIEW.md now pass for their reviewed material/controls; known limitations and unspecified metadata remain explicit. Proceed to a bounded MI05 stable-contract/Crimson pilot proposal. Implementation, production defaults and other scene migrations still need separate approval.
+
+MI05 proposal (2026-11-21): [MI05_PLAN.md](MI05_PLAN.md) proposes a shared typed reader from validated features and a DEV-only single-Canvas Crimson Legacy/Candidate pilot, with bounded first-pass mappings and explicit visual/lifecycle/performance criteria. Await plan approval before implementation. Public defaults remain Legacy; vertex and other-scene passes remain separately gated.
+
+MI05 owner steering (2026-11-21): requested stronger sun expansion. Candidate proposal now caps sun/glow scale at 15%/20%, preserving proportional strengths and Legacy's existing 8%/12%. Revised plan remains awaiting implementation approval.
+
+MI05 revised owner caps (2026-11-21): owner specifies 50% sun expansion and restoration of original 12% glow expansion, superseding the intermediate candidate caps. MI05_PLAN.md reflects 1.5× maximum sun scale and proportional weaker responses. Overall plan implementation remains pending approval.
+
+MI05 implementation approved (2026-11-21): owner says “lets move” after the revised 50%/12% proposal. Stable reader, DEV-only Crimson A/B and first-pass bounded mappings are implemented; actual checks/limits in MI05_RESULTS.md and PROGRESS.md. Preserve the discovered uncommitted 40% Legacy sun cap rather than reverting it to the proposal's historical 8%. Public remains Legacy; owner review and required evidence gate progression. No vertex/other-world/MI06 authorization inferred.
+
+MI05 owner acceptance/public application (2026-11-21): owner reports “passed, implement candidate.” Public Crimson now consumes Candidate from the shared validated DSP producer on the existing audio pipeline. Tests and generated built-production browser checks pass; see MI05_RESULTS.md/PROGRESS.md. Developer comparison remains. Other worlds, vertex refinement and later milestones remain separately gated; no commit/deployment implied.
+
+Crimson vertex pass approved (2026-11-21): owner says “go ahead” after the bounded shader proposal. Implemented ≤0.08-unit bank deformation with logical continuity, normal correction and padded bounds; evidence/current gate in MI05_VERTEX.md and PROGRESS.md. Owner visual/musical review remains separate. No next-world/transition milestone or deployment follows automatically.
+
+Crimson vertex verification (2026-11-21): all 24 test files and generated GPU/public regressions pass; twelve controlled paired render-cost trials stay within 10% (worst +2.36%). MI05_VERTEX.md retains bounds/normal/seam/stream/screenshot/timing evidence and limitations. Stop for owner visual/musical review; no next task automatically approved.
+
+Vertex visibility correction approved (2026-11-21): owner reports barely visible movement and approves the concrete0.32 maximum/0.7 scene-drive curve with “yes.” Implement the terrain-only adjustment, expand bounds and verify before owner review. Initial0.08 evidence stays historical; other-scene/transition scope remains unapproved.
+
+Stronger vertex visibility verified (2026-11-21): approved0.32 cap/0.7 visual drive implemented;24 test files and generated GPU/public input checks pass. Six paired render-cost comparisons pass the10% criterion (worst~0.60%); bounds/normals/protected masks/stream and culling checks retained in MI05_VERTEX.md/current evidence. Await owner artistic/music review; no automatic next task.
+
+Owner replaces vertex pass (2026-11-21): explicit request restores authored terrain and adds independent low-mid gradual contours/high-mid short streaks. Implemented and verified; CRIMSON_CONTOURS.md/PROGRESS.md supersede active vertex settings. Audio engine and other-world scope unchanged. Stop for owner artistic/music review; no next milestone automatically approved.

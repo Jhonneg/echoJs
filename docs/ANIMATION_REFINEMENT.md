@@ -4,7 +4,7 @@
 
 ## Current boundary and sequence
 
-MI02a/MI02b lab checkpoints are accepted. Fixed linear energy is the preferred candidate; adaptive scaling remains experimental and the soft-knee contrast failure stays recorded. Production scenes still consume legacy AudioSignal. MI03's experimental lab detector now passes its synthetic core after the approved release correction; owner review and unequal-mixture limitations remain explicit (see MI03_CORRECTION.md). The initial failed baseline is retained in MI03_RESULTS.md. MI04 slow context is not implemented. Existing source adapters, art/camera choices and legacy compatibility remain intact.
+MI02a/MI02b lab checkpoints are accepted. Fixed linear energy is the preferred candidate; adaptive scaling remains experimental and the soft-knee contrast failure stays recorded. Production scenes still consume legacy AudioSignal. MI03/MI04 synthetic gates pass after the owner-approved 40 ms observation follow-up (MI04_WINDOW_RESULTS.md); weak overlapping-attack limitations remain explicit. Initial failed baselines are retained. G1 owner review passed for reviewed conditions on 2026-11-21 (G1_REVIEW.md). Next is a bounded MI05 stable-contract/Crimson pilot plan; scene implementation remains separately gated. Existing source adapters, art/camera choices and legacy compatibility remain intact.
 
 The first deliverable is the [bounded MI03 plan and event-quality criteria](MI03_PLAN.md). The Music Intelligence roadmap requires quantitative tolerances to be approved before detector implementation. Then complete MI03 and MI04 separately, perform the existing feature-quality review on matched source/volume/passages, and proceed to MI05's Crimson pilot. Refinement belongs within MI05–MI06, not a parallel rewrite of every landscape. Each implementation task has its own owner checkpoint. Landscape-switching transitions are excluded.
 
@@ -29,7 +29,7 @@ Preserve the burgundy ridged valley, nightshade sky, pink sun, open corridor, fo
 First refine motion and shaders:
 
 - Replace active-band counting as the main intensity proxy with validated energy/context. Refine acceleration/deceleration within existing travel limits, with gentle quiet movement and stronger sustained momentum. Onsets never kick the camera.
-- Map low onsets proportionally into sun accents, initially retaining 8% sun-scale and 12% glow-scale limits. Mids drive selected ridge illumination; treble gives sparse crest highlights. Stronger events must be visibly larger than weaker ones without fixed-peak flashing.
+- Map low onsets proportionally into sun accents. Owner specified 50% maximum sun expansion and restoration of the original 12% glow expansion on 2026-11-21; these supersede the intermediate 15%/20% candidate proposal. Legacy retains its accepted 8%/12%. Mids drive selected ridge illumination; treble gives sparse crest highlights. Stronger events must be visibly larger than weaker ones without fixed-peak flashing.
 - Use slow context for haze/distant separation while preserving foreground darkness, palette and sun hierarchy. Keep primary attacks prompt; secondary responses may settle with controlled inertia.
 - Silence, pause and resume should settle naturally without terrain rewind or event replay. Preserve hard constraints for reduced motion, zero Reactivity and unavailable terrain; never travel beyond loaded geometry.
 
@@ -58,4 +58,14 @@ Use deterministic 30/60/120 timing tests, duplicate-event/reset/source tests, se
 
 Browser checks use desktop 1440×810, portrait and wide views, both existing quality settings, pointer extremes, reduced motion and zero Reactivity. Keep resources bounded and frame-rate values out of React state. Initial pilot performance proposal: at most 10% additional p95 frame time on matched hardware/renderer/viewport/DPR/settings; finalize that benchmark when approving MI05. Never equate headless, mocked capture or synthetic metrics with native audibility, aesthetics or hardware proof. No real/private media recording or agent inspection; exports remain synthetic numeric summaries only.
 
-No implementation of later phases, commit, push or deployment is authorized merely by this direction document. Next checkpoint is approval of MI03_PLAN.md's bounded implementation and numerical criteria.
+No implementation of later phases, commit, push or deployment is authorized merely by this direction document. Current checkpoint (2026-11-21): G1 completed for reviewed conditions; MI05_PLAN.md proposes the stable reader and first-pass Crimson A/B pilot, awaiting scope/default/criteria approval. The vertex pass remains separately gated.
+
+2026-11-21 implementation checkpoint: owner approved MI05 with “lets move.” First-pass reader/Crimson lab pilot implemented; see MI05_RESULTS.md. Preserve current uncommitted Legacy 40% sun/12% glow baseline (historical 8% statement above is superseded for this workspace); Candidate 50%/12%. Await owner review before the vertex pass.
+
+2026-11-21 owner verdict: “passed, implement candidate.” Reviewed first-pass Crimson response accepted and applied to public Crimson through shared unchanged MI DSP. This supersedes the pilot-only default boundary; see MI05_RESULTS.md rollout addendum. Vertex displacement remains separately gated; no other landscape change follows automatically.
+
+2026-11-21 vertex authorization: owner says “go ahead” to the bounded second pass. Candidate terrain shader now has ≤0.08-unit selected-bank motion with protected corridor/skyline, continuous chunk phases, corrected normals and padded culling bounds. See MI05_VERTEX.md for implementation, checks and owner review. Subsequent landscapes/transitions remain separately approved tasks.
+
+2026-11-21 visibility correction: owner could barely see the initial vertex pass and approved the proposed0.32 cap/0.7 scene-drive curve with “yes.” This supersedes the initial0.08 amplitude bound for Crimson only. Preserve protected regions, normals/continuity, timing, sun/camera/audio and later-task checkpoints; current checks in MI05_VERTEX.md.
+
+2026-11-21 owner revision: terrain deformation is reverted entirely. Current Crimson direction is gradual low-mid contour illumination and brief high-mid travelling light, independent of bass, using existing fixed six-band controls. Authored geometry/normals restored; keep sun/camera/journey and other worlds unchanged. CRIMSON_CONTOURS.md is the current implementation/evidence reference; vertex direction/results above are historical and no longer active.

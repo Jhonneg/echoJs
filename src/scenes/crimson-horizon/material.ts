@@ -8,20 +8,29 @@ varying vec3 vWorld;
 varying vec3 vNormal;
 varying vec4 vFeatures;
 varying float vFold;
+uniform float contourOrigin;
+varying float vContourCoordinate;
 void main() {
   vec4 world = modelMatrix * vec4(position, 1.0);
   vWorld = world.xyz;
   vNormal = normalize(mat3(modelMatrix) * normal);
+  vContourCoordinate = position.x * .065 + position.z * .045 + contourOrigin;
   vFeatures = terrainFeatures;
   vFold = terrainFold;
   gl_Position = projectionMatrix * viewMatrix * world;
 }`
 export const terrainFragment = `uniform vec3 sunPosition;
 uniform float activity;
+uniform float musicWeight;
+uniform float contourLight;
+uniform float contourStreak;
+uniform float contourProgress;
+uniform float musicHaze;
 varying vec3 vWorld;
 varying vec3 vNormal;
 varying vec4 vFeatures;
 varying float vFold;
+varying float vContourCoordinate;
 ${nightshade}
 float ridgeLine(float value) {
   float width = max(fwidth(value) * 0.65, 0.00005);
@@ -39,12 +48,20 @@ void main() {
   float highlights = crests * pow(vFeatures.z, 1.5) * vFeatures.w * slopes;
   highlights *= 0.35 + 0.65 * smoothstep(-0.15, 0.7, facing);
   float foreground = ridgeLine(vFold) * (1.0 - vFeatures.z) * 0.12;
-  color += vec3(0.8, 0.004, 0.038) * (highlights + foreground) * (0.85 + activity * 0.15);
+  vec3 legacyContours = vec3(0.8, 0.004, 0.038) * (highlights + foreground) * (0.85 + activity * 0.15);
+  color += legacyContours * (1.0 - musicWeight);
   vec3 ray = normalize(vWorld - cameraPosition);
   float depth = distance(cameraPosition, vWorld);
   float haze = (1.0 - exp(-depth * 0.018)) * smoothstep(25.0, 85.0, depth);
-  haze *= exp(-abs(vWorld.x - sunPosition.x) * 0.045) * 0.35 * (0.2 + activity * 0.8);
+  haze *= exp(-abs(vWorld.x - sunPosition.x) * 0.045) * 0.35 * (0.2 + mix(activity, musicHaze, musicWeight) * 0.8);
   color = mix(color, vec3(0.065, 0.0015, 0.012), haze);
+  // Candidate contours are self-lit, independent of bass/sun activity and overall haze.
+  float wrapped = fract(vContourCoordinate - contourProgress);
+  float head = min(wrapped, 1.0 - wrapped);
+  float streakMask = 1.0 - smoothstep(0.015, 0.13, head);
+  vec3 litContours = vec3(0.8, 0.004, 0.038) * (highlights * (0.85 + contourLight * 1.4) + foreground * 0.85);
+  litContours += vec3(0.95, 0.025, 0.12) * highlights * contourStreak * streakMask * 2.2;
+  color += musicWeight * litContours;
   // Full nightshade fade is reached before the streamed window's far boundary.
   color = mix(color, nightColor(ray), smoothstep(70.0, 108.0, depth));
   gl_FragColor = vec4(color, 1.0);

@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Built public Crimson defaults to Candidate with real generated-file analyser energy/onset/uniform response; one AudioContext and no time-domain reads",
+    "Pause clears Candidate pulse; desktop/portrait have no page overflow",
+    "Seek/resume works; generated playback and context preserved across all four landscapes",
+    "Low quality/reduced-motion and Disconnect cleanup retained",
+    "Mocked generated tab stream drives public Candidate, native-ended callback clears/stops all tracks; no picker or native audibility claim"
+  ],
+  "screenshots": [
+    "desktop.png",
+    "portrait.png"
+  ],
+  "errors": [],
+  "active": {
+    "values": {
+      "activity": 0.0461960136176133,
+      "pulse": 0.1413370999159907,
+      "deformationAmplitude": 0.03884566926186814,
+      "deformationPhase": 0.1499909250959819,
+      "musicWeight": 1,
+      "musicRidge": 0.005857981660037364,
+      "musicCrest": 0.003905129985800589,
+      "musicSelection": -0.00048723467328387084,
+      "musicHaze": 0.004471763100841324
+    },
+    "peaks": {
+      "activity": 0.0461960136176133,
+      "pulse": 0.1413370999159907,
+      "deformationAmplitude": 0.03884566926186814,
+      "deformationPhase": 0.1499909250959819,
+      "musicWeight": 1,
+      "musicRidge": 0.005857981660037364,
+      "musicCrest": 0.003905129985800589,
+      "musicSelection": 0,
+      "musicHaze": 0.004471763100841324
+    },
+    "frequencyReads": 38,
+    "timeReads": 0,
+    "contexts": 1,
+    "elements": 1
+  },
+  "mockStream": {
+    "activity": 0.5650312557120797,
+    "weight": 1,
+    "contexts": 3,
+    "timeReads": 0
+  },
+  "status": "passed generated production checks; native capture/audibility and owner hardware remain manual"
+}

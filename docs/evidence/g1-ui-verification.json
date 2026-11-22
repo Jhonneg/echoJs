@@ -1,0 +1,29 @@
+{
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "g1": {
+    "hasRetainedReport": false,
+    "selectionWaited": true,
+    "modes": [
+      {
+        "mode": "legacy",
+        "time": 1.269767
+      },
+      {
+        "mode": "candidate",
+        "time": 1.506667
+      },
+      {
+        "mode": "compare",
+        "time": 1.762667
+      }
+    ],
+    "elementAndContextPreserved": true,
+    "onsetSessionPreserved": true,
+    "volume": 0.25,
+    "exportsBlocked": true,
+    "reducedMotionLabel": true,
+    "resumeAndStop": true
+  },
+  "portraitChartStable": true,
+  "errors": []
+}

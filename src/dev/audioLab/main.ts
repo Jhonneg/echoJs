@@ -1,3 +1,4 @@
+import { createMusicBridge } from './musicBridge'
 import { createAnalysis } from '../../audio/analysis'
 import { createLabSources, type LabSourceState } from './sources'
 import { BAND_NAMES, SIX_BAND_NAMES } from '../../audio/signal'
@@ -11,6 +12,7 @@ import { RANGE_SETTINGS } from './adaptive'
 import {onsetFixtures,compareOnsets,assessOnsets,type OnsetFixture,type OnsetRow} from './onsetComparison'
 import {ONSET_BANDS,ONSET_SETTINGS,type OnsetBand} from './onsets'
 import {contextFixtures,compareContext,assessContext,type ContextFixture,type ContextRow} from './contextComparison'
+import {createReviewRenderer,type ReviewMode} from './review'
 import './style.css'
 
 const labFixtures = [...fixtures, ...rangeFixtures, ...onsetFixtures.filter(f=>f.phaseSeconds===0), ...contextFixtures.filter(f=>f.phaseSeconds===0)]
@@ -18,12 +20,18 @@ const labFixtures = [...fixtures, ...rangeFixtures, ...onsetFixtures.filter(f=>f
 const root = document.querySelector<HTMLElement>('#lab')!
 root.innerHTML = `<h1>ECHO · Audio lab</h1><p>Development only · live tab diagnostics and synthetic baselines</p>
 <p>Live tab measurements stay in memory and cannot be exported. Peak dBFS describes synthetic fixture amplitude; RMS is measured separately. Six-band slow/transient/flux features do not exist.</p>
+<h2>G1 · Feature-quality review</h2><p>Compare the same input and gain. Candidate energy uses fixed calibration; presentation modes do not change audio or features. Choose permitted local audio or share a permitted player tab. Live review data stays in memory and cannot be exported.</p>
+<section aria-label="Comparison presentation"><label>View <select id="review-mode"><option value="compare">Compare</option><option value="legacy">Legacy</option><option value="candidate">Candidate</option></select></label></section>
+<section aria-label="Local review audio"><label>Choose local review audio <input id="review-file" type="file" accept="audio/*,.wav,.mp3"></label><button id="file-play" disabled>Play / resume local audio</button></section><p id="file-state">No review file selected. Selecting audio does not start playback.</p>
 <section aria-label="Tab capture controls"><button id="share-tab">Share a tab</button><button id="disconnect-tab" disabled>Disconnect tab</button><button id="resume-tab" disabled>Resume analysis</button></section>
 <p id="tab-help">Choose a browser tab and enable Share tab audio. Sound stays in the source tab. Cancelling here does not close the native picker.</p>
 <section aria-label="Fixture controls"><label>Fixture <select id="fixture">${labFixtures.map(f => `<option>${f.id}</option>`).join('')}</select></label>
 <label>Generated source rate <select id="rate"><option>44100</option><option selected>48000</option><option>96000</option></select> Hz</label>
-<button id="play">Play synthetic fixture</button><button id="pause">Pause</button><button id="stop">Stop / reset</button><label>Fixture output volume <input id="volume" type="range" min="0" max="1" step="0.05" value="0.25"></label></section>
-<p id="status" role="status">Ready</p><pre id="format"></pre>
+<button id="play">Play synthetic fixture</button><button id="pause">Pause</button><button id="stop">Stop / reset</button><label>Local input / output volume <input id="volume" type="range" min="0" max="1" step="0.05" value="0.25"></label></section>
+<p id="status" role="status">Ready</p><p id="review-input"></p>
+<canvas id="review-canvas" width="1100" height="440" aria-label="Same-input legacy and candidate feature comparison"></canvas><p id="review-state"></p><pre id="format"></pre>
+<p>Legacy orange · candidate cyan. Energy scales are 0–1 with distinct transfer curves. Transient/flux are continuous accents; candidate squares hold for 200 ms after actual emission. Brightness/activity have no direct legacy equivalent. Times use the analysis performance clock, not song position. These are neutral review indicators, not a landscape preview.</p>
+<details id="review-checklist"><summary>G1 checklist · owner review pending</summary><ol><li>Quiet/loud contrast is preserved.</li><li>Sustained energy does not repeatedly trigger onsets.</li><li>Known mid/high examples avoid false bass attacks.</li><li>Timing and weak/strong differences feel useful.</li><li>Quiet ambience and active silence stay restrained.</li><li>Equivalent local/tab material behaves similarly at matched input levels; verify native sharing and audible output manually.</li></ol><p>Use the same passage and player gain. Compare raw RMS when matching sources; OS loudness alone is not input calibration. Report pass/fail/pending and the worst issue using a passage alias. No private media upload or live export is needed.</p></details>
 <label>Graph band <select id="graph-band"><option>bass</option><option>midrange</option><option>treble</option><option>subBass (six)</option><option>bass (six)</option><option>lowMids (six)</option><option>highMids (six)</option><option>presence (six)</option><option>air (six)</option></select></label><canvas id="plot" width="1100" height="200" aria-label="Last 30 seconds of selected band features"></canvas><p>History: RMS white · raw yellow · level green · fast magenta · slow blue · transient cyan · flux violet. Vertical scale grows above 1 for raw magnitudes.</p>
 <div class="scroll"><table><thead><tr><th>Band</th><th>Raw magnitude</th><th>Level</th><th>Fast</th><th>Slow</th><th>Transient</th><th>Flux</th><th>Flux L1/L2</th><th>Active*</th></tr></thead><tbody id="meters"></tbody></table></div>
 <p>*Active: fast &gt; ${ACTIVITY_THRESHOLD}. This diagnostic flag is independent of scene-specific hysteresis.</p>
@@ -32,6 +40,8 @@ root.innerHTML = `<h1>ECHO · Audio lab</h1><p>Development only · live tab diag
 <p>*Six-band legacy values are fast envelopes; candidate values are instantaneous spectral estimates.</p>
 <canvas id="energy-plot" width="1100" height="160" aria-label="Legacy and candidate normalized energy history for selected band"></canvas><p>Selected graph band: legacy green · linear orange · soft knee violet. Scale 0–1.</p>
 <p id="energy-assessment" role="status">Synthetic validation: run energy comparison to evaluate the approved targets.</p>
+<h2>MI05 · Crimson pilot</h2><p>Use the same source above. Compare Legacy and Candidate with shared volume, quality and Reactivity. Switching keeps your journey; closing releases the preview only.</p>
+<button id="crimson-open" aria-expanded="false">Open Crimson preview</button><div id="crimson-preview"></div>
 <h2>MI02b · Range and noise comparison</h2><p>Experimental shared gain ${RANGE_SETTINGS.minGain}–${RANGE_SETTINGS.maxGain}× · 2 s hold · 5 s rise / 300 ms reduction · no increase below −50 dBFS RMS. One gain scales all bands; audio playback is unchanged. Fixed scaling remains the accepted lab candidate.</p>
 <pre id="range-state"></pre><div class="scroll"><table><thead><tr><th>Band</th><th>Fixed linear</th><th>Adaptive experiment</th></tr></thead><tbody id="range-meters"></tbody></table></div>
 <canvas id="range-plot" width="1100" height="160" aria-label="Fixed, adaptive and shared gain history for selected band"></canvas><p>Selected band: fixed orange · adaptive cyan · shared gain/2 violet. Scale 0–1.</p>
@@ -57,17 +67,45 @@ const contextHistory:{time:number;intensity:number;brightness:number;activity:nu
 let contextSession=0
 let onsetSession=0
 const history: { time: number, values: number[] }[] = []
+const review=createReviewRenderer(el<HTMLCanvasElement>('review-canvas'))
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)')
+el('review-mode').onchange=()=>review.setMode(el<HTMLSelectElement>('review-mode').value as ReviewMode,latest.onsets,performance.now()/1000,latest.state==='running'&&latest.onsets.primed,reducedMotion.matches)
 el('graph-band').onchange = () => { history.length = 0 }
 el('onset-band').onchange = () => { onsetHistory.length=0 }
+const musicBridge = createMusicBridge()
 const analysis = createAnalysis({ diagnostics: snapshot => {
   latest = snapshot
+  musicBridge.publish(snapshot)
   if(contextSession!==snapshot.context.session||snapshot.state==='reset'){contextSession=snapshot.context.session;contextHistory.length=0}
   if (snapshot.state === 'reset') history.length = 0
   if (onsetSession!==snapshot.onsets.session) {onsetSession=snapshot.onsets.session;onsetHistory.length=0}
 } })
+let closeCrimson: (() => void) | undefined
+let previewRequest = 0
+el('crimson-open').onclick = async () => {
+  const request = ++previewRequest
+  if (closeCrimson) {
+    closeCrimson(); closeCrimson = undefined
+    el('crimson-open').textContent = 'Open Crimson preview'
+    el('crimson-open').setAttribute('aria-expanded', 'false')
+    return
+  }
+  el<HTMLButtonElement>('crimson-open').disabled = true
+  try {
+    const { mountCrimsonPreview } = await import('./mountCrimsonPreview')
+    if (request !== previewRequest) return
+    closeCrimson = mountCrimsonPreview(el('crimson-preview'), analysis.signal, musicBridge.reader)
+    el('crimson-open').textContent = 'Close Crimson preview'
+    el('crimson-open').setAttribute('aria-expanded', 'true')
+  } catch {
+    el('crimson-preview').textContent = 'Preview could not load. Try opening again.'
+  } finally { el<HTMLButtonElement>('crimson-open').disabled = false }
+}
 let sourceState: LabSourceState = { mode: 'idle', captureStatus: 'disconnected', message: 'Ready' }
 const sources = createLabSources(analysis, state => {
   sourceState = state
+  if(state.mode!=='file')el<HTMLInputElement>('review-file').value=''
+  el('file-state').textContent=state.mode==='file'?'Review file selected locally. Play / resume uses this selection; Stop or source replacement releases it.':'No review file selected. Selecting audio does not start playback.'
   el('status').textContent = state.message
   updateControls()
 })
@@ -80,6 +118,8 @@ el('play').onclick = async () => {
   const rate = Number(el<HTMLSelectElement>('rate').value)
   await sources.play(wav(generateFixture(fixture, rate), rate))
 }
+el('review-file').onchange=()=>{const file=el<HTMLInputElement>('review-file').files?.[0];if(file&&!running)sources.selectFile(file)}
+el('file-play').onclick=()=>{if(!running)void sources.playFile()}
 el('pause').onclick = () => sources.pause()
 el('stop').onclick = () => sources.stop()
 el('volume').oninput = () => sources.setVolume(Number(el<HTMLInputElement>('volume').value))
@@ -91,16 +131,18 @@ let rows: BaselineRow[] = [], metadata: unknown[] = [], errors: { fixture: strin
 let cancelled = false, running = false
 let runMetrics = { offlineWallMs: 0, replayWallMs: 0, maxTraceBytes: 0 }
 function updateControls() {
-  const tab = sourceState.mode === 'tab'
+  const tab = sourceState.mode === 'tab',live=tab||sourceState.mode==='file'
   const pending = sourceState.captureStatus === 'connecting'
   el<HTMLButtonElement>('share-tab').disabled = running || tab
   el<HTMLButtonElement>('disconnect-tab').disabled = !tab
   el('disconnect-tab').textContent = pending ? 'Cancel sharing' : 'Disconnect tab'
   el<HTMLButtonElement>('resume-tab').disabled = !tab || pending
-  el<HTMLButtonElement>('pause').disabled = sourceState.mode !== 'fixture'
+  el<HTMLButtonElement>('pause').disabled = sourceState.mode !== 'fixture'&&sourceState.mode!=='file'
+  el<HTMLButtonElement>('file-play').disabled=running||sourceState.mode!=='file'
+  el<HTMLInputElement>('review-file').disabled=running
   el<HTMLInputElement>('volume').disabled = tab || running
-  el<HTMLButtonElement>('json').disabled = tab || running || (rows.length === 0 && energyRows.length === 0 && rangeRows.length === 0 && onsetRows.length === 0 && contextRows.length === 0)
-  el<HTMLButtonElement>('csv').disabled = tab || running || (rows.length === 0 && energyRows.length === 0 && rangeRows.length === 0 && onsetRows.length === 0 && contextRows.length === 0)
+  el<HTMLButtonElement>('json').disabled = live || running || (rows.length === 0 && energyRows.length === 0 && rangeRows.length === 0 && onsetRows.length === 0 && contextRows.length === 0)
+  el<HTMLButtonElement>('csv').disabled = live || running || (rows.length === 0 && energyRows.length === 0 && rangeRows.length === 0 && onsetRows.length === 0 && contextRows.length === 0)
 }
 updateControls()
 el('cancel').onclick = () => { cancelled = true }
@@ -213,10 +255,10 @@ function download(text: string, extension: string) {
   setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
 el('json').onclick = () => {
-  if (sourceState.mode !== 'tab' && !running && (rows.length || energyRows.length || rangeRows.length || onsetRows.length || contextRows.length)) download(JSON.stringify(report(), null, 2), 'json')
+  if (sourceState.mode !== 'tab' && sourceState.mode !== 'file' && !running && (rows.length || energyRows.length || rangeRows.length || onsetRows.length || contextRows.length)) download(JSON.stringify(report(), null, 2), 'json')
 }
 el('csv').onclick = () => {
-  if (sourceState.mode === 'tab' || running || (!rows.length && !energyRows.length && !rangeRows.length && !onsetRows.length && !contextRows.length)) return
+  if (sourceState.mode === 'tab' || sourceState.mode === 'file' || running || (!rows.length && !energyRows.length && !rangeRows.length && !onsetRows.length && !contextRows.length)) return
   if(suite==='context'){const header='fixture,rate,fft,cadence,window,intensity,brightness,activity,target,centroid,countRate,strengthRate';const lines=contextRows.flatMap(r=>(r.windows.length?r.windows:[{name:'none',intensity:0,brightness:0,activity:0,target:0,centroid:0,countRate:0,strengthRate:0}]).map(w=>[r.fixture,r.rate,r.fft,r.cadence,w.name,w.intensity,w.brightness,w.activity,w.target,w.centroid,w.countRate,w.strengthRate].join(',')));download([header,...lines].join('\n'),'csv');return}
   if(suite==='onsets') {
     const header='fixture,category,stress,phaseSeconds,rate,fft,cadence,expected,detected,matched,missed,extras,wrongBand,releases,precision,recall'
@@ -239,8 +281,12 @@ el('csv').onclick = () => {
   download([header.join(','), ...lines].join('\n'), 'csv')
 }
 function paint(now: number) {
+  review.draw(latest,now/1000,reducedMotion.matches)
   if (now - lastPaint >= 200) {
     lastPaint = now
+    el('review-input').textContent=`${sourceState.mode} · context ${latest.sampleRate||'—'} Hz / FFT ${latest.fftSize||'—'} · ${sourceState.mode==='tab'?'gain controlled in source tab':`local input volume ${Number(el<HTMLInputElement>('volume').value).toFixed(2)}`}`
+    const r=review.view
+    el('review-state').textContent=`View ${r.mode} · session ${r.session} · consumed sequence ${r.sequence} · band events ${r.bands.map(b=>b.count).join('/')} · local input volume ${Number(el<HTMLInputElement>('volume').value).toFixed(2)}${sourceState.mode==='tab'?' (set gain in source tab)':''} · ${reducedMotion.matches?'reduced motion: brief markers hidden, counts retained':'markers use actual emission clock'}`
     const s = latest.signal
     const age = latest.timestamp ? Math.max(0, now - latest.timestamp) : null
     el('format').textContent = `${sourceState.mode} / ${latest.state} · context ${latest.sampleRate || '—'} Hz / FFT ${latest.fftSize || '—'} · window ${latest.windowMs.toFixed(2)} ms\nRMS ${latest.rms.toFixed(6)} (${latest.rmsDbfs?.toFixed(2) ?? '−∞'} dBFS) · update ${s.updateHz.toFixed(1)} Hz · feature age ${age?.toFixed(1) ?? '—'} ms · audio time ${latest.audioTime.toFixed(3)} s\nAtmosphere ${s.atmosphere.toFixed(4)} · isPlaying ${s.isPlaying} · context is not original media sample rate`
@@ -317,4 +363,4 @@ ${adaptive.holding ? 'Startup hold' : adaptive.eligible ? 'Eligible for slow ada
   requestAnimationFrame(paint)
 }
 requestAnimationFrame(paint)
-window.addEventListener('pagehide', () => { cancelled = true; sources.dispose() })
+window.addEventListener('pagehide', () => { cancelled = true; previewRequest++; closeCrimson?.(); sources.dispose() })

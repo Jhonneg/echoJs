@@ -1,0 +1,2356 @@
+{
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "live": "fixture / running · context 96000 Hz / FFT 4096 · window 42.67 ms\nRMS 0.044804 (-26.97 dBFS) · update 0.0 Hz · feature age 16.7 ms · audio time 0.725 s\nAtmosphere 0.0611 · isPlaying true · context is not original media sample rate",
+  "g1": {
+    "early": {
+      "hasRetainedReport": false,
+      "selectionWaited": true,
+      "modes": [
+        {
+          "mode": "legacy",
+          "time": 1.186667
+        },
+        {
+          "mode": "candidate",
+          "time": 1.421333
+        },
+        {
+          "mode": "compare",
+          "time": 1.677333
+        }
+      ],
+      "elementAndContextPreserved": true,
+      "volume": 0.25,
+      "exportsBlocked": true,
+      "reducedMotionLabel": true,
+      "resumeAndStop": true
+    },
+    "retained": {
+      "hasRetainedReport": true,
+      "selectionWaited": true,
+      "modes": [
+        {
+          "mode": "legacy",
+          "time": 1.368
+        },
+        {
+          "mode": "candidate",
+          "time": 1.623413
+        },
+        {
+          "mode": "compare",
+          "time": 1.858667
+        }
+      ],
+      "elementAndContextPreserved": true,
+      "volume": 0.25,
+      "exportsBlocked": true,
+      "reducedMotionLabel": true,
+      "resumeAndStop": true
+    },
+    "lateTabReplacement": true,
+    "manualReview": "pending"
+  },
+  "contextSourceParity": {
+    "localContextTargets": [
+      0.08878,
+      0,
+      0.02219
+    ],
+    "mockContextTargets": [
+      0.08878,
+      0,
+      0.02219
+    ],
+    "intensityTolerance": 0.002,
+    "brightnessTolerance": 0.03,
+    "note": "Generated inputs; raw targets only. Envelopes have different live timelines; identical-timeline equality is unit tested."
+  },
+  "contextCases": 324,
+  "contextAssessment": {
+    "settings": {
+      "intensityReference": 0.5,
+      "intensityRise": 0.75,
+      "intensityFall": 1.5,
+      "brightnessFloor": 0.002,
+      "brightnessLowHz": 100,
+      "brightnessHighHz": 10000,
+      "brightnessTau": 0.5,
+      "activityWindow": 4,
+      "activityReference": 1,
+      "activityRise": 0.5,
+      "activityFall": 1,
+      "eventCapacity": 256,
+      "gapSeconds": 0.25
+    },
+    "targets": {
+      "plateauRelative": 0.05,
+      "plateauAbsolute": 0.002,
+      "contrast": 0.15,
+      "brightness": 0.03,
+      "intensityCadence": 0.03,
+      "brightnessCadence": 0.03,
+      "activityCadence": 0.05,
+      "silence": 0.005
+    },
+    "complete": true,
+    "pass": true,
+    "failures": [],
+    "cadenceFailures": [],
+    "relationFailures": [],
+    "transitionDifferences": [
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-silence-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.00002555417519374129
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.000024629245553782464
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.000016796089580243864
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.00002555417519374129
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.000024629245553782464
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.000016796089580243864
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.00002555417519374129
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.000024629245553782464
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.000016796089580243864
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-noise-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.005702705415068898
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.00001679678316800032
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.0028509529215660877
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.0054937503282166955
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.00012928748870861704
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0013218111160008938
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.006006728127439631
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.00013715782749124745
+      },
+      {
+        "fixture": "context-drone-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0013183020786352792
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.006803249828658736
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.000045663689338758363
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 1.0836485753173974e-7
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.007083998907642261
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.0004641361782880588
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0007711910674266798
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.0075808170256871435
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.00019410241219924713
+      },
+      {
+        "fixture": "context-drone-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0007712902558579537
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.003952741569618296
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.00006914772750262454
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.004028635888044784
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.004748237276515993
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.0002336419885383138
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.004160758180635483
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.0048654271025050655
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.00010065966156674288
+      },
+      {
+        "fixture": "context-drone-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.004160758180655491
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.007984657740616963
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.00012587530442007442
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.002111477382452598
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.00727749183625559
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.00015978980403139346
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0013791307836667072
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.007815620483833108
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.00017291097942989385
+      },
+      {
+        "fixture": "context-amplitude-100-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0014712455181263573
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.006932828893897347
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.000064315910098833
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.001909491709387312
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.007469070007819545
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.000464193780867845
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.002034712202529154
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.007935981143152693
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.00019415187960455566
+      },
+      {
+        "fixture": "context-amplitude-100-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0021459658265815806
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.0037920212509450213
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.00014489833113998958
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.004452886779481455
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.0028663670638877647
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.00023325433437478937
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.004097156327781057
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.0031525887487426907
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.0003616340605839924
+      },
+      {
+        "fixture": "context-amplitude-100-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.004097348603353465
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.007860917128156286
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.007210726743682269
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.002193613399509936
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.007129000304516464
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.006620444462133224
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0015137819693506194
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.007672461784783591
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.007713608081748272
+      },
+      {
+        "fixture": "context-amplitude-1000-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.001624482118962156
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.007121550329333148
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.014547849240561059
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.0019699821951707774
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.00724892097946056
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.013347274063696374
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.002131867644857399
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.007690745448716396
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.01444038738416549
+      },
+      {
+        "fixture": "context-amplitude-1000-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0022433611174528106
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.003889826817704889
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.019511596027854947
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.004458257626232462
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.0029346547478750207
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.020183764231332196
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.004104241475033701
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.003225700689711619
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.02127691166132771
+      },
+      {
+        "fixture": "context-amplitude-1000-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.004104457545076476
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.00786228679430101
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.013722161877407962
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.0021918524434676456
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.007130584101917914
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.012598752297126287
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0015095109744462654
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.007670455957806688
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.014679016000603728
+      },
+      {
+        "fixture": "context-amplitude-8000-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0016199733870729954
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.007119892458766874
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.0276853872497258
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.001965859366483219
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.00725139158089122
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.02540070528581856
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.002124656295439356
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.007693456190830339
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.027480968871638756
+      },
+      {
+        "fixture": "context-amplitude-8000-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0022361184333299367
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.003888706066086267
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.037130218714137575
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.004458118318360918
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.0029337582346057323
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.038409138764345235
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.004104103499203773
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.003224746539784329
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.04048940268137968
+      },
+      {
+        "fixture": "context-amplitude-8000-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.004104319190820535
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.005702705415068898
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.011988452161293267
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.0028509529215660877
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.0054937503282166955
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.01110189324304757
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0019489648767223172
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.006006728127439631
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.012177583722495222
+      },
+      {
+        "fixture": "context-frequency-steps-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0020472506600636986
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.006803249828658736
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.015260708496435169
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.0021230104987384063
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.007083998907642261
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.015425465844481387
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0019545976894085743
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.0075808170256871435
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.016453116888320032
+      },
+      {
+        "fixture": "context-frequency-steps-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.002061816268268915
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.003952741569618296
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.024519819682566113
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.004028635888044784
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.004748237276515993
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.03167637119014488
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.004160758180635483
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.0048654271025050655
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.02937415212434491
+      },
+      {
+        "fixture": "context-frequency-steps-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.004160758180655491
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.005048822188326148
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.0005027559471382226
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.0042865937467082265
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.0048802357614581016
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.005722483842273696
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.001987418734541292
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.005326978237666147
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.005730562015576535
+      },
+      {
+        "fixture": "context-equal-mixture-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0019821314900228607
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.0058513596101674725
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.011472850614083652
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 5.4619389872057056e-8
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.006116581233700919
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.010064219713343814
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0011596629343405829
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.0065421066906946705
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.012388972478741267
+      },
+      {
+        "fixture": "context-equal-mixture-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0011597114082722432
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.003354816242988213
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.022676158822335757
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.006057304861747161
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.004085940592991721
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.024272311983336348
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.00625595240762547
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.0041869199250801625
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.022547104557490316
+      },
+      {
+        "fixture": "context-equal-mixture-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.00625595201854913
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.008740552136947868
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.03365940639063181
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.003097264281142681
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.015612473566627177
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.038876971398371235
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.002920989545704411
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.016204249961768072
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.045125518758539984
+      },
+      {
+        "fixture": "context-sparse-melody-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.002920989048887934
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.008967880339245046
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.03894620958947015
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.0024138680495917886
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.016732855926885434
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.04435221679297602
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.004416912331082379
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.017371410908731746
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.05707782328661323
+      },
+      {
+        "fixture": "context-sparse-melody-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.00441690900957481
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.007496444098189059
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.02929154320012417
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.005155694697919433
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.009941489136388856
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.06116475864246759
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0041607536396256325
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.010466521218832889
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.06340625531755253
+      },
+      {
+        "fixture": "context-sparse-melody-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.004160753639625061
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.0068300235813911064
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.025016380848081138
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.013215999734153105
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.01096739109489174
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.05101904465844287
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.009045242280234067
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.011203766037623367
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.05096725950742284
+      },
+      {
+        "fixture": "context-busy-pulses-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.004742166996403063
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.00524829757428219
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.029463284782505483
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.010370955876732202
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.00918045912968593
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.0737697936938413
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.009789184899696823
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.009650572693304896
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.06532248008519131
+      },
+      {
+        "fixture": "context-busy-pulses-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.007400669493399126
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.004570877988652786
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.02251826608819743
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.01643652430803577
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.00887916920547839
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.049341499597587435
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.010516895913206814
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.009825192651141984
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.0493871212078002
+      },
+      {
+        "fixture": "context-busy-pulses-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.0068933437233760775
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.008682381582956505
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.01922295155153496
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.01770004290803051
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.007977415978273755
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.020368180843366862
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.011771180789297064
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.017418075681988398
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.021832005518258937
+      },
+      {
+        "fixture": "context-rate-steps-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.013042351716950784
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.006642927244773611
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.02024724849859076
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.010903794175269321
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.00818653775214604
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.021715579104888735
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.01495882851090935
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.015832407261885426
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.029109746669760683
+      },
+      {
+        "fixture": "context-rate-steps-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.011904486847850837
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.00738007864080345
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.016821242496971867
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.01165487427692069
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.007635257614552818
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.016301006545728913
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.009859359708132676
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.00808678868776773
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.03438333897206533
+      },
+      {
+        "fixture": "context-rate-steps-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.010951278919069662
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.012995699191279741
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.007210726743682269
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.001809410216597555
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.011292776064060372
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.006620444462133224
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.002524323538638816
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.01231413536686872
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.007713608081748272
+      },
+      {
+        "fixture": "context-quiet-loud-phase0ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.002715732841409829
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.014910432722025163
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.014547849240561059
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 2.7809051297597786e-7
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.013767918588834471
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.013347274063696374
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.0037765921848265382
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.014704675719521568
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.01444038738416549
+      },
+      {
+        "fixture": "context-quiet-loud-phase7ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.003983755078166368
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 44100,
+        "signal": "intensity",
+        "maximum": 0.008397973781429507
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 44100,
+        "signal": "brightness",
+        "maximum": 0.019511596027854947
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 44100,
+        "signal": "activity",
+        "maximum": 0.008630396442727542
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 48000,
+        "signal": "intensity",
+        "maximum": 0.0069390289435433405
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 48000,
+        "signal": "brightness",
+        "maximum": 0.020183764231332196
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 48000,
+        "signal": "activity",
+        "maximum": 0.007945765907041356
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 96000,
+        "signal": "intensity",
+        "maximum": 0.007547716939287241
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 96000,
+        "signal": "brightness",
+        "maximum": 0.02127691166132771
+      },
+      {
+        "fixture": "context-quiet-loud-phase17ms",
+        "rate": 96000,
+        "signal": "activity",
+        "maximum": 0.007945890583647355
+      }
+    ],
+    "onsetDiagnostics": {
+      "expected": 2295,
+      "matched": 2295,
+      "missed": 0,
+      "extras": 0
+    }
+  },
+  "onsetCases": 783,
+  "onsetAssessment": {
+    "settings": {
+      "historySeconds": 1,
+      "historyCapacity": 512,
+      "thresholdMad": 3,
+      "noveltyFloor": 0.0005,
+      "rmsFloor": 0.002,
+      "riseFloor": 0.0005,
+      "riseSeconds": 0.05,
+      "noveltyPowerShare": 0.05,
+      "fallFloor": 0.002,
+      "fallFraction": 0.05,
+      "spacingSeconds": 0.12,
+      "rearmFraction": 0.6,
+      "strengthReference": 0.5,
+      "attackWindowSeconds": 0.04,
+      "eventSeconds": 10,
+      "eventCapacity": 256,
+      "gapSeconds": 0.25
+    },
+    "targets": {
+      "peakDelaySeconds": 0.1,
+      "emissionDelaySeconds": 0.15
+    },
+    "complete": true,
+    "pass": true,
+    "core": {
+      "cases": 702,
+      "expected": 5157,
+      "detected": 5157,
+      "matched": 5157,
+      "missed": 0,
+      "extras": 0,
+      "wrongBand": 0,
+      "releaseEvents": 0,
+      "maxPeakDelayMs": 52.85714285714249,
+      "maxEmissionDelayMs": 119.20634920634932
+    },
+    "stress": {
+      "cases": 81,
+      "expected": 324,
+      "detected": 324,
+      "matched": 324,
+      "missed": 0,
+      "extras": 0,
+      "wrongBand": 0,
+      "releaseEvents": 0,
+      "maxPeakDelayMs": 36.190476190476105,
+      "maxEmissionDelayMs": 102.17687074829928
+    },
+    "strengthGroups": 1377,
+    "strengthFailures": [],
+    "coreFailures": [],
+    "categories": [
+      {
+        "category": "silence",
+        "cases": 27,
+        "expected": 0,
+        "detected": 0,
+        "matched": 0,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 0,
+        "maxEmissionDelayMs": 0
+      },
+      {
+        "category": "noise",
+        "cases": 27,
+        "expected": 0,
+        "detected": 0,
+        "matched": 0,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 0,
+        "maxEmissionDelayMs": 0
+      },
+      {
+        "category": "sustain",
+        "cases": 81,
+        "expected": 324,
+        "detected": 324,
+        "matched": 324,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 51.88888888888887,
+        "maxEmissionDelayMs": 118.64625850340138
+      },
+      {
+        "category": "burst-50",
+        "cases": 81,
+        "expected": 324,
+        "detected": 324,
+        "matched": 324,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 52.47845804988671,
+        "maxEmissionDelayMs": 118.64625850340138
+      },
+      {
+        "category": "burst-100",
+        "cases": 81,
+        "expected": 324,
+        "detected": 324,
+        "matched": 324,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 52.47845804988671,
+        "maxEmissionDelayMs": 118.64625850340138
+      },
+      {
+        "category": "repeat",
+        "cases": 162,
+        "expected": 1944,
+        "detected": 1944,
+        "matched": 1944,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 52.47845804988671,
+        "maxEmissionDelayMs": 119.20634920634932
+      },
+      {
+        "category": "over-bed",
+        "cases": 162,
+        "expected": 2106,
+        "detected": 2106,
+        "matched": 2106,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 52.85714285714249,
+        "maxEmissionDelayMs": 119.05442176870729
+      },
+      {
+        "category": "mixture",
+        "cases": 27,
+        "expected": 81,
+        "detected": 81,
+        "matched": 81,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 51.88888888888887,
+        "maxEmissionDelayMs": 118.64625850340138
+      },
+      {
+        "category": "high-only",
+        "cases": 27,
+        "expected": 27,
+        "detected": 27,
+        "matched": 27,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 51.88888888888887,
+        "maxEmissionDelayMs": 118.64625850340138
+      },
+      {
+        "category": "release",
+        "cases": 27,
+        "expected": 27,
+        "detected": 27,
+        "matched": 27,
+        "missed": 0,
+        "extras": 0,
+        "wrongBand": 0,
+        "releaseEvents": 0,
+        "maxPeakDelayMs": 51.88888888888887,
+        "maxEmissionDelayMs": 118.64625850340138
+      }
+    ]
+  },
+  "seek": {
+    "before": "Session 1 · latest sequence 1 · primed · 1/256 events in latest 10 s. Live clock: performance seconds.",
+    "after": "Session 4 · latest sequence 0 · primed · 0/256 events in latest 10 s. Live clock: performance seconds."
+  },
+  "rows": 216,
+  "rangeRows": 81,
+  "rangeAssessment": {
+    "settings": {
+      "minGain": 1,
+      "maxGain": 2,
+      "holdSeconds": 2,
+      "riseSeconds": 5,
+      "reductionSeconds": 0.3,
+      "floorDbfs": -50,
+      "targetRms": 0.25,
+      "rmsAttackSeconds": 0.3,
+      "rmsReleaseSeconds": 5
+    },
+    "targets": {
+      "noise": 0.005,
+      "loudGraceSeconds": 1
+    },
+    "complete": true,
+    "checks": {
+      "bounded": true,
+      "hold": true,
+      "floor": true,
+      "silence": true,
+      "noise": true,
+      "quiet": true,
+      "loud": true,
+      "reset": true
+    },
+    "pass": true,
+    "extraClippingSeconds": 0.4498866213151942,
+    "adaptiveClippingSeconds": 0.4498866213151942,
+    "fixedClippingSeconds": 0,
+    "noiseMax": 0.0018213411331029325,
+    "silenceMax": 0,
+    "quietMaxRatio": 1.9591785970428615,
+    "gainMax": 1.9966826518630598,
+    "extraClippingAfterGraceSeconds": 0,
+    "extraClippingEarlySeconds": 0.4498866213151942,
+    "maxHitGainDip": 0.05298503307441749,
+    "failures": []
+  },
+  "energyRows": 432,
+  "energyAssessment": {
+    "targets": {
+      "calibrationDb": 1,
+      "loudContrast": 0.15,
+      "noise": 0.005
+    },
+    "maxCalibrationErrorDb": 0.49246092848047035,
+    "calibrationPass": true,
+    "curves": [
+      {
+        "curve": "linear",
+        "referenceRms": 0.5,
+        "groups": 81,
+        "monotonic": true,
+        "noiseMax": 0.0010390658162462963,
+        "silenceMax": 0,
+        "smallestContrast": {
+          "hz": 100,
+          "rate": 48000,
+          "cadence": 120,
+          "range": "Six",
+          "difference": 0.3340638945136587
+        },
+        "checks": {
+          "bounded": true,
+          "monotonic": true,
+          "silence": true,
+          "noise": true,
+          "contrast": true
+        }
+      },
+      {
+        "curve": "softKnee",
+        "referenceRms": 0.5,
+        "groups": 81,
+        "monotonic": true,
+        "noiseMax": 0.0010379872791468363,
+        "silenceMax": 0,
+        "smallestContrast": {
+          "hz": 100,
+          "rate": 48000,
+          "cadence": 120,
+          "range": "Six",
+          "difference": 0.1497933050182509
+        },
+        "checks": {
+          "bounded": true,
+          "monotonic": true,
+          "silence": true,
+          "noise": true,
+          "contrast": false
+        }
+      }
+    ]
+  },
+  "repeatedExactly": true,
+  "partialExportComplete": false,
+  "checks": [
+    "fixture playback/pause/reset",
+    "synthetic capture-API mock: live meters, export lock, switching, native-end callback, denial, missing audio, late resolution",
+    "responsive UI",
+    "JSON/CSV exports",
+    "full baseline repeated exactly",
+    "partial cancellation",
+    "same synthetic player advances across all four landscapes",
+    "production asset exclusion"
+  ],
+  "errors": []
+}
