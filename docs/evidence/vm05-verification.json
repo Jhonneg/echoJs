@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Bounded slow context drive at .2/.8/1, stable sun scale/camera, actual terrain uniform",
+    "Slow invalid-brightness/zero release and reduced-motion ramp",
+    "Six quality/viewports and seven draw calls/geometries"
+  ],
+  "screenshots": [
+    "silence.png",
+    "context-0.2.png",
+    "context-0.8.png",
+    "context-1.png",
+    "standard-1440x810.png",
+    "standard-810x1440.png",
+    "standard-1920x810.png",
+    "low-1440x810.png",
+    "low-810x1440.png",
+    "low-1920x810.png"
+  ],
+  "performance": [
+    {
+      "quality": "standard",
+      "samples": 600,
+      "p95": 16.800000000745058
+    },
+    {
+      "quality": "low",
+      "samples": 599,
+      "p95": 16.800000000745058
+    }
+  ],
+  "errors": [],
+  "levels": [
+    {
+      "level": 0.2,
+      "atmosphere": {
+        "density": 0.18563036403841604,
+        "warmth": 0.12994125482689128
+      }
+    },
+    {
+      "level": 0.8,
+      "atmosphere": {
+        "density": 0.7855599468174801,
+        "warmth": 0.5498919627722363
+      }
+    },
+    {
+      "level": 1,
+      "atmosphere": {
+        "density": 0.9853666946427625,
+        "warmth": 0.6897566862499334
+      }
+    }
+  ],
+  "viewports": [
+    {
+      "quality": "standard",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "quality": "standard",
+      "width": 810,
+      "height": 1440
+    },
+    {
+      "quality": "standard",
+      "width": 1920,
+      "height": 810
+    },
+    {
+      "quality": "low",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "quality": "low",
+      "width": 810,
+      "height": 1440
+    },
+    {
+      "quality": "low",
+      "width": 1920,
+      "height": 810
+    }
+  ],
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending"
+}

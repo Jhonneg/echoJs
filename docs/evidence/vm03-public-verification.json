@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Built public Crimson defaults to Candidate with real generated-file analyser energy/onset/uniform response; one AudioContext and no time-domain reads",
+    "Pause clears Candidate pulse; desktop/portrait have no page overflow",
+    "Seek/resume works; generated playback and context preserved across all four landscapes",
+    "Low quality/reduced-motion and Disconnect cleanup retained",
+    "Mocked generated tab stream drives public Candidate, native-ended callback clears/stops all tracks; no picker or native audibility claim"
+  ],
+  "screenshots": [
+    "desktop.png",
+    "portrait.png"
+  ],
+  "errors": [],
+  "active": {
+    "values": {
+      "activity": 0.037201678623991624,
+      "pulse": 0.10603855093053413,
+      "glowActivity": 0.0010879721491506647,
+      "valleyOrigin": -1.3968146928204135,
+      "contourOrigin": 0.6799999999999997,
+      "valleyGlow": 0.017447498958584922,
+      "musicWeight": 1,
+      "contourLight": 0.024067352558684075,
+      "contourStreak": 0.10545540338691531,
+      "contourProgress": 0.04042105263197114,
+      "musicHaze": 0.003956519371137272
+    },
+    "peaks": {
+      "activity": 0.037201678623991624,
+      "pulse": 0.10603855093053413,
+      "glowActivity": 0.0010879721491506647,
+      "valleyOrigin": 3.84,
+      "contourOrigin": 0.8399999999999999,
+      "valleyGlow": 0.017447498958584922,
+      "musicWeight": 1,
+      "contourLight": 0.024067352558684075,
+      "contourStreak": 0.10545540338691531,
+      "contourProgress": 1,
+      "musicHaze": 0.003956519371137272
+    },
+    "frequencyReads": 39,
+    "timeReads": 0,
+    "contexts": 1,
+    "elements": 1
+  },
+  "mockStream": {
+    "activity": 0.5650279448118591,
+    "weight": 1,
+    "contexts": 3,
+    "timeReads": 0
+  },
+  "status": "passed generated production checks; native capture/audibility and owner hardware remain manual"
+}

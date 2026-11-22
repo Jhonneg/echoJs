@@ -1,5 +1,7 @@
 # Crimson — independent mid contour lighting
 
+Current status: **VM02 — IMPLEMENTED — AWAITING REVIEW**. The owner requested refinement of the baseline described below. [VM02_REVIEW.md](VM02_REVIEW.md) records the current resting/low-mid/high-mid states, fading trail, stationary-camera tests and generated recording. Earlier measurements/settings below are historical.
+
 2026-11-21 · owner explicitly requests reverting terrain deformation and replacing it with low-mid illumination/high-mid streaks, independent of bass. Implemented; owner artistic/musical review pending.
 
 ## Current behavior

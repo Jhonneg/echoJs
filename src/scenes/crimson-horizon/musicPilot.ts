@@ -1,11 +1,15 @@
+import { createAtmosphere, updateAtmosphere } from './atmosphere.ts'
 import { createContourLighting, updateContourLighting } from './contours.ts'
 import { clampSignal } from '../../audio/signal.ts'
 import { musicFeaturesFresh, type MusicFeatureReader, type OnsetEvent } from '../../audio/musicFeatures.ts'
+// Artistic response range, applied only after shared MI measurement.
+// Moderate calibrated energy reaches full visual drive; reactivity still scales the result.
+export const crimsonVisualDrive = (energy: number) => clampSignal(clampSignal(energy) / .35)
 export type CrimsonProfile = 'legacy' | 'candidate'
 export function createMusicPilot() {
   return { profile: 'legacy' as CrimsonProfile, session: -1, sequence: 0, weight: 0, from: 0, transition: .5,
     pulses: [] as OnsetEvent[], tailLow: 0, tailMid: 0, tailHigh: 0, low: 0, mid: 0, high: 0, sun: 0, speed: 0, enabled: false,
-    haze: 0, contours: createContourLighting() }
+    atmosphere: createAtmosphere(), presence: 0, air: 0, haze: 0, body: 0, glowActivity: 0, contours: createContourLighting() }
 }
 export type MusicPilot = ReturnType<typeof createMusicPilot>
 // A short eased attack and one-frame-wide peak make strength independent of render cadence.
@@ -13,6 +17,12 @@ export function onsetEnvelope(age: number) {
   if (age < 0 || age > 2) return 0
   if (age < .025) { const t = age / .025; return t * t * (3 - 2 * t) }
   return Math.exp(-Math.max(0, age - .059) / .22)
+}
+// Upper accents linger enough to read, without changing bass/corona timing.
+export function upperAccentEnvelope(age: number) {
+  if (age < 0 || age >= 1.8) return 0
+  if (age < .025) return onsetEnvelope(age)
+  return Math.exp(-Math.max(0, age - .1) / .38)
 }
 export function updateMusicPilot(state: MusicPilot, reader: MusicFeatureReader, profile: CrimsonProfile,
   delta: number, now: number, reactivity: number, reduced: boolean) {
@@ -44,20 +54,35 @@ export function updateMusicPilot(state: MusicPilot, reader: MusicFeatureReader, 
   }
   const release = Math.exp(-dt / .22)
   state.tailLow *= release; state.tailMid *= release; state.tailHigh *= release
+  state.presence = state.air = 0
   state.low = state.tailLow; state.mid = state.tailMid; state.high = state.tailHigh
   for (let i = state.pulses.length - 1; i >= 0; i--) {
     const event = state.pulses[i], age = now - event.emittedAtSeconds
     if (age > 2) { state.pulses.splice(i, 1); continue }
     const value = clampSignal(event.strength) * onsetEnvelope(age) * gain
     state[event.band] = Math.max(state[event.band], value)
+    if (event.band === 'high') {
+      const upper = clampSignal(event.strength) * upperAccentEnvelope(age) * gain
+      const six = view.energy.six, sum = Math.max(.001, six.presence + six.air)
+      state.presence = Math.max(state.presence, upper * clampSignal(six.presence / sum))
+      state.air = Math.max(state.air, upper * clampSignal(six.air / sum))
+    }
   }
+  updateAtmosphere(state.atmosphere, view.context.intensity, view.context.activity, view.context.brightness,
+    view.context.brightnessValid, fresh && profile === 'candidate', delta, gain, reduced)
   const energy = view.energy
   updateContourLighting(state.contours, energy.six.lowMids, energy.six.highMids, view.session, view.frame,
     view.updatedAtSeconds, now, delta, gain, fresh && profile === 'candidate', reduced, reset)
-  state.sun = fresh ? clampSignal(.75 * energy.low + .25 * energy.overall) * gain : 0
-  const speed = fresh ? 16 * gain * Math.pow(clampSignal(energy.overall), 1.2) : 0
+  const bodyTarget = fresh && profile === 'candidate' ? clampSignal(energy.six.bass) * gain : 0
+  state.body += (bodyTarget - state.body) * (1 - Math.exp(-dt / (reduced ? 1.5 : bodyTarget > state.body ? .18 : .65)))
+  if (bodyTarget === 0 && state.body < .0001) state.body = 0
+  state.sun = fresh ? crimsonVisualDrive(.75 * energy.low + .25 * energy.overall) * gain : 0
+  const speed = fresh ? 16 * gain * Math.pow(crimsonVisualDrive(energy.overall), 1.2) : 0
   state.speed = speed < .005 ? 0 : speed
-  const tau = reduced ? 1.5 : .25
-  const blend = 1 - Math.exp(-dt / tau)
-  state.haze += ((fresh ? clampSignal(view.context.intensity) * gain : 0) - state.haze) * blend
+  const glowTarget = fresh ? clampSignal(view.context.activity) * gain : 0
+  const currentGlow = state.glowActivity ?? 0
+  const glowTau = reduced ? 1.5 : glowTarget > currentGlow ? .12 : .45
+  state.glowActivity = gain === 0 ? 0 : currentGlow + (glowTarget - currentGlow) * (1 - Math.exp(-dt / glowTau))
+  if (glowTarget === 0 && state.glowActivity < .0001) state.glowActivity = 0
+  state.haze = state.atmosphere.density
 }

@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Built public Crimson defaults to Candidate with real generated-file analyser energy/onset/uniform response; one AudioContext and no time-domain reads",
+    "Pause clears Candidate pulse; desktop/portrait have no page overflow",
+    "Seek/resume works; generated playback and context preserved across all four landscapes",
+    "Low quality/reduced-motion and Disconnect cleanup retained",
+    "Mocked generated tab stream drives public Candidate, native-ended callback clears/stops all tracks; no picker or native audibility claim"
+  ],
+  "screenshots": [
+    "desktop.png",
+    "portrait.png"
+  ],
+  "errors": [],
+  "active": {
+    "values": {
+      "activity": 0.03725505042622192,
+      "pulse": 0.10598383382405063,
+      "corona": 0.10481252197869784,
+      "coronaRadius": 10.332970759047349,
+      "glowActivity": 0.0010934577444791837,
+      "valleyOrigin": -1.3968146928204135,
+      "contourOrigin": 0.6799999999999997,
+      "valleyGlow": 0.017475080574580543,
+      "musicWeight": 1,
+      "contourLight": 0.024103728930142593,
+      "contourStreak": 0.10539747181322702,
+      "contourProgress": 0.040526315792610804,
+      "musicHaze": 0.003964973536904973
+    },
+    "peaks": {
+      "activity": 0.03725505042622192,
+      "pulse": 0.10598383382405063,
+      "corona": 0.10481252197869784,
+      "coronaRadius": 10.388599605937689,
+      "glowActivity": 0.0010934577444791837,
+      "valleyOrigin": 3.84,
+      "contourOrigin": 0.8399999999999999,
+      "valleyGlow": 0.017475080574580543,
+      "musicWeight": 1,
+      "contourLight": 0.024103728930142593,
+      "contourStreak": 0.10539747181322702,
+      "contourProgress": 1,
+      "musicHaze": 0.003964973536904973
+    },
+    "frequencyReads": 38,
+    "timeReads": 0,
+    "contexts": 1,
+    "elements": 1
+  },
+  "mockStream": {
+    "activity": 0.5650472557564028,
+    "weight": 1,
+    "contexts": 3,
+    "timeReads": 0
+  },
+  "status": "passed generated production checks; native capture/audibility and owner hardware remain manual"
+}

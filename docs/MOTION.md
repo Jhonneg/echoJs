@@ -153,3 +153,13 @@ Crimson visibility adjustment (2026-11-21): owner approved raising the initial0.
 ## Crimson contour lighting replaces deformation — 2026-11-21
 
 Owner reverted all vertex motion. Current terrain positions/normals are authored. Existing lowMids250–800 drive gradual contour illumination (sqrt visual target,320/750 ms); highMids800–2500 rises create550 ms travelling contour highlights. Qualification and strength depend only on high-mid energy, not bass/overall/broad onset events; constant high mids do not continually retrigger. Zero/stale/pause/reset clear streaks, reduced motion suppresses travel and slows low-light response to1.5 s. Existing sun/camera/journey behavior preserved. See CRIMSON_CONTOURS.md for defaults and current evidence; earlier vertex sections are historical.
+
+## VM02 refinement — IMPLEMENTED — AWAITING REVIEW — 2026-11-21
+
+Current contour visuals supersede the earlier550 ms/power-shaped defaults: low-mid emission target is linear lowMids×Reactivity with existing320/750 ms response; high-mid local rise qualification is unchanged but strength is linear rise×Reactivity. A35 ms eased attack and smooth release through950 ms allow a bright head/short one-sided trail to visibly travel along selected logical contour coordinates. Rest stays barely burgundy; sustained light is soft crimson; strong heads are warmer/brighter. Restricted secondary contours and narrow halos avoid wireframe appearance. Geometry/MI/sun/camera and motion overrides unchanged; fixture-only stationary tests/recording are documented in VM02_REVIEW.md. No VM03.
+
+Activity-driven sun halo (2026-11-21 owner request): Candidate continuous halo emission follows gain-scaled existing context.activity, with120/450 ms local rise/fall and≥1.5 s reduced-motion response. Idle alpha0.003, activity coefficient0.17, bass-pulse coefficient0.06 and Gaussian width/geometry remain unchanged. Zero Reactivity clears the activity drive; inactive/stale input releases it smoothly. Sun body/size, bass pulse geometry, camera and VM02 contours are preserved. Legacy comparison retains energy-driven halo behavior; no MI changes.
+
+VM04 upper detail: presence/air weight existing high onset envelope into short distant glints, fading sparse sky specks and subtle edge shimmer. No permanent particle travel; reduced motion suppresses accents. Quality reduces speck density; sun/corona/valley/camera timing unchanged.
+
+VM05 atmosphere: density combines slow intensity/activity; warmth uses valid brightness×intensity.2s rise/4s release (4/6s reduced), including existing haze. Context affects horizon color and distant depth before reactive emission, without onset flashes or sun/camera changes.

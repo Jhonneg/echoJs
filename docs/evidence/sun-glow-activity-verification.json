@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Actual GPU halo uniform follows 0/.25/.75/1 activity with unchanged sun/glow scale and camera",
+    "Energy alone does not hold Candidate glow; zero Reactivity, stale fade and reduced-motion ramps supported",
+    "Same seven geometries/draw calls; no MI or geometry change"
+  ],
+  "screenshots": [
+    "activity-0.png",
+    "activity-0.25.png",
+    "activity-0.75.png",
+    "activity-1.png"
+  ],
+  "performance": [],
+  "errors": [],
+  "levels": [
+    {
+      "activity": 0,
+      "rendered": 0,
+      "sun": 0,
+      "sunScale": 1,
+      "glowScale": 1,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      }
+    },
+    {
+      "activity": 0.25,
+      "rendered": 0.249267314759598,
+      "sun": 0,
+      "sunScale": 1,
+      "glowScale": 1,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      }
+    },
+    {
+      "activity": 0.75,
+      "rendered": 0.7493622690972794,
+      "sun": 0,
+      "sunScale": 1,
+      "glowScale": 1,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      }
+    },
+    {
+      "activity": 1,
+      "rendered": 0.9992604779686655,
+      "sun": 0,
+      "sunScale": 1,
+      "glowScale": 1,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      }
+    }
+  ],
+  "reducedMotion": 0.18174785321755957,
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending",
+  "preservedOwnerSunScale": "1 + state.sunPulse * (0.05 + .1 * (response?.weight ?? 0))"
+}

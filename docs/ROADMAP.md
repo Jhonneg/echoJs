@@ -227,3 +227,23 @@ Vertex visibility correction approved (2026-11-21): owner reports barely visible
 Stronger vertex visibility verified (2026-11-21): approved0.32 cap/0.7 visual drive implemented;24 test files and generated GPU/public input checks pass. Six paired render-cost comparisons pass the10% criterion (worst~0.60%); bounds/normals/protected masks/stream and culling checks retained in MI05_VERTEX.md/current evidence. Await owner artistic/music review; no automatic next task.
 
 Owner replaces vertex pass (2026-11-21): explicit request restores authored terrain and adds independent low-mid gradual contours/high-mid short streaks. Implemented and verified; CRIMSON_CONTOURS.md/PROGRESS.md supersede active vertex settings. Audio engine and other-world scope unchanged. Stop for owner artistic/music review; no next milestone automatically approved.
+
+VM02 visual refinement (2026-11-21): owner accepts geometry but requests clearer resting/low-mid/high-mid distinction, selected soft contours and visible travelling head/trail. Implemented within VM02; stationary generated PCM cases, weak/strong pixel measurements, normal production regressions and a21.1 s generated-only recording retained in VM02_REVIEW.md. Status remains **IMPLEMENTED — AWAITING REVIEW**. Do not proceed to VM03.
+
+Owner-requested sun-halo adjustment (2026-11-21): map existing slow activity to Candidate halo emission while preserving the sun body/size, bass pulse, geometry/camera and VM02 contours. This specific request is authorized independently of the broader sun/valley milestones; do not infer VM01 completion or start VM03. Actual results/checkpoint in PROGRESS.md; prior VM02 evidence remains scoped to its recorded build.
+
+Crimson VM03 (2026-11-21): owner-authorized valley floor implemented, awaiting owner review. CRIMSON_VISUAL_MAPPING_ROADMAP.md is source of truth; VM02 approved with stationary evidence reconciled. VM03_REVIEW.md retains checks/recording. Next VM01 only after owner review; “Continue Crimson” resumes this workflow.
+
+VM01 (2026-11-21): owner “proceed” approves VM03 and authorizes sun/corona refinement. Implemented, awaiting owner review; see VM01_REVIEW.md and authoritative CRIMSON_VISUAL_MAPPING_ROADMAP.md. Next VM04 only after review/continuation.
+
+VM01 compromise (2026-11-21): owner approves15% sustained plus5% transient body expansion with slightly softened corona. Implemented and verified; remains IMPLEMENTED — AWAITING OWNER REVIEW, no VM04 progression.
+
+VM04 (2026-11-21): owner “looks good” approves VM01 compromise; “continue crimson” authorizes high-frequency atmosphere. Implemented and verified, awaiting owner review in VM04_REVIEW.md. Authoritative visual roadmap updated; no VM05 until review/continuation.
+
+Owner-directed Crimson range refinement (2026-11-21): make sun brightness/travel maximums easier to reach via scene-only .35 energy saturation. Implemented and verified, awaiting owner review; see CRIMSON_RESPONSE_RANGE.md. VM04 remains pending; no VM05 authorization.
+
+VM04 visibility refinement (2026-11-21): owner “make them stand out more” authorizes clearer upper accents. Implemented with brighter/wider glints/specks, longer upper-only fade and reduced speck density. Await owner review; accepted brightness/travel range preserved. No VM05 progression.
+
+VM05 (2026-11-22): owner “no, lets move” approves VM04 and authorizes atmospheric intelligence. Implemented, awaiting owner review in VM05_REVIEW.md and authoritative visual roadmap. Multi-second slow-context depth/horizon mapping only; no VM06 progression until owner review/continuation.
+
+VM06 (2026-11-22): owner “lets go” approves VM05 and authorizes final integration review. Generated production checks/60s soak and code checks pass; VM06 IMPLEMENTED — AWAITING OWNER REVIEW. VM06_REVIEW.md lists pending combined full-song/native/device rows. Final release gate remains open; no production changes or deployment in this phase.

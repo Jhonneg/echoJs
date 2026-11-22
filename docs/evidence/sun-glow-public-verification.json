@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Built public Crimson defaults to Candidate with real generated-file analyser energy/onset/uniform response; one AudioContext and no time-domain reads",
+    "Pause clears Candidate pulse; desktop/portrait have no page overflow",
+    "Seek/resume works; generated playback and context preserved across all four landscapes",
+    "Low quality/reduced-motion and Disconnect cleanup retained",
+    "Mocked generated tab stream drives public Candidate, native-ended callback clears/stops all tracks; no picker or native audibility claim"
+  ],
+  "screenshots": [
+    "desktop.png",
+    "portrait.png"
+  ],
+  "errors": [],
+  "active": {
+    "values": {
+      "atmosphere": 0,
+      "toneMappingExposure": 1,
+      "time": 0.05190000000037253,
+      "haloScale": 1.25,
+      "haloRotation": 0,
+      "bass": 0,
+      "treble": 0,
+      "roughness": 0.4,
+      "metalness": 0.35,
+      "opacity": 0.07,
+      "activity": 0.03724194354290115,
+      "pulse": 0.10596163429229966,
+      "glowActivity": 0.0010933296756899227,
+      "contourOrigin": 0.6799999999999997,
+      "musicWeight": 1,
+      "contourLight": 0.024095170104949274,
+      "contourStreak": 0.10537864526944175,
+      "contourProgress": 0.04063157894736862,
+      "musicHaze": 0.003957655990684136
+    },
+    "peaks": {
+      "atmosphere": 0,
+      "toneMappingExposure": 1,
+      "time": 0.05190000000037253,
+      "haloScale": 1.25,
+      "haloRotation": 0,
+      "bass": 0,
+      "treble": 0,
+      "roughness": 0.4,
+      "metalness": 0.35,
+      "opacity": 0.07,
+      "activity": 0.03724194354290115,
+      "pulse": 0.10596163429229966,
+      "glowActivity": 0.0010933296756899227,
+      "contourOrigin": 0.8399999999999999,
+      "musicWeight": 1,
+      "contourLight": 0.024095170104949274,
+      "contourStreak": 0.10537864526944175,
+      "contourProgress": 1,
+      "musicHaze": 0.003957655990684136
+    },
+    "frequencyReads": 39,
+    "timeReads": 0,
+    "contexts": 1,
+    "elements": 1
+  },
+  "mockStream": {
+    "activity": 0.5648823481683724,
+    "weight": 1,
+    "contexts": 3,
+    "timeReads": 0
+  },
+  "status": "passed generated production checks; native capture/audibility and owner hardware remain manual"
+}

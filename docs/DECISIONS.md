@@ -304,3 +304,27 @@ Owner reported barely visible motion, then approved the concrete0.32 maximum/0.7
 ## 2026-11-21 — replace vertex deformation with independent mid contour lighting
 
 Owner explicitly reverted terrain deformation and selected low-mid gradual contours/high-mid brief streaks. Remove the entire deformation/normal/bounds path rather than retaining a hidden geometry modifier. Reuse existing250–800/800–2500 fixed controls; do not relabel/change frequencies or retune the audio engine. A scene-local high-mid rise qualifier, independent of broad onset events/bass/overall context, creates brief lighting heads without sustained retrigger. Remove sun-activity scaling from Candidate contour emission and composite self-light after haze so bass cannot gate it. Keep low/high lighting independent, source/reset/motion semantics, bounded logical coordinates and existing renderer passes. Preserve historical vertex evidence but mark it reverted. Owner visual review remains separate.
+
+## 2026-11-21 — VM02 visual refinement, awaiting review
+
+Owner requests a clearer resting/sustained/transient hierarchy while preserving accepted geometry, MI, sun and camera. Reduce the resting outline, restrict active light mainly to selected primary contours, use analytic narrow halos and distinguish a warm bright head from a one-sided fading crimson trail. Keep existing high-mid qualification but make visual emission controls linear and lengthen local travel/release to950 ms so movement registers. No bloom/postpass/new geometry. Stationary-camera control/recording is isolated to the generated DEV fixture, not production behavior. Test actual generated PCM via unchanged analysis, numerical pixel brightness/coverage and head movement; share an annotated video-only MP4. Keep VM02 IMPLEMENTED — AWAITING REVIEW and VM03 untouched despite passing automation.
+
+## 2026-11-21 — activity-driven Crimson sun halo
+
+Owner explicitly requests “make the sun glow according to activity,” then resumes with “continue.” Use existing `MusicFeatures.context.activity` (recent onset strength/density), not overall intensity or a new analyser. Only the halo's continuous emission changes: gain-scaled activity with120 ms rise/450 ms fall,≥1.5 s in reduced motion, zero-gain clear/stale release and preserved idle alpha. Keep the existing bass pulse overlay, halo width/scale, sun-body shader/size response, camera, terrain and independent contour lights. Legacy comparison retains its previous sun-energy halo. This narrowly authorizes a halo adjustment despite the earlier VM02 sun-preservation boundary; it neither completes the broader VM01 plan nor authorizes VM03. Preserve the owner's pending sun-scale edit exactly.
+
+2026-11-21 — VM03 uses one procedural surface channel and four reusable low-onset wave slots, with chunk-relative logical coordinates and strength-scaled heads/tails. Existing fixed bass energy supplies only restrained sustained glow. This preserves authored terrain and shared DSP without extra passes or dependencies. Oldest wave replacement bounds dense passages; further channels await owner review.
+
+2026-11-21 — VM01 separates fixed-bass sustained body expansion (15% cap) from validated low-onset corona. Reuse existing halo plane, preserve activity glow, replace Candidate diffuse bass pulse with localized ring. Optional subbass distortion deferred; no new rendering resources or shared DSP changes.
+
+2026-11-21 — Owner-approved VM01 compromise adds5% onset breathing to15% sustained sun expansion (20% total cap), using the existing low envelope. Corona follows combined body radius and dims by up to20% during expansion; no new detector or rendering resource.
+
+2026-11-21 — VM04 weights the existing broad high onset envelope with fixed presence/air balance. Presence lights sparse distant authored contours; air fades analytic sky specks and sun-edge shimmer. Reuse current materials (seven calls/geometries), quality-scale speck selection, avoid new particle simulation or extra detector. Shared-event spectral gating is approximate and documented; no MI changes.
+
+2026-11-21 — Owner extended testing requests more reachable Crimson sun/travel maximums. Apply scene-local saturation at.35 calibrated energy, preserve original caps/gain/envelopes and shared audio interpretation. Deliberately trade upper-range distinction for reachable visual peaks; body/corona and other mappings stay intact.
+
+2026-11-21 — Owner requests more visible VM04 details. Increase glint halo coverage/brightness, air speck size/brightness and edge shimmer; extend only the upper accent envelope. Lower speck density to1%/0.45% after inspecting the enlarged preview, preserving sparse accents and all accepted sun/travel/MI behavior.
+
+2026-11-22 — VM05 uses two bounded scene-local slow-context values (density and valid brightness-weighted warmth),2/4s transitions or4/6s reduced. Reuse existing haze and shader sky/far fade, keeping foreground/emissive effects and sun shader intact. No fog plane or extra pass; keep shared MI/context unmodified.
+
+2026-11-22 — VM06 is verification-only: preserve owner-approved effects and add combined production soak/checklist instead of speculative choreography changes. Separate generated/browser API evidence from owner full-song/native/device acceptance. Final gate stays open until required observations exist.

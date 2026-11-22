@@ -52,7 +52,7 @@ try {
   await wait(`!!document.querySelector('.scene-player button')`);await evaluate(`document.querySelector('.scene-player button').click()`)
   await wait(`window.__elements.length===1&&!window.__elements[0].paused`)
   await evaluate(`window.__elements[0].loop=true;window.__player=window.__elements[0];window.__context=window.__contexts[0]`)
-  await wait(`window.__peaks.pulse>0&&window.__peaks.contourLight>0&&window.__peaks.contourStreak>0`)
+  await wait(`window.__peaks.pulse>0&&window.__peaks.glowActivity>0&&window.__peaks.contourLight>0&&window.__peaks.contourStreak>0`)
   evidence.active=await evaluate(`({values:window.__values,peaks:window.__peaks,frequencyReads:window.__frequencyReads,timeReads:window.__timeReads,contexts:window.__contexts.length,elements:window.__elements.length})`)
   assert.equal(evidence.active.timeReads,0);assert.equal(evidence.active.contexts,1);assert.ok(evidence.active.frequencyReads>0)
   assert.equal(evidence.active.values.musicWeight,1);assert.ok(evidence.active.peaks.pulse<=1)
@@ -102,7 +102,7 @@ try {
   // Existing production exclusion markers still hold after promoting only validated DSP.
   for(const asset of await readdir('dist/assets'))if(asset.endsWith('.js')) {
     const source=await readFile(join('dist/assets',asset),'utf8')
-    for(const marker of ['rmsDbfs','createDiagnosticObserver','echo-synthetic.wav','noise-60db-peak','excursionDelayMs','estimatedBroadRms','MI02a · Energy comparison','MI03 · Onset events','MI04 · Musical context','G1 · Feature-quality review','MI05 · Crimson pilot','Open Crimson preview','mountCrimsonPreview','__mi05'])assert.equal(source.includes(marker),false,marker)
+    for(const marker of ['rmsDbfs','createDiagnosticObserver','echo-synthetic.wav','noise-60db-peak','excursionDelayMs','estimatedBroadRms','MI02a · Energy comparison','MI03 · Onset events','MI04 · Musical context','G1 · Feature-quality review','MI05 · Crimson pilot','Open Crimson preview','mountCrimsonPreview','__mi05','STATIONARY CAMERA','GENERATED AUDIO INPUT','MediaRecorder'])assert.equal(source.includes(marker),false,marker)
   }
   assert.equal((await readdir('dist')).includes('audio-lab.html'),false)
   assert.deepEqual(errors,[]);evidence.status='passed generated production checks; native capture/audibility and owner hardware remain manual'

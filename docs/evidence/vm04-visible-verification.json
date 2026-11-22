@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Separate presence/air high-onset accents, weak/strong response, sustain/no retrigger",
+    "Bass isolation, zero gain/reduced suppression without replay",
+    "Six quality/viewport captures; seven draw calls/geometries"
+  ],
+  "screenshots": [
+    "resting.png",
+    "presence-0.2.png",
+    "presence-0.8.png",
+    "air-0.2.png",
+    "air-0.8.png",
+    "standard-1440x810.png",
+    "standard-810x1440.png",
+    "standard-1920x810.png",
+    "low-1440x810.png",
+    "low-810x1440.png",
+    "low-1920x810.png"
+  ],
+  "performance": [
+    {
+      "quality": "standard",
+      "samples": 601,
+      "p95": 16.800000000745058
+    },
+    {
+      "quality": "low",
+      "samples": 600,
+      "p95": 16.900000002235174
+    }
+  ],
+  "errors": [],
+  "levels": [
+    {
+      "band": "presence",
+      "strength": 0.2,
+      "value": 0.2
+    },
+    {
+      "band": "presence",
+      "strength": 0.8,
+      "value": 0.8
+    },
+    {
+      "band": "air",
+      "strength": 0.2,
+      "value": 0.2
+    },
+    {
+      "band": "air",
+      "strength": 0.8,
+      "value": 0.8
+    }
+  ],
+  "viewports": [
+    {
+      "quality": "standard",
+      "width": 1440,
+      "height": 810,
+      "presence": 0.34103696149937096,
+      "air": 0.34103696149937096
+    },
+    {
+      "quality": "standard",
+      "width": 810,
+      "height": 1440,
+      "presence": 0.35729787236723876,
+      "air": 0.35729787236723876
+    },
+    {
+      "quality": "standard",
+      "width": 1920,
+      "height": 810,
+      "presence": 0.35994031689906625,
+      "air": 0.35994031689906625
+    },
+    {
+      "quality": "low",
+      "width": 1440,
+      "height": 810,
+      "presence": 0.3581451070805434,
+      "air": 0.3581451070805434
+    },
+    {
+      "quality": "low",
+      "width": 810,
+      "height": 1440,
+      "presence": 0.34792636511826375,
+      "air": 0.34792636511826375
+    },
+    {
+      "quality": "low",
+      "width": 1920,
+      "height": 810,
+      "presence": 0.33711088624350305,
+      "air": 0.33711088624350305
+    }
+  ],
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending"
+}

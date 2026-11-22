@@ -19,7 +19,7 @@ export function updateContourLighting(state: ContourLighting, lowMids: number, h
     state.slowHigh = high; state.armed = true; state.pending = false
     state.strength = state.streak = state.progress = 0; state.lastLaunch = -Infinity
   }
-  const target = active ? Math.sqrt(clampSignal(lowMids)) * amount : 0
+  const target = active ? clampSignal(lowMids) * amount : 0
   const tau = reduced ? 1.5 : target > state.light ? .32 : .75
   state.light += (target - state.light) * (1 - Math.exp(-dt / tau))
   if (amount === 0 || (target === 0 && state.light < .0001)) state.light = 0
@@ -37,12 +37,12 @@ export function updateContourLighting(state: ContourLighting, lowMids: number, h
   }
   if (state.pending && now >= state.deadline) {
     state.pending = false; state.armed = false; state.lastLaunch = state.deadline
-    state.strength = Math.pow(clampSignal(state.peak - state.baseline), .7)
+    state.strength = clampSignal(state.peak - state.baseline)
   }
   const age = now - state.lastLaunch
-  state.progress = Math.max(0, Math.min(1, age / .55))
-  const attack = Math.max(0, Math.min(1, age / .025)), release = Math.max(0, Math.min(1, (age - .05) / .5))
-  state.streak = age >= 0 && age < .55 ? state.strength * amount * attack * attack * (3 - 2 * attack) * (1 - release * release * (3 - 2 * release)) : 0
+  state.progress = Math.max(0, Math.min(1, age / .95))
+  const attack = Math.max(0, Math.min(1, age / .035)), release = Math.max(0, Math.min(1, (age - .12) / .83))
+  state.streak = age >= 0 && age < .95 ? state.strength * amount * attack * attack * (3 - 2 * attack) * (1 - release * release * (3 - 2 * release)) : 0
 }
 // Bounded logical-coordinate phase: no restart at chunk edges or rendering rebases.
 export const contourOrigin = (index: number) => ((-index * CHUNK_LENGTH * .045) % 1 + 1) % 1

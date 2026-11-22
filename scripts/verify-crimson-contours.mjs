@@ -33,8 +33,8 @@ try {
   const initial=await read();evidence.environment={browser:await evaluate('navigator.userAgent'),renderer:initial.renderer,platform:await evaluate('navigator.platform')}
   await set({energy:1});await pause(700);let state=await read();assert.equal(state.contours.light,0);assert.equal(state.contours.streak,0)
   evidence.bassOnly=state
-  await set({energy:0,lowMids:.36});await pause(80);const first=await read();assert.ok(first.contours.light>0&&first.contours.light<.6)
-  await pause(1400);state=await read();assert.ok(state.contours.light>.59);assert.equal(state.contours.streak,0);evidence.lowMids=state
+  await set({energy:0,lowMids:.36});await pause(80);const first=await read();assert.ok(first.contours.light>0&&first.contours.light<.36)
+  await pause(1400);state=await read();assert.ok(state.contours.light>.35);assert.equal(state.contours.streak,0);evidence.lowMids=state
   await set({lowMids:0,highMids:.6});await wait(`window.__mi05.read().contours.streak>0`);const head=await read();await pause(120);const later=await read()
   assert.ok(later.contours.progress>head.contours.progress);evidence.highMids={head,later}
   await pause(850);assert.equal((await read()).contours.streak,0);await pause(400);assert.equal((await read()).contours.streak,0)

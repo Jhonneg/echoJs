@@ -88,7 +88,7 @@ test('profile blends preserve one distance integrator, partial gain scales effec
   assert.equal(bridge.reader.read().status,'priming');assert.equal(bridge.reader.read().fftSize,4096)
   updateMusicPilot(p,bridge.reader,'candidate',1/60,12,1,false);assert.equal(p.enabled,false)
   snapshot.onsets.primed=true;bridge.publish(snapshot)
-  updateMusicPilot(p,bridge.reader,'candidate',1/60,12,.5,false);assert.equal(p.sun,.25)
+  updateMusicPilot(p,bridge.reader,'candidate',1/60,12,.5,false);assert.equal(p.sun,.5)
   event(snapshot,'low',1,12.01);snapshot.timestamp=12010;bridge.publish(snapshot)
   updateMusicPilot(p,bridge.reader,'candidate',1/60,12.04,.5,false);assert.equal(p.low,.5)
   snapshot.state='inactive';bridge.publish(snapshot);updateMusicPilot(p,bridge.reader,'candidate',1/60,12.05,1,false);assert.equal(p.low,0);assert.equal(p.enabled,false)

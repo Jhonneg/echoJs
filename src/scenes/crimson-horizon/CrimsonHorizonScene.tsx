@@ -1,3 +1,4 @@
+import { createValley, updateValley, writeValleyUniforms, valleyOrigin } from './valley'
 import { Component, useEffect, useMemo, useRef, useState, useCallback, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
 import { useFrame } from '@react-three/fiber'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
@@ -29,30 +30,47 @@ void main() {
   gl_FragColor = vec4(mix(dimSun, fullSun, activity) * (1.0 + pulse * 0.2), 1.0);
   #include <colorspace_fragment>
 }`
-const glowFragment = `uniform float activity;
+const glowFragment = `uniform float airAccent;
+uniform float corona;
+uniform float coronaRadius;
+uniform float glowActivity;
 uniform float pulse;
 varying vec3 vLocal;
 void main() {
-  float glow = exp(-dot(vLocal.xy, vLocal.xy) / 240.0) * (0.003 + activity * 0.17 + pulse * 0.06);
-  gl_FragColor = vec4(0.65, 0.012, 0.09, glow);
+  float glow = exp(-dot(vLocal.xy, vLocal.xy) / 240.0) * (0.003 + glowActivity * 0.17 + pulse * 0.06);
+  float radius = length(vLocal.xy);
+  float ringDistance = (radius - coronaRadius - (1.0 - corona) * 1.4) / .4;
+  float ring = exp(-ringDistance * ringDistance) * corona * .42;
+  gl_FragColor = vec4(mix(vec3(0.65, 0.012, 0.09), vec3(1.0, .2, .4), ring / max(.001, glow + ring)), glow + ring + exp(-ringDistance * ringDistance) * airAccent * .12 * (0.5 + 0.5 * sin(atan(vLocal.y, vLocal.x) * 43.0)));
   #include <colorspace_fragment>
 }`
-const skyFragment = `varying vec3 vLocal;
+const skyFragment = `uniform float atmosphereDensity;
+uniform float atmosphereWarmth;
+uniform float airAccent;
+uniform float detailDensity;
+varying vec3 vLocal;
 ${nightshade}
 void main() {
-  gl_FragColor = vec4(nightColor(normalize(vLocal)), 1.0);
+  vec3 ray = normalize(vLocal);
+  vec2 coordinate = ray.xy * 95.0;
+  vec2 cell = floor(coordinate);
+  float pick = fract(sin(dot(cell, vec2(127.1, 311.7))) * 43758.5453);
+  float speck = exp(-dot(fract(coordinate) - .5, fract(coordinate) - .5) * 80.0);
+  float band = smoothstep(-.02, .04, ray.y) * (1.0 - smoothstep(.22, .4, ray.y));
+  gl_FragColor = vec4(atmosphericNight(ray, atmosphereDensity, atmosphereWarmth) + vec3(.7, .22, .45) * speck * step(1.0-detailDensity, pick) * band * airAccent * 1.8, 1.0);
   #include <colorspace_fragment>
 }`
 
 type SceneStatus = 'loading' | 'ready' | 'waiting' | 'error'
 export type CrimsonPilotInput = { reader: MusicFeatureReader; profile: CrimsonProfile
   inspect?: (journey: Journey, music: MusicPilot, scene: Scene, camera: Camera, renderer: WebGLRenderer) => void }
-type CompositionProps = { target: RefObject<{ x: number, y: number }>, reducedMotion: boolean,
+type CompositionProps = { quality: GraphicsQuality, target: RefObject<{ x: number, y: number }>, reducedMotion: boolean,
   pilot?: CrimsonPilotInput, signal: AudioSignal, reactivity: number, attempt: number, onStatus: (status: SceneStatus) => void }
 
 function TerrainChunk({ entry, meshes, materials }: { entry: TerrainEntry, meshes: RefObject<Map<number, Mesh>>,
   materials: RefObject<Map<number, ShaderMaterial>> }) {
-  const uniforms = useMemo(() => ({ activity: { value: 0 }, contourLight: { value: 0 }, contourStreak: { value: 0 },
+  const uniforms = useMemo(() => ({ atmosphereDensity: { value: 0 }, atmosphereWarmth: { value: 0 }, presenceAccent: { value: 0 }, activity: { value: 0 }, contourLight: { value: 0 }, contourStreak: { value: 0 },
+    valleyWaves: { value: new Float32Array(16) }, valleyGlow: { value: 0 }, valleyOrigin: { value: valleyOrigin(entry.index) },
     contourProgress: { value: 0 }, contourOrigin: { value: contourOrigin(entry.index) },
     musicHaze: { value: 0 }, musicWeight: { value: 0 }, sunPosition: { value: new Vector3(0, 6, -64) } }), [entry.index])
   return <mesh name={`crimson-chunk-${entry.index}`} ref={mesh => {
@@ -72,7 +90,7 @@ function TerrainChunk({ entry, meshes, materials }: { entry: TerrainEntry, meshe
   </mesh>
 }
 
-function Composition({ target, reducedMotion, signal, reactivity, attempt, onStatus, pilot }: CompositionProps) {
+function Composition({ quality, target, reducedMotion, signal, reactivity, attempt, onStatus, pilot }: CompositionProps) {
   const [snapshot, setSnapshot] = useState<TerrainSnapshot>({ chunks: [], error: false, ready: false })
   const stream = useRef<ReturnType<typeof createTerrainStream> | null>(null)
   const journey = useRef(createJourney())
@@ -83,7 +101,9 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
   const sun = useRef<Mesh>(null), glow = useRef<Mesh>(null), sky = useRef<Mesh>(null)
   const sunMaterial = useRef<ShaderMaterial>(null), glowMaterial = useRef<ShaderMaterial>(null)
   const sunUniforms = useMemo(() => ({ activity: { value: 0 }, pulse: { value: 0 } }), [])
-  const glowUniforms = useMemo(() => ({ activity: { value: 0 }, pulse: { value: 0 } }), [])
+  const glowUniforms = useMemo(() => ({ airAccent: { value: 0 }, corona: { value: 0 }, coronaRadius: { value: 10.35 }, glowActivity: { value: 0 }, pulse: { value: 0 } }), [])
+  const skyUniforms = useMemo(() => ({ atmosphereDensity: { value: 0 }, atmosphereWarmth: { value: 0 }, airAccent: { value: 0 }, detailDensity: { value: .01 } }), [])
+  const skyMaterial = useRef<ShaderMaterial>(null)
   const started = useRef(false)
   const reported = useRef<SceneStatus>('loading')
   const report = useCallback((status: SceneStatus) => {
@@ -107,11 +127,13 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
       report('error')
     }
   }, [attempt, report])
+  const valley = useRef(createValley())
   useFrame(({ camera, scene, gl }, delta) => {
     const state = journey.current
     const limit = stream.current?.distanceLimit(state.distance) ?? state.distance
     const now = performance.now()
     if (pilot) updateMusicPilot(music.current, pilot.reader, pilot.profile, delta, now / 1000, reactivity, reducedMotion)
+    if (pilot) updateValley(valley.current, pilot.reader, pilot.profile === 'candidate', state.distance, now / 1000, delta, reactivity, reducedMotion)
     const response = pilot ? music.current : undefined
     updateJourney(state, signal, reactivity, reducedMotion, delta, now, limit, response)
     stream.current?.requestWindow(chunkIndexAt(state.distance))
@@ -120,7 +142,12 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
     camera.position.set(view.current.x, 3.5 + view.current.y, z)
     camera.lookAt(0, 4.2, z - 59)
     for (const [index, mesh] of meshes.current) mesh.position.z = chunkRenderZ(index, state.distance)
-    for (const material of materials.current.values()) {
+    for (const [index, material] of materials.current) {
+      writeValleyUniforms(valley.current, index, now / 1000, reactivity, material.uniforms.valleyWaves.value)
+      material.uniforms.valleyGlow.value = valley.current.glow
+      material.uniforms.atmosphereDensity.value = (response?.atmosphere.density ?? 0) * (response?.weight ?? 0)
+      material.uniforms.atmosphereWarmth.value = (response?.atmosphere.warmth ?? 0) * (response?.weight ?? 0)
+      material.uniforms.presenceAccent.value = (response?.presence ?? 0)
       material.uniforms.activity.value = state.sun
       material.uniforms.musicWeight.value = response?.weight ?? 0
       material.uniforms.contourLight.value = response?.contours.light ?? 0
@@ -129,9 +156,10 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
       material.uniforms.musicHaze.value = response?.haze ?? 0
       material.uniforms.sunPosition.value.set(0, 6, z - 88)
     }
+    const candidateScale = 1 + (response?.body ?? 0) * .15 + (response?.low ?? 0) * .05
     if (sun.current) {
       sun.current.position.set(0, 6, z - 88)
-      sun.current.scale.setScalar(1 + state.sunPulse * (0.1 + .1 * (response?.weight ?? 0)))
+      sun.current.scale.setScalar((1 + state.sunPulse * .05) * (1 - (response?.weight ?? 0)) + candidateScale * (response?.weight ?? 0))
     }
     if (glow.current) {
       glow.current.position.set(0, 6, z - 99)
@@ -142,9 +170,20 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
       sunMaterial.current.uniforms.activity.value = state.sun
       sunMaterial.current.uniforms.pulse.value = state.sunPulse
     }
+    const airAccent = (response?.air ?? 0) * (response?.weight ?? 0)
+    if (skyMaterial.current) {
+      skyMaterial.current.uniforms.atmosphereDensity.value = (response?.atmosphere.density ?? 0) * (response?.weight ?? 0)
+      skyMaterial.current.uniforms.atmosphereWarmth.value = (response?.atmosphere.warmth ?? 0) * (response?.weight ?? 0)
+      skyMaterial.current.uniforms.airAccent.value = airAccent
+      skyMaterial.current.uniforms.detailDensity.value = quality === 'low' ? .0045 : .01
+    }
     if (glowMaterial.current) {
-      glowMaterial.current.uniforms.activity.value = state.sun
-      glowMaterial.current.uniforms.pulse.value = state.sunPulse
+      glowMaterial.current.uniforms.airAccent.value = airAccent
+      glowMaterial.current.uniforms.glowActivity.value = state.sun * (1 - (response?.weight ?? 0)) + (response?.glowActivity ?? 0) * (response?.weight ?? 0)
+      glowMaterial.current.uniforms.pulse.value = state.sunPulse * (1 - (response?.weight ?? 0))
+      glowMaterial.current.uniforms.corona.value = (response?.low ?? 0) * (response?.weight ?? 0) * (1 - (candidateScale - 1))
+      // Halo plane is farther away than the sphere; align its ring in perspective.
+      glowMaterial.current.uniforms.coronaRadius.value = 10.35 * candidateScale / (1 + state.sunPulse * .12)
     }
     if (stream.current?.failed) report('error')
     else if (started.current) report(state.blocked ? 'waiting' : 'ready')
@@ -154,7 +193,7 @@ function Composition({ target, reducedMotion, signal, reactivity, attempt, onSta
     <color attach="background" args={['#221A32']} />
     <mesh ref={sky} name="crimson-sky">
       <sphereGeometry args={[160, 24, 16]} />
-      <shaderMaterial vertexShader={sunVertex} fragmentShader={skyFragment} side={BackSide} toneMapped={false} depthWrite={false} />
+      <shaderMaterial ref={skyMaterial} uniforms={skyUniforms} vertexShader={sunVertex} fragmentShader={skyFragment} side={BackSide} toneMapped={false} depthWrite={false} />
     </mesh>
     {snapshot.chunks.map(entry => <TerrainChunk key={entry.index} entry={entry} meshes={meshes} materials={materials} />)}
     <mesh ref={sun} name="crimson-sun">
@@ -205,7 +244,7 @@ export default function CrimsonHorizonScene({ signal, reactivity, quality, pilot
         projection="perspective" camera={{ position: [0, 3.5, 24], fov: 42, near: 0.5, far: 200 }}
         frameloop="always"
         fallback={<p className="crimson-fallback">Crimson Horizon needs WebGL to display. You can still choose audio or another landscape from the scene menu.</p>}>
-        <Composition pilot={pilot} target={target} reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} attempt={attempt} onStatus={setStatus} />
+        <Composition quality={quality} pilot={pilot} target={target} reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} attempt={attempt} onStatus={setStatus} />
       </LandscapeCanvas>
     </SceneBoundary>
     <div className="crimson-brand" aria-hidden="true">ECHO</div>

@@ -1,0 +1,569 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "15% sustained expansion plus 5% onset expansion; combined cap20%, proportionally softened corona",
+    "Sustain does not retrigger; silence, zero gain, reduced motion and upper-band isolation",
+    "Six quality/viewports; seven draw calls/geometries"
+  ],
+  "screenshots": [
+    "resting.png",
+    "sustain-0.2.png",
+    "attack-0.2.png",
+    "sustain-0.8.png",
+    "attack-0.8.png",
+    "standard-1440x810.png",
+    "standard-810x1440.png",
+    "standard-1920x810.png",
+    "low-1440x810.png",
+    "low-810x1440.png",
+    "low-1920x810.png"
+  ],
+  "performance": [],
+  "errors": [],
+  "levels": [
+    {
+      "energy": 0.2,
+      "sustain": {
+        "reviewTime": null,
+        "generatedReview": false,
+        "features": {
+          "subBass": 0.2,
+          "bass": 0.2,
+          "lowMids": 0,
+          "highMids": 0,
+          "presence": 0.2,
+          "air": 0.2
+        },
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0,
+        "speed": 0,
+        "blocked": false,
+        "corona": 0,
+        "body": 0.19999901601987147,
+        "sun": 0.19997583039113567,
+        "pulse": 0,
+        "scale": 1.0299998524029808,
+        "glow": 1,
+        "glowActivity": 0,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 282,
+          "previousTime": 5.796,
+          "slowHigh": 0,
+          "armed": true,
+          "pending": false,
+          "baseline": 0,
+          "peak": 0,
+          "deadline": 0,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 0.1999698545967099,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 24,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "f6b60877-76d5-403a-bc26-223721ae20b9",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "c0da7627-fca5-48c5-97f1-3c3e62050e75",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "d44b02f8-9f03-416e-87e3-166bc91372ce",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "7393d9ba-e594-4f48-a123-a94fdb70b6b3",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "1000edbf-68ba-4371-b50e-16aa94d1b863",
+          "60e2c6e1-a48a-437f-bbd1-9c66bde02914",
+          "3c85d640-7465-478b-8ef2-f1e8048c6187",
+          "57403916-6f20-4563-9cff-e0e0a9bd1c05"
+        ],
+        "valleyWaves": [
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2
+        ],
+        "uniforms": {
+          "activity": 0.19997583039113567,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "valleyGlow": 0.19849404314887,
+          "valleyOrigin": 3.84,
+          "contourProgress": 1,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 0.1999698545967099,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      },
+      "hit": {
+        "reviewTime": null,
+        "generatedReview": false,
+        "features": {
+          "subBass": 0.2,
+          "bass": 0.2,
+          "lowMids": 0,
+          "highMids": 0,
+          "presence": 0.2,
+          "air": 0.2
+        },
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0,
+        "speed": 0,
+        "blocked": false,
+        "corona": 0.18730767549451907,
+        "body": 0.19999961003766922,
+        "sun": 0.19998758759951663,
+        "pulse": 0.19506198240566675,
+        "scale": 1.0397530406259339,
+        "glow": 1.02340743788868,
+        "glowActivity": 0,
+        "weight": 1,
+        "low": 0.19506198240566675,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 292,
+          "previousTime": 5.962699999999255,
+          "slowHigh": 0,
+          "armed": true,
+          "pending": false,
+          "baseline": 0,
+          "peak": 0,
+          "deadline": 0,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 0.19998451870609615,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 24,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "f6b60877-76d5-403a-bc26-223721ae20b9",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "c0da7627-fca5-48c5-97f1-3c3e62050e75",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "d44b02f8-9f03-416e-87e3-166bc91372ce",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "7393d9ba-e594-4f48-a123-a94fdb70b6b3",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "1000edbf-68ba-4371-b50e-16aa94d1b863",
+          "60e2c6e1-a48a-437f-bbd1-9c66bde02914",
+          "3c85d640-7465-478b-8ef2-f1e8048c6187",
+          "57403916-6f20-4563-9cff-e0e0a9bd1c05"
+        ],
+        "valleyWaves": [
+          -94.322998046875,
+          0.15640537440776825,
+          0.9300000071525574,
+          2.799999952316284,
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2
+        ],
+        "uniforms": {
+          "activity": 0.19998758759951663,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "valleyGlow": 0.19896001503591976,
+          "valleyOrigin": 3.84,
+          "contourProgress": 1,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 0.19998451870609615,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    },
+    {
+      "energy": 0.8,
+      "sustain": {
+        "reviewTime": null,
+        "generatedReview": false,
+        "features": {
+          "subBass": 0.8,
+          "bass": 0.8,
+          "lowMids": 0,
+          "highMids": 0,
+          "presence": 0.8,
+          "air": 0.8
+        },
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0,
+        "speed": 0,
+        "blocked": false,
+        "corona": 0,
+        "body": 0.7999970447778578,
+        "sun": 0.7999094877739916,
+        "pulse": 0,
+        "scale": 1.1199995567166787,
+        "glow": 1,
+        "glowActivity": 0,
+        "weight": 1,
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 568,
+          "previousTime": 10.5625,
+          "slowHigh": 0,
+          "armed": true,
+          "pending": false,
+          "baseline": 0,
+          "peak": 0,
+          "deadline": 0,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 0.7999094877739603,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 24,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "f6b60877-76d5-403a-bc26-223721ae20b9",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "c0da7627-fca5-48c5-97f1-3c3e62050e75",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "d44b02f8-9f03-416e-87e3-166bc91372ce",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "7393d9ba-e594-4f48-a123-a94fdb70b6b3",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "1000edbf-68ba-4371-b50e-16aa94d1b863",
+          "60e2c6e1-a48a-437f-bbd1-9c66bde02914",
+          "3c85d640-7465-478b-8ef2-f1e8048c6187",
+          "57403916-6f20-4563-9cff-e0e0a9bd1c05"
+        ],
+        "valleyWaves": [
+          0,
+          0,
+          0.9300000071525574,
+          2.799999952316284,
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2
+        ],
+        "uniforms": {
+          "activity": 0.7999094877739916,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "valleyGlow": 0.7954800832340548,
+          "valleyOrigin": 3.84,
+          "contourProgress": 1,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 0.7999094877739603,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      },
+      "hit": {
+        "reviewTime": null,
+        "generatedReview": false,
+        "features": {
+          "subBass": 0.8,
+          "bass": 0.8,
+          "lowMids": 0,
+          "highMids": 0,
+          "presence": 0.8,
+          "air": 0.8
+        },
+        "profile": "candidate",
+        "quality": "standard",
+        "gain": 1,
+        "distance": 0,
+        "speed": 0,
+        "blocked": false,
+        "corona": 0.6590290868904051,
+        "body": 0.7999988288124108,
+        "sun": 0.7999535170798925,
+        "pulse": 0.783802583760086,
+        "scale": 1.159189953509866,
+        "glow": 1.0940563100512104,
+        "glowActivity": 0,
+        "weight": 1,
+        "low": 0.783802583760086,
+        "mid": 0,
+        "high": 0,
+        "contours": {
+          "light": 0,
+          "streak": 0,
+          "progress": 1,
+          "session": 2,
+          "frame": 578,
+          "previousTime": 10.729099999997764,
+          "slowHigh": 0,
+          "armed": true,
+          "pending": false,
+          "baseline": 0,
+          "peak": 0,
+          "deadline": 0,
+          "lastLaunch": null,
+          "strength": 0
+        },
+        "haze": 0.7999535170798764,
+        "camera": {
+          "x": 0,
+          "y": 3.5,
+          "z": 24,
+          "type": "PerspectiveCamera"
+        },
+        "buffers": [
+          {
+            "id": "f6b60877-76d5-403a-bc26-223721ae20b9",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.36949068952437
+          },
+          {
+            "id": "c0da7627-fca5-48c5-97f1-3c3e62050e75",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.4238047906447
+          },
+          {
+            "id": "d44b02f8-9f03-416e-87e3-166bc91372ce",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.42003724608047
+          },
+          {
+            "id": "7393d9ba-e594-4f48-a123-a94fdb70b6b3",
+            "positions": 0,
+            "normals": 0,
+            "radius": 68.38449169808878
+          }
+        ],
+        "workerCount": 1,
+        "chunks": 4,
+        "meshIds": [
+          "1000edbf-68ba-4371-b50e-16aa94d1b863",
+          "60e2c6e1-a48a-437f-bbd1-9c66bde02914",
+          "3c85d640-7465-478b-8ef2-f1e8048c6187",
+          "57403916-6f20-4563-9cff-e0e0a9bd1c05"
+        ],
+        "valleyWaves": [
+          -94.3489990234375,
+          0.6216554641723633,
+          1.7699999809265137,
+          5.199999809265137,
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2,
+          0,
+          0,
+          0.6499999761581421,
+          2
+        ],
+        "uniforms": {
+          "activity": 0.7999535170798925,
+          "contourLight": 0,
+          "contourStreak": 0,
+          "valleyGlow": 0.7968786320325254,
+          "valleyOrigin": 3.84,
+          "contourProgress": 1,
+          "contourOrigin": 0.16000000000000014,
+          "musicHaze": 0.7999535170798764,
+          "musicWeight": 1
+        },
+        "calls": 7,
+        "triangles": 69234,
+        "geometries": 7,
+        "textures": 0,
+        "dpr": 1,
+        "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "samples": 0
+      }
+    }
+  ],
+  "viewports": [
+    {
+      "quality": "standard",
+      "width": 1440,
+      "height": 810,
+      "scale": 1.18193644480989,
+      "corona": 0.5237586248004332
+    },
+    {
+      "quality": "standard",
+      "width": 810,
+      "height": 1440,
+      "scale": 1.182882182178162,
+      "corona": 0.5373729625032136
+    },
+    {
+      "quality": "standard",
+      "width": 1920,
+      "height": 810,
+      "scale": 1.1838374595438752,
+      "corona": 0.552337339222885
+    },
+    {
+      "quality": "low",
+      "width": 1440,
+      "height": 810,
+      "scale": 1.1832428992279977,
+      "corona": 0.5430274798944797
+    },
+    {
+      "quality": "low",
+      "width": 810,
+      "height": 1440,
+      "scale": 1.1846152983333509,
+      "corona": 0.564495694092827
+    },
+    {
+      "quality": "low",
+      "width": 1920,
+      "height": 810,
+      "scale": 1.1848679636264503,
+      "corona": 0.5684398839005471
+    }
+  ],
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending"
+}
