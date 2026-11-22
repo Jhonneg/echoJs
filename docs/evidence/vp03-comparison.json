@@ -1,0 +1,35 @@
+{
+  "nearFloor": {
+    "meanAbsoluteByteDifference": 0.0,
+    "maxByteDifference": 0,
+    "beforeMean": 35.009283333333336,
+    "afterMean": 35.009283333333336,
+    "crop": "200x100+620+650"
+  },
+  "sunInterior": {
+    "meanAbsoluteByteDifference": 0.0,
+    "maxByteDifference": 0,
+    "beforeMean": 146.71653333333333,
+    "afterMean": 146.71653333333333,
+    "crop": "50x50+695+350"
+  },
+  "middleBank": {
+    "meanAbsoluteByteDifference": 5.083855555555555,
+    "maxByteDifference": 13,
+    "beforeMean": 33.721177777777775,
+    "afterMean": 38.805033333333334,
+    "crop": "200x150+270+360"
+  },
+  "farBank": {
+    "meanAbsoluteByteDifference": 4.835444444444445,
+    "maxByteDifference": 12,
+    "beforeMean": 36.904444444444444,
+    "afterMean": 41.45055555555555,
+    "crop": "60x50+530+400"
+  },
+  "source": {
+    "before": "vp03-before-context-0.8.png",
+    "after": "vp03-after-context-0.8.png",
+    "format": "8-bit RGB"
+  }
+}

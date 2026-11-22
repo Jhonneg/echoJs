@@ -31,14 +31,14 @@ try {
   const capture=async name=>{const r=await send('Page.captureScreenshot');await writeFile(join(temporary,name+'.png'),Buffer.from(r.data,'base64'));evidence.screenshots.push(name+'.png')}
   await capture('resting');evidence.levels=[]
   for(const energy of [.2,.8]) {
-    await set({energy});await pause(2200);const sustain=await read();assert.ok(Math.abs(sustain.scale-(1+energy*.15))<.002);assert.equal(sustain.corona,0)
+    await set({energy});await pause(2200);const sustain=await read();assert.ok(Math.abs(sustain.scale-(1+Math.min(1,energy/.35)*.15))<.002);assert.equal(sustain.corona,0)
     await capture('sustain-'+energy)
     await evaluate(`window.__mi05.event(${energy})`);await pause(70);const hit=await read();assert.ok(hit.corona>0);assert.ok(hit.scale>sustain.scale);assert.ok(hit.scale<=1.2)
     assert.ok(Math.abs(hit.scale-(1+.15*hit.body+.05*hit.pulse))<1e-8)
     assert.ok(Math.abs(hit.corona-hit.pulse*(2-hit.scale))<1e-8);await capture('attack-'+energy)
     evidence.levels.push({energy,sustain,hit});await pause(2300);assert.equal((await read()).corona,0);assert.ok(Math.abs((await read()).scale-sustain.scale)<.002)
   }
-  assert.ok(evidence.levels[1].hit.corona>evidence.levels[0].hit.corona*2)
+  assert.ok(evidence.levels[1].hit.corona>evidence.levels[0].hit.corona)
   await set({energy:0});await pause(6500);assert.equal((await read()).scale,1)
   for(const band of ['mid','high']){await evaluate(`window.__mi05.event(1,'${band}')`);await pause(100);assert.equal((await read()).corona,0)}
   await set({energy:1,gain:0});await pause(6500);assert.equal((await read()).scale,1)

@@ -1,10 +1,12 @@
 # ECHO — Crimson Horizon Visual Mapping Roadmap
 
-**Purpose:** A single source of truth for completing Crimson Horizon's music-reactive visual design with Codex in VS Code. This is an implementation roadmap, not a request to rebuild the scene or the audio engine.
+**Completion checkpoint (2026-11-22):** Owner explicitly declares the original Visual Mapping Roadmap complete and starts final Visual Polish. VM00–VM06 are closed by owner direction. All remaining Crimson implementation is governed by [CRIMSON_VISUAL_POLISH_ROADMAP.md](CRIMSON_VISUAL_POLISH_ROADMAP.md). Earlier missing native/audio/device observations remain historical verification limits; completion does not invent those observations.
+
+**Purpose:** Completed reference for Crimson Horizon's music-reactive visual mapping. The Visual Polish Roadmap now governs remaining work; do not restart VM development.
 
 **Project:** [Jhonneg/echoJs](https://github.com/Jhonneg/echoJs)
 
-**Current checkpoint (2026-11-21):** Music Intelligence is implemented. VM02 is **APPROVED** per the owner checkpoint supplied with this roadmap and explicit authorization to proceed to VM03. Its stationary demonstration is verified: [VM02 review](VM02_REVIEW.md), [21.1-second recording](evidence/vm02-stationary-review.mp4), [measurements](evidence/vm02-verification.json). This supersedes the original undocumented-demo assumption. VM03 is **APPROVED** by owner “proceed”; [review and evidence](VM03_REVIEW.md). VM01 is **APPROVED** by owner “looks good” ([review](VM01_REVIEW.md)); VM04 is **APPROVED** by owner “no, lets move” ([review](VM04_REVIEW.md)); VM05 is **APPROVED** by owner “lets go” ([review](VM05_REVIEW.md)); VM06 is **IMPLEMENTED — AWAITING OWNER REVIEW** ([review](VM06_REVIEW.md)); the activity halo remains preserved.
+**Current checkpoint (2026-11-21):** Music Intelligence is implemented. VM02 is **APPROVED** per the owner checkpoint supplied with this roadmap and explicit authorization to proceed to VM03. Its stationary demonstration is verified: [VM02 review](VM02_REVIEW.md), [21.1-second recording](evidence/vm02-stationary-review.mp4), [measurements](evidence/vm02-verification.json). This supersedes the original undocumented-demo assumption. VM03 is **APPROVED** by owner “proceed”; [review and evidence](VM03_REVIEW.md). VM01 is **APPROVED** by owner “looks good” ([review](VM01_REVIEW.md)); VM04 is **APPROVED** by owner “no, lets move” ([review](VM04_REVIEW.md)); VM05 is **APPROVED** by owner “lets go” ([review](VM05_REVIEW.md)); VM06 is **APPROVED / CLOSED** by explicit owner completion declaration ([historical review limits](VM06_REVIEW.md)); the activity halo remains preserved.
 
 > Repository contents and the current signal contract are authoritative. Reconcile this roadmap against the actual code before editing; do not overwrite newer verified status.
 
@@ -122,7 +124,7 @@ These are frequency *features*, not guaranteed instrument separation, beat predi
 
 ### VM06 — Integrated choreography and release review
 
-**Status:** IMPLEMENTED — AWAITING OWNER REVIEW. Automated integration checks passed; combined full-song/native/device gate remains pending in [VM06_REVIEW.md](VM06_REVIEW.md).
+**Status:** APPROVED / CLOSED by owner declaration of completed VM roadmap (2026-11-22). Automated integration passed; historical native/audio/device verification limits remain documented in [VM06_REVIEW.md](VM06_REVIEW.md).
 
 Combine only approved effects with a shared visual hierarchy. A strong bass attack can briefly expand sun corona and produce a delayed ground wave; midrange activity reveals/selectively lights ridges; high-frequency detail adds sparse micro-accents; slow musical context changes atmospheric depth. Avoid physically implausible or distracting cross-coupling solely for spectacle.
 
@@ -213,5 +215,5 @@ Next milestone after owner approval:
 
 ## 9. Simple resume command for future sessions
 
-When the owner says **"Continue Crimson"**, Codex should read this file and progress docs, identify the latest owner-approved phase, and proceed **only** with the next eligible milestone. The owner should not have to re-explain the plan or request a new master prompt. Every milestone still requires an explicit review/continue turn; Codex does not autonomously run in the background.
+Historical VM resume rule (superseded by **"Continue Crimson polish"** in the Visual Polish Roadmap): when the owner says **"Continue Crimson"**, Codex should read this file and progress docs, identify the latest owner-approved phase, and proceed **only** with the next eligible milestone. The owner should not have to re-explain the plan or request a new master prompt. Every milestone still requires an explicit review/continue turn; Codex does not autonomously run in the background.
 

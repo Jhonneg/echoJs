@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { createContourLighting, updateContourLighting, contourOrigin } from '../src/scenes/crimson-horizon/contours.ts'
+import { createContourLighting, updateContourLighting, contourOrigin, contourStreakDrive, CONTOUR_STREAK_SECONDS } from '../src/scenes/crimson-horizon/contours.ts'
 import { createMusicPilot, updateMusicPilot } from '../src/scenes/crimson-horizon/musicPilot.ts'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 import { emptySixBands } from '../src/audio/signal.ts'
@@ -84,7 +84,19 @@ test('VM02 illumination and peak emission remain proportional to input energy',(
     const s=createContourLighting();tick(s,0)
     let peak=0
     for(let i=1;i<=180;i++){tick(s,i/60,level,level);peak=Math.max(peak,s.streak)}
-    assert.ok(Math.abs(s.light-level)<.0001);assert.ok(Math.abs(peak-level)<1e-10)
+    assert.ok(Math.abs(s.light-level)<.0001);assert.ok(Math.abs(peak-contourStreakDrive(level))<1e-10)
     assert.ok(peak>previous);previous=peak
   }
+})
+
+test('VP02 modest rises get readable ordered heads; travel outlasts the former950ms without sustained retrigger',()=>{
+  assert.equal(contourStreakDrive(0),0);assert.equal(contourStreakDrive(1),1)
+  assert.ok(contourStreakDrive(.1)>.4)
+  const s=createContourLighting();tick(s,0)
+  for(let i=1;i<=64;i++)tick(s,i/60,0,.2)
+  assert.ok(s.streak>0);assert.ok(s.progress>0&&s.progress<1)
+  const launch=s.lastLaunch
+  for(let i=65;i<180;i++)tick(s,i/60,0,.2)
+  assert.equal(s.lastLaunch,launch);assert.equal(s.streak,0);assert.equal(s.progress,1)
+  assert.equal(CONTOUR_STREAK_SECONDS,1.25)
 })

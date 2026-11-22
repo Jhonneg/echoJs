@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Body15% sustained+5% attack bounds; modest attacks ordered with common sun/valley curve",
+    "Travel24-unit cap and moderate-energy boost without route changes",
+    "Finite low accents; sustain no repeated waves; silence/zero/reduced controls"
+  ],
+  "screenshots": [
+    "energy-0.03.png",
+    "energy-0.1.png",
+    "energy-0.25.png",
+    "energy-0.35.png",
+    "attack-0.03.png",
+    "attack-0.1.png",
+    "attack-0.3.png"
+  ],
+  "performance": [],
+  "errors": [],
+  "levels": [
+    {
+      "energy": 0.03,
+      "sun": 0.0857138462292204,
+      "body": 0.08571423998946948,
+      "scale": 1.0128571359984204,
+      "speed": 1.883521579140247,
+      "distance": 4.295490552741445
+    },
+    {
+      "energy": 0.1,
+      "sun": 0.28570819433756617,
+      "body": 0.2857141789637445,
+      "scale": 1.0428571268445617,
+      "speed": 7.988879925563976,
+      "distance": 23.126008830394714
+    },
+    {
+      "energy": 0.25,
+      "sun": 0.714272666450695,
+      "body": 0.7142854856616003,
+      "scale": 1.1071428228492401,
+      "speed": 23.990486644608445,
+      "distance": 80.72309680894983
+    },
+    {
+      "energy": 0.35,
+      "sun": 0.9999912942982154,
+      "body": 0.9999998474144306,
+      "scale": 1.1499999771121645,
+      "speed": 23.999995750770662,
+      "distance": 145.51496862172166
+    }
+  ],
+  "attacks": [
+    {
+      "strength": 0.03,
+      "pulse": 0.15482350916452384,
+      "corona": 0.15341750493208367,
+      "scale": 1.009081335515694,
+      "waves": [
+        25.841999053955078,
+        0.11803440749645233,
+        1.16304349899292,
+        1.9695652723312378,
+        0,
+        0,
+        0.8500000238418579,
+        1.5,
+        0,
+        0,
+        0.8500000238418579,
+        1.5,
+        0,
+        0,
+        0.8500000238418579,
+        1.5
+      ]
+    },
+    {
+      "strength": 0.1,
+      "pulse": 0.3999999999999999,
+      "corona": 0.3919999999999999,
+      "scale": 1.02,
+      "waves": [
+        25.733999252319336,
+        0.28458866477012634,
+        1.649999976158142,
+        2.700000047683716,
+        0,
+        0,
+        0.8500000238418579,
+        1.5,
+        0,
+        0,
+        0.8500000238418579,
+        1.5,
+        0,
+        0,
+        0.8500000238418579,
+        1.5
+      ]
+    },
+    {
+      "strength": 0.3,
+      "pulse": 0.72,
+      "corona": 0.6940799999999999,
+      "scale": 1.036,
+      "waves": [
+        25.743000030517578,
+        0.5156809091567993,
+        2.2899999618530273,
+        3.6600000858306885,
+        0,
+        0,
+        0.8500000238418579,
+        1.5,
+        0,
+        0,
+        0.8500000238418579,
+        1.5,
+        0,
+        0,
+        0.8500000238418579,
+        1.5
+      ]
+    }
+  ],
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending"
+}

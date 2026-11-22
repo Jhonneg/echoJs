@@ -37,7 +37,7 @@ try {
   await pause(1400);state=await read();assert.ok(state.contours.light>.35);assert.equal(state.contours.streak,0);evidence.lowMids=state
   await set({lowMids:0,highMids:.6});await wait(`window.__mi05.read().contours.streak>0`);const head=await read();await pause(120);const later=await read()
   assert.ok(later.contours.progress>head.contours.progress);evidence.highMids={head,later}
-  await pause(850);assert.equal((await read()).contours.streak,0);await pause(400);assert.equal((await read()).contours.streak,0)
+  await wait('window.__mi05.read().contours.streak===0');assert.equal((await read()).contours.streak,0);await pause(400);assert.equal((await read()).contours.streak,0)
   evidence.checks.push('Authored buffers and nondeforming shader restored; bass-only no contour drive; low mids rise gradually; high mids travel briefly then stop under sustain')
   await set({highMids:0});await pause(400);await set({highMids:.8});await wait(`window.__mi05.read().contours.streak>0`)
   await set({gain:0});await pause(100);state=await read();assert.equal(state.contours.light,0);assert.equal(state.contours.streak,0)

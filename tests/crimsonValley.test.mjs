@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
-import { createValley, updateValley, writeValleyUniforms, valleyOrigin } from '../src/scenes/crimson-horizon/valley.ts'
+import { createValley, updateValley, writeValleyUniforms, valleyOrigin, VALLEY_LIFETIME, VALLEY_SPEED, VALLEY_ORIGIN_DISTANCE } from '../src/scenes/crimson-horizon/valley.ts'
 function harness() {
   const store=createMusicFeatureStore(),state=createValley(),out=new Float32Array(16)
   let now=1,sequence=0,session=1,events=[]
@@ -24,7 +24,7 @@ test('strength controls brightness width and decay; logical travel survives reba
   const weak=harness(),strong=harness();weak.event(.2);strong.event(.8)
   weak.step(.1);strong.step(.1)
   assert.ok(strong.out[1]>weak.out[1]);assert.ok(strong.out[2]>weak.out[2]);assert.ok(strong.out[3]>weak.out[3])
-  const z=strong.out[0];strong.step(.1,{distance:500});assert.ok(Math.abs(strong.out[0]-z-2.6)<1e-5)
+  const z=strong.out[0];strong.step(.1,{distance:500});assert.ok(Math.abs(strong.out[0]-z-3)<1e-5)
   assert.ok(Math.abs(strong.at(1)[0]-strong.out[0]-48)<1e-5)
   for(const index of [-2,0,1,10000]) assert.ok(Math.abs(Math.sin(-48*.08+valleyOrigin(index))-Math.sin(valleyOrigin(index+1)))<1e-10)
 })
@@ -35,4 +35,12 @@ test('pool bounded; session, profile, zero, stale and reduced consume without re
   }
   const h=harness();for(let i=0;i<100;i++){h.event();h.step()};assert.equal(h.state.waves.length,4)
   h.reset();assert.ok(h.state.waves.every(w=>w.start===-Infinity))
+})
+
+test('polished wave begins deep in world space, reaches foreground and expires at its bounded lifetime',()=>{
+  const h=harness();h.event(.8);h.step(.1)
+  assert.ok(Math.abs(h.out[0]-(-VALLEY_ORIGIN_DISTANCE+.1*VALLEY_SPEED))<1e-5)
+  for(let i=0;i<150;i++)h.step(1/60)
+  assert.ok(h.out[0]>0);assert.ok(h.out[1]>0)
+  h.step(VALLEY_LIFETIME);assert.equal(h.out[1],0)
 })

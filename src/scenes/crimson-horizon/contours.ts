@@ -1,6 +1,11 @@
 import { clampSignal } from '../../audio/signal.ts'
 import { CHUNK_LENGTH } from './terrain.ts'
 
+export const CONTOUR_STREAK_SECONDS = 1.25
+export function contourStreakDrive(energy: number) {
+  const value = clampSignal(energy)
+  return value * 1.15 / (value + .15)
+}
 export function createContourLighting() {
   return { light: 0, streak: 0, progress: 0, session: -1, frame: -1, previousTime: 0,
     slowHigh: 0, armed: true, pending: false, baseline: 0, peak: 0, deadline: 0,
@@ -40,9 +45,9 @@ export function updateContourLighting(state: ContourLighting, lowMids: number, h
     state.strength = clampSignal(state.peak - state.baseline)
   }
   const age = now - state.lastLaunch
-  state.progress = Math.max(0, Math.min(1, age / .95))
-  const attack = Math.max(0, Math.min(1, age / .035)), release = Math.max(0, Math.min(1, (age - .12) / .83))
-  state.streak = age >= 0 && age < .95 ? state.strength * amount * attack * attack * (3 - 2 * attack) * (1 - release * release * (3 - 2 * release)) : 0
+  state.progress = Math.max(0, Math.min(1, age / CONTOUR_STREAK_SECONDS))
+  const attack = Math.max(0, Math.min(1, age / .035)), release = Math.max(0, Math.min(1, (age - .18) / (CONTOUR_STREAK_SECONDS - .18)))
+  state.streak = age >= 0 && age < CONTOUR_STREAK_SECONDS ? contourStreakDrive(state.strength) * amount * attack * attack * (3 - 2 * attack) * (1 - release * release * (3 - 2 * release)) : 0
 }
 // Bounded logical-coordinate phase: no restart at chunk edges or rendering rebases.
 export const contourOrigin = (index: number) => ((-index * CHUNK_LENGTH * .045) % 1 + 1) % 1

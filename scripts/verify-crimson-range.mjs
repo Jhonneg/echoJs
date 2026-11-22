@@ -31,14 +31,14 @@ try {
   evidence.levels=[]
   for(const energy of [.1,.2,.35,.7]){
     await set({energy});await pause(2200);const state=await read();evidence.levels.push({energy,sun:state.sun,speed:state.speed,distance:state.distance})
-    assert.ok(state.sun<=1&&state.speed<=16)
-    if(energy>=.35){assert.ok(state.sun>.999);assert.ok(state.speed>15.95)}
+    assert.ok(state.sun<=1&&state.speed<=24)
+    if(energy>=.35){assert.ok(state.sun>.999);assert.ok(state.speed>23.95)}
     if(energy===.35){const result=await send('Page.captureScreenshot');await writeFile(join(temporary,'full-drive.png'),Buffer.from(result.data,'base64'));evidence.screenshots.push('full-drive.png')}
   }
   assert.ok(evidence.levels[1].sun>evidence.levels[0].sun);assert.ok(evidence.levels[1].speed>evidence.levels[0].speed)
   await set({energy:0});await wait('window.__mi05.read().sun===0');assert.equal((await read()).sun,0);assert.equal((await read()).speed,0)
   await set({energy:1,gain:0});await pause(100);assert.equal((await read()).speed,0)
-  evidence.checks=['Full sun and16-unit/second travel reached at .35 measured energy','Quiet levels remain ordered; original caps, silence and zero gain preserved']
+  evidence.checks=['Full sun and24-unit/second travel reached at .35 measured energy','Quiet levels remain ordered; original caps, silence and zero gain preserved']
   evidence.environment={browser:await evaluate('navigator.userAgent'),renderer:(await read()).renderer}
   assert.deepEqual(errors,[]);evidence.status='generated checks passed; owner appearance/music review pending'
   console.log(`PASS Crimson response range: ${temporary}`)

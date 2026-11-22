@@ -1,3 +1,4 @@
+import { createVP00ReviewAudio, vp00Label } from './vp00Review'
 // Generated feature fixture only. No file/tab/audio nodes and no live-media inspector.
 import { createRoot } from 'react-dom/client'
 import { useEffect, useState } from 'react'
@@ -104,11 +105,11 @@ function read() {
     dpr: renderer.getPixelRatio(), renderer: extension ? renderer.getContext().getParameter(extension.UNMASKED_RENDERER_WEBGL) : 'unavailable',
     samples: frames.length }
 }
-const api = { event(strength: number, band: OnsetEvent['band'] = 'low') { const now = performance.now() / 1000; events.push({ session, sequence: ++sequence, band, timeSeconds: now, emittedAtSeconds: now, strength }) }, async review(record = false, valley = false) {
+const api = { event(strength: number, band: OnsetEvent['band'] = 'low') { const now = performance.now() / 1000; events.push({ session, sequence: ++sequence, band, timeSeconds: now, emittedAtSeconds: now, strength }) }, async review(record = false, valley = false, polish = false) {
   stopReview();generatedReview = true;stationary = !valley;profile = 'candidate';gain = 1
   fixedLight = fixedStreak = fixedProgress = null
   if (inspect) { inspect[0].distance = 0;inspect[0].speed = 0 }
-  reviewURL = URL.createObjectURL(valley ? createVM03ReviewAudio() : createVM02ReviewAudio());reviewElement = new Audio(reviewURL);reviewElement.volume = 1
+  reviewURL = URL.createObjectURL(polish ? createVP00ReviewAudio() : valley ? createVM03ReviewAudio() : createVM02ReviewAudio());reviewElement = new Audio(reviewURL);reviewElement.volume = 1
   const element = reviewElement
   const start = async () => { reviewAnalysis.prepare();if (!reviewAnalysis.startElement(element)) throw Error('Generated analysis failed');await element.play() }
   change()
@@ -117,7 +118,7 @@ const api = { event(strength: number, band: OnsetEvent['band'] = 'low') { const 
     const frame = featureReader.read()
     return { time: element.currentTime, light: inspect?.[1].contours.light ?? 0, streak: inspect?.[1].contours.streak ?? 0,
       low: frame.energy.six.lowMids, high: frame.energy.six.highMids }
-  }, valley) } finally { stopReview();change() }
+  }, valley, polish ? { title: `VP00 · ${stationary ? 'STATIONARY' : 'MOVING'} CAMERA`, label: vp00Label } : undefined) } finally { stopReview();change() }
 }, stopReview() { stopReview();change() }, authored() {
   if (!inspect) return []
   return inspect[2].children.filter(object => object.name.startsWith('crimson-chunk-')).map(object => {

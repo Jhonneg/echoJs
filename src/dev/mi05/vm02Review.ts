@@ -30,7 +30,7 @@ export function reviewLabel(seconds: number) {
   return 'MIXED · generated musical fixture'
 }
 // Records only this fixture's generated WebGL surface, with explanatory labels. Video only.
-export async function recordVM02Review(source: HTMLCanvasElement, start: () => Promise<void>, read: () => { time: number; light: number; streak: number; low: number; high: number }, valley = false) {
+export async function recordVM02Review(source: HTMLCanvasElement, start: () => Promise<void>, read: () => { time: number; light: number; streak: number; low: number; high: number }, valley = false, annotation?: { title: string; label: (time: number) => string }) {
   const canvas = document.createElement('canvas'); canvas.width = 1440; canvas.height = 810
   const ctx = canvas.getContext('2d')!
   const stream = canvas.captureStream(30), chunks: Blob[] = []
@@ -42,10 +42,10 @@ export async function recordVM02Review(source: HTMLCanvasElement, start: () => P
     const state = read()
     ctx.drawImage(source, 0, 0, canvas.width, canvas.height)
     ctx.fillStyle = 'rgba(8, 6, 17, .88)';ctx.fillRect(0, 710, 1440, 100)
-    ctx.fillStyle = '#f7c7d8';ctx.font = '24px sans-serif';ctx.fillText(valley ? vm03Label(state.time) : reviewLabel(state.time), 28, 747)
+    ctx.fillStyle = '#f7c7d8';ctx.font = '24px sans-serif';ctx.fillText(annotation ? annotation.label(state.time) : valley ? vm03Label(state.time) : reviewLabel(state.time), 28, 747)
     ctx.fillStyle = '#c3a7be';ctx.font = '17px sans-serif'
-    ctx.fillText(`${valley ? 'VM03 · MOVING CAMERA' : 'VM02 · STATIONARY CAMERA'} · GENERATED AUDIO INPUT · ${state.time.toFixed(1)}s`, 28, 778)
-    if (!valley) ctx.fillText(`Low mids ${state.low.toFixed(2)} · light ${state.light.toFixed(2)} · high mids ${state.high.toFixed(2)} · streak ${state.streak.toFixed(2)}`, 700, 778)
+    ctx.fillText(`${annotation?.title ?? (valley ? 'VM03 · MOVING CAMERA' : 'VM02 · STATIONARY CAMERA')} · GENERATED AUDIO INPUT · ${state.time.toFixed(1)}s`, 28, 778)
+    if (!valley && !annotation) ctx.fillText(`Low mids ${state.low.toFixed(2)} · light ${state.light.toFixed(2)} · high mids ${state.high.toFixed(2)} · streak ${state.streak.toFixed(2)}`, 700, 778)
     animation = requestAnimationFrame(draw)
   }
   const complete = new Promise<Blob>((resolve, reject) => {

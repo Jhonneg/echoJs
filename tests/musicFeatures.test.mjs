@@ -1,3 +1,4 @@
+import { crimsonLowAccentDrive } from '../src/scenes/crimson-horizon/response.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createSnapshot } from '../src/dev/audioLab/diagnostics.ts'
@@ -37,9 +38,9 @@ test('independent consumers prime retained events, consume hidden events, never 
   event(snapshot,'low',1,1); bridge.publish(snapshot)
   tick(a,1); tick(b,1); assert.equal(a.low,0)
   event(snapshot,'low',.5,1.05); snapshot.timestamp=1050;bridge.publish(snapshot)
-  tick(a,1.08);tick(b,1.08);assert.equal(a.low,.5);assert.equal(b.low,.5)
+  tick(a,1.08);tick(b,1.08);assert.equal(a.low,crimsonLowAccentDrive(.5));assert.equal(b.low,crimsonLowAccentDrive(.5))
   tick(a,1.09);assert.equal(a.pulses.length,1)
-  tick(a,1.1,'legacy');tick(a,1.11,'candidate');assert.equal(a.pulses.length,0);assert.ok(a.low<.5)
+  tick(a,1.1,'legacy');tick(a,1.11,'candidate');assert.equal(a.pulses.length,0);assert.ok(a.low<crimsonLowAccentDrive(.5))
   tick(b,1.4);assert.equal(b.low,0);assert.equal(b.enabled,false)
   snapshot.timestamp=1500;snapshot.onsets.session++;bridge.publish(snapshot);tick(a,1.5);assert.equal(a.low,0)
 })
@@ -54,7 +55,7 @@ test('isolated strengths proportional, bands independent, cadence peak variation
         event(snapshot,band,strength,1.01);bridge.publish(snapshot)
         let peak=0
         for(let i=1;i<=hz;i++) {const now=1+i/hz;snapshot.timestamp=now*1000;bridge.publish(snapshot);updateMusicPilot(s,bridge.reader,'candidate',1/hz,now,1,false);peak=Math.max(peak,s[band]);if(band!=='low')assert.equal(s.low,0)}
-        levels.push(peak);assert.ok(peak<=strength)
+        levels.push(peak);assert.ok(peak<=(band==='low'?crimsonLowAccentDrive(strength):strength))
       }
       for(let i=1;i<levels.length;i++)assert.ok(levels[i]>levels[i-1])
       peaks.push(levels[3])
@@ -82,7 +83,7 @@ test('profile blends preserve one distance integrator, partial gain scales effec
     const now=1+i/60;snapshot.timestamp=now*1000;bridge.publish(snapshot)
     updateMusicPilot(p,bridge.reader,i%120<60?'legacy':'candidate',1/60,now,1,false)
     updateJourney(j,signal,1,false,1/60,now*1000,Infinity,p)
-    assert.ok(j.distance>=last);assert.ok(j.distance-last<=16/60+1e-9);last=j.distance
+    assert.ok(j.distance>=last);assert.ok(j.distance-last<=24/60+1e-9);last=j.distance
   }
   snapshot.onsets.primed=false;snapshot.fftSize=4096;snapshot.sampleRate=96000;snapshot.timestamp=12000;bridge.publish(snapshot)
   assert.equal(bridge.reader.read().status,'priming');assert.equal(bridge.reader.read().fftSize,4096)

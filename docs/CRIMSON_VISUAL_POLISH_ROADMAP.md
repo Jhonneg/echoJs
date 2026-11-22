@@ -1,10 +1,10 @@
 # ECHO — Crimson Horizon Visual Polish Roadmap
 
-**Project:** [Jhonneg/echoJs](https://github.com/Jhonneg/echoJs)  
-**Suggested repository path:** `docs/CRIMSON_VISUAL_POLISH_ROADMAP.md`  
-**Phase:** Post–Visual Mapping polish (VP)  
-**Initial status:** VP00–VP05 not started; reconcile against repository progress before acting.  
-**Next work:** VP00 baseline, followed by **VP01 ground-wave readability**.
+**Project:** [Jhonneg/echoJs](https://github.com/Jhonneg/echoJs)
+**Suggested repository path:** `docs/CRIMSON_VISUAL_POLISH_ROADMAP.md`
+**Phase:** Post–Visual Mapping polish (VP)
+**Current checkpoint (2026-11-22):** Mapping VM00–VM06 closed by explicit owner declaration. Repository baseline6281d27 (`crinsmom complete`) is clean at start. VP00 APPROVED by owner “lets move” ([baseline](VP00_BASELINE.md)); VP01 APPROVED by owner “aproved” ([review](VP01_REVIEW.md)); VP02 APPROVED by owner “its aproved” ([review](VP02_REVIEW.md)); VP03 APPROVED by owner “looks good, lets stop for now” ([review](VP03_REVIEW.md)); VP04–VP05 NOT STARTED.
+**Next work:** Stopped at owner request. VP04 sun proportionality and cross-effect balance remains NOT STARTED; resume on “Continue Crimson polish.”
 
 ## 1. Purpose and current state
 
@@ -51,7 +51,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP00 — Baseline and comparative capture
 
-**Status:** NOT STARTED.  
+**Status:** APPROVED — owner “lets move” (2026-11-22). See [VP00_BASELINE.md](VP00_BASELINE.md). Screenshot sequences accepted; attempted canvas video exports rejected after inspection (capture artifacts).
 **Goal:** Make later adjustments objectively comparable and protect finished VM work.
 
 **Tasks**
@@ -66,7 +66,9 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP01 — Ground-wave readability **← FIRST VISUAL CHANGE**
 
-**Status:** NOT STARTED.  
+**Owner-approved scope exception (2026-11-22):** After real-music feedback, owner explicitly approves combined responsiveness tuning within the current checkpoint: make15% sustained/5% onset sun expansion easier to reach, boost modest low-event ground response, increase travel cap16→24 units/s and strengthen moderate-energy travel. Camera route, authored landscape and shared MI remain unchanged. This does not start VP02 or automatically complete later balance review.
+
+**Status:** APPROVED — owner “aproved” (2026-11-22), including [combined responsiveness tuning](CRIMSON_RESPONSIVENESS.md). See [VP01_REVIEW.md](VP01_REVIEW.md).
 **Goal:** Make the existing low-frequency wave visibly propagate through the canyon without dominating the scene.
 
 **Tasks**
@@ -91,7 +93,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP02 — Mountain streak readability
 
-**Status:** NOT STARTED.  
+**Status:** APPROVED — owner “its aproved” (2026-11-22). See [VP02_REVIEW.md](VP02_REVIEW.md).
 **Goal:** Make existing midrange illumination and traveling heads distinguishable without creating neon wireframes.
 
 **Tasks**
@@ -115,7 +117,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP03 — Depth and restrained atmosphere
 
-**Status:** NOT STARTED.  
+**Status:** APPROVED — owner “looks good, lets stop for now” (2026-11-22). See [VP03_REVIEW.md](VP03_REVIEW.md).
 **Goal:** Improve near/mid/far separation while preserving the minimalist color scheme.
 
 **Tasks**
@@ -137,7 +139,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP04 — Sun proportionality and cross-effect balance
 
-**Status:** NOT STARTED.  
+**Status:** NOT STARTED.
 **Goal:** Make the completed environment read as one composition, not competing independent effects.
 
 **Tasks**
@@ -158,7 +160,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP05 — Final A/B, accessibility and release review
 
-**Status:** NOT STARTED.  
+**Status:** NOT STARTED.
 **Goal:** Determine whether the polish is genuinely finished, then stop.
 
 **Checks**

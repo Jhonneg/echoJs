@@ -163,3 +163,9 @@ Activity-driven sun halo (2026-11-21 owner request): Candidate continuous halo e
 VM04 upper detail: presence/air weight existing high onset envelope into short distant glints, fading sparse sky specks and subtle edge shimmer. No permanent particle travel; reduced motion suppresses accents. Quality reduces speck density; sun/corona/valley/camera timing unchanged.
 
 VM05 atmosphere: density combines slow intensity/activity; warmth uses valid brightness×intensity.2s rise/4s release (4/6s reduced), including existing haze. Context affects horizon color and distant depth before reactive emission, without onset flashes or sun/camera changes.
+
+Owner-approved VP01 exception: Candidate body reaches15% expansion at fixed bass.35; low onset scene soft knee1.2s/(s+.2) supplies up to5% extra breath and ground-wave drive. Travel target24×gain×clamp(overall/.25)^1.2; route/easing/loaded bounds and silence/zero/reduced stop unchanged. No tempo detection or shared MI retuning.
+
+VP02: high-mid contour rise uses scene curve1.15s/(s+.15),35ms eased attack,180ms initial peak and1.25s total travel/fade, shorter tail and brighter selected head. Low-mid320/750ms light and qualifier/rearm unchanged; no sustain retrigger or bass coupling.
+
+VP03 adjusts only depth/material/horizon color distribution. Existing atmospheric2/4s easing (4/6s reduced), all hit envelopes and camera route/speed remain; near/mid/far separation adds no new motion.

@@ -247,3 +247,19 @@ VM04 visibility refinement (2026-11-21): owner “make them stand out more” au
 VM05 (2026-11-22): owner “no, lets move” approves VM04 and authorizes atmospheric intelligence. Implemented, awaiting owner review in VM05_REVIEW.md and authoritative visual roadmap. Multi-second slow-context depth/horizon mapping only; no VM06 progression until owner review/continuation.
 
 VM06 (2026-11-22): owner “lets go” approves VM05 and authorizes final integration review. Generated production checks/60s soak and code checks pass; VM06 IMPLEMENTED — AWAITING OWNER REVIEW. VM06_REVIEW.md lists pending combined full-song/native/device rows. Final release gate remains open; no production changes or deployment in this phase.
+
+Visual Polish (2026-11-22): owner declares VM roadmap complete; CRIMSON_VISUAL_POLISH_ROADMAP.md is now source of truth for remaining Crimson implementation. VP00 inventory and matched generated moving/fixed screenshot baseline implemented, awaiting owner review. VP01 ground-wave readability next only after approval. “Continue Crimson polish” resumes the next eligible milestone without a new master prompt. Rejected canvas-video exports are not accepted evidence; see VP00_BASELINE.md.
+
+VP01 (2026-11-22): owner “lets move” approves VP00. Existing ground front refined, verified and IMPLEMENTED — AWAITING OWNER REVIEW in VP01_REVIEW.md. Next VP02 only after review/“Continue Crimson polish”; no new graphical/audio systems.
+
+VP01 responsiveness exception (2026-11-22): owner explicitly approves combined sun expansion, modest low-event ground response and faster travel up to24units/s. Implemented and verified; CRIMSON_RESPONSIVENESS.md supplements VP01_REVIEW.md. VP01 remains awaiting owner review; no VP02 advancement.
+
+VP01 approved (2026-11-22): owner “aproved” accepts combined ground/sun/travel tuning. Authoritative Polish Roadmap updated. VP02 remains NOT STARTED and is next eligible on “Continue Crimson polish.” No implementation/commit/deploy in approval checkpoint.
+
+VP02 (2026-11-22): owner “continue crinmson polish” authorizes next milestone. High-mid head readability refined; low-mid/resting contours preserved. IMPLEMENTED — AWAITING OWNER REVIEW in VP02_REVIEW.md. Next VP03 only after owner continuation; approved VP01 sun/ground/travel unchanged.
+
+VP02 approved (2026-11-22): owner “its aproved” accepts mountain streak readability. Polish Roadmap updated; VP03 depth and restrained atmosphere is next eligible on “Continue Crimson polish,” not started in this checkpoint.
+
+VP03 (2026-11-22): owner “continue crimson polish” authorizes depth/material polish after approved VP02. Implemented and verified, awaiting owner review in VP03_REVIEW.md. Current material-only changes preserve approved responses/camera/MI. Next VP04 only after owner continuation.
+
+Stopped (2026-11-22): owner “looks good, lets stop for now” approves VP03 and requests stopping. VP04/VP05 NOT STARTED. Resume next eligible VP04 only on “Continue Crimson polish”; accepted checkpoints/evidence in Polish Roadmap and PROGRESS.md. No commit/deployment authorized.

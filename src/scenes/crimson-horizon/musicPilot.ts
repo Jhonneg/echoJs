@@ -1,3 +1,4 @@
+import { crimsonLowAccentDrive, crimsonTravelDrive, CRIMSON_MAX_SPEED } from './response.ts'
 import { createAtmosphere, updateAtmosphere } from './atmosphere.ts'
 import { createContourLighting, updateContourLighting } from './contours.ts'
 import { clampSignal } from '../../audio/signal.ts'
@@ -59,7 +60,7 @@ export function updateMusicPilot(state: MusicPilot, reader: MusicFeatureReader, 
   for (let i = state.pulses.length - 1; i >= 0; i--) {
     const event = state.pulses[i], age = now - event.emittedAtSeconds
     if (age > 2) { state.pulses.splice(i, 1); continue }
-    const value = clampSignal(event.strength) * onsetEnvelope(age) * gain
+    const value = (event.band === 'low' ? crimsonLowAccentDrive(event.strength) : clampSignal(event.strength)) * onsetEnvelope(age) * gain
     state[event.band] = Math.max(state[event.band], value)
     if (event.band === 'high') {
       const upper = clampSignal(event.strength) * upperAccentEnvelope(age) * gain
@@ -73,11 +74,11 @@ export function updateMusicPilot(state: MusicPilot, reader: MusicFeatureReader, 
   const energy = view.energy
   updateContourLighting(state.contours, energy.six.lowMids, energy.six.highMids, view.session, view.frame,
     view.updatedAtSeconds, now, delta, gain, fresh && profile === 'candidate', reduced, reset)
-  const bodyTarget = fresh && profile === 'candidate' ? clampSignal(energy.six.bass) * gain : 0
+  const bodyTarget = fresh && profile === 'candidate' ? crimsonVisualDrive(energy.six.bass) * gain : 0
   state.body += (bodyTarget - state.body) * (1 - Math.exp(-dt / (reduced ? 1.5 : bodyTarget > state.body ? .18 : .65)))
   if (bodyTarget === 0 && state.body < .0001) state.body = 0
   state.sun = fresh ? crimsonVisualDrive(.75 * energy.low + .25 * energy.overall) * gain : 0
-  const speed = fresh ? 16 * gain * Math.pow(crimsonVisualDrive(energy.overall), 1.2) : 0
+  const speed = fresh ? CRIMSON_MAX_SPEED * gain * Math.pow(crimsonTravelDrive(energy.overall), 1.2) : 0
   state.speed = speed < .005 ? 0 : speed
   const glowTarget = fresh ? clampSignal(view.context.activity) * gain : 0
   const currentGlow = state.glowActivity ?? 0

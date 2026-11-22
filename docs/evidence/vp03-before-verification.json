@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-21",
+  "generatedOnly": true,
+  "checks": [
+    "Fixed-camera before/after controls with stable sun and slow context",
+    "Upper/ridge/ground visibility plus six quality/viewports",
+    "Same VP00 moving generated source; no new resource/pass"
+  ],
+  "screenshots": [
+    "resting.png",
+    "context-0.2.png",
+    "context-0.8.png",
+    "upper-details.png",
+    "ridge-head.png",
+    "ground-front.png",
+    "standard-1440x810.png",
+    "standard-810x1440.png",
+    "standard-1920x810.png",
+    "low-1440x810.png",
+    "low-810x1440.png",
+    "low-1920x810.png",
+    "moving-fixture-4.png",
+    "moving-fixture-9.png",
+    "moving-fixture-14.png",
+    "moving-fixture-20.png"
+  ],
+  "performance": [],
+  "errors": [],
+  "label": "before",
+  "levels": [
+    {
+      "level": 0.2,
+      "atmosphere": {
+        "density": 0.1806039901603109,
+        "warmth": 0.12642279311221763
+      },
+      "scale": 1.0857142857142856,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      }
+    },
+    {
+      "level": 0.8,
+      "atmosphere": {
+        "density": 0.7803678910571695,
+        "warmth": 0.5462575237400185
+      },
+      "scale": 1.0857142857142856,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      }
+    }
+  ],
+  "viewports": [
+    {
+      "quality": "standard",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "quality": "standard",
+      "width": 810,
+      "height": 1440
+    },
+    {
+      "quality": "standard",
+      "width": 1920,
+      "height": 810
+    },
+    {
+      "quality": "low",
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "quality": "low",
+      "width": 810,
+      "height": 1440
+    },
+    {
+      "quality": "low",
+      "width": 1920,
+      "height": 810
+    }
+  ],
+  "fixture": [
+    {
+      "time": 4,
+      "actual": 4.056,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 16.450650616650506,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 7.549349383349493
+    },
+    {
+      "time": 9,
+      "actual": 9.048,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": -16.263716586451487,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 40.26371658645149
+    },
+    {
+      "time": 14,
+      "actual": 14.018667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 14.40885033771255,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 105.59114966228745
+    },
+    {
+      "time": 20,
+      "actual": 20.013333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 18.503434286499925,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 197.49656571350008
+    }
+  ],
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending"
+}
