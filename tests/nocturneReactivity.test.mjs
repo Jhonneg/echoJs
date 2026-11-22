@@ -9,7 +9,7 @@ function fixture() {
   const reader = { read: () => view }, state = createNocturneResponse()
   function step({gain = 1, reduced = false, mode = 'audio', hz = 60, now} = {}) {
     view.updatedAtSeconds += 1 / hz; view.frame++
-    updateNocturneResponse(state, reader, mode, manual, gain, reduced, 1 / hz, now ?? view.updatedAtSeconds)
+    updateNocturneResponse(state, view, mode, manual, gain, reduced, 1 / hz, now ?? view.updatedAtSeconds)
   }
   function advance(seconds = 2, options = {}) { for (let i = 0; i < seconds * (options.hz ?? 60); i++) step(options) }
   function event(band = 'low', strength = .5, extra = {}) {

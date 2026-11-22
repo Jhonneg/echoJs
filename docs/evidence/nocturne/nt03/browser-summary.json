@@ -1,0 +1,59 @@
+{
+  "frames": 140,
+  "samples": 141,
+  "errors": [],
+  "sections": [
+    {
+      "name": "bass",
+      "samples": 12,
+      "panelMean": 0.000004506233688916852,
+      "panelPeak": 0.000009452295749603935,
+      "accentPeak": 0,
+      "magentaPeak": 0.2437131988006424
+    },
+    {
+      "name": "lowmid",
+      "samples": 13,
+      "panelMean": 0.000009317942790042115,
+      "panelPeak": 0.00002516898718267354,
+      "accentPeak": 0,
+      "magentaPeak": 0.00010503482808993806
+    },
+    {
+      "name": "sustain",
+      "samples": 11,
+      "panelMean": 0.12886216957239005,
+      "panelPeak": 0.1303645747369251,
+      "accentPeak": 0.0017662428566331328,
+      "magentaPeak": 0.0000013036465490249666
+    },
+    {
+      "name": "attacks",
+      "samples": 27,
+      "panelMean": 0.2258068050160906,
+      "panelPeak": 0.4253148930402864,
+      "accentPeak": 0.08903810099670083,
+      "magentaPeak": 0.0006599085345142509
+    },
+    {
+      "name": "silence",
+      "samples": 5,
+      "panelMean": 0.006643551837158342,
+      "panelPeak": 0.01648528768710158,
+      "accentPeak": 0,
+      "magentaPeak": 0
+    },
+    {
+      "name": "mixed",
+      "samples": 13,
+      "panelMean": 0.1107284717206343,
+      "panelPeak": 0.11342420980717038,
+      "accentPeak": 0.0034708321047636458,
+      "magentaPeak": 0.18496071467633957
+    }
+  ],
+  "manualPixelDifference": {
+    "on": 0,
+    "off": 0
+  }
+}

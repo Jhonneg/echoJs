@@ -1,0 +1,194 @@
+{
+  "batches": {
+    "before": [
+      {
+        "name": "nocturne-cyan",
+        "count": 342
+      },
+      {
+        "name": "nocturne-cyanPanel",
+        "count": 1
+      }
+    ],
+    "after": [
+      {
+        "name": "nocturne-cyan",
+        "count": 336
+      },
+      {
+        "name": "nocturne-cyanDetails",
+        "count": 6
+      },
+      {
+        "name": "nocturne-cyanPanel",
+        "count": 1
+      }
+    ]
+  },
+  "before": [
+    {
+      "name": "lowmid",
+      "windowsMean": 0.13102987830526042,
+      "detailsMean": 0.13102987830526042,
+      "detailAccentPeak": 0.003556399214458346,
+      "panelMean": 0.000005211653634658593,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0.09889759581419229,
+      "highMidPeak": 0.0000036085199031955237
+    },
+    {
+      "name": "highmid",
+      "windowsMean": 0.18477393071406292,
+      "detailsMean": 0.18477393071406292,
+      "detailAccentPeak": 0.0011173276901478635,
+      "panelMean": 0.18366803791006314,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 8.648573415661313e-10,
+      "highMidPeak": 0.14128317526289222
+    },
+    {
+      "name": "attacks",
+      "windowsMean": 0.22836732810525995,
+      "detailsMean": 0.22836732810525995,
+      "detailAccentPeak": 0.06254982343529232,
+      "panelMean": 0.003914872545046216,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0.28256560935810726,
+      "highMidPeak": 0.0003375394298186144
+    },
+    {
+      "name": "stationary-highmid",
+      "windowsMean": 0.19422095061163122,
+      "detailsMean": 0.19422095061163122,
+      "detailAccentPeak": 0.036674052035331806,
+      "panelMean": 0.12856811197731466,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0.19779626261559577,
+      "highMidPeak": 0.09890489156134426
+    },
+    {
+      "name": "mixed",
+      "windowsMean": 0.12876199875618877,
+      "detailsMean": 0.12876199875618877,
+      "detailAccentPeak": 0,
+      "panelMean": 0.1285676048293854,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0.0000572589511496629,
+      "highMidPeak": 0.0988983494955115
+    },
+    {
+      "name": "silence",
+      "windowsMean": 0,
+      "detailsMean": 0,
+      "detailAccentPeak": 0,
+      "panelMean": 0,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0,
+      "highMidPeak": 0
+    }
+  ],
+  "after": [
+    {
+      "name": "lowmid",
+      "windowsMean": 0.03305676876366464,
+      "detailsMean": 0.07942315697249364,
+      "detailAccentPeak": 0.0023570551035292653,
+      "panelMean": 0.000005287449091248238,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0.09893814460604887,
+      "highMidPeak": 0.000003610000685483214
+    },
+    {
+      "name": "highmid",
+      "windowsMean": 0.025548843553896815,
+      "detailsMean": 0.003554395469110783,
+      "detailAccentPeak": 0,
+      "panelMean": 0.1838536924653535,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 8.652115125860426e-10,
+      "highMidPeak": 0.1413410656440948
+    },
+    {
+      "name": "attacks",
+      "windowsMean": 0.0442195164023865,
+      "detailsMean": 0.13499074123268465,
+      "detailAccentPeak": 0.060988649319821564,
+      "panelMean": 0.004251636089458895,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0.2826813794840498,
+      "highMidPeak": 0.0003338355962878736
+    },
+    {
+      "name": "stationary-highmid",
+      "windowsMean": 0.03401570224286635,
+      "detailsMean": 0.05672529389270423,
+      "detailAccentPeak": 0.04193021914831669,
+      "panelMean": 0.12862086398437397,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0.19787758604923117,
+      "highMidPeak": 0.09893978390986079
+    },
+    {
+      "name": "mixed",
+      "windowsMean": 0.018933071338244997,
+      "detailsMean": 0.0008942954998674249,
+      "detailAccentPeak": 0,
+      "panelMean": 0.12862029337464892,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0.00005751302213852559,
+      "highMidPeak": 0.0989387438219329
+    },
+    {
+      "name": "silence",
+      "windowsMean": 0,
+      "detailsMean": 0,
+      "detailAccentPeak": 0,
+      "panelMean": 0,
+      "panelAccentPeak": 0,
+      "lowMidPeak": 0,
+      "highMidPeak": 0
+    }
+  ],
+  "resources": {
+    "before": [
+      "{\"geometries\":107,\"textures\":6,\"calls\":82}"
+    ],
+    "after": [
+      "{\"geometries\":108,\"textures\":6,\"calls\":83}"
+    ]
+  },
+  "manual": [
+    {
+      "name": "audio-idle",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-desktop-standard",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-desktop-low",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-wide-standard",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-wide-low",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-portrait-standard",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-portrait-low",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-panel-off",
+      "differingPixels": 0
+    }
+  ]
+}

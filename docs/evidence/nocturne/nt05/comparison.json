@@ -1,0 +1,129 @@
+{
+  "geometryTransforms": "All eight magenta instance transforms identical; batches8→1/5/2",
+  "before": [
+    {
+      "name": "quiet",
+      "mainMean": 0.055928937635369984,
+      "mainPeak": 0.05918096363545786,
+      "accentPeak": 0.0017725901454328295,
+      "secondaryMean": 0.055928937635369984,
+      "bridgeMean": 0.055928937635369984
+    },
+    {
+      "name": "loud",
+      "mainMean": 0.2236746616786827,
+      "mainPeak": 0.2346046526412232,
+      "accentPeak": 0.006381778435721042,
+      "secondaryMean": 0.2236746616786827,
+      "bridgeMean": 0.2236746616786827
+    },
+    {
+      "name": "attacks",
+      "mainMean": 0.22147977357112386,
+      "mainPeak": 0.4339976583626036,
+      "accentPeak": 0.07629334073658885,
+      "secondaryMean": 0.22147977357112386,
+      "bridgeMean": 0.22147977357112386
+    },
+    {
+      "name": "sub",
+      "mainMean": 0.18323677578145195,
+      "mainPeak": 0.18338834826209063,
+      "accentPeak": 0,
+      "secondaryMean": 0.18323677578145195,
+      "bridgeMean": 0.18323677578145195
+    },
+    {
+      "name": "silence",
+      "mainMean": 0,
+      "mainPeak": 0,
+      "accentPeak": 0,
+      "secondaryMean": 0,
+      "bridgeMean": 0
+    }
+  ],
+  "after": [
+    {
+      "name": "quiet",
+      "mainMean": 0.05096069304422469,
+      "mainPeak": 0.05545802648669823,
+      "accentPeak": 0.006488580217401634,
+      "secondaryMean": 0.01802805608576421,
+      "bridgeMean": 0.05598766259148836
+    },
+    {
+      "name": "loud",
+      "mainMean": 0.20344408449348733,
+      "mainPeak": 0.2199560741338406,
+      "accentPeak": 0.023715758035926845,
+      "secondaryMean": 0.07290193685051832,
+      "bridgeMean": 0.2239269279373664
+    },
+    {
+      "name": "attacks",
+      "mainMean": 0.2556086741963732,
+      "mainPeak": 0.5530616978361707,
+      "accentPeak": 0.3054060671565907,
+      "secondaryMean": 0.05399925495417208,
+      "bridgeMean": 0.21988212169579155
+    },
+    {
+      "name": "sub",
+      "mainMean": 0.05763194037351258,
+      "mainPeak": 0.06747921667423629,
+      "accentPeak": 0.0012817700476520353,
+      "secondaryMean": 0.042604232536498726,
+      "bridgeMean": 0.1834029856656971
+    },
+    {
+      "name": "silence",
+      "mainMean": 0,
+      "mainPeak": 0,
+      "accentPeak": 0,
+      "secondaryMean": 0,
+      "bridgeMean": 0
+    }
+  ],
+  "resources": {
+    "before": [
+      "{\"geometries\":105,\"textures\":6,\"calls\":80}"
+    ],
+    "after": [
+      "{\"geometries\":107,\"textures\":6,\"calls\":82}"
+    ]
+  },
+  "manual": [
+    {
+      "name": "audio-idle",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-desktop-standard",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-desktop-low",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-wide-standard",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-wide-low",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-portrait-standard",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-portrait-low",
+      "differingPixels": 0
+    },
+    {
+      "name": "manual-panel-off",
+      "differingPixels": 0
+    }
+  ]
+}

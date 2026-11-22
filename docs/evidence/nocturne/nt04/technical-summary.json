@@ -1,0 +1,20 @@
+{
+  "reducedMotion": true,
+  "samples": 141,
+  "frames": 140,
+  "maxPanelAccent": 0,
+  "resources": [
+    "{\"geometries\":105,\"textures\":6}"
+  ],
+  "errors": [],
+  "build": {
+    "index-BzbZPGah.js": {
+      "bytes": 1231112,
+      "sha256": "0d2b350b0d3c4e5746ecb27048afb429a38bff98218daf0963c344197ab458ea"
+    },
+    "terrain.worker-CetnzPMd.js": {
+      "bytes": 2420,
+      "sha256": "c1ca61c3e3b4d8adfe1706e5e73c211d6b9b15d477590ce1f5576e0f85a4e647"
+    }
+  }
+}

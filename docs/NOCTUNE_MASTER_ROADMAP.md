@@ -1,6 +1,6 @@
 ECHO — Noctune 2.0: Living Instrument Master Roadmap
 
-Plan version: 1.2 · Prepared: 2026-11-22 · Status: NT01 approved; NT02 implemented; NT03 pending; current-worktree audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
+Plan version: 1.8 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented, owner grouped lighting review pending; current-worktree audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
 Target repository: https://github.com/Jhonneg/echoJs · Destination: docs/NOCTUNE_MASTER_ROADMAP.md
 
 This is the canonical plan for Noctune's Music Intelligence migration and visual mapping. It supersedes the earlier partial NT/NM suggestions. The phase IDs NT01–NT15 below are the only IDs to use going forward.
@@ -335,19 +335,37 @@ Code/tests
 
 NT03
 
-Pending
+Implemented; exact NT02 parity and technical checks passed
 
 Code/tests
 
 NT04
 
-Pending
+Approved by owner “proceed” after NT04 review
 
 Migration visual approval
 
-NT05–NT08
+NT05
 
-Pending
+Implemented; technical verification passed; lighting review pending
+
+Grouped lighting artistic approval
+
+NT06
+
+Implemented; technical verification passed; lighting review pending
+
+Grouped lighting artistic approval
+
+NT07
+
+Implemented; technical checks passed; owner music/device review pending
+
+Grouped lighting artistic approval
+
+NT08
+
+Implemented; technical checks passed; grouped owner music/lighting/device review pending
 
 Grouped lighting artistic approval
 
@@ -381,8 +399,22 @@ Pending
 
 Final handoff
 
-Next action: review NT02 results, then authorize the bounded NT03 response layer. NT04 migration visual approval still precedes NT05.
+Next action: review NT08 and the grouped NT05–NT08 lighting evidence. NT09 requires owner continuation after this lighting review; environment work has not started.
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
 
 NT02 checkpoint: [Integration report and exact baseline curves](reports/nocturne/NT02_INTEGRATION.md). All Nocturne scene and activity feedback consumers now use MI. Geometry/material grouping remains unchanged; NT03/NT04 and subsequent artistic phases are pending.
+
+NT03 checkpoint: owner “procced” authorizes the unified visual state. [Implementation and evidence](reports/nocturne/NT03_VISUAL_STATE.md) show one feature read, named output channels and exact NT02 final-value parity; no artistic curve or geometry change. NT04 remains pending.
+
+NT04 checkpoint: [Production migration review](reports/nocturne/NT04_MIGRATION_REVIEW.md) passed technical checks and matched Manual visual comparisons; source untouched. Actual generated-audio brightness differences are documented. Owner migration visual approval remains pending; NT05 is not authorized.
+
+NT05 checkpoint: owner “proceed” accepts NT04 and authorizes NT05. [Magenta response implementation/evidence](reports/nocturne/NT05_MAGENTA_REVIEW.md) separates main, secondary and unchanged bridge material batches. No shape/camera/DSP or other response change. NT05 implemented; owner lighting acceptance and NT06–NT08 remain pending.
+
+NT06 checkpoint: owner “proceed” after NT05 authorizes this midrange phase. [Implementation/evidence](reports/nocturne/NT06_MIDRANGE_REVIEW.md) separates windows/detail panels, preserves the approved high-mid fixture exactly and verifies existing geometry through matched Manual pixels. NT06 implemented; lighting acceptance and NT07/NT08 remain pending.
+
+
+NT07 checkpoint: owner “proceed” after NT06 authorizes bounded bridge choreography. [Implementation/evidence](reports/nocturne/NT07_BRIDGE_REVIEW.md) segments only the two existing diffusers into six contiguous thirds and drives finite left-to-right travel from qualified low onsets. Existing bridge spill uses mean section brightness; no added point lights or shared analysis changes. Technical verification passed; owner lighting/music/device acceptance and NT08 remain pending.
+
+
+NT08 checkpoint: owner “proceed” after NT07 authorizes bounded treble detail. [Violet implementation/evidence](reports/nocturne/NT08_VIOLET_REVIEW.md) separates existing strips into two side batches, with restrained presence/air sustain and alternating finite high-event accents. No transforms, point-light inventory, global atmosphere or shared audio changes. Technical checks passed; grouped NT05–NT08 owner lighting/music/device review is now the next gate. NT09 is not started.

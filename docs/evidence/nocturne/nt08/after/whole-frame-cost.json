@@ -1,0 +1,846 @@
+{
+  "method": "Temporary info.autoReset=false; collect previous whole frame and reset at useFrame priority -2 before reflection/main render. Fixed camera, idle, Standard quality, no readback during sample interval. Delta is headless smoke only, not hardware performance acceptance.",
+  "samples": [
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016299999999813734
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016299999999813734
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01690000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016799999999813735
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016200000000186263
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017099999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016299999999813734
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01680000000074506
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01690000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016799999999813735
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01640000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01690000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01630000000074506
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01640000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016299999999813734
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01680000000074506
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01690000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01640000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016799999999813735
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016799999999813735
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01690000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016299999999813734
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01690000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01640000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016899999999441206
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016799999999813735
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016799999999813735
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01640000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01690000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01690000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016399999999441205
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01640000000037253
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016799999999813735
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.0165
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016399999999441205
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.017099999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01630000000074506
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.01680000000074506
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016699999999254943
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016700000000186264
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016599999999627472
+    },
+    {
+      "calls": 196,
+      "triangles": 25534,
+      "geometries": 114,
+      "textures": 6,
+      "deltaSeconds": 0.016600000000558793
+    }
+  ],
+  "errors": []
+}

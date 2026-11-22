@@ -1,6 +1,6 @@
 ECHO — Noctune 2.0 Visual Mapping Specification
 
-Plan version: 1.2 · Prepared: 2026-11-22 · Status: Proposed artistic contract; partially source-checked at e627ff821e84dd0f8e781fa9b259805d4822ac39, owner review pending
+Plan version: 1.8 · Prepared: 2026-11-22 · Status: Proposed artistic contract; partially source-checked at e627ff821e84dd0f8e781fa9b259805d4822ac39, owner review pending
 Destination: docs/NOCTUNE_VISUAL_MAPPING.md · Primary plan: NOCTUNE_MASTER_ROADMAP.md
 
 1. Creative brief
@@ -411,37 +411,37 @@ Dominant magenta
 
 NT05
 
-Pending audit
+MI six.bass/subBass + fresh low onset
 
-Pending
+NT05 parameters below
 
-Pending
+NT05_MAGENTA_REVIEW.md
 
-Pending
+Implemented; owner lighting review pending
 
 Secondary magenta
 
 NT05
 
-Pending audit
+MI six.bass/subBass sustained body
 
-Pending
+NT05 parameters below
 
-Pending
+NT05_MAGENTA_REVIEW.md
 
-Pending
+Implemented; owner lighting review pending
 
 Existing cyan
 
 NT06
 
-Pending audit
+MI six.lowMids/highMids; low-mid-qualified mid event for small panels
 
-Pending
+NT06 parameters below
 
-Pending
+NT06_MIDRANGE_REVIEW.md
 
-Pending
+Implemented; owner lighting review pending
 
 Recessed left cyan
 
@@ -459,25 +459,25 @@ Violet accents
 
 NT08
 
-Pending audit
+Implemented: presence/air sustain, alternating localized high accents
 
-Pending
+Technical verification passed
 
-Pending
+Owner grouped lighting/music/device review pending
 
-Pending
+Existing violet geometry and two spill lights retained
 
 Bridge segments
 
 NT07
 
-Pending design
+Implemented: six contiguous sections, low-onset finite travel
 
-Pending
+Technical checks passed
 
-Pending
+Owner lighting/music/device review pending
 
-Pending
+Existing bridge spill reused; see NT07 parameters
 
 Reflections
 
@@ -515,9 +515,90 @@ Pending
 
 Pending
 
-Next action: NT01 audit and NT02–NT04 migration. Do not implement NT05–NT11 before migration baseline is reviewed.
+Next action: review NT08 and grouped NT05–NT08 lighting before authorizing NT09. NT04 baseline is owner-approved; grouped lighting approval remains pending.
 
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
 
 NT02 migration baseline: broad magenta/cyan/violet now read calibrated MI low/mid/high energy plus event accents; atmosphere reads context.intensity. Exact curves and evidence: [NT02](reports/nocturne/NT02_INTEGRATION.md). Existing batches remain intact until their artistic phase. Left cyan composition and coefficients preserved; later mapping ledger rows stay pending.
+
+
+## NT03 implemented response contract (migration baseline)
+
+`visualState.ts` exposes distinct channel objects for magentaMain, magentaSecondary, cyanWindows, cyanDetails, cyanPanel, violet and bridge. Each contains sustainTarget, accent and final level. Reflections are derived one-for-one from final fixture levels; atmosphere supplies a separately eased level and weighted colors. These are independent addresses, not new choreography: current material batches and NT02 shared curves remain intact.
+
+| Control | Actual parameters retained at NT03 |
+| --- | --- |
+| Broad low/mid/high sustained target | `.65 * clamp(energy / .5) * gain`; no additional noise floor |
+| Broad event accent | Matching fresh low/mid/high event, `.3 * strength * gain`, .22 s exponential decay; no separate cooldown |
+| Broad final easing | Magenta .025/.18 s, original cyan .035/.22 s, violet .02/.14 s; combined target clamped 0–1 |
+| Panel sustain | HighMids 800–2500 Hz; `.65 * clamp(energy/.5) * gain`, .06/.18 s easing |
+| Panel event accent | Broad mid event; recent high-mid rise ≥.02 within .09 s of attack, rise reference .2, `.35 * strength * clamp(rise/.2) * gain`, .22 s decay; max 64 scalar samples |
+| Atmosphere | Context intensity; .25 s rise, .8 s active/.35 s inactive fall; magenta/cyan/violet weights .24/.85/.16, fog tint ×.018 over existing neutral baseline |
+| Reduced motion | Broad final .8/1.1 s, no new broad event accents; panel sustained .8/1.1 s with sharp accents suppressed; atmosphere 1.2/1.5 s |
+| Eligibility and bounds | Active feature age 0–.25 s; event emission age 0–.25 s, own session/sequence; dt capped .05 s; gain 0–1; zero gain clears audio output; Manual overrides final controls; tiny zero-target levels settle below .001 |
+| Renderer delivery | All fixture materials ×1.3; existing point intensities ×level (magenta50/40, cyan65/40, panel30, violet12/12); no new passes/materials/lights |
+
+The sustain target and one-shot accent remain separate from the final eased broad-group output; the panel additionally retains its eased sustained contribution. [NT03 evidence](reports/nocturne/NT03_VISUAL_STATE.md) verifies 6,300 exact NT02 output comparisons and matched Manual pixels. Later NT05–NT11 parameter/approval ledger entries stay pending.
+
+NT04 visual checkpoint: [Matched before/after and generated-audio comparisons](reports/nocturne/NT04_MIGRATION_REVIEW.md) retain exact Manual appearance across both quality settings and three viewport shapes. Original narrow portrait framing is unchanged. Broad-group and haze audio brightness differ deliberately after calibrated MI migration; owner must accept that baseline before choreography. No parameter was tuned during NT04.
+
+
+## NT05 implemented magenta parameters
+
+Owner “proceed” approves NT04 and authorizes this bounded change. One existing right fixture, five secondary fixtures and the two bridge emitters now have separate material batches; authored transforms, palette and local light placements stay intact.
+
+| Output | Sustain | Accent / lifecycle |
+| --- | --- | --- |
+| Main right magenta | `.5 * clamp((.8*bass + .2*subBass)/.35) * gain`; .12/.45 s rise/fall | Fresh validated low onset; `.42 * clamp(strength/.35) * gain`, 20 ms eased rise, peak through 55 ms, .2 s exponential decay, 1.2 s cutoff |
+| Five secondary magenta | `.24 * clamp((.6*bass + .4*subBass)/.35) * gain`; .3/.7 s rise/fall | No event accent; deliberately weaker and slower |
+| Bridge | Original NT04 broad-low curve and point intensity40 | Retained until NT07; no chase implemented |
+
+Main Audio level ≤.92; secondary ≤.24. One pulse plus a finite scalar carried tail combine by maximum, preventing weaker overlapping attacks from notching the existing decay; no accumulated pool/cooldown/random clock. Events require own session, unconsumed sequence, positive finite strength and emission age 0–.25 s; suppressed Manual/zero/reduced events are consumed. Body eligibility uses active feature age 0–.25 s. dt≤.05 s; zero gain clears; inactive releases; session resets skip retained events; targets 0 settle below .001. Reduced motion suppresses the pulse and eases bodies with .8/1.1 s. Manual Magenta applies the same direct level to all three batches.
+
+Materials still receive final level×1.3; existing near point uses main×50 and bridge point uses bridge×40. Reflections follow those actual fixtures. Cyan/violet/atmosphere responses and approved cyan placement/spill/reflections are untouched. [NT05 review and before/after evidence](reports/nocturne/NT05_MAGENTA_REVIEW.md). Main/secondary artistic acceptance and later lighting phases remain pending.
+
+
+## NT06 implemented architectural cyan parameters
+
+Window and small-panel batches are separated without changing the 342 existing transforms; the approved left fixture remains separate and unchanged. All Cyan Manual values still apply directly to windows/small panels and preserve the original appearance.
+
+| Output | Sustain | Event / bounds |
+| --- | --- | --- |
+|336 window panes | `.18 * clamp((.7*lowMids + .3*highMids)/.35) * gain`; .35/.9 s rise/fall | No event accent; final≤.18 in Audio |
+|6 small panels | `.28 * clamp(lowMids/.35) * gain`; .1/.35 s rise/fall | Broad-mid event needs low-mid rise≥.02 within .09 s of its attack; peak `.12 * clamp(strength/.35) * clamp(rise/.15) * gain`, .2 s decay; final≤.4 |
+
+Qualifying history has 64 scalar slots, one per new feature frame, using a sample at least .06 s earlier when available; prime without an invented rise. Own session/sequence and event age 0–.25 s, active feature age 0–.25 s, dt≤.05 s; no event accumulation. Inactive clears history and releases bodies; zero/Manual clears audio values and consumes events. Reduced motion suppresses detail accents and uses .8/1.1 s body easing. Zero-target values settle below .001.
+
+Existing window spill uses window×65, right small-panel spill detail×40, materials level×1.3. Approved left panel remains its original high-mid mapping and point×30. No global intensity enters these new fixture curves. [NT06 evidence](reports/nocturne/NT06_MIDRANGE_REVIEW.md) shows low-mid accents over stationary high mids do not retrigger the left panel. Other choreography and owner grouped lighting approval remain pending.
+
+
+## NT07 implemented bridge parameters
+
+Owner “proceed” after NT06 authorizes this phase. Replace the two shared bridge diffusers with six contiguous thirds in the same two housings; retain total footprint, palette and existing point light. Number sections0–5 from camera-left to camera-right, crossing the original central gap without adding a light there.
+
+- Trigger: existing MI `low` onset, same session/unconsumed sequence, finite strength≥.04, emission age0–.25s and active feature age0–.25s. No energy/intensity-driven cycling or new detector. Start at the update that observes the fresh event.
+- Peak per section: `.48 * clamp(strength/.35) * clamp(Reactivity)`; material receives section×1.3. Sections begin .12s apart, each with35ms eased rise, full peak through65ms, then quadratic fade to0 at320ms. Last section expires at920ms.
+- One sequence only. Cooldown1.04s from start includes the920ms travel/tail plus120ms quiet interval. Ignore and consume events during this interval; no queue, restart or overlap. No retained media or feature view; six reusable scalar levels.
+- Bridge channel/reflection summary is the mean of six final levels; existing bridge point receives mean×40. This restrained shared spill supports localized emissive travel without flooding both housings. Physical wet-floor reflection renders the actual section materials.
+- Manual Magenta fills all six sections uniformly and preserves original point×40. Audio sustain target0. Reduced motion suppresses bridge travel completely, while other existing reduced-motion fixture glows remain. Zero gain, stale/inactive input, Manual entry and session changes cancel travel; suppressed/retained events never replay.
+
+Only bridge output changes from NT06; all other fixture curves, global atmosphere, camera and approved cyan remain exact. [NT07 review and demonstrations](reports/nocturne/NT07_BRIDGE_REVIEW.md). Owner musical/readability and device-cost acceptance remain pending before closing the grouped lighting gate.
+
+
+## NT08 implemented violet parameters
+
+Owner “proceed” after NT07 authorizes this phase. All 12 existing violet strip transforms/colors remain intact, rebinned into right `violet` and left `violetSecondary` batches of 6 each. Existing near/far violet spill lights bind to right/left respectively; no added fixtures or lights.
+
+| Component | Mapping | Bounds / timing |
+| --- | --- | --- |
+| Both sustained bodies | `.16 * clamp((.7*presence + .3*air)/.35) * gain` | 40/160 ms rise/fall; body ≤.16 |
+| One bank accent | `.32 * clamp(highEvent.strength/.35) * gain` | 15 ms eased rise, peak through40 ms, quadratic fade to0 at240 ms |
+| Alternation | Right first, then left on each accepted event | 400 ms start cooldown; at most one accent; drop/consume skipped events without queue/restart |
+| Final delivery | Each bank = body + own accent | ≤.48 Audio; material×1.3; own existing point×12 |
+
+Qualify existing `high` events only: own session, unconsumed sequence, finite strength≥.04, emission age0–.25 s and active feature age0–.25 s. Presence spans2500–6000 Hz and air6000–20000 Hz; broad high events span4000–20000 Hz, so presence below4000 Hz supports sustain without being claimed as a high onset. Overall intensity, bass, low mids and highMids do not enter the curve. Held energy never creates repeated accents.
+
+Cooldown is global to the two banks: accepted attacks ≤2.5/s, alternating ≤1.25/s per bank, with a finite tail ending before the next start is allowed. This bounds visual activity but does not substitute for owner comfort review. Reduced motion suppresses accents and uses .8/1.1 s body smoothing. Zero gain/Manual clear audio body and accents; inactive/stale release body and cancel accents; new sessions reset body/alternation and skip retained events. Suppressed events never replay. Manual Violet still sets both banks uniformly. Targets0 settle below.001.
+
+The unified update retains one MI read, borrowed only synchronously; two stable scalar arrays hold bank accents/levels. Reflections derive from each bank's actual final output, via the unchanged physical wet-floor pass. Magenta/cyan/bridge/atmosphere remain exact NT07 behavior. [NT08 report and generated demonstrations](reports/nocturne/NT08_VIOLET_REVIEW.md). Grouped NT05–NT08 owner artistic/music/device approval remains open before NT09.

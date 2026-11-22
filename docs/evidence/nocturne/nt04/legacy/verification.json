@@ -1,0 +1,105 @@
+{
+  "label": "legacy",
+  "root": "/tmp/echo-nt04-legacy-AftvMb",
+  "checks": [
+    "Six matched Manual views plus idle/off and same generated mixed source"
+  ],
+  "captures": [
+    {
+      "name": "audio-idle",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-desktop-standard",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-desktop-low",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1080,
+        607
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-wide-standard",
+      "width": 1920,
+      "height": 810,
+      "canvas": [
+        1920,
+        810
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-wide-low",
+      "width": 1920,
+      "height": 810,
+      "canvas": [
+        1440,
+        607
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-portrait-standard",
+      "width": 810,
+      "height": 1440,
+      "canvas": [
+        810,
+        1440
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-portrait-low",
+      "width": 810,
+      "height": 1440,
+      "canvas": [
+        607,
+        1080
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-panel-off",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": null
+    },
+    {
+      "name": "mixed-audio",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": {
+        "time": 5.634667,
+        "paused": false
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "status": "technical browser checks passed; owner migration appearance approval pending"
+}

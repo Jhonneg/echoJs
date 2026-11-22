@@ -1,0 +1,376 @@
+{
+  "geometry": "All12 violet instance transforms and palette exact;6 per side; approved cyan exact",
+  "manual": [
+    {
+      "name": "audio-idle",
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-desktop-standard",
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-desktop-low",
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-wide-standard",
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-wide-low",
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-portrait-standard",
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-portrait-low",
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-panel-off",
+      "rawAE": "0 (0)"
+    }
+  ],
+  "sections": [
+    {
+      "label": "before",
+      "name": "bass",
+      "presencePeak": 0.0000035308301342938298,
+      "airPeak": 0.0000068520313486236665,
+      "rightMean": 0.000009387410860086147,
+      "leftMean": 0.000009387410860086147,
+      "accentPeak": 0
+    },
+    {
+      "label": "before",
+      "name": "low-mid",
+      "presencePeak": 0.0000028583080073799626,
+      "airPeak": 0.000006526335144099813,
+      "rightMean": 0.00000896141043153777,
+      "leftMean": 0.00000896141043153777,
+      "accentPeak": 0
+    },
+    {
+      "label": "before",
+      "name": "quiet-presence",
+      "presencePeak": 0.04238752287441791,
+      "airPeak": 0.000008434246580920114,
+      "rightMean": 0.055131339738548966,
+      "leftMean": 0.055131339738548966,
+      "accentPeak": 0
+    },
+    {
+      "label": "before",
+      "name": "loud-presence",
+      "presencePeak": 0.14130362751718376,
+      "airPeak": 0.000009316954517877523,
+      "rightMean": 0.1838470838225452,
+      "leftMean": 0.1838470838225452,
+      "accentPeak": 0
+    },
+    {
+      "label": "before",
+      "name": "isolated",
+      "presencePeak": 0.000020285802976173173,
+      "airPeak": 0.20288105429535258,
+      "rightMean": 0.05663970754000289,
+      "leftMean": 0.05663970754000289,
+      "accentPeak": 0.04851285849332801
+    },
+    {
+      "label": "before",
+      "name": "dense",
+      "presencePeak": 0.00002449840042709185,
+      "airPeak": 0.21084032233424624,
+      "rightMean": 0.22519382439003371,
+      "leftMean": 0.22519382439003371,
+      "accentPeak": 0.06086431657123201
+    },
+    {
+      "label": "before",
+      "name": "air",
+      "presencePeak": 2.6208181928851105e-9,
+      "airPeak": 0.10597636124108396,
+      "rightMean": 0.13933013252663,
+      "leftMean": 0.13933013252663,
+      "accentPeak": 0.0032771381637485084
+    },
+    {
+      "label": "before",
+      "name": "mixed",
+      "presencePeak": 0.00002354253345309054,
+      "airPeak": 0.1916235031091854,
+      "rightMean": 0.05587740016543926,
+      "leftMean": 0.05587740016543926,
+      "accentPeak": 0.04581923731687912
+    },
+    {
+      "label": "before",
+      "name": "silence",
+      "presencePeak": 0,
+      "airPeak": 0,
+      "rightMean": 0,
+      "leftMean": 0,
+      "accentPeak": 0
+    },
+    {
+      "label": "after",
+      "name": "bass",
+      "presencePeak": 0.000003523067537414485,
+      "airPeak": 0.000006851883246294873,
+      "rightMean": 0.0000020292329923563826,
+      "leftMean": 0.0000020292329923563826,
+      "accentPeak": 0
+    },
+    {
+      "label": "after",
+      "name": "low-mid",
+      "presencePeak": 0.0000028584334971895413,
+      "airPeak": 0.000006526623074880222,
+      "rightMean": 0.0000018408120262504772,
+      "leftMean": 0.0000018408120262504772,
+      "accentPeak": 0
+    },
+    {
+      "label": "after",
+      "name": "quiet-presence",
+      "presencePeak": 0.042389384895473683,
+      "airPeak": 0.000008434617020723791,
+      "rightMean": 0.01356575991401606,
+      "leftMean": 0.01356575991401606,
+      "accentPeak": 0
+    },
+    {
+      "label": "after",
+      "name": "loud-presence",
+      "presencePeak": 0.14130985894034184,
+      "airPeak": 0.000009317364269205434,
+      "rightMean": 0.04522043267082161,
+      "leftMean": 0.04522043267082161,
+      "accentPeak": 0
+    },
+    {
+      "label": "after",
+      "name": "isolated",
+      "presencePeak": 0.00002403244903631675,
+      "airPeak": 0.11658723232118623,
+      "rightMean": 0.019123133242393158,
+      "leftMean": 0.012576760245041538,
+      "accentPeak": 0.185499435399644
+    },
+    {
+      "label": "after",
+      "name": "dense",
+      "presencePeak": 0.000024146110937392796,
+      "airPeak": 0.2108496163648734,
+      "rightMean": 0.03457388696991966,
+      "leftMean": 0.03509228994462072,
+      "accentPeak": 0.17395679601787267
+    },
+    {
+      "label": "after",
+      "name": "air",
+      "presencePeak": 2.62093412765141e-9,
+      "airPeak": 0.10598103474849556,
+      "rightMean": 0.014534542676014667,
+      "leftMean": 0.014534542676014667,
+      "accentPeak": 0
+    },
+    {
+      "label": "after",
+      "name": "mixed",
+      "presencePeak": 0.000013129812883725832,
+      "airPeak": 0.011276855431201065,
+      "rightMean": 0.01397590826709993,
+      "leftMean": 0.012240346407768532,
+      "accentPeak": 0.13154393031544093
+    },
+    {
+      "label": "after",
+      "name": "silence",
+      "presencePeak": 0,
+      "airPeak": 0,
+      "rightMean": 0,
+      "leftMean": 0,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "bass",
+      "presencePeak": 0.000003526433599066473,
+      "airPeak": 0.000006854164233935276,
+      "rightMean": 0.000001447693895797496,
+      "leftMean": 0.000001447693895797496,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "low-mid",
+      "presencePeak": 0.0000028601912941214206,
+      "airPeak": 0.000006530634911690487,
+      "rightMean": 0.0000019426983768348684,
+      "leftMean": 0.0000019426983768348684,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "quiet-presence",
+      "presencePeak": 0.0424154559094665,
+      "airPeak": 0.000008439803622821546,
+      "rightMean": 0.011111783884142091,
+      "leftMean": 0.011111783884142091,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "loud-presence",
+      "presencePeak": 0.14139674481348205,
+      "airPeak": 0.000009323091904935014,
+      "rightMean": 0.039167269505255946,
+      "leftMean": 0.039167269505255946,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "isolated",
+      "presencePeak": 0.0000202991667422158,
+      "airPeak": 0.20301468744683465,
+      "rightMean": 0.01915769119415201,
+      "leftMean": 0.01915769119415201,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "dense",
+      "presencePeak": 0.000024514541828457192,
+      "airPeak": 0.21097924126939444,
+      "rightMean": 0.010604490859866717,
+      "leftMean": 0.010604490859866717,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "air",
+      "presencePeak": 2.6225449354153453e-9,
+      "airPeak": 0.10604615272233793,
+      "rightMean": 0.01377071558450161,
+      "leftMean": 0.01377071558450161,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "mixed",
+      "presencePeak": 0.00002355804338707666,
+      "airPeak": 0.1917497601782179,
+      "rightMean": 0.007318951727334024,
+      "leftMean": 0.007318951727334024,
+      "accentPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "silence",
+      "presencePeak": 0,
+      "airPeak": 0,
+      "rightMean": 0.0002055535675092867,
+      "leftMean": 0.0002055535675092867,
+      "accentPeak": 0
+    }
+  ],
+  "wholeFrame": {
+    "before": {
+      "samples": 120,
+      "calls": [
+        194
+      ],
+      "triangles": [
+        25534
+      ],
+      "geometries": [
+        113
+      ],
+      "textures": [
+        6
+      ]
+    },
+    "after": {
+      "samples": 120,
+      "calls": [
+        196
+      ],
+      "triangles": [
+        25534
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ]
+    }
+  },
+  "accepted": [
+    {
+      "start": 6.258799999999813,
+      "bank": 0,
+      "audioTimeObserved": 5.144
+    },
+    {
+      "start": 8.258799999999814,
+      "bank": 1,
+      "audioTimeObserved": 7.128
+    },
+    {
+      "start": 10.458699999999721,
+      "bank": 0,
+      "audioTimeObserved": 9.346667
+    },
+    {
+      "start": 11.458699999999721,
+      "bank": 1,
+      "audioTimeObserved": 10.392
+    },
+    {
+      "start": 12.359,
+      "bank": 0,
+      "audioTimeObserved": 11.202667
+    },
+    {
+      "start": 12.925199999999721,
+      "bank": 1,
+      "audioTimeObserved": 11.797394
+    },
+    {
+      "start": 13.4585,
+      "bank": 0,
+      "audioTimeObserved": 12.376
+    },
+    {
+      "start": 14.0585,
+      "bank": 1,
+      "audioTimeObserved": 12.952
+    },
+    {
+      "start": 14.525199999999721,
+      "bank": 0,
+      "audioTimeObserved": 13.421333
+    },
+    {
+      "start": 15.0585,
+      "bank": 1,
+      "audioTimeObserved": 14.01788
+    },
+    {
+      "start": 17.425099999999627,
+      "bank": 0,
+      "audioTimeObserved": 16.344
+    },
+    {
+      "start": 18.458399999999905,
+      "bank": 1,
+      "audioTimeObserved": 17.389333
+    }
+  ]
+}

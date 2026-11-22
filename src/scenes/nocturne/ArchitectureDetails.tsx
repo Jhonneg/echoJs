@@ -1,22 +1,29 @@
+import { BRIDGE_SEGMENTS } from './bridge'
 import { NOCTURNE_LIGHT_COLORS } from './lighting'
 import { useLayoutEffect, useRef } from 'react'
 import { CatmullRomCurve3, InstancedMesh, Object3D, Vector3 } from 'three'
 
 type Triple = [number, number, number]
 type Part = { position: Triple, size: Triple, rotation?: Triple }
-type Finish = 'steel' | 'frame' | 'recess' | 'cyan' | 'cyanPanel' | 'magenta' | 'violet' | 'asphalt'
+type BridgeFinish = `bridge${number}`
+const bridgeFinishes = Array.from({ length: BRIDGE_SEGMENTS }, (_, i) => `bridge${i}` as BridgeFinish)
+type Finish = BridgeFinish | 'steel' | 'frame' | 'recess' | 'cyan' | 'cyanDetails' | 'cyanPanel' | 'magenta' | 'magentaSecondary' | 'violet' | 'violetSecondary' | 'asphalt'
 const finishes: Record<Finish, { color: string, roughness: number, metalness: number }> = {
   steel: { color: '#343e46', roughness: 0.72, metalness: 0.45 },
   frame: { color: '#222c34', roughness: 0.8, metalness: 0.35 },
   recess: { color: '#090e13', roughness: 0.95, metalness: 0.1 },
   cyan: { color: '#1c303a', roughness: 0.42, metalness: 0.25 },
+  cyanDetails: { color: '#1c303a', roughness: 0.42, metalness: 0.25 },
   cyanPanel: { color: '#1c303a', roughness: 0.42, metalness: 0.25 },
   magenta: { color: '#30343c', roughness: 0.6, metalness: 0.35 },
+  magentaSecondary: { color: '#30343c', roughness: 0.6, metalness: 0.35 },
+  ...Object.fromEntries(bridgeFinishes.map(name => [name, { color: '#30343c', roughness: .6, metalness: .35 }])),
   violet: { color: '#13121a', roughness: 0.7, metalness: 0.1 },
+  violetSecondary: { color: '#13121a', roughness: 0.7, metalness: 0.1 },
   asphalt: { color: '#151c21', roughness: 0.98, metalness: 0 },
 }
 // All repeated facade parts share a unit box and one material per finish.
-const parts: Record<Finish, Part[]> = { steel: [], frame: [], recess: [], cyan: [], cyanPanel: [], magenta: [], violet: [], asphalt: [] }
+const parts: Record<Finish, Part[]> = { steel: [], frame: [], recess: [], cyan: [], cyanDetails: [], cyanPanel: [], magenta: [], magentaSecondary: [], ...Object.fromEntries(bridgeFinishes.map(name => [name, []])), violet: [], violetSecondary: [], asphalt: [] }
 function box(finish: Finish, position: Triple, size: Triple, rotation?: Triple) {
   parts[finish].push({ position, size, rotation })
 }
@@ -61,12 +68,12 @@ for (const side of [-1, 1]) {
   // Large fixture bodies, panel housings and thin strip channels for N03.
   for (const z of (side === 1 ? [-3, -18, -34] : [-13, -29, -44])) {
     wall(side, 'frame', 0.22, 2.75, z, [0.44, 3.3, 1.25])
-    wall(side, 'magenta', 0.46, 2.75, z, [0.06, 2.95, 0.96])
+    wall(side, side === 1 && z === -3 ? 'magenta' : 'magentaSecondary', 0.46, 2.75, z, [0.06, 2.95, 0.96])
     wall(side, 'steel', 0.08, 5.7, z - 1.3, [0.16, 3.2, 0.1])
-    wall(side, 'violet', 0.17, 5.7, z - 1.3, [0.025, 3.05, 0.045])
-    wall(side, 'violet', 0.13, 0.32, z, [0.04, 0.045, 2.1])
+    wall(side, side === 1 ? 'violet' : 'violetSecondary', 0.17, 5.7, z - 1.3, [0.025, 3.05, 0.045])
+    wall(side, side === 1 ? 'violet' : 'violetSecondary', 0.13, 0.32, z, [0.04, 0.045, 2.1])
     wall(side, 'frame', 0.18, 4.75, z + 3, [0.36, 0.7, 1.6])
-    wall(side, 'cyan', 0.38, 4.75, z + 3, [0.05, 0.5, 1.35])
+    wall(side, 'cyanDetails', 0.38, 4.75, z + 3, [0.05, 0.5, 1.35])
   }
   // Drain slots and curb joints.
   for (let i = 0; i < 28; i++) {
@@ -86,7 +93,9 @@ for (let i = 0; i < 16; i++) {
 for (let i = 0; i < 9; i++) box('steel', [-2.8 + i * 0.7, 4.39, -8], [0.09, 0.22, 1.8])
 for (const x of [-1.8, 1.8]) {
   box('frame', [x, 4.22, -7.1], [1.35, 0.14, 0.36])
-  box('magenta', [x, 4.13, -7.1], [1.15, 0.035, 0.22])
+  // Contiguous thirds retain the existing diffuser footprint and its two housings.
+  for (let j = 0; j < 3; j++) box(bridgeFinishes[(x < 0 ? 0 : 3) + j],
+    [x - 1.15 / 2 + (j + .5) * 1.15 / 3, 4.13, -7.1], [1.15 / 3, .035, .22])
 }
 // Slender metal gate bars retain the distant focal opening.
 for (let i = 0; i < 10; i++) box('steel', [-1.02 + i * 0.226, 1.9, -51.25], [0.035, 3.65, 0.055])
@@ -108,7 +117,7 @@ function Boxes({ finish }: { finish: Finish }) {
     mesh.current.computeBoundingBox()
     mesh.current.computeBoundingSphere()
   }, [items])
-  const group = finish === 'magenta' || finish === 'cyan' || finish === 'violet' ? finish : finish === 'cyanPanel' ? 'cyan' : null
+  const group = finish === 'magenta' || finish === 'cyan' || finish === 'violet' ? finish : finish === 'cyanPanel' || finish === 'cyanDetails' ? 'cyan' : finish === 'magentaSecondary' || finish.startsWith('bridge') ? 'magenta' : finish === 'violetSecondary' ? 'violet' : null
   return <instancedMesh name={`nocturne-${finish}`} ref={mesh} args={[undefined, undefined, items.length]}>
     <boxGeometry args={[1, 1, 1]} />
     <meshStandardMaterial {...finishes[finish]} color={group ? '#070a0f' : finishes[finish].color}

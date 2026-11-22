@@ -1,0 +1,298 @@
+{
+  "geometry": "Six contiguous thirds exactly cover the two original diffuser footprints (Float32 tolerance2e-7); housings/approved cyan unchanged",
+  "manual": [
+    {
+      "name": "audio-idle",
+      "differingPixels": 0,
+      "maxChannelError": 0,
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-desktop-standard",
+      "differingPixels": 0,
+      "maxChannelError": 0,
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-desktop-low",
+      "differingPixels": 3,
+      "maxChannelError": 0.0117647,
+      "rawAE": "0.00784314 (6.72423e-09)"
+    },
+    {
+      "name": "manual-wide-standard",
+      "differingPixels": 0,
+      "maxChannelError": 0,
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-wide-low",
+      "differingPixels": 3,
+      "maxChannelError": 0.0117647,
+      "rawAE": "0.00784314 (5.04317e-09)"
+    },
+    {
+      "name": "manual-portrait-standard",
+      "differingPixels": 0,
+      "maxChannelError": 0,
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-portrait-low",
+      "differingPixels": 0,
+      "maxChannelError": 0,
+      "rawAE": "0 (0)"
+    },
+    {
+      "name": "manual-panel-off",
+      "differingPixels": 0,
+      "maxChannelError": 0,
+      "rawAE": "0 (0)"
+    }
+  ],
+  "sections": [
+    {
+      "label": "before",
+      "name": "isolated",
+      "meanBridge": 0.09863883960324878,
+      "peakBridge": 0.4104364225265134,
+      "peakSection": null,
+      "bassPeak": 0.2791770417352796
+    },
+    {
+      "label": "before",
+      "name": "held-bass",
+      "meanBridge": 0.12859177711421296,
+      "peakBridge": 0.12863003078155122,
+      "peakSection": null,
+      "bassPeak": 0.09773264392834294
+    },
+    {
+      "label": "before",
+      "name": "dense",
+      "meanBridge": 0.320481891655865,
+      "peakBridge": 0.4144601334129596,
+      "peakSection": null,
+      "bassPeak": 0.2792357925320935
+    },
+    {
+      "label": "before",
+      "name": "mid-only",
+      "meanBridge": 0.0005280134335524623,
+      "peakBridge": 0.0011560846319698791,
+      "peakSection": null,
+      "bassPeak": 3.897199369284231e-10
+    },
+    {
+      "label": "before",
+      "name": "weak",
+      "meanBridge": 0.030771789077119475,
+      "peakBridge": 0.10118537214229587,
+      "peakSection": null,
+      "bassPeak": 0.0008157852724197611
+    },
+    {
+      "label": "before",
+      "name": "mixed",
+      "meanBridge": 0.14400866572152132,
+      "peakBridge": 0.41717416956084746,
+      "peakSection": null,
+      "bassPeak": 0.32106102347600873
+    },
+    {
+      "label": "before",
+      "name": "silence",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": null,
+      "bassPeak": 0
+    },
+    {
+      "label": "after",
+      "name": "isolated",
+      "meanBridge": 0.033032548502259014,
+      "peakBridge": 0.06916708842248766,
+      "peakSection": 0.3339075672198344,
+      "bassPeak": 0.2794469768828959
+    },
+    {
+      "label": "after",
+      "name": "held-bass",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 0.0978086464142568
+    },
+    {
+      "label": "after",
+      "name": "dense",
+      "meanBridge": 0.04018354503102907,
+      "peakBridge": 0.09399517879645336,
+      "peakSection": 0.385505393817917,
+      "bassPeak": 0.2794515956169143
+    },
+    {
+      "label": "after",
+      "name": "mid-only",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 3.900229078300263e-10
+    },
+    {
+      "label": "after",
+      "name": "weak",
+      "meanBridge": 0.018223679285964554,
+      "peakBridge": 0.0220094392338827,
+      "peakSection": 0.09696608266064202,
+      "bassPeak": 0.015481826425780967
+    },
+    {
+      "label": "after",
+      "name": "mixed",
+      "meanBridge": 0.0183445879637726,
+      "peakBridge": 0.062083034252548804,
+      "peakSection": 0.33166429190513247,
+      "bassPeak": 0.31806803476482054
+    },
+    {
+      "label": "after",
+      "name": "silence",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 0
+    },
+    {
+      "label": "reduced",
+      "name": "isolated",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 0.27919462708650794
+    },
+    {
+      "label": "reduced",
+      "name": "held-bass",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 0.09771871827753666
+    },
+    {
+      "label": "reduced",
+      "name": "dense",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 0.2791960060426497
+    },
+    {
+      "label": "reduced",
+      "name": "mid-only",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 3.896642958636247e-10
+    },
+    {
+      "label": "reduced",
+      "name": "weak",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 0.03968939790711695
+    },
+    {
+      "label": "reduced",
+      "name": "mixed",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 0.3210651573499875
+    },
+    {
+      "label": "reduced",
+      "name": "silence",
+      "meanBridge": 0,
+      "peakBridge": 0,
+      "peakSection": 0,
+      "bassPeak": 0
+    }
+  ],
+  "resources": {
+    "before": [
+      "{\"geometries\":108,\"textures\":6,\"calls\":83}"
+    ],
+    "after": [
+      "{\"geometries\":113,\"textures\":6,\"calls\":82}"
+    ],
+    "reduced": [
+      "{\"geometries\":113,\"textures\":6,\"calls\":82}"
+    ]
+  },
+  "wholeFrame": {
+    "before": {
+      "samples": 120,
+      "calls": [
+        190
+      ],
+      "triangles": [
+        25510
+      ],
+      "geometries": [
+        108
+      ],
+      "textures": [
+        6
+      ]
+    },
+    "after": {
+      "samples": 120,
+      "calls": [
+        194
+      ],
+      "triangles": [
+        25534
+      ],
+      "geometries": [
+        113
+      ],
+      "textures": [
+        6
+      ]
+    }
+  },
+  "direction": [
+    {
+      "section": 0,
+      "audioTime": 1.4,
+      "level": 0.28843452252214963
+    },
+    {
+      "section": 1,
+      "audioTime": 1.506667,
+      "level": 0.29317583251108753
+    },
+    {
+      "section": 2,
+      "audioTime": 1.634667,
+      "level": 0.3057381447215238
+    },
+    {
+      "section": 3,
+      "audioTime": 1.741333,
+      "level": 0.3138944290406
+    },
+    {
+      "section": 4,
+      "audioTime": 1.869333,
+      "level": 0.32493648954335946
+    },
+    {
+      "section": 5,
+      "audioTime": 1.976,
+      "level": 0.3339075672198344
+    }
+  ]
+}

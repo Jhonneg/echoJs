@@ -284,4 +284,10 @@ Documentation organization (2026-11-22): owner “yes” approves the proposed s
 
 ## Noctune 2.0 — NT01–NT15
 
-The owner supplied the [master roadmap](NOCTUNE_MASTER_ROADMAP.md), [visual mapping](NOCTUNE_VISUAL_MAPPING.md) and [migration tracker](MUSIC_INTELLIGENCE_MIGRATION.md). NT01 audit/design is approved with “Please implement the plan”; NT02 is the current bounded implementation scope. Later phases follow sequentially with their required gates. Preserve the visually approved left cyan fixture and other landscapes. Actual status is in PROGRESS.md.
+The owner supplied the [master roadmap](NOCTUNE_MASTER_ROADMAP.md), [visual mapping](NOCTUNE_VISUAL_MAPPING.md) and [migration tracker](MUSIC_INTELLIGENCE_MIGRATION.md). NT01 audit/design is approved with “Please implement the plan”; NT02 and owner-authorized NT03 are implemented; NT04 migration baseline is approved by owner “proceed”; Owner-authorized NT05–NT08 magenta/midrange/bridge/violet choreography is implemented; grouped lighting review remains pending before NT09. Later phases follow sequentially with their required gates. Preserve the visually approved left cyan fixture and other landscapes. Actual status is in PROGRESS.md.
+
+
+Noctune NT07 checkpoint (2026-11-22): finite bridge travel implemented and technically verified; [review/evidence](reports/nocturne/NT07_BRIDGE_REVIEW.md). Existing two diffusers are segmented inside their original footprints; qualified MI low events trigger bounded travel without stacking. Owner grouped lighting/music/device acceptance remains pending. NT08 is next after owner continuation; no automatic next-phase approval.
+
+
+Noctune NT08 checkpoint (2026-11-22): localized violet treble response implemented and technically verified; [review/evidence](reports/nocturne/NT08_VIOLET_REVIEW.md). Existing geometry/colors are preserved in two side banks with restrained presence/air sustain and alternating finite high-event accents. Stop at the grouped NT05–NT08 owner lighting/music/device review gate. NT09 is not started.

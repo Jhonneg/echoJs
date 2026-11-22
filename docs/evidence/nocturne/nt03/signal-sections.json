@@ -1,0 +1,63 @@
+{
+  "sampleRate": 48000,
+  "duration": 16.5,
+  "sections": [
+    {
+      "start": 0,
+      "end": 1,
+      "label": "silence"
+    },
+    {
+      "start": 1,
+      "end": 3,
+      "label": "bass-only 110 Hz"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "label": "silence"
+    },
+    {
+      "start": 4,
+      "end": 6,
+      "label": "low-mid-only 450 Hz"
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "label": "silence"
+    },
+    {
+      "start": 7,
+      "end": 9,
+      "label": "high-mid sustain 1500 Hz"
+    },
+    {
+      "start": 9,
+      "end": 12.5,
+      "label": "high-mid sustain + short attacks 1500 Hz"
+    },
+    {
+      "start": 12.5,
+      "end": 13.5,
+      "label": "silence"
+    },
+    {
+      "start": 13.5,
+      "end": 15.5,
+      "label": "bass + high-mid mixed"
+    },
+    {
+      "start": 15.5,
+      "end": 16.5,
+      "label": "silence"
+    }
+  ],
+  "attacks": [
+    9.25,
+    9.8,
+    10.35,
+    10.9,
+    11.45
+  ]
+}

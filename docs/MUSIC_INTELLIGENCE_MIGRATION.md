@@ -1,6 +1,6 @@
 ECHO — Music Intelligence Migration Tracker
 
-Version: 1.2 · Prepared: 2026-11-22 · Status: NT01 approved; NT02 implemented; NT03 pending; audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
+Version: 1.8 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented, owner grouped lighting review pending; audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
 Destination: docs/MUSIC_INTELLIGENCE_MIGRATION.md
 Current execution scope: Noctune only. Future intention: remove shared legacy analysis after every consumer has migrated.
 
@@ -372,7 +372,7 @@ Known risks / blockers:
 Owner review decision:
 Next phase:
 
-Next action: review NT02 implementation evidence and continue with NT03 only after authorization. NT04 migration approval remains open.
+Next action: review NT08 and grouped NT05–NT08 lighting before authorizing NT09. NT04 migration baseline remains owner-approved; grouped lighting artistic approval is open.
 
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
@@ -392,3 +392,45 @@ The earlier inventory describes the pre-migration baseline. NT01 is approved; NT
 | Shared analysis and other scenes | Existing mixed/legacy paths | Retained, outside Nocturne migration |
 
 The full scene is not artistically signed off: NT03 consolidation, NT04 migration review and subsequent phases remain open. Full regression/device/music gates are not closed by NT02 browser smoke.
+
+
+## NT03 checkpoint — unified scene response
+
+Owner “procced” authorized NT03. `visualState.ts` owns the scene response, reads MI once per update and exposes named fixture channels, separate sustain/accent/final values, derived reflection-source levels and atmosphere weights. `reactivity.ts` and `cyanPanel.ts` now accept the same borrowed feature frame synchronously. LightingDriver only binds and applies final outputs. Main/secondary/bridge and original cyan outputs preserve NT02's shared curves/material batches until their artistic phases.
+
+[NT03 verification](reports/nocturne/NT03_VISUAL_STATE.md): 34 test files, lint/typecheck/build, 6,300 exact parity frames, generated browser delivery and pixel-identical Manual captures passed. NT03 implemented; NT04 owner migration review and later artistic/music/device gates remain pending. No legacy data consumer or new analysis path was introduced.
+
+
+## NT04 checkpoint — technical migration review passed
+
+Owner “procced” authorized NT04. [Review/evidence](reports/nocturne/NT04_MIGRATION_REVIEW.md) verifies six exact Manual quality/viewport pairs against pre-migration source, idle/off recovery, active generated playback across scenes, quality changes, pause/resume, disconnect/reconnect and reduced motion. All 85 source files unchanged during this phase. Existing legacy infrastructure remains for other scenes; Nocturne still has no legacy data fallback.
+
+The calibrated broad groups and atmosphere intentionally appear dimmer under the matched generated mix. Owner migration visual approval is pending; do not mark NT04 approved or begin NT05 yet. Native capture, real-song feel and target-device performance remain their later/manual gates.
+
+
+## NT05 checkpoint — main/secondary magenta choreography
+
+Owner “proceed” approves the NT04 migrated baseline and authorizes NT05. The unified visual state now calls a bounded magenta controller using MI six.bass/subBass and validated low onsets. Main sustained body and finite accent are separate; secondary fixtures use a lower/slower body; bridge remains the previous broad-low response. Original magenta geometry is rebinned into three material batches without transform changes. No second analyser or detector.
+
+[NT05 evidence](reports/nocturne/NT05_MAGENTA_REVIEW.md) includes normal/reduced generated playback and actual delivered brightness. 4,200 deterministic frames prove exact cyan/violet/bridge/atmosphere preservation; 82 other source files are unchanged. NT05 implemented, appearance/musical review pending. NT06 is next; other phases and native/device gates remain as recorded.
+
+
+## NT06 checkpoint — architectural midrange separation
+
+Owner “proceed” authorizes NT06 after NT05. 336 existing windows use a slow low/high-mid energy blend; 6 small panels use low-mid energy with a locally rise-qualified broad-mid accent. Approved left cyan controller/coefficients and its independent high-mid role remain unchanged. One bounded 64-sample scalar history; no new analysis or capture path.
+
+[NT06 verification](reports/nocturne/NT06_MIDRANGE_REVIEW.md) includes normal/reduced generated signals, actual material/point values, cyan-on matched Manual captures, exact transform preservation, 4,200 deterministic protected-output comparisons and 83 unchanged source files. NT06 implemented; appearance/musical approval and NT07/NT08 remain pending. No change to MI DSP or other landscapes.
+
+
+## NT07 checkpoint — finite bridge travel
+
+Owner “proceed” authorizes NT07 after NT06. Six contiguous sections within the two existing bridge diffusers consume only fresh qualified low onset events. One920ms sequence,1.04s start cooldown, no overlap/queue, proportional event-strength peak; reduced motion suppresses travel. Existing point light follows average delivered section brightness. Manual remains uniform. MI schema, DSP, capture and other landscapes are unchanged.
+
+[NT07 evidence](reports/nocturne/NT07_BRIDGE_REVIEW.md) contains generated-only before/after/reduced demonstrations, actual section material/point traces, preserved footprints and protected cyan,4,200 exact non-target output frames and84 protected source comparisons. Built-production static views and whole-frame cost are measured separately. Implemented; owner grouped lighting and device/music acceptance remain open. Next is NT08 after continuation.
+
+
+## NT08 checkpoint — localized violet high accents
+
+Owner “proceed” authorizes NT08 after NT07. The same borrowed MI frame supplies presence/air energy to a restrained violet body and existing high onset events to alternating right/left accents. Twelve strip transforms are unchanged; six per material bank, each with its existing spill light. One240 ms accent,400 ms cooldown, no queue/stacking. Reduced motion keeps slow sustain only. No new onset fields, FFT or analyser.
+
+[NT08 evidence](reports/nocturne/NT08_VIOLET_REVIEW.md) verifies independent actual material/point delivery, quiet/loud upper energy, isolated/dense high events, bass/low-mid isolation, silence and reduced motion.4,200 matched frames preserve every non-violet output and bridge section state;85 other source files are unchanged. Eight static Manual/idle/off pairs are pixel-identical; paired whole-frame counters quantify one extra material batch. NT08 implemented; grouped lighting acceptance and owner music/device checks remain pending before NT09.

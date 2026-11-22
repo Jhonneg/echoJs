@@ -1,0 +1,200 @@
+{
+  "label": "production",
+  "root": "/home/jonee/Work/echojs",
+  "checks": [
+    "Six matched Manual views plus idle/off and same generated mixed source",
+    "Active generated playback/currentTime/context/element preserved across all four scenes; quality changes retain Canvas",
+    "Manual values retained across scenes; reduced-motion Manual frames match despite pointer movement",
+    "Pause/resume, disconnect track/source-element release and closed context, file reconnect with one active context"
+  ],
+  "captures": [
+    {
+      "name": "audio-idle",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-desktop-standard",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-desktop-low",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1080,
+        607
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-wide-standard",
+      "width": 1920,
+      "height": 810,
+      "canvas": [
+        1920,
+        810
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-wide-low",
+      "width": 1920,
+      "height": 810,
+      "canvas": [
+        1440,
+        607
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-portrait-standard",
+      "width": 810,
+      "height": 1440,
+      "canvas": [
+        810,
+        1440
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-portrait-low",
+      "width": 810,
+      "height": 1440,
+      "canvas": [
+        607,
+        1080
+      ],
+      "audio": null
+    },
+    {
+      "name": "manual-panel-off",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": null
+    },
+    {
+      "name": "mixed-audio",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": {
+        "time": 5.517333,
+        "paused": false
+      }
+    },
+    {
+      "name": "zero-reactivity",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": {
+        "time": 8.44,
+        "paused": false
+      }
+    },
+    {
+      "name": "reduced-centered",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": {
+        "time": 10.018372,
+        "paused": false
+      }
+    },
+    {
+      "name": "reduced-pointer",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": {
+        "time": 11.384,
+        "paused": false
+      }
+    },
+    {
+      "name": "paused",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": {
+        "time": 12.109333,
+        "paused": true
+      }
+    },
+    {
+      "name": "disconnected",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": {
+        "time": 0,
+        "paused": true
+      }
+    },
+    {
+      "name": "reconnected",
+      "width": 1440,
+      "height": 810,
+      "canvas": [
+        1440,
+        810
+      ],
+      "audio": {
+        "time": 0.738667,
+        "paused": false
+      }
+    }
+  ],
+  "errors": [],
+  "contexts": [
+    {
+      "state": "closed",
+      "sampleRate": 96000
+    },
+    {
+      "state": "running",
+      "sampleRate": 96000
+    }
+  ],
+  "productionHooks": {
+    "mi": "undefined",
+    "review": "undefined"
+  },
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "status": "technical browser checks passed; owner migration appearance approval pending"
+}

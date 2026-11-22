@@ -1,0 +1,91 @@
+{
+  "rate": 48000,
+  "seconds": 20,
+  "sections": [
+    {
+      "start": 0,
+      "end": 1,
+      "label": "silence"
+    },
+    {
+      "start": 1,
+      "end": 3,
+      "label": "bass110Hz only"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "label": "low-mid450Hz only"
+    },
+    {
+      "start": 5,
+      "end": 7,
+      "label": "quiet presence4500Hz"
+    },
+    {
+      "start": 7,
+      "end": 9,
+      "label": "loud presence4500Hz"
+    },
+    {
+      "start": 9,
+      "end": 11,
+      "label": "isolated high8000Hz attacks9.2 and10.2s"
+    },
+    {
+      "start": 11,
+      "end": 14,
+      "label": "dense high8000Hz attacks every100ms"
+    },
+    {
+      "start": 14,
+      "end": 16,
+      "label": "sustained air12000Hz"
+    },
+    {
+      "start": 16,
+      "end": 18,
+      "label": "mixed frequencies and high attacks16.2 and17.2s"
+    },
+    {
+      "start": 18,
+      "end": 20,
+      "label": "silence"
+    }
+  ],
+  "attacks": [
+    9.2,
+    10.2,
+    11.1,
+    11.2,
+    11.299999999999999,
+    11.4,
+    11.5,
+    11.6,
+    11.7,
+    11.799999999999999,
+    11.9,
+    12,
+    12.1,
+    12.2,
+    12.3,
+    12.4,
+    12.5,
+    12.6,
+    12.7,
+    12.8,
+    12.9,
+    13,
+    13.1,
+    13.2,
+    13.3,
+    13.4,
+    13.5,
+    13.6,
+    13.7,
+    13.8,
+    13.9,
+    16.2,
+    17.2
+  ]
+}

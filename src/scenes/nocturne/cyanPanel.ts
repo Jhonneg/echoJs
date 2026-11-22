@@ -1,38 +1,26 @@
 import { clampSignal, smooth } from '../../audio/signal.ts'
-import { musicFeaturesFresh, type MusicFeatureReader } from '../../audio/musicFeatures.ts'
+import { musicFeaturesFresh, type MusicFeaturesV1 } from '../../audio/musicFeatures.ts'
 
 // Keep only scalar feature samples until the broad-mid onset detector emits its event.
 // No PCM or spectrum enters this scene controller.
 const HISTORY = 64
 export function createCyanPanelResponse() {
-  return { level: 0, sustained: 0, accent: 0, session: -1, sequence: 0, frame: -1,
+  return { level: 0, sustained: 0, sustainTarget: 0, accent: 0, session: -1, sequence: 0, frame: -1,
     cursor: 0, count: 0,
     times: new Float64Array(HISTORY), energies: new Float32Array(HISTORY), rises: new Float32Array(HISTORY) }
 }
 export type CyanPanelResponse = ReturnType<typeof createCyanPanelResponse>
-export function deliverCyanPanelLevel(material: { emissiveIntensity: number }, light: { intensity: number },
-  fullPointIntensity: number, level: number) {
-  material.emissiveIntensity = level * 1.3
-  light.intensity = level * fullPointIntensity
-}
-
-export function updateCyanPanelResponse(state: CyanPanelResponse, reader: MusicFeatureReader | undefined,
+export function updateCyanPanelResponse(state: CyanPanelResponse, view: MusicFeaturesV1,
   delta: number, nowSeconds: number, reactivity: number, reducedMotion: boolean) {
   const gain = clampSignal(reactivity)
-  if (!reader) {
-    state.level = state.sustained = state.accent = 0
-    state.count = 0
-    return state
-  }
-  const view = reader.read()
   if (state.session !== view.session) {
     state.session = view.session; state.sequence = view.sequence
     state.count = state.cursor = 0; state.frame = -1
-    state.level = state.sustained = state.accent = 0
+    state.level = state.sustained = state.sustainTarget = state.accent = 0
   }
   if (gain === 0) {
     state.sequence = view.sequence
-    state.level = state.sustained = state.accent = 0
+    state.level = state.sustained = state.sustainTarget = state.accent = 0
     state.count = 0; state.frame = -1
     return state
   }
@@ -53,9 +41,10 @@ export function updateCyanPanelResponse(state: CyanPanelResponse, reader: MusicF
     state.cursor = (index + 1) % HISTORY
     state.count = Math.min(HISTORY, state.count + 1)
   } else if (!fresh) {
-    state.count = 0
+    state.count = 0; state.frame = -1
   }
   const target = fresh ? .65 * clampSignal(highMid / .5) * gain : 0
+  state.sustainTarget = target
   state.sustained = smooth(state.sustained, target, dt,
     reducedMotion ? .8 : .06, reducedMotion ? 1.1 : .18)
   state.accent *= Math.exp(-dt / (reducedMotion ? .8 : .22))

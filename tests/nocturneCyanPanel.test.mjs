@@ -1,7 +1,8 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { createCyanPanelResponse, deliverCyanPanelLevel, updateCyanPanelResponse } from '../src/scenes/nocturne/cyanPanel.ts'
+import { createCyanPanelResponse, updateCyanPanelResponse } from '../src/scenes/nocturne/cyanPanel.ts'
 import { createNocturneResponse, updateNocturneResponse } from '../src/scenes/nocturne/reactivity.ts'
+import { applyNocturneVisualState } from '../src/scenes/nocturne/visualState.ts'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 
 function fixture() {
@@ -16,9 +17,10 @@ function fixture() {
     view.context = { intensity: overall }
     view.events = event ? [{ session: 1, sequence: ++view.sequence, band: 'mid',
       timeSeconds: time, emittedAtSeconds: time, strength: 1 }] : []
-    updateCyanPanelResponse(state, reader, 1 / 60, time, 1, false)
+    updateCyanPanelResponse(state, view, 1 / 60, time, 1, false)
     const material = { emissiveIntensity: NaN }, light = { intensity: NaN }
-    deliverCyanPanelLevel(material, light, 30, state.level)
+    applyNocturneVisualState({emitters:[{channel:'cyanPanel',material}],lights:[{channel:'cyanPanel',light,full:30}]},
+      {channels:{cyanPanel:{level:state.level}}})
     return { highMids, lowMids, overall, sustained: state.sustained, accent: state.accent,
       level: state.level, emissive: material.emissiveIntensity, pointLight: light.intensity }
   }
@@ -64,7 +66,7 @@ test('one-frame high-mid attack survives delayed broad-mid event emission', () =
   f.view.frame++; f.view.updatedAtSeconds += 1 / 60
   f.view.events = [{ session: 1, sequence: ++f.view.sequence, band: 'mid',
     timeSeconds: f.view.updatedAtSeconds - 9 / 60, emittedAtSeconds: f.view.updatedAtSeconds, strength: 1 }]
-  updateCyanPanelResponse(f.state, f.reader, 1 / 60, f.view.updatedAtSeconds, 1, false)
+  updateCyanPanelResponse(f.state, f.view, 1 / 60, f.view.updatedAtSeconds, 1, false)
   assert.ok(f.state.accent > .1)
   assert.ok(f.state.level > pulse.level)
 })
@@ -99,13 +101,13 @@ test('panel level ignores magenta final brightness and resets on stale/session/z
     store.publish({session: 1, sequence: 0, status: 'active', updatedAtSeconds: 1 + i / 60,
       sampleRate: 48000, fftSize: 2048, events: [], energy: {low: .5, mid: 0, high: 0, overall: .5, six: {}},
       context: {intensity: 0, brightness: 0, brightnessValid: false, activity: 0}})
-    updateNocturneResponse(magenta, store.reader, 'audio', { magenta: 0, cyan: 0, cyanPanel: 0, violet: 0 }, 1, false, 1 / 60, 1 + i / 60)
+    updateNocturneResponse(magenta, store.reader.read(), 'audio', { magenta: 0, cyan: 0, cyanPanel: 0, violet: 0 }, 1, false, 1 / 60, 1 + i / 60)
   }
   assert.ok(magenta.magenta > .6)
   assert.equal(f.state.level, panel)
-  updateCyanPanelResponse(f.state, f.reader, 1 / 60, f.view.updatedAtSeconds + .3, 1, false)
+  updateCyanPanelResponse(f.state, f.view, 1 / 60, f.view.updatedAtSeconds + .3, 1, false)
   assert.equal(f.state.accent, 0)
-  updateCyanPanelResponse(f.state, f.reader, 1 / 60, f.view.updatedAtSeconds + .3, 0, false)
+  updateCyanPanelResponse(f.state, f.view, 1 / 60, f.view.updatedAtSeconds + .3, 0, false)
   assert.equal(f.state.level, 0)
   f.view.session++
   f.step()
@@ -117,18 +119,18 @@ test('reduced motion keeps sustained light gradual and suppresses sharp accents'
   for (let i = 0; i < 20; i++) f.step()
   f.view.frame++; f.view.updatedAtSeconds += 1 / 60
   f.view.energy.six.highMids = .5
-  updateCyanPanelResponse(f.state, f.reader, 1 / 60, f.view.updatedAtSeconds, 1, true)
+  updateCyanPanelResponse(f.state, f.view, 1 / 60, f.view.updatedAtSeconds, 1, true)
   assert.ok(f.state.sustained > 0 && f.state.sustained < .02)
   f.view.events = [{ session: 1, sequence: ++f.view.sequence, band: 'mid',
     timeSeconds: f.view.updatedAtSeconds, emittedAtSeconds: f.view.updatedAtSeconds, strength: 1 }]
-  updateCyanPanelResponse(f.state, f.reader, 1 / 60, f.view.updatedAtSeconds, 1, true)
+  updateCyanPanelResponse(f.state, f.view, 1 / 60, f.view.updatedAtSeconds, 1, true)
   assert.equal(f.state.accent, 0)
 })
 
 test('repeated rendering of a feature frame does not fill the history', () => {
   const f = fixture(); f.step(.3)
   const count=f.state.count
-  for(let i=0;i<20;i++)updateCyanPanelResponse(f.state,f.reader,1/120,f.view.updatedAtSeconds+.05,1,false)
+  for(let i=0;i<20;i++)updateCyanPanelResponse(f.state,f.view,1/120,f.view.updatedAtSeconds+.05,1,false)
   assert.equal(f.state.count,count)
 })
 
@@ -137,8 +139,8 @@ test('zero/manual suppression consumes panel events before resuming Audio', () =
   for(let i=0;i<5;i++)f.step(.4)
   f.view.events=[{session:1,sequence:++f.view.sequence,band:'mid',timeSeconds:f.view.updatedAtSeconds,
     emittedAtSeconds:f.view.updatedAtSeconds,strength:1}]
-  updateCyanPanelResponse(f.state,f.reader,1/60,f.view.updatedAtSeconds,0,false)
+  updateCyanPanelResponse(f.state,f.view,1/60,f.view.updatedAtSeconds,0,false)
   assert.equal(f.state.sequence,f.view.sequence)
-  updateCyanPanelResponse(f.state,f.reader,1/60,f.view.updatedAtSeconds,1,false)
+  updateCyanPanelResponse(f.state,f.view,1/60,f.view.updatedAtSeconds,1,false)
   assert.equal(f.state.accent,0)
 })

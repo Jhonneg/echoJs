@@ -1,0 +1,51 @@
+{
+  "rate": 48000,
+  "seconds": 20,
+  "sections": [
+    {
+      "start": 0,
+      "end": 1,
+      "label": "silence"
+    },
+    {
+      "start": 1,
+      "end": 3,
+      "label": "bass110Hz only"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "label": "silence"
+    },
+    {
+      "start": 4,
+      "end": 6,
+      "label": "low-mid450Hz only"
+    },
+    {
+      "start": 6,
+      "end": 8,
+      "label": "high-mid1500Hz only"
+    },
+    {
+      "start": 8,
+      "end": 11,
+      "label": "low-mid sustain + four attacks"
+    },
+    {
+      "start": 11,
+      "end": 14,
+      "label": "stationary high mids + low-mid attacks"
+    },
+    {
+      "start": 14,
+      "end": 16,
+      "label": "bass + stationary high mids"
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "label": "silence release"
+    }
+  ]
+}

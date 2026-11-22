@@ -182,3 +182,27 @@ Crimson terrain resource ownership (VP05,2026-11-22): TerrainChunk memoizes a Bu
 Supersedes the historical N05 legacy bridge above for Nocturne. App passes the existing MusicFeatureReader into NocturneScene/LightingDriver; the scene no longer accepts AudioSignal. `reactivity.ts` consumes calibrated broad energy, discrete matching onset events and context intensity. `cyanPanel.ts` retains the independent high-mid curve/qualified event and now samples scalar history once per feature frame. Both consume suppressed events during Manual/zero/reduced states; sessions skip retained events. Numeric visual state stays outside React.
 
 LandscapeCanvas requires signal only for enabled camera tilt; Nocturne uses its explicitly disabled branch without a legacy prop. Shared audio controls use MI freshness/energy for Nocturne receiving/silent feedback while adapter states retain connection/playback ownership. Other landscapes and shared analysis remain intact. [Exact mappings and NT02 evidence](reports/nocturne/NT02_INTEGRATION.md); NT03/NT04 remain pending.
+
+## Nocturne NT03 — unified visual state
+
+LightingDriver owns one NocturneVisualState. Its update reads the MusicFeatureReader once, synchronously gives the borrowed view to broad/panel controllers, and publishes reusable named fixture envelopes (sustain target, event accent, final level), derived reflection-source values and final atmosphere color weights. Controllers retain only bounded numeric history and temporal cursors. The renderer adapter writes final emissive/point values and the driver copies colors to the existing gate/halo/fog; no component interprets feature bands or preview mode.
+
+Logical main/secondary magenta, original cyan and bridge outputs preserve the NT02 curves and existing material batching. Later artistic phases own material separation/choreography. [NT03 contract and evidence](reports/nocturne/NT03_VISUAL_STATE.md). No shared analysis, camera, geometry, capture or quality change.
+
+## Nocturne NT05 — independent magenta material groups
+
+The unified visual update passes its borrowed MI frame to magenta.ts. Bass/subBass sustain two separate body envelopes; fresh low onsets drive one finite main pulse with a scalar carried tail that prevents overlap notches. No detector, FFT or event-history pool is added. Main/secondary/bridge emitters are separate material batches with identical original instance transforms. Existing near spill binds to main and bridge spill retains its old broad response. Other channels, atmospheric weights and the physical planar reflection path are unchanged. [NT05 parameters/evidence](reports/nocturne/NT05_MAGENTA_REVIEW.md).
+
+## Nocturne NT06 — independent architectural cyan
+
+The same borrowed MI frame updates midrange.ts: a low/high-mid window envelope and a quicker low-mid small-panel body/qualified event accent. Its 64-slot scalar low-mid history does not read raw media. Approved cyanPanel.ts and magenta.ts remain unchanged. The original cyan batch is split into 336 windows and 6 small panels with identical instance transforms/material properties; final window/small-panel outputs bind to the existing 65/40 point lights. No shared audio contract, source, camera or reflection-pass change. [NT06 mapping/evidence](reports/nocturne/NT06_MIDRANGE_REVIEW.md).
+
+
+## Nocturne NT07 — finite bridge sections
+
+The single borrowed MI frame also updates bridge.ts: one bounded low-onset sequence over six reusable scalar section levels, no continuous phase or event queue. Contiguous thirds retain the two existing bridge diffuser footprints; six materials provide localized brightness with the existing point light driven by their mean. Manual fills sections uniformly; reduced/stale/zero/session guards suppress travel without replay. No additional lights, shadows, React state or shared analysis. [Parameters/evidence](reports/nocturne/NT07_BRIDGE_REVIEW.md).
+
+
+## Nocturne NT08 — localized violet banks
+
+The unified borrowed-frame update also calls violet.ts. Existing presence/air supply a restrained shared body; accepted high events alternate between two bounded bank envelopes with a400 ms global cooldown. The twelve unchanged strips are six right/six left instances in two materials; existing near/far points bind to their own final bank levels. Manual sets both uniformly, reduced motion keeps only slow sustain, and suppressed events are consumed without replay. No MI, geometry, camera, global atmosphere, reflection pass or other fixture-controller changes. [NT08 evidence](reports/nocturne/NT08_VIOLET_REVIEW.md).

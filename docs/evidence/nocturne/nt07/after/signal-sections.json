@@ -1,0 +1,73 @@
+{
+  "rate": 48000,
+  "seconds": 18,
+  "sections": [
+    {
+      "start": 0,
+      "end": 1,
+      "label": "silence"
+    },
+    {
+      "start": 1,
+      "end": 4,
+      "label": "isolated bass attacks110Hz at1.2 and2.7s"
+    },
+    {
+      "start": 4,
+      "end": 7,
+      "label": "held bass110Hz: no automatic cycling"
+    },
+    {
+      "start": 7,
+      "end": 11,
+      "label": "dense bass attacks every200ms: ignored during active sweep/cooldown"
+    },
+    {
+      "start": 11,
+      "end": 13,
+      "label": "mid1500Hz only: no bridge trigger"
+    },
+    {
+      "start": 13,
+      "end": 14,
+      "label": "weak bass attack110Hz at13.2s"
+    },
+    {
+      "start": 14,
+      "end": 16,
+      "label": "mixed110Hz +1500Hz with attacks14.2 and15.5s"
+    },
+    {
+      "start": 16,
+      "end": 18,
+      "label": "silence"
+    }
+  ],
+  "attacks": [
+    1.2,
+    2.7,
+    7.1,
+    7.3,
+    7.5,
+    7.699999999999999,
+    7.8999999999999995,
+    8.1,
+    8.3,
+    8.5,
+    8.7,
+    8.9,
+    9.1,
+    9.3,
+    9.5,
+    9.7,
+    9.9,
+    10.1,
+    10.3,
+    10.5,
+    10.7,
+    10.9,
+    13.2,
+    14.2,
+    15.5
+  ]
+}

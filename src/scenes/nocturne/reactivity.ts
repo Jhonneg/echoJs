@@ -1,14 +1,16 @@
 import { clampSignal, smooth } from '../../audio/signal.ts'
-import { musicFeaturesFresh, type MusicFeatureReader } from '../../audio/musicFeatures.ts'
+import { musicFeaturesFresh, type MusicFeaturesV1 } from '../../audio/musicFeatures.ts'
 import type { NocturneLighting, NocturneLightingMode } from './lighting.ts'
 
 export type NocturneResponse = Pick<NocturneLighting, 'magenta' | 'cyan' | 'violet'> & {
   atmosphere: number, session: number, sequence: number,
   accents: { magenta: number, cyan: number, violet: number },
+  sustainTargets: { magenta: number, cyan: number, violet: number },
 }
 export const createNocturneResponse = (): NocturneResponse => ({
   magenta: 0, cyan: 0, violet: 0, atmosphere: 0, session: -1, sequence: 0,
   accents: { magenta: 0, cyan: 0, violet: 0 },
+  sustainTargets: { magenta: 0, cyan: 0, violet: 0 },
 })
 const mappings = [
   ['magenta', 'low', 0.025, 0.18],
@@ -18,9 +20,8 @@ const mappings = [
 const settle = (value: number, target: number) => target === 0 && value < 0.001 ? 0 : value
 
 // Migration baseline only. Later choreography phases split the existing material groups.
-export function updateNocturneResponse(response: NocturneResponse, reader: MusicFeatureReader, mode: NocturneLightingMode,
+export function updateNocturneResponse(response: NocturneResponse, view: MusicFeaturesV1, mode: NocturneLightingMode,
   manual: NocturneLighting, reactivity: number, reducedMotion: boolean, delta: number, nowSeconds: number) {
-  const view = reader.read()
   const reset = response.session !== view.session
   if (reset) {
     Object.assign(response, createNocturneResponse())
@@ -42,6 +43,8 @@ export function updateNocturneResponse(response: NocturneResponse, reader: Music
       response.accents[group] = Math.max(response.accents[group], .3 * clampSignal(event.strength) * gain)
   }
   response.sequence = Math.max(response.sequence, view.sequence)
+  for (const [group, band] of mappings) response.sustainTargets[group] = enabled
+    ? .65 * clampSignal(view.energy[band] / .5) * gain : 0
   if (mode === 'manual') {
     for (const [group] of mappings) response[group] = clampSignal(manual[group])
     response.atmosphere = 0
@@ -51,9 +54,8 @@ export function updateNocturneResponse(response: NocturneResponse, reader: Music
     response.magenta = response.cyan = response.violet = response.atmosphere = 0
     return
   }
-  for (const [group, band, attack, release] of mappings) {
-    const sustain = enabled ? .65 * clampSignal(view.energy[band] / .5) * gain : 0
-    const target = clampSignal(sustain + response.accents[group])
+  for (const [group, , attack, release] of mappings) {
+    const target = clampSignal(response.sustainTargets[group] + response.accents[group])
     response[group] = settle(smooth(response[group], target, dt, reducedMotion ? .8 : attack, reducedMotion ? 1.1 : release), target)
     if (response.accents[group] < .001) response.accents[group] = 0
   }

@@ -1,12 +1,13 @@
-// NT02 generated-only integration review; never captures private media.
+// Nocturne generated-only integration review; never captures private media.
 import { spawn, spawnSync } from 'node:child_process'
 import { mkdtemp, writeFile, copyFile, readFile, mkdir, cp, symlink } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { createServer } from 'node:net'
 import assert from 'node:assert/strict'
-const repository=process.cwd(), temporary=await mkdtemp(join(tmpdir(),'echo-nt02-review-'))
-const root=join(temporary,'app'), output=join(repository,'docs/evidence/nocturne/nt02')
+const reduced=process.env.ECHO_NOCTURNE_REDUCED==='1'
+const repository=process.cwd(), temporary=await mkdtemp(join(tmpdir(),'echo-nocturne-review-'))
+const root=join(temporary,'app'), output=join(repository,'docs/evidence/nocturne',process.env.ECHO_NOCTURNE_LABEL || 'nt03')
 await mkdir(root);await mkdir(output,{recursive:true})
 for(const path of ['src','public','index.html','package.json','vite.config.ts'])await cp(join(repository,path),join(root,path),{recursive:true})
 await symlink(join(repository,'node_modules'),join(root,'node_modules'),'dir')
@@ -15,10 +16,10 @@ assert.equal(generated.status,0,generated.stderr)
 // Probes live in an isolated copy. Production source and analysis remain byte-identical.
 const driverPath=join(root,'src/scenes/nocturne/LightingDriver.tsx')
 let driver=await readFile(driverPath,'utf8')
-const probe="\n    ;(window as any).__nocturneReview = () => {\n      const view = musicFeatures?.read()\n      const panelTarget = bound.emitters.find(x => x.group === 'cyanPanel')!\n      const panelLight = bound.lights.find(x => x.group === 'cyanPanel')!\n      return { camera: camera.position.toArray(), resources: {geometries: gl.info.memory.geometries, textures: gl.info.memory.textures}, groups: {cyan: state.cyan, violet: state.violet, atmosphere: state.atmosphere}, now: performance.now() / 1000, feature: view ? {\n        session: view.session, frame: view.frame, status: view.status,\n        time: view.updatedAtSeconds, highMids: view.energy.six.highMids,\n        lowMids: view.energy.six.lowMids, bass: view.energy.six.bass,\n        overall: view.energy.overall, sequence: view.sequence,\n        recentEvents: view.events.slice(-4).map(e => ({sequence:e.sequence,band:e.band,time:e.timeSeconds,emitted:e.emittedAtSeconds,strength:e.strength}))\n      } : null, panel: { level: panel.current.level, sustained: panel.current.sustained,\n        accent: panel.current.accent, sequence: panel.current.sequence,\n        emissive: panelTarget.material.emissiveIntensity, point: panelLight.light.intensity },\n        magenta: { level: state.magenta, emissive: bound.emitters.find(x => x.group === 'magenta')!.material.emissiveIntensity,\n        points: bound.lights.filter(x => x.group === 'magenta').map(x => x.light.intensity) }\n      }\n    }\n"
-assert.ok(driver.includes('    applyLevels(bound, state, panelLevel)'))
+const probe="\n    ;(window as any).__nocturneReview = () => {\n      const view = musicFeatures.read()\n      const panelTarget = bound.emitters.find(x => x.channel === 'cyanPanel')!\n      const panelLight = bound.lights.find(x => x.channel === 'cyanPanel')!\n      return { camera: camera.position.toArray(), resources: {geometries: gl.info.memory.geometries, textures: gl.info.memory.textures},\n        groups: {cyan: state.channels.cyanWindows.level, violet: state.channels.violet.level, atmosphere: state.atmosphere.level},\n        now: performance.now() / 1000, feature: {\n          session: view.session, frame: view.frame, status: view.status,\n          time: view.updatedAtSeconds, highMids: view.energy.six.highMids,\n          lowMids: view.energy.six.lowMids, bass: view.energy.six.bass,\n          overall: view.energy.overall, sequence: view.sequence,\n          recentEvents: view.events.slice(-4).map(e => ({sequence:e.sequence,band:e.band,time:e.timeSeconds,emitted:e.emittedAtSeconds,strength:e.strength}))\n        }, panel: { level: state.channels.cyanPanel.level, sustained: state.panel.sustained,\n          accent: state.panel.accent, sequence: state.panel.sequence,\n          emissive: panelTarget.material.emissiveIntensity, point: panelLight.light.intensity },\n        magenta: { level: state.channels.magentaMain.level,\n          emissive: bound.emitters.find(x => x.channel === 'magentaMain')!.material.emissiveIntensity,\n          points: bound.lights.filter(x => x.channel === 'magentaMain' || x.channel === 'bridge').map(x => x.light.intensity) }\n      }\n    }\n"
+assert.ok(driver.includes('    applyNocturneVisualState(bound, state)'))
 driver=driver.replace('const scene = useThree(state => state.scene)','const {scene, camera, gl} = useThree()')
-driver=driver.replace('    applyLevels(bound, state, panelLevel)','    applyLevels(bound, state, panelLevel)'+probe)
+driver=driver.replace('    applyNocturneVisualState(bound, state)','    applyNocturneVisualState(bound, state)'+probe)
 await writeFile(driverPath,driver)
 const localPath=join(root,'src/audio/localFile.ts')
 await writeFile(localPath,(await readFile(localPath,'utf8')).replace('      element = current','      element = current\n      ;(window as any).__reviewAudio = current'))
@@ -36,10 +37,11 @@ try{
  const send=(method,params={})=>new Promise((resolve,reject)=>{const n=++id;pending.set(n,m=>m.error?reject(Error(JSON.stringify(m.error))):resolve(m.result));ws.send(JSON.stringify({id:n,method,params}));setTimeout(()=>{if(pending.delete(n))reject(Error(`${method} timed out`))},30000).unref()})
  const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,userGesture:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description);return r.result.value}
  const wait=async expression=>{for(let i=0;i<150;i++){if(await evaluate(expression))return;await pause(100)}throw Error(`Timed out ${expression}`)}
- await send('Runtime.enable');await send('Page.enable');await send('DOM.enable');await send('Emulation.setDeviceMetricsOverride',{width:1440,height:810,deviceScaleFactor:1,mobile:false})
+ await send('Runtime.enable');await send('Page.enable');await send('DOM.enable');await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:reduced?'reduce':'no-preference'}]});await send('Emulation.setDeviceMetricsOverride',{width:1440,height:810,deviceScaleFactor:1,mobile:false})
  await send('Page.navigate',{url:`http://127.0.0.1:${port}/`});await wait('!!document.getElementById("scene-select")')
  await evaluate(`document.querySelector('details.audio-chooser').open=true;document.getElementById('scene-select').value='nocturne';document.getElementById('scene-select').dispatchEvent(new Event('change',{bubbles:true}));true`)
  await wait('!!window.__nocturneReview')
+ assert.equal(await evaluate('matchMedia("(prefers-reduced-motion: reduce)").matches'),reduced)
  const dom=await send('DOM.getDocument',{depth:-1});const file=await send('DOM.querySelector',{nodeId:dom.root.nodeId,selector:'input[type=file]'})
  assert.ok(file.nodeId);await send('DOM.setFileInputFiles',{nodeId:file.nodeId,files:['/tmp/echo-nocturne-generated-review.wav']})
  await wait('!!document.querySelector(".scene-player button")')
@@ -65,8 +67,9 @@ try{
  assert.ok(Math.max(...section(1.3,2.8).map(x=>x.review.magenta.level))>.1)
  assert.ok(section(1.3,2.8).every(x=>x.review.panel.level<.001))
  assert.ok(section(4.3,5.8).every(x=>x.review.panel.accent===0))
- assert.ok(section(7.5,8.8).every(x=>x.review.panel.level>.12&&x.review.magenta.level<.001))
- assert.ok(Math.max(...section(9.2,12.3).map(x=>x.review.panel.accent))>.02)
+ assert.ok(section(7.5,8.8).every(x=>x.review.panel.level>(reduced?.04:.12)&&x.review.magenta.level<(reduced?.01:.001)))
+ if(reduced)assert.ok(trace.every(x=>x.review.panel.accent===0))
+ else assert.ok(Math.max(...section(9.2,12.3).map(x=>x.review.panel.accent))>.02)
  await evaluate('window.__originalReviewAudio=window.__reviewAudio')
  async function select(id,value){await evaluate(`document.getElementById(${JSON.stringify(id)}).value=${JSON.stringify(value)};document.getElementById(${JSON.stringify(id)}).dispatchEvent(new Event('change',{bubbles:true}));true`);await pause(200)}
  for(const scene of ['bloom','lavender-peaks','crimson-horizon','nocturne']){
@@ -87,7 +90,7 @@ try{
  const audioStart=frames[0].time
  const ff=spawnSync('ffmpeg',['-y','-loglevel','error','-f','concat','-safe','0','-i',join(temporary,'frames.txt'),'-ss',String(audioStart),'-i','/tmp/echo-nocturne-generated-review.wav','-map','0:v:0','-map','1:a:0','-c:v','libx264','-crf','22','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-shortest','-movflags','+faststart',join(output,'generated-music-demo.mp4')],{encoding:'utf8'})
  assert.equal(ff.status,0,ff.stderr)
- await writeFile(join(output,'trace.json'),JSON.stringify({source:'generated WAV through unmodified production analysis and app local-file path; temporary isolated-copy probes only',fixture:'/tmp/echo-nocturne-generated-review.wav',sections:JSON.parse(await readFile('/tmp/echo-nocturne-generated-review-sections.json','utf8')),frames,trace,errors,browser:await evaluate('navigator.userAgent')},null,2))
+ await writeFile(join(output,'trace.json'),JSON.stringify({reducedMotion:reduced,source:'generated WAV through unmodified production analysis and app local-file path; temporary isolated-copy probes only',fixture:'/tmp/echo-nocturne-generated-review.wav',sections:JSON.parse(await readFile('/tmp/echo-nocturne-generated-review-sections.json','utf8')),frames,trace,errors,browser:await evaluate('navigator.userAgent')},null,2))
  await copyFile('/tmp/echo-nocturne-generated-review-sections.json',join(output,'signal-sections.json'))
  assert.deepEqual(errors,[]);success=true;console.log('PASS',temporary,frames.length,'frames',trace.length,'samples')
 }catch(e){console.error('FAIL',e);throw e}finally{ws?.close();browser.kill();server.kill();if(!success)console.log('partial temp',temporary)}
