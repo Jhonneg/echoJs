@@ -7,6 +7,7 @@ import { Component, useEffect, useRef, useSyncExternalStore, type ReactNode, typ
 import { useFrame } from '@react-three/fiber'
 import { createViewMotion, updateViewMotion } from '../crimson-horizon/cameraMotion'
 import type { AudioSignal } from '../../audio/signal'
+import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import type { GraphicsQuality } from '../../engine/quality'
 import { ArchitectureDetails } from './ArchitectureDetails'
@@ -71,7 +72,7 @@ class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean
   static getDerivedStateFromError() { return { failed: true } }
   render() { return this.state.failed ? <p className="nocturne-fallback">Nocturne could not render. Choose another landscape or reload.</p> : this.props.children }
 }
-export default function NocturneScene({ signal, quality, lighting, lightingMode, reactivity }: { signal: AudioSignal, quality: GraphicsQuality, lighting: NocturneLighting, lightingMode: NocturneLightingMode, reactivity: number }) {
+export default function NocturneScene({ signal, musicFeatures, quality, lighting, lightingMode, reactivity }: { signal: AudioSignal, musicFeatures?: MusicFeatureReader, quality: GraphicsQuality, lighting: NocturneLighting, lightingMode: NocturneLightingMode, reactivity: number }) {
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
   const target = useRef({ x: 0, y: 0 })
   useEffect(() => {
@@ -101,10 +102,11 @@ export default function NocturneScene({ signal, quality, lighting, lightingMode,
           <pointLight name="magenta-bridge-spill" position={[0, 3.9, -7.1]} color={NOCTURNE_LIGHT_COLORS.magenta} intensity={40} distance={13} decay={2} />
           <pointLight name="cyan-window-spill" position={[-2.1, 5.8, 0.1]} color={NOCTURNE_LIGHT_COLORS.cyan} intensity={65} distance={14} decay={2} />
           <pointLight name="cyan-panel-spill" position={[2.1, 4.75, -15]} color={NOCTURNE_LIGHT_COLORS.cyan} intensity={40} distance={12} decay={2} />
+          <pointLight name="cyanPanel-left-spill" position={[-2.35, 2.65, -7.3]} color={NOCTURNE_LIGHT_COLORS.cyan} intensity={30} distance={9} decay={2} />
           <pointLight name="violet-near-spill" position={[2.6, 4.8, -4.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={12} distance={7} decay={2} />
           <pointLight name="violet-far-spill" position={[-2.6, 4.8, -14.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={12} distance={7} decay={2} />
         </group>
-        <LightingDriver signal={signal} mode={lightingMode} manual={lighting} reactivity={reactivity} reducedMotion={reducedMotion} />
+        <LightingDriver signal={signal} musicFeatures={musicFeatures} mode={lightingMode} manual={lighting} reactivity={reactivity} reducedMotion={reducedMotion} />
       </LandscapeCanvas>
     </SceneBoundary>
     <div className="nocturne-brand" aria-hidden="true">ECHO</div>

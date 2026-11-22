@@ -1,0 +1,34 @@
+{
+  "label": "review",
+  "root": "/home/jonee/Work/echojs",
+  "shots": [
+    {
+      "name": "cyan-off.png",
+      "state": {
+        "scene": "Nocturne",
+        "sliders": {
+          "nocturne-magenta": "1",
+          "nocturne-cyan": "0",
+          "nocturne-cyanPanel": "0",
+          "nocturne-violet": "0"
+        },
+        "canvas": true
+      }
+    },
+    {
+      "name": "cyan-on.png",
+      "state": {
+        "scene": "Nocturne",
+        "sliders": {
+          "nocturne-magenta": "1",
+          "nocturne-cyan": "0",
+          "nocturne-cyanPanel": "1",
+          "nocturne-violet": "0"
+        },
+        "canvas": true
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+}

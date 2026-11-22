@@ -1,7 +1,7 @@
 import { clampSignal, smooth, type AudioSignal } from '../../audio/signal.ts'
 import type { NocturneLighting, NocturneLightingMode } from './lighting.ts'
 
-export type NocturneResponse = NocturneLighting & { atmosphere: number }
+export type NocturneResponse = Pick<NocturneLighting, 'magenta' | 'cyan' | 'violet'> & { atmosphere: number }
 export const createNocturneResponse = (): NocturneResponse => ({ magenta: 0, cyan: 0, violet: 0, atmosphere: 0 })
 const mappings = [
   ['magenta', 'bass', 0.025, 0.18],

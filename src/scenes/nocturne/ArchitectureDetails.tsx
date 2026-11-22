@@ -4,18 +4,19 @@ import { CatmullRomCurve3, InstancedMesh, Object3D, Vector3 } from 'three'
 
 type Triple = [number, number, number]
 type Part = { position: Triple, size: Triple, rotation?: Triple }
-type Finish = 'steel' | 'frame' | 'recess' | 'cyan' | 'magenta' | 'violet' | 'asphalt'
+type Finish = 'steel' | 'frame' | 'recess' | 'cyan' | 'cyanPanel' | 'magenta' | 'violet' | 'asphalt'
 const finishes: Record<Finish, { color: string, roughness: number, metalness: number }> = {
   steel: { color: '#343e46', roughness: 0.72, metalness: 0.45 },
   frame: { color: '#222c34', roughness: 0.8, metalness: 0.35 },
   recess: { color: '#090e13', roughness: 0.95, metalness: 0.1 },
   cyan: { color: '#1c303a', roughness: 0.42, metalness: 0.25 },
+  cyanPanel: { color: '#1c303a', roughness: 0.42, metalness: 0.25 },
   magenta: { color: '#30343c', roughness: 0.6, metalness: 0.35 },
   violet: { color: '#13121a', roughness: 0.7, metalness: 0.1 },
   asphalt: { color: '#151c21', roughness: 0.98, metalness: 0 },
 }
 // All repeated facade parts share a unit box and one material per finish.
-const parts: Record<Finish, Part[]> = { steel: [], frame: [], recess: [], cyan: [], magenta: [], violet: [], asphalt: [] }
+const parts: Record<Finish, Part[]> = { steel: [], frame: [], recess: [], cyan: [], cyanPanel: [], magenta: [], violet: [], asphalt: [] }
 function box(finish: Finish, position: Triple, size: Triple, rotation?: Triple) {
   parts[finish].push({ position, size, rotation })
 }
@@ -73,6 +74,10 @@ for (const side of [-1, 1]) {
     box('frame', [side * 2.85, 0.245, 4 - i * 2], [0.3, 0.012, 0.035])
   }
 }
+// One slim, recessed left fixture. Its lower position brings the wet ground into the spill.
+wall(-1, 'recess', 0.12, 2.65, -7.3, [0.07, 2.05, 0.78])
+wall(-1, 'frame', 0.2, 2.65, -7.3, [0.25, 1.95, 0.7])
+wall(-1, 'cyanPanel', 0.38, 2.65, -7.3, [0.05, 1.75, 0.5])
 // Subtle asphalt repair seams, without reflective puddles or texture assets.
 for (let i = 0; i < 16; i++) {
   box('asphalt', [Math.sin(i * 2.7) * 1.5, 0.003, 3 - i * 3.3], [1.1 + (i % 3) * 0.3, 0.006, 0.75 + (i % 2) * 0.3], [0, i * 0.61, 0])
@@ -103,7 +108,7 @@ function Boxes({ finish }: { finish: Finish }) {
     mesh.current.computeBoundingBox()
     mesh.current.computeBoundingSphere()
   }, [items])
-  const group = finish === 'magenta' || finish === 'cyan' || finish === 'violet' ? finish : null
+  const group = finish === 'magenta' || finish === 'cyan' || finish === 'violet' ? finish : finish === 'cyanPanel' ? 'cyan' : null
   return <instancedMesh name={`nocturne-${finish}`} ref={mesh} args={[undefined, undefined, items.length]}>
     <boxGeometry args={[1, 1, 1]} />
     <meshStandardMaterial {...finishes[finish]} color={group ? '#070a0f' : finishes[finish].color}

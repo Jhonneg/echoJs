@@ -160,6 +160,10 @@ Owner approved N01 and subsequently N02 on 2026-11-16 ("lets move" after the bou
 - **N05 — Audio integration:** existing feature contract/boundaries, independently smoothed light groups and overall atmospheric response; no architecture/camera movement.
 - **N06 — Performance and integration:** responsive behavior, bounded resources, source continuity and target hardware evidence.
 
+Owner's 2026-11-22 request authorizes a bounded Nocturne Music Intelligence audit and one left cyan panel integration. Audit the actual existing mappings and measured brightness first; then add an independent panel using validated high-mid energy and onset-qualified accents. Preserve the other lighting groups and shared Music Intelligence implementation. Test isolated and mixed synthetic feature cases, compare delivered fixture values, and report browser/music-review limits. This does not authorize a general Nocturne lighting redesign or the next milestone.
+
+Owner visually approved the resulting single fixture and requested a review-only live music-reactivity check: fixed-camera generated or permitted audio, time-aligned high-mid sustain/attacks, bass/low-mid isolation, silence and magenta independence. Report findings and any scene-local mapping proposal before further implementation. No geometry, other fixture, global-lighting or Music Intelligence change is authorized by this review request.
+
 N01 follow-up (2026-11-16): owner approved Crimson-style mouse camera with bounded lateral/vertical parallax, smooth return and reduced-motion centering. This supersedes the fixed-view requirement only for pointer interaction; no forward travel or later phase authorized.
 
 ## Music Intelligence — shared audio interpretation

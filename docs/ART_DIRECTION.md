@@ -103,6 +103,8 @@ Nocturne smooth-response clarification (2026-11-17): owner requested quick smoot
 
 Owner response acceptance (2026-11-17): “tested, looks good” accepts the current quick smooth lighting response and brighter idle appearance. Retain this treatment as the Nocturne baseline; further response tuning requires a new owner request.
 
+Nocturne left cyan fixture (2026-11-22): owner visually approves the single recessed vertical fixture, local wall spill and wet-pavement reflection at the accepted left near-midground placement. Preserve its geometry, color, camera relationship and lighting footprint. Music-reactivity review is separate; no additional fixture or global-lighting change is authorized by visual approval.
+
 ## Planned Crimson-first animation expansion — 2026-11-18
 
 Owner chose expressive/controlled expansion while retaining each landscape's atmosphere. [ANIMATION_REFINEMENT.md](ANIMATION_REFINEMENT.md) records Crimson as pilot with subtle coherent bank deformation, localized ridge/sun accents and slow haze, subject to feature-quality and scene-specific reviews. Preserve the burgundy valley, nightshade sky, pink sun, open corridor and camera character. Other landscapes retain their current identities, including Lavender's silhouettes/shared depth motion and Nocturne's stationary industry/smooth illumination/idle readability. This is a design direction, not evidence of newly implemented or visually accepted effects; no current palette, material or geometry baseline changes here.

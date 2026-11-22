@@ -10,8 +10,8 @@ export function NocturneLightingControls({ lighting, onChange, mode, onMode }: {
     </label>
     <p className="source-help">{mode === 'audio' ? 'Lights follow the music with quick, smooth transitions. The distant gate and haze follow overall intensity.' : 'Isolate each group independently of audio. Manual values are kept when switching modes.'}</p>
     {mode === 'manual' && <>
-    {(['magenta', 'cyan', 'violet'] as const).map(group => <label key={group} className="slider-control">
-      {{ magenta: 'Magenta · fixtures and bridge', cyan: 'Cyan · windows and panels', violet: 'Violet · strips and accents' }[group]}
+    {(['magenta', 'cyan', 'cyanPanel', 'violet'] as const).map(group => <label key={group} className="slider-control">
+      {{ magenta: 'Magenta · fixtures and bridge', cyan: 'Cyan · windows and existing panels', cyanPanel: 'Cyan · left panel', violet: 'Violet · strips and accents' }[group]}
       <input id={`nocturne-${group}`} type="range" min="0" max="1" step="0.01" value={lighting[group]}
         onChange={event => onChange({ ...lighting, [group]: Number(event.currentTarget.value) })} />
       <output htmlFor={`nocturne-${group}`}>{Math.round(lighting[group] * 100)}%</output>

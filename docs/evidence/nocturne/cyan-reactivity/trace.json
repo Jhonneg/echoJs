@@ -1,0 +1,7312 @@
+{
+  "source": "generated WAV through unmodified production analysis and app local-file path; temporary isolated-copy probes only",
+  "fixture": "/tmp/echo-nocturne-generated-review.wav",
+  "sections": {
+    "sampleRate": 48000,
+    "duration": 16.5,
+    "sections": [
+      {
+        "start": 0,
+        "end": 1,
+        "label": "silence"
+      },
+      {
+        "start": 1,
+        "end": 3,
+        "label": "bass-only 110 Hz"
+      },
+      {
+        "start": 3,
+        "end": 4,
+        "label": "silence"
+      },
+      {
+        "start": 4,
+        "end": 6,
+        "label": "low-mid-only 450 Hz"
+      },
+      {
+        "start": 6,
+        "end": 7,
+        "label": "silence"
+      },
+      {
+        "start": 7,
+        "end": 9,
+        "label": "high-mid sustain 1500 Hz"
+      },
+      {
+        "start": 9,
+        "end": 12.5,
+        "label": "high-mid sustain + short attacks 1500 Hz"
+      },
+      {
+        "start": 12.5,
+        "end": 13.5,
+        "label": "silence"
+      },
+      {
+        "start": 13.5,
+        "end": 15.5,
+        "label": "bass + high-mid mixed"
+      },
+      {
+        "start": 15.5,
+        "end": 16.5,
+        "label": "silence"
+      }
+    ],
+    "attacks": [
+      9.25,
+      9.8,
+      10.35,
+      10.9,
+      11.45
+    ]
+  },
+  "frames": [
+    {
+      "name": "frame-0000.jpg",
+      "time": 0.066667
+    },
+    {
+      "name": "frame-0001.jpg",
+      "time": 0.194667
+    },
+    {
+      "name": "frame-0002.jpg",
+      "time": 0.343643
+    },
+    {
+      "name": "frame-0003.jpg",
+      "time": 0.472
+    },
+    {
+      "name": "frame-0004.jpg",
+      "time": 0.6
+    },
+    {
+      "name": "frame-0005.jpg",
+      "time": 0.728
+    },
+    {
+      "name": "frame-0006.jpg",
+      "time": 0.87673
+    },
+    {
+      "name": "frame-0007.jpg",
+      "time": 1.005333
+    },
+    {
+      "name": "frame-0008.jpg",
+      "time": 1.133333
+    },
+    {
+      "name": "frame-0009.jpg",
+      "time": 1.261333
+    },
+    {
+      "name": "frame-0010.jpg",
+      "time": 1.410267
+    },
+    {
+      "name": "frame-0011.jpg",
+      "time": 1.538667
+    },
+    {
+      "name": "frame-0012.jpg",
+      "time": 1.666667
+    },
+    {
+      "name": "frame-0013.jpg",
+      "time": 1.794667
+    },
+    {
+      "name": "frame-0014.jpg",
+      "time": 1.94381
+    },
+    {
+      "name": "frame-0015.jpg",
+      "time": 2.072
+    },
+    {
+      "name": "frame-0016.jpg",
+      "time": 2.2
+    },
+    {
+      "name": "frame-0017.jpg",
+      "time": 2.328
+    },
+    {
+      "name": "frame-0018.jpg",
+      "time": 2.47688
+    },
+    {
+      "name": "frame-0019.jpg",
+      "time": 2.605333
+    },
+    {
+      "name": "frame-0020.jpg",
+      "time": 2.733333
+    },
+    {
+      "name": "frame-0021.jpg",
+      "time": 2.861333
+    },
+    {
+      "name": "frame-0022.jpg",
+      "time": 3.010114
+    },
+    {
+      "name": "frame-0023.jpg",
+      "time": 3.138667
+    },
+    {
+      "name": "frame-0024.jpg",
+      "time": 3.266667
+    },
+    {
+      "name": "frame-0025.jpg",
+      "time": 3.394667
+    },
+    {
+      "name": "frame-0026.jpg",
+      "time": 3.542943
+    },
+    {
+      "name": "frame-0027.jpg",
+      "time": 3.672
+    },
+    {
+      "name": "frame-0028.jpg",
+      "time": 3.8
+    },
+    {
+      "name": "frame-0029.jpg",
+      "time": 3.928
+    },
+    {
+      "name": "frame-0030.jpg",
+      "time": 4.076509
+    },
+    {
+      "name": "frame-0031.jpg",
+      "time": 4.269333
+    },
+    {
+      "name": "frame-0032.jpg",
+      "time": 4.397333
+    },
+    {
+      "name": "frame-0033.jpg",
+      "time": 4.525333
+    },
+    {
+      "name": "frame-0034.jpg",
+      "time": 4.674667
+    },
+    {
+      "name": "frame-0035.jpg",
+      "time": 4.802667
+    },
+    {
+      "name": "frame-0036.jpg",
+      "time": 4.930667
+    },
+    {
+      "name": "frame-0037.jpg",
+      "time": 5.058667
+    },
+    {
+      "name": "frame-0038.jpg",
+      "time": 5.208
+    },
+    {
+      "name": "frame-0039.jpg",
+      "time": 5.336
+    },
+    {
+      "name": "frame-0040.jpg",
+      "time": 5.464
+    },
+    {
+      "name": "frame-0041.jpg",
+      "time": 5.592
+    },
+    {
+      "name": "frame-0042.jpg",
+      "time": 5.741333
+    },
+    {
+      "name": "frame-0043.jpg",
+      "time": 5.869333
+    },
+    {
+      "name": "frame-0044.jpg",
+      "time": 5.997333
+    },
+    {
+      "name": "frame-0045.jpg",
+      "time": 6.125333
+    },
+    {
+      "name": "frame-0046.jpg",
+      "time": 6.274667
+    },
+    {
+      "name": "frame-0047.jpg",
+      "time": 6.402667
+    },
+    {
+      "name": "frame-0048.jpg",
+      "time": 6.530667
+    },
+    {
+      "name": "frame-0049.jpg",
+      "time": 6.658667
+    },
+    {
+      "name": "frame-0050.jpg",
+      "time": 6.808
+    },
+    {
+      "name": "frame-0051.jpg",
+      "time": 6.936
+    },
+    {
+      "name": "frame-0052.jpg",
+      "time": 7.064
+    },
+    {
+      "name": "frame-0053.jpg",
+      "time": 7.192
+    },
+    {
+      "name": "frame-0054.jpg",
+      "time": 7.341333
+    },
+    {
+      "name": "frame-0055.jpg",
+      "time": 7.469333
+    },
+    {
+      "name": "frame-0056.jpg",
+      "time": 7.597333
+    },
+    {
+      "name": "frame-0057.jpg",
+      "time": 7.746602
+    },
+    {
+      "name": "frame-0058.jpg",
+      "time": 7.874667
+    },
+    {
+      "name": "frame-0059.jpg",
+      "time": 8.002667
+    },
+    {
+      "name": "frame-0060.jpg",
+      "time": 8.130667
+    },
+    {
+      "name": "frame-0061.jpg",
+      "time": 8.258667
+    },
+    {
+      "name": "frame-0062.jpg",
+      "time": 8.408
+    },
+    {
+      "name": "frame-0063.jpg",
+      "time": 8.536
+    },
+    {
+      "name": "frame-0064.jpg",
+      "time": 8.664
+    },
+    {
+      "name": "frame-0065.jpg",
+      "time": 8.792
+    },
+    {
+      "name": "frame-0066.jpg",
+      "time": 8.941333
+    },
+    {
+      "name": "frame-0067.jpg",
+      "time": 9.069333
+    },
+    {
+      "name": "frame-0068.jpg",
+      "time": 9.197333
+    },
+    {
+      "name": "frame-0069.jpg",
+      "time": 9.344511
+    },
+    {
+      "name": "frame-0070.jpg",
+      "time": 9.474667
+    },
+    {
+      "name": "frame-0071.jpg",
+      "time": 9.602667
+    },
+    {
+      "name": "frame-0072.jpg",
+      "time": 9.730667
+    },
+    {
+      "name": "frame-0073.jpg",
+      "time": 9.858667
+    },
+    {
+      "name": "frame-0074.jpg",
+      "time": 10.008
+    },
+    {
+      "name": "frame-0075.jpg",
+      "time": 10.136
+    },
+    {
+      "name": "frame-0076.jpg",
+      "time": 10.264
+    },
+    {
+      "name": "frame-0077.jpg",
+      "time": 10.392
+    },
+    {
+      "name": "frame-0078.jpg",
+      "time": 10.541333
+    },
+    {
+      "name": "frame-0079.jpg",
+      "time": 10.669333
+    },
+    {
+      "name": "frame-0080.jpg",
+      "time": 10.797333
+    },
+    {
+      "name": "frame-0081.jpg",
+      "time": 10.946667
+    },
+    {
+      "name": "frame-0082.jpg",
+      "time": 11.074667
+    },
+    {
+      "name": "frame-0083.jpg",
+      "time": 11.202667
+    },
+    {
+      "name": "frame-0084.jpg",
+      "time": 11.330667
+    },
+    {
+      "name": "frame-0085.jpg",
+      "time": 11.466729
+    },
+    {
+      "name": "frame-0086.jpg",
+      "time": 11.608
+    },
+    {
+      "name": "frame-0087.jpg",
+      "time": 11.736
+    },
+    {
+      "name": "frame-0088.jpg",
+      "time": 11.864
+    },
+    {
+      "name": "frame-0089.jpg",
+      "time": 11.992
+    },
+    {
+      "name": "frame-0090.jpg",
+      "time": 12.141333
+    },
+    {
+      "name": "frame-0091.jpg",
+      "time": 12.269333
+    },
+    {
+      "name": "frame-0092.jpg",
+      "time": 12.397333
+    },
+    {
+      "name": "frame-0093.jpg",
+      "time": 12.525333
+    },
+    {
+      "name": "frame-0094.jpg",
+      "time": 12.674667
+    },
+    {
+      "name": "frame-0095.jpg",
+      "time": 12.802667
+    },
+    {
+      "name": "frame-0096.jpg",
+      "time": 12.930667
+    },
+    {
+      "name": "frame-0097.jpg",
+      "time": 13.058667
+    },
+    {
+      "name": "frame-0098.jpg",
+      "time": 13.208
+    },
+    {
+      "name": "frame-0099.jpg",
+      "time": 13.336
+    },
+    {
+      "name": "frame-0100.jpg",
+      "time": 13.464
+    },
+    {
+      "name": "frame-0101.jpg",
+      "time": 13.592
+    },
+    {
+      "name": "frame-0102.jpg",
+      "time": 13.741333
+    },
+    {
+      "name": "frame-0103.jpg",
+      "time": 13.869333
+    },
+    {
+      "name": "frame-0104.jpg",
+      "time": 13.997333
+    },
+    {
+      "name": "frame-0105.jpg",
+      "time": 14.125333
+    },
+    {
+      "name": "frame-0106.jpg",
+      "time": 14.274667
+    },
+    {
+      "name": "frame-0107.jpg",
+      "time": 14.402667
+    },
+    {
+      "name": "frame-0108.jpg",
+      "time": 14.530667
+    },
+    {
+      "name": "frame-0109.jpg",
+      "time": 14.658667
+    },
+    {
+      "name": "frame-0110.jpg",
+      "time": 14.808
+    },
+    {
+      "name": "frame-0111.jpg",
+      "time": 14.936
+    },
+    {
+      "name": "frame-0112.jpg",
+      "time": 15.064
+    },
+    {
+      "name": "frame-0113.jpg",
+      "time": 15.211369
+    },
+    {
+      "name": "frame-0114.jpg",
+      "time": 15.341333
+    },
+    {
+      "name": "frame-0115.jpg",
+      "time": 15.469333
+    },
+    {
+      "name": "frame-0116.jpg",
+      "time": 15.597333
+    },
+    {
+      "name": "frame-0117.jpg",
+      "time": 15.744972
+    },
+    {
+      "name": "frame-0118.jpg",
+      "time": 15.874667
+    },
+    {
+      "name": "frame-0119.jpg",
+      "time": 16.002667
+    },
+    {
+      "name": "frame-0120.jpg",
+      "time": 16.130667
+    },
+    {
+      "name": "frame-0121.jpg",
+      "time": 16.258667
+    }
+  ],
+  "trace": [
+    {
+      "audioTime": 0.066667,
+      "paused": false,
+      "review": {
+        "now": 3.00520000000298,
+        "feature": {
+          "session": 7,
+          "frame": 7,
+          "status": "active",
+          "time": 2.989,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 0,
+          "recentEvents": []
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 0,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 0.194667,
+      "paused": false,
+      "review": {
+        "now": 3.14330000000447,
+        "feature": {
+          "session": 7,
+          "frame": 16,
+          "status": "active",
+          "time": 3.139,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 0,
+          "recentEvents": []
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 0,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 0.343643,
+      "paused": false,
+      "review": {
+        "now": 3.2755,
+        "feature": {
+          "session": 7,
+          "frame": 24,
+          "status": "active",
+          "time": 3.2723,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 0,
+          "recentEvents": []
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 0,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 0.472,
+      "paused": false,
+      "review": {
+        "now": 3.4089000000059606,
+        "feature": {
+          "session": 7,
+          "frame": 32,
+          "status": "active",
+          "time": 3.4055999999999997,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 0,
+          "recentEvents": []
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 0,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 0.6,
+      "paused": false,
+      "review": {
+        "now": 3.542,
+        "feature": {
+          "session": 7,
+          "frame": 40,
+          "status": "active",
+          "time": 3.539,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 0,
+          "recentEvents": []
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 0,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 0.728,
+      "paused": false,
+      "review": {
+        "now": 3.6754000000059603,
+        "feature": {
+          "session": 7,
+          "frame": 48,
+          "status": "active",
+          "time": 3.6723000000000003,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 0,
+          "recentEvents": []
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 0,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 0.87673,
+      "paused": false,
+      "review": {
+        "now": 3.8087000000029803,
+        "feature": {
+          "session": 7,
+          "frame": 56,
+          "status": "active",
+          "time": 3.8056,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 0,
+          "recentEvents": []
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 0,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 1.005333,
+      "paused": false,
+      "review": {
+        "now": 3.94270000000298,
+        "feature": {
+          "session": 7,
+          "frame": 64,
+          "status": "active",
+          "time": 3.939,
+          "highMids": 6.458453306826375e-7,
+          "lowMids": 0.000010721954248339292,
+          "bass": 0.000014485563947298962,
+          "overall": 0.00002099522404125189,
+          "sequence": 0,
+          "recentEvents": []
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 0,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 1.133333,
+      "paused": false,
+      "review": {
+        "now": 4.07620000000298,
+        "feature": {
+          "session": 7,
+          "frame": 72,
+          "status": "active",
+          "time": 4.0723,
+          "highMids": 0.0000030491823273103727,
+          "lowMids": 0.00007653283648492674,
+          "bass": 0.1675271957527897,
+          "overall": 0.16954400290284777,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000030271976359065566,
+          "sustained": 0.000030271976359065566,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000039353569266785235,
+          "point": 0.000908159290771967
+        },
+        "magenta": {
+          "level": 0.49190588424419185,
+          "emissive": 0.6394776495174495,
+          "points": [
+            24.59529421220959,
+            19.676235369767674
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 1.261333,
+      "paused": false,
+      "review": {
+        "now": 4.20940000000596,
+        "feature": {
+          "session": 7,
+          "frame": 80,
+          "status": "active",
+          "time": 4.2056000000000004,
+          "highMids": 0.0000028856881479051407,
+          "lowMids": 0.0000718819980471888,
+          "bass": 0.1675239579635094,
+          "overall": 0.1695439526085999,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000016176850197887755,
+          "sustained": 0.000016176850197887755,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.00002102990525725408,
+          "point": 0.00048530550593663265
+        },
+        "magenta": {
+          "level": 0.48057151438045,
+          "emissive": 0.624742968694585,
+          "points": [
+            24.0285757190225,
+            19.222860575218
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 1.410267,
+      "paused": false,
+      "review": {
+        "now": 4.34230000000447,
+        "feature": {
+          "session": 7,
+          "frame": 88,
+          "status": "active",
+          "time": 4.3389,
+          "highMids": 0.000002987346076312553,
+          "lowMids": 0.00007625595002405784,
+          "bass": 0.16752713534318148,
+          "overall": 0.16954407496122323,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000009441206514090313,
+          "sustained": 0.000009441206514090313,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000012273568468317408,
+          "point": 0.0002832361954227094
+        },
+        "magenta": {
+          "level": 0.44986662869037564,
+          "emissive": 0.5848266172974883,
+          "points": [
+            22.493331434518783,
+            17.994665147615024
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 1.538667,
+      "paused": false,
+      "review": {
+        "now": 4.47530000000447,
+        "feature": {
+          "session": 7,
+          "frame": 96,
+          "status": "active",
+          "time": 4.4722,
+          "highMids": 0.0000027528885903143147,
+          "lowMids": 0.00007154367332240792,
+          "bass": 0.16752359898202576,
+          "overall": 0.16954395333460526,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000006269474125658948,
+          "sustained": 0.000006269474125658948,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000008150316363356634,
+          "point": 0.00018808422376976846
+        },
+        "magenta": {
+          "level": 0.4155074735106016,
+          "emissive": 0.5401597155637821,
+          "points": [
+            20.77537367553008,
+            16.620298940424064
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 1.666667,
+      "paused": false,
+      "review": {
+        "now": 4.6087000000029805,
+        "feature": {
+          "session": 7,
+          "frame": 104,
+          "status": "active",
+          "time": 4.605600000000001,
+          "highMids": 0.000002416018238533797,
+          "lowMids": 0.00006551383185756786,
+          "bass": 0.16751922137779754,
+          "overall": 0.1695436042862485,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000004744863546539384,
+          "sustained": 0.000004744863546539384,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000006168322610501199,
+          "point": 0.00014234590639618152
+        },
+        "magenta": {
+          "level": 0.38554666197485415,
+          "emissive": 0.5012106605673105,
+          "points": [
+            19.27733309874271,
+            15.421866478994167
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 1.794667,
+      "paused": false,
+      "review": {
+        "now": 4.741800000004471,
+        "feature": {
+          "session": 7,
+          "frame": 112,
+          "status": "active",
+          "time": 4.738899999999999,
+          "highMids": 0.000002040817875740224,
+          "lowMids": 0.00006397403239243045,
+          "bass": 0.16751840750040944,
+          "overall": 0.16954365923004744,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000003990536208207609,
+          "sustained": 0.000003990536208207609,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000005187697070669891,
+          "point": 0.00011971608624622826
+        },
+        "magenta": {
+          "level": 0.362477861445459,
+          "emissive": 0.4712212198790967,
+          "points": [
+            18.12389307227295,
+            14.499114457818362
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 1.94381,
+      "paused": false,
+      "review": {
+        "now": 4.87580000000447,
+        "feature": {
+          "session": 7,
+          "frame": 120,
+          "status": "active",
+          "time": 4.872199999999999,
+          "highMids": 0.0000021884210594316344,
+          "lowMids": 0.00006481565137545128,
+          "bass": 0.16751914428896794,
+          "overall": 0.16954374063533337,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0000036420783993312686,
+          "sustained": 0.0000036420783993312686,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000004734701919130649,
+          "point": 0.00010926235197993806
+        },
+        "magenta": {
+          "level": 0.34601827000185587,
+          "emissive": 0.4498237510024126,
+          "points": [
+            17.300913500092793,
+            13.840730800074235
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 2.072,
+      "paused": false,
+      "review": {
+        "now": 5.0085,
+        "feature": {
+          "session": 7,
+          "frame": 128,
+          "status": "active",
+          "time": 5.0055,
+          "highMids": 0.0000021671369526694006,
+          "lowMids": 0.00006403277664482502,
+          "bass": 0.16751833930019353,
+          "overall": 0.16954345570619106,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0000035301735946050405,
+          "sustained": 0.0000035301735946050405,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000004589225672986553,
+          "point": 0.00010590520783815121
+        },
+        "magenta": {
+          "level": 0.33485106056954056,
+          "emissive": 0.43530637874040273,
+          "points": [
+            16.74255302847703,
+            13.394042422781622
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 2.2,
+      "paused": false,
+      "review": {
+        "now": 5.14170000000298,
+        "feature": {
+          "session": 7,
+          "frame": 136,
+          "status": "active",
+          "time": 5.1389,
+          "highMids": 0.000002231618614286174,
+          "lowMids": 0.0000693111526814188,
+          "bass": 0.16752199874683127,
+          "overall": 0.16954381177236716,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0000036116069595833688,
+          "sustained": 0.0000036116069595833688,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.0000046950890474583794,
+          "point": 0.00010834820878750107
+        },
+        "magenta": {
+          "level": 0.3275311218505659,
+          "emissive": 0.42579045840573565,
+          "points": [
+            16.376556092528293,
+            13.101244874022635
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 2.328,
+      "paused": false,
+      "review": {
+        "now": 5.27480000000447,
+        "feature": {
+          "session": 7,
+          "frame": 144,
+          "status": "active",
+          "time": 5.2722,
+          "highMids": 0.0000028301848514964628,
+          "lowMids": 0.00007512856656058694,
+          "bass": 0.16752610080291155,
+          "overall": 0.16954384109757084,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000003584175799395511,
+          "sustained": 0.000003584175799395511,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000004659428539214165,
+          "point": 0.00010752527398186532
+        },
+        "magenta": {
+          "level": 0.3228614530191744,
+          "emissive": 0.41971988892492673,
+          "points": [
+            16.14307265095872,
+            12.914458120766977
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 2.47688,
+      "paused": false,
+      "review": {
+        "now": 5.408900000005961,
+        "feature": {
+          "session": 7,
+          "frame": 152,
+          "status": "active",
+          "time": 5.4055,
+          "highMids": 0.0000024944284448418157,
+          "lowMids": 0.00006998683771815189,
+          "bass": 0.16752218277570965,
+          "overall": 0.16954362648060667,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000003629199884824805,
+          "sustained": 0.000003629199884824805,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000004717959850272247,
+          "point": 0.00010887599654474415
+        },
+        "magenta": {
+          "level": 0.31993365364355736,
+          "emissive": 0.4159137497366246,
+          "points": [
+            15.996682682177868,
+            12.797346145742294
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 2.605333,
+      "paused": false,
+      "review": {
+        "now": 5.5465,
+        "feature": {
+          "session": 7,
+          "frame": 160,
+          "status": "active",
+          "time": 5.5389,
+          "highMids": 0.0000027912694765352927,
+          "lowMids": 0.00007563478077685635,
+          "bass": 0.1675265545952114,
+          "overall": 0.169544056430886,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0000035804705389844153,
+          "sustained": 0.0000035804705389844153,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.00000465461170067974,
+          "point": 0.00010741411616953246
+        },
+        "magenta": {
+          "level": 0.3182517329670261,
+          "emissive": 0.4137272528571339,
+          "points": [
+            15.912586648351304,
+            12.730069318681043
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 2.733333,
+      "paused": false,
+      "review": {
+        "now": 5.67660000000149,
+        "feature": {
+          "session": 7,
+          "frame": 168,
+          "status": "active",
+          "time": 5.6722,
+          "highMids": 0.0000030491823273103727,
+          "lowMids": 0.00007653283648492674,
+          "bass": 0.1675271957527897,
+          "overall": 0.16954400290284777,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0000034483939278552195,
+          "sustained": 0.0000034483939278552195,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000004482912106211786,
+          "point": 0.00010345181783565659
+        },
+        "magenta": {
+          "level": 0.317530509792061,
+          "emissive": 0.4127896627296793,
+          "points": [
+            15.876525489603049,
+            12.70122039168244
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 2.861333,
+      "paused": false,
+      "review": {
+        "now": 5.8093000000044706,
+        "feature": {
+          "session": 7,
+          "frame": 176,
+          "status": "active",
+          "time": 5.8055,
+          "highMids": 0.0000028856881479051407,
+          "lowMids": 0.0000718819980471888,
+          "bass": 0.1675239579635094,
+          "overall": 0.1695439526085999,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0000035039936166246935,
+          "sustained": 0.0000035039936166246935,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000004555191701612102,
+          "point": 0.00010511980849874081
+        },
+        "magenta": {
+          "level": 0.3170851857871757,
+          "emissive": 0.41221074152332843,
+          "points": [
+            15.854259289358785,
+            12.683407431487028
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 3.010114,
+      "paused": false,
+      "review": {
+        "now": 5.94210000000149,
+        "feature": {
+          "session": 7,
+          "frame": 184,
+          "status": "active",
+          "time": 5.9388000000000005,
+          "highMids": 0.00014436992646142848,
+          "lowMids": 0.001337768354694621,
+          "bass": 0.1489881126175031,
+          "overall": 0.1536124982516497,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0000034546757138343135,
+          "sustained": 0.0000034546757138343135,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.000004491078427984608,
+          "point": 0.0001036402714150294
+        },
+        "magenta": {
+          "level": 0.31684823181243194,
+          "emissive": 0.4119027013561615,
+          "points": [
+            15.842411590621596,
+            12.673929272497277
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 3.138667,
+      "paused": false,
+      "review": {
+        "now": 6.075300000004471,
+        "feature": {
+          "session": 7,
+          "frame": 192,
+          "status": "active",
+          "time": 6.0722,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0.24717262659946615,
+          "emissive": 0.321324414579306,
+          "points": [
+            12.358631329973308,
+            9.886905063978645
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 3.266667,
+      "paused": false,
+      "review": {
+        "now": 6.208300000004471,
+        "feature": {
+          "session": 7,
+          "frame": 200,
+          "status": "active",
+          "time": 6.2055,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0.12594976155952808,
+          "emissive": 0.16373469002738653,
+          "points": [
+            6.297488077976404,
+            5.037990462381123
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 3.394667,
+      "paused": false,
+      "review": {
+        "now": 6.34160000000149,
+        "feature": {
+          "session": 7,
+          "frame": 208,
+          "status": "active",
+          "time": 6.3389,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0.06002565166199275,
+          "emissive": 0.07803334716059059,
+          "points": [
+            3.0012825830996377,
+            2.40102606647971
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 3.542943,
+      "paused": false,
+      "review": {
+        "now": 6.475,
+        "feature": {
+          "session": 7,
+          "frame": 216,
+          "status": "active",
+          "time": 6.4721,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0.028639073695680882,
+          "emissive": 0.037230795804385146,
+          "points": [
+            1.4319536847840442,
+            1.1455629478272353
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 3.672,
+      "paused": false,
+      "review": {
+        "now": 6.6085,
+        "feature": {
+          "session": 7,
+          "frame": 224,
+          "status": "active",
+          "time": 6.6055,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0.013648926685475193,
+          "emissive": 0.01774360469111775,
+          "points": [
+            0.6824463342737597,
+            0.5459570674190077
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 3.8,
+      "paused": false,
+      "review": {
+        "now": 6.74160000000149,
+        "feature": {
+          "session": 7,
+          "frame": 232,
+          "status": "active",
+          "time": 6.738899999999999,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0.006508476029077796,
+          "emissive": 0.008461018837801135,
+          "points": [
+            0.32542380145388977,
+            0.26033904116311185
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 3.928,
+      "paused": false,
+      "review": {
+        "now": 6.87510000000149,
+        "feature": {
+          "session": 7,
+          "frame": 240,
+          "status": "active",
+          "time": 6.8721000000000005,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0.003101836082246462,
+          "emissive": 0.0040323869069204005,
+          "points": [
+            0.1550918041123231,
+            0.12407344328985848
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 4.076509,
+      "paused": false,
+      "review": {
+        "now": 7.0085,
+        "feature": {
+          "session": 7,
+          "frame": 248,
+          "status": "active",
+          "time": 7.0055,
+          "highMids": 0.000004966959890943232,
+          "lowMids": 0.15541558647677087,
+          "bass": 0.00001639919219670299,
+          "overall": 0.1554155876288429,
+          "sequence": 1,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.00009009202568491762,
+          "sustained": 0.00009009202568491762,
+          "accent": 0,
+          "sequence": 1,
+          "emissive": 0.00011711963339039291,
+          "point": 0.0027027607705475284
+        },
+        "magenta": {
+          "level": 0.0014799291585417893,
+          "emissive": 0.0019239079061043262,
+          "points": [
+            0.07399645792708946,
+            0.059197166341671575
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 4.269333,
+      "paused": false,
+      "review": {
+        "now": 7.208400000005961,
+        "feature": {
+          "session": 7,
+          "frame": 259,
+          "status": "active",
+          "time": 7.1888000000000005,
+          "highMids": 0.0000048535209140340275,
+          "lowMids": 0.15541559921842565,
+          "bass": 0.000017227234479465303,
+          "overall": 0.15541560046917222,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.00003468067710153043,
+          "sustained": 0.00003468067710153043,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.00004508488023198956,
+          "point": 0.0010404203130459128
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 4.397333,
+      "paused": false,
+      "review": {
+        "now": 7.34190000000596,
+        "feature": {
+          "session": 7,
+          "frame": 268,
+          "status": "active",
+          "time": 7.3388,
+          "highMids": 0.000004966959890943232,
+          "lowMids": 0.15541558647677087,
+          "bass": 0.00001639919219670299,
+          "overall": 0.1554155876288429,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000019405539387630424,
+          "sustained": 0.000019405539387630424,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000025227201203919554,
+          "point": 0.0005821661816289127
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 4.525333,
+      "paused": false,
+      "review": {
+        "now": 7.4757000000029805,
+        "feature": {
+          "session": 7,
+          "frame": 276,
+          "status": "active",
+          "time": 7.4721,
+          "highMids": 0.000004855229563275996,
+          "lowMids": 0.15541560798694234,
+          "bass": 0.000017227332624615158,
+          "overall": 0.15541560926092704,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000012529004737256953,
+          "sustained": 0.000012529004737256953,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.00001628770615843404,
+          "point": 0.0003758701421177086
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 4.674667,
+      "paused": false,
+      "review": {
+        "now": 7.608900000005961,
+        "feature": {
+          "session": 7,
+          "frame": 284,
+          "status": "active",
+          "time": 7.6055,
+          "highMids": 0.00000466823768769206,
+          "lowMids": 0.15541559977647532,
+          "bass": 0.00001849006318844579,
+          "overall": 0.1554156012362615,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000009247443224477156,
+          "sustained": 0.000009247443224477156,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000012021676191820304,
+          "point": 0.0002774232967343147
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 4.802667,
+      "paused": false,
+      "review": {
+        "now": 7.742,
+        "feature": {
+          "session": 7,
+          "frame": 292,
+          "status": "active",
+          "time": 7.7388,
+          "highMids": 0.0000048535209140340275,
+          "lowMids": 0.15541559921842565,
+          "bass": 0.000017227234479465303,
+          "overall": 0.15541560046917222,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.00000763751971902777,
+          "sustained": 0.00000763751971902777,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000009928775634736101,
+          "point": 0.0002291255915708331
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 4.930667,
+      "paused": false,
+      "review": {
+        "now": 7.87510000000149,
+        "feature": {
+          "session": 7,
+          "frame": 300,
+          "status": "active",
+          "time": 7.8721000000000005,
+          "highMids": 0.000004966959890943232,
+          "lowMids": 0.15541558647677087,
+          "bass": 0.00001639919219670299,
+          "overall": 0.1554155876288429,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000006924143908018242,
+          "sustained": 0.000006924143908018242,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000009001387080423714,
+          "point": 0.00020772431724054726
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 5.058667,
+      "paused": false,
+      "review": {
+        "now": 8.00890000000596,
+        "feature": {
+          "session": 7,
+          "frame": 308,
+          "status": "active",
+          "time": 8.0054,
+          "highMids": 0.000004855229563275996,
+          "lowMids": 0.15541560798694234,
+          "bass": 0.000017227332624615158,
+          "overall": 0.15541560926092704,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0000065772857018621,
+          "sustained": 0.0000065772857018621,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000008550471412420731,
+          "point": 0.000197318571055863
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 5.208,
+      "paused": false,
+      "review": {
+        "now": 8.14310000000149,
+        "feature": {
+          "session": 7,
+          "frame": 316,
+          "status": "active",
+          "time": 8.1387,
+          "highMids": 0.00000466823768769206,
+          "lowMids": 0.15541559977647532,
+          "bass": 0.00001849006318844579,
+          "overall": 0.1554156012362615,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000006411302434805177,
+          "sustained": 0.000006411302434805177,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.00000833469316524673,
+          "point": 0.0001923390730441553
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 5.336,
+      "paused": false,
+      "review": {
+        "now": 8.27540000000596,
+        "feature": {
+          "session": 7,
+          "frame": 324,
+          "status": "active",
+          "time": 8.2721,
+          "highMids": 0.0000048535209140340275,
+          "lowMids": 0.15541559921842565,
+          "bass": 0.000017227234479465303,
+          "overall": 0.15541560046917222,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000006296414852849716,
+          "sustained": 0.000006296414852849716,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000008185339308704632,
+          "point": 0.00018889244558549148
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 5.464,
+      "paused": false,
+      "review": {
+        "now": 8.40980000000447,
+        "feature": {
+          "session": 7,
+          "frame": 332,
+          "status": "active",
+          "time": 8.4054,
+          "highMids": 0.000004966959890943232,
+          "lowMids": 0.15541558647677087,
+          "bass": 0.00001639919219670299,
+          "overall": 0.1554155876288429,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000006296961771381889,
+          "sustained": 0.000006296961771381889,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000008186050302796456,
+          "point": 0.00018890885314145668
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 5.592,
+      "paused": false,
+      "review": {
+        "now": 8.54170000000298,
+        "feature": {
+          "session": 7,
+          "frame": 340,
+          "status": "active",
+          "time": 8.5387,
+          "highMids": 0.000004855229563275996,
+          "lowMids": 0.15541560798694234,
+          "bass": 0.000017227332624615158,
+          "overall": 0.15541560926092704,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000006321210591947223,
+          "sustained": 0.000006321210591947223,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000008217573769531391,
+          "point": 0.0001896363177584167
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 5.741333,
+      "paused": false,
+      "review": {
+        "now": 8.675200000002981,
+        "feature": {
+          "session": 7,
+          "frame": 348,
+          "status": "active",
+          "time": 8.6721,
+          "highMids": 0.00000466823768769206,
+          "lowMids": 0.15541559977647532,
+          "bass": 0.00001849006318844579,
+          "overall": 0.1554156012362615,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000006328989959343875,
+          "sustained": 0.000006328989959343875,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000008227686947147037,
+          "point": 0.00018986969878031622
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 5.869333,
+      "paused": false,
+      "review": {
+        "now": 8.8085,
+        "feature": {
+          "session": 7,
+          "frame": 356,
+          "status": "active",
+          "time": 8.805399999999999,
+          "highMids": 0.0000048535209140340275,
+          "lowMids": 0.15541559921842565,
+          "bass": 0.000017227234479465303,
+          "overall": 0.15541560046917222,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.000006265802875060648,
+          "sustained": 0.000006265802875060648,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000008145543737578843,
+          "point": 0.00018797408625181945
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 5.997333,
+      "paused": false,
+      "review": {
+        "now": 8.94170000000298,
+        "feature": {
+          "session": 7,
+          "frame": 364,
+          "status": "active",
+          "time": 8.9387,
+          "highMids": 0.00002686379158843585,
+          "lowMids": 0.15540135911709685,
+          "bass": 0.000056396763152714884,
+          "overall": 0.15540137242824154,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.00000629043791574079,
+          "sustained": 0.00000629043791574079,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.000008177569290463027,
+          "point": 0.0001887131374722237
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 6.125333,
+      "paused": false,
+      "review": {
+        "now": 9.07590000000596,
+        "feature": {
+          "session": 7,
+          "frame": 372,
+          "status": "active",
+          "time": 9.072,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 6.274667,
+      "paused": false,
+      "review": {
+        "now": 9.20820000000298,
+        "feature": {
+          "session": 7,
+          "frame": 380,
+          "status": "active",
+          "time": 9.2054,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 6.402667,
+      "paused": false,
+      "review": {
+        "now": 9.3415,
+        "feature": {
+          "session": 7,
+          "frame": 388,
+          "status": "active",
+          "time": 9.338700000000001,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 6.530667,
+      "paused": false,
+      "review": {
+        "now": 9.474800000004471,
+        "feature": {
+          "session": 7,
+          "frame": 396,
+          "status": "active",
+          "time": 9.472,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 6.658667,
+      "paused": false,
+      "review": {
+        "now": 9.608,
+        "feature": {
+          "session": 7,
+          "frame": 404,
+          "status": "active",
+          "time": 9.6053,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 6.808,
+      "paused": false,
+      "review": {
+        "now": 9.7415,
+        "feature": {
+          "session": 7,
+          "frame": 412,
+          "status": "active",
+          "time": 9.738700000000001,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 6.936,
+      "paused": false,
+      "review": {
+        "now": 9.87490000000596,
+        "feature": {
+          "session": 7,
+          "frame": 420,
+          "status": "active",
+          "time": 9.872,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 7.064,
+      "paused": false,
+      "review": {
+        "now": 10.00810000000149,
+        "feature": {
+          "session": 7,
+          "frame": 428,
+          "status": "active",
+          "time": 10.0054,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 2,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.057151065246619795,
+          "sustained": 0.057151065246619795,
+          "accent": 0,
+          "sequence": 2,
+          "emissive": 0.07429638482060573,
+          "point": 1.7145319573985938
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 7.192,
+      "paused": false,
+      "review": {
+        "now": 10.14220000000298,
+        "feature": {
+          "session": 7,
+          "frame": 436,
+          "status": "active",
+          "time": 10.1387,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1316979957291255,
+          "sustained": 0.12083823299346617,
+          "accent": 0.010859762735659325,
+          "sequence": 3,
+          "emissive": 0.17120739444786315,
+          "point": 3.9509398718737647
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 7.341333,
+      "paused": false,
+      "review": {
+        "now": 10.27530000000447,
+        "feature": {
+          "session": 7,
+          "frame": 444,
+          "status": "active",
+          "time": 10.272,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.13365567535083792,
+          "sustained": 0.12773082531776914,
+          "accent": 0.00592485003306878,
+          "sequence": 3,
+          "emissive": 0.1737523779560893,
+          "point": 4.009670260525137
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 7.469333,
+      "paused": false,
+      "review": {
+        "now": 10.40840000000596,
+        "feature": {
+          "session": 7,
+          "frame": 452,
+          "status": "active",
+          "time": 10.405299999999999,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1317093285284143,
+          "sustained": 0.1284783283583759,
+          "accent": 0.0032310001700384147,
+          "sequence": 3,
+          "emissive": 0.1712221270869386,
+          "point": 3.951279855852429
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 7.597333,
+      "paused": false,
+      "review": {
+        "now": 10.5415,
+        "feature": {
+          "session": 7,
+          "frame": 460,
+          "status": "active",
+          "time": 10.5387,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.13032277579685875,
+          "sustained": 0.12855921103411685,
+          "accent": 0.0017635647627418794,
+          "sequence": 3,
+          "emissive": 0.16941960853591637,
+          "point": 3.9096832739057623
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 7.746602,
+      "paused": false,
+      "review": {
+        "now": 10.67860000000149,
+        "feature": {
+          "session": 7,
+          "frame": 468,
+          "status": "active",
+          "time": 10.672,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.12952928919777204,
+          "sustained": 0.1285680009677672,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.16838807595710367,
+          "point": 3.8858786759331614
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 7.874667,
+      "paused": false,
+      "review": {
+        "now": 10.81120000000298,
+        "feature": {
+          "session": 7,
+          "frame": 476,
+          "status": "active",
+          "time": 10.805299999999999,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.12856895048892839,
+          "sustained": 0.12856895048892839,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.1671396356356069,
+          "point": 3.8570685146678514
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 8.002667,
+      "paused": false,
+      "review": {
+        "now": 10.944,
+        "feature": {
+          "session": 7,
+          "frame": 484,
+          "status": "active",
+          "time": 10.9387,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1285690534646916,
+          "sustained": 0.1285690534646916,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.1671397695040991,
+          "point": 3.8570716039407484
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 8.130667,
+      "paused": false,
+      "review": {
+        "now": 11.07570000000298,
+        "feature": {
+          "session": 7,
+          "frame": 492,
+          "status": "active",
+          "time": 11.072,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.12856906460706136,
+          "sustained": 0.12856906460706136,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.16713978398917978,
+          "point": 3.8570719382118406
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 8.258667,
+      "paused": false,
+      "review": {
+        "now": 11.20920000000298,
+        "feature": {
+          "session": 7,
+          "frame": 500,
+          "status": "active",
+          "time": 11.2053,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.12856906581746974,
+          "sustained": 0.12856906581746974,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.16713978556271067,
+          "point": 3.857071974524092
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 8.408,
+      "paused": false,
+      "review": {
+        "now": 11.34280000000447,
+        "feature": {
+          "session": 7,
+          "frame": 508,
+          "status": "active",
+          "time": 11.3386,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1285690659487388,
+          "sustained": 0.1285690659487388,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.16713978573336044,
+          "point": 3.8570719784621637
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 8.536,
+      "paused": false,
+      "review": {
+        "now": 11.47580000000447,
+        "feature": {
+          "session": 7,
+          "frame": 516,
+          "status": "active",
+          "time": 11.4719,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.12856906596294548,
+          "sustained": 0.12856906596294548,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.16713978575182914,
+          "point": 3.8570719788883645
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 8.664,
+      "paused": false,
+      "review": {
+        "now": 11.609,
+        "feature": {
+          "session": 7,
+          "frame": 524,
+          "status": "active",
+          "time": 11.6052,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.12856906596448586,
+          "sustained": 0.12856906596448586,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.16713978575383162,
+          "point": 3.857071978934576
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 8.792,
+      "paused": false,
+      "review": {
+        "now": 11.74220000000298,
+        "feature": {
+          "session": 7,
+          "frame": 532,
+          "status": "active",
+          "time": 11.7386,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1285690659646529,
+          "sustained": 0.1285690659646529,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.16713978575404878,
+          "point": 3.8570719789395866
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 8.941333,
+      "paused": false,
+      "review": {
+        "now": 11.875800000004471,
+        "feature": {
+          "session": 7,
+          "frame": 540,
+          "status": "active",
+          "time": 11.872,
+          "highMids": 0.09889928151128707,
+          "lowMids": 8.525186791111057e-10,
+          "bass": 3.98213776482907e-10,
+          "overall": 0.09889928189936044,
+          "sequence": 3,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.128569065964671,
+          "sustained": 0.128569065964671,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.1671397857540723,
+          "point": 3.8570719789401298
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 9.069333,
+      "paused": false,
+      "review": {
+        "now": 12.00910000000149,
+        "feature": {
+          "session": 7,
+          "frame": 548,
+          "status": "active",
+          "time": 12.0053,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 4,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1177348438976393,
+          "sustained": 0.1177348438976393,
+          "accent": 0,
+          "sequence": 3,
+          "emissive": 0.1530552970669311,
+          "point": 3.532045316929179
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 9.197333,
+      "paused": false,
+      "review": {
+        "now": 12.14390000000596,
+        "feature": {
+          "session": 7,
+          "frame": 556,
+          "status": "active",
+          "time": 12.1386,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 4,
+          "recentEvents": [
+            {
+              "sequence": 1,
+              "band": "low",
+              "time": 3.9556,
+              "emitted": 4.0056,
+              "strength": 0.16940226829040053
+            },
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.10417042575126097,
+          "sustained": 0.10417042575126097,
+          "accent": 0,
+          "sequence": 4,
+          "emissive": 0.13542155347663926,
+          "point": 3.125112772537829
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 9.344511,
+      "paused": false,
+      "review": {
+        "now": 12.27660000000149,
+        "feature": {
+          "session": 7,
+          "frame": 564,
+          "status": "active",
+          "time": 12.272,
+          "highMids": 0.3249577462981634,
+          "lowMids": 2.598786047894374e-9,
+          "bass": 8.318752976356923e-10,
+          "overall": 0.324957746413244,
+          "sequence": 5,
+          "recentEvents": [
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.32734514552785465,
+          "sustained": 0.26830205339163615,
+          "accent": 0.05904309213621849,
+          "sequence": 5,
+          "emissive": 0.4255486891862111,
+          "point": 9.82035436583564
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 9.474667,
+      "paused": false,
+      "review": {
+        "now": 12.41010000000149,
+        "feature": {
+          "session": 7,
+          "frame": 572,
+          "status": "active",
+          "time": 12.4052,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 5,
+          "recentEvents": [
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.28845402919238233,
+          "sustained": 0.25625604280167746,
+          "accent": 0.032197986390704855,
+          "sequence": 5,
+          "emissive": 0.37499023795009706,
+          "point": 8.65362087577147
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 9.602667,
+      "paused": false,
+      "review": {
+        "now": 12.54330000000447,
+        "feature": {
+          "session": 7,
+          "frame": 580,
+          "status": "active",
+          "time": 12.5386,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 5,
+          "recentEvents": [
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1877528176837773,
+          "sustained": 0.1701942805186807,
+          "accent": 0.017558537165096595,
+          "sequence": 5,
+          "emissive": 0.2440786629889105,
+          "point": 5.632584530513319
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 9.730667,
+      "paused": false,
+      "review": {
+        "now": 12.676800000004471,
+        "feature": {
+          "session": 7,
+          "frame": 588,
+          "status": "active",
+          "time": 12.671899999999999,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 5,
+          "recentEvents": [
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1388040436827814,
+          "sustained": 0.12922013288116424,
+          "accent": 0.00958391080161716,
+          "sequence": 5,
+          "emissive": 0.18044525678761583,
+          "point": 4.164121310483442
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 9.858667,
+      "paused": false,
+      "review": {
+        "now": 12.80820000000298,
+        "feature": {
+          "session": 7,
+          "frame": 596,
+          "status": "active",
+          "time": 12.805200000000001,
+          "highMids": 0.3249577462981634,
+          "lowMids": 2.598786047894374e-9,
+          "bass": 8.318752976356923e-10,
+          "overall": 0.324957746413244,
+          "sequence": 5,
+          "recentEvents": [
+            {
+              "sequence": 2,
+              "band": "mid",
+              "time": 6.9721,
+              "emitted": 7.0222,
+              "strength": 0.15541559267964666
+            },
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.2439496935717124,
+          "sustained": 0.23871854331188672,
+          "accent": 0.00523115025982569,
+          "sequence": 5,
+          "emissive": 0.3171346016432261,
+          "point": 7.318490807151372
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 10.008,
+      "paused": false,
+      "review": {
+        "now": 12.94220000000298,
+        "feature": {
+          "session": 7,
+          "frame": 604,
+          "status": "active",
+          "time": 12.938600000000001,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 6,
+          "recentEvents": [
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.32578486965879777,
+          "sustained": 0.2693120177295522,
+          "accent": 0.05647285192924556,
+          "sequence": 6,
+          "emissive": 0.4235203305564371,
+          "point": 9.773546089763933
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 10.136,
+      "paused": false,
+      "review": {
+        "now": 13.07570000000298,
+        "feature": {
+          "session": 7,
+          "frame": 612,
+          "status": "active",
+          "time": 13.0719,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 6,
+          "recentEvents": [
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.2072739124983152,
+          "sustained": 0.17646355441177963,
+          "accent": 0.030810358086535577,
+          "sequence": 6,
+          "emissive": 0.26945608624780976,
+          "point": 6.218217374949456
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 10.264,
+      "paused": false,
+      "review": {
+        "now": 13.208600000001491,
+        "feature": {
+          "session": 7,
+          "frame": 620,
+          "status": "active",
+          "time": 13.2053,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 6,
+          "recentEvents": [
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.14896827200401935,
+          "sustained": 0.13216645058053603,
+          "accent": 0.016801821423483323,
+          "sequence": 6,
+          "emissive": 0.19365875360522516,
+          "point": 4.469048160120581
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 10.392,
+      "paused": false,
+      "review": {
+        "now": 13.34190000000596,
+        "feature": {
+          "session": 7,
+          "frame": 628,
+          "status": "active",
+          "time": 13.3386,
+          "highMids": 0.31956227363046613,
+          "lowMids": 0.00008137436114408527,
+          "bass": 0.000009252646672319894,
+          "overall": 0.3195622891779916,
+          "sequence": 6,
+          "recentEvents": [
+            {
+              "sequence": 3,
+              "band": "mid",
+              "time": 9.972,
+              "emitted": 10.022,
+              "strength": 0.09889928151340366
+            },
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1983957892012476,
+          "sustained": 0.18922908136091043,
+          "accent": 0.009166707840337154,
+          "sequence": 6,
+          "emissive": 0.2579145259616219,
+          "point": 5.951873676037428
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 10.541333,
+      "paused": false,
+      "review": {
+        "now": 13.476100000001491,
+        "feature": {
+          "session": 7,
+          "frame": 636,
+          "status": "active",
+          "time": 13.4719,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 7,
+          "recentEvents": [
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.3558945582327548,
+          "sustained": 0.29491259061213204,
+          "accent": 0.060981967620622766,
+          "sequence": 7,
+          "emissive": 0.4626629257025812,
+          "point": 10.676836746982644
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 10.669333,
+      "paused": false,
+      "review": {
+        "now": 13.60880000000447,
+        "feature": {
+          "session": 7,
+          "frame": 644,
+          "status": "active",
+          "time": 13.6052,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 7,
+          "recentEvents": [
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.2218726898329979,
+          "sustained": 0.18861737591870067,
+          "accent": 0.033255313914297216,
+          "sequence": 7,
+          "emissive": 0.2884344967828973,
+          "point": 6.656180694989937
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 10.797333,
+      "paused": false,
+      "review": {
+        "now": 13.74540000000596,
+        "feature": {
+          "session": 7,
+          "frame": 652,
+          "status": "active",
+          "time": 13.7386,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 7,
+          "recentEvents": [
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.15606003853940625,
+          "sustained": 0.13793315002002512,
+          "accent": 0.01812688851938112,
+          "sequence": 7,
+          "emissive": 0.20287805010122814,
+          "point": 4.681801156182187
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 10.946667,
+      "paused": false,
+      "review": {
+        "now": 13.878900000005961,
+        "feature": {
+          "session": 7,
+          "frame": 660,
+          "status": "active",
+          "time": 13.8719,
+          "highMids": 0.14673488383527503,
+          "lowMids": 0.00012052426687015786,
+          "bass": 0.000013222721054048986,
+          "overall": 0.14673495605659137,
+          "sequence": 7,
+          "recentEvents": [
+            {
+              "sequence": 4,
+              "band": "mid",
+              "time": 11.9553,
+              "emitted": 12.0053,
+              "strength": 0.008880614196785687
+            },
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.14401614262856144,
+          "sustained": 0.13412650703911788,
+          "accent": 0.009889635589443552,
+          "sequence": 7,
+          "emissive": 0.18722098541712986,
+          "point": 4.320484278856843
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 11.074667,
+      "paused": false,
+      "review": {
+        "now": 14.01030000000447,
+        "feature": {
+          "session": 7,
+          "frame": 668,
+          "status": "active",
+          "time": 14.0052,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 8,
+          "recentEvents": [
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.38091113067862425,
+          "sustained": 0.32007902829466534,
+          "accent": 0.06083210238395894,
+          "sequence": 8,
+          "emissive": 0.49518446988221154,
+          "point": 11.427333920358727
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 11.202667,
+      "paused": false,
+      "review": {
+        "now": 14.143400000005961,
+        "feature": {
+          "session": 7,
+          "frame": 676,
+          "status": "active",
+          "time": 14.1386,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 8,
+          "recentEvents": [
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.23378488741989556,
+          "sustained": 0.20061129955702045,
+          "accent": 0.03317358786287511,
+          "sequence": 8,
+          "emissive": 0.3039203536458642,
+          "point": 7.013546622596866
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 11.330667,
+      "paused": false,
+      "review": {
+        "now": 14.27610000000149,
+        "feature": {
+          "session": 7,
+          "frame": 684,
+          "status": "active",
+          "time": 14.271799999999999,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 8,
+          "recentEvents": [
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1618024777937345,
+          "sustained": 0.14370369074556305,
+          "accent": 0.018098787048171434,
+          "sequence": 8,
+          "emissive": 0.21034322113185486,
+          "point": 4.854074333812035
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 11.466729,
+      "paused": false,
+      "review": {
+        "now": 14.4095,
+        "feature": {
+          "session": 7,
+          "frame": 692,
+          "status": "active",
+          "time": 14.4052,
+          "highMids": 0.07065620061415438,
+          "lowMids": 0.000009932554697899562,
+          "bass": 0.000001156556015617639,
+          "overall": 0.07065620212800848,
+          "sequence": 8,
+          "recentEvents": [
+            {
+              "sequence": 5,
+              "band": "mid",
+              "time": 12.188600000000001,
+              "emitted": 12.2386,
+              "strength": 0.18191585089954343
+            },
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.12644345092942455,
+          "sustained": 0.11656914689098358,
+          "accent": 0.009874304038440982,
+          "sequence": 8,
+          "emissive": 0.16437648620825193,
+          "point": 3.7933035278827365
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 11.608,
+      "paused": false,
+      "review": {
+        "now": 14.54310000000149,
+        "feature": {
+          "session": 7,
+          "frame": 700,
+          "status": "active",
+          "time": 14.5385,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.405676067453668,
+          "sustained": 0.3347929169926849,
+          "accent": 0.07088315046098312,
+          "sequence": 9,
+          "emissive": 0.5273788876897685,
+          "point": 12.17028202361004
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 11.736,
+      "paused": false,
+      "review": {
+        "now": 14.67710000000149,
+        "feature": {
+          "session": 7,
+          "frame": 708,
+          "status": "active",
+          "time": 14.6718,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.246278433511986,
+          "sustained": 0.20762370471479613,
+          "accent": 0.03865472879718986,
+          "sequence": 9,
+          "emissive": 0.3201619635655818,
+          "point": 7.38835300535958
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 11.864,
+      "paused": false,
+      "review": {
+        "now": 14.80990000000596,
+        "feature": {
+          "session": 7,
+          "frame": 716,
+          "status": "active",
+          "time": 14.8051,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.1681367267805211,
+          "sustained": 0.1470475486127266,
+          "accent": 0.02108917816779452,
+          "sequence": 9,
+          "emissive": 0.21857774481467745,
+          "point": 5.044101803415633
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 11.992,
+      "paused": false,
+      "review": {
+        "now": 14.94220000000298,
+        "feature": {
+          "session": 7,
+          "frame": 724,
+          "status": "active",
+          "time": 14.9385,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.12964781800592226,
+          "sustained": 0.11814725041965472,
+          "accent": 0.011500567586267527,
+          "sequence": 9,
+          "emissive": 0.16854216340769895,
+          "point": 3.889434540177668
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 12.141333,
+      "paused": false,
+      "review": {
+        "now": 15.07590000000596,
+        "feature": {
+          "session": 7,
+          "frame": 732,
+          "status": "active",
+          "time": 15.0718,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11067491335394758,
+          "sustained": 0.10439474750307516,
+          "accent": 0.006280165850872414,
+          "sequence": 9,
+          "emissive": 0.14387738736013186,
+          "point": 3.3202474006184275
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 12.269333,
+      "paused": false,
+      "review": {
+        "now": 15.20910000000149,
+        "feature": {
+          "session": 7,
+          "frame": 740,
+          "status": "active",
+          "time": 15.2051,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.10124436894789168,
+          "sustained": 0.0978196043010064,
+          "accent": 0.0034247646468852783,
+          "sequence": 9,
+          "emissive": 0.1316176796322592,
+          "point": 3.0373310684367505
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 12.397333,
+      "paused": false,
+      "review": {
+        "now": 15.3425,
+        "feature": {
+          "session": 7,
+          "frame": 748,
+          "status": "active",
+          "time": 15.3385,
+          "highMids": 0.07064058608788303,
+          "lowMids": 4.5758014773180943e-10,
+          "bass": 2.049989250846591e-10,
+          "overall": 0.07064058656922997,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0965584942310274,
+          "sustained": 0.09468916772707252,
+          "accent": 0.0018693265039548875,
+          "sequence": 9,
+          "emissive": 0.12552604250033564,
+          "point": 2.896754826930822
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 12.525333,
+      "paused": false,
+      "review": {
+        "now": 15.47580000000447,
+        "feature": {
+          "session": 7,
+          "frame": 756,
+          "status": "active",
+          "time": 15.4718,
+          "highMids": 0.044363864981987064,
+          "lowMids": 0.003586246900141521,
+          "bass": 0.0016746608992418447,
+          "overall": 0.044589111356152074,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0912214006191967,
+          "sustained": 0.09020200025995972,
+          "accent": 0.001019400359236982,
+          "sequence": 9,
+          "emissive": 0.11858782080495571,
+          "point": 2.736642018575901
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 12.674667,
+      "paused": false,
+      "review": {
+        "now": 15.60910000000149,
+        "feature": {
+          "session": 7,
+          "frame": 764,
+          "status": "active",
+          "time": 15.6052,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0456777319374187,
+          "sustained": 0.0456777319374187,
+          "accent": 0,
+          "sequence": 9,
+          "emissive": 0.059381051518644305,
+          "point": 1.370331958122561
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 12.802667,
+      "paused": false,
+      "review": {
+        "now": 15.74180000000447,
+        "feature": {
+          "session": 7,
+          "frame": 772,
+          "status": "active",
+          "time": 15.7384,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.02178137740996889,
+          "sustained": 0.02178137740996889,
+          "accent": 0,
+          "sequence": 9,
+          "emissive": 0.028315790632959557,
+          "point": 0.6534413222990667
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 12.930667,
+      "paused": false,
+      "review": {
+        "now": 15.87460000000149,
+        "feature": {
+          "session": 7,
+          "frame": 780,
+          "status": "active",
+          "time": 15.871799999999999,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.010386426421642368,
+          "sustained": 0.010386426421642368,
+          "accent": 0,
+          "sequence": 9,
+          "emissive": 0.013502354348135077,
+          "point": 0.31159279264927103
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 13.058667,
+      "paused": false,
+      "review": {
+        "now": 16.00930000000447,
+        "feature": {
+          "session": 7,
+          "frame": 788,
+          "status": "active",
+          "time": 16.0051,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.004947256276165783,
+          "sustained": 0.004947256276165783,
+          "accent": 0,
+          "sequence": 9,
+          "emissive": 0.006431433159015518,
+          "point": 0.14841768828497348
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 13.208,
+      "paused": false,
+      "review": {
+        "now": 16.14130000000447,
+        "feature": {
+          "session": 7,
+          "frame": 796,
+          "status": "active",
+          "time": 16.1384,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0023617165133226104,
+          "sustained": 0.0023617165133226104,
+          "accent": 0,
+          "sequence": 9,
+          "emissive": 0.0030702314673193938,
+          "point": 0.0708514953996783
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 13.336,
+      "paused": false,
+      "review": {
+        "now": 16.27460000000149,
+        "feature": {
+          "session": 7,
+          "frame": 804,
+          "status": "active",
+          "time": 16.2718,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0011261819825113969,
+          "sustained": 0.0011261819825113969,
+          "accent": 0,
+          "sequence": 9,
+          "emissive": 0.001464036577264816,
+          "point": 0.03378545947534191
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 13.464,
+      "paused": false,
+      "review": {
+        "now": 16.40840000000596,
+        "feature": {
+          "session": 7,
+          "frame": 812,
+          "status": "active",
+          "time": 16.405099999999997,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 9,
+          "recentEvents": [
+            {
+              "sequence": 6,
+              "band": "mid",
+              "time": 12.7719,
+              "emitted": 12.8219,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 7,
+              "band": "mid",
+              "time": 13.3219,
+              "emitted": 13.3719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 9,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0,
+          "emissive": 0,
+          "points": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 13.592,
+      "paused": false,
+      "review": {
+        "now": 16.54120000000298,
+        "feature": {
+          "session": 7,
+          "frame": 820,
+          "status": "active",
+          "time": 16.538400000000003,
+          "highMids": 0.08477254712908863,
+          "lowMids": 0.000057284858328076395,
+          "bass": 0.12564557182776978,
+          "overall": 0.15282527331243312,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.06873355325431951,
+          "sustained": 0.06873355325431951,
+          "accent": 0,
+          "sequence": 9,
+          "emissive": 0.08935361923061537,
+          "point": 2.062006597629585
+        },
+        "magenta": {
+          "level": 0.3984064654272058,
+          "emissive": 0.5179284050553675,
+          "points": [
+            19.920323271360292,
+            15.936258617088232
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 13.741333,
+      "paused": false,
+      "review": {
+        "now": 16.67570000000298,
+        "feature": {
+          "session": 7,
+          "frame": 828,
+          "status": "active",
+          "time": 16.6717,
+          "highMids": 0.08477207499336954,
+          "lowMids": 0.000054862150163126194,
+          "bass": 0.12564294739019877,
+          "overall": 0.15282442445813205,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11310741594957717,
+          "sustained": 0.1057071745939861,
+          "accent": 0.007400241355591066,
+          "sequence": 11,
+          "emissive": 0.14703964073445033,
+          "point": 3.3932224784873153
+        },
+        "magenta": {
+          "level": 0.41772950537588677,
+          "emissive": 0.5430483569886528,
+          "points": [
+            20.88647526879434,
+            16.70918021503547
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 13.869333,
+      "paused": false,
+      "review": {
+        "now": 16.80930000000447,
+        "feature": {
+          "session": 7,
+          "frame": 836,
+          "status": "active",
+          "time": 16.8051,
+          "highMids": 0.08477194756001316,
+          "lowMids": 0.000057566275898490934,
+          "bass": 0.1256456036666823,
+          "overall": 0.15282491740692172,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11375262516164142,
+          "sustained": 0.1097170494179874,
+          "accent": 0.004035575743654013,
+          "sequence": 11,
+          "emissive": 0.14787841271013386,
+          "point": 3.4125787548492426
+        },
+        "magenta": {
+          "level": 0.39175061728816285,
+          "emissive": 0.5092758024746117,
+          "points": [
+            19.587530864408144,
+            15.670024691526514
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 13.997333,
+      "paused": false,
+      "review": {
+        "now": 16.943,
+        "feature": {
+          "session": 7,
+          "frame": 844,
+          "status": "active",
+          "time": 16.9384,
+          "highMids": 0.08477277431779191,
+          "lowMids": 0.00005601153186895821,
+          "bass": 0.12564437265473716,
+          "overall": 0.15282525022654309,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11235166043296207,
+          "sustained": 0.1101509387537341,
+          "accent": 0.00220072167922797,
+          "sequence": 11,
+          "emissive": 0.1460571585628507,
+          "point": 3.3705498129888625
+        },
+        "magenta": {
+          "level": 0.3595385857922217,
+          "emissive": 0.4674001615298882,
+          "points": [
+            17.976929289611085,
+            14.381543431688868
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 14.125333,
+      "paused": false,
+      "review": {
+        "now": 17.07560000000149,
+        "feature": {
+          "session": 7,
+          "frame": 852,
+          "status": "active",
+          "time": 17.0718,
+          "highMids": 0.08477169241915909,
+          "lowMids": 0.000051529963898440985,
+          "bass": 0.12564095317901872,
+          "overall": 0.1528243662135405,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11139863182627593,
+          "sustained": 0.11019796600775542,
+          "accent": 0.0012006658185205175,
+          "sequence": 11,
+          "emissive": 0.14481822137415873,
+          "point": 3.341958954788278
+        },
+        "magenta": {
+          "level": 0.3303460630459369,
+          "emissive": 0.42944988195971795,
+          "points": [
+            16.517303152296844,
+            13.213842521837476
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 14.274667,
+      "paused": false,
+      "review": {
+        "now": 17.20940000000596,
+        "feature": {
+          "session": 7,
+          "frame": 860,
+          "status": "active",
+          "time": 17.205099999999998,
+          "highMids": 0.0847717781316759,
+          "lowMids": 0.000055885896811827916,
+          "bass": 0.1256441358906059,
+          "overall": 0.15282464728651177,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020314956552757,
+          "sustained": 0.11020314956552757,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.14326409443518584,
+          "point": 3.306094486965827
+        },
+        "magenta": {
+          "level": 0.3074674157264299,
+          "emissive": 0.39970764044435886,
+          "points": [
+            15.373370786321495,
+            12.298696629057195
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 14.402667,
+      "paused": false,
+      "review": {
+        "now": 17.341800000004472,
+        "feature": {
+          "session": 7,
+          "frame": 868,
+          "status": "active",
+          "time": 17.3384,
+          "highMids": 0.08477246906933932,
+          "lowMids": 0.00005136664155130076,
+          "bass": 0.125640426961041,
+          "overall": 0.15282459513300595,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020376441163621,
+          "sustained": 0.11020376441163621,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.14326489373512707,
+          "point": 3.306112932349086
+        },
+        "magenta": {
+          "level": 0.29094027435922754,
+          "emissive": 0.37822235666699583,
+          "points": [
+            14.547013717961377,
+            11.637610974369101
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 14.530667,
+      "paused": false,
+      "review": {
+        "now": 17.47530000000447,
+        "feature": {
+          "session": 7,
+          "frame": 876,
+          "status": "active",
+          "time": 17.471700000000002,
+          "highMids": 0.08477173549567182,
+          "lowMids": 0.00004785463541595172,
+          "bass": 0.12563840103157292,
+          "overall": 0.152824263799756,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020383652755673,
+          "sustained": 0.11020383652755673,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.14326498748582375,
+          "point": 3.306115095826702
+        },
+        "magenta": {
+          "level": 0.27966152971992053,
+          "emissive": 0.3635599886358967,
+          "points": [
+            13.983076485996026,
+            11.186461188796821
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 14.658667,
+      "paused": false,
+      "review": {
+        "now": 17.60870000000298,
+        "feature": {
+          "session": 7,
+          "frame": 884,
+          "status": "active",
+          "time": 17.6051,
+          "highMids": 0.08477242294805547,
+          "lowMids": 0.000049515041301729434,
+          "bass": 0.12563977479062732,
+          "overall": 0.15282499912105074,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020395952928079,
+          "sustained": 0.11020395952928079,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.14326514738806503,
+          "point": 3.306118785878424
+        },
+        "magenta": {
+          "level": 0.27223940153119547,
+          "emissive": 0.35391122199055414,
+          "points": [
+            13.611970076559773,
+            10.88957606124782
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 14.808,
+      "paused": false,
+      "review": {
+        "now": 17.74210000000149,
+        "feature": {
+          "session": 7,
+          "frame": 892,
+          "status": "active",
+          "time": 17.738400000000002,
+          "highMids": 0.0847719466281334,
+          "lowMids": 0.00004790629704014687,
+          "bass": 0.12563815218305954,
+          "overall": 0.15282420972753769,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020401079357577,
+          "sustained": 0.11020401079357577,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.1432652140316485,
+          "point": 3.306120323807273
+        },
+        "magenta": {
+          "level": 0.26748262355356733,
+          "emissive": 0.3477274106196375,
+          "points": [
+            13.374131177678366,
+            10.699304942142692
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 14.936,
+      "paused": false,
+      "review": {
+        "now": 17.875,
+        "feature": {
+          "session": 7,
+          "frame": 900,
+          "status": "active",
+          "time": 17.8717,
+          "highMids": 0.08477178668116113,
+          "lowMids": 0.00004945865228142179,
+          "bass": 0.12563953496181846,
+          "overall": 0.1528243064620611,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020409147241615,
+          "sustained": 0.11020409147241615,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.14326531891414102,
+          "point": 3.3061227441724848
+        },
+        "magenta": {
+          "level": 0.26449827080079386,
+          "emissive": 0.343847752041032,
+          "points": [
+            13.224913540039692,
+            10.579930832031755
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 15.064,
+      "paused": false,
+      "review": {
+        "now": 18.01260000000149,
+        "feature": {
+          "session": 7,
+          "frame": 908,
+          "status": "active",
+          "time": 18.0051,
+          "highMids": 0.08477226507002533,
+          "lowMids": 0.000054266391439515525,
+          "bass": 0.1256433575980598,
+          "overall": 0.15282509486442258,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020398681529693,
+          "sustained": 0.11020398681529693,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.14326518285988601,
+          "point": 3.306119604458908
+        },
+        "magenta": {
+          "level": 0.26265037822360776,
+          "emissive": 0.3414454916906901,
+          "points": [
+            13.132518911180387,
+            10.50601512894431
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 15.211369,
+      "paused": false,
+      "review": {
+        "now": 18.1435,
+        "feature": {
+          "session": 7,
+          "frame": 916,
+          "status": "active",
+          "time": 18.1384,
+          "highMids": 0.08477254712908863,
+          "lowMids": 0.000057284858328076395,
+          "bass": 0.12564557182776978,
+          "overall": 0.15282527331243312,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020406005543369,
+          "sustained": 0.11020406005543369,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.1432652780720638,
+          "point": 3.3061218016630107
+        },
+        "magenta": {
+          "level": 0.2615212019483966,
+          "emissive": 0.3399775625329156,
+          "points": [
+            13.07606009741983,
+            10.460848077935864
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 15.341333,
+      "paused": false,
+      "review": {
+        "now": 18.27580000000447,
+        "feature": {
+          "session": 7,
+          "frame": 924,
+          "status": "active",
+          "time": 18.2717,
+          "highMids": 0.08477207499336954,
+          "lowMids": 0.000054862150163126194,
+          "bass": 0.12564294739019877,
+          "overall": 0.15282442445813205,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020402637374892,
+          "sustained": 0.11020402637374892,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.1432652342858736,
+          "point": 3.3061207912124675
+        },
+        "magenta": {
+          "level": 0.26083704203309327,
+          "emissive": 0.3390881546430213,
+          "points": [
+            13.041852101654664,
+            10.43348168132373
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 15.469333,
+      "paused": false,
+      "review": {
+        "now": 18.4095,
+        "feature": {
+          "session": 7,
+          "frame": 932,
+          "status": "active",
+          "time": 18.405,
+          "highMids": 0.08477194756001316,
+          "lowMids": 0.000057566275898490934,
+          "bass": 0.1256456036666823,
+          "overall": 0.15282491740692172,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.11020413802451026,
+          "sustained": 0.11020413802451026,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.14326537943186335,
+          "point": 3.306124140735308
+        },
+        "magenta": {
+          "level": 0.2604236034113843,
+          "emissive": 0.33855068443479963,
+          "points": [
+            13.021180170569217,
+            10.416944136455372
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 15.597333,
+      "paused": false,
+      "review": {
+        "now": 18.54380000000447,
+        "feature": {
+          "session": 7,
+          "frame": 940,
+          "status": "active",
+          "time": 18.5383,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.07539972910448461,
+          "sustained": 0.07539972910448461,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.09801964783583,
+          "point": 2.2619918731345385
+        },
+        "magenta": {
+          "level": 0.22950438256476471,
+          "emissive": 0.29835569733419415,
+          "points": [
+            11.475219128238235,
+            9.18017530259059
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 15.744972,
+      "paused": false,
+      "review": {
+        "now": 18.67720000000298,
+        "feature": {
+          "session": 7,
+          "frame": 948,
+          "status": "active",
+          "time": 18.6717,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.03595427983342649,
+          "sustained": 0.03595427983342649,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.046740563783454446,
+          "point": 1.0786283950027948
+        },
+        "magenta": {
+          "level": 0.1225629744006748,
+          "emissive": 0.15933186672087726,
+          "points": [
+            6.128148720033741,
+            4.902518976026992
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 15.874667,
+      "paused": false,
+      "review": {
+        "now": 18.80910000000149,
+        "feature": {
+          "session": 7,
+          "frame": 956,
+          "status": "active",
+          "time": 18.805,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.01713523749649744,
+          "sustained": 0.01713523749649744,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.022275808745446674,
+          "point": 0.5140571248949233
+        },
+        "magenta": {
+          "level": 0.05841156280594461,
+          "emissive": 0.075935031647728,
+          "points": [
+            2.9205781402972306,
+            2.3364625122377842
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 16.002667,
+      "paused": false,
+      "review": {
+        "now": 18.94270000000298,
+        "feature": {
+          "session": 7,
+          "frame": 964,
+          "status": "active",
+          "time": 18.938299999999998,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.008170919594519445,
+          "sustained": 0.008170919594519445,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.010622195472875278,
+          "point": 0.24512758783558333
+        },
+        "magenta": {
+          "level": 0.027853490981677647,
+          "emissive": 0.036209538276180946,
+          "points": [
+            1.3926745490838823,
+            1.114139639267106
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 16.130667,
+      "paused": false,
+      "review": {
+        "now": 19.07480000000447,
+        "feature": {
+          "session": 7,
+          "frame": 972,
+          "status": "active",
+          "time": 19.0717,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0039006258536425993,
+          "sustained": 0.0039006258536425993,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.005070813609735379,
+          "point": 0.11701877560927798
+        },
+        "magenta": {
+          "level": 0.013296673132141208,
+          "emissive": 0.017285675071783572,
+          "points": [
+            0.6648336566070604,
+            0.5318669252856483
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 16.258667,
+      "paused": false,
+      "review": {
+        "now": 19.20860000000149,
+        "feature": {
+          "session": 7,
+          "frame": 980,
+          "status": "active",
+          "time": 19.204900000000002,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0.0018589761969803542,
+          "sustained": 0.0018589761969803542,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0.0024166690560744604,
+          "point": 0.055769285909410625
+        },
+        "magenta": {
+          "level": 0.006336982776391029,
+          "emissive": 0.008238077609308338,
+          "points": [
+            0.31684913881955146,
+            0.25347931105564114
+          ]
+        }
+      }
+    },
+    {
+      "audioTime": 16.408,
+      "paused": false,
+      "review": {
+        "now": 19.34140000000596,
+        "feature": {
+          "session": 7,
+          "frame": 988,
+          "status": "active",
+          "time": 19.3384,
+          "highMids": 0,
+          "lowMids": 0,
+          "bass": 0,
+          "overall": 0,
+          "sequence": 11,
+          "recentEvents": [
+            {
+              "sequence": 8,
+              "band": "mid",
+              "time": 13.8552,
+              "emitted": 13.9052,
+              "strength": 0.25380750808370345
+            },
+            {
+              "sequence": 9,
+              "band": "mid",
+              "time": 14.4218,
+              "emitted": 14.4719,
+              "strength": 0.254317160215713
+            },
+            {
+              "sequence": 10,
+              "band": "low",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.1271580751678445
+            },
+            {
+              "sequence": 11,
+              "band": "mid",
+              "time": 16.4885,
+              "emitted": 16.538400000000003,
+              "strength": 0.08477256651068868
+            }
+          ]
+        },
+        "panel": {
+          "level": 0,
+          "sustained": 0,
+          "accent": 0,
+          "sequence": 11,
+          "emissive": 0,
+          "point": 0
+        },
+        "magenta": {
+          "level": 0.0030217834301000893,
+          "emissive": 0.003928318459130116,
+          "points": [
+            0.15108917150500448,
+            0.12087133720400357
+          ]
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+}

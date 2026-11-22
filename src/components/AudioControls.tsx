@@ -140,7 +140,7 @@ export function AudioControls(props: Props) {
           </div>
           {props.scene === 'lavender-peaks' && <p className="source-help">Lavender Peaks motion preview: all mountains move together, slower on low notes and faster on high notes. Distant ridges stay slower than the foreground.</p>}
           {props.scene === 'crimson-horizon' && <p className="source-help">Travel stays steady, even in silence. Low hits pulse the sun; low mids light the contours and high mids send brief streaks. Move the mouse to look around.</p>}
-          {props.scene === 'nocturne' && <p className="source-help">Bass drives magenta fixtures, mids drive cyan windows, and treble drives violet accents with quick, smooth transitions. Overall intensity lights the distant gate and haze.</p>}
+          {props.scene === 'nocturne' && <p className="source-help">Bass drives magenta fixtures, mids drive cyan windows, high mids drive the left cyan panel, and treble drives violet accents. Overall intensity lights the distant gate and haze.</p>}
           {props.scene === 'nocturne' && <NocturneLightingControls mode={props.nocturneLightingMode} onMode={props.onNocturneLightingMode} lighting={props.nocturneLighting} onChange={props.onNocturneLighting} />}
           <label className="slider-control">Reactivity
             <input type="range" disabled={props.scene === 'nocturne' && props.nocturneLightingMode === 'manual'} min="0" max="1" step="0.01" value={props.reactivity} onChange={(event) => props.onReactivity(Number(event.currentTarget.value))} />
