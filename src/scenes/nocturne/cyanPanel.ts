@@ -5,7 +5,7 @@ import { musicFeaturesFresh, type MusicFeatureReader } from '../../audio/musicFe
 // No PCM or spectrum enters this scene controller.
 const HISTORY = 64
 export function createCyanPanelResponse() {
-  return { level: 0, sustained: 0, accent: 0, session: -1, sequence: 0,
+  return { level: 0, sustained: 0, accent: 0, session: -1, sequence: 0, frame: -1,
     cursor: 0, count: 0,
     times: new Float64Array(HISTORY), energies: new Float32Array(HISTORY), rises: new Float32Array(HISTORY) }
 }
@@ -19,7 +19,7 @@ export function deliverCyanPanelLevel(material: { emissiveIntensity: number }, l
 export function updateCyanPanelResponse(state: CyanPanelResponse, reader: MusicFeatureReader | undefined,
   delta: number, nowSeconds: number, reactivity: number, reducedMotion: boolean) {
   const gain = clampSignal(reactivity)
-  if (!reader || gain === 0) {
+  if (!reader) {
     state.level = state.sustained = state.accent = 0
     state.count = 0
     return state
@@ -27,18 +27,25 @@ export function updateCyanPanelResponse(state: CyanPanelResponse, reader: MusicF
   const view = reader.read()
   if (state.session !== view.session) {
     state.session = view.session; state.sequence = view.sequence
-    state.count = state.cursor = 0
+    state.count = state.cursor = 0; state.frame = -1
     state.level = state.sustained = state.accent = 0
+  }
+  if (gain === 0) {
+    state.sequence = view.sequence
+    state.level = state.sustained = state.accent = 0
+    state.count = 0; state.frame = -1
+    return state
   }
   const fresh = musicFeaturesFresh(view, nowSeconds)
   const dt = Number.isFinite(delta) ? Math.max(0, Math.min(.05, delta)) : 0
   const highMid = fresh ? clampSignal(view.energy.six.highMids) : 0
-  if (fresh && view.frame > 0) {
-    let earlier = state.count ? state.energies[(state.cursor - 1 + HISTORY) % HISTORY] : 0
+  if (fresh && view.frame > 0 && view.frame !== state.frame) {
+    let earlier = state.count ? state.energies[(state.cursor - 1 + HISTORY) % HISTORY] : highMid
     for (let i = 0; i < state.count; i++) {
       const index = (state.cursor - 1 - i + HISTORY) % HISTORY
       if (view.updatedAtSeconds - state.times[index] >= .06) { earlier = state.energies[index]; break }
     }
+    state.frame = view.frame
     const index = state.cursor
     state.times[index] = view.updatedAtSeconds
     state.energies[index] = highMid
@@ -54,9 +61,9 @@ export function updateCyanPanelResponse(state: CyanPanelResponse, reader: MusicF
   state.accent *= Math.exp(-dt / (reducedMotion ? .8 : .22))
   if (!fresh) state.accent = 0
   for (const event of view.events) {
-    if (event.sequence <= state.sequence) continue
+    if (event.session !== view.session || event.sequence <= state.sequence) continue
     state.sequence = event.sequence
-    if (!fresh || reducedMotion || event.band !== 'mid' || nowSeconds - event.emittedAtSeconds > .25) continue
+    if (!fresh || reducedMotion || event.band !== 'mid' || !Number.isFinite(event.emittedAtSeconds) || nowSeconds < event.emittedAtSeconds || nowSeconds - event.emittedAtSeconds > .25) continue
     let highMidRise = 0
     for (let i = 0; i < state.count; i++) {
       const index = (state.cursor - 1 - i + HISTORY) % HISTORY

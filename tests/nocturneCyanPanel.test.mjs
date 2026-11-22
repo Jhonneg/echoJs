@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createCyanPanelResponse, deliverCyanPanelLevel, updateCyanPanelResponse } from '../src/scenes/nocturne/cyanPanel.ts'
 import { createNocturneResponse, updateNocturneResponse } from '../src/scenes/nocturne/reactivity.ts'
-import { silentSignal } from '../src/audio/signal.ts'
+import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 
 function fixture() {
   const state = createCyanPanelResponse()
@@ -92,15 +92,16 @@ test('mixed-frequency input keeps the panel on its own high-mid response', () =>
 })
 
 test('panel level ignores magenta final brightness and resets on stale/session/zero gain', () => {
-  const f = fixture(), legacy = createNocturneResponse(), signal = silentSignal()
+  const f = fixture(), magenta = createNocturneResponse(), store = createMusicFeatureStore()
   for (let i = 0; i < 90; i++) f.step(.3)
   const panel = f.state.level
-  signal.isPlaying = true; signal.updatedAt = 1000; signal.fast.bass = 1
   for (let i = 0; i < 90; i++) {
-    signal.updatedAt = 1000 + i * 1000 / 60
-    updateNocturneResponse(legacy, signal, 'audio', { magenta: 0, cyan: 0, cyanPanel: 0, violet: 0 }, 1, false, 1 / 60, signal.updatedAt)
+    store.publish({session: 1, sequence: 0, status: 'active', updatedAtSeconds: 1 + i / 60,
+      sampleRate: 48000, fftSize: 2048, events: [], energy: {low: .5, mid: 0, high: 0, overall: .5, six: {}},
+      context: {intensity: 0, brightness: 0, brightnessValid: false, activity: 0}})
+    updateNocturneResponse(magenta, store.reader, 'audio', { magenta: 0, cyan: 0, cyanPanel: 0, violet: 0 }, 1, false, 1 / 60, 1 + i / 60)
   }
-  assert.ok(legacy.magenta > .6)
+  assert.ok(magenta.magenta > .6)
   assert.equal(f.state.level, panel)
   updateCyanPanelResponse(f.state, f.reader, 1 / 60, f.view.updatedAtSeconds + .3, 1, false)
   assert.equal(f.state.accent, 0)
@@ -122,4 +123,22 @@ test('reduced motion keeps sustained light gradual and suppresses sharp accents'
     timeSeconds: f.view.updatedAtSeconds, emittedAtSeconds: f.view.updatedAtSeconds, strength: 1 }]
   updateCyanPanelResponse(f.state, f.reader, 1 / 60, f.view.updatedAtSeconds, 1, true)
   assert.equal(f.state.accent, 0)
+})
+
+test('repeated rendering of a feature frame does not fill the history', () => {
+  const f = fixture(); f.step(.3)
+  const count=f.state.count
+  for(let i=0;i<20;i++)updateCyanPanelResponse(f.state,f.reader,1/120,f.view.updatedAtSeconds+.05,1,false)
+  assert.equal(f.state.count,count)
+})
+
+test('zero/manual suppression consumes panel events before resuming Audio', () => {
+  const f=fixture();for(let i=0;i<30;i++)f.step()
+  for(let i=0;i<5;i++)f.step(.4)
+  f.view.events=[{session:1,sequence:++f.view.sequence,band:'mid',timeSeconds:f.view.updatedAtSeconds,
+    emittedAtSeconds:f.view.updatedAtSeconds,strength:1}]
+  updateCyanPanelResponse(f.state,f.reader,1/60,f.view.updatedAtSeconds,0,false)
+  assert.equal(f.state.sequence,f.view.sequence)
+  updateCyanPanelResponse(f.state,f.reader,1/60,f.view.updatedAtSeconds,1,false)
+  assert.equal(f.state.accent,0)
 })

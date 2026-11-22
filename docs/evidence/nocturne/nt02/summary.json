@@ -1,0 +1,227 @@
+{
+  "checks": [
+    "Protected audio/DSP, other-scene and Nocturne geometry/material/reflection files byte-identical to task baseline",
+    "141 generated-audio numeric samples and 140 fixed-camera composited frames",
+    "Exact cyan emitter=level*1.3 and point=level*30 for every sample",
+    "Band isolation, high-mid sustain/attacks, existing audio element retained across four scene selections",
+    "Quality switches and Manual→Audio smoke passed; no runtime exceptions"
+  ],
+  "sections": [
+    {
+      "name": "bass",
+      "samples": 12,
+      "highMid": 0.000002888669898823083,
+      "panelMean": 0.000005592531680900899,
+      "panelMax": 0.000015967763381476933,
+      "accentMax": 0,
+      "magentaMax": 0.24537146669497106,
+      "cyanMax": 0.00033037470183574775,
+      "violetMax": 0.000010054495531824078
+    },
+    {
+      "name": "lowmid",
+      "samples": 13,
+      "highMid": 0.000004971583935570685,
+      "panelMean": 0.000009260889774755177,
+      "panelMax": 0.0000248650945247801,
+      "accentMax": 0,
+      "magentaMax": 0.0002037864212774421,
+      "cyanMax": 0.22926951678297128,
+      "violetMax": 0.000009758864338208147
+    },
+    {
+      "name": "sustain",
+      "samples": 11,
+      "highMid": 0.09899131990326557,
+      "panelMean": 0.12894277269628035,
+      "panelMax": 0.13044522915137502,
+      "accentMax": 0.0017676394804522929,
+      "magentaMax": 0.0000012626573995947723,
+      "cyanMax": 0.13714004332276175,
+      "violetMax": 0.000011311421357916385
+    },
+    {
+      "name": "attacks",
+      "samples": 27,
+      "highMid": 0.32526019022682184,
+      "panelMean": 0.21953054599966657,
+      "panelMax": 0.4343608391602713,
+      "accentMax": 0.08258112928457878,
+      "magentaMax": 0.0002656126574074434,
+      "cyanMax": 0.4470863205107701,
+      "violetMax": 0.00009615747434056548
+    },
+    {
+      "name": "silence",
+      "samples": 5,
+      "highMid": 0,
+      "panelMean": 0.006576472862736683,
+      "panelMax": 0.01632040648804082,
+      "accentMax": 0,
+      "magentaMax": 0,
+      "cyanMax": 0.02399799830139772,
+      "violetMax": 0
+    },
+    {
+      "name": "mixed",
+      "samples": 13,
+      "highMid": 0.08485167890416047,
+      "panelMean": 0.11069333958954893,
+      "panelMax": 0.11277895248950105,
+      "accentMax": 0.002791938429080883,
+      "magentaMax": 0.18154598663882582,
+      "cyanMax": 0.12085261968941136,
+      "violetMax": 0.000009415037126936505
+    }
+  ],
+  "protectedFiles": [
+    {
+      "file": "src/audio/analysis.ts",
+      "sha256": "28cf0def41ae125c779572f9269fd0a18a1e2dbe379668598ddf32a9791ec795"
+    },
+    {
+      "file": "src/audio/features.ts",
+      "sha256": "bbaf3b60aaf29e08abd99afb8daaacd9a724cb84ad09b061b7c5fee1d19f6b4e"
+    },
+    {
+      "file": "src/audio/flux.ts",
+      "sha256": "3fe831ec0c4ce8d9cc0b843193e39e8d71e4846fcaf77816dac9fe7b23e99dab"
+    },
+    {
+      "file": "src/audio/localFile.ts",
+      "sha256": "2eba75e80f734e0f0a1df997922b65c5e2bdd06b5c49812ca5ec343dccab58a6"
+    },
+    {
+      "file": "src/audio/music/analysis.ts",
+      "sha256": "df3968778d574c391ad37923d5da4636de48a1d7c96895b3345ce830494a0ff7"
+    },
+    {
+      "file": "src/audio/music/context.ts",
+      "sha256": "88cc6c9f9c5a0a6223a9f87a68165e79a246157d645e7ca7f88172f59d3e47bf"
+    },
+    {
+      "file": "src/audio/music/energy.ts",
+      "sha256": "8846abbedbed0cae124094a9daa59ca5e149f9bf4469aac7c5bfa090f3ada15e"
+    },
+    {
+      "file": "src/audio/music/onsets.ts",
+      "sha256": "d7aa528753b3da37a6fe99d22430b58db36fa07259f7d5eb122a88ed52b5e3d2"
+    },
+    {
+      "file": "src/audio/musicFeatures.ts",
+      "sha256": "54596883f868a7f7cd937cab7c35beff848b6aa7c43af0c551c5a9597e3ee0a9"
+    },
+    {
+      "file": "src/audio/signal.ts",
+      "sha256": "256f28f6a898ec48605742c43863e11f647a03d6ecc7551d82d46becf9af02c7"
+    },
+    {
+      "file": "src/audio/sixBands.ts",
+      "sha256": "b8531766e0df46aebc93230270a8a2041675bad1c81da513b15141d569432add"
+    },
+    {
+      "file": "src/audio/tabCapture.ts",
+      "sha256": "7e26215bfe6e4176e397505c444dff06d953a792e1ba2151b50644b38ee29a1c"
+    },
+    {
+      "file": "src/scenes/bloom/BloomScene.tsx",
+      "sha256": "410b11475481833180c658b703c6045196b2b64421e10e6a3298013d047e206e"
+    },
+    {
+      "file": "src/scenes/bloom/bloom.css",
+      "sha256": "829e2b7595af486e07d0e22ddae10e9aa9ab0eaee06c43f0477b078c41d60fac"
+    },
+    {
+      "file": "src/scenes/bloom/reactivity.ts",
+      "sha256": "3e5d624ffda1302f95a58e5888dbf9075dc9cfb0217d750438af0ca45ea3253f"
+    },
+    {
+      "file": "src/scenes/lavender-peaks/LavenderPeaksScene.tsx",
+      "sha256": "98c96de7155b42b84824f7fbdfded9141b70652b72cdbc120fbfb6c2a2c37361"
+    },
+    {
+      "file": "src/scenes/lavender-peaks/lavender-peaks.css",
+      "sha256": "c17ff0721e0662f41a6e43bd114aec6bd57250d3a75a02c96e57f49f3bc20d80"
+    },
+    {
+      "file": "src/scenes/lavender-peaks/motion.ts",
+      "sha256": "035185c670a2a59cb478b1f17567c750c951167ab70be213e7ec0799c1903a35"
+    },
+    {
+      "file": "src/scenes/lavender-peaks/terrain.ts",
+      "sha256": "55b8ff617ea732cd7e09d7ca3340ac73dbbc9fc180f0283c89b93f57e0d76794"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/CrimsonHorizonScene.tsx",
+      "sha256": "c4a500f949abfab261b3f2c1f8b95e23b64ba0324bebea3fe8c98af0d61bac00"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/atmosphere.ts",
+      "sha256": "1376e1cb89e1b51023ab507eb00ff894ddbbde233ecff4daa5b48509034be3af"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/cameraMotion.ts",
+      "sha256": "e16e23df69de8b037aee43eccd098ecbcd364812961fea0f1d64e0978ba9cb74"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/contours.ts",
+      "sha256": "0bde7a03f7b0d64d1809b93c7592f198004306eaffc70aec8df6b0015e9b7a7d"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/crimson-horizon.css",
+      "sha256": "9a9476c94f5c5a752f03ca299d4e3b11fa434c93483b0382b5af4843a43ef0c7"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/journey.ts",
+      "sha256": "986e59bb7df7614489eb35abb50a9ce878549f27d1ea17e7706d94faf1e99d3f"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/material.ts",
+      "sha256": "ae89bfe38d71d04077b9a4dc2c8b7a631bec9d6700c4a27746f06aa5d11e98da"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/musicPilot.ts",
+      "sha256": "ec6b27ae5f2ee4a6245806c044511e24d93574830e83614be79defbe41f299ab"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/noise.ts",
+      "sha256": "9e56e4e02c6edc60c6297d3bd16b342ce346f4f8cdd27e8e26f518fb94fc7344"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/response.ts",
+      "sha256": "00611a75fa7a5bbf64ade688be1d58631cf39c19f543703f4e936ad4cb172ae9"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/terrain.ts",
+      "sha256": "7dff8d08b8b3f84414a60b3c944d4b225504ace9d6e0c661c8a5453d64146fda"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/terrain.worker.ts",
+      "sha256": "7c0ddbd39454d216d38368a05f0ec137609711eba31b364b62fd7a01556e30b0"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/terrainStream.ts",
+      "sha256": "e088c60a24161e439353d54104a961c5ed3bd5acc688e61ebe9e4d2dd4e11dfd"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/valley.ts",
+      "sha256": "28bd67983bcb32aed05b5cb42e1dc2947d09eb64cf8807d2e93fe4f25667c8d2"
+    },
+    {
+      "file": "src/scenes/nocturne/ArchitectureDetails.tsx",
+      "sha256": "b85dbd602f2ba0abc62eb809e2fe6cfc0bd1f2fd910ffd76769690386bfbd4ef"
+    },
+    {
+      "file": "src/scenes/nocturne/Atmosphere.tsx",
+      "sha256": "9a70270970198d3cd1df4cae65f3bbea3bfbaa11c049af0d038e29d06b12ecc9"
+    },
+    {
+      "file": "src/scenes/nocturne/WetGround.tsx",
+      "sha256": "ff7e72d5147b9c4c99a18f7219947bbf61464776e136b1a2154ae422c48833cd"
+    },
+    {
+      "file": "src/scenes/nocturne/WallSurface.tsx",
+      "sha256": "34ecd021a20c286415740f6f137581cbbd69a47e3b6a0a56cfaf3e5b5775a0f9"
+    }
+  ]
+}

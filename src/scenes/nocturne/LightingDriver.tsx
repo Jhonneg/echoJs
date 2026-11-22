@@ -1,7 +1,6 @@
 import { useLayoutEffect, useMemo, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { Color, Fog, Mesh, MeshStandardMaterial, PointLight, ShaderMaterial } from 'three'
-import type { AudioSignal } from '../../audio/signal'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import { NOCTURNE_LIGHT_COLORS, type NocturneLighting, type NocturneLightingMode } from './lighting'
 import { createNocturneResponse, updateNocturneResponse, type NocturneResponse } from './reactivity'
@@ -24,8 +23,8 @@ function applyLevels(targets: LightingTargets, response: NocturneResponse, panel
   deliverCyanPanelLevel(panelMaterial, panelLight.light, panelLight.full, panelLevel)
 }
 
-export function LightingDriver({ signal, musicFeatures, mode, manual, reactivity, reducedMotion }: {
-  signal: AudioSignal, musicFeatures?: MusicFeatureReader, mode: NocturneLightingMode, manual: NocturneLighting, reactivity: number, reducedMotion: boolean,
+export function LightingDriver({ musicFeatures, mode, manual, reactivity, reducedMotion }: {
+  musicFeatures: MusicFeatureReader, mode: NocturneLightingMode, manual: NocturneLighting, reactivity: number, reducedMotion: boolean,
 }) {
   const scene = useThree(state => state.scene)
   const response = useRef(createNocturneResponse())
@@ -57,9 +56,9 @@ export function LightingDriver({ signal, musicFeatures, mode, manual, reactivity
     if (!bound) return
     const state = response.current
     const now = performance.now()
-    updateNocturneResponse(state, signal, mode, manual, reactivity, reducedMotion, delta, now)
-    const panelLevel = mode === 'manual' ? manual.cyanPanel : updateCyanPanelResponse(panel.current, musicFeatures,
-      delta, now / 1000, reactivity, reducedMotion).level
+    updateNocturneResponse(state, musicFeatures, mode, manual, reactivity, reducedMotion, delta, now / 1000)
+    updateCyanPanelResponse(panel.current, musicFeatures, delta, now / 1000, mode === 'manual' ? 0 : reactivity, reducedMotion)
+    const panelLevel = mode === 'manual' ? manual.cyanPanel : panel.current.level
     applyLevels(bound, state, panelLevel)
     const { glow, scratch } = palette
     const magenta = mode === 'manual' ? state.magenta : state.atmosphere

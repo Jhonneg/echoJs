@@ -10,6 +10,8 @@ Start with [current progress](PROGRESS.md) and [the project roadmap](ROADMAP.md)
 - Application audio: [Music Intelligence roadmap](ECHO_Music_Intelligence_Roadmap.md), [animation refinement](ANIMATION_REFINEMENT.md).
 - Crimson: [visual mapping roadmap](CRIMSON_VISUAL_MAPPING_ROADMAP.md), [visual polish roadmap](CRIMSON_VISUAL_POLISH_ROADMAP.md).
 
+- Noctune 2.0: [master roadmap](NOCTUNE_MASTER_ROADMAP.md), [visual mapping](NOCTUNE_VISUAL_MAPPING.md), [migration tracker](MUSIC_INTELLIGENCE_MIGRATION.md).
+
 ## Reports, evidence and history
 
 | Folder | Contents |

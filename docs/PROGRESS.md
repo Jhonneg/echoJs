@@ -1,5 +1,12 @@
 # ECHO — current checkpoint
 
+## Noctune 2.0 — NT01 APPROVED; NT02 IMPLEMENTED — 2026-11-22
+
+- Owner “Please implement the plan” approves the [NT01 audit/design](reports/nocturne/NT01_MIGRATION_AUDIT.md) and authorizes NT02. Reconciled the three owner-supplied roadmaps: exact MI/context semantics, panel point ×30, material batching, shared UI/canvas boundaries and media privacy. [NT02 implementation/evidence](reports/nocturne/NT02_INTEGRATION.md) records new mappings and deliberate differences from legacy normalization.
+- Nocturne now requires only MusicFeatureReader for audio lighting and uses MI for receiving/silent feedback. Shared disabled-tilt canvas permits omission of legacy signal; other scenes retain their existing paths. Broad-group MI sustain/events and context atmosphere replace legacy fast/transient/flux/atmosphere. Cyan visual coefficients preserved; frame/event bookkeeping now prevents suppressed event replay.
+- Passed 33 test files, lint, typecheck/build and generated-audio browser checks (141 numeric samples/140 frames), static dependency audit, protected source byte comparison and pixel-identical Manual cyan-on/off captures. Existing bundle warning remains. Audio engine, other landscapes, scene geometry/materials/reflections unchanged. No native/music/device/FPS acceptance inferred.
+- NT03 is not started; next action is the bounded unified scene-response phase, followed by NT04 migration visual approval. Stop after NT02 for owner review under the approved one-task boundary. No commit/push/deploy. Suggested commit, only if authorized: `Migrate Nocturne lighting and status to Music Intelligence`.
+
 ## Nocturne cyan fixture live reactivity review — MEASURED, OWNER MUSIC REVIEW PENDING — 2026-11-22
 
 - Owner visually approved the single cyan fixture. Ran the existing local-file/Music Intelligence/Nocturne Audio path with a generated 16.5-second WAV and fixed headless browser camera. [Review, video, annotated signal schedule and 123 measured signal-to-fixture samples](reports/nocturne/NOCTURNE_CYAN_MUSIC_REVIEW.md) cover bass-only, low-mid-only, high-mid sustain, five short attacks, mixed input and silence. An isolated `/tmp` copy supplied numeric probes; no production app/audio/scene source changed.

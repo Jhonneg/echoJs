@@ -6,6 +6,7 @@ import type { CaptureState } from '../audio/tabCapture'
 import type { LocalFileState } from '../audio/localFile'
 import type { GraphicsQuality } from '../engine/quality'
 import { sceneNames, type SceneId } from '../scenes/scene'
+import { nocturneHasSignal } from '../scenes/nocturne/activity'
 
 type Props = {
   nocturneLightingMode: NocturneLightingMode
@@ -64,12 +65,14 @@ export function AudioControls(props: Props) {
   const [activity, setActivity] = useState({ playing: false, suspended: false })
   useEffect(() => {
     const timer = window.setInterval(() => setActivity((previous) => {
-      const playing = analysis.signal.isPlaying
+      const playing = props.scene === 'nocturne'
+        ? nocturneHasSignal(analysis.musicFeatures, performance.now() / 1000)
+        : analysis.signal.isPlaying
       const suspended = analysis.message.startsWith('Suspended') || analysis.message.startsWith('Audio context could not resume')
       return previous.playing === playing && previous.suspended === suspended ? previous : { playing, suspended }
     }), 500)
     return () => clearInterval(timer)
-  }, [analysis])
+  }, [analysis, props.scene])
 
   const sharing = source === 'tab' && (capture.status === 'connecting' || capture.status === 'connected')
   const canDisconnect = source === 'file' ? local.status !== 'empty' : sharing

@@ -1,82 +1,78 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { silentSignal, smooth } from '../src/audio/signal.ts'
 import { createNocturneResponse, updateNocturneResponse } from '../src/scenes/nocturne/reactivity.ts'
-const manual = { magenta: 0.2, cyan: 0.5, violet: 0.9 }
-const fresh = () => Object.assign(silentSignal(), { isPlaying: true, updatedAt: 1000 })
-function advance(state, signal, seconds = 2, gain = 1, reduced = false, hz = 60) {
-  for (let i = 0; i < seconds * hz; i++) {
-    signal.updatedAt = 1000 + i * 1000 / hz
-    updateNocturneResponse(state, signal, 'audio', manual, gain, reduced, 1 / hz, signal.updatedAt)
+import { nocturneHasSignal } from '../src/scenes/nocturne/activity.ts'
+const manual = { magenta: .2, cyan: .5, violet: .9, cyanPanel: .4 }
+function fixture() {
+  const view = { session: 1, sequence: 0, status: 'active', frame: 1, updatedAtSeconds: 1,
+    energy: { low: 0, mid: 0, high: 0, overall: 0 }, context: { intensity: 0 }, events: [] }
+  const reader = { read: () => view }, state = createNocturneResponse()
+  function step({gain = 1, reduced = false, mode = 'audio', hz = 60, now} = {}) {
+    view.updatedAtSeconds += 1 / hz; view.frame++
+    updateNocturneResponse(state, reader, mode, manual, gain, reduced, 1 / hz, now ?? view.updatedAtSeconds)
   }
+  function advance(seconds = 2, options = {}) { for (let i = 0; i < seconds * (options.hz ?? 60); i++) step(options) }
+  function event(band = 'low', strength = .5, extra = {}) {
+    const e = {session: view.session, sequence: ++view.sequence, band, strength,
+      timeSeconds: view.updatedAtSeconds, emittedAtSeconds: view.updatedAtSeconds, ...extra}
+    view.events.push(e); return e
+  }
+  step()
+  return {view, reader, state, step, advance, event}
 }
-test('each band rises smoothly but faster than the first N05 envelope', () => {
-  for (const [band, group, originalAttack] of [['bass', 'magenta', 0.045], ['midrange', 'cyan', 0.065], ['treble', 'violet', 0.035]]) {
-    const signal = fresh(), state = createNocturneResponse()
-    signal.fast[band] = 1;signal.flux[band] = 1
-    updateNocturneResponse(state, signal, 'audio', manual, 1, false, 1 / 60, 1000)
-    assert.ok(state[group] > smooth(0, 1, 1 / 60, originalAttack))
-    assert.ok(state[group] < 1, 'first frame must not jump to full brightness')
-    const first = state[group]
-    advance(state, signal, 0.1)
-    assert.ok(state[group] > first && state[group] > 0.94)
-    for (const name of ['magenta', 'cyan', 'violet']) if (name !== group) assert.equal(state[name], 0)
+const outputs = state => ['magenta', 'cyan', 'violet', 'atmosphere'].map(k => state[k])
+test('calibrated bands stay independent, proportional and bounded during sustain', () => {
+  for (const [band, group] of [['low','magenta'],['mid','cyan'],['high','violet']]) {
+    const f = fixture(); f.view.energy[band] = .1; f.advance()
+    const quiet = f.state[group]; assert.ok(Math.abs(quiet - .13) < .001)
+    f.view.energy[band] = .4; f.advance(); assert.ok(Math.abs(f.state[group] - quiet * 4) < .001)
+    for (const g of ['magenta','cyan','violet']) if (g !== group) assert.equal(f.state[g],0)
+    f.advance(5); assert.equal(f.state.accents[group],0)
+    f.view.energy[band] = 1;f.advance();assert.ok(f.state[group] <= .65)
   }
 })
-test('sustained energy stays illuminated without flash timers, while accents add brightness', () => {
-  const signal = fresh(), state = createNocturneResponse()
-  signal.fast.bass = 0.7;advance(state, signal)
-  const sustained = state.magenta
-  assert.ok(sustained > 0.3)
-  advance(state, signal, 3);assert.ok(state.magenta >= sustained)
-  signal.flux.bass = 1;advance(state, signal);assert.ok(state.magenta > sustained && state.magenta <= 1)
-  signal.fast.bass = 0;advance(state, signal);assert.equal(state.magenta, 0)
-})
-test('reactivity scales all illumination and zero immediately clears output', () => {
-  const states = [0.25, 0.5, 1].map(gain => {
-    const signal = fresh(), state = createNocturneResponse()
-    signal.fast.bass = signal.flux.bass = signal.atmosphere = 1
-    advance(state, signal, 2, gain);return state
-  })
-  assert.ok(Math.abs(states[0].magenta * 4 - states[2].magenta) < 1e-9)
-  updateNocturneResponse(states[2], fresh(), 'audio', manual, 0, false, 0, 1000)
-  assert.deepEqual(states[2], createNocturneResponse())
-})
-test('pause, disconnect, stale and invalid timestamps fade smoothly to exact zero', () => {
-  for (const kind of ['pause', 'stale', 'empty', 'future', 'nan']) {
-    const signal = fresh(), state = { magenta: 1, cyan: 1, violet: 1, atmosphere: 1 }
-    signal.fast.bass = signal.fast.midrange = signal.fast.treble = signal.atmosphere = 1
-    if (kind === 'pause') signal.isPlaying = false
-    if (kind === 'empty') signal.updatedAt = 0
-    if (kind === 'future') signal.updatedAt = 2000
-    if (kind === 'nan') signal.updatedAt = NaN
-    const now = kind === 'stale' ? 1300 : 1000
-    updateNocturneResponse(state, signal, 'audio', manual, 1, false, 1 / 60, now)
-    assert.ok(state.magenta > 0 && state.magenta < 1)
-    for (let i = 0; i < 300; i++) updateNocturneResponse(state, signal, 'audio', manual, 1, false, 1 / 60, now)
-    assert.deepEqual(state, createNocturneResponse(), kind)
+test('fresh events add finite proportional accents and duplicates never retrigger', () => {
+  for (const [band, group] of [['low','magenta'],['mid','cyan'],['high','violet']]) {
+    const f = fixture(); f.view.energy[band] = .1;f.advance()
+    f.event(band,.5); f.step(); assert.equal(f.state.accents[group],.15)
+    assert.ok(f.state[group] > .13)
+    f.advance(3); assert.equal(f.state.accents[group],0);assert.ok(Math.abs(f.state[group]-.13)<.001)
   }
 })
-test('cadence, slower reduced motion, quiet targets and invalid values remain bounded', () => {
-  const outputs = [30, 60, 120].map(hz => {
-    const signal = fresh(), state = createNocturneResponse()
-    signal.fast.bass = 0.6;signal.atmosphere = 0.7
-    advance(state, signal, 1, 1, false, hz);return state
-  })
-  assert.ok(Math.abs(outputs[0].magenta - outputs[2].magenta) < 1e-9)
-  const signal = fresh(), normal = createNocturneResponse(), reduced = createNocturneResponse()
-  signal.fast.bass = 0.6;signal.atmosphere = 0.01
-  advance(normal, signal, 0.1);advance(reduced, signal, 0.1, 1, true)
-  assert.ok(reduced.magenta > 0 && reduced.magenta < normal.magenta)
-  assert.ok(reduced.atmosphere > 0)
-  signal.fast.bass = NaN;signal.transient.bass = Infinity
-  advance(normal, signal, 5);assert.equal(normal.magenta, 0)
-  updateNocturneResponse(normal, signal, 'audio', manual, NaN, false, Infinity, 1000)
-  assert.deepEqual(normal, createNocturneResponse())
+test('manual, zero gain and reduced motion consume suppressed events without replay', () => {
+  for (const options of [{mode:'manual'},{gain:0},{reduced:true}]) {
+    const f=fixture();f.event();f.step(options)
+    assert.equal(f.state.accents.magenta,0)
+    if(options.mode)assert.deepEqual(outputs(f.state),[.2,.5,.9,0])
+    f.step();assert.equal(f.state.accents.magenta,0)
+  }
 })
-test('manual isolation ignores playback/reactivity and switching to Audio releases it', () => {
-  const state = createNocturneResponse(), signal = silentSignal()
-  updateNocturneResponse(state, signal, 'manual', manual, 0, true, 0, 0)
-  assert.deepEqual(state, { ...manual, atmosphere: 0 })
-  advance(state, signal, 5);assert.deepEqual(state, createNocturneResponse())
+test('stale, future, priming and inactive data release to zero, sessions skip retained events', () => {
+  for (const kind of ['stale','future','priming','inactive','invalid']) {
+    const f=fixture(); f.view.energy.low=.5;f.view.context.intensity=.8;f.advance()
+    if(['priming','inactive'].includes(kind))f.view.status=kind
+    const now=kind==='stale'?100:kind==='future'?0:kind==='invalid'?NaN:undefined
+    f.advance(5,{now});assert.deepEqual(outputs(f.state),[0,0,0,0],kind)
+  }
+  const f=fixture();f.event();f.view.session++;f.event();f.step();assert.equal(f.state.accents.magenta,0)
+})
+test('wrong-session, future, expired and invalid events do not create accents', () => {
+  for (const extra of [{session:2},{emittedAtSeconds:99},{emittedAtSeconds:0},{emittedAtSeconds:NaN}]) {
+    const f=fixture();f.event('low',1,extra);f.step();assert.equal(f.state.accents.magenta,0)
+  }
+})
+test('cadence, gain, invalid inputs and atmosphere isolation', () => {
+  const levels=[30,60,120].map(hz=>{const f=fixture();f.view.energy.low=.3;f.advance(1,{hz});return f.state.magenta})
+  assert.ok(Math.abs(levels[0]-levels[2])<1e-9)
+  const f=fixture();f.view.context.intensity=1;f.advance();assert.ok(f.state.atmosphere>.99)
+  assert.deepEqual(outputs(f.state).slice(0,3),[0,0,0])
+  f.view.energy.low=NaN;f.step({gain:NaN});assert.deepEqual(outputs(f.state),[0,0,0,0])
+})
+test('Noctune activity feedback separates active silence, receiving, stale and missing MI', () => {
+  const f=fixture(),now=f.view.updatedAtSeconds
+  assert.equal(nocturneHasSignal(f.reader,now),false)
+  f.view.energy.mid=.1;assert.equal(nocturneHasSignal(f.reader,now),true)
+  assert.equal(nocturneHasSignal(f.reader,now+1),false)
+  assert.equal(nocturneHasSignal(undefined,now),false)
+  f.view.status='inactive';assert.equal(nocturneHasSignal(f.reader,now),false)
 })

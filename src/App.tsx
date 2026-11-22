@@ -50,7 +50,7 @@ export default function App() {
           : scene === 'lavender-peaks'
             ? <LavenderPeaksScene quality={quality} signal={analysis.signal} reactivity={reactivity} />
             : scene === 'nocturne'
-              ? <NocturneScene signal={analysis.signal} musicFeatures={analysis.musicFeatures} quality={quality} lighting={nocturneLighting} lightingMode={nocturneLightingMode} reactivity={reactivity} />
+              ? <NocturneScene musicFeatures={analysis.musicFeatures!} quality={quality} lighting={nocturneLighting} lightingMode={nocturneLightingMode} reactivity={reactivity} />
               : <CrimsonHorizonScene pilot={analysis.musicFeatures ? { reader: analysis.musicFeatures, profile: 'candidate' } : undefined} quality={quality} signal={analysis.signal} reactivity={reactivity} />}
         <AudioControls source={source} capture={capture} local={local} analysis={analysis}
           scene={scene} onScene={setScene}

@@ -281,3 +281,7 @@ Crimson requested follow-up (2026-11-22): owner approved bounded background star
 2026-11-22 — Owner “looks better now” approves the star visibility follow-up and requests documentation organization. Organization proposal under review; preserve all existing docs/evidence and repair references when moving files.
 
 Documentation organization (2026-11-22): owner “yes” approves the proposed structure. Completed topic-based report/evidence moves, progress history extraction, index and reference updates. Core guides/roadmap paths retained; no application changes or new development phase.
+
+## Noctune 2.0 — NT01–NT15
+
+The owner supplied the [master roadmap](NOCTUNE_MASTER_ROADMAP.md), [visual mapping](NOCTUNE_VISUAL_MAPPING.md) and [migration tracker](MUSIC_INTELLIGENCE_MIGRATION.md). NT01 audit/design is approved with “Please implement the plan”; NT02 is the current bounded implementation scope. Later phases follow sequentially with their required gates. Preserve the visually approved left cyan fixture and other landscapes. Actual status is in PROGRESS.md.

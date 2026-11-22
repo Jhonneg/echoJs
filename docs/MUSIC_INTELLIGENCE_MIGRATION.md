@@ -1,0 +1,394 @@
+ECHO — Music Intelligence Migration Tracker
+
+Version: 1.2 · Prepared: 2026-11-22 · Status: NT01 approved; NT02 implemented; NT03 pending; audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
+Destination: docs/MUSIC_INTELLIGENCE_MIGRATION.md
+Current execution scope: Noctune only. Future intention: remove shared legacy analysis after every consumer has migrated.
+
+1. Project-wide migration objective
+
+MusicFeaturesV1 (or a deliberately versioned successor) should become the sole production musical-analysis contract for ECHO. Every landscape owns visual interpretation, not DSP or separate audio-analyser instances. The legacy AudioSignal implementation can be removed only when no production consumer remains and the application passes complete regression testing.
+
+For the current work: migrate Noctune first, without changing the other landscapes or deleting legacy infrastructure. The full execution sequence is in NOCTUNE_MASTER_ROADMAP.md. The artistic targets are in NOCTUNE_VISUAL_MAPPING.md.
+
+2. Reported architecture before migration
+
+The owner-provided Noctune audit reports that createAnalysis({ musicIntelligence: true }) produces:
+
+Legacy mutable AudioSignal: normalized fast, slow, transient, flux, six frequency bands, atmosphere, isPlaying, and millisecond updatedAt.
+
+Music Intelligence MusicFeaturesV1: fixed-reference calibrated six-band linear energy, low/mid/high onset events, session and sequence, active/fresh state, event timestamps in seconds, and context measurements. The reader.read() scalar view is borrowed/reused between frames; only the event objects are immutable.
+
+The existing Noctune magenta/cyan/violet groups and gate/halo/fog historically read legacy state; the approved independent left cyan fixture is a local exception that already uses Music Intelligence.
+
+Preliminary source verification: At commit e627ff8, src/audio/musicFeatures.ts defines energy.six as subBass, bass, lowMids, highMids, presence, air, and context as intensity, brightness, brightnessValid, activity. src/App.tsx passes both analysis.signal and analysis.musicFeatures to Noctune. src/scenes/nocturne/LightingDriver.tsx delegates legacy groups to reactivity.ts and the Music Intelligence panel to cyanPanel.ts. This is a read-only snapshot; NT01 must audit the agent's current working tree and any changes since this commit.
+
+3. Destination architecture
+
+User-authorized audio input
+└── Existing shared analysis/capture lifecycle
+└── Music Intelligence feature reader
+├── Noctune scene-local visual response model
+│ ├── sustained fixture envelopes
+│ ├── event-triggered accents/choreography
+│ └── slow atmosphere/dynamics
+├── Crimson visual response (future parity audit)
+├── Lavender Peaks visual response (future migration)
+└── Bloom / other scenes (future migration)
+
+One source of analysis truth, multiple distinct artistic interpretations. Do not copy the old global three-group response architecture into an adapter simply to satisfy the type change.
+
+4. Legacy-to-Music Intelligence replacement policy
+
+Legacy dependency
+
+Proposed migration
+
+Warning
+
+fast broad-band intensity
+
+Calibrated target-band energy with scene-local fast smoothing
+
+Not numerically interchangeable; thresholds/gains require fresh testing
+
+slow broad-band intensity
+
+Calibrated energy with scene-local slow smoothing
+
+No need to recreate slow DSP in scene components
+
+Continuous transient envelope
+
+Qualified low/mid/high onset accents when behavior is truly event-like
+
+Events have discrete semantics and session/sequence
+
+Continuous flux
+
+Onsets for attack-oriented effects; if continuous spectral change is essential, document a real feature gap
+
+Onset is not an exact flux substitute
+
+Legacy six normalized bands
+
+Music Intelligence calibrated six-band energy
+
+Verify actual frequency boundaries/field names
+
+atmosphere
+
+Evaluate existing context.intensity, context.activity, and context.brightness (when brightnessValid) before adding a scene-local slow energy composite
+
+Do not use one scalar to drive all fixture brightness
+
+isPlaying/updatedAt
+
+Feature active/fresh state and correctly interpreted timestamps
+
+Legacy time milliseconds; MI event time seconds per report
+
+Legacy manual group preview
+
+Direct preview of final scene visual controls
+
+Must not fake or corrupt a Music Intelligence session
+
+The Music Intelligence onset events distinguish low/mid/high, not all six energy bands. Mid onset reportedly spans 250–4000 Hz; high-mid energy spans 800–2500 Hz. Qualify broad events against recent relevant band-energy rises when a fixture needs high-mid specificity. Deduplicate by session and sequence. Do not infer individual instruments or song sections from these features alone. src/audio/musicFeatures.ts uses musicFeaturesFresh() to require active status and an age within .25 s; audit visual response against that exact gate.
+
+5. Existing cyan fixture: protected integration
+
+The approved recessed left cyan panel already uses the intended new contract:
+
+high-mid calibrated energy for restrained sustain;
+
+mid onset qualified against short high-mid rise for a one-shot accent;
+
+independent material/light/manual response, not magenta bass;
+
+bounded local event/history logic and zero/silence handling.
+
+Earlier owner-supplied tests found expected high-mid-only, bass-only, low-mid-only, mixed, and silence behavior. A stronger attack coefficient was only proposed, not approved or implemented. Migration must preserve it or supply equivalent tests, delivered lighting traces, and owner-approved visual comparison.
+
+6. Landscape and application migration inventory
+
+The table below is a planning inventory, not proof from live source. Update the status only after code search and successful tests.
+
+Consumer
+
+Known/reported state
+
+Migration status
+
+Next action
+
+Noctune main magenta and bridge-related existing lamps
+
+Legacy bass fast + transient/flux per audit
+
+Pending
+
+NT01 inventory → NT02 migration
+
+Noctune existing cyan windows/panels
+
+Legacy midrange per audit
+
+Pending
+
+NT01 inventory → NT02 migration
+
+Noctune violet strips
+
+Legacy treble per audit
+
+Pending
+
+NT01 inventory → NT02 migration
+
+Noctune gate, halo, fog tint
+
+Legacy atmosphere per audit
+
+Pending
+
+NT01 inventory → NT02 migration
+
+Noctune recessed left cyan fixture
+
+MusicFeaturesV1 high-mid and qualified onset
+
+Integrated; migration parity unverified
+
+Preserve; NT04 regression
+
+Crimson Horizon
+
+Music Intelligence integration used for some documented visual effects
+
+Full exclusivity unverified
+
+Audit after Noctune completion
+
+Lavender Peaks
+
+Prior independent reactive ridges, original audio source unverified
+
+Unverified
+
+Audit in later project-wide pass
+
+Bloom
+
+Original POC; current consumer unknown
+
+Unverified
+
+Audit in later project-wide pass
+
+Other scenes, UI, diagnostics, manual preview, tests
+
+Exact dependencies unknown
+
+Unverified
+
+Repository-wide audit before deleting legacy
+
+Do not mark an entire landscape migrated because one component uses Music Intelligence. A complete scene migration means zero runtime dependency on legacy signals, including indirect aggregate/environment paths.
+
+Known source wiring at the checked commit: src/scenes/nocturne/NocturneScene.tsx types its signal prop as AudioSignal; src/scenes/nocturne/LightingDriver.tsx receives both signal and optional MI reader; src/scenes/nocturne/reactivity.ts maps magenta/cyan/violet via legacy fast/transient/flux and legacy atmosphere; src/scenes/nocturne/cyanPanel.ts reads MI separately. NocturneScene.tsx also has approved bounded mouse-camera parallax; preserve it and reduced-motion centering rather than incorrectly enforcing an entirely frozen camera.
+
+Additional shared-host dependency: NocturneScene.tsx passes signal to LandscapeCanvas even with cameraTilt={false} and reactivity={0}. src/engine/LandscapeCanvas.tsx currently requires an AudioSignal prop because other landscapes may use its optional camera-tilt behavior. NT01/NT02 must decide how to make the Noctune path truly legacy-free without breaking shared canvas users (for example, a narrowly scoped optional signal for disabled camera tilt). This is distinct from the scene's actual music-reactive lighting logic.
+
+7. Noctune execution order and gates
+
+Phase
+
+Work
+
+Blocker/gate
+
+NT01
+
+Discover all legacy consumers, confirm MI contract and current code
+
+Audit approval before mutation
+
+NT02
+
+Route MI data and remove Noctune legacy dependencies
+
+Isolated integration and lifecycle tests
+
+NT03
+
+Introduce scene-local typed response layer
+
+Deterministic tests, bounded state
+
+NT04
+
+Compare approved visual baseline, cyan panel, manual behavior
+
+Owner migration review
+
+NT05–NT11
+
+Implement living-instrument visual mapping
+
+Grouped artistic approvals
+
+NT12–NT14
+
+Controlled tests, synchronized real-song review, performance/accessibility
+
+Evidence + owner sign-off
+
+NT15
+
+Final docs, traceability and closeout
+
+Noctune zero-legacy proof
+
+8. Required repository audit and evidence
+
+Use the repository's own tools. A useful starting point is to search for the actual symbols (verify naming first):
+
+rg -n 'AudioSignal|MusicFeaturesV1|createAnalysis|LightingDriver|atmosphere|updatedAt' src docs
+
+Then investigate imports, adapters, runtime call paths, and tests. This regex alone is not sufficient proof of runtime dependency removal; documentation and compatibility declarations may legitimately retain references after migration.
+
+Minimum evidence for Noctune migration:
+
+Before/after dependency map showing the last Noctune legacy entry points removed.
+
+Exact Music Intelligence contract/units and tested event de-duplication rules.
+
+Target response traces for isolated bands, onsets, sustained energy, silence, and mixtures.
+
+Verified zero-Reactivity, reduced motion, manual preview, feature freshness, new session, disconnect, and scene switching.
+
+Matched fixed-camera screenshots and short synchronized generated-signal review.
+
+Explicit unverified list: real-song artistic feel and hardware FPS must not be marked passing without owner/device review.
+
+Test, lint, typecheck, build results and current known warnings.
+
+9. Risks and required mitigations
+
+Risk
+
+Mitigation
+
+Calibrated energy behaves unlike clamped legacy gain
+
+Retune scene-local gains using controlled traces and actual visual appearance; avoid raw coefficient copying
+
+Broad events are attributed to the wrong band
+
+Qualify against short energy history; don't invent unavailable band-specific onset types
+
+Event repeats after scene reopen/reconnect
+
+Reset by session and track processed sequence
+
+Fast visual effects become flickery/overwhelming
+
+Bound intensity, cooldown/overlap, reduced-motion path, and visual QA
+
+Lighting groups still move as one
+
+Independent scene-level targets and group isolation tests
+
+Moving code breaks original cyan visual
+
+Preserve synthetic values and matched camera captures
+
+Shared legacy deletion breaks other landscapes
+
+Retain pipeline until repo-wide zero-consumer verification
+
+Rendering cost grows
+
+Reuse existing lighting/reflections, batch emissive details, measure GPU/FPS
+
+10. Event and state invariants
+
+One source capture should not duplicate audible playback or introduce another analyser merely for Noctune.
+
+Read the current feature frame consistently; derive scene-local targets deterministically at render/update cadence.
+
+Do not retain the reader's borrowed scalar view across frames; copy only needed values into bounded history.
+
+Ignore stale or inactive features; do not continue generating new accents from a frozen frame.
+
+Handle event session, sequence, and timestamp units explicitly; consume each one-shot event once per relevant session.
+
+Silence and Reactivity=0 bring reactive outputs to the documented resting state without residual unbounded timers.
+
+Manual preview cannot corrupt live Music Intelligence feature state.
+
+Reduced motion disables/softens rapid sequences while preserving accessibility and overall artistic visibility.
+
+Other scenes' behavior must remain unchanged during Noctune-only migration.
+
+Preserve Noctune's approved pointer-controlled camera parallax while avoiding new music-driven camera travel.
+
+11. Project-wide legacy removal: future checklist (not part of Noctune implementation)
+
+Remove the shared legacy analysis code only after:
+
+Noctune fully migrated and owner-approved.
+
+Crimson Horizon audited and fully migrated (not merely partially using MI).
+
+Lavender Peaks migrated and verified.
+
+Bloom and every additional landscape migrated and verified.
+
+UI controls, diagnostics, manual preview, and test fixtures migrated.
+
+No active runtime legacy data consumers remain anywhere in the repository.
+
+Capture lifecycle, permissions, and audio routing regression tests pass.
+
+Real-browser and long-session tests pass across scenes.
+
+Dead legacy types, adapters, DSP, and obsolete tests/docs are removed carefully in a separately reviewed change.
+
+This list is intentionally not authorized for execution during Noctune's NT01–NT15 roadmap. It is a later project-wide milestone.
+
+12. Progress log template (append per approved phase)
+
+Date / phase / commit (if authorized):
+Implementation summary:
+Actual feature inputs:
+Consumers removed/migrated:
+Files changed:
+Tests run and results:
+Browser/video evidence:
+Real-song review status:
+Performance status:
+Known risks / blockers:
+Owner review decision:
+Next phase:
+
+Next action: review NT02 implementation evidence and continue with NT03 only after authorization. NT04 migration approval remains open.
+
+
+NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
+
+
+## Current execution inventory — after NT02 (2026-11-22)
+
+The earlier inventory describes the pre-migration baseline. NT01 is approved; NT02 code and technical evidence are complete in the [integration report](reports/nocturne/NT02_INTEGRATION.md).
+
+| Consumer | Current source | Status |
+| --- | --- | --- |
+| Existing magenta/bridge, cyan, violet | MI low/mid/high energy plus discrete matching events | Migrated, baseline curves measured |
+| Gate, halo, fog tint | MI context.intensity, local easing | Migrated |
+| Approved left cyan | MI highMids + qualified mid onset | Coefficients preserved; frame/suppression safeguards added |
+| Nocturne canvas host | Disabled tilt without signal prop | Legacy scene entry removed |
+| Nocturne receiving/silent feedback | MI freshness and broad energy; adapter owns lifecycle | Migrated |
+| Shared analysis and other scenes | Existing mixed/legacy paths | Retained, outside Nocturne migration |
+
+The full scene is not artistically signed off: NT03 consolidation, NT04 migration review and subsequent phases remain open. Full regression/device/music gates are not closed by NT02 browser smoke.

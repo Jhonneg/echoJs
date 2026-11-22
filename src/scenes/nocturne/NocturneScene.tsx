@@ -6,7 +6,6 @@ import { NOCTURNE_LIGHT_COLORS, type NocturneLighting, type NocturneLightingMode
 import { Component, useEffect, useRef, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { createViewMotion, updateViewMotion } from '../crimson-horizon/cameraMotion'
-import type { AudioSignal } from '../../audio/signal'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import type { GraphicsQuality } from '../../engine/quality'
@@ -72,7 +71,7 @@ class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean
   static getDerivedStateFromError() { return { failed: true } }
   render() { return this.state.failed ? <p className="nocturne-fallback">Nocturne could not render. Choose another landscape or reload.</p> : this.props.children }
 }
-export default function NocturneScene({ signal, musicFeatures, quality, lighting, lightingMode, reactivity }: { signal: AudioSignal, musicFeatures?: MusicFeatureReader, quality: GraphicsQuality, lighting: NocturneLighting, lightingMode: NocturneLightingMode, reactivity: number }) {
+export default function NocturneScene({ musicFeatures, quality, lighting, lightingMode, reactivity }: { musicFeatures: MusicFeatureReader, quality: GraphicsQuality, lighting: NocturneLighting, lightingMode: NocturneLightingMode, reactivity: number }) {
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
   const target = useRef({ x: 0, y: 0 })
   useEffect(() => {
@@ -89,7 +88,7 @@ export default function NocturneScene({ signal, musicFeatures, quality, lighting
     }}
     onPointerLeave={() => { target.current.x = 0; target.current.y = 0 }}>
     <SceneBoundary>
-      <LandscapeCanvas signal={signal} reactivity={0} reducedMotion={reducedMotion} cameraTilt={false} quality={quality}
+      <LandscapeCanvas reactivity={0} reducedMotion={reducedMotion} cameraTilt={false} quality={quality}
         projection="perspective" camera={{ position: [0, 1.6, 5], rotation: [0.055, 0, 0], fov: 50, near: 0.1, far: 100 }} frameloop="always"
         fallback={<p className="nocturne-fallback">Nocturne needs WebGL. You can choose another landscape from the scene menu.</p>}>
         <MouseCamera target={target} reducedMotion={reducedMotion} />
@@ -106,7 +105,7 @@ export default function NocturneScene({ signal, musicFeatures, quality, lighting
           <pointLight name="violet-near-spill" position={[2.6, 4.8, -4.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={12} distance={7} decay={2} />
           <pointLight name="violet-far-spill" position={[-2.6, 4.8, -14.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={12} distance={7} decay={2} />
         </group>
-        <LightingDriver signal={signal} musicFeatures={musicFeatures} mode={lightingMode} manual={lighting} reactivity={reactivity} reducedMotion={reducedMotion} />
+        <LightingDriver musicFeatures={musicFeatures} mode={lightingMode} manual={lighting} reactivity={reactivity} reducedMotion={reducedMotion} />
       </LandscapeCanvas>
     </SceneBoundary>
     <div className="nocturne-brand" aria-hidden="true">ECHO</div>

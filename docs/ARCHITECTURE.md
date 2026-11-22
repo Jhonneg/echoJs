@@ -176,3 +176,9 @@ Owner-requested halo follow-up (2026-11-21): `musicPilot.glowActivity` maps exis
 Current Crimson travel override (2026-11-22): the single journey integrator advances at fixed24 units/second independently of shared music features/Reactivity. Reduced-motion and loaded-window guards still freeze safely. Scene audio reader continues driving visual mappings; no source/DSP contract change. See CRIMSON_CONSTANT_TRAVEL.md.
 
 Crimson terrain resource ownership (VP05,2026-11-22): TerrainChunk memoizes a BufferGeometry with the original position/normal/feature/fold attributes, attaches it as a primitive and explicitly disposes it on cleanup. Keep attributes attached until disposal: R3F JSX attribute removal before deferred geometry cleanup otherwise prevents Three releasing their GPU buffers. No authored geometry/rendering/DSP change. Production rolling-chunk verification counts actual live GPU buffers in addition to geometry counts.
+
+## Nocturne NT02 — Music Intelligence only
+
+Supersedes the historical N05 legacy bridge above for Nocturne. App passes the existing MusicFeatureReader into NocturneScene/LightingDriver; the scene no longer accepts AudioSignal. `reactivity.ts` consumes calibrated broad energy, discrete matching onset events and context intensity. `cyanPanel.ts` retains the independent high-mid curve/qualified event and now samples scalar history once per feature frame. Both consume suppressed events during Manual/zero/reduced states; sessions skip retained events. Numeric visual state stays outside React.
+
+LandscapeCanvas requires signal only for enabled camera tilt; Nocturne uses its explicitly disabled branch without a legacy prop. Shared audio controls use MI freshness/energy for Nocturne receiving/silent feedback while adapter states retain connection/playback ownership. Other landscapes and shared analysis remain intact. [Exact mappings and NT02 evidence](reports/nocturne/NT02_INTEGRATION.md); NT03/NT04 remain pending.
