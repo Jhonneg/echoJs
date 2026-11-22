@@ -1,6 +1,6 @@
 ECHO — Noctune 2.0: Living Instrument Master Roadmap
 
-Plan version: 1.8 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented, owner grouped lighting review pending; current-worktree audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
+Plan version: 1.11 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented; owner authorized NT09 continuation; NT09 existing surfaces verified; NT10 implemented; NT11 assessment ready, owner artistic approval pending; current-worktree audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
 Target repository: https://github.com/Jhonneg/echoJs · Destination: docs/NOCTUNE_MASTER_ROADMAP.md
 
 This is the canonical plan for Noctune's Music Intelligence migration and visual mapping. It supersedes the earlier partial NT/NM suggestions. The phase IDs NT01–NT15 below are the only IDs to use going forward.
@@ -369,9 +369,21 @@ Implemented; technical checks passed; grouped owner music/lighting/device review
 
 Grouped lighting artistic approval
 
-NT09–NT11
+NT09
 
-Pending
+Verified existing surface response; no production modification needed
+
+Grouped environment artistic approval
+
+NT10
+
+Implemented; technical verification passed; owner environment review pending
+
+Grouped environment artistic approval
+
+NT11
+
+Technical coordination assessment passed; mappings retained; owner artistic approval pending
 
 Grouped environment artistic approval
 
@@ -399,7 +411,7 @@ Pending
 
 Final handoff
 
-Next action: review NT08 and the grouped NT05–NT08 lighting evidence. NT09 requires owner continuation after this lighting review; environment work has not started.
+Next action: owner artistic review of NT11 staged coordination and grouped NT09–NT11 environment evidence. NT12 deterministic matrix starts only after continuation/approval; music/device checks remain pending.
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
 
@@ -418,3 +430,12 @@ NT07 checkpoint: owner “proceed” after NT06 authorizes bounded bridge choreo
 
 
 NT08 checkpoint: owner “proceed” after NT07 authorizes bounded treble detail. [Violet implementation/evidence](reports/nocturne/NT08_VIOLET_REVIEW.md) separates existing strips into two side batches, with restrained presence/air sustain and alternating finite high-event accents. No transforms, point-light inventory, global atmosphere or shared audio changes. Technical checks passed; grouped NT05–NT08 owner lighting/music/device review is now the next gate. NT09 is not started.
+
+
+NT09 checkpoint: owner “proceed” after NT08 authorizes surface assessment. [Verification/evidence](reports/nocturne/NT09_SURFACE_REVIEW.md) shows the existing live planar reflection and associated point/material response already deliver credible local magenta/cyan influence at both qualities. Existing shader/materials retained; no production changes. All89 source files remain byte-identical to task-start f0485eb. Record weak/fixed-viewport reflection limits without synthetic floor effects. NT10 is next after review; native/music/device and grouped environment approval remain pending.
+
+
+NT10 checkpoint: owner “proceed” after NT09 authorizes slow atmosphere/depth. [Implementation/evidence](reports/nocturne/NT10_ATMOSPHERE_REVIEW.md) uses existing intensity, activity weighted by intensity, and valid brightness for bounded multi-second glow, fog-far and palette response. No fixture, geometry, material, camera or MI change. Manual remains pixel-identical; actual fixture outputs and resource counts preserved. Technical verification passed; NT11 is next after review and grouped environment/music/device acceptance remains pending.
+
+
+NT11 checkpoint: owner “proceed” after NT10 authorizes whole-scene coordination review. [Staged synchronized assessment](reports/nocturne/NT11_COORDINATION_REVIEW.md) covers quiet intro, bass entrance, mid addition, dense passage, breakdown, return and silence. Existing mappings maintain distinct roles and bounded local overlap; no concrete tuning defect found, so no production changes. All90 source files preserved. Technical assessment passed; owner NT11 artistic/grouped environment approval remains pending before NT12.

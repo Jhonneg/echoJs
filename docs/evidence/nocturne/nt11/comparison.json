@@ -1,0 +1,1105 @@
+{
+  "baseline": "/tmp/echo-nt11-baseline-2b1pWQ",
+  "method": "Per-render scalar probes after final delivery in an isolated app; source/DSP unchanged. Stage labels come from generated arrangement schedule, not detection. Peak/mean fixture levels are not equivalent to whole-scene luminance.",
+  "stages": [
+    {
+      "label": "current",
+      "name": "intro",
+      "samples": 109,
+      "channels": {
+        "magentaMain": {
+          "mean": 5.158804281869481e-8,
+          "peak": 7.18778065073986e-8,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 4.274167304400333e-8,
+          "peak": 4.305428298824261e-8,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.002642164208647575,
+          "peak": 0.0027221613937755923,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 2.9399081815574154e-8,
+          "peak": 1.4933751622089733e-7,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.022957405297944627,
+          "peak": 0.022957421305557977,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000013800392770074526,
+          "peak": 0.0000013800392786534507,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000013800392770074526,
+          "peak": 0.0000013800392786534507,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.003898123740156557,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "current",
+      "name": "bass",
+      "samples": 228,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.15448351188405662,
+          "peak": 0.24383942854664675,
+          "accentPeak": 0.08478781078861493
+        },
+        "magentaSecondary": {
+          "mean": 0.049133077959622094,
+          "peak": 0.053628614045249344,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.00009915038012218473,
+          "peak": 0.00032125226558056693,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.00008669754932178141,
+          "peak": 0.00019969289614138396,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.000009684859567554374,
+          "peak": 0.00003339600164778746,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000021312542755004513,
+          "peak": 0.0000029791548310810076,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000021312542755004513,
+          "peak": 0.0000029791548310810076,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0.005961261571063776,
+          "peak": 0.02348477107378371,
+          "accentPeak": 0.02348477107378371
+        }
+      },
+      "atmosphereMean": 0.053248780905618284,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 3
+    },
+    {
+      "label": "current",
+      "name": "mid-addition",
+      "samples": 227,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.12233801602571875,
+          "peak": 0.20995596215136397,
+          "accentPeak": 0.08478774344036501
+        },
+        "magentaSecondary": {
+          "mean": 0.03700874246742867,
+          "peak": 0.04122604915167635,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.02797078034326527,
+          "peak": 0.02798057339575261,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.04522199130336306,
+          "peak": 0.04523086726132204,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.0642969978045531,
+          "peak": 0.06429714692138502,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000022085375971273294,
+          "peak": 0.0000029566604543743893,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000022085375971273294,
+          "peak": 0.0000029566604543743893,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0.00580335555736344,
+          "peak": 0.02348289256958879,
+          "accentPeak": 0.02348289256958879
+        }
+      },
+      "atmosphereMean": 0.07058352213865597,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 3
+    },
+    {
+      "label": "current",
+      "name": "dense",
+      "samples": 408,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.1595204928514882,
+          "peak": 0.23137360482952266,
+          "accentPeak": 0.08478787395496648
+        },
+        "magentaSecondary": {
+          "mean": 0.045973666743004564,
+          "peak": 0.04962784636815018,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.03802892883867676,
+          "peak": 0.03970382809738392,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.056528530143076135,
+          "peak": 0.0565376149653483,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.11147546207262572,
+          "peak": 0.1840308160444492,
+          "accentPeak": 0.014220311943560071
+        },
+        "violet": {
+          "mean": 0.026666429753329064,
+          "peak": 0.10949829868275392,
+          "accentPeak": 0.08887895639911716
+        },
+        "violetSecondary": {
+          "mean": 0.025398564473465696,
+          "peak": 0.10945547420129764,
+          "accentPeak": 0.08887914312900008
+        },
+        "bridge": {
+          "mean": 0.010864256568668833,
+          "peak": 0.023482941913230037,
+          "accentPeak": 0.023482941913230037
+        }
+      },
+      "atmosphereMean": 0.0939844691999847,
+      "maximumVioletAccentBanks": 1,
+      "maximumLitBridgeSections": 3
+    },
+    {
+      "label": "current",
+      "name": "breakdown",
+      "samples": 168,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.00003204342268391758,
+          "peak": 0.0001957731392373994,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.00017540007719680896,
+          "peak": 0.0007059896270449632,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.004221522823050116,
+          "peak": 0.005123425892739184,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.0000014675337999215122,
+          "peak": 0.000011466050904922941,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.032156201322220065,
+          "peak": 0.0321562091837637,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000010362915621600895,
+          "peak": 0.0000010364390594519906,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000010362915621600895,
+          "peak": 0.0000010364390594519906,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.060766347780349506,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "current",
+      "name": "return",
+      "samples": 407,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.1596880501873692,
+          "peak": 0.2312607015820512,
+          "accentPeak": 0.08478813808820153
+        },
+        "magentaSecondary": {
+          "mean": 0.0456982024406443,
+          "peak": 0.049602059318036316,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.037910847944672144,
+          "peak": 0.0396412015742743,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.056529044914172114,
+          "peak": 0.05653735403953432,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.11158015048756835,
+          "peak": 0.183990777041749,
+          "accentPeak": 0.014220271707539131
+        },
+        "violet": {
+          "mean": 0.02690357295260658,
+          "peak": 0.10976993358400548,
+          "accentPeak": 0.0888699030265678
+        },
+        "violetSecondary": {
+          "mean": 0.02561532432527091,
+          "peak": 0.10997443890618439,
+          "accentPeak": 0.08887023954302072
+        },
+        "bridge": {
+          "mean": 0.010387649046553853,
+          "peak": 0.02348297293183185,
+          "accentPeak": 0.02348297293183185
+        }
+      },
+      "atmosphereMean": 0.08475534513320633,
+      "maximumVioletAccentBanks": 1,
+      "maximumLitBridgeSections": 3
+    },
+    {
+      "label": "current",
+      "name": "silence",
+      "samples": 167,
+      "channels": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.002814000478006745,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "reduced",
+      "name": "intro",
+      "samples": 109,
+      "channels": {
+        "magentaMain": {
+          "mean": 3.8200624366259784e-8,
+          "peak": 4.313317644529636e-8,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 3.595664503562882e-8,
+          "peak": 4.118424995265802e-8,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.0022479963367480326,
+          "peak": 0.0025988037150227314,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 9.279131024289266e-9,
+          "peak": 1.8683541068227097e-8,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.018941427631760852,
+          "peak": 0.021897321169282846,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000011395008365962264,
+          "peak": 0.0000013165449538083599,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000011395008365962264,
+          "peak": 0.0000013165449538083599,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.002276408874400659,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "reduced",
+      "name": "bass",
+      "samples": 228,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.12138473805904,
+          "peak": 0.12754285834763246,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.04643545121325207,
+          "peak": 0.048781567777711414,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.0001456711056918602,
+          "peak": 0.00045248664019118716,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.0000559462559239946,
+          "peak": 0.00007811616003083352,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.0010327368763465119,
+          "peak": 0.0036416084843837134,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000019878186524208383,
+          "peak": 0.000002104644272462569,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000019878186524208383,
+          "peak": 0.000002104644272462569,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.03857462813009605,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "reduced",
+      "name": "mid-addition",
+      "samples": 228,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.09299844630091665,
+          "peak": 0.09885192787176757,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.03559980538754049,
+          "peak": 0.03786725117572251,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.027481242142409393,
+          "peak": 0.02796010126500168,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.04441410521917863,
+          "peak": 0.045187956739193874,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.0631515568635897,
+          "peak": 0.06425207822161845,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000020990344004467743,
+          "peak": 0.0000021689121981625644,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000020990344004467743,
+          "peak": 0.0000021689121981625644,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.06395537748333613,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "reduced",
+      "name": "dense",
+      "samples": 408,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.1122180949300617,
+          "peak": 0.11749726631654223,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.04295161904451474,
+          "peak": 0.045015437631399986,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.03662394228475272,
+          "peak": 0.03769415240017946,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.056112503290388985,
+          "peak": 0.05652776712290356,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.09620769630497797,
+          "peak": 0.10357572290305284,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.014168378191731532,
+          "peak": 0.015330313180017655,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.014168378191731532,
+          "peak": 0.015330313180017655,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.08651556925503537,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "reduced",
+      "name": "breakdown",
+      "samples": 168,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.0028527701270253223,
+          "peak": 0.007820537944628695,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.0010934621310628105,
+          "peak": 0.0029975362770324992,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.004638071815440639,
+          "peak": 0.006068704747815262,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.0013781369577058429,
+          "peak": 0.0037780551053866684,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.03385508836000014,
+          "peak": 0.03681063260472417,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.00037089475387053395,
+          "peak": 0.0010149744464098694,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.00037089475387053395,
+          "peak": 0.0010149744464098694,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.06840281979780222,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "reduced",
+      "name": "return",
+      "samples": 407,
+      "channels": {
+        "magentaMain": {
+          "mean": 0.10873472626034585,
+          "peak": 0.1171746747787522,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.04163200255006053,
+          "peak": 0.044876159105578614,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.03580165244377926,
+          "peak": 0.0376947371283345,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.05467203060654509,
+          "peak": 0.056525016206915205,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.09502950342255022,
+          "peak": 0.10342341407979369,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.014151933173407618,
+          "peak": 0.015395873220189349,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.014151933173407618,
+          "peak": 0.015395873220189349,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.0780047944450816,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    },
+    {
+      "label": "reduced",
+      "name": "silence",
+      "samples": 167,
+      "channels": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "atmosphereMean": 0.008546669967468959,
+      "maximumVioletAccentBanks": 0,
+      "maximumLitBridgeSections": 0
+    }
+  ],
+  "runs": [
+    {
+      "label": "current",
+      "renderSamples": 3299,
+      "pollSamples": 537,
+      "frames": 440,
+      "resources": [
+        "{\"geometries\":114,\"textures\":6}"
+      ],
+      "lastAtmosphere": {
+        "level": 0.001864749570347054,
+        "magenta": 0.00044753989688329295,
+        "cyan": 0.001585037134794996,
+        "violet": 0.00029835993125552863,
+        "fogNear": 17,
+        "fogFar": 73.98142581915715
+      }
+    },
+    {
+      "label": "reduced",
+      "renderSamples": 3297,
+      "pollSamples": 526,
+      "frames": 440,
+      "resources": [
+        "{\"geometries\":114,\"textures\":6}"
+      ],
+      "lastAtmosphere": {
+        "level": 0.006524253498214565,
+        "magenta": 0.0015658208395714955,
+        "cyan": 0.00554561547348238,
+        "violet": 0.0010438805597143305,
+        "fogNear": 17,
+        "fogFar": 73.97020801846504
+      }
+    }
+  ],
+  "protectedFiles": [
+    {
+      "file": "src/App.tsx",
+      "sha256": "95cea8bb38b6734e409974edb172d512a01d67f715c3886a699868de89f743ae"
+    },
+    {
+      "file": "src/audio/analysis.ts",
+      "sha256": "28cf0def41ae125c779572f9269fd0a18a1e2dbe379668598ddf32a9791ec795"
+    },
+    {
+      "file": "src/audio/features.ts",
+      "sha256": "bbaf3b60aaf29e08abd99afb8daaacd9a724cb84ad09b061b7c5fee1d19f6b4e"
+    },
+    {
+      "file": "src/audio/flux.ts",
+      "sha256": "3fe831ec0c4ce8d9cc0b843193e39e8d71e4846fcaf77816dac9fe7b23e99dab"
+    },
+    {
+      "file": "src/audio/localFile.ts",
+      "sha256": "2eba75e80f734e0f0a1df997922b65c5e2bdd06b5c49812ca5ec343dccab58a6"
+    },
+    {
+      "file": "src/audio/music/analysis.ts",
+      "sha256": "df3968778d574c391ad37923d5da4636de48a1d7c96895b3345ce830494a0ff7"
+    },
+    {
+      "file": "src/audio/music/context.ts",
+      "sha256": "88cc6c9f9c5a0a6223a9f87a68165e79a246157d645e7ca7f88172f59d3e47bf"
+    },
+    {
+      "file": "src/audio/music/energy.ts",
+      "sha256": "8846abbedbed0cae124094a9daa59ca5e149f9bf4469aac7c5bfa090f3ada15e"
+    },
+    {
+      "file": "src/audio/music/onsets.ts",
+      "sha256": "d7aa528753b3da37a6fe99d22430b58db36fa07259f7d5eb122a88ed52b5e3d2"
+    },
+    {
+      "file": "src/audio/musicFeatures.ts",
+      "sha256": "54596883f868a7f7cd937cab7c35beff848b6aa7c43af0c551c5a9597e3ee0a9"
+    },
+    {
+      "file": "src/audio/signal.ts",
+      "sha256": "256f28f6a898ec48605742c43863e11f647a03d6ecc7551d82d46becf9af02c7"
+    },
+    {
+      "file": "src/audio/sixBands.ts",
+      "sha256": "b8531766e0df46aebc93230270a8a2041675bad1c81da513b15141d569432add"
+    },
+    {
+      "file": "src/audio/tabCapture.ts",
+      "sha256": "7e26215bfe6e4176e397505c444dff06d953a792e1ba2151b50644b38ee29a1c"
+    },
+    {
+      "file": "src/components/AudioControls.tsx",
+      "sha256": "05b3e34e852e5b35398eabe87b2b9112f648e05120087ff96048410457e6087c"
+    },
+    {
+      "file": "src/components/BloomDebugControls.tsx",
+      "sha256": "28b2de728161c64236650715ad37a43fbf616c88ddbb34b34af5dc058d183fdf"
+    },
+    {
+      "file": "src/components/FullscreenControls.tsx",
+      "sha256": "b9c1ee224821bfb712bf3e336b7a1fa6e7a9c992b54b237944688393fd6c643f"
+    },
+    {
+      "file": "src/components/NocturneLightingControls.tsx",
+      "sha256": "36ac3b3fb36e2c1cb7d244305edc5b901249a78f30c384747f54267d9c44c89c"
+    },
+    {
+      "file": "src/components/PerformancePanel.tsx",
+      "sha256": "adc24f6dc34845394f89792b0f9023290554aca7ff639225adf501162da89209"
+    },
+    {
+      "file": "src/components/PerformanceProbe.tsx",
+      "sha256": "3e9eedbf4b94dffbf710caaf89371fcf9741e9a60fd476bfb3df640e913eafa1"
+    },
+    {
+      "file": "src/components/SignalDiagnostics.tsx",
+      "sha256": "06e0f668fe62f58204caaf0e250d573f3563e31ce5fb9a5018e6c69057417239"
+    },
+    {
+      "file": "src/dev/audioLab/CrimsonPreview.tsx",
+      "sha256": "2b7412bfeb6ab64510c317ec7650b997453bc8d4079cdb006760c8f5302d85fd"
+    },
+    {
+      "file": "src/dev/audioLab/adaptive.ts",
+      "sha256": "521e9cc1d02e40c19a9664ad37b8730a38876b58aaa70db8b84b1ee1979ad4c4"
+    },
+    {
+      "file": "src/dev/audioLab/baseline.ts",
+      "sha256": "f6ca97f31150787a883d1adf20294c13ecb3601cd77d49382320a57d2aa88886"
+    },
+    {
+      "file": "src/dev/audioLab/context.ts",
+      "sha256": "a1ab485f7ca5336d6a6bedc6ba185470a73c7018f409f90db99c930856853ead"
+    },
+    {
+      "file": "src/dev/audioLab/contextComparison.ts",
+      "sha256": "2b16772799af455dc4f6ae70b1ce4820fddae6e686faafaf0e28ae27c72c25ce"
+    },
+    {
+      "file": "src/dev/audioLab/diagnostics.ts",
+      "sha256": "edb806e188b684e18ed196cb621e3ae6fd4c5ba91204af3101317a09d339fb3e"
+    },
+    {
+      "file": "src/dev/audioLab/energy.ts",
+      "sha256": "12e9faae279e6d821c2f0943ea39f9a7fb92ffde2ad0a0b8ceeb367112c08adf"
+    },
+    {
+      "file": "src/dev/audioLab/energyComparison.ts",
+      "sha256": "39720130007304d8a9ba67265a596dc3e652d33824000563ef54148370e37d92"
+    },
+    {
+      "file": "src/dev/audioLab/fixtures.ts",
+      "sha256": "fcf9861ac28ec1201863df18b659097fa12286b6adf02e76a35954040f430c38"
+    },
+    {
+      "file": "src/dev/audioLab/main.ts",
+      "sha256": "5fcf9b6bc71f282b7065ecaa5d8d02b9e046b65bf578af314f8562a90ba015eb"
+    },
+    {
+      "file": "src/dev/audioLab/mountCrimsonPreview.ts",
+      "sha256": "c9554966f75d5d575c9465dd3aa172fafb72c966d83fe44d7efc2fbb9568d2af"
+    },
+    {
+      "file": "src/dev/audioLab/musicBridge.ts",
+      "sha256": "3df47c72621141c55f5305b213d919d7cdc6040d6262b060217437367af766f6"
+    },
+    {
+      "file": "src/dev/audioLab/onsetComparison.ts",
+      "sha256": "b04ea20bc38ddb10f7d7e12724568ca709aa08a9ccecb85ad6699d41307e6bff"
+    },
+    {
+      "file": "src/dev/audioLab/onsets.ts",
+      "sha256": "d008b2761eac6a178ec5033db72fc3b9e3f84be141dddde8bb010c7bc93a4513"
+    },
+    {
+      "file": "src/dev/audioLab/rangeComparison.ts",
+      "sha256": "a65c2bacb8d70fee42061ab79d18a98fc3dd7dbfe33f6bdb98bbf094037fdf42"
+    },
+    {
+      "file": "src/dev/audioLab/review.ts",
+      "sha256": "f2ef8928e64df67ba2d9bc7ac05d280676024fbfa43ecabf16b68a7cca8d391c"
+    },
+    {
+      "file": "src/dev/audioLab/sources.ts",
+      "sha256": "1651c5e54b0b07ab90d82866b961a01f42c70ed7494e8a9736dba92703cb20de"
+    },
+    {
+      "file": "src/dev/audioLab/style.css",
+      "sha256": "4a5e446335b8b4101441b82bf0dcfa5c14026e77d5f6a2f592b91057e4de2a08"
+    },
+    {
+      "file": "src/dev/mi05/index.html",
+      "sha256": "32af534bedec5795794e3dbc3fc50a88916483cf41e16caab5ef4915267ca624"
+    },
+    {
+      "file": "src/dev/mi05/main.tsx",
+      "sha256": "addde60c63a25ae54f53b2c3500375f499f2f9b8a3c156a627f5c9aeb57537d6"
+    },
+    {
+      "file": "src/dev/mi05/style.css",
+      "sha256": "a296fe9da6d0d901242b5c3b0bf80975057581f450213c506635e34d7b3402cf"
+    },
+    {
+      "file": "src/dev/mi05/vm02Review.ts",
+      "sha256": "4c86a123bd4f7204c01a9d8d2eb5bcf2eae4e648cb7a543b4336b0ba6eaf18fb"
+    },
+    {
+      "file": "src/dev/mi05/vp00Review.ts",
+      "sha256": "f0272d16ebf53dfaf988391d3df992300cb2c82d8925777b335ea55caf81ea55"
+    },
+    {
+      "file": "src/engine/LandscapeCanvas.tsx",
+      "sha256": "e4996f26e7b00368cf1ccc3b8fd13d6aeb3e659672b52ed2c1fea6bf9d45dc06"
+    },
+    {
+      "file": "src/engine/bassMotion.ts",
+      "sha256": "0afc27d6a96817861d85d8d3034ffc969f9b69d060cf7d613c694954e82fb2b3"
+    },
+    {
+      "file": "src/engine/bassMotionVariant.ts",
+      "sha256": "2f5d3b663f18ced87289e92e0544d4f3b08b9a068258ee8a756e3c934fce0f77"
+    },
+    {
+      "file": "src/engine/cameraTilt.ts",
+      "sha256": "e8c62acf7b4c4695b0a3b8cc7a129fc086f56bc8bb11cbaa5b40f540db7c4067"
+    },
+    {
+      "file": "src/engine/performance.ts",
+      "sha256": "f66cd00c13a00b8815714cf60d2a6c231240a265318b1cf3e9d2624379cb66bf"
+    },
+    {
+      "file": "src/engine/quality.ts",
+      "sha256": "689903d7ef479210d3fdda7959841ee7025cd2c150b4f738b5cfa3af61dc50c0"
+    },
+    {
+      "file": "src/index.css",
+      "sha256": "b2dced391fa833ac99fff36a814ddfe60eed720e72f238bc9781fba5db054ab3"
+    },
+    {
+      "file": "src/main.tsx",
+      "sha256": "d4f3a194baaa2acd3b537cb707d426e7c66c306578102de433b31f15e7cd6b00"
+    },
+    {
+      "file": "src/scenes/bloom/BloomScene.tsx",
+      "sha256": "410b11475481833180c658b703c6045196b2b64421e10e6a3298013d047e206e"
+    },
+    {
+      "file": "src/scenes/bloom/bloom.css",
+      "sha256": "829e2b7595af486e07d0e22ddae10e9aa9ab0eaee06c43f0477b078c41d60fac"
+    },
+    {
+      "file": "src/scenes/bloom/reactivity.ts",
+      "sha256": "3e5d624ffda1302f95a58e5888dbf9075dc9cfb0217d750438af0ca45ea3253f"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/CrimsonHorizonScene.tsx",
+      "sha256": "c4a500f949abfab261b3f2c1f8b95e23b64ba0324bebea3fe8c98af0d61bac00"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/atmosphere.ts",
+      "sha256": "1376e1cb89e1b51023ab507eb00ff894ddbbde233ecff4daa5b48509034be3af"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/cameraMotion.ts",
+      "sha256": "e16e23df69de8b037aee43eccd098ecbcd364812961fea0f1d64e0978ba9cb74"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/contours.ts",
+      "sha256": "0bde7a03f7b0d64d1809b93c7592f198004306eaffc70aec8df6b0015e9b7a7d"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/crimson-horizon.css",
+      "sha256": "9a9476c94f5c5a752f03ca299d4e3b11fa434c93483b0382b5af4843a43ef0c7"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/journey.ts",
+      "sha256": "986e59bb7df7614489eb35abb50a9ce878549f27d1ea17e7706d94faf1e99d3f"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/material.ts",
+      "sha256": "ae89bfe38d71d04077b9a4dc2c8b7a631bec9d6700c4a27746f06aa5d11e98da"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/musicPilot.ts",
+      "sha256": "ec6b27ae5f2ee4a6245806c044511e24d93574830e83614be79defbe41f299ab"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/noise.ts",
+      "sha256": "9e56e4e02c6edc60c6297d3bd16b342ce346f4f8cdd27e8e26f518fb94fc7344"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/response.ts",
+      "sha256": "00611a75fa7a5bbf64ade688be1d58631cf39c19f543703f4e936ad4cb172ae9"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/terrain.ts",
+      "sha256": "7dff8d08b8b3f84414a60b3c944d4b225504ace9d6e0c661c8a5453d64146fda"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/terrain.worker.ts",
+      "sha256": "7c0ddbd39454d216d38368a05f0ec137609711eba31b364b62fd7a01556e30b0"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/terrainStream.ts",
+      "sha256": "e088c60a24161e439353d54104a961c5ed3bd5acc688e61ebe9e4d2dd4e11dfd"
+    },
+    {
+      "file": "src/scenes/crimson-horizon/valley.ts",
+      "sha256": "28bd67983bcb32aed05b5cb42e1dc2947d09eb64cf8807d2e93fe4f25667c8d2"
+    },
+    {
+      "file": "src/scenes/lavender-peaks/LavenderPeaksScene.tsx",
+      "sha256": "98c96de7155b42b84824f7fbdfded9141b70652b72cdbc120fbfb6c2a2c37361"
+    },
+    {
+      "file": "src/scenes/lavender-peaks/lavender-peaks.css",
+      "sha256": "c17ff0721e0662f41a6e43bd114aec6bd57250d3a75a02c96e57f49f3bc20d80"
+    },
+    {
+      "file": "src/scenes/lavender-peaks/motion.ts",
+      "sha256": "035185c670a2a59cb478b1f17567c750c951167ab70be213e7ec0799c1903a35"
+    },
+    {
+      "file": "src/scenes/lavender-peaks/terrain.ts",
+      "sha256": "55b8ff617ea732cd7e09d7ca3340ac73dbbc9fc180f0283c89b93f57e0d76794"
+    },
+    {
+      "file": "src/scenes/nocturne/ArchitectureDetails.tsx",
+      "sha256": "8e10259d68267fb5e4ba3ac7347362e1e8b392ba228cdfe1797ea5bbaf39cea3"
+    },
+    {
+      "file": "src/scenes/nocturne/Atmosphere.tsx",
+      "sha256": "9a70270970198d3cd1df4cae65f3bbea3bfbaa11c049af0d038e29d06b12ecc9"
+    },
+    {
+      "file": "src/scenes/nocturne/LightingDriver.tsx",
+      "sha256": "d217005c1390cc84dc4c049396a78acdaaabc8c1400ae59733fd44d052c50d55"
+    },
+    {
+      "file": "src/scenes/nocturne/NocturneScene.tsx",
+      "sha256": "5469a67a6a2d32c73418e84d445c52c2225030cd9f1d26ef698e93e4cc3d1570"
+    },
+    {
+      "file": "src/scenes/nocturne/WallSurface.tsx",
+      "sha256": "34ecd021a20c286415740f6f137581cbbd69a47e3b6a0a56cfaf3e5b5775a0f9"
+    },
+    {
+      "file": "src/scenes/nocturne/WetGround.tsx",
+      "sha256": "ff7e72d5147b9c4c99a18f7219947bbf61464776e136b1a2154ae422c48833cd"
+    },
+    {
+      "file": "src/scenes/nocturne/activity.ts",
+      "sha256": "c7561369b14ca4dea3e3edd21f427955339c61aace65f9f8e4a2175112f131ea"
+    },
+    {
+      "file": "src/scenes/nocturne/atmosphereResponse.ts",
+      "sha256": "c3fe6d796e4dcc148f21800166cf4da168fab7b0a8ce1302e035aa83cf6001fc"
+    },
+    {
+      "file": "src/scenes/nocturne/bridge.ts",
+      "sha256": "e9f22f36c32d4de7fab089d515f3114026d804daed9b2c1e5bf0908c8899ba5c"
+    },
+    {
+      "file": "src/scenes/nocturne/cyanPanel.ts",
+      "sha256": "340ae429ae1aa2f0f92862ee1250b17492eb6968c0675aac0eac8d1ce93b8a9c"
+    },
+    {
+      "file": "src/scenes/nocturne/lighting.ts",
+      "sha256": "e8d7361bf812fd15d6d6887ab4291219c1299cb3b0645bb005d3af03411c4976"
+    },
+    {
+      "file": "src/scenes/nocturne/magenta.ts",
+      "sha256": "3d1fbcac8788765cd8f0b848732bc553252e80aba000d2e9ff339b3dc0f3440f"
+    },
+    {
+      "file": "src/scenes/nocturne/midrange.ts",
+      "sha256": "2699d1bb00cab8c4141e1a39823698aa3733bf8ead0ef89dee5b47c6cd2836a0"
+    },
+    {
+      "file": "src/scenes/nocturne/nocturne.css",
+      "sha256": "8dd821eb1bf9bddb49fde927494956915bb717f39c724ab2b335e336a4c97ad9"
+    },
+    {
+      "file": "src/scenes/nocturne/reactivity.ts",
+      "sha256": "b79e5b4a70948679579aa5c2b5d9555a07c0a2485bcdc740d4f5ad6bffcdd03e"
+    },
+    {
+      "file": "src/scenes/nocturne/violet.ts",
+      "sha256": "3f4f89292a9994f00027bd60afedb88f9ac985e033c1724a9316e57531ab64e1"
+    },
+    {
+      "file": "src/scenes/nocturne/visualState.ts",
+      "sha256": "a925619e16c7f4baea1d30f701f301d6fedaf6746c8186abdb4e1328bd05b5c6"
+    },
+    {
+      "file": "src/scenes/scene.ts",
+      "sha256": "100d5cbd41581b32fa48aa7f03e3b4c95ae09f4aceb80532bfe8154e8a68eadf"
+    }
+  ],
+  "decision": "Retain current mappings: generated arrangement preserves musical roles and bounded localized overlaps; no new shared gain/limiter or rolling-energy layer is justified. Owner artistic approval remains pending."
+}

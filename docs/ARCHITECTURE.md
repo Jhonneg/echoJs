@@ -206,3 +206,18 @@ The single borrowed MI frame also updates bridge.ts: one bounded low-onset seque
 ## Nocturne NT08 — localized violet banks
 
 The unified borrowed-frame update also calls violet.ts. Existing presence/air supply a restrained shared body; accepted high events alternate between two bounded bank envelopes with a400 ms global cooldown. The twelve unchanged strips are six right/six left instances in two materials; existing near/far points bind to their own final bank levels. Manual sets both uniformly, reduced motion keeps only slow sustain, and suppressed events are consumed without replay. No MI, geometry, camera, global atmosphere, reflection pass or other fixture-controller changes. [NT08 evidence](reports/nocturne/NT08_VIOLET_REVIEW.md).
+
+
+## Nocturne NT09 — existing surfaces retained
+
+Surface verification confirms the existing Reflector renders the scene after final fixture material/point values are applied at priority-1. `state.reflections` is derived source metadata, not another shader multiplier. Wetness/Fresnel/spread/UV breakup remain static; the floor has no audio/time uniforms. Existing roughness/bump wall materials receive the existing local point lights. Isolated on/off, reflection-disabled and spill-disabled diagnostics establish local contributions at both qualities; four actual built-production cyan/off images match diagnostics exactly. All production source is unchanged. [NT09 assessment](reports/nocturne/NT09_SURFACE_REVIEW.md).
+
+
+## Nocturne NT10 — slow context atmosphere
+
+The single borrowed feature frame also updates atmosphereResponse.ts. Existing intensity controls capped glow, intensity-weighted activity controls density, and valid spectral brightness controls a small signed palette balance. Final state supplies gate/haze weights plus fogNear17 and fogFar66–74; LightingDriver delivers those existing parameters before reflection/render. Multi-second envelopes are bounded, slower under reduced motion, released when inactive/stale, reset on sessions and cleared by zero/Manual. Manual weights/fog remain exact. Broad helper atmosphere is retained internally but no longer drives Audio rendering. All fixture outputs, geometry, floor/wall materials and shared DSP stay unchanged. [NT10 parameters/evidence](reports/nocturne/NT10_ATMOSPHERE_REVIEW.md).
+
+
+## Nocturne NT11 — existing coordination policy retained
+
+Staged whole-scene assessment retains existing per-controller caps, localized accents and independent sustained envelopes, with NT10's slow context atmosphere. No scene-wide limiter or extra shared energy multiplier is added; material/point delivery remains exactly from associated final outputs. All90 source files match task-start NT10. [NT11 review](reports/nocturne/NT11_COORDINATION_REVIEW.md) separates technical delivery evidence from required owner artistic approval.

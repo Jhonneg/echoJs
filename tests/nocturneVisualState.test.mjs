@@ -63,7 +63,7 @@ test('Manual preview shares final outputs and atmosphere weights without corrupt
   const viewBefore=JSON.stringify(f.store.reader.read())
   updateNocturneVisualState(f.state,f.reader,'manual',manual,0,false,1/60,f.input.updatedAtSeconds)
   assert.deepEqual(levels(f.state),[.2,.2,.4,.4,.6,.8,.8,.2])
-  assert.deepEqual(f.state.atmosphere,{level:0,magenta:.2*.24,cyan:.4*.85,violet:.8*.16})
+  assert.deepEqual(f.state.atmosphere,{level:0,magenta:.2*.24,cyan:.4*.85,violet:.8*.16,fogNear:17,fogFar:74})
   assert.equal(JSON.stringify(f.store.reader.read()),viewBefore)
   f.event();f.step({mode:'manual'});f.step()
   assert.equal(f.state.panel.accent,0);assert.equal(f.state.broad.accents.cyan,0)
@@ -82,7 +82,7 @@ test('sustain, qualified accents and atmosphere remain separate',()=>{
   assert.equal(f.state.atmosphere.level,0)
   f.input.energy.mid=0;f.input.energy.six.highMids=0;f.input.context.intensity=1;f.advance(5)
   assert.deepEqual(levels(f.state),NOCTURNE_VISUAL_CHANNELS.map(()=>0))
-  assert.ok(f.state.atmosphere.level>.99)
+  assert.ok(f.state.atmosphere.level>.59&&f.state.atmosphere.level<.65)
 })
 
 test('inactivity/session/zero clear history and suppressed attacks never replay',()=>{

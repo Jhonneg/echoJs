@@ -14,3 +14,9 @@ Milestone plans, reviews and results. Historical status in a report does not sup
 - [NT07 finite bridge choreography](NT07_BRIDGE_REVIEW.md)
 
 - [NT08 localized violet treble accents](NT08_VIOLET_REVIEW.md)
+
+- [NT09 existing wet-surface and local material verification](NT09_SURFACE_REVIEW.md)
+
+- [NT10 slow context atmosphere and depth](NT10_ATMOSPHERE_REVIEW.md)
+
+- [NT11 staged whole-scene coordination assessment](NT11_COORDINATION_REVIEW.md)

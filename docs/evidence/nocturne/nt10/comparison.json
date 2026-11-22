@@ -1,0 +1,241 @@
+{
+  "sections": [
+    {
+      "label": "before",
+      "name": "quiet",
+      "contextIntensity": 0.03531852443113523,
+      "activity": 0.0023642984530203854,
+      "brightness": 0.7002591062197817,
+      "level": 0.03530992078684102,
+      "fogFar": 74
+    },
+    {
+      "label": "before",
+      "name": "energetic",
+      "contextIntensity": 0.19333165479388836,
+      "activity": 0.40536900207403026,
+      "brightness": 0.7002672934838603,
+      "level": 0.19416051454521308,
+      "fogFar": 74
+    },
+    {
+      "label": "before",
+      "name": "recovery",
+      "contextIntensity": 0.0018934542722424915,
+      "activity": 0.0037335857819158036,
+      "brightness": 0.0000010601850370260243,
+      "level": 0.004037571305955177,
+      "fogFar": 74
+    },
+    {
+      "label": "before",
+      "name": "silence",
+      "contextIntensity": 2.4586484393984685e-8,
+      "activity": 1.7402957831093207e-10,
+      "brightness": 2.2604659825582637e-21,
+      "level": 5.2986239683038715e-8,
+      "fogFar": 74
+    },
+    {
+      "label": "after",
+      "name": "quiet",
+      "contextIntensity": 0.03530538258156012,
+      "activity": 0.0023567496042513195,
+      "brightness": 0.700259213358161,
+      "level": 0.021011155441446345,
+      "fogFar": 73.99771689862365
+    },
+    {
+      "label": "after",
+      "name": "energetic",
+      "contextIntensity": 0.193358534490295,
+      "activity": 0.4045410985833495,
+      "brightness": 0.7002682294389282,
+      "level": 0.12147950782866165,
+      "fogFar": 73.47535156402871
+    },
+    {
+      "label": "after",
+      "name": "recovery",
+      "contextIntensity": 0.0018699052954061768,
+      "activity": 0.003676791112503505,
+      "brightness": 0.0000010254070956868065,
+      "level": 0.03377009442367777,
+      "fogFar": 73.8176564064306
+    },
+    {
+      "label": "after",
+      "name": "silence",
+      "contextIntensity": 2.486642699285905e-8,
+      "activity": 1.7725329752600523e-10,
+      "brightness": 2.3134439747062e-21,
+      "level": 0.0005129842778913968,
+      "fogFar": 73.99370793484593
+    },
+    {
+      "label": "reduced",
+      "name": "quiet",
+      "contextIntensity": 0.035316997951656305,
+      "activity": 0.0024905117241711323,
+      "brightness": 0.7002592820433542,
+      "level": 0.016499151387169533,
+      "fogFar": 73.9978775683
+    },
+    {
+      "label": "reduced",
+      "name": "energetic",
+      "contextIntensity": 0.19290523517987226,
+      "activity": 0.4043001101210923,
+      "brightness": 0.7002726851827296,
+      "level": 0.10609363318880588,
+      "fogFar": 73.5436871344184
+    },
+    {
+      "label": "reduced",
+      "name": "recovery",
+      "contextIntensity": 0.001902976843848436,
+      "activity": 0.0037104243222353846,
+      "brightness": 0.0000010613334508272686,
+      "level": 0.048066485604441836,
+      "fogFar": 73.79463356122264
+    },
+    {
+      "label": "reduced",
+      "name": "silence",
+      "contextIntensity": 2.4305875791585144e-8,
+      "activity": 1.679883567623457e-10,
+      "brightness": 2.095106777442262e-21,
+      "level": 0.0029048134846101086,
+      "fogFar": 73.98769469565936
+    }
+  ],
+  "manual": [
+    {
+      "name": "audio-idle",
+      "rawAE": 0
+    },
+    {
+      "name": "manual-desktop-standard",
+      "rawAE": 0
+    },
+    {
+      "name": "manual-desktop-low",
+      "rawAE": 0
+    },
+    {
+      "name": "manual-wide-standard",
+      "rawAE": 0
+    },
+    {
+      "name": "manual-wide-low",
+      "rawAE": 0
+    },
+    {
+      "name": "manual-portrait-standard",
+      "rawAE": 0
+    },
+    {
+      "name": "manual-portrait-low",
+      "rawAE": 0
+    },
+    {
+      "name": "manual-panel-off",
+      "rawAE": 0
+    }
+  ],
+  "controlled": [
+    {
+      "name": "quiet",
+      "level": 0,
+      "density": 0,
+      "tint": 0,
+      "far": 74,
+      "foregroundRawAE": 0
+    },
+    {
+      "name": "low-spectrum",
+      "level": 0.38999999999999685,
+      "density": 0,
+      "tint": -0.47999999999996235,
+      "far": 74,
+      "foregroundRawAE": 0
+    },
+    {
+      "name": "high-spectrum",
+      "level": 0.3899999999999971,
+      "density": 0,
+      "tint": 0.4799999999999249,
+      "far": 74,
+      "foregroundRawAE": 0
+    },
+    {
+      "name": "dense",
+      "level": 0.38999999999999724,
+      "density": 0.5999999999999905,
+      "tint": 0.47999999999999365,
+      "far": 69.20000000000007,
+      "foregroundRawAE": 0
+    },
+    {
+      "name": "invalid-brightness",
+      "level": 0.38999999999999735,
+      "density": 0,
+      "tint": 0,
+      "far": 74,
+      "foregroundRawAE": 0
+    },
+    {
+      "name": "maximum",
+      "level": 0.6499999999999937,
+      "density": 0.9999999999999903,
+      "tint": 0.9999999999999214,
+      "far": 66.00000000000007,
+      "foregroundRawAE": 0
+    },
+    {
+      "change": "brightness",
+      "rawAE": 139.041
+    },
+    {
+      "change": "density",
+      "rawAE": 279.261
+    }
+  ],
+  "wholeFrame": {
+    "before": {
+      "samples": 120,
+      "calls": [
+        196
+      ],
+      "triangles": [
+        25534
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ]
+    },
+    "after": {
+      "samples": 120,
+      "calls": [
+        196
+      ],
+      "triangles": [
+        25534
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ]
+    }
+  },
+  "gatePixelBlue": {
+    "quiet": 0.0396078,
+    "highSpectrum": 0.482353,
+    "maximum": 0.580431
+  }
+}

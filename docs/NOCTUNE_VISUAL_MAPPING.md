@@ -1,6 +1,6 @@
 ECHO — Noctune 2.0 Visual Mapping Specification
 
-Plan version: 1.8 · Prepared: 2026-11-22 · Status: Proposed artistic contract; partially source-checked at e627ff821e84dd0f8e781fa9b259805d4822ac39, owner review pending
+Plan version: 1.11 · Prepared: 2026-11-22 · Status: Proposed artistic contract; partially source-checked at e627ff821e84dd0f8e781fa9b259805d4822ac39, owner review pending
 Destination: docs/NOCTUNE_VISUAL_MAPPING.md · Primary plan: NOCTUNE_MASTER_ROADMAP.md
 
 1. Creative brief
@@ -483,39 +483,39 @@ Reflections
 
 NT09
 
-Derived from fixtures
+Existing reflected scene and associated point/material response retained
 
-Pending
+Matched on/off and isolated contribution checks passed
 
-Pending
+Owner environment/music/device review pending
 
-Pending
+No new shader, gain, floor light or audio uniform
 
 Fog/distance
 
 NT10
 
-Derived slow energy
+Implemented: slow context intensity/activity/valid brightness
 
-Pending
+Technical verification passed
 
-Pending
+Owner environment/music/device review pending
 
-Pending
+Existing fog/gate/haze only; Manual appearance unchanged
 
 Cross-system composition
 
 NT11
 
-All final outputs
+Current distinct mappings retained after staged assessment
 
-Pending
+Technical staged checks passed
 
-Pending
+Owner artistic approval required
 
-Pending
+No new global gain or shared limiter
 
-Next action: review NT08 and grouped NT05–NT08 lighting before authorizing NT09. NT04 baseline is owner-approved; grouped lighting approval remains pending.
+Next action: owner artistic review of NT11 staged coordination before NT12. No additional mapping change proposed; grouped environment/music/device acceptance remains pending.
 
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
@@ -602,3 +602,46 @@ Qualify existing `high` events only: own session, unconsumed sequence, finite st
 Cooldown is global to the two banks: accepted attacks ≤2.5/s, alternating ≤1.25/s per bank, with a finite tail ending before the next start is allowed. This bounds visual activity but does not substitute for owner comfort review. Reduced motion suppresses accents and uses .8/1.1 s body smoothing. Zero gain/Manual clear audio body and accents; inactive/stale release body and cancel accents; new sessions reset body/alternation and skip retained events. Suppressed events never replay. Manual Violet still sets both banks uniformly. Targets0 settle below.001.
 
 The unified update retains one MI read, borrowed only synchronously; two stable scalar arrays hold bank accents/levels. Reflections derive from each bank's actual final output, via the unchanged physical wet-floor pass. Magenta/cyan/bridge/atmosphere remain exact NT07 behavior. [NT08 report and generated demonstrations](reports/nocturne/NT08_VIOLET_REVIEW.md). Grouped NT05–NT08 owner artistic/music/device approval remains open before NT09.
+
+
+## NT09 verified existing surface response — no production change
+
+Owner “proceed” after NT08 authorizes this assessment. The existing planar wet floor already reflects delivered material/light brightness after LightingDriver's priority-1 update; its texture is the current reflected scene, not a separate audio scalar. `state.reflections` names final source levels for diagnostics/coordination; the floor does not consume them as another brightness multiplier. Existing point lights illuminate authored industrial wall materials and nearby details.
+
+Preserve WetGround's static wetness/Fresnel mask, five-tap reflection spread and small static UV distortion; there is no audio-driven water motion. Retain wall roughness/bump maps and all existing material coefficients. No added edge highlight shader or broad reflectivity increase is justified by the NT09 measurements.
+
+Matched fixture off/.25/.75 captures hold every other final fixture and atmosphere at0 in an isolated diagnostic copy. Both Standard/Low show proportional ordering of magenta/cyan pavement color, distinct reflection-versus-spill contributions, and local wall response. Actual uninstrumented production cyan-on/off pairs match the diagnostic images exactly. Reduced-motion static floor pairs also match exactly. [NT09 report and captures](reports/nocturne/NT09_SURFACE_REVIEW.md).
+
+Bridge strip mirror images lie below the fixed viewport; the sampled visible floor shows their shared mean-driven spill, without a traveling head image. Distant left violet influence is much weaker than near violet, especially at Low quality. These are recorded framing/resolution limits, not reasons to invent global glints, move the camera or alter approved geometry. Preserve the current implementation pending owner environment/music review. NT10 remains separate.
+
+
+## NT10 implemented slow atmosphere parameters
+
+Owner “proceed” after NT09 authorizes this phase. Existing MI context is sufficient; no new energy composite, event detector, analyser or section recognition. `atmosphereResponse.ts` receives the same single borrowed MI frame as fixture controllers.
+
+| Internal response | Target | Normal time constants | Reduced motion |
+| --- | --- | --- | --- |
+| Distant illumination `level` | `.65 * clamp(intensity) * gain` | 2 s rise /4 s fall | 4/6 s |
+| Depth `density` | `clamp(activity) * clamp(intensity) * gain` | 3 s rise /5 s fall | 4/6 s |
+| Signed balance `tint` | `(2*clamp(brightness)-1) * clamp(intensity) * gain`, only if valid and finite; otherwise0 | 4 s in either direction | 6 s |
+
+Intensity is already MI's calibrated broad-RMS context with .75/1.5 s smoothing; activity is a four-second strength-weighted onset rate, not BPM. Brightness is log-normalized spectral centroid, not a mood/warmth detector. Scene-local smoothing compounds these upstream time constants intentionally; no latency claim from the scene coefficient alone.
+
+Audio final color weights: `magenta=level*(.24-.04*tint)`, `cyan=level*(.85+.03*tint)`, `violet=level*(.16+.04*tint)`. Higher centroid makes the small balance shift toward cyan/violet, lower centroid toward magenta. Existing palette colors mix into gate emission and haze glow; existing fog color stays `baseline('#05070b') + glow*.018`. No ambient/exposure increase.
+
+Fog near stays17 m, so near architecture remains unaffected by fog. Fog far=`74-8*density` m, bounded66–74. Activity without intensity cannot maintain density or illuminate the scene. Existing fog/gate/haze geometry/materials and floor/wall shaders are unchanged; distant geometry naturally receives the changed fog attenuation. No additional light, render pass or material.
+
+Active feature age0–.25 s is required. Stale/inactive target0 and release slowly; zero gain/Manual clear audio envelopes immediately. New session resets history. dt≤.05 s; zero targets settle below.001 (absolute value for signed tint). Manual retains original weighted colors and fog17/74 exactly; Audio baseline remains dark with unchanged environmental fill. The old broad helper still computes a historical atmosphere value, but final Audio rendering now uses only the new controller.
+
+[NT10 review/evidence](reports/nocturne/NT10_ATMOSPHERE_REVIEW.md) covers live generated quiet/energetic/recovery, reduced motion, independent context snapshots, actual delivery, exact Manual pixels and unchanged fixture outputs/cost. NT11 and owner environment/music/device approval remain separate.
+
+
+## NT11 coordination assessment — current mappings retained
+
+Owner “proceed” after NT10 authorizes this phase. Generated intro, bass entrance, midrange addition, dense passage, breakdown and return show distinct existing roles without a specific balance defect. No new coefficients, overlap limiter, global gain or energy-history layer is added. Per-fixture caps/timing/localization from NT05–NT08 plus the slow NT10 atmosphere remain the coordination policy.
+
+In the assessed dense section, main magenta mean/peak≈.1595/.2314, secondary mean≈.0460, windows≈.0380, details≈.0565, approved cyan panel mean/peak≈.1115/.1840, and violet-bank peaks≈.1095. One violet bank can accent at a time; at most3 of6 bridge sections are nonzero during travel. Numeric levels are not interchangeable measures of perceptual prominence across differently sized fixtures. Existing right magenta remains the visual anchor in inspected frames.
+
+Bass-only passage leaves the cyan panel near0; adding midrange raises cyan without forcing windows to accent. Breakdown retains only a quiet high-mid pad and fading atmosphere; the return restores layered roles. Final silence settles all fixture outputs to0 while atmosphere releases slowly. Reduced motion has no sharp accents or bridge travel. These are responses to supplied features and authored test schedule, not detected song sections.
+
+[NT11 report and synchronized stage evidence](reports/nocturne/NT11_COORDINATION_REVIEW.md) retains observed values, actual material/point delivery and all90 unchanged source hashes. Owner artistic approval is required by NT11; it has not been inferred from automation. NT12 and real-music review remain separate.

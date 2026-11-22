@@ -1,6 +1,6 @@
 ECHO — Music Intelligence Migration Tracker
 
-Version: 1.8 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented, owner grouped lighting review pending; audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
+Version: 1.11 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented; owner authorized NT09 continuation; NT09 existing surfaces verified; NT10 implemented; NT11 assessment ready, owner artistic approval pending; audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
 Destination: docs/MUSIC_INTELLIGENCE_MIGRATION.md
 Current execution scope: Noctune only. Future intention: remove shared legacy analysis after every consumer has migrated.
 
@@ -372,7 +372,7 @@ Known risks / blockers:
 Owner review decision:
 Next phase:
 
-Next action: review NT08 and grouped NT05–NT08 lighting before authorizing NT09. NT04 migration baseline remains owner-approved; grouped lighting artistic approval is open.
+Next action: review NT11 staged coordination before NT12. Current mappings retained; native/music/device acceptance is not inferred from generated checks.
 
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
@@ -434,3 +434,24 @@ Owner “proceed” authorizes NT07 after NT06. Six contiguous sections within t
 Owner “proceed” authorizes NT08 after NT07. The same borrowed MI frame supplies presence/air energy to a restrained violet body and existing high onset events to alternating right/left accents. Twelve strip transforms are unchanged; six per material bank, each with its existing spill light. One240 ms accent,400 ms cooldown, no queue/stacking. Reduced motion keeps slow sustain only. No new onset fields, FFT or analyser.
 
 [NT08 evidence](reports/nocturne/NT08_VIOLET_REVIEW.md) verifies independent actual material/point delivery, quiet/loud upper energy, isolated/dense high events, bass/low-mid isolation, silence and reduced motion.4,200 matched frames preserve every non-violet output and bridge section state;85 other source files are unchanged. Eight static Manual/idle/off pairs are pixel-identical; paired whole-frame counters quantify one extra material batch. NT08 implemented; grouped lighting acceptance and owner music/device checks remain pending before NT09.
+
+
+## NT09 checkpoint — existing reflection/material response verified
+
+Owner “proceed” authorizes NT09 after the NT08 lighting report. Surface assessment finds no missing audio interface: the current reflected scene already uses final fixture materials and local point lights in the same frame. No additional Music Intelligence inputs, audio uniforms or global intensity multiplier are needed. Existing wall maps receive the associated point lights.
+
+[NT09 evidence](reports/nocturne/NT09_SURFACE_REVIEW.md) retains32 isolated contribution captures,9 uninstrumented built-production views, pixel measurements and all89 unchanged source hashes. No production implementation changed; NT09 is verified reuse, rather than an added shader. Next is NT10 after owner continuation; full-song/device/native and grouped environment acceptance remain pending.
+
+
+## NT10 checkpoint — existing context drives slow atmosphere
+
+Owner “proceed” authorizes NT10 after NT09. Intensity controls capped distant glow; activity weighted by intensity controls a modest fog-far change; finite brightness guarded by brightnessValid controls a small signed palette shift. Multi-second local envelopes respect reduced motion, freshness, gain, Manual and sessions. Existing context semantics are sufficient; no MI/DSP/capture changes.
+
+[NT10 evidence](reports/nocturne/NT10_ATMOSPHERE_REVIEW.md) compares generated live transitions and independently controlled context at held fixtures.4,200 matched frames preserve every fixture/reflection output and bridge state;87 other source files byte-identical. Eight Manual/idle/off image pairs are exact. Only the new scene atmospheric controller, visual-state wiring and final fog delivery change; NT11 and native/music/device approval remain pending.
+
+
+## NT11 checkpoint — composition assessed without new coupling
+
+Owner “proceed” authorizes NT11 after NT10. Existing MI mappings were reviewed together using a generated seven-stage arrangement and per-render feature/response/delivery traces. No added global intensity multiplier, shared limiter, rolling-energy interpretation or DSP change was justified. Approved cyan and every existing controller remain unchanged.
+
+[NT11 evidence](reports/nocturne/NT11_COORDINATION_REVIEW.md) records normal/reduced synchronized clips, actual material/point delivery, bounded violet/bridge overlap and90 byte-identical source files relative to task start. Technical assessment passed; owner artistic/grouped environment approval remains pending. NT12 deterministic matrix and NT13 owner-authorized live music review have not started.

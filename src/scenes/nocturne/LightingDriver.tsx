@@ -61,6 +61,8 @@ export function LightingDriver({ musicFeatures, mode, manual, reactivity, reduce
     glow.add(scratch.copy(palette.violet).multiplyScalar(state.atmosphere.violet))
     bound.gate.emissive.copy(glow)
     bound.haze.uniforms.glow.value.copy(glow)
+    bound.fog.near = state.atmosphere.fogNear
+    bound.fog.far = state.atmosphere.fogFar
     bound.fog.color.copy(glow).multiplyScalar(0.018).add(palette.baseline)
   }, -1) // Update before the main camera/render and its planar reflection pass.
   return null

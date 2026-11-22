@@ -4,6 +4,7 @@ import type { NocturneLighting, NocturneLightingMode } from './lighting.ts'
 import { createNocturneResponse, updateNocturneResponse } from './reactivity.ts'
 import { createCyanPanelResponse, updateCyanPanelResponse } from './cyanPanel.ts'
 import { createMagentaResponse, updateMagentaResponse } from './magenta.ts'
+import { createAtmosphereResponse, updateAtmosphereResponse } from './atmosphereResponse.ts'
 import { createVioletResponse, updateVioletResponse } from './violet.ts'
 import { createBridgeResponse, updateBridgeResponse } from './bridge.ts'
 import { createMidrangeResponse, updateMidrangeResponse } from './midrange.ts'
@@ -14,6 +15,7 @@ export const NOCTURNE_VISUAL_CHANNELS = [
 export type NocturneVisualChannel = typeof NOCTURNE_VISUAL_CHANNELS[number]
 export type NocturneVisualEnvelope = { sustainTarget: number, accent: number, level: number }
 export type NocturneVisualState = {
+  context: ReturnType<typeof createAtmosphereResponse>,
   broad: ReturnType<typeof createNocturneResponse>,
   panel: ReturnType<typeof createCyanPanelResponse>,
   magenta: ReturnType<typeof createMagentaResponse>,
@@ -23,14 +25,14 @@ export type NocturneVisualState = {
   channels: Record<NocturneVisualChannel, NocturneVisualEnvelope>,
   // Derived source-light levels. The existing planar reflection renders the real fixtures.
   reflections: Record<NocturneVisualChannel, number>,
-  atmosphere: { level: number, magenta: number, cyan: number, violet: number },
+  atmosphere: { level: number, magenta: number, cyan: number, violet: number, fogNear: number, fogFar: number },
 }
 export function createNocturneVisualState(): NocturneVisualState {
   return {
-    broad: createNocturneResponse(), panel: createCyanPanelResponse(), magenta: createMagentaResponse(), midrange: createMidrangeResponse(), bridge: createBridgeResponse(), violet: createVioletResponse(),
+    context: createAtmosphereResponse(), broad: createNocturneResponse(), panel: createCyanPanelResponse(), magenta: createMagentaResponse(), midrange: createMidrangeResponse(), bridge: createBridgeResponse(), violet: createVioletResponse(),
     channels: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, { sustainTarget: 0, accent: 0, level: 0 }])) as NocturneVisualState['channels'],
     reflections: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, 0])) as NocturneVisualState['reflections'],
-    atmosphere: { level: 0, magenta: 0, cyan: 0, violet: 0 },
+    atmosphere: { level: 0, magenta: 0, cyan: 0, violet: 0, fogNear: 17, fogFar: 74 },
   }
 }
 
@@ -77,10 +79,14 @@ export function updateNocturneVisualState(state: NocturneVisualState, reader: Mu
   panel.level = mode === 'manual' ? clampSignal(manual.cyanPanel) : state.panel.level
   for (const name of NOCTURNE_VISUAL_CHANNELS) state.reflections[name] = state.channels[name].level
   const atmosphere = state.atmosphere, manualMode = mode === 'manual'
-  atmosphere.level = state.broad.atmosphere
-  atmosphere.magenta = (manualMode ? state.broad.magenta : atmosphere.level) * .24
-  atmosphere.cyan = (manualMode ? state.broad.cyan : atmosphere.level) * .85
-  atmosphere.violet = (manualMode ? state.broad.violet : atmosphere.level) * .16
+  updateAtmosphereResponse(state.context, view, deltaSeconds, nowSeconds, reactivity, reducedMotion, manualMode)
+  const { level, density, tint } = state.context
+  atmosphere.level = level
+  atmosphere.magenta = manualMode ? state.broad.magenta * .24 : level * (.24 - .04 * tint)
+  atmosphere.cyan = manualMode ? state.broad.cyan * .85 : level * (.85 + .03 * tint)
+  atmosphere.violet = manualMode ? state.broad.violet * .16 : level * (.16 + .04 * tint)
+  atmosphere.fogNear = 17
+  atmosphere.fogFar = 74 - 8 * density
   return state
 }
 

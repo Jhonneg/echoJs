@@ -284,10 +284,19 @@ Documentation organization (2026-11-22): owner “yes” approves the proposed s
 
 ## Noctune 2.0 — NT01–NT15
 
-The owner supplied the [master roadmap](NOCTUNE_MASTER_ROADMAP.md), [visual mapping](NOCTUNE_VISUAL_MAPPING.md) and [migration tracker](MUSIC_INTELLIGENCE_MIGRATION.md). NT01 audit/design is approved with “Please implement the plan”; NT02 and owner-authorized NT03 are implemented; NT04 migration baseline is approved by owner “proceed”; Owner-authorized NT05–NT08 magenta/midrange/bridge/violet choreography is implemented; grouped lighting review remains pending before NT09. Later phases follow sequentially with their required gates. Preserve the visually approved left cyan fixture and other landscapes. Actual status is in PROGRESS.md.
+The owner supplied the [master roadmap](NOCTUNE_MASTER_ROADMAP.md), [visual mapping](NOCTUNE_VISUAL_MAPPING.md) and [migration tracker](MUSIC_INTELLIGENCE_MIGRATION.md). NT01 audit/design is approved with “Please implement the plan”; NT02 and owner-authorized NT03 are implemented; NT04 migration baseline is approved by owner “proceed”; Owner-authorized NT05–NT08 magenta/midrange/bridge/violet choreography is implemented; owner continuation authorized NT09 after the lighting report; unperformed music/device checks remain pending. Later phases follow sequentially with their required gates. Preserve the visually approved left cyan fixture and other landscapes. Actual status is in PROGRESS.md.
 
 
 Noctune NT07 checkpoint (2026-11-22): finite bridge travel implemented and technically verified; [review/evidence](reports/nocturne/NT07_BRIDGE_REVIEW.md). Existing two diffusers are segmented inside their original footprints; qualified MI low events trigger bounded travel without stacking. Owner grouped lighting/music/device acceptance remains pending. NT08 is next after owner continuation; no automatic next-phase approval.
 
 
 Noctune NT08 checkpoint (2026-11-22): localized violet treble response implemented and technically verified; [review/evidence](reports/nocturne/NT08_VIOLET_REVIEW.md). Existing geometry/colors are preserved in two side banks with restrained presence/air sustain and alternating finite high-event accents. Stop at the grouped NT05–NT08 owner lighting/music/device review gate. NT09 is not started.
+
+
+Noctune NT09 checkpoint (2026-11-22): existing wet-pavement reflection and local material response verified; [report/evidence](reports/nocturne/NT09_SURFACE_REVIEW.md). No production modifications needed. NT10 slow atmosphere is next after owner review/continuation; no new environment phase is automatically authorized.
+
+
+Noctune NT10 checkpoint (2026-11-22): owner continuation authorizes slow atmosphere; [implementation/evidence](reports/nocturne/NT10_ATMOSPHERE_REVIEW.md) uses existing MI context with multi-second bounded glow/depth/tint. Fixtures, materials, camera and Manual appearance remain intact. NT11 whole-scene coordination is next after owner review/continuation; no automatic next-phase approval.
+
+
+Noctune NT11 checkpoint (2026-11-22): owner continuation authorizes staged whole-scene review; [assessment/evidence](reports/nocturne/NT11_COORDINATION_REVIEW.md). Existing mappings retained; no production edits. Technical checks passed, but NT11 explicitly requires owner artistic approval. Stop for that review before NT12; native/music/device and grouped environment acceptance remain pending.
