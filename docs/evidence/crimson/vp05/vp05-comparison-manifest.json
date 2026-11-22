@@ -1,0 +1,65 @@
+{
+  "baselineCommit": "6281d27",
+  "baselineRoot": "/tmp/echo-vp05-baseline-p4cctuv8",
+  "unchangedBaselineProductionFileCount": 58,
+  "harnessOverrides": [
+    "src/dev/mi05/main.tsx",
+    "src/dev/mi05/vm02Review.ts",
+    "src/dev/mi05/vp00Review.ts"
+  ],
+  "baselineReadoutCompatibility": "Optional corona readout falls back to0; production sources unchanged",
+  "fixtureId": "vp00-48k-21s-v1",
+  "sourcePrefixSha256": "51e4ebdc4d762e6c67b79164738e1b73c001df18b79543317e2a7cab03c86e5c",
+  "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+  "cadenceComparison": [
+    {
+      "quality": "standard",
+      "baselineP95": 16.799999997019768,
+      "currentP95": 16.80000000447035,
+      "changePercent": 4.434870248815059e-08,
+      "baselineSamples": 300,
+      "currentSamples": 300,
+      "dpr": 1
+    },
+    {
+      "quality": "low",
+      "baselineP95": 16.799999997019768,
+      "currentP95": 16.80000000447035,
+      "changePercent": 4.434870248815059e-08,
+      "baselineSamples": 300,
+      "currentSamples": 300,
+      "dpr": 0.75
+    }
+  ],
+  "clipTimes": {
+    "baseline": [
+      8.044066,
+      8.21553,
+      8.386667,
+      8.576836,
+      8.728,
+      8.92,
+      9.110085,
+      9.367412,
+      9.538667,
+      9.709333,
+      9.88
+    ],
+    "current": [
+      8.054858,
+      8.226667,
+      8.397333,
+      8.589333,
+      8.781333,
+      8.952,
+      9.144,
+      9.442442,
+      9.613333,
+      9.784,
+      9.976
+    ]
+  },
+  "limits": "Reconstructed baseline with current DEV capture adapter; fixed camera; actual timestamps not bit-identical FFT scheduling; about5-6Hz source frames duplicated to30fps. One5-second sample/preset/source, not a hardware/headroom guarantee.",
+  "finalRun": "/tmp/echo-vp05-final-fixedBj4xTo",
+  "cleanupFix": "Current final footage includes explicit terrain geometry disposal; authored position/normal buffers verified identical."
+}

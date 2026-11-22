@@ -2,7 +2,7 @@
 
 **Your music. Another world.**
 
-A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks previews sideways mountain motion driven by shared music intensity and frequency balance and a bass-pulsing sun. Crimson Horizon travels forward through an endless 3D ridged valley while music plays, with a gentle mouse-following viewpoint. Its pink sun responds to musical energy and strong bass hits, while its surrounding glow follows musical activity against a nightshade sky. Silence stops travel and dims the sun. ECHO branding and the selected scene name appear initially. Source and scene settings live in the compact chooser opened by the scene name at the bottom left; selecting a local file also shows a compact player on the landscape.
+A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks previews sideways mountain motion driven by shared music intensity and frequency balance and a bass-pulsing sun. Crimson Horizon travels forward at a constant pace through an endless 3D ridged valley, with a gentle mouse-following viewpoint. Its pink sun responds to musical energy and strong bass hits, while its surrounding glow follows musical activity against a nightshade sky. Silence dims the sun while travel continues. ECHO branding and the selected scene name appear initially. Source and scene settings live in the compact chooser opened by the scene name at the bottom left; selecting a local file also shows a compact player on the landscape.
 
 ## Run locally
 
@@ -25,7 +25,7 @@ Click the scene name to open the chooser, or focus it with Tab and press Space/E
 - **Open audio file:** select a local browser-supported file, then use the on-scene Play/Pause/Replay and volume controls. Volume affects local playback only.
 - **Disconnect / Cancel sharing:** release the selected source or cancel ECHO's pending sharing request. Close a pending native picker yourself too.
 - **Landscape:** switch between Bloom, Lavender Peaks and the Crimson Horizon 3D preview without stopping audio. The choice lasts for the page session.
-- **Reactivity:** changes Bloom’s visual amplitude or Lavender Peaks’ travel speed and sun pulse, not sound volume. Lavender Peaks moves all six ridges together: low-frequency passages move slower and high-frequency passages move faster, with overall intensity controlling strength. Distant layers remain slower than the foreground. In Crimson Horizon, Reactivity scales forward travel and sun brightness. Music energy controls speed and sun brightness; musical activity controls the surrounding glow. Mouse movement shifts its viewpoint even during silence; leaving the landscape returns it to center. Reduced motion freezes the camera and slows sun brightness changes.
+- **Reactivity:** changes Bloom’s visual amplitude or Lavender Peaks’ travel speed and sun pulse, not sound volume. Lavender Peaks moves all six ridges together: low-frequency passages move slower and high-frequency passages move faster, with overall intensity controlling strength. Distant layers remain slower than the foreground. In Crimson Horizon, Reactivity scales the lighting and sun response; forward travel stays at24 units/second, including silence, pause, disconnected input and zero Reactivity. Music energy controls sun brightness; musical activity controls the surrounding glow. Mouse movement shifts its viewpoint even during silence; leaving the landscape returns it to center. Reduced motion freezes the camera and slows sun brightness changes.
 - **Graphics quality:** Standard preserves the existing drawing resolution; Low is softer and renders fewer pixels. The choice lasts for the page session.
 - **Enter/Exit fullscreen:** expands the landscape and chooser using the browser's native API. Native Escape remains available.
 
@@ -49,6 +49,7 @@ See [the release checklist](docs/RELEASE_CHECKLIST.md) for current evidence, man
 
 ## Project context
 
+- [Documentation index](docs/README.md): guides, reports, evidence and history.
 - [Progress](docs/PROGRESS.md): actual checkpoint and next action.
 - [Roadmap](docs/ROADMAP.md): approved task boundaries.
 - [Vision](docs/VISION.md), [art direction](docs/ART_DIRECTION.md) and [motion](docs/MOTION.md).

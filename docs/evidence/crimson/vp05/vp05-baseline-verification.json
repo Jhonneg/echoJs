@@ -1,0 +1,7166 @@
+{
+  "date": "2026-11-22",
+  "generatedOnly": true,
+  "checks": [
+    "Same VP00 generated PCM with fixed1440x810 camera and comparable source timestamps",
+    "Composited busy-section video and screenshots; matched5-second quality cadence samples"
+  ],
+  "screenshots": [
+    "fixed-1.png",
+    "fixed-4.png",
+    "fixed-9.png",
+    "fixed-14.png",
+    "fixed-17.3.png",
+    "fixed-20.png"
+  ],
+  "performance": [
+    {
+      "quality": "standard",
+      "samples": 300,
+      "p95": 16.799999997019768,
+      "dpr": 1,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      }
+    },
+    {
+      "quality": "low",
+      "samples": 300,
+      "p95": 16.799999997019768,
+      "dpr": 0.75,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      }
+    }
+  ],
+  "errors": [],
+  "label": "baseline",
+  "mode": "comparison",
+  "root": "/tmp/echo-vp05-baseline-p4cctuv8",
+  "fixture": [
+    {
+      "time": 0.130043,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.7908384248361059,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 8,
+        "previousTime": 1.5893,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 0.216,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.7312921134137709,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 14,
+        "previousTime": 1.6894,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 0.322667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.6454437003936279,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 20,
+        "previousTime": 1.7894,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 0.429333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.5696020663901161,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 26,
+        "previousTime": 1.8894000000000002,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 0.536,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.5026092292136762,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 32,
+        "previousTime": 1.9894,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 0.621333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.4436065353437127,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 38,
+        "previousTime": 2.0894,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 0.728,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.39148139340711025,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 44,
+        "previousTime": 2.1893000000000002,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 0.834667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.3454811171012763,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 50,
+        "previousTime": 2.2894,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 0.941333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.30488601574334223,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 56,
+        "previousTime": 2.3893,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.026667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.26906096453485767,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 62,
+        "previousTime": 2.4894000000000003,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.218667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.20954488987369463,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 74,
+        "previousTime": 2.6893000000000002,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.325333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.18492271626596568,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 80,
+        "previousTime": 2.7893000000000003,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.432,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.16319372432224466,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 86,
+        "previousTime": 2.8893,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.538056,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.14401795623562527,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 92,
+        "previousTime": 2.9893,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.624,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.1270954002945031,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 98,
+        "previousTime": 3.0894,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.730667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.11217531813024571,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 104,
+        "previousTime": 3.1893000000000002,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.837333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.09899437079638344,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 110,
+        "previousTime": 3.2893000000000003,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 1.943375,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1,
+      "sun": 0.08735130600605893,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 116,
+        "previousTime": 3.3893,
+        "slowHigh": 0,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 2.029333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0000008503795936,
+      "sun": 0.07709401833120605,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.00925786770472797,
+        "bass": 0.026599558396613175,
+        "lowMids": 0.028058565607239763,
+        "highMids": 0.028082251583712525,
+        "presence": 0.02808609351621936,
+        "air": 0.028084747559194292
+      },
+      "contours": {
+        "light": 0.000004086804565800359,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 122,
+        "previousTime": 3.4893,
+        "slowHigh": 0.000010805475791913052,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      }
+    },
+    {
+      "time": 2.136,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.005526532597687,
+      "sun": 0.11019354375349763,
+      "pulse": 0.04769415107387169,
+      "features": {
+        "subBass": 0.007620029445884894,
+        "bass": 0.048874473061557774,
+        "lowMids": 0.049466144598268785,
+        "highMids": 0.04946619131017621,
+        "presence": 0.04946710793952899,
+        "air": 0.04946614275171007
+      },
+      "contours": {
+        "light": 0.0134832855896876,
+        "streak": 0.04265377442374714,
+        "progress": 0.04063157894579982,
+        "session": 3,
+        "frame": 129,
+        "previousTime": 3.606,
+        "slowHigh": 0.028179051945844046,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0068132028046717485,
+        "peak": 0.04946697722841889,
+        "deadline": 3.5843000000000003,
+        "lastLaunch": 3.5843000000000003,
+        "strength": 0.04265377442374714
+      }
+    },
+    {
+      "time": 2.242667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0064406659854233,
+      "sun": 0.13483767819121772,
+      "pulse": 0.030286978337220247,
+      "features": {
+        "subBass": 0.007662840947726575,
+        "bass": 0.048853890400154566,
+        "lowMids": 0.04944894213807358,
+        "highMids": 0.04945042853833044,
+        "presence": 0.049450396740822015,
+        "air": 0.04944835503191881
+      },
+      "contours": {
+        "light": 0.02313225540175338,
+        "streak": 0.04259114705065554,
+        "progress": 0.145789473681073,
+        "session": 3,
+        "frame": 135,
+        "previousTime": 3.7059,
+        "slowHigh": 0.04020724555372108,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0068132028046717485,
+        "peak": 0.04946697722841889,
+        "deadline": 3.5843000000000003,
+        "lastLaunch": 3.5843000000000003,
+        "strength": 0.04265377442374714
+      }
+    },
+    {
+      "time": 2.349333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0059145295983194,
+      "sun": 0.13259961497991876,
+      "pulse": 0.019224248170289063,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.02477156177404122,
+        "streak": 0.040293725080885925,
+        "progress": 0.2510526315758099,
+        "session": 3,
+        "frame": 141,
+        "previousTime": 3.8059000000000003,
+        "slowHigh": 0.029204472661857366,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0068132028046717485,
+        "peak": 0.04946697722841889,
+        "deadline": 3.5843000000000003,
+        "lastLaunch": 3.5843000000000003,
+        "strength": 0.04265377442374714
+      }
+    },
+    {
+      "time": 2.45399,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0048571100934047,
+      "sun": 0.11701874950368824,
+      "pulse": 0.012202330440428542,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.021679409935665056,
+        "streak": 0.03534213067625477,
+        "progress": 0.3563157894705469,
+        "session": 3,
+        "frame": 147,
+        "previousTime": 3.9059,
+        "slowHigh": 0.012692211499237192,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0068132028046717485,
+        "peak": 0.04946697722841889,
+        "deadline": 3.5843000000000003,
+        "lastLaunch": 3.5843000000000003,
+        "strength": 0.04265377442374714
+      }
+    },
+    {
+      "time": 2.541333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0040279159497596,
+      "sun": 0.10325577620239053,
+      "pulse": 0.007741743752110271,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.018970711551408045,
+        "streak": 0.028624239461652563,
+        "progress": 0.4616842105247466,
+        "session": 3,
+        "frame": 153,
+        "previousTime": 4.006,
+        "slowHigh": 0.005511417617328603,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0068132028046717485,
+        "peak": 0.04946697722841889,
+        "deadline": 3.5843000000000003,
+        "lastLaunch": 3.5843000000000003,
+        "strength": 0.04265377442374714
+      }
+    },
+    {
+      "time": 2.648,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0033679511838578,
+      "sun": 0.09113429374750899,
+      "pulse": 0.004916200834548977,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.01660487442874999,
+        "streak": 0.021057095638070355,
+        "progress": 0.5668421052600208,
+        "session": 3,
+        "frame": 159,
+        "previousTime": 4.105899999999999,
+        "slowHigh": 0.002397249098260273,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0068132028046717485,
+        "peak": 0.04946697722841889,
+        "deadline": 3.5843000000000003,
+        "lastLaunch": 3.5843000000000003,
+        "strength": 0.04265377442374714
+      }
+    },
+    {
+      "time": 2.754667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.004117162603307,
+      "sun": 0.10366767884166461,
+      "pulse": 0.0031204917125128473,
+      "features": {
+        "subBass": 0.007607159190697631,
+        "bass": 0.04887848078335518,
+        "lowMids": 0.04946534708209014,
+        "highMids": 0.049465792496691245,
+        "presence": 0.049465514472331704,
+        "air": 0.04946654088529903
+      },
+      "contours": {
+        "light": 0.02048018670957088,
+        "streak": 0.0028096431516094235,
+        "progress": 0.005473684207389041,
+        "session": 3,
+        "frame": 165,
+        "previousTime": 4.206,
+        "slowHigh": 0.018257362023871966,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.002374237002693954,
+        "peak": 0.049467358091704786,
+        "deadline": 4.2176,
+        "lastLaunch": 4.2176,
+        "strength": 0.04709312108901083
+      }
+    },
+    {
+      "time": 2.859473,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0074486707753767,
+      "sun": 0.13048327120347353,
+      "pulse": 0.04101820392921755,
+      "features": {
+        "subBass": 0.007622885529968428,
+        "bass": 0.04887471224011725,
+        "lowMids": 0.04946597262241084,
+        "highMids": 0.04946666903533852,
+        "presence": 0.04946639932060935,
+        "air": 0.04946586942867857
+      },
+      "contours": {
+        "light": 0.028259569247824478,
+        "streak": 0.04709312108901083,
+        "progress": 0.11073684210212645,
+        "session": 3,
+        "frame": 171,
+        "previousTime": 4.305899999999999,
+        "slowHigh": 0.03589156509658881,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.002374237002693954,
+        "peak": 0.049467358091704786,
+        "deadline": 4.2176,
+        "lastLaunch": 4.2176,
+        "strength": 0.04709312108901083
+      }
+    },
+    {
+      "time": 2.946667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0073429396318123,
+      "sun": 0.1446999137579711,
+      "pulse": 0.026035747873393793,
+      "features": {
+        "subBass": 0.002399048249048011,
+        "bass": 0.008451646507692942,
+        "lowMids": 0.00878802557655215,
+        "highMids": 0.008786628292843513,
+        "presence": 0.008786783061623246,
+        "air": 0.00878678432878718
+      },
+      "contours": {
+        "light": 0.0329305302270893,
+        "streak": 0.04570631580848886,
+        "progress": 0.21599999999686292,
+        "session": 3,
+        "frame": 177,
+        "previousTime": 4.4059,
+        "slowHigh": 0.040665342261282954,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002374237002693954,
+        "peak": 0.049467358091704786,
+        "deadline": 4.2176,
+        "lastLaunch": 4.2176,
+        "strength": 0.04709312108901083
+      }
+    },
+    {
+      "time": 3.053333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0058689449129739,
+      "sun": 0.1262546591575081,
+      "pulse": 0.015310845308267365,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.028524318661498353,
+        "streak": 0.040082762390411183,
+        "progress": 0.3389473684226215,
+        "session": 3,
+        "frame": 184,
+        "previousTime": 4.522600000000001,
+        "slowHigh": 0.016444523965270307,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002374237002693954,
+        "peak": 0.049467358091704786,
+        "deadline": 4.2176,
+        "lastLaunch": 4.2176,
+        "strength": 0.04709312108901083
+      }
+    },
+    {
+      "time": 3.16,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0048624891419324,
+      "sun": 0.11143327393228758,
+      "pulse": 0.009722769558426285,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.02496705135473295,
+        "streak": 0.03293397170863218,
+        "progress": 0.44410526315789467,
+        "session": 3,
+        "frame": 190,
+        "previousTime": 4.6226,
+        "slowHigh": 0.00714676065505821,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002374237002693954,
+        "peak": 0.049467358091704786,
+        "deadline": 4.2176,
+        "lastLaunch": 4.2176,
+        "strength": 0.04709312108901083
+      }
+    },
+    {
+      "time": 3.266667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0040614473289007,
+      "sun": 0.09835181229848348,
+      "pulse": 0.006171395931697096,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.021853410794742824,
+        "streak": 0.024661105690214687,
+        "progress": 0.5493684210526312,
+        "session": 3,
+        "frame": 196,
+        "previousTime": 4.722600000000001,
+        "slowHigh": 0.003105969377317157,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002374237002693954,
+        "peak": 0.049467358091704786,
+        "deadline": 4.2176,
+        "lastLaunch": 4.2176,
+        "strength": 0.04709312108901083
+      }
+    },
+    {
+      "time": 3.352,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0037736853742303,
+      "sun": 0.09398453702563804,
+      "pulse": 0.003918990708194299,
+      "features": {
+        "subBass": 0.007623615312692652,
+        "bass": 0.04887388937702287,
+        "lowMids": 0.049465154110027776,
+        "highMids": 0.04946511633246616,
+        "presence": 0.04946461423572971,
+        "air": 0.049465707815683886
+      },
+      "contours": {
+        "light": 0.02114567697771954,
+        "streak": 0.016266905765122096,
+        "progress": 0.6545263157879053,
+        "session": 3,
+        "frame": 202,
+        "previousTime": 4.8226,
+        "slowHigh": 0.00902914388459889,
+        "armed": true,
+        "pending": true,
+        "baseline": 0.0018076603130494427,
+        "peak": 0.03153113448745833,
+        "deadline": 4.851,
+        "lastLaunch": 4.2176,
+        "strength": 0.04709312108901083
+      }
+    },
+    {
+      "time": 3.458667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0073903582128327,
+      "sun": 0.12399270011409105,
+      "pulse": 0.04425196335557346,
+      "features": {
+        "subBass": 0.007621534077479682,
+        "bass": 0.04887647941995837,
+        "lowMids": 0.04946590275941929,
+        "highMids": 0.04946460529797813,
+        "presence": 0.049466069554419775,
+        "air": 0.04946608115638292
+      },
+      "contours": {
+        "light": 0.0287465054362064,
+        "streak": 0.04765745601941672,
+        "progress": 0.0930526315773786,
+        "session": 3,
+        "frame": 208,
+        "previousTime": 4.9226,
+        "slowHigh": 0.03189223001869114,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0018076603130494427,
+        "peak": 0.04946511633246616,
+        "deadline": 4.851,
+        "lastLaunch": 4.851,
+        "strength": 0.04765745601941672
+      }
+    },
+    {
+      "time": 3.565333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0074996212381295,
+      "sun": 0.14411637878754874,
+      "pulse": 0.028075568228472802,
+      "features": {
+        "subBass": 0.007726524797584569,
+        "bass": 0.04882719972971311,
+        "lowMids": 0.04942745530817356,
+        "highMids": 0.049428636937520136,
+        "presence": 0.04942848969389393,
+        "air": 0.04942861051736649
+      },
+      "contours": {
+        "light": 0.03431021718184012,
+        "streak": 0.046737219108800125,
+        "progress": 0.1984210526315793,
+        "session": 3,
+        "frame": 214,
+        "previousTime": 5.022600000000001,
+        "slowHigh": 0.041823771476809476,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0018076603130494427,
+        "peak": 0.04946511633246616,
+        "deadline": 4.851,
+        "lastLaunch": 4.851,
+        "strength": 0.04765745601941672
+      }
+    },
+    {
+      "time": 3.672,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.006545440223082,
+      "sun": 0.1363630841066944,
+      "pulse": 0.01782058563705441,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.03265341392134652,
+        "streak": 0.04256250024147552,
+        "progress": 0.3036842105263158,
+        "session": 3,
+        "frame": 220,
+        "previousTime": 5.1225,
+        "slowHigh": 0.02595476177955657,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0018076603130494427,
+        "peak": 0.04946511633246616,
+        "deadline": 4.851,
+        "lastLaunch": 4.851,
+        "strength": 0.04765745601941672
+      }
+    },
+    {
+      "time": 3.757333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0054146858933213,
+      "sun": 0.12035504279137896,
+      "pulse": 0.011316517413426123,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.028581207213269347,
+        "streak": 0.03592987836740546,
+        "progress": 0.408842105261589,
+        "session": 3,
+        "frame": 226,
+        "previousTime": 5.222600000000001,
+        "slowHigh": 0.01127049697635525,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0018076603130494427,
+        "peak": 0.04946511633246616,
+        "deadline": 4.851,
+        "lastLaunch": 4.851,
+        "strength": 0.04765745601941672
+      }
+    },
+    {
+      "time": 3.864,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.004516581873774,
+      "sun": 0.10621295247382836,
+      "pulse": 0.007183005737873421,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.025013509979091166,
+        "streak": 0.027825420862122936,
+        "progress": 0.5141052631563263,
+        "session": 3,
+        "frame": 232,
+        "previousTime": 5.3226,
+        "slowHigh": 0.004898137794908447,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0018076603130494427,
+        "peak": 0.04946511633246616,
+        "deadline": 4.851,
+        "lastLaunch": 4.851,
+        "strength": 0.04765745601941672
+      }
+    },
+    {
+      "time": 3.970667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0037925639031968,
+      "sun": 0.09373260157251835,
+      "pulse": 0.004559315339285278,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0218911565493151,
+        "streak": 0.019254879843103534,
+        "progress": 0.6193684210510628,
+        "session": 3,
+        "frame": 238,
+        "previousTime": 5.4226,
+        "slowHigh": 0.0021287219106880272,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0018076603130494427,
+        "peak": 0.04946511633246616,
+        "deadline": 4.851,
+        "lastLaunch": 4.851,
+        "strength": 0.04765745601941672
+      }
+    },
+    {
+      "time": 4.077333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.007326604548521,
+      "sun": 0.11711266479530916,
+      "pulse": 0.04946611420558685,
+      "features": {
+        "subBass": 0.007616188453167051,
+        "bass": 0.04887596230289171,
+        "lowMids": 0.04946561957330536,
+        "highMids": 0.04946661901048068,
+        "presence": 0.04946693816976398,
+        "air": 0.0494649992845923
+      },
+      "contours": {
+        "light": 0.02757112736383137,
+        "streak": 0.046800489374155145,
+        "progress": 0.04052631579104153,
+        "session": 3,
+        "frame": 245,
+        "previousTime": 5.5393,
+        "slowHigh": 0.02603506579077068,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.002666526826713478,
+        "peak": 0.04946701620086862,
+        "deadline": 5.517600000000001,
+        "lastLaunch": 5.517600000000001,
+        "strength": 0.046800489374155145
+      }
+    },
+    {
+      "time": 4.269333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0070292935157164,
+      "sun": 0.1414130304852784,
+      "pulse": 0.02236845058458177,
+      "features": {
+        "subBass": 0.000011128238861145243,
+        "bass": 0.000024925270993180037,
+        "lowMids": 0.00003362848073564627,
+        "highMids": 0.00003068995073129968,
+        "presence": 0.00003073537211736867,
+        "air": 0.000030690246581975974
+      },
+      "contours": {
+        "light": 0.0342460784976024,
+        "streak": 0.04421100073702623,
+        "progress": 0.25105263158051544,
+        "session": 3,
+        "frame": 257,
+        "previousTime": 5.739199999999999,
+        "slowHigh": 0.03251710277911605,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002666526826713478,
+        "peak": 0.04946701620086862,
+        "deadline": 5.517600000000001,
+        "lastLaunch": 5.517600000000001,
+        "strength": 0.046800489374155145
+      }
+    },
+    {
+      "time": 4.376,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0057787701480012,
+      "sun": 0.12481415098499227,
+      "pulse": 0.014198070221300109,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.029975909367380215,
+        "streak": 0.038778022191646576,
+        "progress": 0.3563157894752519,
+        "session": 3,
+        "frame": 263,
+        "previousTime": 5.8392,
+        "slowHigh": 0.014133866155385477,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002666526826713478,
+        "peak": 0.04946701620086862,
+        "deadline": 5.517600000000001,
+        "lastLaunch": 5.517600000000001,
+        "strength": 0.046800489374155145
+      }
+    },
+    {
+      "time": 4.482667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0047959991584805,
+      "sun": 0.11013433399056737,
+      "pulse": 0.009012032248130663,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.02623061844336474,
+        "streak": 0.03141503205202947,
+        "progress": 0.4615789473699893,
+        "session": 3,
+        "frame": 269,
+        "previousTime": 5.9392,
+        "slowHigh": 0.006142552910409372,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002666526826713478,
+        "peak": 0.04946701620086862,
+        "deadline": 5.517600000000001,
+        "lastLaunch": 5.517600000000001,
+        "strength": 0.046800489374155145
+      }
+    },
+    {
+      "time": 4.586807,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0040117741401415,
+      "sun": 0.09719320861489299,
+      "pulse": 0.005720265076552805,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.022956337403628672,
+        "streak": 0.02310422451372315,
+        "progress": 0.5668421052647258,
+        "session": 3,
+        "frame": 275,
+        "previousTime": 6.0392,
+        "slowHigh": 0.0026695424905238403,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002666526826713478,
+        "peak": 0.04946701620086862,
+        "deadline": 5.517600000000001,
+        "lastLaunch": 5.517600000000001,
+        "strength": 0.046800489374155145
+      }
+    },
+    {
+      "time": 4.674667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.004029843444145,
+      "sun": 0.09814107411728308,
+      "pulse": 0.0036308605700802895,
+      "features": {
+        "subBass": 0.0076100419440132345,
+        "bass": 0.04887813964091207,
+        "lowMids": 0.04946627843993318,
+        "highMids": 0.04946620785848842,
+        "presence": 0.04946668912295799,
+        "air": 0.04946657851806629
+      },
+      "contours": {
+        "light": 0.023133788971895972,
+        "streak": 0.014827793772275636,
+        "progress": 0.6721052631594623,
+        "session": 3,
+        "frame": 281,
+        "previousTime": 6.1392,
+        "slowHigh": 0.01158033042291878,
+        "armed": true,
+        "pending": true,
+        "baseline": 0.0016229600424754842,
+        "peak": 0.0494659909898653,
+        "deadline": 6.1676,
+        "lastLaunch": 5.517600000000001,
+        "strength": 0.046800489374155145
+      }
+    },
+    {
+      "time": 4.781333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0075267211090917,
+      "sun": 0.12677894018080552,
+      "pulse": 0.04387372264453196,
+      "features": {
+        "subBass": 0.007621725725949163,
+        "bass": 0.048875790035996604,
+        "lowMids": 0.04946587179506452,
+        "highMids": 0.049466615542673925,
+        "presence": 0.049466012487454664,
+        "air": 0.049466598882265574
+      },
+      "contours": {
+        "light": 0.030200982855059254,
+        "streak": 0.047843247816012936,
+        "progress": 0.0931578947384107,
+        "session": 3,
+        "frame": 287,
+        "previousTime": 6.239199999999999,
+        "slowHigh": 0.03300111163340345,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0016229600424754842,
+        "peak": 0.04946620785848842,
+        "deadline": 6.1676,
+        "lastLaunch": 6.1676,
+        "strength": 0.047843247816012936
+      }
+    },
+    {
+      "time": 4.888,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0075742089802882,
+      "sun": 0.1459272639200014,
+      "pulse": 0.027848249596969417,
+      "features": {
+        "subBass": 0.006126882524163945,
+        "bass": 0.03675843635102677,
+        "lowMids": 0.03726516202559963,
+        "highMids": 0.03726610474025644,
+        "presence": 0.03726532253747544,
+        "air": 0.03726440993408585
+      },
+      "contours": {
+        "light": 0.03535970878897383,
+        "streak": 0.0469194233771257,
+        "progress": 0.1984210526331472,
+        "session": 3,
+        "frame": 293,
+        "previousTime": 6.3392,
+        "slowHigh": 0.04229137840686335,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0016229600424754842,
+        "peak": 0.04946620785848842,
+        "deadline": 6.1676,
+        "lastLaunch": 6.1676,
+        "strength": 0.047843247816012936
+      }
+    },
+    {
+      "time": 4.992745,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0063661051209136,
+      "sun": 0.1326295208639562,
+      "pulse": 0.017676298222935472,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.03208574279435926,
+        "streak": 0.04272842943795412,
+        "progress": 0.3036842105278846,
+        "session": 3,
+        "frame": 299,
+        "previousTime": 6.4392,
+        "slowHigh": 0.02213586701148896,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0016229600424754842,
+        "peak": 0.04946620785848842,
+        "deadline": 6.1676,
+        "lastLaunch": 6.1676,
+        "strength": 0.047843247816012936
+      }
+    },
+    {
+      "time": 5.08,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.005262504891932,
+      "sun": 0.11705977291106084,
+      "pulse": 0.011224891298119339,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.028084330343105205,
+        "streak": 0.03606995039821778,
+        "progress": 0.4088421052631578,
+        "session": 3,
+        "frame": 305,
+        "previousTime": 6.5392,
+        "slowHigh": 0.00962020814694399,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0016229600424754842,
+        "peak": 0.04946620785848842,
+        "deadline": 6.1676,
+        "lastLaunch": 6.1676,
+        "strength": 0.047843247816012936
+      }
+    },
+    {
+      "time": 5.186667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0043871213946636,
+      "sun": 0.10330488701126733,
+      "pulse": 0.007124847305562211,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.024578656599473944,
+        "streak": 0.027933897800649678,
+        "progress": 0.5141052631578943,
+        "session": 3,
+        "frame": 311,
+        "previousTime": 6.6391,
+        "slowHigh": 0.004184410782595652,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0016229600424754842,
+        "peak": 0.04946620785848842,
+        "deadline": 6.1676,
+        "lastLaunch": 6.1676,
+        "strength": 0.047843247816012936
+      }
+    },
+    {
+      "time": 5.293333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0036144526240092,
+      "sun": 0.09009177973685452,
+      "pulse": 0.00419181472890292,
+      "features": {
+        "subBass": 0.008767663007396453,
+        "bass": 0.048138969992009825,
+        "lowMids": 0.0489211840245988,
+        "highMids": 0.04890021524116696,
+        "presence": 0.048899665660629685,
+        "air": 0.048898936693811026
+      },
+      "contours": {
+        "light": 0.02126717560601761,
+        "streak": 0.01791816464300388,
+        "progress": 0.6369473684163465,
+        "session": 3,
+        "frame": 318,
+        "previousTime": 6.7558,
+        "slowHigh": 0.002933308334198639,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0016229600424754842,
+        "peak": 0.04946620785848842,
+        "deadline": 6.1676,
+        "lastLaunch": 6.1676,
+        "strength": 0.047843247816012936
+      }
+    },
+    {
+      "time": 5.4,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0075457924379576,
+      "sun": 0.12128918232079908,
+      "pulse": 0.04946690478070628,
+      "features": {
+        "subBass": 0.007606814629448299,
+        "bass": 0.04887853737122355,
+        "lowMids": 0.049466653546149666,
+        "highMids": 0.049466674155488874,
+        "presence": 0.049466997758707436,
+        "air": 0.04946666522699018
+      },
+      "contours": {
+        "light": 0.028813963368203674,
+        "streak": 0.046532479144242175,
+        "progress": 0.05810526315318941,
+        "session": 3,
+        "frame": 324,
+        "previousTime": 6.8558,
+        "slowHigh": 0.029206518192751444,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.002933308334198639,
+        "peak": 0.04946578747844081,
+        "deadline": 6.8175,
+        "lastLaunch": 6.8175,
+        "strength": 0.046532479144242175
+      }
+    },
+    {
+      "time": 5.504386,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.007669375893307,
+      "sun": 0.14231284578436498,
+      "pulse": 0.03266498978894074,
+      "features": {
+        "subBass": 0.007623250415375758,
+        "bass": 0.04887568931700099,
+        "lowMids": 0.04946677433198196,
+        "highMids": 0.04946614544023005,
+        "presence": 0.04946603068737808,
+        "air": 0.04946501637161086
+      },
+      "contours": {
+        "light": 0.03436151735233232,
+        "streak": 0.04628713313328063,
+        "progress": 0.16347368420738917,
+        "session": 3,
+        "frame": 330,
+        "previousTime": 6.9559,
+        "slowHigh": 0.04066833384767384,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.002933308334198639,
+        "peak": 0.04946578747844081,
+        "deadline": 6.8175,
+        "lastLaunch": 6.8175,
+        "strength": 0.046532479144242175
+      }
+    },
+    {
+      "time": 5.592,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0068474925371294,
+      "sun": 0.13941502071411138,
+      "pulse": 0.02074308517601745,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.033878384294294524,
+        "streak": 0.04323068484342008,
+        "progress": 0.26863157894266326,
+        "session": 3,
+        "frame": 336,
+        "previousTime": 7.0558000000000005,
+        "slowHigh": 0.02987018993218009,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002933308334198639,
+        "peak": 0.04946578747844081,
+        "deadline": 6.8175,
+        "lastLaunch": 6.8175,
+        "strength": 0.046532479144242175
+      }
+    },
+    {
+      "time": 5.698667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0056401263916068,
+      "sun": 0.1230333239539705,
+      "pulse": 0.013166391602398585,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.029649458026650206,
+        "streak": 0.03744042714121315,
+        "progress": 0.37389473683739977,
+        "session": 3,
+        "frame": 342,
+        "previousTime": 7.1559,
+        "slowHigh": 0.012970717595989022,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002933308334198639,
+        "peak": 0.04946578747844081,
+        "deadline": 6.8175,
+        "lastLaunch": 6.8175,
+        "strength": 0.046532479144242175
+      }
+    },
+    {
+      "time": 5.805333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0046892800974727,
+      "sun": 0.10857652730406606,
+      "pulse": 0.008357188256071891,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.02594841458900802,
+        "streak": 0.02989429746213176,
+        "progress": 0.4791578947321362,
+        "session": 3,
+        "frame": 348,
+        "previousTime": 7.2558,
+        "slowHigh": 0.005641750130313017,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002933308334198639,
+        "peak": 0.04946578747844081,
+        "deadline": 6.8175,
+        "lastLaunch": 6.8175,
+        "strength": 0.046532479144242175
+      }
+    },
+    {
+      "time": 5.910303,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0039275634227216,
+      "sun": 0.09581844903923005,
+      "pulse": 0.005304611746068837,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.022709360119764585,
+        "streak": 0.021568865314980496,
+        "progress": 0.5844210526268736,
+        "session": 3,
+        "frame": 354,
+        "previousTime": 7.355899999999999,
+        "slowHigh": 0.002449852105178211,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002933308334198639,
+        "peak": 0.04946578747844081,
+        "deadline": 6.8175,
+        "lastLaunch": 6.8175,
+        "strength": 0.046532479144242175
+      }
+    },
+    {
+      "time": 5.997333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0043791636996116,
+      "sun": 0.10486300674331878,
+      "pulse": 0.0033670302635682953,
+      "features": {
+        "subBass": 0.007609336660999651,
+        "bass": 0.04887772201180614,
+        "lowMids": 0.049465816170667684,
+        "highMids": 0.04946655382062014,
+        "presence": 0.049466212642555796,
+        "air": 0.0494657836301845
+      },
+      "contours": {
+        "light": 0.024815686653665223,
+        "streak": 0.002845147674823598,
+        "progress": 0.005473684205820237,
+        "session": 3,
+        "frame": 360,
+        "previousTime": 7.4558,
+        "slowHigh": 0.016883579403114312,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0017787379741301137,
+        "peak": 0.04946695914998175,
+        "deadline": 7.4675,
+        "lastLaunch": 7.4675,
+        "strength": 0.047688221175851635
+      }
+    },
+    {
+      "time": 6.104,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0075740044740555,
+      "sun": 0.13473581564393605,
+      "pulse": 0.037504865310869336,
+      "features": {
+        "subBass": 0.007621324555515405,
+        "bass": 0.04887393150858422,
+        "lowMids": 0.0494661882265362,
+        "highMids": 0.04946598974278057,
+        "presence": 0.04946614343695549,
+        "air": 0.04946659937224718
+      },
+      "contours": {
+        "light": 0.03234310615870728,
+        "streak": 0.047687549294090636,
+        "progress": 0.12821052631265226,
+        "session": 3,
+        "frame": 367,
+        "previousTime": 7.5725,
+        "slowHigh": 0.037145645368764225,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0017787379741301137,
+        "peak": 0.04946695914998175,
+        "deadline": 7.4675,
+        "lastLaunch": 7.4675,
+        "strength": 0.047688221175851635
+      }
+    },
+    {
+      "time": 6.210667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.007269250657687,
+      "sun": 0.14438516372540217,
+      "pulse": 0.023805703900258844,
+      "features": {
+        "subBass": 0.0004110541208825439,
+        "bass": 0.0007939085252611328,
+        "lowMids": 0.0009141037015322687,
+        "highMids": 0.0009088752095685463,
+        "presence": 0.0009090354708385385,
+        "air": 0.0009088461940378814
+      },
+      "contours": {
+        "light": 0.03513143184123357,
+        "streak": 0.04571204975923216,
+        "progress": 0.2334736842073887,
+        "session": 3,
+        "frame": 373,
+        "previousTime": 7.6724,
+        "slowHigh": 0.038144224530649314,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0017787379741301137,
+        "peak": 0.04946695914998175,
+        "deadline": 7.4675,
+        "lastLaunch": 7.4675,
+        "strength": 0.047688221175851635
+      }
+    },
+    {
+      "time": 6.317333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.005971883967999,
+      "sun": 0.12753009997057166,
+      "pulse": 0.015103480464994098,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.03077841956847354,
+        "streak": 0.04059562187535285,
+        "progress": 0.3388421052615894,
+        "session": 3,
+        "frame": 379,
+        "previousTime": 7.772399999999999,
+        "slowHigh": 0.0167041761547794,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0017787379741301137,
+        "peak": 0.04946695914998175,
+        "deadline": 7.4675,
+        "lastLaunch": 7.4675,
+        "strength": 0.047688221175851635
+      }
+    },
+    {
+      "time": 6.42161,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.004953070116943,
+      "sun": 0.11255898720461303,
+      "pulse": 0.009591087698602613,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.026940043375017833,
+        "streak": 0.03335812501971056,
+        "progress": 0.44399999999686257,
+        "session": 3,
+        "frame": 385,
+        "previousTime": 7.8725,
+        "slowHigh": 0.007253557880590362,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0017787379741301137,
+        "peak": 0.04946695914998175,
+        "deadline": 7.4675,
+        "lastLaunch": 7.4675,
+        "strength": 0.047688221175851635
+      }
+    },
+    {
+      "time": 6.509333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0041392721776379,
+      "sun": 0.09932054172225573,
+      "pulse": 0.006085046100750471,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.023574063757570925,
+        "streak": 0.024972739869570545,
+        "progress": 0.5493684210510623,
+        "session": 3,
+        "frame": 391,
+        "previousTime": 7.9725,
+        "slowHigh": 0.003152383260206956,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0017787379741301137,
+        "peak": 0.04946695914998175,
+        "deadline": 7.4675,
+        "lastLaunch": 7.4675,
+        "strength": 0.047688221175851635
+      }
+    },
+    {
+      "time": 6.616,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0039496962841439,
+      "sun": 0.09645568844580499,
+      "pulse": 0.0038641564067041297,
+      "features": {
+        "subBass": 0.008349636120934938,
+        "bass": 0.048470694407987715,
+        "lowMids": 0.04917808924369498,
+        "highMids": 0.04916647492482685,
+        "presence": 0.04916959044350278,
+        "air": 0.04916881630198099
+      },
+      "contours": {
+        "light": 0.02277245440869032,
+        "streak": 0.0164724652357069,
+        "progress": 0.6545263157863356,
+        "session": 3,
+        "frame": 397,
+        "previousTime": 8.0725,
+        "slowHigh": 0.009243603950397462,
+        "armed": true,
+        "pending": true,
+        "baseline": 0.003282495054039202,
+        "peak": 0.04916647492482685,
+        "deadline": 8.1175,
+        "lastLaunch": 7.4675,
+        "strength": 0.047688221175851635
+      }
+    },
+    {
+      "time": 6.722667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0076630023114834,
+      "sun": 0.12559969770986845,
+      "pulse": 0.047721443923335646,
+      "features": {
+        "subBass": 0.007606321870119569,
+        "bass": 0.04887725161281287,
+        "lowMids": 0.04946568791655155,
+        "highMids": 0.049466254906872495,
+        "presence": 0.0494653789466612,
+        "air": 0.049466435231360295
+      },
+      "contours": {
+        "light": 0.029925422787158037,
+        "streak": 0.046183623331890945,
+        "progress": 0.07557894736528495,
+        "session": 3,
+        "frame": 403,
+        "previousTime": 8.1725,
+        "slowHigh": 0.03196615717582402,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.003282495054039202,
+        "peak": 0.049466118385930145,
+        "deadline": 8.1175,
+        "lastLaunch": 8.1175,
+        "strength": 0.046183623331890945
+      }
+    },
+    {
+      "time": 6.827113,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0076672066697223,
+      "sun": 0.14518475523888683,
+      "pulse": 0.03029053842255759,
+      "features": {
+        "subBass": 0.007811330789044071,
+        "bass": 0.04443540216599882,
+        "lowMids": 0.04509755149031584,
+        "highMids": 0.045079743891889575,
+        "presence": 0.045079448431070625,
+        "air": 0.045079418742934196
+      },
+      "contours": {
+        "light": 0.035169749564484196,
+        "streak": 0.045666425750704086,
+        "progress": 0.18084210526002142,
+        "session": 3,
+        "frame": 409,
+        "previousTime": 8.2725,
+        "slowHigh": 0.04186087363895856,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.003282495054039202,
+        "peak": 0.049466118385930145,
+        "deadline": 8.1175,
+        "lastLaunch": 8.1175,
+        "strength": 0.046183623331890945
+      }
+    },
+    {
+      "time": 6.914667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.006602836955515,
+      "sun": 0.13617227320248965,
+      "pulse": 0.01922650788610725,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.033052310248352534,
+        "streak": 0.04211425606763957,
+        "progress": 0.28610526315475787,
+        "session": 3,
+        "frame": 415,
+        "previousTime": 8.372399999999999,
+        "slowHigh": 0.025666398308852107,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.003282495054039202,
+        "peak": 0.049466118385930145,
+        "deadline": 8.1175,
+        "lastLaunch": 8.1175,
+        "strength": 0.046183623331890945
+      }
+    },
+    {
+      "time": 7.021333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0052799456742818,
+      "sun": 0.11768902905688164,
+      "pulse": 0.0113116752518619,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.028289521341536478,
+        "streak": 0.03481142176680277,
+        "progress": 0.40894736842105317,
+        "session": 3,
+        "frame": 422,
+        "previousTime": 8.4891,
+        "slowHigh": 0.00970540238745009,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.003282495054039202,
+        "peak": 0.049466118385930145,
+        "deadline": 8.1175,
+        "lastLaunch": 8.1175,
+        "strength": 0.046183623331890945
+      }
+    },
+    {
+      "time": 7.128,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.004401108991502,
+      "sun": 0.10386020361088649,
+      "pulse": 0.007179932241582245,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.024758234286608775,
+        "streak": 0.026956663198469545,
+        "progress": 0.5142105263157897,
+        "session": 3,
+        "frame": 428,
+        "previousTime": 8.5891,
+        "slowHigh": 0.004217950490426141,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.003282495054039202,
+        "peak": 0.049466118385930145,
+        "deadline": 8.1175,
+        "lastLaunch": 8.1175,
+        "strength": 0.046183623331890945
+      }
+    },
+    {
+      "time": 7.233368,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0037068969536693,
+      "sun": 0.09198153230408775,
+      "pulse": 0.004557364479255791,
+      "features": {
+        "subBass": 0.002406544911055788,
+        "bass": 0.0034971280064667503,
+        "lowMids": 0.0041130426483388305,
+        "highMids": 0.004151296545020617,
+        "presence": 0.004147318277402716,
+        "air": 0.004147333686016696
+      },
+      "contours": {
+        "light": 0.02175831771749109,
+        "streak": 0.018651204250113775,
+        "progress": 0.6194736842105262,
+        "session": 3,
+        "frame": 434,
+        "previousTime": 8.6891,
+        "slowHigh": 0.0023694264777678127,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.003282495054039202,
+        "peak": 0.049466118385930145,
+        "deadline": 8.1175,
+        "lastLaunch": 8.1175,
+        "strength": 0.046183623331890945
+      }
+    },
+    {
+      "time": 7.32,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.019191375404671,
+      "sun": 0.25334854861863737,
+      "pulse": 0.14592911392608757,
+      "features": {
+        "subBass": 0.028261676797235888,
+        "bass": 0.18154511254730993,
+        "lowMids": 0.18373220062617038,
+        "highMids": 0.18373250442197128,
+        "presence": 0.18373214706972324,
+        "air": 0.18373225487852782
+      },
+      "contours": {
+        "light": 0.05719393360525545,
+        "streak": 0.18113123459507693,
+        "progress": 0.04052631578790392,
+        "session": 3,
+        "frame": 440,
+        "previousTime": 8.789100000000001,
+        "slowHigh": 0.09079425570243335,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.002600921686770328,
+        "peak": 0.18373215628184728,
+        "deadline": 8.7674,
+        "lastLaunch": 8.7674,
+        "strength": 0.18113123459507693
+      }
+    },
+    {
+      "time": 7.426667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0230633177060384,
+      "sun": 0.3963693621268434,
+      "pulse": 0.09262652319257264,
+      "features": {
+        "subBass": 0.02831046772833625,
+        "bass": 0.18153742856256255,
+        "lowMids": 0.1837322556516274,
+        "highMids": 0.18373169315804633,
+        "presence": 0.1837314182399345,
+        "air": 0.1837312704270588
+      },
+      "contours": {
+        "light": 0.0911548188111403,
+        "streak": 0.1808652845458117,
+        "progress": 0.14578947368264228,
+        "session": 3,
+        "frame": 446,
+        "previousTime": 8.889100000000001,
+        "slowHigh": 0.14334103049943925,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.002600921686770328,
+        "peak": 0.18373215628184728,
+        "deadline": 8.7674,
+        "lastLaunch": 8.7674,
+        "strength": 0.18113123459507693
+      }
+    },
+    {
+      "time": 7.533333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.022615765141904,
+      "sun": 0.4366215235784973,
+      "pulse": 0.05879342763014261,
+      "features": {
+        "subBass": 0.0010744564081647077,
+        "bass": 0.001999369914288623,
+        "lowMids": 0.002342115561215777,
+        "highMids": 0.002346667218174833,
+        "presence": 0.002345901612023054,
+        "air": 0.002345808592823154
+      },
+      "contours": {
+        "light": 0.10229773632934774,
+        "streak": 0.17110917542298304,
+        "progress": 0.2510526315773787,
+        "session": 3,
+        "frame": 452,
+        "previousTime": 8.9891,
+        "slowHigh": 0.12224462910042502,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002600921686770328,
+        "peak": 0.18373215628184728,
+        "deadline": 8.7674,
+        "lastLaunch": 8.7674,
+        "strength": 0.18113123459507693
+      }
+    },
+    {
+      "time": 7.638658,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0187429685130243,
+      "sun": 0.3854769711839637,
+      "pulse": 0.0373183297111814,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.08957440262284731,
+        "streak": 0.15008199975452605,
+        "progress": 0.35631578947211523,
+        "session": 3,
+        "frame": 458,
+        "previousTime": 9.0891,
+        "slowHigh": 0.05327957745899654,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002600921686770328,
+        "peak": 0.18373215628184728,
+        "deadline": 8.7674,
+        "lastLaunch": 8.7674,
+        "strength": 0.18113123459507693
+      }
+    },
+    {
+      "time": 7.725333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0156520514228835,
+      "sun": 0.3401397129653327,
+      "pulse": 0.0236765384523207,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.07838267552440172,
+        "streak": 0.12155416262829026,
+        "progress": 0.461684210526315,
+        "session": 3,
+        "frame": 464,
+        "previousTime": 9.1891,
+        "slowHigh": 0.02315520891369407,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002600921686770328,
+        "peak": 0.18373215628184728,
+        "deadline": 8.7674,
+        "lastLaunch": 8.7674,
+        "strength": 0.18113123459507693
+      }
+    },
+    {
+      "time": 7.832,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0131587807083071,
+      "sun": 0.3002097670140642,
+      "pulse": 0.015035193856268116,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.06860757336092349,
+        "streak": 0.08941993484557925,
+        "progress": 0.5668421052615882,
+        "session": 3,
+        "frame": 470,
+        "previousTime": 9.289100000000001,
+        "slowHigh": 0.010063212311498452,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.002600921686770328,
+        "peak": 0.18373215628184728,
+        "deadline": 8.7674,
+        "lastLaunch": 8.7674,
+        "strength": 0.18113123459507693
+      }
+    },
+    {
+      "time": 7.938667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0145436993672807,
+      "sun": 0.33136658486831494,
+      "pulse": 0.009543385106400489,
+      "features": {
+        "subBass": 0.0283140745989267,
+        "bass": 0.18153613412635788,
+        "lowMids": 0.183732658748711,
+        "highMids": 0.18373181661932317,
+        "presence": 0.18373123898000807,
+        "air": 0.18373135893071
+      },
+      "contours": {
+        "light": 0.07588393507134696,
+        "streak": 0.01053370993342491,
+        "progress": 0.0054736842089578444,
+        "session": 3,
+        "frame": 476,
+        "previousTime": 9.389100000000001,
+        "slowHigh": 0.054779781106987724,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.006639628981115303,
+        "peak": 0.1831977363188447,
+        "deadline": 9.4007,
+        "lastLaunch": 9.4007,
+        "strength": 0.1765581073377294
+      }
+    },
+    {
+      "time": 8.044066,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0278962336247819,
+      "sun": 0.44866617617322047,
+      "pulse": 0.16436814795749405,
+      "features": {
+        "subBass": 0.028253060073166754,
+        "bass": 0.1815459300645248,
+        "lowMids": 0.18373328708877873,
+        "highMids": 0.18373132343775198,
+        "presence": 0.18373129076381314,
+        "air": 0.18373070061490787
+      },
+      "contours": {
+        "light": 0.10482867232772672,
+        "streak": 0.1765581073377294,
+        "progress": 0.11073684210369432,
+        "session": 3,
+        "frame": 482,
+        "previousTime": 9.489,
+        "slowHigh": 0.1276429017570348,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.006639628981115303,
+        "peak": 0.1831977363188447,
+        "deadline": 9.4007,
+        "lastLaunch": 9.4007,
+        "strength": 0.1765581073377294
+      }
+    },
+    {
+      "time": 8.21553,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0241343693692442,
+      "sun": 0.48464869010599854,
+      "pulse": 0.07141245922013918,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.11578096701576475,
+        "streak": 0.15766200584846177,
+        "progress": 0.3037894736810736,
+        "session": 3,
+        "frame": 493,
+        "previousTime": 9.6724,
+        "slowHigh": 0.09404527706790453,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.006639628981115303,
+        "peak": 0.1831977363188447,
+        "deadline": 9.4007,
+        "lastLaunch": 9.4007,
+        "strength": 0.1765581073377294
+      }
+    },
+    {
+      "time": 8.386667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0170658063187767,
+      "sun": 0.38545493196573266,
+      "pulse": 0.03105454207416576,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.09068876904296656,
+        "streak": 0.10828907174250799,
+        "progress": 0.4966315789473684,
+        "session": 3,
+        "frame": 504,
+        "previousTime": 9.8557,
+        "slowHigh": 0.020415130910941773,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.006639628981115303,
+        "peak": 0.1831977363188447,
+        "deadline": 9.4007,
+        "lastLaunch": 9.4007,
+        "strength": 0.1765581073377294
+      }
+    },
+    {
+      "time": 8.576836,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.014041520600641,
+      "sun": 0.338395884487972,
+      "pulse": 0.014556211468283085,
+      "features": {
+        "subBass": 0.028299456262368548,
+        "bass": 0.1815402306535954,
+        "lowMids": 0.1837318040165001,
+        "highMids": 0.18373168596301007,
+        "presence": 0.18373212057129137,
+        "air": 0.1837303183964885
+      },
+      "contours": {
+        "light": 0.07884344076714592,
+        "streak": 0.05593888524499812,
+        "progress": 0.6721052631531889,
+        "session": 3,
+        "frame": 514,
+        "previousTime": 10.0224,
+        "slowHigh": 0.027130459239359247,
+        "armed": true,
+        "pending": true,
+        "baseline": 0.007429369440759419,
+        "peak": 0.15907303565592798,
+        "deadline": 10.0674,
+        "lastLaunch": 9.4007,
+        "strength": 0.1765581073377294
+      }
+    },
+    {
+      "time": 8.728,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.026738226086215,
+      "sun": 0.519627536789534,
+      "pulse": 0.09067704299672098,
+      "features": {
+        "subBass": 0.028261665224589227,
+        "bass": 0.1815451128723032,
+        "lowMids": 0.18373213762798868,
+        "highMids": 0.18373256470945293,
+        "presence": 0.18373212297333189,
+        "air": 0.1837322553405005
+      },
+      "contours": {
+        "light": 0.12458150331849449,
+        "streak": 0.17538310079358807,
+        "progress": 0.1632631578947378,
+        "session": 3,
+        "frame": 525,
+        "previousTime": 10.2057,
+        "slowHigh": 0.1497370046958276,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.007429369440759419,
+        "peak": 0.18373168596301007,
+        "deadline": 10.0674,
+        "lastLaunch": 10.0674,
+        "strength": 0.17630231652225065
+      }
+    },
+    {
+      "time": 8.92,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0207894257427534,
+      "sun": 0.45933569285321196,
+      "pulse": 0.03939614040599104,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.10997502416229041,
+        "streak": 0.1460808473158493,
+        "progress": 0.35631578947211706,
+        "session": 3,
+        "frame": 536,
+        "previousTime": 10.389,
+        "slowHigh": 0.05303849530965386,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007429369440759419,
+        "peak": 0.18373168596301007,
+        "deadline": 10.0674,
+        "lastLaunch": 10.0674,
+        "strength": 0.17630231652225065
+      }
+    },
+    {
+      "time": 9.110085,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.015488303030822,
+      "sun": 0.37298242468479437,
+      "pulse": 0.018474568764409612,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.08806894323584415,
+        "streak": 0.09766137154795636,
+        "progress": 0.5316842105263164,
+        "session": 3,
+        "frame": 546,
+        "previousTime": 10.5557,
+        "slowHigh": 0.013221592780885489,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007429369440759419,
+        "peak": 0.18373168596301007,
+        "deadline": 10.0674,
+        "lastLaunch": 10.0674,
+        "strength": 0.17630231652225065
+      }
+    },
+    {
+      "time": 9.367412,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0285487444096142,
+      "sun": 0.5061637347146742,
+      "pulse": 0.14121675609433967,
+      "features": {
+        "subBass": 0.028253288254540442,
+        "bass": 0.18154759904330456,
+        "lowMids": 0.18373130968047977,
+        "highMids": 0.18373114813225006,
+        "presence": 0.18373286724814378,
+        "air": 0.1837323421448437
+      },
+      "contours": {
+        "light": 0.12130406406231745,
+        "streak": 0.1766321486499326,
+        "progress": 0.14589473683739915,
+        "session": 3,
+        "frame": 562,
+        "previousTime": 10.8224,
+        "slowHigh": 0.1417007263769363,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.00660528421480525,
+        "peak": 0.18349995655579818,
+        "deadline": 10.7006,
+        "lastLaunch": 10.7006,
+        "strength": 0.17689467234099293
+      }
+    },
+    {
+      "time": 9.538667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.02386378202546,
+      "sun": 0.4989736918185943,
+      "pulse": 0.06619260266647342,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.12115202124626444,
+        "streak": 0.15438110868211066,
+        "progress": 0.3213684210510636,
+        "session": 3,
+        "frame": 572,
+        "previousTime": 10.989,
+        "slowHigh": 0.08572646202884143,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.00660528421480525,
+        "peak": 0.18349995655579818,
+        "deadline": 10.7006,
+        "lastLaunch": 10.7006,
+        "strength": 0.17689467234099293
+      }
+    },
+    {
+      "time": 9.709333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0169450725344882,
+      "sun": 0.3968480145702269,
+      "pulse": 0.02878462647768384,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.09489580159055888,
+        "streak": 0.10325067112231713,
+        "progress": 0.5142105263173584,
+        "session": 3,
+        "frame": 583,
+        "previousTime": 11.1723,
+        "slowHigh": 0.01860930181094631,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.00660528421480525,
+        "peak": 0.18349995655579818,
+        "deadline": 10.7006,
+        "lastLaunch": 10.7006,
+        "strength": 0.17689467234099293
+      }
+    },
+    {
+      "time": 9.88,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.015551693551469,
+      "sun": 0.37640873875288383,
+      "pulse": 0.013492232764020303,
+      "features": {
+        "subBass": 0.02829791572349429,
+        "bass": 0.18153950269129057,
+        "lowMids": 0.18373305025356504,
+        "highMids": 0.18373115622143774,
+        "presence": 0.18373131939889925,
+        "air": 0.1837299737837658
+      },
+      "contours": {
+        "light": 0.08907582383215186,
+        "streak": 0.05109524149867622,
+        "progress": 0.689684210523179,
+        "session": 3,
+        "frame": 593,
+        "previousTime": 11.339,
+        "slowHigh": 0.04813104899143954,
+        "armed": true,
+        "pending": true,
+        "baseline": 0.007392521506616153,
+        "peak": 0.18373253375329013,
+        "deadline": 11.3674,
+        "lastLaunch": 10.7006,
+        "strength": 0.17689467234099293
+      }
+    },
+    {
+      "time": 10.072,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.028396868332064,
+      "sun": 0.5378871198968164,
+      "pulse": 0.1125589313586081,
+      "features": {
+        "subBass": 0.03065876817893031,
+        "bass": 0.17848205317891364,
+        "lowMids": 0.18098163456672023,
+        "highMids": 0.18097456344497817,
+        "presence": 0.18097085477740316,
+        "air": 0.18096994242942474
+      },
+      "contours": {
+        "light": 0.13035207178988337,
+        "streak": 0.17437268180550694,
+        "progress": 0.18073684210683147,
+        "session": 3,
+        "frame": 604,
+        "previousTime": 11.5223,
+        "slowHigh": 0.15429566208549422,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.007392521506616153,
+        "peak": 0.18373253375329013,
+        "deadline": 11.3674,
+        "lastLaunch": 11.3674,
+        "strength": 0.17634001224667398
+      }
+    },
+    {
+      "time": 10.178667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0236917918202406,
+      "sun": 0.4944295750871149,
+      "pulse": 0.06619254397969591,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.1196800326119226,
+        "streak": 0.15748788208056258,
+        "progress": 0.3036842105247479,
+        "session": 3,
+        "frame": 611,
+        "previousTime": 11.639,
+        "slowHigh": 0.0801105042918505,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007392521506616153,
+        "peak": 0.18373253375329013,
+        "deadline": 11.3674,
+        "lastLaunch": 11.3674,
+        "strength": 0.17634001224667398
+      }
+    },
+    {
+      "time": 10.264,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0195801326263025,
+      "sun": 0.43638711354146964,
+      "pulse": 0.04203392031222932,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.10475473773160497,
+        "streak": 0.13294614779203082,
+        "progress": 0.40884210526002107,
+        "session": 3,
+        "frame": 617,
+        "previousTime": 11.7389,
+        "slowHigh": 0.0348449069747499,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007392521506616153,
+        "peak": 0.18373253375329013,
+        "deadline": 11.3674,
+        "lastLaunch": 11.3674,
+        "strength": 0.17634001224667398
+      }
+    },
+    {
+      "time": 10.370667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.016320103053454,
+      "sun": 0.3851102760281791,
+      "pulse": 0.02668046005300565,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.09167855150604222,
+        "streak": 0.10295839235772154,
+        "progress": 0.5141052631547576,
+        "session": 3,
+        "frame": 623,
+        "previousTime": 11.839,
+        "slowHigh": 0.015130919791744217,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007392521506616153,
+        "peak": 0.18373253375329013,
+        "deadline": 11.3674,
+        "lastLaunch": 11.3674,
+        "strength": 0.17634001224667398
+      }
+    },
+    {
+      "time": 10.477333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.013696074145408,
+      "sun": 0.33986333552847015,
+      "pulse": 0.016935059669724077,
+      "features": {
+        "subBass": 0.02959156762141184,
+        "bass": 0.0798229816629242,
+        "lowMids": 0.08484965171453106,
+        "highMids": 0.0847505523218808,
+        "presence": 0.08475381783781119,
+        "air": 0.08475238258816527
+      },
+      "contours": {
+        "light": 0.08023616837952185,
+        "streak": 0.07124605530727468,
+        "progress": 0.6193684210494941,
+        "session": 3,
+        "frame": 629,
+        "previousTime": 11.939,
+        "slowHigh": 0.0065832353821710585,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007392521506616153,
+        "peak": 0.18373253375329013,
+        "deadline": 11.3674,
+        "lastLaunch": 11.3674,
+        "strength": 0.17634001224667398
+      }
+    },
+    {
+      "time": 10.584,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0264478404752442,
+      "sun": 0.42038289739462986,
+      "pulse": 0.18364908266742327,
+      "features": {
+        "subBass": 0.028314715097068184,
+        "bass": 0.1815374569835076,
+        "lowMids": 0.18373185746258192,
+        "highMids": 0.18373136492221212,
+        "presence": 0.18373164179644796,
+        "air": 0.18373067473017604
+      },
+      "contours": {
+        "light": 0.10005028593353339,
+        "streak": 0.17705782770651812,
+        "progress": 0.057999999996861853,
+        "session": 3,
+        "frame": 635,
+        "previousTime": 12.0389,
+        "slowHigh": 0.09290183683904017,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0065832353821710585,
+        "peak": 0.1836410630886892,
+        "deadline": 12.0007,
+        "lastLaunch": 12.0007,
+        "strength": 0.17705782770651812
+      }
+    },
+    {
+      "time": 10.669333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0275795340297467,
+      "sun": 0.5083356239763612,
+      "pulse": 0.1213260224617089,
+      "features": {
+        "subBass": 0.02825318047981384,
+        "bass": 0.18154621792786002,
+        "lowMids": 0.18373153676877485,
+        "highMids": 0.18373175052391233,
+        "presence": 0.1837324295956069,
+        "air": 0.18373122325930824
+      },
+      "contours": {
+        "light": 0.1225091308048111,
+        "streak": 0.17613467284789844,
+        "progress": 0.1632631578916002,
+        "session": 3,
+        "frame": 641,
+        "previousTime": 12.1389,
+        "slowHigh": 0.14425697398533355,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.0065832353821710585,
+        "peak": 0.1836410630886892,
+        "deadline": 12.0007,
+        "lastLaunch": 12.0007,
+        "strength": 0.17705782770651812
+      }
+    },
+    {
+      "time": 10.776,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.025601721016968,
+      "sun": 0.5216585423273957,
+      "pulse": 0.07701004502161343,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.12741113221026806,
+        "streak": 0.1645118243443872,
+        "progress": 0.2685263157863367,
+        "session": 3,
+        "frame": 647,
+        "previousTime": 12.239,
+        "slowHigh": 0.12699284777184616,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0065832353821710585,
+        "peak": 0.1836410630886892,
+        "deadline": 12.0007,
+        "lastLaunch": 12.0007,
+        "strength": 0.17705782770651812
+      }
+    },
+    {
+      "time": 10.882667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0210936342263601,
+      "sun": 0.4603620478107218,
+      "pulse": 0.04888108019944886,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.11150682345948008,
+        "streak": 0.1424882176615717,
+        "progress": 0.3737894736810731,
+        "session": 3,
+        "frame": 653,
+        "previousTime": 12.338899999999999,
+        "slowHigh": 0.05523687569045516,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0065832353821710585,
+        "peak": 0.1836410630886892,
+        "deadline": 12.0007,
+        "lastLaunch": 12.0007,
+        "strength": 0.17705782770651812
+      }
+    },
+    {
+      "time": 10.989333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0175415532582144,
+      "sun": 0.40626808126046343,
+      "pulse": 0.031026601799730946,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.09758779678296918,
+        "streak": 0.11377973639330459,
+        "progress": 0.47905263157580963,
+        "session": 3,
+        "frame": 659,
+        "previousTime": 12.4389,
+        "slowHigh": 0.02400584721859971,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0065832353821710585,
+        "peak": 0.1836410630886892,
+        "deadline": 12.0007,
+        "lastLaunch": 12.0007,
+        "strength": 0.17705782770651812
+      }
+    },
+    {
+      "time": 11.074667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0146947657186012,
+      "sun": 0.3585303233313457,
+      "pulse": 0.01969371411824735,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0854062360086398,
+        "streak": 0.08210226413343852,
+        "progress": 0.5843157894705461,
+        "session": 3,
+        "frame": 665,
+        "previousTime": 12.5389,
+        "slowHigh": 0.010432898194898092,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0065832353821710585,
+        "peak": 0.1836410630886892,
+        "deadline": 12.0007,
+        "lastLaunch": 12.0007,
+        "strength": 0.17705782770651812
+      }
+    },
+    {
+      "time": 11.181333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0153771276787094,
+      "sun": 0.3727040401324462,
+      "pulse": 0.012506000829219537,
+      "features": {
+        "subBass": 0.028257030884438643,
+        "bass": 0.18154708768169353,
+        "lowMids": 0.1837327483321614,
+        "highMids": 0.18373142119436706,
+        "presence": 0.18373196460808713,
+        "air": 0.1837316182776492
+      },
+      "contours": {
+        "light": 0.0882759528099696,
+        "streak": 0.051201005212523104,
+        "progress": 0.6894736842058211,
+        "session": 3,
+        "frame": 671,
+        "previousTime": 12.6389,
+        "slowHigh": 0.04907529081743511,
+        "armed": true,
+        "pending": true,
+        "baseline": 0.007811898432088407,
+        "peak": 0.18373142119436706,
+        "deadline": 12.6673,
+        "lastLaunch": 12.0007,
+        "strength": 0.17705782770651812
+      }
+    },
+    {
+      "time": 11.288,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0283268466286632,
+      "sun": 0.4900753306804071,
+      "pulse": 0.15235460550943056,
+      "features": {
+        "subBass": 0.028257178505918606,
+        "bass": 0.18154710314033623,
+        "lowMids": 0.1837321781164373,
+        "highMids": 0.18373143664583563,
+        "presence": 0.18373133826502994,
+        "air": 0.18373201164080658
+      },
+      "contours": {
+        "light": 0.11746680562898476,
+        "streak": 0.17591952276227865,
+        "progress": 0.110736842105265,
+        "session": 3,
+        "frame": 678,
+        "previousTime": 12.755600000000001,
+        "slowHigh": 0.132813040638689,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.007811898432088407,
+        "peak": 0.18373142119436706,
+        "deadline": 12.6673,
+        "lastLaunch": 12.6673,
+        "strength": 0.17591952276227865
+      }
+    },
+    {
+      "time": 11.394667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0277428515547054,
+      "sun": 0.5424910858877042,
+      "pulse": 0.09670501671011544,
+      "features": {
+        "subBass": 0.009668749447420452,
+        "bass": 0.03777702321841856,
+        "lowMids": 0.038996059031656496,
+        "highMids": 0.03899523577778978,
+        "presence": 0.03899606792129214,
+        "air": 0.03899636071952711
+      },
+      "contours": {
+        "light": 0.1320370991947738,
+        "streak": 0.17073901831728847,
+        "progress": 0.21600000000000147,
+        "session": 3,
+        "frame": 684,
+        "previousTime": 12.8556,
+        "slowHigh": 0.15210133586561825,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007811898432088407,
+        "peak": 0.18373142119436706,
+        "deadline": 12.6673,
+        "lastLaunch": 12.6673,
+        "strength": 0.17591952276227865
+      }
+    },
+    {
+      "time": 11.500376,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.022971746091381,
+      "sun": 0.48431891162195845,
+      "pulse": 0.06141010334083355,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.1171327378813985,
+        "streak": 0.15357415604627292,
+        "progress": 0.3211578947352746,
+        "session": 3,
+        "frame": 690,
+        "previousTime": 12.9556,
+        "slowHigh": 0.07157431263731534,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007811898432088407,
+        "peak": 0.18373142119436706,
+        "deadline": 12.6673,
+        "lastLaunch": 12.6673,
+        "strength": 0.17591952276227865
+      }
+    },
+    {
+      "time": 11.586667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0190088527915961,
+      "sun": 0.4273565164653045,
+      "pulse": 0.038961515275818724,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.10249777969828913,
+        "streak": 0.12788101097459362,
+        "progress": 0.4265263157894744,
+        "session": 3,
+        "frame": 696,
+        "previousTime": 13.0556,
+        "slowHigh": 0.03110606804730287,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007811898432088407,
+        "peak": 0.18373142119436706,
+        "deadline": 12.6673,
+        "lastLaunch": 12.6673,
+        "strength": 0.17591952276227865
+      }
+    },
+    {
+      "time": 11.693333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0158673045327369,
+      "sun": 0.3771879476274717,
+      "pulse": 0.0247415362801258,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0897152832936015,
+        "streak": 0.09744932576050895,
+        "progress": 0.5316842105247476,
+        "session": 3,
+        "frame": 702,
+        "previousTime": 13.1556,
+        "slowHigh": 0.013518641447057137,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.007811898432088407,
+        "peak": 0.18373142119436706,
+        "deadline": 12.6673,
+        "lastLaunch": 12.6673,
+        "strength": 0.17591952276227865
+      }
+    },
+    {
+      "time": 11.8,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0137433479758813,
+      "sun": 0.34160979040158257,
+      "pulse": 0.015697217416736752,
+      "features": {
+        "subBass": 0.03274435407331474,
+        "bass": 0.09234536824719261,
+        "lowMids": 0.09759977330961019,
+        "highMids": 0.0977845929232277,
+        "presence": 0.09779536328098645,
+        "air": 0.09779342378525857
+      },
+      "contours": {
+        "light": 0.08117416924960145,
+        "streak": 0.06585416987705446,
+        "progress": 0.6370526315789492,
+        "session": 3,
+        "frame": 708,
+        "previousTime": 13.255600000000001,
+        "slowHigh": 0.01860070566093694,
+        "armed": true,
+        "pending": true,
+        "baseline": 0.006777313122112355,
+        "peak": 0.0977845929232277,
+        "deadline": 13.300600000000001,
+        "lastLaunch": 12.6673,
+        "strength": 0.17591952276227865
+      }
+    },
+    {
+      "time": 11.905979,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0271738323085464,
+      "sun": 0.4421287771607447,
+      "pulse": 0.17609250363319873,
+      "features": {
+        "subBass": 0.02831524903032662,
+        "bass": 0.18153725612727495,
+        "lowMids": 0.18373291413623133,
+        "highMids": 0.18373163631846606,
+        "presence": 0.18373181644770922,
+        "air": 0.18373115800067039
+      },
+      "contours": {
+        "light": 0.10568475247228337,
+        "streak": 0.1769233212558244,
+        "progress": 0.07715789473527299,
+        "session": 3,
+        "frame": 714,
+        "previousTime": 13.3556,
+        "slowHigh": 0.10642221761005456,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.006777313122112355,
+        "peak": 0.18370063437793677,
+        "deadline": 13.300600000000001,
+        "lastLaunch": 13.300600000000001,
+        "strength": 0.1769233212558244
+      }
+    },
+    {
+      "time": 11.992,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0277314910511468,
+      "sun": 0.5220561612246496,
+      "pulse": 0.11243475323366824,
+      "features": {
+        "subBass": 0.028378930699914106,
+        "bass": 0.1814960167737941,
+        "lowMids": 0.1836937556517203,
+        "highMids": 0.18369467244054502,
+        "presence": 0.18369380324146348,
+        "air": 0.18369274517473735
+      },
+      "contours": {
+        "light": 0.12639909920979867,
+        "streak": 0.1749270114823663,
+        "progress": 0.18105263158051493,
+        "session": 3,
+        "frame": 720,
+        "previousTime": 13.4555,
+        "slowHigh": 0.15010496419330654,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.006777313122112355,
+        "peak": 0.18370063437793677,
+        "deadline": 13.300600000000001,
+        "lastLaunch": 13.300600000000001,
+        "strength": 0.1769233212558244
+      }
+    },
+    {
+      "time": 12.098667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.024736675837097,
+      "sun": 0.5099496700379579,
+      "pulse": 0.07143134070726048,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.12463569216610434,
+        "streak": 0.16133411625472902,
+        "progress": 0.28610526315632484,
+        "session": 3,
+        "frame": 726,
+        "previousTime": 13.5555,
+        "slowHigh": 0.1095146138749678,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.006777313122112355,
+        "peak": 0.18370063437793677,
+        "deadline": 13.300600000000001,
+        "lastLaunch": 13.300600000000001,
+        "strength": 0.1769233212558244
+      }
+    },
+    {
+      "time": 12.205333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0204140509060953,
+      "sun": 0.45002900428253423,
+      "pulse": 0.04534007340062978,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.10907783238422464,
+        "streak": 0.13795345059129221,
+        "progress": 0.3913684210510613,
+        "session": 3,
+        "frame": 732,
+        "previousTime": 13.6556,
+        "slowHigh": 0.04755520913764454,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.006777313122112355,
+        "peak": 0.18370063437793677,
+        "deadline": 13.300600000000001,
+        "lastLaunch": 13.300600000000001,
+        "strength": 0.1769233212558244
+      }
+    },
+    {
+      "time": 12.312,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.016500781892615,
+      "sun": 0.3889932668682326,
+      "pulse": 0.026675264652407243,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.09337232725916632,
+        "streak": 0.10326739304867158,
+        "progress": 0.5142105263173566,
+        "session": 3,
+        "frame": 739,
+        "previousTime": 13.772200000000002,
+        "slowHigh": 0.01799735255972536,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.006777313122112355,
+        "peak": 0.18370063437793677,
+        "deadline": 13.300600000000001,
+        "lastLaunch": 13.300600000000001,
+        "strength": 0.1769233212558244
+      }
+    },
+    {
+      "time": 12.397333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.01384884883733,
+      "sun": 0.34324244514950175,
+      "pulse": 0.01693176195975328,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.08170607468440676,
+        "streak": 0.07145028395921989,
+        "progress": 0.619473684212093,
+        "session": 3,
+        "frame": 745,
+        "previousTime": 13.872200000000001,
+        "slowHigh": 0.007821617180326944,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.006777313122112355,
+        "peak": 0.18370063437793677,
+        "deadline": 13.300600000000001,
+        "lastLaunch": 13.300600000000001,
+        "strength": 0.1769233212558244
+      }
+    },
+    {
+      "time": 12.504,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0238310042205763,
+      "sun": 0.412718754230926,
+      "pulse": 0.13836753224223833,
+      "features": {
+        "subBass": 0.028308725215711338,
+        "bass": 0.1815383192858158,
+        "lowMids": 0.18373076746234096,
+        "highMids": 0.18373260474105726,
+        "presence": 0.18373241463378615,
+        "air": 0.1837307690383192
+      },
+      "contours": {
+        "light": 0.09803773961094228,
+        "streak": 0.11998168916091172,
+        "progress": 0.023052631580516673,
+        "session": 3,
+        "frame": 751,
+        "previousTime": 13.9722,
+        "slowHigh": 0.08245077625421436,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 12.610667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0283717379241852,
+      "sun": 0.5031986346265549,
+      "pulse": 0.14121641588852055,
+      "features": {
+        "subBass": 0.028255713350526325,
+        "bass": 0.1815460582497863,
+        "lowMids": 0.18373215982780358,
+        "highMids": 0.18373234522765547,
+        "presence": 0.18373265149028006,
+        "air": 0.18373101940504807
+      },
+      "contours": {
+        "light": 0.12103647328723151,
+        "streak": 0.17525589538125905,
+        "progress": 0.12831578947525316,
+        "session": 3,
+        "frame": 757,
+        "previousTime": 14.072299999999998,
+        "slowHigh": 0.1397519678944325,
+        "armed": false,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 12.717333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0269168399257538,
+      "sun": 0.5335914125285862,
+      "pulse": 0.08963520211666119,
+      "features": {
+        "subBass": 0.00918854772839074,
+        "bass": 0.033481677099627495,
+        "lowMids": 0.03472138994462913,
+        "highMids": 0.0347207297414738,
+        "presence": 0.03472089781609152,
+        "air": 0.034721848962344426
+      },
+      "contours": {
+        "light": 0.1298895509412099,
+        "streak": 0.16798239381999253,
+        "progress": 0.23357894736998963,
+        "session": 3,
+        "frame": 763,
+        "previousTime": 14.1722,
+        "slowHigh": 0.13630193882250313,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 12.802667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0221906260159939,
+      "sun": 0.4732722329998578,
+      "pulse": 0.05689472720251799,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.1143514340709713,
+        "streak": 0.14919268454275197,
+        "progress": 0.3388421052647261,
+        "session": 3,
+        "frame": 769,
+        "previousTime": 14.272200000000002,
+        "slowHigh": 0.06151452302267603,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 12.909333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0183928993806421,
+      "sun": 0.4176612797016695,
+      "pulse": 0.036113155401110576,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.10007732409321274,
+        "streak": 0.12256489201968393,
+        "progress": 0.4441052631594626,
+        "session": 3,
+        "frame": 775,
+        "previousTime": 14.372200000000001,
+        "slowHigh": 0.026734101502822502,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.016,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.015368082711775,
+      "sun": 0.36858478566624164,
+      "pulse": 0.022922334935934673,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.08758500388759373,
+        "streak": 0.09177714072093435,
+        "progress": 0.5493684210542009,
+        "session": 3,
+        "frame": 781,
+        "previousTime": 14.4722,
+        "slowHigh": 0.011618592619173081,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.122667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.046534427744806,
+      "sun": 0.5058412448244006,
+      "pulse": 0.33821221355723785,
+      "features": {
+        "subBass": 0.06954644586032031,
+        "bass": 0.4468829802784398,
+        "lowMids": 0.00020502614679246295,
+        "highMids": 0.000006696169600227937,
+        "presence": 0.0000063258059480853695,
+        "air": 0.000013789420721471421
+      },
+      "contours": {
+        "light": 0.0767754748246213,
+        "streak": 0.06053784117590134,
+        "progress": 0.6545263157894741,
+        "session": 3,
+        "frame": 787,
+        "previousTime": 14.5722,
+        "slowHigh": 0.005088100846599338,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.226832,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0629607855666365,
+      "sun": 0.6688879517955301,
+      "pulse": 0.34760978806832754,
+      "features": {
+        "subBass": 0.06969759318225076,
+        "bass": 0.4468584943177417,
+        "lowMids": 0.00016983861323017075,
+        "highMids": 0.000004915953410951224,
+        "presence": 0.0000063950216170302735,
+        "air": 0.000013245555921943014
+      },
+      "contours": {
+        "light": 0.06720640684545066,
+        "streak": 0.03243425967697969,
+        "progress": 0.7598947368436738,
+        "session": 3,
+        "frame": 793,
+        "previousTime": 14.6722,
+        "slowHigh": 0.0022147005670748445,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.314667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.065753610089158,
+      "sun": 0.777960158427492,
+      "pulse": 0.22074090604369187,
+      "features": {
+        "subBass": 0.06962388082156183,
+        "bass": 0.44687043565110174,
+        "lowMids": 0.00018789182257199075,
+        "highMids": 0.000005951526195093244,
+        "presence": 0.00000631226689400318,
+        "air": 0.000013534487515366024
+      },
+      "contours": {
+        "light": 0.058848398102261626,
+        "streak": 0.011251919779967716,
+        "progress": 0.8650526315789471,
+        "session": 3,
+        "frame": 799,
+        "previousTime": 14.772200000000002,
+        "slowHigh": 0.0009659243532214694,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.421333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.067085132662702,
+      "sun": 0.8607798027821622,
+      "pulse": 0.12987014900697658,
+      "features": {
+        "subBass": 0.06968742657453743,
+        "bass": 0.44686114847573366,
+        "lowMids": 0.0001730285418760933,
+        "highMids": 0.000005561561392944331,
+        "presence": 0.000006445499221128727,
+        "air": 0.000013313377368560658
+      },
+      "contours": {
+        "light": 0.05039605140598686,
+        "streak": 0.00010000230409597737,
+        "progress": 0.9878947368374001,
+        "session": 3,
+        "frame": 806,
+        "previousTime": 14.8888,
+        "slowHigh": 0.0003694381941435795,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.528,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0674579027697244,
+      "sun": 0.9066779109918481,
+      "pulse": 0.08243331330792925,
+      "features": {
+        "subBass": 0.0695666536020247,
+        "bass": 0.44688082210757957,
+        "lowMids": 0.00020038037336745675,
+        "highMids": 0.00000702892764620621,
+        "presence": 0.000006508532178038026,
+        "air": 0.000013281797177414031
+      },
+      "contours": {
+        "light": 0.04412870425733449,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 812,
+        "previousTime": 14.9888,
+        "slowHigh": 0.00016397725545386034,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.633123,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.06752603511886,
+      "sun": 0.9374693502633002,
+      "pulse": 0.05227588095345792,
+      "features": {
+        "subBass": 0.06966526338996748,
+        "bass": 0.4468640451923007,
+        "lowMids": 0.00017824729266079057,
+        "highMids": 0.000005331804734801334,
+        "presence": 0.0000066179249630968944,
+        "air": 0.000013081106679590784
+      },
+      "contours": {
+        "light": 0.03863886052945298,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 818,
+        "previousTime": 15.088899999999999,
+        "slowHigh": 0.00007468562100595981,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.72,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0674749377036963,
+      "sun": 0.958067682416712,
+      "pulse": 0.033211584103343475,
+      "features": {
+        "subBass": 0.06956662166807698,
+        "bass": 0.44688082097375564,
+        "lowMids": 0.00020068365268343204,
+        "highMids": 0.0000070241598752335836,
+        "presence": 0.000006499747328551787,
+        "air": 0.000013282021989471797
+      },
+      "contours": {
+        "light": 0.033843168856089845,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 824,
+        "previousTime": 15.188799999999999,
+        "slowHigh": 0.00003575800808192561,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.826667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0673868673034324,
+      "sun": 0.9718919269471894,
+      "pulse": 0.021080601961090257,
+      "features": {
+        "subBass": 0.06968751013547143,
+        "bass": 0.44686115088826694,
+        "lowMids": 0.00017228674316512182,
+        "highMids": 0.000005565035180515583,
+        "presence": 0.000006450991167125945,
+        "air": 0.000013313334026757127
+      },
+      "contours": {
+        "light": 0.029642142802570486,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 830,
+        "previousTime": 15.288799999999998,
+        "slowHigh": 0.00001896893269363365,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 13.933333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0672990660500457,
+      "sun": 0.9811585951772669,
+      "pulse": 0.013380625797887829,
+      "features": {
+        "subBass": 0.06967023677998775,
+        "bass": 0.44686303488169543,
+        "lowMids": 0.00017675038951035218,
+        "highMids": 0.000005306143192763406,
+        "presence": 0.000006579238970300509,
+        "air": 0.000013079513981860995
+      },
+      "contours": {
+        "light": 0.025964707378276768,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 836,
+        "previousTime": 15.3888,
+        "slowHigh": 0.000011508709460317841,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.03878,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0672255772987158,
+      "sun": 0.9873702286518494,
+      "pulse": 0.008493170502131287,
+      "features": {
+        "subBass": 0.06958695273920906,
+        "bass": 0.4468773314821061,
+        "lowMids": 0.0001957519365942313,
+        "highMids": 0.000006699820626830519,
+        "presence": 0.0000065466715890785,
+        "air": 0.000013240298704708465
+      },
+      "contours": {
+        "light": 0.02274733528448205,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 842,
+        "previousTime": 15.4888,
+        "slowHigh": 0.000008477308618524196,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.232,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0671263106381814,
+      "sun": 0.9943250779230983,
+      "pulse": 0.003421816194405434,
+      "features": {
+        "subBass": 0.0695518853529357,
+        "bass": 0.44688226145860266,
+        "lowMids": 0.00020343335384702372,
+        "highMids": 0.000006930768272059347,
+        "presence": 0.00000652668241180556,
+        "air": 0.000013105328540822205
+      },
+      "contours": {
+        "light": 0.01746730475896209,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 854,
+        "previousTime": 15.688799999999999,
+        "slowHigh": 0.000006621377661548315,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.337145,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670962254170262,
+      "sun": 0.9961944640622805,
+      "pulse": 0.0021729388324760773,
+      "features": {
+        "subBass": 0.06969683305300041,
+        "bass": 0.44685932966838227,
+        "lowMids": 0.0001697210109113834,
+        "highMids": 0.000005017332004665373,
+        "presence": 0.00000658690302566724,
+        "air": 0.000013192538390403527
+      },
+      "contours": {
+        "light": 0.015313014417696379,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 860,
+        "previousTime": 15.788799999999998,
+        "slowHigh": 0.000006426567053189253,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.424,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670748563239465,
+      "sun": 0.9974500931417398,
+      "pulse": 0.0013786166267775921,
+      "features": {
+        "subBass": 0.0695458281596068,
+        "bass": 0.44688429007556607,
+        "lowMids": 0.0002049213666809683,
+        "highMids": 0.00000755842992904652,
+        "presence": 0.000006410610099913835,
+        "air": 0.000013340521386643203
+      },
+      "contours": {
+        "light": 0.013423147788661542,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 866,
+        "previousTime": 15.8888,
+        "slowHigh": 0.00000615737593942568,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.530667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670603044913847,
+      "sun": 0.9982900624791936,
+      "pulse": 0.0008754560248794285,
+      "features": {
+        "subBass": 0.0696967466217549,
+        "bass": 0.4468593272822085,
+        "lowMids": 0.0001704843670790413,
+        "highMids": 0.000005037688086655965,
+        "presence": 0.000006598850493243629,
+        "air": 0.000013195195490857246
+      },
+      "contours": {
+        "light": 0.011772769754136048,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 872,
+        "previousTime": 15.9888,
+        "slowHigh": 0.000006149874462239303,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.637333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670499569608487,
+      "sun": 0.9988547111999446,
+      "pulse": 0.0005551788846237212,
+      "features": {
+        "subBass": 0.06961731290916974,
+        "bass": 0.4468721590355138,
+        "lowMids": 0.00018916758771075396,
+        "highMids": 0.000006050852836995778,
+        "presence": 0.000006622164812605359,
+        "air": 0.00001314665198851009
+      },
+      "contours": {
+        "light": 0.010322940043356094,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 878,
+        "previousTime": 16.0888,
+        "slowHigh": 0.000005765217155326645,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.744,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.067043502781852,
+      "sun": 0.9992316755450709,
+      "pulse": 0.0003527127593482909,
+      "features": {
+        "subBass": 0.06964269237552,
+        "bass": 0.4468685238062491,
+        "lowMids": 0.00018376742311902183,
+        "highMids": 0.000006338393728377633,
+        "presence": 0.000006418640018534371,
+        "air": 0.000013334237634624523
+      },
+      "contours": {
+        "light": 0.009060317185992685,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 884,
+        "previousTime": 16.1888,
+        "slowHigh": 0.000005952720878886424,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.829333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670383922768514,
+      "sun": 0.9995182563571251,
+      "pulse": 0.0002075141369772095,
+      "features": {
+        "subBass": 0.06958687706600593,
+        "bass": 0.44687733026399457,
+        "lowMids": 0.00019617486922706147,
+        "highMids": 0.0000067094773930902416,
+        "presence": 0.000006556120505430375,
+        "air": 0.00001324117380755156
+      },
+      "contours": {
+        "light": 0.007781319647000006,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 891,
+        "previousTime": 16.3054,
+        "slowHigh": 0.000005940403592026447,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 14.936,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.067035895888163,
+      "sun": 0.9996770775791308,
+      "pulse": 0.00013171678018439832,
+      "features": {
+        "subBass": 0.06967031523284585,
+        "bass": 0.44686304664732623,
+        "lowMids": 0.00017604698700547468,
+        "highMids": 0.000005357307831198168,
+        "presence": 0.000006593188566853334,
+        "air": 0.000013079894553717947
+      },
+      "contours": {
+        "light": 0.006833902164865183,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 897,
+        "previousTime": 16.4055,
+        "slowHigh": 0.000006113393140786501,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.042667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670340916026066,
+      "sun": 0.999783538627977,
+      "pulse": 0.00008360543736858878,
+      "features": {
+        "subBass": 0.06956242618298937,
+        "bass": 0.4468804565976333,
+        "lowMids": 0.00020113648439387913,
+        "highMids": 0.00000677913867640039,
+        "presence": 0.000006338038676476373,
+        "air": 0.000013474288227961982
+      },
+      "contours": {
+        "light": 0.0060042050927956725,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 903,
+        "previousTime": 16.5055,
+        "slowHigh": 0.000006078287310864085,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.149333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670305086545167,
+      "sun": 0.9998549016031406,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.0695666536020247,
+        "bass": 0.44688082210757957,
+        "lowMids": 0.00020038037336745675,
+        "highMids": 0.00000702892764620621,
+        "presence": 0.000006508532178038026,
+        "air": 0.000013281797177414031
+      },
+      "contours": {
+        "light": 0.0052787029824116595,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 909,
+        "previousTime": 16.6055,
+        "slowHigh": 0.000006217100952300926,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.255217,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670307077365415,
+      "sun": 0.9999027376359376,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.06966534020753766,
+        "bass": 0.4468640380509715,
+        "lowMids": 0.00017755670400417656,
+        "highMids": 0.000005374118646060452,
+        "presence": 0.000006632194008125485,
+        "air": 0.000013082336021813802
+      },
+      "contours": {
+        "light": 0.004643052034664776,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 915,
+        "previousTime": 16.7054,
+        "slowHigh": 0.000006024979385973458,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.341333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.067030890836613,
+      "sun": 0.9999348030876442,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.06959246684428731,
+        "bass": 0.4468756208235112,
+        "lowMids": 0.00019518540197960082,
+        "highMids": 0.000006452938062388046,
+        "presence": 0.0000063702209114781964,
+        "air": 0.000013354030066210787
+      },
+      "contours": {
+        "light": 0.004086937517351715,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 921,
+        "previousTime": 16.8055,
+        "slowHigh": 0.00000607823243940082,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.448,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670309230526482,
+      "sun": 0.9999562972027083,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.06968751013547143,
+        "bass": 0.44686115088826694,
+        "lowMids": 0.00017228674316512182,
+        "highMids": 0.000005565035180515583,
+        "presence": 0.000006450991167125945,
+        "air": 0.000013313334026757127
+      },
+      "contours": {
+        "light": 0.003599688697637585,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 927,
+        "previousTime": 16.9054,
+        "slowHigh": 0.000005952458478431761,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.554667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670309047748228,
+      "sun": 0.9999707051389074,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.06954982179215856,
+        "bass": 0.4468829309396988,
+        "lowMids": 0.00020423476071516604,
+        "highMids": 0.000006885909255727589,
+        "presence": 0.000006650541639910462,
+        "air": 0.00001310757948618995
+      },
+      "contours": {
+        "light": 0.0031731216811505198,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 933,
+        "previousTime": 17.0055,
+        "slowHigh": 0.000005803268738265811,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.660363,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670311668871,
+      "sun": 0.9999803630673638,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.0696975065623155,
+        "bass": 0.44685854462399816,
+        "lowMids": 0.00017060569076061182,
+        "highMids": 0.00000499212758367514,
+        "presence": 0.000006412274813309944,
+        "air": 0.000013246361731766235
+      },
+      "contours": {
+        "light": 0.002801123410697574,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 939,
+        "previousTime": 17.105400000000003,
+        "slowHigh": 0.000006116980187409259,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.746667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670312474212997,
+      "sun": 0.9999876826096762,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.0695464494755428,
+        "bass": 0.44688298054587405,
+        "lowMids": 0.00020499199302563017,
+        "highMids": 0.000006767010422947151,
+        "presence": 0.000006343190874750351,
+        "air": 0.00001378930927858644
+      },
+      "contours": {
+        "light": 0.002424948238036752,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 946,
+        "previousTime": 17.222099999999998,
+        "slowHigh": 0.000006139775286824741,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.853333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670314320676286,
+      "sun": 0.9999917434063512,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.06969547551933115,
+        "bass": 0.4468587797876145,
+        "lowMids": 0.00017015656659145363,
+        "highMids": 0.000004870867863363673,
+        "presence": 0.000006322615745179647,
+        "air": 0.000013652243275628855
+      },
+      "contours": {
+        "light": 0.0021463398094465212,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 952,
+        "previousTime": 17.3221,
+        "slowHigh": 0.0000062346043048483805,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 15.96,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0670313666788018,
+      "sun": 0.9999944654397653,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.06955476330581496,
+        "bass": 0.44688180527307125,
+        "lowMids": 0.00020302000749244267,
+        "highMids": 0.0000069166882030982786,
+        "presence": 0.000006511544726334248,
+        "air": 0.00001312973825022291
+      },
+      "contours": {
+        "light": 0.0019018281772833138,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 958,
+        "previousTime": 17.422099999999997,
+        "slowHigh": 0.000006093677513148177,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.066667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0630481386526067,
+      "sun": 0.9557881203169237,
+      "pulse": 0,
+      "features": {
+        "subBass": 3.386496184686406e-15,
+        "bass": 5.160460434146685e-15,
+        "lowMids": 9.280522951642605e-15,
+        "highMids": 1.0448298323580459e-14,
+        "presence": 4.6287584436780965e-15,
+        "air": 6.356105019583258e-13
+      },
+      "contours": {
+        "light": 0.0017099339746135273,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 964,
+        "previousTime": 17.5221,
+        "slowHigh": 0.000013597815294560601,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.152,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.054049405243607,
+      "sun": 0.8433746272877257,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0014962890733933051,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 970,
+        "previousTime": 17.622,
+        "slowHigh": 0.00000591451287494893,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.258667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0463421718841595,
+      "sun": 0.7442754962998556,
+      "pulse": 0,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0013095122746093152,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 976,
+        "previousTime": 17.722099999999998,
+        "slowHigh": 0.000002568295561326741,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.365333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0433729110947305,
+      "sun": 0.697946652101127,
+      "pulse": 0,
+      "features": {
+        "subBass": 0.07824385362798862,
+        "bass": 0.44166466644071223,
+        "lowMids": 0.0020001827096196656,
+        "highMids": 0.00021721576163928505,
+        "presence": 0.000039053085912563596,
+        "air": 0.000018075630864006036
+      },
+      "contours": {
+        "light": 0.0013015903706288983,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 982,
+        "previousTime": 17.822,
+        "slowHigh": 0.000042110348304767754,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.471436,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0752368852945087,
+      "sun": 0.7976085587024087,
+      "pulse": 0.4363104814788403,
+      "features": {
+        "subBass": 0.06957147209374687,
+        "bass": 0.4468788427975412,
+        "lowMids": 0.00019979871143175923,
+        "highMids": 0.00000656083106769702,
+        "presence": 0.0000063427522451270075,
+        "air": 0.000013818511471010121
+      },
+      "contours": {
+        "light": 0.0012162000791135273,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 988,
+        "previousTime": 17.922,
+        "slowHigh": 0.000035557065683625584,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.557333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0730693675207748,
+      "sun": 0.8643329597521792,
+      "pulse": 0.2769421525599875,
+      "features": {
+        "subBass": 0.07239102295615299,
+        "bass": 0.4104847301206415,
+        "lowMids": 0.0008620397296536437,
+        "highMids": 0.00008951887015007757,
+        "presence": 0.000016932689549616164,
+        "air": 0.000014429804351699797
+      },
+      "contours": {
+        "light": 0.0010879337533670705,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 994,
+        "previousTime": 18.0221,
+        "slowHigh": 0.00001889431266444754,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.664,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.062826617617403,
+      "sun": 0.8151718125836794,
+      "pulse": 0.17562553799858105,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0009898088595629243,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1000,
+        "previousTime": 18.122,
+        "slowHigh": 0.00002364227886312365,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.770667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.051951151481073,
+      "sun": 0.7197463829161805,
+      "pulse": 0.11167879293248818,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0008667164303585102,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1006,
+        "previousTime": 18.222,
+        "slowHigh": 0.00001027489203893818,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.876202,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0432920325598154,
+      "sun": 0.635094561786706,
+      "pulse": 0.07085438323844827,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0007584259648205662,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1012,
+        "previousTime": 18.322,
+        "slowHigh": 0.000004465449672726252,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 16.962667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.03632990996544,
+      "sun": 0.5604689836250889,
+      "pulse": 0.04497385748299541,
+      "features": {
+        "subBass": 0.0045806639340176016,
+        "bass": 0.006842366497264344,
+        "lowMids": 0.000683487226818311,
+        "highMids": 0.000026799489348647167,
+        "presence": 0.0000018253628081896698,
+        "air": 0.0000014949776536112148
+      },
+      "contours": {
+        "light": 0.0006637541688803647,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1018,
+        "previousTime": 18.422099999999997,
+        "slowHigh": 0.0000019390598712476064,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.069333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.061669878472432,
+      "sun": 0.6691543992841121,
+      "pulse": 0.3472888642694382,
+      "features": {
+        "subBass": 0.06954698820457847,
+        "bass": 0.44688386714580597,
+        "lowMids": 0.0002046544629214416,
+        "highMids": 0.000007206629136572635,
+        "presence": 0.000006529923697797233,
+        "air": 0.000013261289775007814
+      },
+      "contours": {
+        "light": 0.0007610400476340708,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1025,
+        "previousTime": 18.538700000000002,
+        "slowHigh": 0.00003489032442115689,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.176,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0650160744597403,
+      "sun": 0.7783162529346499,
+      "pulse": 0.22033671422529752,
+      "features": {
+        "subBass": 0.06969309414302681,
+        "bass": 0.44686030515767206,
+        "lowMids": 0.00017159691240974638,
+        "highMids": 0.000005412031775884772,
+        "presence": 0.000006428373408054677,
+        "air": 0.000013325261699023699
+      },
+      "contours": {
+        "light": 0.0006894560137980611,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1031,
+        "previousTime": 18.6387,
+        "slowHigh": 0.00001857232592483285,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.282611,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.061516043918888,
+      "sun": 0.7995942206568291,
+      "pulse": 0.13985573694843495,
+      "features": {
+        "subBass": 0.003173958509926526,
+        "bass": 0.005993373961386714,
+        "lowMids": 0.0005594680070136331,
+        "highMids": 0.000059946679629058155,
+        "presence": 0.000011152934712139446,
+        "air": 0.000004709361672037155
+      },
+      "contours": {
+        "light": 0.0006477391472627146,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1037,
+        "previousTime": 18.7387,
+        "slowHigh": 0.0000295020261822193,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.368,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0512161833209626,
+      "sun": 0.7060865201739434,
+      "pulse": 0.08881188950679798,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0005779190678796223,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1043,
+        "previousTime": 18.8387,
+        "slowHigh": 0.000016686664197798492,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.581333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.036175748175469,
+      "sun": 0.5499007348276305,
+      "pulse": 0.03578145071900378,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00044264459137028576,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1055,
+        "previousTime": 19.0386,
+        "slowHigh": 0.0000031543312741525495,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.666667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0385855315955375,
+      "sun": 0.5746151614379488,
+      "pulse": 0.022701468698757516,
+      "features": {
+        "subBass": 0.06967984816472218,
+        "bass": 0.4468619904985733,
+        "lowMids": 0.00017481129575941571,
+        "highMids": 0.000005353343411386165,
+        "presence": 0.000006619835890098446,
+        "air": 0.000013168573540120666
+      },
+      "contours": {
+        "light": 0.0006340404241706851,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1061,
+        "previousTime": 19.1387,
+        "slowHigh": 0.00005695229082060245,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.773333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0702793203093566,
+      "sun": 0.7147419350221349,
+      "pulse": 0.40459963768877005,
+      "features": {
+        "subBass": 0.06957604362789982,
+        "bass": 0.44687943968981586,
+        "lowMids": 0.00019830869814473336,
+        "highMids": 0.000006921172607150267,
+        "presence": 0.0000064170408215164405,
+        "air": 0.000013337438480791584
+      },
+      "contours": {
+        "light": 0.0005779721891282912,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1067,
+        "previousTime": 19.2387,
+        "slowHigh": 0.00002804330054194289,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.88,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0695261626333825,
+      "sun": 0.808785800752,
+      "pulse": 0.2568141251311079,
+      "features": {
+        "subBass": 0.03897533704873154,
+        "bass": 0.218423718225397,
+        "lowMids": 0.00010701806112305376,
+        "highMids": 0.000005305090231229777,
+        "presence": 0.000005815780343324666,
+        "air": 0.000013794260558213533
+      },
+      "contours": {
+        "light": 0.0005485291507129822,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1073,
+        "previousTime": 19.3387,
+        "slowHigh": 0.000025486780297772305,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 17.986667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0583872112474155,
+      "sun": 0.7401698302297811,
+      "pulse": 0.16300927811899982,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0005097247083428025,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1079,
+        "previousTime": 19.438599999999997,
+        "slowHigh": 0.000019791897015842207,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.072,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0482465803288104,
+      "sun": 0.6531975825643477,
+      "pulse": 0.10346792544729538,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0004460974647985689,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1085,
+        "previousTime": 19.538700000000002,
+        "slowHigh": 0.000008594358036030046,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.178667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0402148598443952,
+      "sun": 0.5764448433887822,
+      "pulse": 0.06567486047359591,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00039041259888440797,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1091,
+        "previousTime": 19.6387,
+        "slowHigh": 0.0000037350926057271352,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.285333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0337913889075079,
+      "sun": 0.5094858423564977,
+      "pulse": 0.04168622575141266,
+      "features": {
+        "subBass": 0.007058439355146721,
+        "bass": 0.011155563219574276,
+        "lowMids": 0.0009321393837333636,
+        "highMids": 0.00003587032527908831,
+        "presence": 0.000002469050858380547,
+        "air": 0.0000021316511796155053
+      },
+      "contours": {
+        "light": 0.00037878816652894224,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1097,
+        "previousTime": 19.7387,
+        "slowHigh": 0.000006283429513253523,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.392,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0620658789561552,
+      "sun": 0.6416851635276083,
+      "pulse": 0.3690799592398061,
+      "features": {
+        "subBass": 0.0696302664937116,
+        "bass": 0.4468704206288237,
+        "lowMids": 0.0001861168764680232,
+        "highMids": 0.000006285144090908456,
+        "presence": 0.000006477099546735906,
+        "air": 0.000013298104012449633
+      },
+      "contours": {
+        "light": 0.0005392876864846652,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1103,
+        "previousTime": 19.8386,
+        "slowHigh": 0.00003672408988632232,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.477333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0653075043590965,
+      "sun": 0.7598143823205739,
+      "pulse": 0.23426849163049823,
+      "features": {
+        "subBass": 0.06963020196326031,
+        "bass": 0.4468704186649648,
+        "lowMids": 0.00018670902754598667,
+        "highMids": 0.000006280776937956766,
+        "presence": 0.0000064706988053260665,
+        "air": 0.000013296726512754704
+      },
+      "contours": {
+        "light": 0.0004954651524359259,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1109,
+        "previousTime": 19.9387,
+        "slowHigh": 0.000019372082116045616,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.584,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.059697147913628,
+      "sun": 0.767319916934921,
+      "pulse": 0.13782893465912785,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.000477361494323631,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1116,
+        "previousTime": 20.0553,
+        "slowHigh": 0.00002840490372534463,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.690667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0496590221606599,
+      "sun": 0.6772420999532522,
+      "pulse": 0.0875248193778768,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0004178297502866875,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1122,
+        "previousTime": 20.1553,
+        "slowHigh": 0.000012344720271850663,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.797333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0415961585396827,
+      "sun": 0.5975893521752016,
+      "pulse": 0.055529943800834064,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00036562469614656443,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1128,
+        "previousTime": 20.2553,
+        "slowHigh": 0.000005364993314667405,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.902036,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.035046473665268,
+      "sun": 0.5273707523121504,
+      "pulse": 0.03524687767209629,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0003199849788506579,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1134,
+        "previousTime": 20.3553,
+        "slowHigh": 0.000002331616483206878,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 18.989333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0411387111105492,
+      "sun": 0.5948621918316566,
+      "pulse": 0.022372476912412786,
+      "features": {
+        "subBass": 0.06967519513555744,
+        "bass": 0.446862130658074,
+        "lowMids": 0.00017541065200849502,
+        "highMids": 0.000005255905749914236,
+        "presence": 0.000006425764212372807,
+        "air": 0.00001320082875554211
+      },
+      "contours": {
+        "light": 0.0005038508490811404,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1140,
+        "previousTime": 20.455299999999998,
+        "slowHigh": 0.000043879671224519486,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.096,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0621097781889939,
+      "sun": 0.6334496373441566,
+      "pulse": 0.375023845941699,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0014120704948216698,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1146,
+        "previousTime": 20.5553,
+        "slowHigh": 0.0003037137709460951,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.202667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0490778861224899,
+      "sun": 0.5590173428995534,
+      "pulse": 0.2380412929902483,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0012358064216756981,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1152,
+        "previousTime": 20.6553,
+        "slowHigh": 0.0001319934607521005,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.306989,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0394210323386688,
+      "sun": 0.49326941107339006,
+      "pulse": 0.1510248146295234,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0010814006114000408,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1158,
+        "previousTime": 20.7553,
+        "slowHigh": 0.000057364121577513236,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.394667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0321247150933592,
+      "sun": 0.43536314440066826,
+      "pulse": 0.09590453307005045,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0009465391590944299,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1164,
+        "previousTime": 20.8553,
+        "slowHigh": 0.000024930344470169186,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.501333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0264761154910345,
+      "sun": 0.3842066264330796,
+      "pulse": 0.06087409988102424,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0008283858174687927,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1170,
+        "previousTime": 20.955299999999998,
+        "slowHigh": 0.000010834683044200065,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.608,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0220229910037242,
+      "sun": 0.33906115777966944,
+      "pulse": 0.0386390081646941,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0007249811653222684,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1176,
+        "previousTime": 21.0552,
+        "slowHigh": 0.0000047126594210498766,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.712382,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0179289335602693,
+      "sun": 0.2930755710831102,
+      "pulse": 0.022743112229797958,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.000620595194699388,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1183,
+        "previousTime": 21.1719,
+        "slowHigh": 0.0000017820286058804725,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.8,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0151165874854386,
+      "sun": 0.2586059559386389,
+      "pulse": 0.014429321338915864,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0005430559440395049,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1189,
+        "previousTime": 21.272,
+        "slowHigh": 7.738213197616241e-7,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 19.906667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0128003743087262,
+      "sun": 0.22821895510577717,
+      "pulse": 0.009158815754402139,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0004752680729710546,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1195,
+        "previousTime": 21.372,
+        "slowHigh": 3.363013592729808e-7,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 20.013333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0108748829167364,
+      "sun": 0.2014276978809631,
+      "pulse": 0.005816076984335577,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00041599739948039037,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1201,
+        "previousTime": 21.4719,
+        "slowHigh": 1.4627781566144602e-7,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 20.205333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0078979576127087,
+      "sun": 0.15687204884196437,
+      "pulse": 0.002343241126257159,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00031862419694803036,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1213,
+        "previousTime": 21.6719,
+        "slowHigh": 2.7628310614817515e-8,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 20.312,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0067456516282998,
+      "sun": 0.13843909720513292,
+      "pulse": 0.001487340481194052,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.0002788513959704014,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1219,
+        "previousTime": 21.771900000000002,
+        "slowHigh": 1.2007214297276642e-8,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 20.418667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.005767189024049,
+      "sun": 0.12217207448013752,
+      "pulse": 0.0009440691707780219,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00024404330173117539,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1225,
+        "previousTime": 21.8719,
+        "slowHigh": 5.218313822757098e-9,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 20.504,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0049335317242398,
+      "sun": 0.10780300109347232,
+      "pulse": 0.000598962766998629,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00021355171090607194,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1231,
+        "previousTime": 21.971799999999998,
+        "slowHigh": 2.2697605180039136e-9,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 20.610667,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.004223360958563,
+      "sun": 0.09513581455431305,
+      "pulse": 0.0003801834818032757,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.000186894759620967,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1237,
+        "previousTime": 22.071900000000003,
+        "slowHigh": 9.856121690688054e-10,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 20.717333,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.003617453629881,
+      "sun": 0.08396755695785066,
+      "pulse": 0.00024142601594292413,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00016358711725113087,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1243,
+        "previousTime": 22.171799999999998,
+        "slowHigh": 4.287023861348884e-10,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    },
+    {
+      "time": 20.824,
+      "camera": {
+        "x": 0,
+        "y": 3.5,
+        "z": 24,
+        "type": "PerspectiveCamera"
+      },
+      "distance": 0,
+      "scale": 1.0030989310332683,
+      "sun": 0.07410110893289878,
+      "pulse": 0.00015324188479863017,
+      "features": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "contours": {
+        "light": 0.00014316708035734004,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 1249,
+        "previousTime": 22.271900000000002,
+        "slowHigh": 1.8615809259690864e-10,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.008472409703569047,
+        "peak": 0.1837310560712106,
+        "deadline": 13.9672,
+        "lastLaunch": 13.9672,
+        "strength": 0.17525864636764155
+      }
+    }
+  ],
+  "clip": [
+    {
+      "file": "clip-000.jpg",
+      "time": 8.044066
+    },
+    {
+      "file": "clip-001.jpg",
+      "time": 8.21553
+    },
+    {
+      "file": "clip-002.jpg",
+      "time": 8.386667
+    },
+    {
+      "file": "clip-003.jpg",
+      "time": 8.576836
+    },
+    {
+      "file": "clip-004.jpg",
+      "time": 8.728
+    },
+    {
+      "file": "clip-005.jpg",
+      "time": 8.92
+    },
+    {
+      "file": "clip-006.jpg",
+      "time": 9.110085
+    },
+    {
+      "file": "clip-007.jpg",
+      "time": 9.367412
+    },
+    {
+      "file": "clip-008.jpg",
+      "time": 9.538667
+    },
+    {
+      "file": "clip-009.jpg",
+      "time": 9.709333
+    },
+    {
+      "file": "clip-010.jpg",
+      "time": 9.88
+    }
+  ],
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending"
+}

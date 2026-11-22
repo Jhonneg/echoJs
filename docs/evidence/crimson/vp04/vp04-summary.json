@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "quiet": {
+      "sun": 0.14604653811199736,
+      "scale": 1.0261694826673475
+    },
+    "busy": {
+      "sun": 0.5450562520521793,
+      "scale": 1.0834554483580636
+    },
+    "sustainPulse": 0.012442137864733903
+  },
+  "maximums": {
+    "sun": 0.9999952460109509,
+    "body": 0.9999999450916408,
+    "pulse": 0.8319859175596527,
+    "presence": 0.11636227042836456,
+    "air": 0.11636241741910008,
+    "contourLight": 0.13212387938978384,
+    "contourStreak": 0.6288639910422277,
+    "atmosphereDensity": 0.5263570195119674
+  },
+  "simultaneousNearMaximumSamples": 0,
+  "mixedSamples": 200,
+  "sunSweep": [
+    {
+      "energy": 0.03,
+      "sustainedScale": 1.0128571421134636,
+      "attackScale": 1.0204934730447965,
+      "corona": 0.14959671038817857
+    },
+    {
+      "energy": 0.1,
+      "sustainedScale": 1.04285714127652,
+      "attackScale": 1.0628571421034245,
+      "corona": 0.3748571431586301
+    },
+    {
+      "energy": 0.3,
+      "sustainedScale": 1.1285714240553628,
+      "attackScale": 1.1645714264167508,
+      "corona": 0.6015085729799394
+    }
+  ]
+}

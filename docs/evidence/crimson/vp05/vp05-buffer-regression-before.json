@@ -1,0 +1,564 @@
+{
+  "date": "2026-11-22",
+  "generatedOnly": true,
+  "checks": [
+    "Trusted Enter/Tab/Escape opens chooser, reaches close control and restores trigger focus; named accessibility-tree controls present",
+    "Built public Crimson defaults to Candidate with real generated-file analyser energy/onset/uniform response; one AudioContext and no time-domain reads"
+  ],
+  "screenshots": [
+    "keyboard-chooser.png"
+  ],
+  "errors": [],
+  "accessibility": [
+    {
+      "role": "RootWebArea",
+      "name": "ECHO — Audio visualizer"
+    },
+    {
+      "role": "generic",
+      "name": ""
+    },
+    {
+      "role": "main",
+      "name": ""
+    },
+    {
+      "role": "heading",
+      "name": "ECHO — Your music. Another world."
+    },
+    {
+      "role": "region",
+      "name": "Crimson Horizon: a three-dimensional dark mountain valley beneath a pink sun"
+    },
+    {
+      "role": "group",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "ECHO — Your music. Another world."
+    },
+    {
+      "role": "generic",
+      "name": ""
+    },
+    {
+      "role": "status",
+      "name": ""
+    },
+    {
+      "role": "DisclosureTriangle",
+      "name": "Crimson Horizon — audio and scene controls"
+    },
+    {
+      "role": "generic",
+      "name": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "ECHO — Your music. Another world."
+    },
+    {
+      "role": "Canvas",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "Preparing landscape…"
+    },
+    {
+      "role": "StaticText",
+      "name": "CRIMSON HORIZON"
+    },
+    {
+      "role": "region",
+      "name": "Choose your audio"
+    },
+    {
+      "role": "paragraph",
+      "name": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Preparing landscape…"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "CRIMSON HORIZON"
+    },
+    {
+      "role": "heading",
+      "name": "Choose your audio"
+    },
+    {
+      "role": "button",
+      "name": "Close audio controls"
+    },
+    {
+      "role": "status",
+      "name": ""
+    },
+    {
+      "role": "button",
+      "name": "Share a tab"
+    },
+    {
+      "role": "LabelText",
+      "name": ""
+    },
+    {
+      "role": "LabelText",
+      "name": ""
+    },
+    {
+      "role": "combobox",
+      "name": "Landscape"
+    },
+    {
+      "role": "paragraph",
+      "name": ""
+    },
+    {
+      "role": "LabelText",
+      "name": ""
+    },
+    {
+      "role": "LabelText",
+      "name": ""
+    },
+    {
+      "role": "combobox",
+      "name": "Graphics quality"
+    },
+    {
+      "role": "button",
+      "name": "Enter fullscreen"
+    },
+    {
+      "role": "paragraph",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "Crimson Horizon needs WebGL to display. You can still choose audio or another landscape from the scene menu."
+    },
+    {
+      "role": "StaticText",
+      "name": "Choose your audio"
+    },
+    {
+      "role": "StaticText",
+      "name": "×"
+    },
+    {
+      "role": "StaticText",
+      "name": "Choose a shared tab or a local audio file."
+    },
+    {
+      "role": "StaticText",
+      "name": "Share a tab"
+    },
+    {
+      "role": "StaticText",
+      "name": "Open audio file"
+    },
+    {
+      "role": "button",
+      "name": "Open audio file"
+    },
+    {
+      "role": "StaticText",
+      "name": "Landscape"
+    },
+    {
+      "role": "MenuListPopup",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "Travel stays steady, even in silence. Low hits pulse the sun; low mids light the contours and high mids send brief streaks. Move the mouse to look around."
+    },
+    {
+      "role": "StaticText",
+      "name": "Reactivity"
+    },
+    {
+      "role": "slider",
+      "name": "Reactivity"
+    },
+    {
+      "role": "status",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "Graphics quality"
+    },
+    {
+      "role": "MenuListPopup",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "Enter fullscreen"
+    },
+    {
+      "role": "StaticText",
+      "name": "Audio stays on your device. Nothing is recorded or uploaded. Close this panel to enjoy the scene; Disconnect ends the source."
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Choose your audio"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "×"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Choose a shared tab or a local audio file."
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Share a tab"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Open audio file"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Landscape"
+    },
+    {
+      "role": "option",
+      "name": "Nocturne · Preview"
+    },
+    {
+      "role": "option",
+      "name": "Bloom"
+    },
+    {
+      "role": "option",
+      "name": "Lavender Peaks · Preview"
+    },
+    {
+      "role": "option",
+      "name": "Crimson Horizon · Preview"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Travel stays steady, even in silence. Low hits pulse the "
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "sun; low mids light the contours and high mids send "
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "brief streaks. Move the mouse to look around."
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Reactivity"
+    },
+    {
+      "role": "StaticText",
+      "name": "100"
+    },
+    {
+      "role": "StaticText",
+      "name": "%"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Graphics quality"
+    },
+    {
+      "role": "option",
+      "name": "Standard"
+    },
+    {
+      "role": "option",
+      "name": "Low"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Enter fullscreen"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Audio stays on your device. Nothing is recorded or uploaded. "
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Close this panel to enjoy the scene; Disconnect ends the "
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "source."
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "100"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "%"
+    }
+  ],
+  "active": {
+    "values": {
+      "atmosphereDensity": 0.0001274928765648299,
+      "atmosphereWarmth": 0.000015168333279343804,
+      "airAccent": 0.020150536816611605,
+      "detailDensity": 0.01,
+      "activity": 0.03338728073922781,
+      "pulse": 0.16466700161582049,
+      "corona": 0.16250667083960382,
+      "coronaRadius": 10.282601085919735,
+      "glowActivity": 0.00036462897268894006,
+      "valleyOrigin": -5.236814692820413,
+      "contourOrigin": 0.5200000000000005,
+      "presenceAccent": 0.02015073015589855,
+      "valleyGlow": 0.0051872239203209995,
+      "musicWeight": 1,
+      "contourLight": 0.007197844195417871,
+      "contourStreak": 0.12366387071923077,
+      "contourProgress": 0.017520000001192314,
+      "musicHaze": 0.0001274928765648299
+    },
+    "peaks": {
+      "atmosphereDensity": 0.0001274928765648299,
+      "atmosphereWarmth": 0.000015168333279343804,
+      "airAccent": 0.020150536816611605,
+      "detailDensity": 0.01,
+      "activity": 0.03338728073922781,
+      "pulse": 0.16466700161582049,
+      "corona": 0.16250667083960382,
+      "coronaRadius": 10.382575498792267,
+      "glowActivity": 0.00036462897268894006,
+      "valleyOrigin": 3.84,
+      "contourOrigin": 0.8399999999999999,
+      "presenceAccent": 0.02015073015589855,
+      "valleyGlow": 0.0051872239203209995,
+      "musicWeight": 1,
+      "contourLight": 0.007197844195417871,
+      "contourStreak": 0.12366387071923077,
+      "contourProgress": 1,
+      "musicHaze": 0.0001274928765648299
+    },
+    "frequencyReads": 129,
+    "timeReads": 0,
+    "contexts": 1,
+    "elements": 1
+  },
+  "soak": [
+    {
+      "second": 3.117333,
+      "values": {
+        "atmosphereDensity": 0.008575090722168825,
+        "atmosphereWarmth": 0.001111862436120266,
+        "airAccent": 0,
+        "detailDensity": 0.01,
+        "activity": 0.0672123722388711,
+        "pulse": 0.03236557936272212,
+        "corona": 0.03205714287788107,
+        "coronaRadius": 10.408208980287336,
+        "glowActivity": 0.03890738987774922,
+        "valleyOrigin": -5.236814692820413,
+        "contourOrigin": 0.5200000000000005,
+        "presenceAccent": 0,
+        "valleyGlow": 0.01003602300557816,
+        "musicWeight": 1,
+        "contourLight": 0.015699257625594387,
+        "contourStreak": 0.16261142720146596,
+        "contourProgress": 0.33752000000119226,
+        "musicHaze": 0.008575090722168825
+      },
+      "workers": 1,
+      "canvases": 1,
+      "contexts": 1,
+      "timeReads": 0,
+      "resources": [
+        {
+          "buffers": 32,
+          "textures": 4,
+          "programs": 4
+        }
+      ]
+    },
+    {
+      "second": 4.12,
+      "values": {
+        "atmosphereDensity": 0.022439656339293203,
+        "atmosphereWarmth": 0.002954696535163096,
+        "airAccent": 0.018450278658855217,
+        "detailDensity": 0.01,
+        "activity": 0.08952861837129772,
+        "pulse": 0.1173634139712114,
+        "corona": 0.1153978370643072,
+        "coronaRadius": 10.377191235876204,
+        "glowActivity": 0.08186275179207539,
+        "valleyOrigin": -2.793629385640827,
+        "contourOrigin": 0.35999999999999943,
+        "presenceAccent": 0.01845048505583783,
+        "valleyGlow": 0.015535449257631985,
+        "musicWeight": 1,
+        "contourLight": 0.021523099896404767,
+        "contourStreak": 0.1851038517024988,
+        "contourProgress": 0.11080000000238428,
+        "musicHaze": 0.022439656339293203
+      },
+      "workers": 1,
+      "canvases": 1,
+      "contexts": 1,
+      "timeReads": 0,
+      "resources": [
+        {
+          "buffers": 36,
+          "textures": 4,
+          "programs": 4
+        }
+      ]
+    },
+    {
+      "second": 5.122667,
+      "values": {
+        "atmosphereDensity": 0.03850099571997707,
+        "atmosphereWarmth": 0.0044056908195775285,
+        "airAccent": 0,
+        "detailDensity": 0.01,
+        "activity": 0.06613377105667112,
+        "pulse": 0.019624380609377275,
+        "corona": 0.019460770811174047,
+        "coronaRadius": 10.411769711377882,
+        "glowActivity": 0.1291261620999275,
+        "valleyOrigin": -2.793629385640827,
+        "contourOrigin": 0.35999999999999943,
+        "presenceAccent": 0,
+        "valleyGlow": 0.009213648966298262,
+        "musicWeight": 1,
+        "contourLight": 0.01572176860518849,
+        "contourStreak": 0.15361504113240695,
+        "contourProgress": 0.390800000002384,
+        "musicHaze": 0.03850099571997707
+      },
+      "workers": 1,
+      "canvases": 1,
+      "contexts": 1,
+      "timeReads": 0,
+      "resources": [
+        {
+          "buffers": 36,
+          "textures": 4,
+          "programs": 4
+        }
+      ]
+    },
+    {
+      "second": 6.125333,
+      "values": {
+        "atmosphereDensity": 0.05502779077083118,
+        "atmosphereWarmth": 0.006238865020214971,
+        "airAccent": 0.042508474478304914,
+        "detailDensity": 0.01,
+        "activity": 0.17049842995573236,
+        "pulse": 0.2909736603875538,
+        "corona": 0.2801950797820319,
+        "coronaRadius": 10.371264804368527,
+        "glowActivity": 0.1751734765304461,
+        "valleyOrigin": -0.3504440784612406,
+        "contourOrigin": 0.20000000000000107,
+        "presenceAccent": 0.04250865354135814,
+        "valleyGlow": 0.029006700568432617,
+        "musicWeight": 1,
+        "contourLight": 0.03941845969144512,
+        "contourStreak": 0.19103521659771264,
+        "contourProgress": 0.15080000000119184,
+        "musicHaze": 0.05502779077083118
+      },
+      "workers": 1,
+      "canvases": 1,
+      "contexts": 1,
+      "timeReads": 0,
+      "resources": [
+        {
+          "buffers": 40,
+          "textures": 4,
+          "programs": 4
+        }
+      ]
+    },
+    {
+      "second": 7.128,
+      "values": {
+        "atmosphereDensity": 0.08459569693468842,
+        "atmosphereWarmth": 0.008463016803731831,
+        "airAccent": 0,
+        "detailDensity": 0.01,
+        "activity": 0.17782301362217676,
+        "pulse": 0.04257661256872618,
+        "corona": 0.04162271291891999,
+        "coronaRadius": 10.528094541819996,
+        "glowActivity": 0.2699366304521171,
+        "valleyOrigin": -0.3504440784612406,
+        "contourOrigin": 0.20000000000000107,
+        "presenceAccent": 0,
+        "valleyGlow": 0.02386926674672821,
+        "musicWeight": 1,
+        "contourLight": 0.04133597710552166,
+        "contourStreak": 0.3224158853315175,
+        "contourProgress": 0.4442400000023845,
+        "musicHaze": 0.08459569693468842
+      },
+      "workers": 1,
+      "canvases": 1,
+      "contexts": 1,
+      "timeReads": 0,
+      "resources": [
+        {
+          "buffers": 40,
+          "textures": 4,
+          "programs": 4
+        }
+      ]
+    },
+    {
+      "second": 8.130667,
+      "values": {
+        "atmosphereDensity": 0.12350077271135368,
+        "atmosphereWarmth": 0.014766813570209368,
+        "airAccent": 0.04221065678441866,
+        "detailDensity": 0.01,
+        "activity": 0.27901269264298195,
+        "pulse": 0.1664930508207965,
+        "corona": 0.15953425593079187,
+        "coronaRadius": 10.571384347635531,
+        "glowActivity": 0.3717264350506817,
+        "valleyOrigin": -4.1904440784612405,
+        "contourOrigin": 0.040000000000000924,
+        "presenceAccent": 0.04221098603647873,
+        "valleyGlow": 0.05049136262866501,
+        "musicWeight": 1,
+        "contourLight": 0.06793717004177571,
+        "contourStreak": 0.4408846313508147,
+        "contourProgress": 0.20424000000119236,
+        "musicHaze": 0.12350077271135368
+      },
+      "workers": 1,
+      "canvases": 1,
+      "contexts": 1,
+      "timeReads": 0,
+      "resources": [
+        {
+          "buffers": 44,
+          "textures": 4,
+          "programs": 4
+        }
+      ]
+    }
+  ],
+  "soakSeconds": 120,
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(current.buffers<=first.buffers+10)\n"
+}

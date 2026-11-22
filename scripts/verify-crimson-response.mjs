@@ -30,7 +30,7 @@ try {
   await set({profile:'candidate',stationary:false,moving:true,repeatEvents:false,energy:0,activity:0,lowMids:0,highMids:0,presence:0,air:0});await evaluate('window.__mi05.reset()');await wait('window.__mi05.read().weight===1');await pause(1500)
   evidence.levels=[]
   for(const energy of [.03,.1,.25,.35]){
-    await set({energy});await pause(2600);const state=await read(),speed=24*Math.pow(Math.min(1,energy/.25),1.2),body=Math.min(1,energy/.35)
+    await set({energy});await pause(2600);const state=await read(),speed=24,body=Math.min(1,energy/.35)
     assert.ok(state.speed<=24&&Math.abs(state.speed-speed)<.1)
     assert.ok(Math.abs(state.body-body)<.002);assert.ok(Math.abs(state.scale-(1+.15*body))<.001)
     evidence.levels.push({energy,sun:state.sun,body:state.body,scale:state.scale,speed:state.speed,distance:state.distance})
@@ -46,10 +46,10 @@ try {
     await pause(4500);assert.equal((await read()).pulse,0);assert.ok((await read()).valleyWaves.every((v,i)=>i%4!==1||v===0))
   }
   assert.ok(evidence.attacks[1].pulse>evidence.attacks[0].pulse);assert.ok(evidence.attacks[2].pulse>evidence.attacks[1].pulse)
-  await set({stationary:false,energy:0});await wait('window.__mi05.read().sun===0&&window.__mi05.read().body===0');assert.equal((await read()).speed,0)
-  await set({energy:1,gain:0});await pause(200);assert.equal((await read()).speed,0)
+  await set({stationary:false,energy:0});await wait('window.__mi05.read().sun===0&&window.__mi05.read().body===0');assert.equal((await read()).speed,24)
+  await set({energy:1,gain:0});await pause(200);assert.equal((await read()).speed,24)
   await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await set({gain:1,energy:.35});await evaluate('window.__mi05.event(1)');await pause(100);assert.equal((await read()).speed,0);assert.equal((await read()).pulse,0)
-  evidence.checks=['Body15% sustained+5% attack bounds; modest attacks ordered with common sun/valley curve','Travel24-unit cap and moderate-energy boost without route changes','Finite low accents; sustain no repeated waves; silence/zero/reduced controls']
+  evidence.checks=['Body15% sustained+5% attack bounds; modest attacks ordered with common sun/valley curve','Constant24-unit travel, including silence and zero gain; route unchanged','Finite low accents; sustain no repeated waves; silence/zero/reduced controls']
   evidence.environment={browser:await evaluate('navigator.userAgent'),renderer:(await read()).renderer}
   assert.deepEqual(errors,[]);evidence.status='generated checks passed; owner appearance/music review pending'
   console.log(`PASS combined Crimson response: ${temporary}`)

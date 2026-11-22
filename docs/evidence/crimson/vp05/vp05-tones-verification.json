@@ -1,0 +1,347 @@
+{
+  "date": "2026-11-22",
+  "generatedOnly": true,
+  "checks": [
+    "Five actual generated frequencies at two amplitudes through unchanged production analysis",
+    "Dominant fixed band and soft/loud ordering; real FFT overlap retained"
+  ],
+  "screenshots": [
+    "tone-110.jpg",
+    "tone-469.jpg",
+    "tone-1500.jpg",
+    "tone-4000.jpg",
+    "tone-8000.jpg"
+  ],
+  "performance": [],
+  "errors": [],
+  "label": "tones",
+  "mode": "tones",
+  "root": "/home/jonee/Work/echojs",
+  "tones": [
+    {
+      "frequency": 110,
+      "band": "bass",
+      "amplitude": 0.04,
+      "six": {
+        "subBass": 0.008704097702331035,
+        "bass": 0.0558524481916311,
+        "lowMids": 0.00002312339945649561,
+        "highMids": 0.0000046217056611624646,
+        "presence": 0.000006757451548937001,
+        "air": 0.000013425860566275859
+      },
+      "sun": 0.3191903205171067,
+      "scale": 1.0245567376255618,
+      "contours": {
+        "light": 0.000024448694512986496,
+        "streak": 0,
+        "progress": 1,
+        "session": 3,
+        "frame": 69,
+        "previousTime": 2.291,
+        "slowHigh": 0.000004527643834025806,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      },
+      "pulse": 0.030578136062233696
+    },
+    {
+      "frequency": 110,
+      "band": "bass",
+      "amplitude": 0.24,
+      "six": {
+        "subBass": 0.052257390123487436,
+        "bass": 0.3351110845087251,
+        "lowMids": 0.00012965939329835998,
+        "highMids": 0.000004377793441099616,
+        "presence": 0.000007138072884784749,
+        "air": 0.00001358912088230696
+      },
+      "sun": 0.8934881026282413,
+      "scale": 1.1424104205428964,
+      "contours": {
+        "light": 0.00018817857249583278,
+        "streak": 0,
+        "progress": 1,
+        "session": 6,
+        "frame": 67,
+        "previousTime": 3.4244,
+        "slowHigh": 0.000005458365322638088,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      },
+      "pulse": 0.0749763996764552
+    },
+    {
+      "frequency": 469,
+      "band": "lowMids",
+      "amplitude": 0.04,
+      "six": {
+        "subBass": 0.0000014017778065978132,
+        "bass": 0.0000012855286231949954,
+        "lowMids": 0.056526515501283216,
+        "highMids": 0.000004697720066160581,
+        "presence": 0.000006495145371173008,
+        "air": 0.000013854998147715986
+      },
+      "sun": 0.24552347008599143,
+      "scale": 1.0247843429223407,
+      "contours": {
+        "light": 0.047558474821923866,
+        "streak": 0,
+        "progress": 1,
+        "session": 9,
+        "frame": 67,
+        "previousTime": 4.674300000000001,
+        "slowHigh": 0.000004779758746995813,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      },
+      "pulse": 0
+    },
+    {
+      "frequency": 469,
+      "band": "lowMids",
+      "amplitude": 0.24,
+      "six": {
+        "subBass": 0.0000026332514382099812,
+        "bass": 0.000002222675853951281,
+        "lowMids": 0.3391618599417398,
+        "highMids": 0.000005651620700028315,
+        "presence": 0.000007008943246100106,
+        "air": 0.000013777498536803813
+      },
+      "sun": 0.23013567040672941,
+      "scale": 1.0044536546074445,
+      "contours": {
+        "light": 0.28623649467635176,
+        "streak": 0,
+        "progress": 1,
+        "session": 12,
+        "frame": 66,
+        "previousTime": 5.7909,
+        "slowHigh": 0.000006068055366966229,
+        "armed": true,
+        "pending": false,
+        "baseline": 0,
+        "peak": 0,
+        "deadline": 0,
+        "lastLaunch": null,
+        "strength": 0
+      },
+      "pulse": 0
+    },
+    {
+      "frequency": 1500,
+      "band": "highMids",
+      "amplitude": 0.04,
+      "six": {
+        "subBass": 5.018287852839885e-7,
+        "bass": 1.5888148430225076e-10,
+        "lowMids": 4.743340358383184e-10,
+        "highMids": 0.056529065132459366,
+        "presence": 0.00000856406550335095,
+        "air": 0.000012213246978573674
+      },
+      "sun": 0.07890257990423033,
+      "scale": 1.0006679256531048,
+      "contours": {
+        "light": 0.06845949542906517,
+        "streak": 0.23078572564435534,
+        "progress": 0.41744000000119214,
+        "session": 15,
+        "frame": 66,
+        "previousTime": 7.0243,
+        "slowHigh": 0.05604973332560858,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0026191084611587147,
+        "peak": 0.056529065132459366,
+        "deadline": 6.5193,
+        "lastLaunch": 6.5193,
+        "strength": 0.05390995667130065
+      },
+      "pulse": 0
+    },
+    {
+      "frequency": 1500,
+      "band": "highMids",
+      "amplitude": 0.24,
+      "six": {
+        "subBass": 0.000003012858937940916,
+        "bass": 1.1711380150556958e-9,
+        "lowMids": 2.8690316526782843e-9,
+        "highMids": 0.3391582406061559,
+        "presence": 0.0000027826035819961205,
+        "air": 0.000014836790434152844
+      },
+      "sun": 0.22095915849353592,
+      "scale": 1.0001169356535988,
+      "contours": {
+        "light": 0.015109612234277614,
+        "streak": 0.6042943673794678,
+        "progress": 0.41751999999880807,
+        "session": 18,
+        "frame": 67,
+        "previousTime": 8.1575,
+        "slowHigh": 0.3360954739213734,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0015552839346933745,
+        "peak": 0.3391582406061559,
+        "deadline": 7.6525,
+        "lastLaunch": 7.6525,
+        "strength": 0.3376029566714625
+      },
+      "pulse": 0
+    },
+    {
+      "frequency": 4000,
+      "band": "presence",
+      "amplitude": 0.04,
+      "six": {
+        "subBass": 4.912537686295528e-7,
+        "bass": 4.887822669400663e-9,
+        "lowMids": 1.0013764466408803e-8,
+        "highMids": 6.940486111038252e-8,
+        "presence": 0.056524664179528346,
+        "air": 0.000014447436890568682
+      },
+      "sun": 0.07690128512694858,
+      "scale": 1.0000170987504298,
+      "contours": {
+        "light": 0.002853860088881267,
+        "streak": 0,
+        "progress": 1,
+        "session": 21,
+        "frame": 67,
+        "previousTime": 9.4075,
+        "slowHigh": 8.564957488374384e-8,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0015552839346933745,
+        "peak": 0.3391582406061559,
+        "deadline": 7.6525,
+        "lastLaunch": null,
+        "strength": 0
+      },
+      "pulse": 0
+    },
+    {
+      "frequency": 4000,
+      "band": "presence",
+      "amplitude": 0.24,
+      "six": {
+        "subBass": 0.0000029514494049065466,
+        "bass": 2.8365034164729347e-8,
+        "lowMids": 6.007459317987289e-8,
+        "highMids": 4.151490485162786e-7,
+        "presence": 0.339147954309225,
+        "air": 0.000008561638248209248
+      },
+      "sun": 0.22093291279146868,
+      "scale": 1.0000000269851148,
+      "contours": {
+        "light": 0.0006440639320013495,
+        "streak": 0,
+        "progress": 1,
+        "session": 24,
+        "frame": 66,
+        "previousTime": 10.5241,
+        "slowHigh": 5.029589696258264e-7,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0015552839346933745,
+        "peak": 0.3391582406061559,
+        "deadline": 7.6525,
+        "lastLaunch": null,
+        "strength": 0
+      },
+      "pulse": 0
+    },
+    {
+      "frequency": 8000,
+      "band": "air",
+      "amplitude": 0.04,
+      "six": {
+        "subBass": 4.578402464517909e-7,
+        "bass": 7.00135846267178e-10,
+        "lowMids": 1.3376637332307873e-9,
+        "highMids": 3.1611577334830548e-9,
+        "presence": 3.3346469740585874e-8,
+        "air": 0.0565227677364636
+      },
+      "sun": 0.07735042080960962,
+      "scale": 1.0000000039659689,
+      "contours": {
+        "light": 0.00012443032422326678,
+        "streak": 0,
+        "progress": 1,
+        "session": 27,
+        "frame": 66,
+        "previousTime": 11.7574,
+        "slowHigh": 9.646129927377934e-9,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0015552839346933745,
+        "peak": 0.3391582406061559,
+        "deadline": 7.6525,
+        "lastLaunch": null,
+        "strength": 0
+      },
+      "pulse": 0
+    },
+    {
+      "frequency": 8000,
+      "band": "air",
+      "amplitude": 0.24,
+      "six": {
+        "subBass": 0.0000027426875424334945,
+        "bass": 4.344493116557662e-9,
+        "lowMids": 6.938672188188197e-9,
+        "highMids": 1.947198351158368e-8,
+        "presence": 2.0068866372618477e-7,
+        "air": 0.33913656452432084
+      },
+      "sun": 0.2229018290953458,
+      "scale": 1.000000007756156,
+      "contours": {
+        "light": 1.656079584752338e-7,
+        "streak": 0,
+        "progress": 1,
+        "session": 30,
+        "frame": 67,
+        "previousTime": 12.8907,
+        "slowHigh": 2.2517713660225308e-8,
+        "armed": true,
+        "pending": false,
+        "baseline": 0.0015552839346933745,
+        "peak": 0.3391582406061559,
+        "deadline": 7.6525,
+        "lastLaunch": null,
+        "strength": 0
+      },
+      "pulse": 0
+    }
+  ],
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending"
+}

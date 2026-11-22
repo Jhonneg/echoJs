@@ -1,4 +1,4 @@
-import { createVP00ReviewAudio, vp00Label } from './vp00Review'
+import { createVP00ReviewAudio, createVP05Tone, vp00Label } from './vp00Review'
 // Generated feature fixture only. No file/tab/audio nodes and no live-media inspector.
 import { createRoot } from 'react-dom/client'
 import { useEffect, useState } from 'react'
@@ -105,7 +105,14 @@ function read() {
     dpr: renderer.getPixelRatio(), renderer: extension ? renderer.getContext().getParameter(extension.UNMASKED_RENDERER_WEBGL) : 'unavailable',
     samples: frames.length }
 }
-const api = { event(strength: number, band: OnsetEvent['band'] = 'low') { const now = performance.now() / 1000; events.push({ session, sequence: ++sequence, band, timeSeconds: now, emittedAtSeconds: now, strength }) }, async review(record = false, valley = false, polish = false) {
+const api = { async tone(frequency: number, amplitude: number) {
+  stopReview();generatedReview = true;stationary = true;profile = 'candidate';gain = 1
+  fixedLight = fixedStreak = fixedProgress = null
+  if (inspect) { inspect[0].distance = 0;inspect[0].speed = 0 }
+  reviewURL = URL.createObjectURL(createVP05Tone(frequency, amplitude));reviewElement = new Audio(reviewURL)
+  reviewAnalysis.prepare();if (!reviewAnalysis.startElement(reviewElement)) throw Error('Generated tone analysis failed')
+  change();await reviewElement.play()
+}, event(strength: number, band: OnsetEvent['band'] = 'low') { const now = performance.now() / 1000; events.push({ session, sequence: ++sequence, band, timeSeconds: now, emittedAtSeconds: now, strength }) }, async review(record = false, valley = false, polish = false) {
   stopReview();generatedReview = true;stationary = !valley;profile = 'candidate';gain = 1
   fixedLight = fixedStreak = fixedProgress = null
   if (inspect) { inspect[0].distance = 0;inspect[0].speed = 0 }

@@ -26,3 +26,14 @@ export function createVP00ReviewAudio() {
   }
   return wav(samples, rate)
 }
+
+// VP05 generated band-isolation input; original VP00 comparison PCM above stays unchanged.
+export function createVP05Tone(frequency: number, amplitude: number) {
+  const rate = 48000, samples = new Float32Array(rate * 3.4)
+  for (let i = 0; i < samples.length; i++) {
+    const t = i / rate
+    const envelope = t < .5 || t >= 2.5 ? 0 : Math.max(0, Math.min(1, (t - .5) / .012, (2.5 - t) / .035))
+    samples[i] = Math.min(.5, Math.max(0, amplitude)) * envelope * Math.sin(2 * Math.PI * frequency * t)
+  }
+  return wav(samples, rate)
+}

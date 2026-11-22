@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { crimsonLowAccentDrive, crimsonTravelDrive, CRIMSON_MAX_SPEED } from '../src/scenes/crimson-horizon/response.ts'
+import { crimsonLowAccentDrive, CRIMSON_MAX_SPEED } from '../src/scenes/crimson-horizon/response.ts'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 import { createMusicPilot, updateMusicPilot } from '../src/scenes/crimson-horizon/musicPilot.ts'
 import { createValley, updateValley } from '../src/scenes/crimson-horizon/valley.ts'
@@ -10,7 +10,7 @@ test('modest low attacks get bounded ordered scene gain, preserving zero/full sc
   for(const strength of [0,.01,.03,.1,.25,.5,1]){const drive=crimsonLowAccentDrive(strength);assert.ok(drive>previous&&drive<=1);previous=drive}
   assert.equal(crimsonLowAccentDrive(0),0);assert.equal(crimsonLowAccentDrive(1),1)
   assert.ok(Math.abs(crimsonLowAccentDrive(.1)-.4)<1e-12)
-  assert.equal(crimsonTravelDrive(.25),1);assert.equal(crimsonTravelDrive(0),0);assert.equal(CRIMSON_MAX_SPEED,24)
+  assert.equal(CRIMSON_MAX_SPEED,24)
 })
 test('sun and valley interpret the same low event without changing the shared event or retriggering sustain',()=>{
   const store=createMusicFeatureStore(),pilot=createMusicPilot(),valley=createValley();let now=1,events=[],sequence=0
@@ -20,7 +20,7 @@ test('sun and valley interpret the same low event without changing the shared ev
   step();const event=Object.freeze({session:1,sequence:++sequence,band:'low',timeSeconds:now,emittedAtSeconds:now,strength:.1});events=[event]
   for(let i=0;i<3;i++)step()
   assert.ok(Math.abs(pilot.low-.4)<1e-12);assert.ok(Math.abs(valley.waves[0].strength-.4)<1e-12);assert.equal(event.strength,.1)
-  assert.ok(pilot.speed>16*Math.pow(.1/.35,1.2))
+  assert.equal(pilot.speed,24)
   for(let i=0;i<600;i++)step()
   assert.equal(valley.launched,1);assert.equal(pilot.low,0);assert.ok(Math.abs(pilot.body-.1/.35)<1e-10)
 })

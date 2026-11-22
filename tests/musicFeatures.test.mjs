@@ -64,7 +64,7 @@ test('isolated strengths proportional, bands independent, cadence peak variation
   }
   assert.equal(onsetEnvelope(-1),0);assert.equal(onsetEnvelope(3),0)
 })
-test('energy is monotonic, constant energy never pulses; motion overrides, silence and terrain clamp are safe', () => {
+test('sun energy is monotonic, constant energy never pulses; reduced motion and terrain clamp remain safe', () => {
   let previous=0
   for(const energy of [.001,.1,.3,.6,1]) {
     const { snapshot, bridge }=setup(), p=createMusicPilot(), j=createJourney(), signal=silentSignal()

@@ -6,7 +6,7 @@
 
 **Project:** [Jhonneg/echoJs](https://github.com/Jhonneg/echoJs)
 
-**Current checkpoint (2026-11-21):** Music Intelligence is implemented. VM02 is **APPROVED** per the owner checkpoint supplied with this roadmap and explicit authorization to proceed to VM03. Its stationary demonstration is verified: [VM02 review](VM02_REVIEW.md), [21.1-second recording](evidence/vm02-stationary-review.mp4), [measurements](evidence/vm02-verification.json). This supersedes the original undocumented-demo assumption. VM03 is **APPROVED** by owner “proceed”; [review and evidence](VM03_REVIEW.md). VM01 is **APPROVED** by owner “looks good” ([review](VM01_REVIEW.md)); VM04 is **APPROVED** by owner “no, lets move” ([review](VM04_REVIEW.md)); VM05 is **APPROVED** by owner “lets go” ([review](VM05_REVIEW.md)); VM06 is **APPROVED / CLOSED** by explicit owner completion declaration ([historical review limits](VM06_REVIEW.md)); the activity halo remains preserved.
+**Current checkpoint (2026-11-21):** Music Intelligence is implemented. VM02 is **APPROVED** per the owner checkpoint supplied with this roadmap and explicit authorization to proceed to VM03. Its stationary demonstration is verified: [VM02 review](reports/crimson/VM02_REVIEW.md), [21.1-second recording](evidence/crimson/vm02/vm02-stationary-review.mp4), [measurements](evidence/crimson/vm02/vm02-verification.json). This supersedes the original undocumented-demo assumption. VM03 is **APPROVED** by owner “proceed”; [review and evidence](reports/crimson/VM03_REVIEW.md). VM01 is **APPROVED** by owner “looks good” ([review](reports/crimson/VM01_REVIEW.md)); VM04 is **APPROVED** by owner “no, lets move” ([review](reports/crimson/VM04_REVIEW.md)); VM05 is **APPROVED** by owner “lets go” ([review](reports/crimson/VM05_REVIEW.md)); VM06 is **APPROVED / CLOSED** by explicit owner completion declaration ([historical review limits](reports/crimson/VM06_REVIEW.md)); the activity halo remains preserved.
 
 > Repository contents and the current signal contract are authoritative. Reconcile this roadmap against the actual code before editing; do not overwrite newer verified status.
 
@@ -75,7 +75,7 @@ These are frequency *features*, not guaranteed instrument separation, beat predi
 
 ### VM03 — Reactive Valley Floor
 
-**Status:** APPROVED by owner “proceed” (2026-11-21). See [VM03_REVIEW.md](VM03_REVIEW.md).
+**Status:** APPROVED by owner “proceed” (2026-11-21). See [VM03_REVIEW.md](reports/crimson/VM03_REVIEW.md).
 
 **Goal:** Make the large dark foreground participate through light propagation while keeping the canyon minimal.
 
@@ -91,7 +91,7 @@ These are frequency *features*, not guaranteed instrument separation, beat predi
 
 ### VM01 — Sun and corona refinement
 
-**Status:** APPROVED — owner “looks good” after combined sun/corona refinement. See [VM01_REVIEW.md](VM01_REVIEW.md).
+**Status:** APPROVED — owner “looks good” after combined sun/corona refinement. See [VM01_REVIEW.md](reports/crimson/VM01_REVIEW.md).
 
 - Sustained bass controls a restrained, proportional body expansion (15% cap); owner-approved VM01 refinement adds a brief onset expansion up to5% (20% combined), with corona brightness gently reduced during expansion.
 - Bass onset strength drives a separate corona flash or thin outward halo; one event per attack.
@@ -103,7 +103,7 @@ These are frequency *features*, not guaranteed instrument separation, beat predi
 
 ### VM04 — High-frequency atmosphere
 
-**Status:** APPROVED — owner “no, lets move” (2026-11-22). See [VM04_REVIEW.md](VM04_REVIEW.md).
+**Status:** APPROVED — owner “no, lets move” (2026-11-22). See [VM04_REVIEW.md](reports/crimson/VM04_REVIEW.md).
 
 - Presence: occasional small flashes/glints on distant peaks or near the horizon.
 - Air/treble: sparse fine atmospheric particles and subtle sun-edge shimmer.
@@ -114,7 +114,7 @@ These are frequency *features*, not guaranteed instrument separation, beat predi
 
 ### VM05 — Atmospheric intelligence
 
-**Status:** APPROVED — owner “lets go” (2026-11-22). See [VM05_REVIEW.md](VM05_REVIEW.md).
+**Status:** APPROVED — owner “lets go” (2026-11-22). See [VM05_REVIEW.md](reports/crimson/VM05_REVIEW.md).
 
 - Slowly modulate distant fog, horizon haze, sky warmth/brightness, and mountain depth contrast using verified slow musical context, not per-hit events.
 - Quiet music is spacious and subdued; dense passages feel richer and more luminous; silence retains a beautiful baseline.
@@ -124,7 +124,7 @@ These are frequency *features*, not guaranteed instrument separation, beat predi
 
 ### VM06 — Integrated choreography and release review
 
-**Status:** APPROVED / CLOSED by owner declaration of completed VM roadmap (2026-11-22). Automated integration passed; historical native/audio/device verification limits remain documented in [VM06_REVIEW.md](VM06_REVIEW.md).
+**Status:** APPROVED / CLOSED by owner declaration of completed VM roadmap (2026-11-22). Automated integration passed; historical native/audio/device verification limits remain documented in [VM06_REVIEW.md](reports/crimson/VM06_REVIEW.md).
 
 Combine only approved effects with a shared visual hierarchy. A strong bass attack can briefly expand sun corona and produce a delayed ground wave; midrange activity reveals/selectively lights ridges; high-frequency detail adds sparse micro-accents; slow musical context changes atmospheric depth. Avoid physically implausible or distracting cross-coupling solely for spectacle.
 

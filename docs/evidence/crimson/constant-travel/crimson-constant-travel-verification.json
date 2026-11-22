@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-22",
+  "generatedOnly": true,
+  "checks": [
+    "Constant24-unit speed in quiet/loud/silence/zero gain/stale data and both profiles",
+    "Distance advances without resets; reduced-motion freeze/resume and bounded geometry"
+  ],
+  "screenshots": [
+    "walking-silence.png"
+  ],
+  "performance": [],
+  "errors": [],
+  "cases": [
+    {
+      "options": {
+        "energy": 0,
+        "moving": false,
+        "gain": 1
+      },
+      "before": 22.399200000107292,
+      "after": 40.399200000107335,
+      "speed": 24,
+      "seconds": 0.752,
+      "blocked": false
+    },
+    {
+      "options": {
+        "energy": 1,
+        "moving": true,
+        "gain": 1
+      },
+      "before": 48.811200000107355,
+      "after": 66.79920000010739,
+      "speed": 24,
+      "seconds": 0.751,
+      "blocked": false
+    },
+    {
+      "options": {
+        "energy": 1,
+        "gain": 0
+      },
+      "before": 75.19680000007165,
+      "after": 93.19440000003593,
+      "speed": 24,
+      "seconds": 0.752,
+      "blocked": false
+    },
+    {
+      "options": {
+        "ticking": false
+      },
+      "before": 101.99520000010747,
+      "after": 119.99520000010752,
+      "speed": 24,
+      "seconds": 0.751,
+      "blocked": false
+    },
+    {
+      "options": {
+        "profile": "legacy"
+      },
+      "before": 128.39280000007176,
+      "after": 146.39520000010734,
+      "speed": 24,
+      "seconds": 0.751,
+      "blocked": false
+    },
+    {
+      "options": {
+        "profile": "candidate",
+        "ticking": true,
+        "energy": 0,
+        "moving": false
+      },
+      "before": 154.79280000007154,
+      "after": 172.79520000010714,
+      "speed": 24,
+      "seconds": 0.752,
+      "blocked": false
+    }
+  ],
+  "reduced": {
+    "stopped": 175.1904000000356,
+    "resumed": 178.79519999992826
+  },
+  "environment": {
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+  },
+  "status": "generated checks passed; owner appearance/music review pending"
+}

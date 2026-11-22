@@ -1,4 +1,4 @@
-import { crimsonLowAccentDrive, crimsonTravelDrive, CRIMSON_MAX_SPEED } from './response.ts'
+import { crimsonLowAccentDrive, CRIMSON_MAX_SPEED } from './response.ts'
 import { createAtmosphere, updateAtmosphere } from './atmosphere.ts'
 import { createContourLighting, updateContourLighting } from './contours.ts'
 import { clampSignal } from '../../audio/signal.ts'
@@ -78,8 +78,7 @@ export function updateMusicPilot(state: MusicPilot, reader: MusicFeatureReader, 
   state.body += (bodyTarget - state.body) * (1 - Math.exp(-dt / (reduced ? 1.5 : bodyTarget > state.body ? .18 : .65)))
   if (bodyTarget === 0 && state.body < .0001) state.body = 0
   state.sun = fresh ? crimsonVisualDrive(.75 * energy.low + .25 * energy.overall) * gain : 0
-  const speed = fresh ? CRIMSON_MAX_SPEED * gain * Math.pow(crimsonTravelDrive(energy.overall), 1.2) : 0
-  state.speed = speed < .005 ? 0 : speed
+  state.speed = CRIMSON_MAX_SPEED
   const glowTarget = fresh ? clampSignal(view.context.activity) * gain : 0
   const currentGlow = state.glowActivity ?? 0
   const glowTau = reduced ? 1.5 : glowTarget > currentGlow ? .12 : .45

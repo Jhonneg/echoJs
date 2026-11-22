@@ -17,7 +17,7 @@ function signalWith(count, level = 0.6) {
   for (const band of SIX_BAND_NAMES.slice(0, count)) signal.sixBands[band] = level
   return signal
 }
-test('sun target follows the number of active bands and travel follows energy', () => {
+test('sun target follows active bands while travel stays constant independently of energy', () => {
   let previous = -1
   for (let count = 0; count <= 6; count++) {
     const state = createJourney(), signal = signalWith(count)
@@ -26,15 +26,14 @@ test('sun target follows the number of active bands and travel follows energy', 
     assert.ok(Math.abs(state.sun - count / 6) < 0.00001)
     assert.ok(state.sun > previous)
     previous = state.sun
-    assert.equal(state.distance > 0, count > 0)
+    assert.ok(Math.abs(state.distance-96)<1e-9)
   }
   const quiet = createJourney(), loud = createJourney()
   feed(quiet, signalWith(6, 0.2), 2)
   feed(loud, signalWith(6, 0.9), 2)
-  assert.ok(loud.distance > quiet.distance && loud.speed <= 16)
-  assert.ok(quiet.speed < 1.5, 'quiet music should remain slower than energetic music')
-  assert.ok(loud.speed > 12, 'strong music should drive noticeably faster travel')
-  assert.ok(loud.speed / quiet.speed > 6, 'slow and fast travel should be clearly separated')
+  assert.ok(Math.abs(loud.distance-quiet.distance)<1e-9)
+  assert.equal(loud.speed,24);assert.equal(quiet.speed,24)
+
 })
 test('sun pulses only on strong bass accents, decays, and respects motion settings', () => {
   const signal = signalWith(6), state = createJourney()
@@ -68,7 +67,7 @@ test('sun pulses only on strong bass accents, decays, and respects motion settin
   signal.isPlaying = false
   feed(state, signal, 3)
   assert.equal(state.sunPulse, 0)
-  assert.equal(state.speed, 0)
+  assert.equal(state.speed, 24)
 })
 
 test('band hysteresis holds brief gaps and releases sustained silence', () => {
@@ -84,10 +83,10 @@ test('band hysteresis holds brief gaps and releases sustained silence', () => {
   assert.equal(state.activeCount, 0)
   signal.sixBands.subBass = 0
   feed(state, signal, 4)
-  assert.equal(state.speed, 0)
+  assert.equal(state.speed, 24)
   assert.ok(state.sun < 0.01)
 })
-test('pause, stale input, zero Reactivity and reduced motion stop progress without resetting it', () => {
+test('only reduced motion freezes travel; pause, stale input and zero Reactivity keep constant progress', () => {
   for (const mode of ['pause', 'stale', 'zero', 'reduced']) {
     const state = createJourney(), signal = signalWith(6)
     feed(state, signal, 1)
@@ -95,8 +94,8 @@ test('pause, stale input, zero Reactivity and reduced motion stop progress witho
     if (mode === 'pause') signal.isPlaying = false
     updateJourney(state, signal, mode === 'zero' ? 0 : 1, mode === 'reduced', 1 / 60,
       mode === 'stale' ? signal.updatedAt + 251 : signal.updatedAt)
-    assert.equal(state.distance, previous)
-    assert.equal(state.speed, 0)
+    if(mode==='reduced'){assert.equal(state.distance,previous);assert.equal(state.speed,0)}
+    else{assert.ok(Math.abs(state.distance-previous-.4)<1e-9);assert.equal(state.speed,24)}
     if (mode === 'pause' || mode === 'stale') assert.equal(state.activeCount, 0)
   }
 })
@@ -108,6 +107,7 @@ test('forward integration is consistent at common render cadences and never cros
     distances.push(state.distance)
   }
   assert.ok(Math.abs(distances[0] - distances[2]) < 1e-8)
+  assert.ok(Math.abs(distances[0]-240)<1e-8)
   const state = createJourney()
   feed(state, signalWith(6), 10, 1, false, 60, 2)
   assert.equal(state.distance, 2)
@@ -165,4 +165,12 @@ test('render origin rebasing preserves relative camera-to-terrain positions', ()
       assert.ok(Math.abs((chunkRenderZ(index, distance) - localCameraZ(distance)) - (-index * 48 - 24 + distance)) < 1e-8)
     }
   }
+})
+
+test('disconnected silence travels at the same rate from the first frame and resumes exactly after a loading hold',()=>{
+  const state=createJourney(),signal=silentSignal()
+  updateJourney(state,signal,0,false,1/60,1,0)
+  assert.equal(state.distance,0);assert.equal(state.speed,0);assert.equal(state.blocked,true)
+  updateJourney(state,signal,0,false,1/60,2,100)
+  assert.equal(state.speed,24);assert.equal(state.distance,.4)
 })

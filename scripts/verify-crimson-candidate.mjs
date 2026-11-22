@@ -33,6 +33,7 @@ try {
     for(const Type of [WebGLRenderingContext,WebGL2RenderingContext]) {
       const locations=new WeakMap(),get=Type.prototype.getUniformLocation,set=Type.prototype.uniform1f;
       Type.prototype.getUniformLocation=function(program,name){const location=get.call(this,program,name);if(location)locations.set(location,name);return location};
+      const set3=Type.prototype.uniform3f;Type.prototype.uniform3f=function(location,x,y,z){if(locations.get(location)==='cameraPosition')window.__crimsonCamera={x,y,z};return set3.call(this,location,x,y,z)};
       Type.prototype.uniform1f=function(location,value){const name=locations.get(location);if(name){window.__values[name]=value;window.__peaks[name]=Math.max(window.__peaks[name]||0,value)}return set.call(this,location,value)};
     }
   })()`})
@@ -41,6 +42,10 @@ try {
   await select('scene-select','crimson-horizon')
   await wait(`window.__values.musicWeight===1`)
   assert.equal(await evaluate(`!!document.getElementById('crimson-profile')||!!document.getElementById('baseline')`),false)
+  const idleBefore=await evaluate('window.__crimsonCamera');await pause(500);const idleAfter=await evaluate('window.__crimsonCamera')
+  assert.ok(idleBefore&&idleAfter);const idleTravel=(idleBefore.z-idleAfter.z+48)%48;assert.ok(idleTravel>6&&idleTravel<20)
+  evidence.idleTravel={before:idleBefore,after:idleAfter,localAdvance:idleTravel};evidence.checks.push('Production Crimson camera advances before audio acquisition')
+
   // Generated three-band bursts. One locally synthesized WAV, never a private file.
   await evaluate(`(()=>{
     const rate=48000,length=rate*24,buffer=new ArrayBuffer(44+length*2),v=new DataView(buffer);

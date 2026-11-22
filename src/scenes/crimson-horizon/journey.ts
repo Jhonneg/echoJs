@@ -1,3 +1,4 @@
+import { CRIMSON_MAX_SPEED } from './response.ts'
 import type { MusicPilot } from './musicPilot.ts'
 import { SIX_BAND_NAMES, clampSignal, smooth, type AudioSignal } from '../../audio/signal.ts'
 
@@ -12,10 +13,9 @@ export function updateJourney(state: Journey, signal: AudioSignal, reactivity: n
   const dt = Math.max(0, Math.min(Number.isFinite(delta) ? delta : 0, 0.05))
   const gain = clampSignal(reactivity)
   const playing = signal.isPlaying && signal.updatedAt > 0 && now - signal.updatedAt <= 250
-  let squares = 0, count = 0
+  let count = 0
   for (let index = 0; index < SIX_BAND_NAMES.length; index++) {
     const level = playing ? clampSignal(signal.sixBands[SIX_BAND_NAMES[index]]) : 0
-    squares += level * level
     if (!playing) {
       state.active[index] = false
       state.quiet[index] = 0
@@ -42,19 +42,13 @@ export function updateJourney(state: Journey, signal: AudioSignal, reactivity: n
   if (pulseTarget === 0 && state.legacyPulse < 0.0001) state.legacyPulse = 0
   state.sunPulse = state.legacyPulse * (1 - weight) + (pilot?.low ?? 0) * weight
   state.blocked = false
-  if ((!playing && !(pilot?.enabled && weight > 0)) || (pilot?.profile === 'candidate' && !pilot.enabled) || gain === 0 || reducedMotion) {
+  // Forward travel is an ambient scene property, independent of audio and Reactivity.
+  if (reducedMotion) {
     state.speed = 0
     return
   }
-  const energy = Math.sqrt(squares / SIX_BAND_NAMES.length)
-  const legacySpeed = count > 0 && playing ? gain * (0.4 + 15.6 * Math.pow(energy, 1.7)) : 0
-  const targetSpeed = legacySpeed * (1 - weight) + (pilot?.speed ?? 0) * weight
-  const response = targetSpeed > state.speed ? 0.35 : 0.2 + .3 * weight
-  const decay = Math.exp(-dt / response)
-  const travel = targetSpeed * dt + (state.speed - targetSpeed) * response * (1 - decay)
-  state.speed = targetSpeed + (state.speed - targetSpeed) * decay
-  if (targetSpeed === 0 && state.speed < 0.005) state.speed = 0
-  const next = state.distance + (state.speed === 0 ? 0 : travel)
+  state.speed = CRIMSON_MAX_SPEED
+  const next = state.distance + state.speed * dt
   state.blocked = next > distanceLimit + 0.00001
   state.distance = Math.max(state.distance, Math.min(next, distanceLimit))
   if (state.blocked) state.speed = 0

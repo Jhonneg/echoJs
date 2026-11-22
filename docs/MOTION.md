@@ -142,7 +142,7 @@ Owner clarified that lights should illuminate smoothly, faster than the first N0
 
 ## Planned Music Intelligence refinement — 2026-11-18
 
-Owner selected expressive/controlled refinement with Crimson as the future pilot, subtle terrain deformation and transitions within music/playback. [ANIMATION_REFINEMENT.md](ANIMATION_REFINEMENT.md) records the intended feature roles, two-pass Crimson approach, caps and preservation rules. This is a future direction after MI03/MI04 and feature-quality review; it does not replace the implemented response constants or authorize immediate scene changes. Onsets will be discrete, strength-qualified events with identity/timing; camera kicks, BPM claims, random flicker and scene-switch transition work are excluded. Existing scene-specific reduced-motion and zero-Reactivity behavior remains the baseline. The next deliverable/approval is [MI03_PLAN.md](MI03_PLAN.md).
+Owner selected expressive/controlled refinement with Crimson as the future pilot, subtle terrain deformation and transitions within music/playback. [ANIMATION_REFINEMENT.md](ANIMATION_REFINEMENT.md) records the intended feature roles, two-pass Crimson approach, caps and preservation rules. This is a future direction after MI03/MI04 and feature-quality review; it does not replace the implemented response constants or authorize immediate scene changes. Onsets will be discrete, strength-qualified events with identity/timing; camera kicks, BPM claims, random flicker and scene-switch transition work are excluded. Existing scene-specific reduced-motion and zero-Reactivity behavior remains the baseline. The next deliverable/approval is [MI03_PLAN.md](reports/music-intelligence/MI03_PLAN.md).
 
 ## Crimson bounded vertex pass — 2026-11-21
 
@@ -169,3 +169,5 @@ Owner-approved VP01 exception: Candidate body reaches15% expansion at fixed bass
 VP02: high-mid contour rise uses scene curve1.15s/(s+.15),35ms eased attack,180ms initial peak and1.25s total travel/fade, shorter tail and brighter selected head. Low-mid320/750ms light and qualifier/rearm unchanged; no sustain retrigger or bass coupling.
 
 VP03 adjusts only depth/material/horizon color distribution. Existing atmospheric2/4s easing (4/6s reduced), all hit envelopes and camera route/speed remain; near/mid/far separation adds no new motion.
+
+Current Crimson walking override (owner2026-11-22): fixed24 units/second, independent of energy, profile, pause, silence, stale/disconnected source or Reactivity. No speed envelope or catch-up; keep existing50ms delta cap, logical distance/rebase/loaded-terrain guard. Reduced motion freezes travel and resuming uses the fixed speed without resetting distance. Prior Crimson audio-driven travel sections are historical; other worlds and all musical effect envelopes remain unchanged.

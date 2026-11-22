@@ -3,8 +3,10 @@
 **Project:** [Jhonneg/echoJs](https://github.com/Jhonneg/echoJs)
 **Suggested repository path:** `docs/CRIMSON_VISUAL_POLISH_ROADMAP.md`
 **Phase:** Post–Visual Mapping polish (VP)
-**Current checkpoint (2026-11-22):** Mapping VM00–VM06 closed by explicit owner declaration. Repository baseline6281d27 (`crinsmom complete`) is clean at start. VP00 APPROVED by owner “lets move” ([baseline](VP00_BASELINE.md)); VP01 APPROVED by owner “aproved” ([review](VP01_REVIEW.md)); VP02 APPROVED by owner “its aproved” ([review](VP02_REVIEW.md)); VP03 APPROVED by owner “looks good, lets stop for now” ([review](VP03_REVIEW.md)); VP04–VP05 NOT STARTED.
-**Next work:** Stopped at owner request. VP04 sun proportionality and cross-effect balance remains NOT STARTED; resume on “Continue Crimson polish.”
+**Current checkpoint (2026-11-22):** Mapping VM00–VM06 closed by explicit owner declaration. Repository baseline6281d27 (`crinsmom complete`) is clean at start. VP00 APPROVED by owner “lets move” ([baseline](reports/crimson/VP00_BASELINE.md)); VP01 APPROVED by owner “aproved” ([review](reports/crimson/VP01_REVIEW.md)); VP02 APPROVED by owner “its aproved” ([review](reports/crimson/VP02_REVIEW.md)); VP03 APPROVED by owner “looks good, lets stop for now” ([review](reports/crimson/VP03_REVIEW.md)); VP04 APPROVED by owner “lets do it” ([review](reports/crimson/VP04_REVIEW.md)); constant walking APPROVED; VP05 APPROVED by owner “aproved” (2026-11-22). All polish milestones complete.
+**Next work:** None for Crimson. The separate star visibility follow-up is approved by owner “looks better now” (see PROGRESS.md); VP00–VP05 stay closed. [VP05_REVIEW.md](reports/crimson/VP05_REVIEW.md) and before/after evidence retained. Stop further Crimson changes unless the owner requests a specific bug fix or new work.
+
+**Latest owner-directed motion override (2026-11-22):** Forward travel is constant24 units/second through silence, pause, disconnected/stale sources and zero Reactivity. Reduced motion freezes travel; loaded-terrain safety still holds. This supersedes prior energy-driven speed/easing/silence-stop requirements only. Musical lighting/size mappings remain independent and unchanged. VP04 and constant walking accepted by owner “lets do it”; VP05 is approved; Crimson polish is complete.
 
 ## 1. Purpose and current state
 
@@ -51,7 +53,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP00 — Baseline and comparative capture
 
-**Status:** APPROVED — owner “lets move” (2026-11-22). See [VP00_BASELINE.md](VP00_BASELINE.md). Screenshot sequences accepted; attempted canvas video exports rejected after inspection (capture artifacts).
+**Status:** APPROVED — owner “lets move” (2026-11-22). See [VP00_BASELINE.md](reports/crimson/VP00_BASELINE.md). Screenshot sequences accepted; attempted canvas video exports rejected after inspection (capture artifacts).
 **Goal:** Make later adjustments objectively comparable and protect finished VM work.
 
 **Tasks**
@@ -68,7 +70,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 **Owner-approved scope exception (2026-11-22):** After real-music feedback, owner explicitly approves combined responsiveness tuning within the current checkpoint: make15% sustained/5% onset sun expansion easier to reach, boost modest low-event ground response, increase travel cap16→24 units/s and strengthen moderate-energy travel. Camera route, authored landscape and shared MI remain unchanged. This does not start VP02 or automatically complete later balance review.
 
-**Status:** APPROVED — owner “aproved” (2026-11-22), including [combined responsiveness tuning](CRIMSON_RESPONSIVENESS.md). See [VP01_REVIEW.md](VP01_REVIEW.md).
+**Status:** APPROVED — owner “aproved” (2026-11-22), including [combined responsiveness tuning](reports/crimson/CRIMSON_RESPONSIVENESS.md). See [VP01_REVIEW.md](reports/crimson/VP01_REVIEW.md).
 **Goal:** Make the existing low-frequency wave visibly propagate through the canyon without dominating the scene.
 
 **Tasks**
@@ -93,7 +95,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP02 — Mountain streak readability
 
-**Status:** APPROVED — owner “its aproved” (2026-11-22). See [VP02_REVIEW.md](VP02_REVIEW.md).
+**Status:** APPROVED — owner “its aproved” (2026-11-22). See [VP02_REVIEW.md](reports/crimson/VP02_REVIEW.md).
 **Goal:** Make existing midrange illumination and traveling heads distinguishable without creating neon wireframes.
 
 **Tasks**
@@ -117,7 +119,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP03 — Depth and restrained atmosphere
 
-**Status:** APPROVED — owner “looks good, lets stop for now” (2026-11-22). See [VP03_REVIEW.md](VP03_REVIEW.md).
+**Status:** APPROVED — owner “looks good, lets stop for now” (2026-11-22). See [VP03_REVIEW.md](reports/crimson/VP03_REVIEW.md).
 **Goal:** Improve near/mid/far separation while preserving the minimalist color scheme.
 
 **Tasks**
@@ -139,7 +141,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP04 — Sun proportionality and cross-effect balance
 
-**Status:** NOT STARTED.
+**Status:** APPROVED — owner “lets do it” (2026-11-22). Balance verified with approved production tuning preserved; see [VP04_REVIEW.md](reports/crimson/VP04_REVIEW.md).
 **Goal:** Make the completed environment read as one composition, not competing independent effects.
 
 **Tasks**
@@ -160,7 +162,7 @@ Use statuses `NOT STARTED`, `IN PROGRESS`, `IMPLEMENTED — AWAITING OWNER REVIE
 
 ### VP05 — Final A/B, accessibility and release review
 
-**Status:** NOT STARTED.
+**Status:** APPROVED — owner “aproved” (2026-11-22). Automated final checks and bounded GPU cleanup repair complete; see [VP05_REVIEW.md](reports/crimson/VP05_REVIEW.md). Final artistic gate accepted. Native/device checks without reported evidence remain explicitly unverified; no deployment authorization implied.
 **Goal:** Determine whether the polish is genuinely finished, then stop.
 
 **Checks**

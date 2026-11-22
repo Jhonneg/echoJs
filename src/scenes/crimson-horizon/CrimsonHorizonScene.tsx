@@ -6,7 +6,7 @@ import { createMusicPilot, updateMusicPilot, type CrimsonProfile, type MusicPilo
 import type { AudioSignal } from '../../audio/signal'
 import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
-import { BackSide, Mesh, ShaderMaterial, Vector3, type Scene, type Camera, type WebGLRenderer } from 'three'
+import { BackSide, BufferAttribute, BufferGeometry, Mesh, ShaderMaterial, Vector3, type Scene, type Camera, type WebGLRenderer } from 'three'
 import { contourOrigin } from './contours'
 import { createJourney, updateJourney, type Journey } from './journey'
 import { createTerrainStream, chunkIndexAt, localCameraZ, chunkRenderZ, type TerrainEntry, type TerrainSnapshot } from './terrainStream'
@@ -55,9 +55,9 @@ void main() {
   vec2 coordinate = ray.xy * 95.0;
   vec2 cell = floor(coordinate);
   float pick = fract(sin(dot(cell, vec2(127.1, 311.7))) * 43758.5453);
-  float speck = exp(-dot(fract(coordinate) - .5, fract(coordinate) - .5) * 80.0);
+  float speck = exp(-dot(fract(coordinate) - .5, fract(coordinate) - .5) * 55.0);
   float band = smoothstep(-.02, .04, ray.y) * (1.0 - smoothstep(.22, .4, ray.y));
-  gl_FragColor = vec4(atmosphericNight(ray, atmosphereDensity, atmosphereWarmth) + vec3(.7, .22, .45) * speck * step(1.0-detailDensity, pick) * band * airAccent * 1.8, 1.0);
+  gl_FragColor = vec4(atmosphericNight(ray, atmosphereDensity, atmosphereWarmth) + vec3(.7, .22, .45) * speck * step(1.0-detailDensity, pick) * band * (.018 + airAccent * 2.5), 1.0);
   #include <colorspace_fragment>
 }`
 
@@ -69,6 +69,17 @@ type CompositionProps = { quality: GraphicsQuality, target: RefObject<{ x: numbe
 
 function TerrainChunk({ entry, meshes, materials }: { entry: TerrainEntry, meshes: RefObject<Map<number, Mesh>>,
   materials: RefObject<Map<number, ShaderMaterial>> }) {
+  // Keep attributes attached until disposal so Three can release their GPU buffers.
+  // JSX attribute children detach before R3F's deferred geometry disposal.
+  const geometry = useMemo(() => {
+    const value = new BufferGeometry()
+    value.setAttribute('position', new BufferAttribute(entry.data.positions, 3))
+    value.setAttribute('normal', new BufferAttribute(entry.data.normals, 3))
+    value.setAttribute('terrainFeatures', new BufferAttribute(entry.data.features, 4))
+    value.setAttribute('terrainFold', new BufferAttribute(entry.data.folds, 1))
+    return value
+  }, [entry.data])
+  useEffect(() => () => geometry.dispose(), [geometry])
   const uniforms = useMemo(() => ({ atmosphereDensity: { value: 0 }, atmosphereWarmth: { value: 0 }, presenceAccent: { value: 0 }, activity: { value: 0 }, contourLight: { value: 0 }, contourStreak: { value: 0 },
     valleyWaves: { value: new Float32Array(16) }, valleyGlow: { value: 0 }, valleyOrigin: { value: valleyOrigin(entry.index) },
     contourProgress: { value: 0 }, contourOrigin: { value: contourOrigin(entry.index) },
@@ -77,12 +88,7 @@ function TerrainChunk({ entry, meshes, materials }: { entry: TerrainEntry, meshe
     if (mesh) meshes.current.set(entry.index, mesh)
     else meshes.current.delete(entry.index)
   }}>
-    <bufferGeometry>
-      <bufferAttribute attach="attributes-position" args={[entry.data.positions, 3]} />
-      <bufferAttribute attach="attributes-normal" args={[entry.data.normals, 3]} />
-      <bufferAttribute attach="attributes-terrainFeatures" args={[entry.data.features, 4]} />
-      <bufferAttribute attach="attributes-terrainFold" args={[entry.data.folds, 1]} />
-    </bufferGeometry>
+    <primitive attach="geometry" object={geometry} />
     <shaderMaterial ref={material => {
       if (material) materials.current.set(entry.index, material)
       else materials.current.delete(entry.index)
