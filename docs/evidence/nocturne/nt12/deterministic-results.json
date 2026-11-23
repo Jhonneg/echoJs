@@ -1,5 +1,5 @@
 {
-  "baseline": "/tmp/echo-nt12-baseline-489bzD",
+  "baseline": "/tmp/echo-nt12-baseline-OxRkB1",
   "contract": {
     "summary": {
       "cases": 54,
@@ -2574,7 +2574,7 @@
             "session": 1,
             "frame": 305,
             "updatedAtSeconds": 11.166666666666638,
-            "status": "inactive",
+            "status": "active",
             "sampleRate": 48000,
             "fftSize": 2048,
             "energy": {
@@ -2627,19 +2627,19 @@
           },
           "channels": {
             "magentaMain": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.22857142857142862,
               "accent": 0,
-              "level": 0
+              "level": 0.055436542080693395
             },
             "magentaSecondary": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.08228571428571428,
               "accent": 0,
-              "level": 0
+              "level": 0.008653221930703286
             },
             "cyanWindows": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.030857142857142857,
               "accent": 0,
-              "level": 0
+              "level": 0.002803172619804283
             },
             "cyanDetails": {
               "sustainTarget": 0,
@@ -2647,19 +2647,19 @@
               "level": 0
             },
             "cyanPanel": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.26,
               "accent": 0,
-              "level": 0
+              "level": 0.1108241106082675
             },
             "violet": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.02742857142857143,
               "accent": 0,
-              "level": 0
+              "level": 0.015508163423805853
             },
             "violetSecondary": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.02742857142857143,
               "accent": 0,
-              "level": 0
+              "level": 0.015508163423805853
             },
             "bridge": {
               "sustainTarget": 0,
@@ -2686,15 +2686,15 @@
           "materials": [
             {
               "channel": "magentaMain",
-              "value": 0
+              "value": 0.07206750470490142
             },
             {
               "channel": "magentaSecondary",
-              "value": 0
+              "value": 0.011249188509914273
             },
             {
               "channel": "cyanWindows",
-              "value": 0
+              "value": 0.003644124405745568
             },
             {
               "channel": "cyanDetails",
@@ -2702,15 +2702,15 @@
             },
             {
               "channel": "cyanPanel",
-              "value": 0
+              "value": 0.14407134379074774
             },
             {
               "channel": "violet",
-              "value": 0
+              "value": 0.02016061245094761
             },
             {
               "channel": "violetSecondary",
-              "value": 0
+              "value": 0.02016061245094761
             },
             {
               "channel": "bridge",
@@ -2746,7 +2746,7 @@
           "lights": [
             {
               "channel": "magentaMain",
-              "value": 0
+              "value": 2.77182710403467
             },
             {
               "channel": "bridge",
@@ -2754,7 +2754,7 @@
             },
             {
               "channel": "cyanWindows",
-              "value": 0
+              "value": 0.1822062202872784
             },
             {
               "channel": "cyanDetails",
@@ -2762,15 +2762,15 @@
             },
             {
               "channel": "cyanPanel",
-              "value": 0
+              "value": 3.324723318248025
             },
             {
               "channel": "violet",
-              "value": 0
+              "value": 0.18609796108567023
             },
             {
               "channel": "violetSecondary",
-              "value": 0
+              "value": 0.18609796108567023
             }
           ]
         },
@@ -6191,7 +6191,7 @@
             "session": 1,
             "frame": 608,
             "updatedAtSeconds": 11.133333333333464,
-            "status": "inactive",
+            "status": "active",
             "sampleRate": 48000,
             "fftSize": 2048,
             "energy": {
@@ -6244,19 +6244,19 @@
           },
           "channels": {
             "magentaMain": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.22857142857142862,
               "accent": 0,
-              "level": 0
+              "level": 0.029640062666653585
             },
             "magentaSecondary": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.08228571428571428,
               "accent": 0,
-              "level": 0
+              "level": 0.00444676370138616
             },
             "cyanWindows": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.030857142857142857,
               "accent": 0,
-              "level": 0
+              "level": 0.0014349511079955783
             },
             "cyanDetails": {
               "sustainTarget": 0,
@@ -6264,19 +6264,19 @@
               "level": 0
             },
             "cyanPanel": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.26,
               "accent": 0,
-              "level": 0
+              "level": 0.06305906661678873
             },
             "violet": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.02742857142857143,
               "accent": 0,
-              "level": 0
+              "level": 0.009346542714502115
             },
             "violetSecondary": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.02742857142857143,
               "accent": 0,
-              "level": 0
+              "level": 0.009346542714502115
             },
             "bridge": {
               "sustainTarget": 0,
@@ -6303,15 +6303,15 @@
           "materials": [
             {
               "channel": "magentaMain",
-              "value": 0
+              "value": 0.03853208146664966
             },
             {
               "channel": "magentaSecondary",
-              "value": 0
+              "value": 0.005780792811802008
             },
             {
               "channel": "cyanWindows",
-              "value": 0
+              "value": 0.0018654364403942517
             },
             {
               "channel": "cyanDetails",
@@ -6319,15 +6319,15 @@
             },
             {
               "channel": "cyanPanel",
-              "value": 0
+              "value": 0.08197678660182535
             },
             {
               "channel": "violet",
-              "value": 0
+              "value": 0.01215050552885275
             },
             {
               "channel": "violetSecondary",
-              "value": 0
+              "value": 0.01215050552885275
             },
             {
               "channel": "bridge",
@@ -6363,7 +6363,7 @@
           "lights": [
             {
               "channel": "magentaMain",
-              "value": 0
+              "value": 1.4820031333326793
             },
             {
               "channel": "bridge",
@@ -6371,7 +6371,7 @@
             },
             {
               "channel": "cyanWindows",
-              "value": 0
+              "value": 0.09327182201971258
             },
             {
               "channel": "cyanDetails",
@@ -6379,15 +6379,15 @@
             },
             {
               "channel": "cyanPanel",
-              "value": 0
+              "value": 1.8917719985036618
             },
             {
               "channel": "violet",
-              "value": 0
+              "value": 0.11215851257402537
             },
             {
               "channel": "violetSecondary",
-              "value": 0
+              "value": 0.11215851257402537
             }
           ]
         },
@@ -9808,7 +9808,7 @@
             "session": 1,
             "frame": 1214,
             "updatedAtSeconds": 11.116666666666678,
-            "status": "inactive",
+            "status": "active",
             "sampleRate": 48000,
             "fftSize": 2048,
             "energy": {
@@ -9861,19 +9861,19 @@
           },
           "channels": {
             "magentaMain": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.22857142857142862,
               "accent": 0,
-              "level": 0
+              "level": 0.01533440905436631
             },
             "magentaSecondary": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.08228571428571428,
               "accent": 0,
-              "level": 0
+              "level": 0.002254260168711908
             },
             "cyanWindows": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.030857142857142857,
               "accent": 0,
-              "level": 0
+              "level": 0.0007260165261593507
             },
             "cyanDetails": {
               "sustainTarget": 0,
@@ -9881,19 +9881,19 @@
               "level": 0
             },
             "cyanPanel": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.26,
               "accent": 0,
-              "level": 0
+              "level": 0.033715571283318445
             },
             "violet": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.02742857142857143,
               "accent": 0,
-              "level": 0
+              "level": 0.005158317362725439
             },
             "violetSecondary": {
-              "sustainTarget": 0,
+              "sustainTarget": 0.02742857142857143,
               "accent": 0,
-              "level": 0
+              "level": 0.005158317362725439
             },
             "bridge": {
               "sustainTarget": 0,
@@ -9920,15 +9920,15 @@
           "materials": [
             {
               "channel": "magentaMain",
-              "value": 0
+              "value": 0.019934731770676204
             },
             {
               "channel": "magentaSecondary",
-              "value": 0
+              "value": 0.0029305382193254804
             },
             {
               "channel": "cyanWindows",
-              "value": 0
+              "value": 0.0009438214840071559
             },
             {
               "channel": "cyanDetails",
@@ -9936,15 +9936,15 @@
             },
             {
               "channel": "cyanPanel",
-              "value": 0
+              "value": 0.04383024266831398
             },
             {
               "channel": "violet",
-              "value": 0
+              "value": 0.006705812571543071
             },
             {
               "channel": "violetSecondary",
-              "value": 0
+              "value": 0.006705812571543071
             },
             {
               "channel": "bridge",
@@ -9980,7 +9980,7 @@
           "lights": [
             {
               "channel": "magentaMain",
-              "value": 0
+              "value": 0.7667204527183156
             },
             {
               "channel": "bridge",
@@ -9988,7 +9988,7 @@
             },
             {
               "channel": "cyanWindows",
-              "value": 0
+              "value": 0.04719107420035779
             },
             {
               "channel": "cyanDetails",
@@ -9996,15 +9996,15 @@
             },
             {
               "channel": "cyanPanel",
-              "value": 0
+              "value": 1.0114671384995533
             },
             {
               "channel": "violet",
-              "value": 0
+              "value": 0.06189980835270527
             },
             {
               "channel": "violetSecondary",
-              "value": 0
+              "value": 0.06189980835270527
             }
           ]
         },

@@ -7,7 +7,7 @@ function fixture(){
  const state=createBridgeResponse(),view={session:1,sequence:0,status:'active',updatedAtSeconds:1,events:[],energy:{six:emptySixBands()}}
  let time=1
  function step({dt=1/120,gain=1,reduced=false,manual=false,now}={}){time+=dt;view.updatedAtSeconds=time;updateBridgeResponse(state,view,now??time,gain,reduced,manual)}
- function event(strength=.2,band='low',extra={}){view.events.push({session:view.session,sequence:++view.sequence,band,strength,emittedAtSeconds:time,timeSeconds:time,...extra})}
+ function event(strength=.2,band='high',extra={}){view.events.push({session:view.session,sequence:++view.sequence,band,strength,emittedAtSeconds:time,timeSeconds:time,...extra})}
  function advance(seconds,options={}){for(let i=0;i<Math.ceil(seconds/(options.dt??1/120));i++)step(options)}
  step();return{state,view,step,event,advance}
 }
@@ -38,8 +38,8 @@ test('dense events neither restart nor stack, dropped events are not queued',()=
  for(let i=0;i<1200;i++){if(i%6===0)dense.event(1);dense.step();assert.ok([...dense.state.levels].every(x=>x<=.48));assert.ok(dense.state.level<=.48)}
  dense.advance(2);assert.equal(dense.state.level,0)
 })
-test('mid/high/subthreshold/malformed/wrong session/stale/future events are ignored',()=>{
- for(const [band,strength,extra] of [['mid',1,{}],['high',1,{}],['low',.039,{}],['low',NaN,{}],['low',1,{session:9}],['low',1,{emittedAtSeconds:0}],['low',1,{emittedAtSeconds:100}]]){
+test('mid/low/subthreshold/malformed/wrong session/stale/future events are ignored',()=>{
+ for(const [band,strength,extra] of [['mid',1,{}],['high',1,{}],['high',.039,{}],['high',NaN,{}],['high',1,{session:9}],['high',1,{emittedAtSeconds:0}],['high',1,{emittedAtSeconds:100}]]){
   const f=fixture();f.event(strength,band,extra);f.advance(1);assert.equal(f.state.peak,0)
  }
 })

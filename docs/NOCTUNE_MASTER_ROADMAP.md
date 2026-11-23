@@ -1,6 +1,6 @@
 ECHO — Noctune 2.0: Living Instrument Master Roadmap
 
-Plan version: 1.11 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented; owner authorized NT09 continuation; NT09 existing surfaces verified; NT10 implemented; NT11 assessment ready, owner artistic approval pending; current-worktree audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
+Plan version: 1.13.2 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented; owner authorized NT09 continuation; NT09 existing surfaces verified; NT10 implemented; NT11 continuation accepted; NT12 deterministic verification passed; NT13 approved Audio spill lift applied; live re-review pending; current-worktree audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
 Target repository: https://github.com/Jhonneg/echoJs · Destination: docs/NOCTUNE_MASTER_ROADMAP.md
 
 This is the canonical plan for Noctune's Music Intelligence migration and visual mapping. It supersedes the earlier partial NT/NM suggestions. The phase IDs NT01–NT15 below are the only IDs to use going forward.
@@ -389,13 +389,13 @@ Grouped environment artistic approval
 
 NT12
 
-Pending
+Verified:54 contract cases,36 spectral configurations,28 PCM/control criteria; production unchanged
 
 Test evidence
 
 NT13
 
-Pending
+Live review prepared; owner source/cases/observations pending; not complete
 
 Owner musical approval
 
@@ -411,7 +411,7 @@ Pending
 
 Final handoff
 
-Next action: owner artistic review of NT11 staged coordination and grouped NT09–NT11 environment evidence. NT12 deterministic matrix starts only after continuation/approval; music/device checks remain pending.
+Next action: owner refreshes the rebuilt app and repeats bass listening with the approved spill lift, then completes remaining NT13 cases. Musical approval pending; NT14 unstarted.
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
 
@@ -439,3 +439,17 @@ NT10 checkpoint: owner “proceed” after NT09 authorizes slow atmosphere/depth
 
 
 NT11 checkpoint: owner “proceed” after NT10 authorizes whole-scene coordination review. [Staged synchronized assessment](reports/nocturne/NT11_COORDINATION_REVIEW.md) covers quiet intro, bass entrance, mid addition, dense passage, breakdown, return and silence. Existing mappings maintain distinct roles and bounded local overlap; no concrete tuning defect found, so no production changes. All90 source files preserved. Technical assessment passed; owner NT11 artistic/grouped environment approval remains pending before NT12.
+
+
+NT12 checkpoint: owner “proceed” accepts continuation after the NT11 review and authorizes deterministic verification; “continue” resumes this same phase. [Matrix/evidence](reports/nocturne/NT12_MATRIX_REVIEW.md) passes54 contract cases,36 processor configurations and28 browser PCM/control criteria. All90 source files unchanged; no analysis or scene tuning required. NT12 technical gate passed. NT13 needs owner-authorized live music and owner artistic notes; no real-song/device/native acceptance inferred.
+
+
+NT13 checkpoint: owner “continue” after NT12 authorizes preparation for live musical review. [Owner worksheet and pending ledger](reports/nocturne/NT13_LIVE_REVIEW.md) covers the five contrasting listening cases and actual artistic decision. Local app is available; all production source preserved. No real-song playback was inspected or recorded, no owner results inferred, and NT13 remains open pending cases/observations/approval. NT14 is not started.
+
+
+NT13 brightness feedback: owner reports bass tracking but dim Audio corridor versus Manual. [Matched local spill proposal](reports/nocturne/NT13_SPILL_PROPOSAL.md) is ready in a temporary copy; no production changes. Owner choice and live re-review precede further tuning/NT14. Preserve approved cyan and independent fixture response; no DSP/global-exposure adjustment proposed.
+
+
+NT13 applied checkpoint: owner “do the lift” approves the [Audio spill correction](reports/nocturne/NT13_SPILL_IMPLEMENTATION.md). Main magenta point1.5×, window/detail points2×, bounded by original full intensity; Manual unchanged. Final spill is a separate unified-state output; emitters/approved cyan/other points/atmosphere/timing and all89 other source files remain unchanged. Generated checks pass; live owner re-review still required. NT14 is not started.
+
+NT13 refinement follow-up (2026-11-22): owner requested the [R0–R5 refinement roadmap](NOCTUNE_NT13_REFINEMENT_ROADMAP.md) one phase at a time. R0 audit, R1 calibration, R2 spatial choreography and owner-authorized R3 environment cues have generated evidence; [latest checkpoint](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r3--environment-participation-checkpoint-2026-11-22) awaits owner review. This does not close NT13's real-song/artistic gate or authorize R4/NT14 automatically.

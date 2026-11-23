@@ -49,7 +49,9 @@ const wetShader = {
       float fresnel = 0.1 + 0.9 * pow(1.0 - facing, 4.0);
       float wetness = mix(0.09, 0.86, puddle) * edges;
       float strength = wetness * (0.32 + 0.65 * fresnel) * mix(0.65, 1.0, breakup);
-      gl_FragColor = vec4(reflected * 0.9, strength);
+      // Enhance only bright reflected sources; no independent motion or colored overlay.
+      vec3 highlights = max(reflected - vec3(0.055), vec3(0.0));
+      gl_FragColor = vec4(reflected * 0.9 + highlights * 0.2, strength);
       #include <tonemapping_fragment>
       #include <colorspace_fragment>
     }`,

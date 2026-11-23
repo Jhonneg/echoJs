@@ -20,7 +20,7 @@ function fixture() {
     updateCyanPanelResponse(state, view, 1 / 60, time, 1, false)
     const material = { emissiveIntensity: NaN }, light = { intensity: NaN }
     applyNocturneVisualState({emitters:[{channel:'cyanPanel',material}],lights:[{channel:'cyanPanel',light,full:30}]},
-      {channels:{cyanPanel:{level:state.level}}})
+      {channels:{cyanPanel:{level:state.level}},spill:{cyanPanel:state.level}})
     return { highMids, lowMids, overall, sustained: state.sustained, accent: state.accent,
       level: state.level, emissive: material.emissiveIntensity, pointLight: light.intensity }
   }

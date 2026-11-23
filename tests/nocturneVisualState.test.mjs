@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 import { emptySixBands } from '../src/audio/signal.ts'
 import {
-  NOCTURNE_VISUAL_CHANNELS, createNocturneVisualState, updateNocturneVisualState, applyNocturneVisualState,
+  calibrateNocturneLevel, NOCTURNE_VISUAL_CHANNELS, createNocturneVisualState, updateNocturneVisualState, applyNocturneVisualState,
 } from '../src/scenes/nocturne/visualState.ts'
 
 const manual = { magenta: .2, cyan: .4, cyanPanel: .6, violet: .8 }
@@ -43,16 +43,16 @@ test('each named output and physical reflection source can be exercised without 
   const expected={magentaMain:.2285714286,magentaSecondary:.0822857143,bridge:0,cyanWindows:.1697142857,cyanDetails:.24,violet:.0457142857,violetSecondary:.0457142857,cyanPanel:.52}
   const emitters=[],lights=[]
   for(const name of NOCTURNE_VISUAL_CHANNELS){
-    assert.ok(Math.abs(f.state.channels[name].level-expected[name])<.001,name)
+    assert.ok(Math.abs(f.state.channels[name].level-calibrateNocturneLevel(expected[name]))<.001,name)
     assert.equal(f.state.reflections[name],f.state.channels[name].level)
     emitters.push({channel:name,material:{emissiveIntensity:NaN}})
     lights.push({channel:name,light:{intensity:NaN},full:name==='cyanPanel'?30:40})
   }
   applyNocturneVisualState({emitters,lights},f.state)
   for(const {channel,material} of emitters)assert.equal(material.emissiveIntensity,f.state.channels[channel].level*1.3)
-  for(const {channel,light,full} of lights)assert.equal(light.intensity,f.state.channels[channel].level*full)
+  for(const {channel,light,full} of lights)assert.equal(light.intensity,f.state.spill[channel]*full)
   assert.notEqual(f.state.channels.magentaMain,f.state.channels.magentaSecondary)
-  f.state.channels.bridge.level=.05
+  f.state.channels.bridge.level=.05;f.state.spill.bridge=.05
   applyNocturneVisualState({emitters,lights},f.state)
   assert.equal(lights.find(x=>x.channel==='bridge').light.intensity,2)
   assert.ok(lights.find(x=>x.channel==='magentaMain').light.intensity>8)
@@ -121,5 +121,57 @@ test('violet high events reach only the alternating bank and its point light',()
  assert.ok(targets.lights[0].light.intensity>targets.lights[1].light.intensity)
  f.advance(.5);f.event('high',.3);f.step();f.step()
  assert.equal(f.state.channels.violet.accent,0);assert.ok(f.state.channels.violetSecondary.accent>.2)
- assert.equal(f.state.channels.magentaMain.level,0);assert.equal(f.state.channels.cyanPanel.level,0);assert.equal(f.state.channels.bridge.level,0)
+ assert.equal(f.state.channels.magentaMain.level,0);assert.equal(f.state.channels.cyanPanel.level,0);assert.ok(f.state.channels.bridge.level>0)
+})
+
+
+test('approved Audio spill lift is bounded, independent and absent from Manual/zero',()=>{
+ const f=fixture();f.input.energy.six.bass=f.input.energy.six.lowMids=f.input.energy.six.highMids=.4;f.advance(3)
+ const expected={magentaMain:1.5,cyanWindows:2,cyanDetails:2}
+ for(const name of NOCTURNE_VISUAL_CHANNELS)assert.equal(f.state.spill[name],Math.min(1,f.state.channels[name].level*(expected[name]??1)))
+ const panel=f.state.channels.cyanPanel.level;assert.equal(f.state.spill.cyanPanel,panel)
+ f.event('low',1);f.step();f.step();assert.equal(f.state.spill.magentaMain,1);assert.ok(f.state.channels.magentaMain.level<1)
+ assert.ok(Math.abs(f.state.channels.cyanPanel.level-panel)<1e-8)
+ f.step({mode:'manual',gain:0});for(const name of NOCTURNE_VISUAL_CHANNELS)assert.equal(f.state.spill[name],f.state.channels[name].level)
+ f.step({gain:0});assert.ok(Object.values(f.state.spill).every(x=>x===0))
+ f.step({reduced:true});for(const name of NOCTURNE_VISUAL_CHANNELS)assert.equal(f.state.spill[name],Math.min(1,f.state.channels[name].level*(expected[name]??1)))
+})
+
+
+test('R1 brightness preserves off, headroom, ordering and proportional small-signal response',()=>{
+  assert.equal(calibrateNocturneLevel(0),0)
+  assert.equal(calibrateNocturneLevel(1),1)
+  const values=[0,.001,.01,.05,.1,.2,.5,1].map(calibrateNocturneLevel)
+  for(let i=1;i<values.length;i++)assert.ok(values[i]>values[i-1])
+  assert.ok(calibrateNocturneLevel(.1)<.2)
+  assert.ok(calibrateNocturneLevel(.5)<.7)
+  assert.ok(Math.abs(calibrateNocturneLevel(.002)/calibrateNocturneLevel(.001)-2)<.003)
+  const f=fixture();f.input.energy.six.highMids=.1;f.advance(4)
+  const before=f.state.channels.cyanPanel.level
+  f.input.energy.six.bass=.8;f.input.context.intensity=1;f.event('low',1);f.advance(1)
+  assert.ok(Math.abs(f.state.channels.cyanPanel.level-before)<1e-8)
+  f.input.energy.six.highMids=0;f.input.energy.six.bass=0;f.advance(10)
+  assert.equal(f.state.channels.cyanPanel.level,0)
+  f.step({gain:0});assert.ok(levels(f.state).every(x=>x===0))
+})
+
+
+test('R3 depth light follows only slow context, honors Manual and zero, resets on session',()=>{
+ const f=fixture(),twin=fixture();f.input.context.intensity=twin.input.context.intensity=.6
+ for(let i=0;i<120;i++){if(i%20===0)f.event('high',.3);f.step();twin.step();assert.equal(f.state.environment.depthLight,twin.state.environment.depthLight)}
+ assert.ok(f.state.environment.depthLight>0&&f.state.environment.depthLight<.39)
+ f.step({mode:'manual',gain:0});assert.equal(f.state.environment.depthLight,.65*.8)
+ f.step({gain:0});assert.equal(f.state.environment.depthLight,0)
+ f.advance(2);f.input.session++;f.step();assert.ok(f.state.environment.depthLight<.01)
+})
+
+test('R3 contour adapter lights only selected structural instances from real bridge sections',()=>{
+ const state=createNocturneVisualState(),attribute={array:new Float32Array(4),needsUpdate:false},material={emissiveIntensity:0}
+ state.bridge.levels.set([.1,.2,.3,.4,.5,.6])
+ const emitter={channel:'bridge',material,instances:{channel:'bridge',scale:.16,indices:new Uint8Array([255,0,3,5]),attribute}}
+ applyNocturneVisualState({emitters:[emitter],lights:[]},state)
+ assert.equal(attribute.array[0],0)
+ for(const [i,want] of [[1,.016],[2,.064],[3,.096]])assert.ok(Math.abs(attribute.array[i]-want)<1e-7)
+ state.bridge.levels.fill(0);applyNocturneVisualState({emitters:[emitter],lights:[]},state)
+ assert.ok(attribute.array.every(v=>v===0))
 })

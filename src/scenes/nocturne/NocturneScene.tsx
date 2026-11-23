@@ -22,6 +22,8 @@ function Architecture() {
   return <>
     <IndustrialBuildings />
     <color attach="background" args={['#05070b']} />
+    {/* Static cool visibility floor; independent of fixture energy and Reactivity. */}
+    <ambientLight name="nocturne-readability-fill" color="#708a9e" intensity={0.35} />
     <hemisphereLight args={['#a2b1bd', '#737b81', 2.2]} />
     <directionalLight position={[-2, 12, 4]} intensity={0.9} color="#bac5cc" />
     <Block position={[0, -0.15, -23]} size={[18, 0.3, 64]} color="#12191e" />

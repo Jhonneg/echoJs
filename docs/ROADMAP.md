@@ -300,3 +300,20 @@ Noctune NT10 checkpoint (2026-11-22): owner continuation authorizes slow atmosph
 
 
 Noctune NT11 checkpoint (2026-11-22): owner continuation authorizes staged whole-scene review; [assessment/evidence](reports/nocturne/NT11_COORDINATION_REVIEW.md). Existing mappings retained; no production edits. Technical checks passed, but NT11 explicitly requires owner artistic approval. Stop for that review before NT12; native/music/device and grouped environment acceptance remain pending.
+
+
+Noctune NT12 checkpoint (2026-11-22): owner continuation after NT11 authorizes deterministic verification; [matrix/evidence](reports/nocturne/NT12_MATRIX_REVIEW.md).54 contract cases,36 MI spectral configurations and28 actual browser PCM/control criteria pass; all90 production source files unchanged. NT13 live owner-authorized real-music review is next after continuation. Do not infer musical/device/native approval from synthetic checks.
+
+
+Noctune NT13 checkpoint (2026-11-22): live review prepared after owner continuation; [worksheet/pending ledger](reports/nocturne/NT13_LIVE_REVIEW.md). Await owner source/cases, live text observations and musical approval. No production changes or captured-media inspection/recording. NT13 remains open; NT14 is not authorized by preparation alone.
+
+
+NT13 spill correction (2026-11-22): owner “do the lift” approves the matched proposal. [Applied/verified](reports/nocturne/NT13_SPILL_IMPLEMENTATION.md): only three Audio point gains change; emitters, approved cyan, Manual and all controllers remain intact. Rebuilt review app5183 is ready after refresh/re-share. Owner live re-review/final musical approval remains pending; NT14 unstarted.
+
+NT13 refinement checkpoint (2026-11-22): owner requested [R0–R5 one phase at a time](NOCTUNE_NT13_REFINEMENT_ROADMAP.md) and approved R0. [Audit and generated visual evidence](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r0--ground-truth-checkpoint-2026-11-22) are ready; no production change. Generated captures plus live owner text review explicitly replace recorded owner-song evidence. R0 owner review pending, R1 not started; NT14 remains paused and NT13 is not artistically approved.
+
+NT13-R1 checkpoint (2026-11-22): owner “proceed” after R0 authorizes brightness calibration only. [Implemented candidate/evidence](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r1--brightness-calibration-checkpoint-2026-11-22) adds constant cool minimum fill and an Audio final-level soft curve. Generated checks pass; real-song calibration and visual exit gate remain owner pending. Stop before R2; NT14 remains paused.
+
+NT13-R2 checkpoint (2026-11-22): owner “proceed” after R1 authorizes spatial choreography only. [Implemented/evidence](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r2--spatial-choreography-checkpoint-2026-11-22): bounded bass echoes, qualified-mid window/detail depth sequences and high-onset bridge. Generated direction/delivery/lifecycle checks pass; owner perception, prior real-song/brightness gates and Low Manual-on reference discrepancy remain pending. Stop before R3; NT14 paused.
+
+NT13-R3 checkpoint (2026-11-22): owner positive R2 visual feedback and “lets keep going” authorize environment participation. [Implemented/evidence](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r3--environment-participation-checkpoint-2026-11-22): sparse existing bridge-rib accents, source-coherent wet highlights, slow depth point/haze lift. Generated checks pass; one added unshadowed point, no geometry/camera/MI changes. Stop for R3 review before R4; final real-song/device gates remain open and NT14 paused.

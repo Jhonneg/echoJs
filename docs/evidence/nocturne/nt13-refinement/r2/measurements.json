@@ -1,0 +1,371 @@
+{
+  "changedExistingSource": [
+    "src/scenes/nocturne/ArchitectureDetails.tsx",
+    "src/scenes/nocturne/LightingDriver.tsx",
+    "src/scenes/nocturne/bridge.ts",
+    "src/scenes/nocturne/visualState.ts"
+  ],
+  "unchangedExistingSource": 86,
+  "newSource": [
+    "src/scenes/nocturne/spatial.ts"
+  ],
+  "runs": [
+    {
+      "quality": "standard",
+      "samples": 3291,
+      "frames": 439,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 1,
+        "drawingSize": [
+          1440,
+          810
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "calls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "meanFrameSeconds": 0.016702309328471457,
+      "maxScreenshotBracketSeconds": 0.23466700000000174,
+      "lateSilenceAllOff": true
+    },
+    {
+      "quality": "low",
+      "samples": 3285,
+      "frames": 439,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 0.75,
+        "drawingSize": [
+          1080,
+          607
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "calls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "meanFrameSeconds": 0.016750745814306824,
+      "maxScreenshotBracketSeconds": 0.21333299999999866,
+      "lateSilenceAllOff": true
+    },
+    {
+      "quality": "standard-reduced",
+      "samples": 3281,
+      "frames": 436,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 1,
+        "drawingSize": [
+          1440,
+          810
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "calls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "meanFrameSeconds": 0.01679033831148986,
+      "maxScreenshotBracketSeconds": 0.2126570000000001,
+      "lateSilenceAllOff": true
+    }
+  ],
+  "sequences": [
+    {
+      "role": "magentaSecondary",
+      "peaks": [
+        {
+          "index": 0,
+          "audioTime": 3.224,
+          "increment": 0.1834182309655248,
+          "screenshotTime": 3.1813335,
+          "screenshotBracket": [
+            3.138667,
+            3.224
+          ],
+          "image": "magentaSecondary-step-0.jpg"
+        },
+        {
+          "index": 1,
+          "audioTime": 3.416,
+          "increment": 0.17985616800192392,
+          "screenshotTime": 3.4373335000000003,
+          "screenshotBracket": [
+            3.394667,
+            3.48
+          ],
+          "image": "magentaSecondary-step-1.jpg"
+        },
+        {
+          "index": 2,
+          "audioTime": 3.608,
+          "increment": 0.17613690911283286,
+          "screenshotTime": 3.6719999999999997,
+          "screenshotBracket": [
+            3.629333,
+            3.714667
+          ],
+          "image": "magentaSecondary-step-2.jpg"
+        },
+        {
+          "index": 3,
+          "audioTime": 3.757333,
+          "increment": 0.1759749498648542,
+          "screenshotTime": 3.799662,
+          "screenshotBracket": [
+            3.756657,
+            3.842667
+          ],
+          "image": "magentaSecondary-step-3.jpg"
+        },
+        {
+          "index": 4,
+          "audioTime": 3.949333,
+          "increment": 0.17587564813068884,
+          "screenshotTime": 3.928,
+          "screenshotBracket": [
+            3.885333,
+            3.970667
+          ],
+          "image": "magentaSecondary-step-4.jpg"
+        }
+      ]
+    },
+    {
+      "role": "cyanWindows",
+      "peaks": [
+        {
+          "index": 0,
+          "audioTime": 9.112,
+          "increment": 0.10572547615788049,
+          "screenshotTime": 9.048,
+          "screenshotBracket": [
+            9.005333,
+            9.090667
+          ],
+          "image": "cyanWindows-step-0.jpg"
+        },
+        {
+          "index": 1,
+          "audioTime": 9.24,
+          "increment": 0.10430363334176296,
+          "screenshotTime": 9.176,
+          "screenshotBracket": [
+            9.133333,
+            9.218667
+          ],
+          "image": "cyanWindows-step-1.jpg"
+        },
+        {
+          "index": 2,
+          "audioTime": 9.389333,
+          "increment": 0.10325139743189685,
+          "screenshotTime": 9.441758,
+          "screenshotBracket": [
+            9.389333,
+            9.494183
+          ],
+          "image": "cyanWindows-step-2.jpg"
+        },
+        {
+          "index": 3,
+          "audioTime": 9.538667,
+          "increment": 0.10263562400463358,
+          "screenshotTime": 9.5813335,
+          "screenshotBracket": [
+            9.538667,
+            9.624
+          ],
+          "image": "cyanWindows-step-3.jpg"
+        },
+        {
+          "index": 4,
+          "audioTime": 9.688,
+          "increment": 0.1021768942276434,
+          "screenshotTime": 9.688,
+          "screenshotBracket": [
+            9.645333,
+            9.730667
+          ],
+          "image": "cyanWindows-step-4.jpg"
+        }
+      ]
+    },
+    {
+      "role": "cyanDetails",
+      "peaks": [
+        {
+          "index": 0,
+          "audioTime": 9.218667,
+          "increment": 0.07073087532308964,
+          "screenshotTime": 9.176,
+          "screenshotBracket": [
+            9.133333,
+            9.218667
+          ],
+          "image": "cyanDetails-step-0.jpg"
+        },
+        {
+          "index": 1,
+          "audioTime": 9.325333,
+          "increment": 0.07004578980272312,
+          "screenshotTime": 9.304,
+          "screenshotBracket": [
+            9.261333,
+            9.346667
+          ],
+          "image": "cyanDetails-step-1.jpg"
+        },
+        {
+          "index": 2,
+          "audioTime": 9.453333,
+          "increment": 0.06983366976187542,
+          "screenshotTime": 9.441758,
+          "screenshotBracket": [
+            9.389333,
+            9.494183
+          ],
+          "image": "cyanDetails-step-2.jpg"
+        },
+        {
+          "index": 3,
+          "audioTime": 9.581333,
+          "increment": 0.06976449289451365,
+          "screenshotTime": 9.5813335,
+          "screenshotBracket": [
+            9.538667,
+            9.624
+          ],
+          "image": "cyanDetails-step-3.jpg"
+        },
+        {
+          "index": 4,
+          "audioTime": 9.688,
+          "increment": 0.06974718926863044,
+          "screenshotTime": 9.688,
+          "screenshotBracket": [
+            9.645333,
+            9.730667
+          ],
+          "image": "cyanDetails-step-4.jpg"
+        },
+        {
+          "index": 5,
+          "audioTime": 9.816,
+          "increment": 0.06974180472544586,
+          "screenshotTime": 9.7946665,
+          "screenshotBracket": [
+            9.752,
+            9.837333
+          ],
+          "image": "cyanDetails-step-5.jpg"
+        }
+      ]
+    },
+    {
+      "role": "bridge",
+      "peaks": [
+        {
+          "index": 0,
+          "audioTime": 15.341333,
+          "increment": 0.23499079080808294,
+          "screenshotTime": 15.308294499999999,
+          "screenshotBracket": [
+            15.256,
+            15.360589
+          ],
+          "image": "bridge-step-0.jpg"
+        },
+        {
+          "index": 1,
+          "audioTime": 15.469333,
+          "increment": 0.23499079080808294,
+          "screenshotTime": 15.448,
+          "screenshotBracket": [
+            15.405333,
+            15.490667
+          ],
+          "image": "bridge-step-1.jpg"
+        },
+        {
+          "index": 2,
+          "audioTime": 15.576,
+          "increment": 0.23499079080808294,
+          "screenshotTime": 15.576,
+          "screenshotBracket": [
+            15.533333,
+            15.618667
+          ],
+          "image": "bridge-step-2.jpg"
+        },
+        {
+          "index": 3,
+          "audioTime": 15.704,
+          "increment": 0.23499079080808294,
+          "screenshotTime": 15.68198,
+          "screenshotBracket": [
+            15.638627,
+            15.725333
+          ],
+          "image": "bridge-step-3.jpg"
+        },
+        {
+          "index": 4,
+          "audioTime": 15.810667,
+          "increment": 0.23499079080808294,
+          "screenshotTime": 15.8106665,
+          "screenshotBracket": [
+            15.768,
+            15.853333
+          ],
+          "image": "bridge-step-4.jpg"
+        },
+        {
+          "index": 5,
+          "audioTime": 15.938667,
+          "increment": 0.23499079080808294,
+          "screenshotTime": 15.9386665,
+          "screenshotBracket": [
+            15.896,
+            15.981333
+          ],
+          "image": "bridge-step-5.jpg"
+        }
+      ]
+    }
+  ],
+  "manualPixelDifferences": {
+    "standard/manual-all-on": "0 (0)",
+    "standard/manual-all-off": "0 (0)",
+    "low/manual-all-on": "1853.84 (0.00158937)",
+    "low/manual-all-off": "0 (0)"
+  }
+}

@@ -13,7 +13,7 @@ function fixture(hz,rows){
  for(let segment=0;segment<6;segment++)emitters.push({channel:'bridge',segment,material:{emissiveIntensity:0}})
  const lights=[['magentaMain',50],['bridge',40],['cyanWindows',65],['cyanDetails',40],['cyanPanel',30],['violet',12],['violetSecondary',12]].map(([channel,full])=>({channel,full,light:{intensity:0}}))
  let label='prime'
- function snapshot(){return {time,features:JSON.parse(JSON.stringify(store.reader.read())),channels:JSON.parse(JSON.stringify(state.channels)),bridgeSections:[...state.bridge.levels],atmosphere:{...state.atmosphere},materials:emitters.map(x=>({channel:x.channel,segment:x.segment,value:x.material.emissiveIntensity})),lights:lights.map(x=>({channel:x.channel,value:x.light.intensity}))}}
+ function snapshot(){return {time,features:JSON.parse(JSON.stringify(store.reader.read())),channels:JSON.parse(JSON.stringify(state.channels)),spill:{...state.spill},bridgeSections:[...state.bridge.levels],atmosphere:{...state.atmosphere},materials:emitters.map(x=>({channel:x.channel,segment:x.segment,value:x.material.emissiveIntensity})),lights:lights.map(x=>({channel:x.channel,value:x.light.intensity}))}}
  function step({mode='audio',gain=1,reduced=false,publish=true,stale=false}={}){
   time+=1/hz;if(publish){input.updatedAtSeconds=time;store.publish(input)}
   const before=reads,borrow=JSON.stringify(store.reader.read())
@@ -21,7 +21,8 @@ function fixture(hz,rows){
   assert.equal(reads,before+1);assert.equal(JSON.stringify(store.reader.read()),borrow)
   applyNocturneVisualState({emitters,lights},state)
   for(const x of emitters)assert.equal(x.material.emissiveIntensity,(x.segment===undefined?state.channels[x.channel].level:state.bridge.levels[x.segment])*1.3)
-  for(const x of lights)assert.equal(x.light.intensity,state.channels[x.channel].level*x.full)
+  // NT13 owner-approved Audio-only point lift; emitter/controller expectations unchanged.
+  for(const x of lights){const gain=mode==='manual'?1:({magentaMain:1.5,cyanWindows:2,cyanDetails:2}[x.channel]??1);assert.equal(x.light.intensity,Math.min(1,state.channels[x.channel].level*gain)*x.full)}
   assert.ok(NOCTURNE_VISUAL_CHANNELS.every(n=>Number.isFinite(state.channels[n].level)&&state.channels[n].level>=0&&state.channels[n].level<=1))
   if(rows&&Math.round(time*hz)%Math.max(1,Math.round(hz/10))===0)rows.push({label,...snapshot()})
  }
@@ -41,9 +42,9 @@ export function runNocturneResponseMatrix({trace=false}={}){
   for(const [band,feature,channel]of [['low','bass','magentaMain'],['mid','highMids','cyanPanel'],['high','air','violet']]){
    check('isolated-'+band+'-attack',hz,'Own fresh event produces finite accent above sustain',f=>{f.advance(.3);f.energy({[feature]:.2});f.advance(.067);f.event(band);let peak=0;for(let i=0;i<Math.round(hz*.3);i++){f.step();peak=Math.max(peak,f.state.channels[channel].accent)}assert.ok(peak>.01);f.advance(2);assert.equal(f.state.channels[channel].accent,0);return{peak,final:f.snapshot()}})
   }
-  check('low-mid-attack-near-held-high-mid',hz,'Small-panel accent>0; approved high-mid panel accent0',f=>{f.energy({highMids:.2});f.advance(2);f.energy({highMids:.2,lowMids:.25});f.advance(.067);f.event('mid');f.step();assert.ok(f.state.channels.cyanDetails.accent>.02);assert.equal(f.state.channels.cyanPanel.accent,0);return f.snapshot()})
+  check('low-mid-attack-near-held-high-mid',hz,'Small-panel accent>0; approved high-mid panel accent0',f=>{f.energy({highMids:.2});f.advance(2);f.energy({highMids:.2,lowMids:.25});f.advance(.067);f.event('mid');f.step();assert.ok(f.state.midrange.detailAccent>.02);f.advance(.18);assert.ok(f.state.instances.cyanDetails[0]>f.state.instances.cyanDetails[5]);assert.equal(f.state.channels.cyanPanel.accent,0);return f.snapshot()})
   check('bass-plus-high-mid',hz,'Independent held high-mid level while bass event accents magenta',f=>{f.energy({highMids:.2});f.advance(3);const panel=f.state.channels.cyanPanel.level;f.energy({highMids:.2,bass:.2});f.event('low');f.advance(.1);assert.ok(f.state.channels.magentaMain.accent>0);assert.equal(f.state.channels.cyanPanel.accent,0);assert.ok(Math.abs(f.state.channels.cyanPanel.level-panel)<1e-8);return f.snapshot()})
-  check('rising-falling-high-mid',hz,'Ordered quiet/loud response, linear settled strength, no attacks',f=>{f.energy({highMids:.1});f.advance(3);const quiet=f.state.channels.cyanPanel.level;f.energy({highMids:.3});f.advance(3);const loud=f.state.channels.cyanPanel.level;assert.ok(Math.abs(loud-3*quiet)<1e-6);f.energy({highMids:.1});f.advance(3);assert.ok(Math.abs(f.state.channels.cyanPanel.level-quiet)<1e-6);return{quiet,loud,final:f.snapshot()}})
+  check('rising-falling-high-mid',hz,'Ordered quiet/loud response with R1 display headroom, no attacks',f=>{f.energy({highMids:.1});f.advance(3);const quiet=f.state.channels.cyanPanel.level;f.energy({highMids:.3});f.advance(3);const loud=f.state.channels.cyanPanel.level;assert.ok(loud>quiet*2&&loud<quiet*3);f.energy({highMids:.1});f.advance(3);assert.ok(Math.abs(f.state.channels.cyanPanel.level-quiet)<1e-6);return{quiet,loud,final:f.snapshot()}})
   check('duplicate-events',hz,'Repeated borrowed event list matches consumed-event control, never retriggers',f=>{const twin=fixture(hz);f.energy({bass:.2,highMids:.2,air:.2});twin.energy({bass:.2,highMids:.2,air:.2});f.advance(.1);twin.advance(.1);for(const band of ['low','mid','high']){f.event(band);twin.event(band)}f.step();twin.step();twin.input.events=[];for(let i=0;i<hz*2;i++){f.step();twin.step();assert.deepEqual(f.state.channels,twin.state.channels);assert.deepEqual(f.state.bridge,twin.state.bridge)}return f.snapshot()})
   for(const mode of ['stale','inactive','session','manual','zero','reduced']){
    check(mode,hz,'Lifecycle guards suppress sharp events; expected sustained/manual/reset behavior',f=>{
@@ -58,6 +59,7 @@ export function runNocturneResponseMatrix({trace=false}={}){
     if(mode==='manual'){assert.deepEqual(Object.values(f.state.channels).map(x=>x.level),[.2,.2,.3,.3,.4,.5,.5,.2]);assert.equal(f.state.atmosphere.fogFar,74)}
     if(mode==='zero')assert.ok(Object.values(f.state.channels).every(x=>x.level===0))
     if(mode==='stale'||mode==='inactive'){f.advance(8,options);assert.ok(Object.values(f.state.channels).every(x=>x.level===0))}
+    if(mode==='inactive')f.input.status='active'
     f.step();assert.ok(Object.values(f.state.channels).every(x=>x.accent===0),'suppressed attacks never replay')
     return f.snapshot()
    })

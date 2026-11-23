@@ -33,7 +33,7 @@ export function updateBridgeResponse(state: BridgeResponse, view: MusicFeaturesV
     if (event.session !== view.session || event.sequence <= state.sequence) continue
     state.sequence = event.sequence
     const age = nowSeconds - event.emittedAtSeconds
-    if (reset || !enabled || event.band !== 'low' || !Number.isFinite(event.strength) || event.strength < .04 || !Number.isFinite(age) || age < 0 || age > .25 || nowSeconds < state.nextAt) continue
+    if (reset || !enabled || event.band !== 'high' || !Number.isFinite(event.strength) || event.strength < .04 || !Number.isFinite(age) || age < 0 || age > .25 || nowSeconds < state.nextAt) continue
     // One active sequence, no queue/restart/overlap. Skipped events are consumed.
     state.startedAt = nowSeconds
     state.nextAt = nowSeconds + COOLDOWN_SECONDS

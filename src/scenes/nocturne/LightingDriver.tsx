@@ -1,7 +1,8 @@
+import type { SpatialChannel } from './spatial'
 import { BRIDGE_SEGMENTS } from './bridge'
 import { useLayoutEffect, useMemo, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { Color, Fog, Mesh, MeshStandardMaterial, PointLight, ShaderMaterial } from 'three'
+import { Color, Fog, InstancedBufferAttribute, Mesh, MeshStandardMaterial, PointLight, ShaderMaterial } from 'three'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import { NOCTURNE_LIGHT_COLORS, type NocturneLighting, type NocturneLightingMode } from './lighting'
 import {
@@ -9,7 +10,7 @@ import {
   type NocturneVisualChannel, type NocturneVisualTargets,
 } from './visualState'
 
-type LightingTargets = NocturneVisualTargets & { gate: MeshStandardMaterial, haze: ShaderMaterial, fog: Fog }
+type LightingTargets = NocturneVisualTargets & { gate: MeshStandardMaterial, haze: ShaderMaterial, fog: Fog, depth: PointLight }
 const emitterChannels = [
   ['magenta', 'magentaMain'], ['magentaSecondary', 'magentaSecondary'], ['cyan', 'cyanWindows'], ['cyanDetails', 'cyanDetails'], ['cyanPanel', 'cyanPanel'], ['violet', 'violet'], ['violetSecondary', 'violetSecondary'],
 ] as const
@@ -38,11 +39,22 @@ export function LightingDriver({ musicFeatures, mode, manual, reactivity, reduce
     }
     targets.current = {
       emitters: [
-        ...emitterChannels.map(([group, channel]) => ({ channel, material: (scene.getObjectByName(`nocturne-${group}`) as Mesh).material as MeshStandardMaterial })),
+        ...emitterChannels.map(([group, channel]) => {
+          const mesh = scene.getObjectByName(`nocturne-${group}`) as Mesh
+          const attribute = mesh.geometry.getAttribute('nocturneLevel') as InstancedBufferAttribute | undefined
+          return { channel, material: mesh.material as MeshStandardMaterial,
+            instances: attribute ? { channel: channel as SpatialChannel, indices: mesh.userData.nocturneSpatialIndices as Uint8Array,
+              attribute: attribute as InstancedBufferAttribute & { array: Float32Array } } : undefined }
+        }),
+        { channel: 'bridge', material: (scene.getObjectByName('nocturne-steel') as Mesh).material as MeshStandardMaterial,
+          instances: { channel: 'bridge', scale: .16,
+            indices: scene.getObjectByName('nocturne-steel')!.userData.nocturneSpatialIndices as Uint8Array,
+            attribute: (scene.getObjectByName('nocturne-steel') as Mesh).geometry.getAttribute('nocturneLevel') as InstancedBufferAttribute & { array: Float32Array } } },
         ...Array.from({ length: BRIDGE_SEGMENTS }, (_, segment) => ({ channel: 'bridge' as const, segment,
           material: (scene.getObjectByName(`nocturne-bridge${segment}`) as Mesh).material as MeshStandardMaterial })),
       ],
       lights,
+      depth: scene.getObjectByName('nocturne-depth-spill') as PointLight,
       gate: (scene.getObjectByName('nocturne-gate-light') as Mesh).material as MeshStandardMaterial,
       haze: (scene.getObjectByName('nocturne-gate-haze') as Mesh).material as ShaderMaterial,
       fog: scene.fog as Fog,
@@ -61,6 +73,7 @@ export function LightingDriver({ musicFeatures, mode, manual, reactivity, reduce
     glow.add(scratch.copy(palette.violet).multiplyScalar(state.atmosphere.violet))
     bound.gate.emissive.copy(glow)
     bound.haze.uniforms.glow.value.copy(glow)
+    bound.depth.intensity = 18 * state.environment.depthLight
     bound.fog.near = state.atmosphere.fogNear
     bound.fog.far = state.atmosphere.fogFar
     bound.fog.color.copy(glow).multiplyScalar(0.018).add(palette.baseline)

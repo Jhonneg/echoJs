@@ -1,6 +1,6 @@
 ECHO — Noctune 2.0 Visual Mapping Specification
 
-Plan version: 1.11 · Prepared: 2026-11-22 · Status: Proposed artistic contract; partially source-checked at e627ff821e84dd0f8e781fa9b259805d4822ac39, owner review pending
+Plan version: 1.13.2 · Prepared: 2026-11-22 · Status: Proposed artistic contract; partially source-checked at e627ff821e84dd0f8e781fa9b259805d4822ac39, owner review pending
 Destination: docs/NOCTUNE_VISUAL_MAPPING.md · Primary plan: NOCTUNE_MASTER_ROADMAP.md
 
 1. Creative brief
@@ -515,7 +515,7 @@ Owner artistic approval required
 
 No new global gain or shared limiter
 
-Next action: owner artistic review of NT11 staged coordination before NT12. No additional mapping change proposed; grouped environment/music/device acceptance remains pending.
+Next action: live owner re-review of the applied Audio spill lift, then remaining NT13 cases. NT14 unstarted.
 
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
@@ -645,3 +645,83 @@ In the assessed dense section, main magenta mean/peak≈.1595/.2314, secondary m
 Bass-only passage leaves the cyan panel near0; adding midrange raises cyan without forcing windows to accent. Breakdown retains only a quiet high-mid pad and fading atmosphere; the return restores layered roles. Final silence settles all fixture outputs to0 while atmosphere releases slowly. Reduced motion has no sharp accents or bridge travel. These are responses to supplied features and authored test schedule, not detected song sections.
 
 [NT11 report and synchronized stage evidence](reports/nocturne/NT11_COORDINATION_REVIEW.md) retains observed values, actual material/point delivery and all90 unchanged source hashes. Owner artistic approval is required by NT11; it has not been inferred from automation. NT12 and real-music review remain separate.
+
+
+## NT12 deterministic mapping verification
+
+Owner “proceed” after NT11 authorizes the matrix; later “continue” resumes the same phase. Current mappings pass without tuning:54 explicit-feature/lifecycle cases at30/60/120 Hz,36 synthetic-spectrum configurations through unchanged MI at44.1/48/96 kHz, and28 normal/reduced browser PCM/control criteria. The1000 Hz case belongs to highMids800–2500, not lowMids;450 Hz separately validates low-mid details and local qualification.
+
+[NT12 expected/observed evidence](reports/nocturne/NT12_MATRIX_REVIEW.md) retains time-aligned features, sustain/accent/final values and exact material/point delivery. Low-mid attacks near stationary high mids accent details while approved panel accents remain0; bass attacks leave its high-mid sustain independent. Zero gain is verified against positive browser input; Manual on/off remains independent of gain. Browser leakage and releasing previous groups are documented rather than called false exact zeros. All90 source files remain unchanged. NT13 real-song feel and owner/device/native checks are separate.
+
+
+## NT13 live artistic review — prepared, results pending
+
+Owner continuation authorizes this review, without identifying tracks or supplying artistic results. [NT13 worksheet](reports/nocturne/NT13_LIVE_REVIEW.md) asks the owner to assess distinct frequency roles, attacks versus sustain, dense contrast, quiet recovery and purposeful choreography using locally authorized music. Collect text observations only; do not inspect or persist captured media. No mapping changes are proposed without a concrete owner-reported symptom. Musical approval remains pending; NT14 has not started.
+
+
+NT13 brightness feedback: owner reports bass tracking but dim Audio corridor versus Manual. [Matched local spill proposal](reports/nocturne/NT13_SPILL_PROPOSAL.md) is ready in a temporary copy; no production changes. Owner choice and live re-review precede further tuning/NT14. Preserve approved cyan and independent fixture response; no DSP/global-exposure adjustment proposed.
+
+
+NT13 applied checkpoint: owner “do the lift” approves the [Audio spill correction](reports/nocturne/NT13_SPILL_IMPLEMENTATION.md). Main magenta point1.5×, window/detail points2×, bounded by original full intensity; Manual unchanged. Final spill is a separate unified-state output; emitters/approved cyan/other points/atmosphere/timing and all89 other source files remain unchanged. Generated checks pass; live owner re-review still required. NT14 is not started.
+
+
+## NT13 approved final spill mapping
+
+Current point delivery is `state.spill[channel] * originalFull`, while emitters remain `channels[channel].level * 1.3`. In Audio, spill=`clamp(level*gain)`, with gains1.5 main magenta,2 cyan windows,2 cyan details,1 elsewhere. Manual uses gain1 for every channel. Approved cyan remains level×30; bridge mean×40 and violet own-bank×12 remain unchanged. No new smoothing, event source, overall-intensity coupling or permanent floor. Source/reflection levels retain their original meaning; physical wet reflection renders actual brighter point influence. This supersedes earlier linear-point expectations only for the three selected Audio points.
+
+## NT13-R0 current worktree audit — 2026-11-22
+
+This section supersedes historical/proposed mappings above **for current implementation facts**. The refinement roadmap remains the artistic target; R0 makes no production changes. Authoritative code: `audio/musicFeatures.ts`, `audio/sixBands.ts`, `nocturne/visualState.ts`, its individual response modules, `LightingDriver.tsx`, `ArchitectureDetails.tsx`, `NocturneScene.tsx`, `WetGround.tsx` and `WallSurface.tsx`. [R0 measurements and review](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r0--ground-truth-checkpoint-2026-11-22).
+
+**Contract:** Noctune receives only `MusicFeatureReader`; no legacy `AudioSignal` values enter its scene, activity indicator or camera. `LandscapeCanvas` is shared with legacy consumers but Noctune passes `cameraTilt=false` and no signal. Imports from `signal.ts` provide math/types, not legacy signal consumption. `read()` borrows a reused view. Version/session/frame/status, timestamps in seconds, broad and six-band normalized energies, immutable low/mid/high onset events and slow context are available. Active freshness is age 0–0.25 s. Onset events are broad-band candidates, not six-band or instrument classifications.
+
+Six bands: subBass20–80, bass80–250, lowMids250–800, highMids800–2500, presence2500–6000, air6000–20000 Hz (Nyquist-limited). These are calibrated/smoothed energy values, not dB or raw FFT amplitudes. Noctune adds scene-local envelopes. Below, `C(x)` clamps0–1, `g` is Reactivity; body targets multiply `g`. Normal-motion times are seconds; reduced motion slows sustained changes and suppresses new transient travel/accents. Final emitter intensity is `1.3 × final channel`; point delivery is original full intensity × final normalized spill.
+
+| Current group / shared instances | Sustained target | Event / additional smoothing | Final output and shared controls |
+| --- | --- | --- | --- |
+| Main magenta, dominant right panel | `.5*C((.8*bass+.2*subBass)/.35)` | Body attack/release .12/.45; low onset peak `.42*C(strength/.35)`,20ms rise, finite1.2s tail, carries old tail on retrigger | Body + accent, clamp1; point50 × `C(1.5*level)`; shares low stream with bridge but neither consumes the other's final brightness |
+| Secondary magenta, remaining5 panels | `.24*C((.6*bass+.4*subBass)/.35)` | Body .3/.7; no accent | All5 share one material/body; no dedicated point; follows bass/subBass independently from main final brightness |
+| Cyan windows,336 instances | `.18*C((.7*lowMids+.3*highMids)/.35)` | Body .35/.9; no onset sequencing | All windows share one material/body; point65 × `C(2*level)` |
+| Cyan details,6 panels | `.28*C(lowMids/.35)` | Body .1/.35; broad mid event locally qualified by low-mid rise≥.02; accent≤.12, .2 decay | Shared body/accent; point40 × `C(2*level)`; shares broad mid candidates with left panel but qualifies a different band |
+| Approved left cyan,1 panel | `.65*C(highMids/.5)` | Body .06/.18; broad mid event qualified by high-mid rise≥.02; accent `.35*C(strength)*C(rise/.2)*g`, .22 decay | Body + accent, clamp1; point30 × level; independent of magenta, overall intensity and low-mid detail final brightness |
+| Violet,2 banks of6 strips | `.16*C((.7*presence+.3*air)/.35)` | Body .04/.16; high event strength≥.04 alternates banks, peak≤.32, .24s pulse, .4s cooldown | Shared body; one accent bank at a time; point12 per bank × its own level; no per-strip travel |
+| Bridge,6 contiguous sections in2 original housings | None | **Low** onset strength≥.04; peak `.48*C(strength/.35)`, starts .12s apart, .32s section tail; .92s sequence,1.04s cooldown, no queue | Separate section emitters; point40 × mean section level; not the proposed treble sequence |
+| Gate, haze, fog | Slow context intensity `.65*I*g`; density `activity*I*g`; tint `(2*brightness−1)*I*g` only when brightnessValid/finite | Level2/4 attack/release; density3/5; tint4s; reduced4/6,4/6,6s | Shared colored gate/haze/fog; fog17 to `74−8*density`; no ambient/wall light contribution from this controller |
+| Wet pavement | No audio target | Reflects delivered real scene through existing masked/Fresnel planar reflection; static texture perturbation | No independent transient/envelope or audio-driven UV motion; reflection cannot illuminate walls |
+| Architecture/environment | Non-reactive hemisphere2.2 and directional.9; dark rough materials | Static | Existing minimum readability is very dark; no new environmental light in R0 |
+
+All six energy bands, all three onset streams and intensity/activity/valid brightness have rendered consumers. Broad low/mid/high/overall energies are exposed, but the old `broad` response is now computed without driving Audio fixtures/atmosphere; its group values still support Manual. Sample rate/FFT are metadata, not visual drivers. No fast/slow six-band envelopes are separately exposed: scene sustain envelopes derive from existing smoothed energy. No beat/BPM/section/instrument classification is available.
+
+**Discrepancies with target:** instances still respond in lockstep within large banks; the bridge is low-onset driven; floor movement comes from reflected source changes; distant environmental response is gate/haze/fog only. There is no missing event interface blocking later scene-local work. Do not mistake computed broad response for an active Audio fallback, or current behavior for completed R1–R5 choreography.
+
+## NT13-R1 delivered brightness calibration — 2026-11-22
+
+Owner authorized R1 after R0; [evidence and pending gate](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r1--brightness-calibration-checkpoint-2026-11-22). The R0 map remains accurate for raw controller targets, event roles, envelopes and timing. Audio final levels now pass through `f(x)=2x/(1+x)` after body+accent composition. Bridge sections are calibrated individually; its final channel/point is their mean. `sustainTarget`/`accent` fields stay raw diagnostic values; `level` is calibrated. Reflection-source values follow final levels; point spill still applies the previously approved gains. Manual bypasses the curve. Zero stays zero,1 stays1, small responses are lifted smoothly, and display response is monotonic rather than exactly linear.
+
+A static cool ambient contribution (#708a9e,.35) establishes a modest visibility floor in every mode, independent of audio and Reactivity. Existing environmental lights, exposure/tone mapping, atmosphere response, materials and geometry are unchanged. Manual point/emitter controls are identical but lit surfaces receive the same additional static fill. No R2 spatial choreography or new shared MI feature is implemented. Quiet/silence legibility and real-song response remain subject to owner review.
+
+## NT13-R2 current spatial mapping — 2026-11-22
+
+[R2 evidence and pending review](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r2--spatial-choreography-checkpoint-2026-11-22) supersedes the earlier lockstep/low-bridge implementation facts. Sustained targets, R1 final calibration, environmental fill and approved left cyan response remain unchanged.
+
+| Role | Current spatial output | Trigger / limits |
+| --- | --- | --- |
+| Low weight | Main magenta unchanged;5 secondary panels echo near→far | Low onset≥.04, .1s initial delay, .18s step, .3s tail, peak≤.16 |
+| Mid architectural rhythm |5 cyan window depth groups, then6 detail panels near→far | Broad mid onset≥.04 qualified with existing low/high-mid rise≥.02; windows .14s step/.28s tail/peak≤.20; details .1s initial delay/.12s step/.24s tail/peak≤.14 |
+| High-mid localization | Approved panel unchanged, downstream detail echo | If high-mid qualifies without low mids, detail sequence skips nearest z=0 panel and starts at z=-10 beyond the approved panel |
+| Treble detail | Existing bridge sequence traverses6 sections; violet still alternates banks | Bridge now high-onset driven, not low; original finite timing/peak/cooldown retained |
+
+Each spatial role is a single finite sequence with no restart/queue during its duration and cooldown. Cancellation consumes suppressed events. Sustained energy alone does not start travel; reduced motion suppresses spatial accents. New `spatial.ts` uses existing scene scalar histories, not a second audio analyser.
+
+Secondary/window/detail `instances` store calibrated per-fixture levels; their scalar channel is the mean of spatial groups. Their channel `accent` is mean raw spatial accent. The driver uploads one float per existing instance to a shared emission-shader extension; fixed material intensity1.3 is multiplied by the actual instance attribute. Other emitters retain scalar delivery. Manual fills every instance from original controls; zero/silence buffers are exactly zero. Existing point positions stay fixed and follow group means; reflected source progression is real, but local point spill is not independently positioned per fixture. No new geometry/material colors/lights or ambient changes.
+
+## NT13-R3 environment delivery — 2026-11-22
+
+[Current evidence/limitations](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r3--environment-participation-checkpoint-2026-11-22). Existing R2 fixture bodies, accents, depth sequences and bridge timing remain unchanged.
+
+-9 existing bridge ribs sample corresponding final bridge sections at.16 gain, with material intensity1.3. Other steel instances use a zero sentinel; no broad emissive wall treatment. Same finite high-onset sequence, zero under reduced motion/silence, static preview under Manual.
+- Wet pavement preserves its real reflection/masks/static UVs and adds `.2*max(reflected−.055,0)` to the existing `.9*reflected`. Bright source reflections receive a small contrast lift with no independent animation/audio uniform.
+- One cool unshadowed point at[0,2.8,-42], distance22/decay2, receives `18*environment.depthLight`. Audio depthLight equals the existing slow context atmosphere level; Manual uses `.65*max(magenta,cyan,violet)`. It affects far walls/curbs/gate, not fixture control values. Gain0 is immediate zero; ordinary silence retains the existing slow atmosphere tail.
+- Existing gate-haze coefficient.22→.28; fog, gate response, exposure, R1 static fill, geometry and palette stay as authored. Manual off remains the same resting scene; Manual full includes the new environment response.
+
+The steel batch adds197 scalar attributes,9 mapped, with the same shader extension used in R2. The adapter supports scaled bridge sources and sentinel255. Point count is now8, not7; draw/geometry/texture counts remain196/114/6. Device performance/artistic approval are separate gates.

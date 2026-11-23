@@ -221,3 +221,13 @@ The single borrowed feature frame also updates atmosphereResponse.ts. Existing i
 ## Nocturne NT11 — existing coordination policy retained
 
 Staged whole-scene assessment retains existing per-controller caps, localized accents and independent sustained envelopes, with NT10's slow context atmosphere. No scene-wide limiter or extra shared energy multiplier is added; material/point delivery remains exactly from associated final outputs. All90 source files match task-start NT10. [NT11 review](reports/nocturne/NT11_COORDINATION_REVIEW.md) separates technical delivery evidence from required owner artistic approval.
+
+
+## Nocturne NT12 — verified analysis/scene contract
+
+Three evidence layers now verify the existing interface: explicit MusicFeatures inputs for deterministic response/lifecycle guards; prescribed synthetic spectra through unchanged createMusicAnalysis for calibrated band routing; generated PCM through the actual browser analyser for delivered material/point values and original UI controls. No production code changed. One borrowed feature read per scene update and no mutation are checked by the unified matrix. [Expected/observed NT12 report](reports/nocturne/NT12_MATRIX_REVIEW.md) separates these proofs from native/audio-device/real-song acceptance.
+
+
+## Nocturne NT13 — separate final point spill
+
+Owner-approved Audio readability correction adds a stable spill record to the unified visual state. Derive bounded final point values from each fixture's own level (main1.5, windows/details2, others1; Manual1), then the renderer adapter multiplies by original point full intensity. Emission/reflection-source levels and all controllers stay unchanged. No response logic moves into LightingDriver; no new light/pass/material or audio dependency. [Applied verification](reports/nocturne/NT13_SPILL_IMPLEMENTATION.md).

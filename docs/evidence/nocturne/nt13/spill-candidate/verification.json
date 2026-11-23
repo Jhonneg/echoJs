@@ -1,0 +1,2040 @@
+{
+  "label": "isolated-current",
+  "root": "/tmp/echo-nt13-surfaces-2CpitU/app",
+  "method": "Synthetic held NT11 bass/dense mean levels and fixed atmosphere. Candidate affects only three point lights in a temporary copy; no production mapping or owner-media capture.",
+  "checks": [
+    "Matched synthetic bass/dense/silence at both qualities; original Manual All on reference; no owner music or source inspection"
+  ],
+  "captures": [
+    {
+      "name": "standard-bass-current",
+      "drive": {
+        "preset": "bass",
+        "candidate": false
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0.0532,
+        "magenta": 0.012767999999999998,
+        "cyan": 0.045219999999999996,
+        "violet": 0.008512,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0.20085
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0.06383
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0.00013000000000000002
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0.00013000000000000002
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0
+        },
+        {
+          "channel": "violet",
+          "intensity": 0
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 7.725,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 0.006500000000000001,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 0.004,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 0,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          1007,
+          567
+        ],
+        "texel": [
+          0.0009930486593843098,
+          0.001763668430335097
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "standard-bass-candidate",
+      "drive": {
+        "preset": "bass",
+        "candidate": true
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0.0532,
+        "magenta": 0.012767999999999998,
+        "cyan": 0.045219999999999996,
+        "violet": 0.008512,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0.20085
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0.06383
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0.00013000000000000002
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0.00013000000000000002
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0
+        },
+        {
+          "channel": "violet",
+          "intensity": 0
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 11.587499999999999,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 0.013000000000000001,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 0.008,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 0,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          1007,
+          567
+        ],
+        "texel": [
+          0.0009930486593843098,
+          0.001763668430335097
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "standard-dense-current",
+      "drive": {
+        "preset": "dense",
+        "candidate": false
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0.094,
+        "magenta": 0.02256,
+        "cyan": 0.0799,
+        "violet": 0.01504,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0.20735
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0.0598
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0.0494
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0.07345
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0.14495
+        },
+        {
+          "channel": "violet",
+          "intensity": 0.034710000000000005
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0.03302
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 7.9750000000000005,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 2.4699999999999998,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 2.2600000000000002,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 3.345,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0.3204,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0.30479999999999996,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          1007,
+          567
+        ],
+        "texel": [
+          0.0009930486593843098,
+          0.001763668430335097
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "standard-dense-candidate",
+      "drive": {
+        "preset": "dense",
+        "candidate": true
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0.094,
+        "magenta": 0.02256,
+        "cyan": 0.0799,
+        "violet": 0.01504,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0.20735
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0.0598
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0.0494
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0.07345
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0.14495
+        },
+        {
+          "channel": "violet",
+          "intensity": 0.034710000000000005
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0.03302
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 11.9625,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 4.9399999999999995,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 4.5200000000000005,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 3.345,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0.3204,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0.30479999999999996,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          1007,
+          567
+        ],
+        "texel": [
+          0.0009930486593843098,
+          0.001763668430335097
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "standard-silence-current",
+      "drive": {
+        "preset": "silence",
+        "candidate": false
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0,
+        "magenta": 0,
+        "cyan": 0,
+        "violet": 0,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0
+        },
+        {
+          "channel": "violet",
+          "intensity": 0
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 0,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 0,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 0,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          1007,
+          567
+        ],
+        "texel": [
+          0.0009930486593843098,
+          0.001763668430335097
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "standard-silence-candidate",
+      "drive": {
+        "preset": "silence",
+        "candidate": true
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0,
+        "magenta": 0,
+        "cyan": 0,
+        "violet": 0,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0
+        },
+        {
+          "channel": "violet",
+          "intensity": 0
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 0,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 0,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 0,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          1007,
+          567
+        ],
+        "texel": [
+          0.0009930486593843098,
+          0.001763668430335097
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "low-bass-current",
+      "drive": {
+        "preset": "bass",
+        "candidate": false
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0.0532,
+        "magenta": 0.012767999999999998,
+        "cyan": 0.045219999999999996,
+        "violet": 0.008512,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0.20085
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0.06383
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0.00013000000000000002
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0.00013000000000000002
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0
+        },
+        {
+          "channel": "violet",
+          "intensity": 0
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 7.725,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 0.006500000000000001,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 0.004,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 0,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          512,
+          288
+        ],
+        "texel": [
+          0.001953125,
+          0.003472222222222222
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "low-bass-candidate",
+      "drive": {
+        "preset": "bass",
+        "candidate": true
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0.0532,
+        "magenta": 0.012767999999999998,
+        "cyan": 0.045219999999999996,
+        "violet": 0.008512,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0.20085
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0.06383
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0.00013000000000000002
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0.00013000000000000002
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0
+        },
+        {
+          "channel": "violet",
+          "intensity": 0
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 11.587499999999999,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 0.013000000000000001,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 0.008,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 0,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          512,
+          288
+        ],
+        "texel": [
+          0.001953125,
+          0.003472222222222222
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "low-dense-current",
+      "drive": {
+        "preset": "dense",
+        "candidate": false
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0.094,
+        "magenta": 0.02256,
+        "cyan": 0.0799,
+        "violet": 0.01504,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0.20735
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0.0598
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0.0494
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0.07345
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0.14495
+        },
+        {
+          "channel": "violet",
+          "intensity": 0.034710000000000005
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0.03302
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 7.9750000000000005,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 2.4699999999999998,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 2.2600000000000002,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 3.345,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0.3204,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0.30479999999999996,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          512,
+          288
+        ],
+        "texel": [
+          0.001953125,
+          0.003472222222222222
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "low-dense-candidate",
+      "drive": {
+        "preset": "dense",
+        "candidate": true
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0.094,
+        "magenta": 0.02256,
+        "cyan": 0.0799,
+        "violet": 0.01504,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0.20735
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0.0598
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0.0494
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0.07345
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0.14495
+        },
+        {
+          "channel": "violet",
+          "intensity": 0.034710000000000005
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0.03302
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 11.9625,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 4.9399999999999995,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 4.5200000000000005,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 3.345,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0.3204,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0.30479999999999996,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          512,
+          288
+        ],
+        "texel": [
+          0.001953125,
+          0.003472222222222222
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "low-silence-current",
+      "drive": {
+        "preset": "silence",
+        "candidate": false
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0,
+        "magenta": 0,
+        "cyan": 0,
+        "violet": 0,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0
+        },
+        {
+          "channel": "violet",
+          "intensity": 0
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 0,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 0,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 0,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          512,
+          288
+        ],
+        "texel": [
+          0.001953125,
+          0.003472222222222222
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "low-silence-candidate",
+      "drive": {
+        "preset": "silence",
+        "candidate": true
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0,
+        "magenta": 0,
+        "cyan": 0,
+        "violet": 0,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 0
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 0
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 0
+        },
+        {
+          "channel": "violet",
+          "intensity": 0
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 0
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 0
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 0,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 0,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 0,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 0,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 0,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 0,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          512,
+          288
+        ],
+        "texel": [
+          0.001953125,
+          0.003472222222222222
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    },
+    {
+      "name": "standard-manual-all-on",
+      "drive": {
+        "manual": true
+      },
+      "camera": [
+        0,
+        1.6,
+        5
+      ],
+      "atmosphere": {
+        "level": 0,
+        "magenta": 0.24,
+        "cyan": 0.85,
+        "violet": 0.16,
+        "fogNear": 17,
+        "fogFar": 74
+      },
+      "emitters": [
+        {
+          "channel": "magentaMain",
+          "intensity": 1.3
+        },
+        {
+          "channel": "magentaSecondary",
+          "intensity": 1.3
+        },
+        {
+          "channel": "cyanWindows",
+          "intensity": 1.3
+        },
+        {
+          "channel": "cyanDetails",
+          "intensity": 1.3
+        },
+        {
+          "channel": "cyanPanel",
+          "intensity": 1.3
+        },
+        {
+          "channel": "violet",
+          "intensity": 1.3
+        },
+        {
+          "channel": "violetSecondary",
+          "intensity": 1.3
+        },
+        {
+          "channel": "bridge",
+          "segment": 0,
+          "intensity": 1.3
+        },
+        {
+          "channel": "bridge",
+          "segment": 1,
+          "intensity": 1.3
+        },
+        {
+          "channel": "bridge",
+          "segment": 2,
+          "intensity": 1.3
+        },
+        {
+          "channel": "bridge",
+          "segment": 3,
+          "intensity": 1.3
+        },
+        {
+          "channel": "bridge",
+          "segment": 4,
+          "intensity": 1.3
+        },
+        {
+          "channel": "bridge",
+          "segment": 5,
+          "intensity": 1.3
+        }
+      ],
+      "points": [
+        {
+          "name": "magenta-fixture-spill",
+          "channel": "magentaMain",
+          "intensity": 50,
+          "full": 50
+        },
+        {
+          "name": "magenta-bridge-spill",
+          "channel": "bridge",
+          "intensity": 40,
+          "full": 40
+        },
+        {
+          "name": "cyan-window-spill",
+          "channel": "cyanWindows",
+          "intensity": 65,
+          "full": 65
+        },
+        {
+          "name": "cyan-panel-spill",
+          "channel": "cyanDetails",
+          "intensity": 40,
+          "full": 40
+        },
+        {
+          "name": "cyanPanel-left-spill",
+          "channel": "cyanPanel",
+          "intensity": 30,
+          "full": 30
+        },
+        {
+          "name": "violet-near-spill",
+          "channel": "violet",
+          "intensity": 12,
+          "full": 12
+        },
+        {
+          "name": "violet-far-spill",
+          "channel": "violetSecondary",
+          "intensity": 12,
+          "full": 12
+        }
+      ],
+      "floor": {
+        "visible": true,
+        "target": [
+          1007,
+          567
+        ],
+        "texel": [
+          0.0009930486593843098,
+          0.001763668430335097
+        ],
+        "position": [
+          0,
+          0.016,
+          -23
+        ],
+        "rotation": [
+          -1.5707963267948966,
+          0,
+          0,
+          "XYZ"
+        ],
+        "uniforms": [
+          "color",
+          "tDiffuse",
+          "textureMatrix",
+          "texel"
+        ]
+      },
+      "resources": {
+        "geometries": 114,
+        "textures": 6
+      }
+    }
+  ],
+  "errors": [],
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "status": "Temporary spill proposal only; no production implementation; owner decision pending"
+}

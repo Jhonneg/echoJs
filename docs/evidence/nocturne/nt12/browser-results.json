@@ -1,0 +1,4285 @@
+{
+  "criteria": [
+    {
+      "label": "current",
+      "name": "silence",
+      "expected": "All fixture levels0",
+      "observed": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "100Hz band",
+      "expected": "Bass feature>.1; panel/violet accents0",
+      "observed": {
+        "label": "current",
+        "name": "bass100",
+        "samples": 78,
+        "energyMean": {
+          "subBass": 0.046146217305698484,
+          "bass": 0.13358233556306398,
+          "lowMids": 0.000045398412116183,
+          "highMids": 0.0000021537983087200075,
+          "presence": 0.00000378098244260342,
+          "air": 0.000006924817762910263
+        },
+        "channels": {
+          "magentaMain": {
+            "mean": 0.16585064928717946,
+            "peak": 0.1658513897704895,
+            "accentPeak": 0
+          },
+          "magentaSecondary": {
+            "mean": 0.06749490376160457,
+            "peak": 0.06760912431212836,
+            "accentPeak": 0
+          },
+          "cyanWindows": {
+            "mean": 0.000017164836293223193,
+            "peak": 0.000017407190604749975,
+            "accentPeak": 0
+          },
+          "cyanDetails": {
+            "mean": 0.000037847679512726285,
+            "peak": 0.000038800989212670755,
+            "accentPeak": 0
+          },
+          "cyanPanel": {
+            "mean": 0.000002892355840039434,
+            "peak": 0.0000029876879560148605,
+            "accentPeak": 0
+          },
+          "violet": {
+            "mean": 0.000002159678203956793,
+            "peak": 0.0000021597982945529965,
+            "accentPeak": 0
+          },
+          "violetSecondary": {
+            "mean": 0.000002159678203956793,
+            "peak": 0.0000021597982945529965,
+            "accentPeak": 0
+          },
+          "bridge": {
+            "mean": 0,
+            "peak": 0,
+            "accentPeak": 0
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "450Hz band",
+      "expected": "Low-mid feature>.1; high-mid panel accent0",
+      "observed": {
+        "label": "current",
+        "name": "lowmid450",
+        "samples": 21,
+        "energyMean": {
+          "subBass": 0.0000034509661017355836,
+          "bass": 0.000016113523187690037,
+          "lowMids": 0.14132735995353776,
+          "highMids": 0.000004516070053796676,
+          "presence": 0.0000028583670697996752,
+          "air": 0.000006527013855425313
+        },
+        "channels": {
+          "magentaMain": {
+            "mean": 0.00048557857591603965,
+            "peak": 0.0006776331839259057,
+            "accentPeak": 0
+          },
+          "magentaSecondary": {
+            "mean": 0.0015485270854593875,
+            "peak": 0.001942272623921767,
+            "accentPeak": 0
+          },
+          "cyanWindows": {
+            "mean": 0.0508510567224188,
+            "peak": 0.0508621602764828,
+            "accentPeak": 0
+          },
+          "cyanDetails": {
+            "mean": 0.11306189342304347,
+            "peak": 0.11306189455968994,
+            "accentPeak": 0
+          },
+          "cyanPanel": {
+            "mean": 0.000005921221902713377,
+            "peak": 0.000005963401796261184,
+            "accentPeak": 0
+          },
+          "violet": {
+            "mean": 0.0000018099110137549582,
+            "peak": 0.0000018099691797816246,
+            "accentPeak": 0
+          },
+          "violetSecondary": {
+            "mean": 0.0000018099110137549582,
+            "peak": 0.0000018099691797816246,
+            "accentPeak": 0
+          },
+          "bridge": {
+            "mean": 0,
+            "peak": 0,
+            "accentPeak": 0
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "1000Hz strength",
+      "expected": "Loud high-mid feature and panel mean exceed quiet",
+      "observed": {
+        "quiet": {
+          "label": "current",
+          "name": "quiet1000",
+          "samples": 78,
+          "energyMean": {
+            "subBass": 3.917997897164009e-7,
+            "bass": 2.361002384430972e-7,
+            "lowMids": 0.000008424599141421122,
+            "highMids": 0.04239826818477427,
+            "presence": 0.0000021476540095738535,
+            "air": 0.000006891941380816687
+          },
+          "channels": {
+            "magentaMain": {
+              "mean": 0.000003985035300978184,
+              "peak": 0.000011197810625980843,
+              "accentPeak": 0
+            },
+            "magentaSecondary": {
+              "mean": 0.00005222317186550996,
+              "peak": 0.00011332706274390631,
+              "accentPeak": 0
+            },
+            "cyanWindows": {
+              "mean": 0.01111737270501283,
+              "peak": 0.01510905273597198,
+              "accentPeak": 0
+            },
+            "cyanDetails": {
+              "mean": 0.00045191980615087723,
+              "peak": 0.0016618155043360062,
+              "accentPeak": 0
+            },
+            "cyanPanel": {
+              "mean": 0.055117751599189545,
+              "peak": 0.055117753657995615,
+              "accentPeak": 0
+            },
+            "violet": {
+              "mean": 0.0000016324727480849823,
+              "peak": 0.0000016326361444940814,
+              "accentPeak": 0
+            },
+            "violetSecondary": {
+              "mean": 0.0000016324727480849823,
+              "peak": 0.0000016326361444940814,
+              "accentPeak": 0
+            },
+            "bridge": {
+              "mean": 0,
+              "peak": 0,
+              "accentPeak": 0
+            }
+          }
+        },
+        "loud": {
+          "label": "current",
+          "name": "loud1000",
+          "samples": 78,
+          "energyMean": {
+            "subBass": 0.0000013120322170769144,
+            "bass": 7.814940955087127e-7,
+            "lowMids": 0.000028079765227329134,
+            "highMids": 0.1413262078524051,
+            "presence": 9.751977045758913e-7,
+            "air": 0.000007993497555845506
+          },
+          "channels": {
+            "magentaMain": {
+              "mean": 0.0000014035975754706915,
+              "peak": 0.0000014635445519618,
+              "accentPeak": 0
+            },
+            "magentaSecondary": {
+              "mean": 0.0000013946014244945356,
+              "peak": 0.0000022285140041607867,
+              "accentPeak": 0
+            },
+            "cyanWindows": {
+              "mean": 0.021760353685999434,
+              "peak": 0.021809556372370226,
+              "accentPeak": 0
+            },
+            "cyanDetails": {
+              "mean": 0.000022911153602131565,
+              "peak": 0.000024122502747403174,
+              "accentPeak": 0
+            },
+            "cyanPanel": {
+              "mean": 0.1837240716631266,
+              "peak": 0.18372407226106052,
+              "accentPeak": 0
+            },
+            "violet": {
+              "mean": 0.0000014088451382028341,
+              "peak": 0.0000014091608808556218,
+              "accentPeak": 0
+            },
+            "violetSecondary": {
+              "mean": 0.0000014088451382028341,
+              "peak": 0.0000014091608808556218,
+              "accentPeak": 0
+            },
+            "bridge": {
+              "mean": 0,
+              "peak": 0,
+              "accentPeak": 0
+            }
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "8000Hz band",
+      "expected": "Air feature>.1; panel/magenta accents0",
+      "observed": {
+        "label": "current",
+        "name": "high8000",
+        "samples": 48,
+        "energyMean": {
+          "subBass": 0.0000011401200684126726,
+          "bass": 1.4650960695661635e-9,
+          "lowMids": 2.5897132732905303e-9,
+          "highMids": 6.728351030500735e-9,
+          "presence": 8.316489138950652e-8,
+          "air": 0.14131870067582625
+        },
+        "channels": {
+          "magentaMain": {
+            "mean": 3.7812460506657804e-7,
+            "peak": 4.3393746767704413e-7,
+            "accentPeak": 0
+          },
+          "magentaSecondary": {
+            "mean": 3.775428811594828e-7,
+            "peak": 4.1981941120789385e-7,
+            "accentPeak": 0
+          },
+          "cyanWindows": {
+            "mean": 0.0016152782943973161,
+            "peak": 0.0024157949017524095,
+            "accentPeak": 0
+          },
+          "cyanDetails": {
+            "mean": 2.4221950182284396e-7,
+            "peak": 5.98879497809759e-7,
+            "accentPeak": 0
+          },
+          "cyanPanel": {
+            "mean": 7.224066108780764e-7,
+            "peak": 0.0000030746024633588086,
+            "accentPeak": 0
+          },
+          "violet": {
+            "mean": 0.019380877120540107,
+            "peak": 0.01938087718765973,
+            "accentPeak": 0
+          },
+          "violetSecondary": {
+            "mean": 0.019380877120540107,
+            "peak": 0.01938087718765973,
+            "accentPeak": 0
+          },
+          "bridge": {
+            "mean": 0,
+            "peak": 0,
+            "accentPeak": 0
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "low-attacks",
+      "expected": "Own finite accent>.01",
+      "observed": {
+        "mean": 0.1104051707783988,
+        "peak": 0.4038753509914092,
+        "accentPeak": 0.2543925234005738
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "mid-attacks",
+      "expected": "Own finite accent>.01",
+      "observed": {
+        "mean": 0.06623802717518441,
+        "peak": 0.2916132552569121,
+        "accentPeak": 0.07419780265734473
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "high-attacks",
+      "expected": "Own finite accent>.01",
+      "observed": {
+        "mean": 0.013872020263288933,
+        "peak": 0.2201142568082956,
+        "accentPeak": 0.1938198860853443
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "held high-mid near bass attacks",
+      "expected": "Panel accent0, stable mean near .092 while magenta accents",
+      "observed": {
+        "label": "current",
+        "name": "bass-highmid",
+        "samples": 186,
+        "energyMean": {
+          "subBass": 0.025375248361410762,
+          "bass": 0.073415660890405,
+          "lowMids": 0.00005352058625691452,
+          "highMids": 0.07066377468196773,
+          "presence": 0.000004118220009082289,
+          "air": 0.0000068411327726587124
+        },
+        "channels": {
+          "magentaMain": {
+            "mean": 0.14005239999115268,
+            "peak": 0.478611653335115,
+            "accentPeak": 0.25439173248969765
+          },
+          "magentaSecondary": {
+            "mean": 0.04424122221843844,
+            "peak": 0.06410339194961583,
+            "accentPeak": 0
+          },
+          "cyanWindows": {
+            "mean": 0.01090842338411731,
+            "peak": 0.010981560918565485,
+            "accentPeak": 0
+          },
+          "cyanDetails": {
+            "mean": 0.00009751062685868492,
+            "peak": 0.0004213887053392252,
+            "accentPeak": 0
+          },
+          "cyanPanel": {
+            "mean": 0.09186307571865399,
+            "peak": 0.09186583281470763,
+            "accentPeak": 0
+          },
+          "violet": {
+            "mean": 0.00000246829022024405,
+            "peak": 0.000006071896270569705,
+            "accentPeak": 0
+          },
+          "violetSecondary": {
+            "mean": 0.00000246829022024405,
+            "peak": 0.000006071896270569705,
+            "accentPeak": 0
+          },
+          "bridge": {
+            "mean": 0.012427784052262096,
+            "peak": 0.07045671690762864,
+            "accentPeak": 0.07045671690762864
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "low-mid attacks near held high mids",
+      "expected": "Detail accent>.01; panel accent0",
+      "observed": {
+        "label": "current",
+        "name": "lowmid-near-highmid",
+        "samples": 210,
+        "energyMean": {
+          "subBass": 0.000008993564384269803,
+          "bass": 0.000036241111654421475,
+          "lowMids": 0.01978498973573859,
+          "highMids": 0.07066354180969135,
+          "presence": 0.0000018799669568712032,
+          "air": 0.000006386038924384235
+        },
+        "channels": {
+          "magentaMain": {
+            "mean": 0.001328565690520354,
+            "peak": 0.009627926943567792,
+            "accentPeak": 0
+          },
+          "magentaSecondary": {
+            "mean": 0.00179350409886374,
+            "peak": 0.008843553470151953,
+            "accentPeak": 0
+          },
+          "cyanWindows": {
+            "mean": 0.023619417671367323,
+            "peak": 0.03426919344286313,
+            "accentPeak": 0
+          },
+          "cyanDetails": {
+            "mean": 0.04497515538357428,
+            "peak": 0.15270249851322457,
+            "accentPeak": 0.05238597499514119
+          },
+          "cyanPanel": {
+            "mean": 0.09186549770967622,
+            "peak": 0.09186781150079916,
+            "accentPeak": 0
+          },
+          "violet": {
+            "mean": 0.000001927101055960432,
+            "peak": 0.000005849253007486345,
+            "accentPeak": 0
+          },
+          "violetSecondary": {
+            "mean": 0.000001927101055960432,
+            "peak": 0.000005849253007486345,
+            "accentPeak": 0
+          },
+          "bridge": {
+            "mean": 0,
+            "peak": 0,
+            "accentPeak": 0
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "sustain no repeated accents",
+      "expected": "Settled1000/8000 sections have accent0",
+      "observed": {
+        "loud": {
+          "mean": 0.1837240716631266,
+          "peak": 0.18372407226106052,
+          "accentPeak": 0
+        },
+        "high": {
+          "mean": 0.019380877120540107,
+          "peak": 0.01938087718765973,
+          "accentPeak": 0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "settled band isolation",
+      "expected": "Unrelated final levels<.001",
+      "observed": {
+        "bassPanel": {
+          "mean": 0.000002892355840039434,
+          "peak": 0.0000029876879560148605,
+          "accentPeak": 0
+        },
+        "lowPanel": {
+          "mean": 0.000005921221902713377,
+          "peak": 0.000005963401796261184,
+          "accentPeak": 0
+        },
+        "highPanel": {
+          "mean": 7.224066108780764e-7,
+          "peak": 0.0000030746024633588086,
+          "accentPeak": 0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "rising/falling dynamics",
+      "expected": "Panel increases then decreases with1000Hz ramp",
+      "observed": {
+        "early": 0.07477797747433909,
+        "top": 0.16650824147397117,
+        "fall": 0.05303616660347317
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "silence recovery",
+      "expected": "Every fixture0 in final window",
+      "observed": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "browser zero with positive input",
+      "expected": "High-mid>.1 but all delivered fixtures and atmosphere0",
+      "observed": {
+        "audioTime": 11.498667,
+        "now": 1.7825,
+        "camera": [
+          0,
+          1.6,
+          5
+        ],
+        "resources": {
+          "geometries": 114,
+          "textures": 6,
+          "calls": 83
+        },
+        "feature": {
+          "session": 9,
+          "frame": 19,
+          "status": "active",
+          "updatedAt": 1.7782,
+          "energy": {
+            "subBass": 0.0000011144222677578021,
+            "bass": 9.30276793230718e-7,
+            "lowMids": 0.00002815113981503995,
+            "highMids": 0.14140674045746646,
+            "presence": 9.72870606506376e-7,
+            "air": 0.000007997613024724575
+          },
+          "context": {
+            "intensity": 0.04008438323192077,
+            "brightness": 0.19673467341236456,
+            "brightnessValid": true,
+            "activity": 0,
+            "session": 4,
+            "time": 1.7782,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.14140674349658008,
+            "brightnessTarget": 0.5000000086090681,
+            "activityTarget": 0,
+            "broadRms": 0.07070337174829004,
+            "centroidHz": 1000.0000396462246,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          },
+          "sequence": 0,
+          "events": []
+        },
+        "atmosphere": {
+          "level": 0,
+          "magenta": 0,
+          "cyan": 0,
+          "violet": 0,
+          "fogNear": 17,
+          "fogFar": 74
+        },
+        "actualAtmosphere": {
+          "gate": [
+            0,
+            0,
+            0
+          ],
+          "haze": [
+            0,
+            0,
+            0
+          ],
+          "near": 17,
+          "far": 74
+        },
+        "channels": {
+          "magentaMain": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "magentaSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanWindows": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanDetails": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanPanel": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violet": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violetSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "bridge": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          }
+        },
+        "bridgeSections": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "emitters": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0
+          },
+          {
+            "channel": "magentaSecondary",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0
+          },
+          {
+            "channel": "violet",
+            "intensity": 0
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 0,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 1,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 2,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 3,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 4,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 5,
+            "intensity": 0
+          }
+        ],
+        "points": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0,
+            "full": 50
+          },
+          {
+            "channel": "bridge",
+            "intensity": 0,
+            "full": 40
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0,
+            "full": 65
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0,
+            "full": 40
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0,
+            "full": 30
+          },
+          {
+            "channel": "violet",
+            "intensity": 0,
+            "full": 12
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0,
+            "full": 12
+          }
+        ]
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "browser Manual independent of gain",
+      "expected": "Original on/off previews deliver1.3/all-full or0",
+      "observed": {
+        "on": {
+          "audioTime": 11.882667,
+          "now": 2.16539999999851,
+          "camera": [
+            0,
+            1.6,
+            5
+          ],
+          "resources": {
+            "geometries": 114,
+            "textures": 6,
+            "calls": 83
+          },
+          "feature": {
+            "session": 9,
+            "frame": 42,
+            "status": "active",
+            "updatedAt": 2.1615,
+            "energy": {
+              "subBass": 0.0000011144222677578021,
+              "bass": 9.30276793230718e-7,
+              "lowMids": 0.00002815113981503995,
+              "highMids": 0.14140674045746646,
+              "presence": 9.72870606506376e-7,
+              "air": 0.000007997613024724575
+            },
+            "context": {
+              "intensity": 0.08062797810865427,
+              "brightness": 0.3591059688123044,
+              "brightnessValid": true,
+              "activity": 0,
+              "session": 4,
+              "time": 2.1615,
+              "primed": true,
+              "state": "running",
+              "intensityTarget": 0.14140674349658008,
+              "brightnessTarget": 0.5000000086090681,
+              "activityTarget": 0,
+              "broadRms": 0.07070337174829004,
+              "centroidHz": 1000.0000396462246,
+              "countRate": 0,
+              "strengthRate": 0,
+              "eventCount": 0,
+              "sequence": 0,
+              "overflow": false
+            },
+            "sequence": 0,
+            "events": []
+          },
+          "atmosphere": {
+            "level": 0,
+            "magenta": 0.24,
+            "cyan": 0.85,
+            "violet": 0.16,
+            "fogNear": 17,
+            "fogFar": 74
+          },
+          "actualAtmosphere": {
+            "gate": [
+              0.3094645817863657,
+              0.6872660542403943,
+              1.0356855447126043
+            ],
+            "haze": [
+              0.3094645817863657,
+              0.6872660542403943,
+              1.0356855447126043
+            ],
+            "near": 17,
+            "far": 74
+          },
+          "channels": {
+            "magentaMain": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "magentaSecondary": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "cyanWindows": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "cyanDetails": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "cyanPanel": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "violet": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "violetSecondary": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "bridge": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            }
+          },
+          "bridgeSections": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "emitters": [
+            {
+              "channel": "magentaMain",
+              "intensity": 1.3
+            },
+            {
+              "channel": "magentaSecondary",
+              "intensity": 1.3
+            },
+            {
+              "channel": "cyanWindows",
+              "intensity": 1.3
+            },
+            {
+              "channel": "cyanDetails",
+              "intensity": 1.3
+            },
+            {
+              "channel": "cyanPanel",
+              "intensity": 1.3
+            },
+            {
+              "channel": "violet",
+              "intensity": 1.3
+            },
+            {
+              "channel": "violetSecondary",
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 0,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 1,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 2,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 3,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 4,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 5,
+              "intensity": 1.3
+            }
+          ],
+          "points": [
+            {
+              "channel": "magentaMain",
+              "intensity": 50,
+              "full": 50
+            },
+            {
+              "channel": "bridge",
+              "intensity": 40,
+              "full": 40
+            },
+            {
+              "channel": "cyanWindows",
+              "intensity": 65,
+              "full": 65
+            },
+            {
+              "channel": "cyanDetails",
+              "intensity": 40,
+              "full": 40
+            },
+            {
+              "channel": "cyanPanel",
+              "intensity": 30,
+              "full": 30
+            },
+            {
+              "channel": "violet",
+              "intensity": 12,
+              "full": 12
+            },
+            {
+              "channel": "violetSecondary",
+              "intensity": 12,
+              "full": 12
+            }
+          ]
+        },
+        "off": {
+          "audioTime": 12.074667,
+          "now": 2.3525,
+          "camera": [
+            0,
+            1.6,
+            5
+          ],
+          "resources": {
+            "geometries": 114,
+            "textures": 6,
+            "calls": 83
+          },
+          "feature": {
+            "session": 9,
+            "frame": 53,
+            "status": "active",
+            "updatedAt": 2.3448,
+            "energy": {
+              "subBass": 0.0000011144222677578021,
+              "bass": 9.30276793230718e-7,
+              "lowMids": 0.00002815113981503995,
+              "highMids": 0.14140674045746646,
+              "presence": 9.72870606506376e-7,
+              "air": 0.000007997613024724575
+            },
+            "context": {
+              "intensity": 0.09380637580450528,
+              "brightness": 0.40234820593416615,
+              "brightnessValid": true,
+              "activity": 0,
+              "session": 4,
+              "time": 2.3448,
+              "primed": true,
+              "state": "running",
+              "intensityTarget": 0.14140674349658008,
+              "brightnessTarget": 0.5000000086090681,
+              "activityTarget": 0,
+              "broadRms": 0.07070337174829004,
+              "centroidHz": 1000.0000396462246,
+              "countRate": 0,
+              "strengthRate": 0,
+              "eventCount": 0,
+              "sequence": 0,
+              "overflow": false
+            },
+            "sequence": 0,
+            "events": []
+          },
+          "atmosphere": {
+            "level": 0,
+            "magenta": 0,
+            "cyan": 0,
+            "violet": 0,
+            "fogNear": 17,
+            "fogFar": 74
+          },
+          "actualAtmosphere": {
+            "gate": [
+              0,
+              0,
+              0
+            ],
+            "haze": [
+              0,
+              0,
+              0
+            ],
+            "near": 17,
+            "far": 74
+          },
+          "channels": {
+            "magentaMain": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "magentaSecondary": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "cyanWindows": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "cyanDetails": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "cyanPanel": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "violet": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "violetSecondary": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "bridge": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            }
+          },
+          "bridgeSections": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "emitters": [
+            {
+              "channel": "magentaMain",
+              "intensity": 0
+            },
+            {
+              "channel": "magentaSecondary",
+              "intensity": 0
+            },
+            {
+              "channel": "cyanWindows",
+              "intensity": 0
+            },
+            {
+              "channel": "cyanDetails",
+              "intensity": 0
+            },
+            {
+              "channel": "cyanPanel",
+              "intensity": 0
+            },
+            {
+              "channel": "violet",
+              "intensity": 0
+            },
+            {
+              "channel": "violetSecondary",
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 0,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 1,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 2,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 3,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 4,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 5,
+              "intensity": 0
+            }
+          ],
+          "points": [
+            {
+              "channel": "magentaMain",
+              "intensity": 0,
+              "full": 50
+            },
+            {
+              "channel": "bridge",
+              "intensity": 0,
+              "full": 40
+            },
+            {
+              "channel": "cyanWindows",
+              "intensity": 0,
+              "full": 65
+            },
+            {
+              "channel": "cyanDetails",
+              "intensity": 0,
+              "full": 40
+            },
+            {
+              "channel": "cyanPanel",
+              "intensity": 0,
+              "full": 30
+            },
+            {
+              "channel": "violet",
+              "intensity": 0,
+              "full": 12
+            },
+            {
+              "channel": "violetSecondary",
+              "intensity": 0,
+              "full": 12
+            }
+          ]
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "current",
+      "name": "browser pause recovery",
+      "expected": "All fixture outputs settle0",
+      "observed": {
+        "audioTime": 11.2,
+        "now": 2.78489999999851,
+        "camera": [
+          0,
+          1.6,
+          5
+        ],
+        "resources": {
+          "geometries": 114,
+          "textures": 6,
+          "calls": 83
+        },
+        "feature": {
+          "session": 12,
+          "frame": 2,
+          "status": "inactive",
+          "updatedAt": 2.7781,
+          "energy": {
+            "subBass": 0,
+            "bass": 0,
+            "lowMids": 0,
+            "highMids": 0,
+            "presence": 0,
+            "air": 0
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 7,
+            "time": 0,
+            "primed": false,
+            "state": "reset",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          },
+          "sequence": 0,
+          "events": []
+        },
+        "atmosphere": {
+          "level": 0,
+          "magenta": 0,
+          "cyan": 0,
+          "violet": 0,
+          "fogNear": 17,
+          "fogFar": 74
+        },
+        "actualAtmosphere": {
+          "gate": [
+            0,
+            0,
+            0
+          ],
+          "haze": [
+            0,
+            0,
+            0
+          ],
+          "near": 17,
+          "far": 74
+        },
+        "channels": {
+          "magentaMain": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "magentaSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanWindows": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanDetails": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanPanel": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violet": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violetSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "bridge": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          }
+        },
+        "bridgeSections": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "emitters": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0
+          },
+          {
+            "channel": "magentaSecondary",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0
+          },
+          {
+            "channel": "violet",
+            "intensity": 0
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 0,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 1,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 2,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 3,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 4,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 5,
+            "intensity": 0
+          }
+        ],
+        "points": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0,
+            "full": 50
+          },
+          {
+            "channel": "bridge",
+            "intensity": 0,
+            "full": 40
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0,
+            "full": 65
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0,
+            "full": 40
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0,
+            "full": 30
+          },
+          {
+            "channel": "violet",
+            "intensity": 0,
+            "full": 12
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0,
+            "full": 12
+          }
+        ]
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "silence",
+      "expected": "All fixture levels0",
+      "observed": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "100Hz band",
+      "expected": "Bass feature>.1; panel/violet accents0",
+      "observed": {
+        "label": "reduced",
+        "name": "bass100",
+        "samples": 78,
+        "energyMean": {
+          "subBass": 0.04617081570575279,
+          "bass": 0.13365515804601963,
+          "lowMids": 0.000045551423250911015,
+          "highMids": 0.0000021604774816000985,
+          "presence": 0.000003783070486394317,
+          "air": 0.000006928579243395778
+        },
+        "channels": {
+          "magentaMain": {
+            "mean": 0.15283087573136714,
+            "peak": 0.16066257972542355,
+            "accentPeak": 0
+          },
+          "magentaSecondary": {
+            "mean": 0.062312433603442886,
+            "peak": 0.06550341864282377,
+            "accentPeak": 0
+          },
+          "cyanWindows": {
+            "mean": 0.000016099650228374585,
+            "peak": 0.00001650106107284142,
+            "accentPeak": 0
+          },
+          "cyanDetails": {
+            "mean": 0.00003502178810295478,
+            "peak": 0.0000359194220194307,
+            "accentPeak": 0
+          },
+          "cyanPanel": {
+            "mean": 0.0000028955549151862167,
+            "peak": 0.0000029335738510351183,
+            "accentPeak": 0
+          },
+          "violet": {
+            "mean": 0.000001999973979749169,
+            "peak": 0.0000020960377707305095,
+            "accentPeak": 0
+          },
+          "violetSecondary": {
+            "mean": 0.000001999973979749169,
+            "peak": 0.0000020960377707305095,
+            "accentPeak": 0
+          },
+          "bridge": {
+            "mean": 0,
+            "peak": 0,
+            "accentPeak": 0
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "450Hz band",
+      "expected": "Low-mid feature>.1; high-mid panel accent0",
+      "observed": {
+        "label": "reduced",
+        "name": "lowmid450",
+        "samples": 21,
+        "energyMean": {
+          "subBass": 0.0000032901534729432293,
+          "bass": 0.00001606844926292843,
+          "lowMids": 0.14140422625359828,
+          "highMids": 0.0000045262008613004574,
+          "presence": 0.000002859936443467151,
+          "air": 0.000006530557983330168
+        },
+        "channels": {
+          "magentaMain": {
+            "mean": 0.014803940000361795,
+            "peak": 0.017149685590132527,
+            "accentPeak": 0
+          },
+          "magentaSecondary": {
+            "mean": 0.006038359962831734,
+            "peak": 0.006995218096578193,
+            "accentPeak": 0
+          },
+          "cyanWindows": {
+            "mean": 0.04899645943738199,
+            "peak": 0.049367723080161845,
+            "accentPeak": 0
+          },
+          "cyanDetails": {
+            "mean": 0.10887940020051506,
+            "peak": 0.1097044442681333,
+            "accentPeak": 0
+          },
+          "cyanPanel": {
+            "mean": 0.000006549023880372458,
+            "peak": 0.000006656096268417346,
+            "accentPeak": 0
+          },
+          "violet": {
+            "mean": 0.0000018576482764981227,
+            "peak": 0.0000018650836892796445,
+            "accentPeak": 0
+          },
+          "violetSecondary": {
+            "mean": 0.0000018576482764981227,
+            "peak": 0.0000018650836892796445,
+            "accentPeak": 0
+          },
+          "bridge": {
+            "mean": 0,
+            "peak": 0,
+            "accentPeak": 0
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "1000Hz strength",
+      "expected": "Loud high-mid feature and panel mean exceed quiet",
+      "observed": {
+        "quiet": {
+          "label": "reduced",
+          "name": "quiet1000",
+          "samples": 78,
+          "energyMean": {
+            "subBass": 3.937151207863184e-7,
+            "bass": 2.3622894611125236e-7,
+            "lowMids": 0.00000842918038178657,
+            "highMids": 0.04242133969768336,
+            "presence": 0.000002148820625021288,
+            "air": 0.000006895680075156992
+          },
+          "channels": {
+            "magentaMain": {
+              "mean": 0.0016240651681363528,
+              "peak": 0.0027474104516889827,
+              "accentPeak": 0
+            },
+            "magentaSecondary": {
+              "mean": 0.0006624327797032126,
+              "peak": 0.0011205951026457884,
+              "accentPeak": 0
+            },
+            "cyanWindows": {
+              "mean": 0.013091910360511069,
+              "peak": 0.017619300827980723,
+              "accentPeak": 0
+            },
+            "cyanDetails": {
+              "mean": 0.01677083005814099,
+              "peak": 0.028369100952589005,
+              "accentPeak": 0
+            },
+            "cyanPanel": {
+              "mean": 0.05086149749821585,
+              "peak": 0.05342191322324518,
+              "accentPeak": 0
+            },
+            "violet": {
+              "mean": 0.0000016832746161927884,
+              "peak": 0.0000017178403368233053,
+              "accentPeak": 0
+            },
+            "violetSecondary": {
+              "mean": 0.0000016832746161927884,
+              "peak": 0.0000017178403368233053,
+              "accentPeak": 0
+            },
+            "bridge": {
+              "mean": 0,
+              "peak": 0,
+              "accentPeak": 0
+            }
+          }
+        },
+        "loud": {
+          "label": "reduced",
+          "name": "loud1000",
+          "samples": 78,
+          "energyMean": {
+            "subBass": 0.000001303303652728901,
+            "bass": 7.929011226383416e-7,
+            "lowMids": 0.000028099140712236073,
+            "highMids": 0.14140308874202523,
+            "presence": 9.755356409077077e-7,
+            "air": 0.00000799783064836908
+          },
+          "channels": {
+            "magentaMain": {
+              "mean": 0.00010908009815786799,
+              "peak": 0.0001836526353488031,
+              "accentPeak": 0
+            },
+            "magentaSecondary": {
+              "mean": 0.00004463112280968592,
+              "peak": 0.0000750318405065953,
+              "accentPeak": 0
+            },
+            "cyanWindows": {
+              "mean": 0.020817661433825848,
+              "peak": 0.0214203957415825,
+              "accentPeak": 0
+            },
+            "cyanDetails": {
+              "mean": 0.0011352902570687124,
+              "peak": 0.0019050487134895221,
+              "accentPeak": 0
+            },
+            "cyanPanel": {
+              "mean": 0.17334231023754826,
+              "peak": 0.17960406796550724,
+              "accentPeak": 0
+            },
+            "violet": {
+              "mean": 0.00000147963201090192,
+              "peak": 0.0000015284634339859653,
+              "accentPeak": 0
+            },
+            "violetSecondary": {
+              "mean": 0.00000147963201090192,
+              "peak": 0.0000015284634339859653,
+              "accentPeak": 0
+            },
+            "bridge": {
+              "mean": 0,
+              "peak": 0,
+              "accentPeak": 0
+            }
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "8000Hz band",
+      "expected": "Air feature>.1; panel/magenta accents0",
+      "observed": {
+        "label": "reduced",
+        "name": "high8000",
+        "samples": 49,
+        "energyMean": {
+          "subBass": 0.000001140730267206063,
+          "bass": 1.4202422838275126e-9,
+          "lowMids": 2.5091315076578235e-9,
+          "highMids": 6.633062335687622e-9,
+          "presence": 8.314902437660148e-8,
+          "air": 0.14139558613446615
+        },
+        "channels": {
+          "magentaMain": {
+            "mean": 0.000005888960071664185,
+            "peak": 0.000008147726205290221,
+            "accentPeak": 0
+          },
+          "magentaSecondary": {
+            "mean": 0.0000025771211844465465,
+            "peak": 0.0000034965030401303642,
+            "accentPeak": 0
+          },
+          "cyanWindows": {
+            "mean": 0.0025456367521151414,
+            "peak": 0.0035795491211889786,
+            "accentPeak": 0
+          },
+          "cyanDetails": {
+            "mean": 0.00005928515500968901,
+            "peak": 0.00008336306142771642,
+            "accentPeak": 0
+          },
+          "cyanPanel": {
+            "mean": 0.021365406107310896,
+            "peak": 0.03004298570160025,
+            "accentPeak": 0
+          },
+          "violet": {
+            "mean": 0.01834197344411183,
+            "peak": 0.018781647837012062,
+            "accentPeak": 0
+          },
+          "violetSecondary": {
+            "mean": 0.01834197344411183,
+            "peak": 0.018781647837012062,
+            "accentPeak": 0
+          },
+          "bridge": {
+            "mean": 0,
+            "peak": 0,
+            "accentPeak": 0
+          }
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "reduced suppression",
+      "expected": "All channel accents/bridge sections0",
+      "observed": {
+        "renderSamples": 3599
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "rising/falling dynamics",
+      "expected": "Panel increases then decreases with1000Hz ramp",
+      "observed": {
+        "early": 0.0699800488851842,
+        "top": 0.1545176099045808,
+        "fall": 0.09346271594243183
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "silence recovery",
+      "expected": "Every fixture0 in final window",
+      "observed": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "browser zero with positive input",
+      "expected": "High-mid>.1 but all delivered fixtures and atmosphere0",
+      "observed": {
+        "audioTime": 12.010667,
+        "now": 2.101800000000745,
+        "camera": [
+          0,
+          1.6,
+          5
+        ],
+        "resources": {
+          "geometries": 114,
+          "textures": 6,
+          "calls": 83
+        },
+        "feature": {
+          "session": 10,
+          "frame": 48,
+          "status": "active",
+          "updatedAt": 2.0932,
+          "energy": {
+            "subBass": 0.0000015558038000510225,
+            "bass": 9.291675587601101e-7,
+            "lowMids": 0.000028132703741660535,
+            "highMids": 0.14131299533641067,
+            "presence": 9.740354676050125e-7,
+            "air": 0.0000079938171453753
+          },
+          "context": {
+            "intensity": 0.08933378751502917,
+            "brightness": 0.38845723739370913,
+            "brightnessValid": true,
+            "activity": 0,
+            "session": 5,
+            "time": 2.0932,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.14131299837782502,
+            "brightnessTarget": 0.500000008605707,
+            "activityTarget": 0,
+            "broadRms": 0.07065649918891251,
+            "centroidHz": 1000.000039630746,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          },
+          "sequence": 0,
+          "events": []
+        },
+        "atmosphere": {
+          "level": 0,
+          "magenta": 0,
+          "cyan": 0,
+          "violet": 0,
+          "fogNear": 17,
+          "fogFar": 74
+        },
+        "actualAtmosphere": {
+          "gate": [
+            0,
+            0,
+            0
+          ],
+          "haze": [
+            0,
+            0,
+            0
+          ],
+          "near": 17,
+          "far": 74
+        },
+        "channels": {
+          "magentaMain": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "magentaSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanWindows": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanDetails": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanPanel": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violet": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violetSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "bridge": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          }
+        },
+        "bridgeSections": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "emitters": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0
+          },
+          {
+            "channel": "magentaSecondary",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0
+          },
+          {
+            "channel": "violet",
+            "intensity": 0
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 0,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 1,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 2,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 3,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 4,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 5,
+            "intensity": 0
+          }
+        ],
+        "points": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0,
+            "full": 50
+          },
+          {
+            "channel": "bridge",
+            "intensity": 0,
+            "full": 40
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0,
+            "full": 65
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0,
+            "full": 40
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0,
+            "full": 30
+          },
+          {
+            "channel": "violet",
+            "intensity": 0,
+            "full": 12
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0,
+            "full": 12
+          }
+        ]
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "browser Manual independent of gain",
+      "expected": "Original on/off previews deliver1.3/all-full or0",
+      "observed": {
+        "on": {
+          "audioTime": 12.394667,
+          "now": 2.4844000000003725,
+          "camera": [
+            0,
+            1.6,
+            5
+          ],
+          "resources": {
+            "geometries": 114,
+            "textures": 6,
+            "calls": 83
+          },
+          "feature": {
+            "session": 10,
+            "frame": 71,
+            "status": "active",
+            "updatedAt": 2.4765,
+            "energy": {
+              "subBass": 0.0000015558038000510225,
+              "bass": 9.291675587601101e-7,
+              "lowMids": 0.000028132703741660535,
+              "highMids": 0.14131299533641067,
+              "presence": 9.740354676050125e-7,
+              "air": 0.0000079938171453753
+            },
+            "context": {
+              "intensity": 0.1101329915441053,
+              "brightness": 0.44817835341950335,
+              "brightnessValid": true,
+              "activity": 0,
+              "session": 5,
+              "time": 2.4765,
+              "primed": true,
+              "state": "running",
+              "intensityTarget": 0.14131299837782502,
+              "brightnessTarget": 0.500000008605707,
+              "activityTarget": 0,
+              "broadRms": 0.07065649918891251,
+              "centroidHz": 1000.000039630746,
+              "countRate": 0,
+              "strengthRate": 0,
+              "eventCount": 0,
+              "sequence": 0,
+              "overflow": false
+            },
+            "sequence": 0,
+            "events": []
+          },
+          "atmosphere": {
+            "level": 0,
+            "magenta": 0.24,
+            "cyan": 0.85,
+            "violet": 0.16,
+            "fogNear": 17,
+            "fogFar": 74
+          },
+          "actualAtmosphere": {
+            "gate": [
+              0.3094645817863657,
+              0.6872660542403943,
+              1.0356855447126043
+            ],
+            "haze": [
+              0.3094645817863657,
+              0.6872660542403943,
+              1.0356855447126043
+            ],
+            "near": 17,
+            "far": 74
+          },
+          "channels": {
+            "magentaMain": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "magentaSecondary": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "cyanWindows": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "cyanDetails": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "cyanPanel": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "violet": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "violetSecondary": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            },
+            "bridge": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 1
+            }
+          },
+          "bridgeSections": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "emitters": [
+            {
+              "channel": "magentaMain",
+              "intensity": 1.3
+            },
+            {
+              "channel": "magentaSecondary",
+              "intensity": 1.3
+            },
+            {
+              "channel": "cyanWindows",
+              "intensity": 1.3
+            },
+            {
+              "channel": "cyanDetails",
+              "intensity": 1.3
+            },
+            {
+              "channel": "cyanPanel",
+              "intensity": 1.3
+            },
+            {
+              "channel": "violet",
+              "intensity": 1.3
+            },
+            {
+              "channel": "violetSecondary",
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 0,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 1,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 2,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 3,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 4,
+              "intensity": 1.3
+            },
+            {
+              "channel": "bridge",
+              "segment": 5,
+              "intensity": 1.3
+            }
+          ],
+          "points": [
+            {
+              "channel": "magentaMain",
+              "intensity": 50,
+              "full": 50
+            },
+            {
+              "channel": "bridge",
+              "intensity": 40,
+              "full": 40
+            },
+            {
+              "channel": "cyanWindows",
+              "intensity": 65,
+              "full": 65
+            },
+            {
+              "channel": "cyanDetails",
+              "intensity": 40,
+              "full": 40
+            },
+            {
+              "channel": "cyanPanel",
+              "intensity": 30,
+              "full": 30
+            },
+            {
+              "channel": "violet",
+              "intensity": 12,
+              "full": 12
+            },
+            {
+              "channel": "violetSecondary",
+              "intensity": 12,
+              "full": 12
+            }
+          ]
+        },
+        "off": {
+          "audioTime": 12.565333,
+          "now": 2.6712000000011176,
+          "camera": [
+            0,
+            1.6,
+            5
+          ],
+          "resources": {
+            "geometries": 114,
+            "textures": 6,
+            "calls": 83
+          },
+          "feature": {
+            "session": 10,
+            "frame": 82,
+            "status": "active",
+            "updatedAt": 2.6598,
+            "energy": {
+              "subBass": 0.0000015558038000510225,
+              "bass": 9.291675587601101e-7,
+              "lowMids": 0.000028132703741660535,
+              "highMids": 0.14131299533641067,
+              "presence": 9.740354676050125e-7,
+              "air": 0.0000079938171453753
+            },
+            "context": {
+              "intensity": 0.11689362003292422,
+              "brightness": 0.4640831021800588,
+              "brightnessValid": true,
+              "activity": 0,
+              "session": 5,
+              "time": 2.6598,
+              "primed": true,
+              "state": "running",
+              "intensityTarget": 0.14131299837782502,
+              "brightnessTarget": 0.500000008605707,
+              "activityTarget": 0,
+              "broadRms": 0.07065649918891251,
+              "centroidHz": 1000.000039630746,
+              "countRate": 0,
+              "strengthRate": 0,
+              "eventCount": 0,
+              "sequence": 0,
+              "overflow": false
+            },
+            "sequence": 0,
+            "events": []
+          },
+          "atmosphere": {
+            "level": 0,
+            "magenta": 0,
+            "cyan": 0,
+            "violet": 0,
+            "fogNear": 17,
+            "fogFar": 74
+          },
+          "actualAtmosphere": {
+            "gate": [
+              0,
+              0,
+              0
+            ],
+            "haze": [
+              0,
+              0,
+              0
+            ],
+            "near": 17,
+            "far": 74
+          },
+          "channels": {
+            "magentaMain": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "magentaSecondary": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "cyanWindows": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "cyanDetails": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "cyanPanel": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "violet": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "violetSecondary": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            },
+            "bridge": {
+              "sustainTarget": 0,
+              "accent": 0,
+              "level": 0
+            }
+          },
+          "bridgeSections": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "emitters": [
+            {
+              "channel": "magentaMain",
+              "intensity": 0
+            },
+            {
+              "channel": "magentaSecondary",
+              "intensity": 0
+            },
+            {
+              "channel": "cyanWindows",
+              "intensity": 0
+            },
+            {
+              "channel": "cyanDetails",
+              "intensity": 0
+            },
+            {
+              "channel": "cyanPanel",
+              "intensity": 0
+            },
+            {
+              "channel": "violet",
+              "intensity": 0
+            },
+            {
+              "channel": "violetSecondary",
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 0,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 1,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 2,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 3,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 4,
+              "intensity": 0
+            },
+            {
+              "channel": "bridge",
+              "segment": 5,
+              "intensity": 0
+            }
+          ],
+          "points": [
+            {
+              "channel": "magentaMain",
+              "intensity": 0,
+              "full": 50
+            },
+            {
+              "channel": "bridge",
+              "intensity": 0,
+              "full": 40
+            },
+            {
+              "channel": "cyanWindows",
+              "intensity": 0,
+              "full": 65
+            },
+            {
+              "channel": "cyanDetails",
+              "intensity": 0,
+              "full": 40
+            },
+            {
+              "channel": "cyanPanel",
+              "intensity": 0,
+              "full": 30
+            },
+            {
+              "channel": "violet",
+              "intensity": 0,
+              "full": 12
+            },
+            {
+              "channel": "violetSecondary",
+              "intensity": 0,
+              "full": 12
+            }
+          ]
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "reduced",
+      "name": "browser pause recovery",
+      "expected": "All fixture outputs settle0",
+      "observed": {
+        "audioTime": 11.816235,
+        "now": 3.7967000000011177,
+        "camera": [
+          0,
+          1.6,
+          5
+        ],
+        "resources": {
+          "geometries": 114,
+          "textures": 6,
+          "calls": 83
+        },
+        "feature": {
+          "session": 14,
+          "frame": 8,
+          "status": "inactive",
+          "updatedAt": 3.7931,
+          "energy": {
+            "subBass": 0,
+            "bass": 0,
+            "lowMids": 0,
+            "highMids": 0,
+            "presence": 0,
+            "air": 0
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 9,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          },
+          "sequence": 0,
+          "events": []
+        },
+        "atmosphere": {
+          "level": 0,
+          "magenta": 0,
+          "cyan": 0,
+          "violet": 0,
+          "fogNear": 17,
+          "fogFar": 74
+        },
+        "actualAtmosphere": {
+          "gate": [
+            0,
+            0,
+            0
+          ],
+          "haze": [
+            0,
+            0,
+            0
+          ],
+          "near": 17,
+          "far": 74
+        },
+        "channels": {
+          "magentaMain": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "magentaSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanWindows": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanDetails": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanPanel": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violet": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violetSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "bridge": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          }
+        },
+        "bridgeSections": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "emitters": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0
+          },
+          {
+            "channel": "magentaSecondary",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0
+          },
+          {
+            "channel": "violet",
+            "intensity": 0
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 0,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 1,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 2,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 3,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 4,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "segment": 5,
+            "intensity": 0
+          }
+        ],
+        "points": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0,
+            "full": 50
+          },
+          {
+            "channel": "bridge",
+            "intensity": 0,
+            "full": 40
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0,
+            "full": 65
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0,
+            "full": 40
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0,
+            "full": 30
+          },
+          {
+            "channel": "violet",
+            "intensity": 0,
+            "full": 12
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0,
+            "full": 12
+          }
+        ]
+      },
+      "status": "passed"
+    }
+  ],
+  "runs": [
+    {
+      "label": "current",
+      "renderSamples": 3607,
+      "frames": 480,
+      "errors": [],
+      "resources": [
+        "{\"geometries\":114,\"textures\":6}"
+      ],
+      "lastAtmosphere": {
+        "level": 0.0017050897239162107,
+        "magenta": 0.0004092215337398906,
+        "cyan": 0.001449326265328779,
+        "violet": 0.00027281435582659374,
+        "fogNear": 17,
+        "fogFar": 73.99843084633675
+      }
+    },
+    {
+      "label": "reduced",
+      "renderSamples": 3599,
+      "frames": 480,
+      "errors": [],
+      "resources": [
+        "{\"geometries\":114,\"textures\":6}"
+      ],
+      "lastAtmosphere": {
+        "level": 0.005410542725028919,
+        "magenta": 0.0012985302540069405,
+        "cyan": 0.004598961316274581,
+        "violet": 0.000865686836004627,
+        "fogNear": 17,
+        "fogFar": 73.99706349314333
+      }
+    }
+  ],
+  "sections": [
+    {
+      "label": "current",
+      "name": "silence-start",
+      "samples": 84,
+      "energyMean": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "bass100",
+      "samples": 78,
+      "energyMean": {
+        "subBass": 0.046146217305698484,
+        "bass": 0.13358233556306398,
+        "lowMids": 0.000045398412116183,
+        "highMids": 0.0000021537983087200075,
+        "presence": 0.00000378098244260342,
+        "air": 0.000006924817762910263
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.16585064928717946,
+          "peak": 0.1658513897704895,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.06749490376160457,
+          "peak": 0.06760912431212836,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.000017164836293223193,
+          "peak": 0.000017407190604749975,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.000037847679512726285,
+          "peak": 0.000038800989212670755,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.000002892355840039434,
+          "peak": 0.0000029876879560148605,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.000002159678203956793,
+          "peak": 0.0000021597982945529965,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.000002159678203956793,
+          "peak": 0.0000021597982945529965,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "lowmid450",
+      "samples": 21,
+      "energyMean": {
+        "subBass": 0.0000034509661017355836,
+        "bass": 0.000016113523187690037,
+        "lowMids": 0.14132735995353776,
+        "highMids": 0.000004516070053796676,
+        "presence": 0.0000028583670697996752,
+        "air": 0.000006527013855425313
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.00048557857591603965,
+          "peak": 0.0006776331839259057,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.0015485270854593875,
+          "peak": 0.001942272623921767,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.0508510567224188,
+          "peak": 0.0508621602764828,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.11306189342304347,
+          "peak": 0.11306189455968994,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.000005921221902713377,
+          "peak": 0.000005963401796261184,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000018099110137549582,
+          "peak": 0.0000018099691797816246,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000018099110137549582,
+          "peak": 0.0000018099691797816246,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "quiet1000",
+      "samples": 78,
+      "energyMean": {
+        "subBass": 3.917997897164009e-7,
+        "bass": 2.361002384430972e-7,
+        "lowMids": 0.000008424599141421122,
+        "highMids": 0.04239826818477427,
+        "presence": 0.0000021476540095738535,
+        "air": 0.000006891941380816687
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.000003985035300978184,
+          "peak": 0.000011197810625980843,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.00005222317186550996,
+          "peak": 0.00011332706274390631,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.01111737270501283,
+          "peak": 0.01510905273597198,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.00045191980615087723,
+          "peak": 0.0016618155043360062,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.055117751599189545,
+          "peak": 0.055117753657995615,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000016324727480849823,
+          "peak": 0.0000016326361444940814,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000016324727480849823,
+          "peak": 0.0000016326361444940814,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "loud1000",
+      "samples": 78,
+      "energyMean": {
+        "subBass": 0.0000013120322170769144,
+        "bass": 7.814940955087127e-7,
+        "lowMids": 0.000028079765227329134,
+        "highMids": 0.1413262078524051,
+        "presence": 9.751977045758913e-7,
+        "air": 0.000007993497555845506
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.0000014035975754706915,
+          "peak": 0.0000014635445519618,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.0000013946014244945356,
+          "peak": 0.0000022285140041607867,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.021760353685999434,
+          "peak": 0.021809556372370226,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.000022911153602131565,
+          "peak": 0.000024122502747403174,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.1837240716631266,
+          "peak": 0.18372407226106052,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000014088451382028341,
+          "peak": 0.0000014091608808556218,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000014088451382028341,
+          "peak": 0.0000014091608808556218,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "high8000",
+      "samples": 48,
+      "energyMean": {
+        "subBass": 0.0000011401200684126726,
+        "bass": 1.4650960695661635e-9,
+        "lowMids": 2.5897132732905303e-9,
+        "highMids": 6.728351030500735e-9,
+        "presence": 8.316489138950652e-8,
+        "air": 0.14131870067582625
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 3.7812460506657804e-7,
+          "peak": 4.3393746767704413e-7,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 3.775428811594828e-7,
+          "peak": 4.1981941120789385e-7,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.0016152782943973161,
+          "peak": 0.0024157949017524095,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 2.4221950182284396e-7,
+          "peak": 5.98879497809759e-7,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 7.224066108780764e-7,
+          "peak": 0.0000030746024633588086,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.019380877120540107,
+          "peak": 0.01938087718765973,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.019380877120540107,
+          "peak": 0.01938087718765973,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "low-attacks",
+      "samples": 136,
+      "energyMean": {
+        "subBass": 0.006967055632031996,
+        "bass": 0.018480886452461105,
+        "lowMids": 0.00007298799283025987,
+        "highMids": 0.00000588322675325025,
+        "presence": 0.00000107562204092146,
+        "air": 8.851417090104285e-7
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.1104051707783988,
+          "peak": 0.4038753509914092,
+          "accentPeak": 0.2543925234005738
+        },
+        "magentaSecondary": {
+          "mean": 0.01697187509535628,
+          "peak": 0.035476295387137244,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.000005096240606892948,
+          "peak": 0.00007797735530305514,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.000030753612781909174,
+          "peak": 0.0004245099071350024,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.00000735072495375365,
+          "peak": 0.0000813173277661655,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 4.6444889685717646e-7,
+          "peak": 0.0000059232836862561055,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 4.6444889685717646e-7,
+          "peak": 0.0000059232836862561055,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0.01666682378761296,
+          "peak": 0.06954044324050729,
+          "accentPeak": 0.06954044324050729
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "mid-attacks",
+      "samples": 138,
+      "energyMean": {
+        "subBass": 4.252886653734297e-7,
+        "bass": 0.0000017248564463762639,
+        "lowMids": 0.00004276910441502043,
+        "highMids": 0.02199877406711647,
+        "presence": 0.0000013753608815519045,
+        "air": 5.257575521335582e-7
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.00018291620313454034,
+          "peak": 0.001876837234391424,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.00036090448798817553,
+          "peak": 0.0021515684937010514,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.006375890898696927,
+          "peak": 0.01190914849713321,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.00001993241020284517,
+          "peak": 0.0002919677006969598,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.06623802717518441,
+          "peak": 0.2916132552569121,
+          "accentPeak": 0.07419780265734473
+        },
+        "violet": {
+          "mean": 5.14144279158568e-7,
+          "peak": 0.000007034428428577653,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 5.14144279158568e-7,
+          "peak": 0.000007034428428577653,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "high-attacks",
+      "samples": 137,
+      "energyMean": {
+        "subBass": 1.758311387186295e-7,
+        "bass": 5.495751172812685e-9,
+        "lowMids": 2.674774673358294e-8,
+        "highMids": 1.738267205574481e-7,
+        "presence": 0.0000013506192982730205,
+        "air": 0.020835032184227446
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 2.8084439181641725e-8,
+          "peak": 3.25777447507159e-7,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 1.2468754289756295e-8,
+          "peak": 1.6098801102023122e-7,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.00013675254469550652,
+          "peak": 0.001340464770605796,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 1.4460513423113956e-8,
+          "peak": 1.5702249780759236e-7,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 2.3259174247751171e-7,
+          "peak": 0.000002095222906353007,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.013872020263288933,
+          "peak": 0.2201142568082956,
+          "accentPeak": 0.1938198860853443
+        },
+        "violetSecondary": {
+          "mean": 0.013508779656325352,
+          "peak": 0.2093221136739091,
+          "accentPeak": 0.18552601399429466
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "bass-highmid",
+      "samples": 186,
+      "energyMean": {
+        "subBass": 0.025375248361410762,
+        "bass": 0.073415660890405,
+        "lowMids": 0.00005352058625691452,
+        "highMids": 0.07066377468196773,
+        "presence": 0.000004118220009082289,
+        "air": 0.0000068411327726587124
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.14005239999115268,
+          "peak": 0.478611653335115,
+          "accentPeak": 0.25439173248969765
+        },
+        "magentaSecondary": {
+          "mean": 0.04424122221843844,
+          "peak": 0.06410339194961583,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.01090842338411731,
+          "peak": 0.010981560918565485,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.00009751062685868492,
+          "peak": 0.0004213887053392252,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.09186307571865399,
+          "peak": 0.09186583281470763,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.00000246829022024405,
+          "peak": 0.000006071896270569705,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.00000246829022024405,
+          "peak": 0.000006071896270569705,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0.012427784052262096,
+          "peak": 0.07045671690762864,
+          "accentPeak": 0.07045671690762864
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "lowmid-near-highmid",
+      "samples": 210,
+      "energyMean": {
+        "subBass": 0.000008993564384269803,
+        "bass": 0.000036241111654421475,
+        "lowMids": 0.01978498973573859,
+        "highMids": 0.07066354180969135,
+        "presence": 0.0000018799669568712032,
+        "air": 0.000006386038924384235
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.001328565690520354,
+          "peak": 0.009627926943567792,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.00179350409886374,
+          "peak": 0.008843553470151953,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.023619417671367323,
+          "peak": 0.03426919344286313,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.04497515538357428,
+          "peak": 0.15270249851322457,
+          "accentPeak": 0.05238597499514119
+        },
+        "cyanPanel": {
+          "mean": 0.09186549770967622,
+          "peak": 0.09186781150079916,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.000001927101055960432,
+          "peak": 0.000005849253007486345,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.000001927101055960432,
+          "peak": 0.000005849253007486345,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "dynamics",
+      "samples": 270,
+      "energyMean": {
+        "subBass": 9.67879542060467e-7,
+        "bass": 7.261774209189184e-7,
+        "lowMids": 0.000018836724019612232,
+        "highMids": 0.09454523676563528,
+        "presence": 0.000003444944965984556,
+        "air": 0.000006629502302455258
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.0000014693230506094402,
+          "peak": 0.000003942228436799278,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.000001987542707351406,
+          "peak": 0.000009518089640961028,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.015613164510539193,
+          "peak": 0.02027669296187912,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.00003894063907071012,
+          "peak": 0.0003073450068861349,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.12620709268364405,
+          "peak": 0.1812918942770746,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000020386807531872566,
+          "peak": 0.0000021100940586706893,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000020386807531872566,
+          "peak": 0.0000021100940586706893,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "current",
+      "name": "silence",
+      "samples": 168,
+      "energyMean": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "silence-start",
+      "samples": 85,
+      "energyMean": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "bass100",
+      "samples": 78,
+      "energyMean": {
+        "subBass": 0.04617081570575279,
+        "bass": 0.13365515804601963,
+        "lowMids": 0.000045551423250911015,
+        "highMids": 0.0000021604774816000985,
+        "presence": 0.000003783070486394317,
+        "air": 0.000006928579243395778
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.15283087573136714,
+          "peak": 0.16066257972542355,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.062312433603442886,
+          "peak": 0.06550341864282377,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.000016099650228374585,
+          "peak": 0.00001650106107284142,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.00003502178810295478,
+          "peak": 0.0000359194220194307,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.0000028955549151862167,
+          "peak": 0.0000029335738510351183,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.000001999973979749169,
+          "peak": 0.0000020960377707305095,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.000001999973979749169,
+          "peak": 0.0000020960377707305095,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "lowmid450",
+      "samples": 21,
+      "energyMean": {
+        "subBass": 0.0000032901534729432293,
+        "bass": 0.00001606844926292843,
+        "lowMids": 0.14140422625359828,
+        "highMids": 0.0000045262008613004574,
+        "presence": 0.000002859936443467151,
+        "air": 0.000006530557983330168
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.014803940000361795,
+          "peak": 0.017149685590132527,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.006038359962831734,
+          "peak": 0.006995218096578193,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.04899645943738199,
+          "peak": 0.049367723080161845,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.10887940020051506,
+          "peak": 0.1097044442681333,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.000006549023880372458,
+          "peak": 0.000006656096268417346,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000018576482764981227,
+          "peak": 0.0000018650836892796445,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000018576482764981227,
+          "peak": 0.0000018650836892796445,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "quiet1000",
+      "samples": 78,
+      "energyMean": {
+        "subBass": 3.937151207863184e-7,
+        "bass": 2.3622894611125236e-7,
+        "lowMids": 0.00000842918038178657,
+        "highMids": 0.04242133969768336,
+        "presence": 0.000002148820625021288,
+        "air": 0.000006895680075156992
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.0016240651681363528,
+          "peak": 0.0027474104516889827,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.0006624327797032126,
+          "peak": 0.0011205951026457884,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.013091910360511069,
+          "peak": 0.017619300827980723,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.01677083005814099,
+          "peak": 0.028369100952589005,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.05086149749821585,
+          "peak": 0.05342191322324518,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000016832746161927884,
+          "peak": 0.0000017178403368233053,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000016832746161927884,
+          "peak": 0.0000017178403368233053,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "loud1000",
+      "samples": 78,
+      "energyMean": {
+        "subBass": 0.000001303303652728901,
+        "bass": 7.929011226383416e-7,
+        "lowMids": 0.000028099140712236073,
+        "highMids": 0.14140308874202523,
+        "presence": 9.755356409077077e-7,
+        "air": 0.00000799783064836908
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.00010908009815786799,
+          "peak": 0.0001836526353488031,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.00004463112280968592,
+          "peak": 0.0000750318405065953,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.020817661433825848,
+          "peak": 0.0214203957415825,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.0011352902570687124,
+          "peak": 0.0019050487134895221,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.17334231023754826,
+          "peak": 0.17960406796550724,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.00000147963201090192,
+          "peak": 0.0000015284634339859653,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.00000147963201090192,
+          "peak": 0.0000015284634339859653,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "high8000",
+      "samples": 49,
+      "energyMean": {
+        "subBass": 0.000001140730267206063,
+        "bass": 1.4202422838275126e-9,
+        "lowMids": 2.5091315076578235e-9,
+        "highMids": 6.633062335687622e-9,
+        "presence": 8.314902437660148e-8,
+        "air": 0.14139558613446615
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.000005888960071664185,
+          "peak": 0.000008147726205290221,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.0000025771211844465465,
+          "peak": 0.0000034965030401303642,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.0025456367521151414,
+          "peak": 0.0035795491211889786,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.00005928515500968901,
+          "peak": 0.00008336306142771642,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.021365406107310896,
+          "peak": 0.03004298570160025,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.01834197344411183,
+          "peak": 0.018781647837012062,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.01834197344411183,
+          "peak": 0.018781647837012062,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "low-attacks",
+      "samples": 138,
+      "energyMean": {
+        "subBass": 0.007402657903730237,
+        "bass": 0.01942030701774875,
+        "lowMids": 0.00008381012664282332,
+        "highMids": 0.000007593404803389944,
+        "presence": 0.0000013840402918562444,
+        "air": 9.623984530699004e-7
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.025384191701579684,
+          "peak": 0.04429102777052424,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.010459830990855238,
+          "peak": 0.018209205796264102,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.000002856252776142724,
+          "peak": 0.00004562750977672821,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.0000061085464619151385,
+          "peak": 0.00009721733468666154,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.00032745248108432764,
+          "peak": 0.0016382698621992473,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0007898306933547879,
+          "peak": 0.0026155423880073908,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0007898306933547879,
+          "peak": 0.0026155423880073908,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "mid-attacks",
+      "samples": 139,
+      "energyMean": {
+        "subBass": 4.172954397305313e-7,
+        "bass": 0.0000017427521897215225,
+        "lowMids": 0.00004326216963682074,
+        "highMids": 0.019931392324039298,
+        "presence": 0.000001386227339261739,
+        "air": 5.019515532787538e-7
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.0031547905955538248,
+          "peak": 0.007587085681684083,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.0010225392083936943,
+          "peak": 0.003124445554082493,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.003219040930023647,
+          "peak": 0.00598198827234415,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.000004061988109385735,
+          "peak": 0.00005132903158810308,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.026990125419844774,
+          "peak": 0.05015624953080276,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 5.983299841834433e-8,
+          "peak": 7.487310951317709e-7,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 5.983299841834433e-8,
+          "peak": 7.487310951317709e-7,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "high-attacks",
+      "samples": 137,
+      "energyMean": {
+        "subBass": 1.6460479573527823e-7,
+        "bass": 5.154964640879137e-9,
+        "lowMids": 2.433578293992747e-8,
+        "highMids": 1.5581293046099088e-7,
+        "presence": 0.0000012045435725617331,
+        "air": 0.019630734240504655
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 5.862753704111469e-9,
+          "peak": 7.131213755087875e-8,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 5.297161502939343e-9,
+          "peak": 6.2718128451878e-8,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.00006840068790947321,
+          "peak": 0.0010022529084384151,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 1.933947941794027e-9,
+          "peak": 3.083113627372163e-8,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.0035668618553567405,
+          "peak": 0.008401860980715723,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0028018360532155655,
+          "peak": 0.005022778582108551,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0028018360532155655,
+          "peak": 0.005022778582108551,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "bass-highmid",
+      "samples": 187,
+      "energyMean": {
+        "subBass": 0.025798712541801966,
+        "bass": 0.07436628182432235,
+        "lowMids": 0.00005669774719530538,
+        "highMids": 0.07070228350221268,
+        "presence": 0.000004252868405323469,
+        "air": 0.000006867309769024823
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.09455370738219133,
+          "peak": 0.11811490503756718,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.0385787802304271,
+          "peak": 0.04824589995695653,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.010429169493938618,
+          "peak": 0.010884602103617953,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.00006184818737823488,
+          "peak": 0.00011743889641210681,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.08767338709128777,
+          "peak": 0.09156638409677514,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.00009800424497022514,
+          "peak": 0.0002883215628655773,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.00009800424497022514,
+          "peak": 0.0002883215628655773,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "lowmid-near-highmid",
+      "samples": 210,
+      "energyMean": {
+        "subBass": 0.000010246190934905026,
+        "bass": 0.0000404716135232074,
+        "lowMids": 0.02075811357041625,
+        "highMids": 0.07070129019532323,
+        "presence": 0.000002013189315322443,
+        "air": 0.0000064039314586034265
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.01119633363237121,
+          "peak": 0.036773023172926994,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.004568486150023232,
+          "peak": 0.015006088063302123,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.01820126836844462,
+          "peak": 0.024648679204473372,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.016213003683377945,
+          "peak": 0.03053682561135144,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.0919013913598372,
+          "peak": 0.09191450713937328,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.000002925179221520362,
+          "peak": 0.000005984381220017402,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.000002925179221520362,
+          "peak": 0.000005984381220017402,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "dynamics",
+      "samples": 270,
+      "energyMean": {
+        "subBass": 9.693733026250744e-7,
+        "bass": 7.291425467102735e-7,
+        "lowMids": 0.00001886333501857113,
+        "highMids": 0.09463872969952723,
+        "presence": 0.0000034408151564831367,
+        "air": 0.0000066250174175671776
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0.00009828954240336291,
+          "peak": 0.00040228390208085194,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0.000040176976826172856,
+          "peak": 0.0001640689006640694,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0.014759768201860708,
+          "peak": 0.018565211274962665,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0.001166667863158663,
+          "peak": 0.004767524531618482,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0.12100085871312061,
+          "peak": 0.15559695722156225,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0.0000019915176602034027,
+          "peak": 0.000002020759467432552,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0.0000019915176602034027,
+          "peak": 0.000002020759467432552,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    },
+    {
+      "label": "reduced",
+      "name": "silence",
+      "samples": 168,
+      "energyMean": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "channels": {
+        "magentaMain": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "magentaSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanWindows": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanDetails": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "cyanPanel": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violet": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "violetSecondary": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        },
+        "bridge": {
+          "mean": 0,
+          "peak": 0,
+          "accentPeak": 0
+        }
+      }
+    }
+  ]
+}

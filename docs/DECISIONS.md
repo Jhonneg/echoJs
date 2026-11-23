@@ -381,3 +381,28 @@ Owner explicitly requests “make the sun glow according to activity,” then re
 
 
 2026-11-22 — Owner “proceed” after NT10 authorizes NT11 coordination review. The generated intro/bass/mid/dense/breakdown/return arrangement shows distinct existing roles, restrained secondary/window levels and bounded localized violet/bridge overlap. Retain mappings rather than add speculative cross-group dimming or a global limiter that would couple the approved cyan fixture to other lights. No new energy history or unsupported section detection. No production changes; owner NT11 artistic/grouped environment approval remains required before NT12.
+
+
+2026-11-22 — Owner “proceed” after NT11 authorizes NT12, with “continue” resuming the same matrix. Keep the three evidence layers distinct: ideal feature contract for exact guards, synthetic spectra for unchanged MI routing/calibration, and real browser-generated PCM for FFT leakage and final delivery. Use450 Hz for low-mid qualification because1 kHz is high-mid. Do not retune DSP or add thresholds to hide expected FFT leakage or previous-band decay; all intended criteria pass. NT13 remains live owner-authorized music review, without persisting captured media.
+
+
+2026-11-22 — NT13 owner confirms bass timing but finds the corridor too dim versus Manual. Trace the gap to full Manual outputs versus restrained Audio levels. Prepare a bounded local spill-only preview before changing production: main point1.5×, windows/details2× capped at original full intensities, preserving emitters/approved cyan/other points/atmosphere/Manual. No global exposure or DSP change. Choice and live re-review remain pending.
+
+
+2026-11-22 — Owner “do the lift” approves the matched NT13 spill proposal. Implement only the normalized final point-spill output in visualState.ts, with caps at original full intensities and Manual bypass. Preserve the approved cyan light and all emitter/timing/controller/atmosphere behavior exactly; tests separate point delivery from emission. Rebuild the local preview and repeat generated/owner listening checks. No additional broad brightness or DSP adjustment is inferred.
+
+## 2026-11-22 — NT13-R0 evidence policy and phase boundary
+
+Owner approved R0 of the refinement roadmap and chose generated captures plus live owner review. Record generated sources/scenes only; owner music remains live/text-only. This revises the roadmap's real-song recording method without waiving final musical/artistic review. R0 preserves all90 production source files and the existing spill lift; it diagnoses low delivered levels and environmental readability under matched exposure. No R1 tuning or NT14 continuation is authorized by the baseline's automated success. Preserve separate owner checkpoints for each refinement phase.
+
+## 2026-11-22 — NT13-R1 restrained fill and final response curve
+
+Owner “proceed” following R0 authorizes R1. Use a small scene-local cool ambient contribution for static visibility, separately from fixture energy, plus `2x/(1+x)` on Audio final fixture levels. This preserves existing MI/controller roles/timing, exact zero/full output and Manual controls while lifting modest signals. Ambient fill intentionally affects Manual surfaces as well; exposure and authored materials remain unchanged. The prior spill gains remain in effect. A generic final calibration does not replace band-specific response with global intensity. Real-song calibration/legibility remain unverified until owner live/text review; stop before R2 rather than treating generated success as artistic approval.
+
+## 2026-11-22 — NT13-R2 instanced event choreography
+
+Owner “proceed” after R1 authorizes R2 only. Reuse current fixture geometry/instancing with one per-instance emission float rather than split meshes or add traveling point lights. Secondary magenta follows low-onset echoes; windows/details use locally qualified broad mid events; bridge changes to high onsets to give treble a narrow spatial role. Existing controller sustain, approved panel, main magenta, R1 fill/calibration and MI stay unchanged. Cooldowns prevent queues/restarts and reduced motion suppresses travel. Point spill follows existing group means and cannot physically travel per fixture; reflect actual source emission. Retain the Low Manual-on reference discrepancy explicitly instead of claiming blanket pixel identity or expanding into a renderer fix. R2's musical readability requires owner review before R3.
+
+## 2026-11-22 — NT13-R3 restrained environmental participation
+
+Owner “its looking greats, lets keep going” supplies positive R2 visual feedback and authorizes R3. Reuse9 existing structural ribs for scaled real bridge accents, enhance only bright pixels of the real wet reflection and add one local unshadowed far-depth point driven by existing slow context. Preserve the approved fixtures, R1 resting fill, R2 choreography, camera and analysis. A small haze coefficient lift supports depth. Accept the explicit7→8 point cost for motivated wall/gate illumination rather than add new geometry/passes or global exposure. Real-song/device approval is still outstanding; R4 requires separate continuation.

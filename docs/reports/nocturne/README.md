@@ -20,3 +20,11 @@ Milestone plans, reviews and results. Historical status in a report does not sup
 - [NT10 slow context atmosphere and depth](NT10_ATMOSPHERE_REVIEW.md)
 
 - [NT11 staged whole-scene coordination assessment](NT11_COORDINATION_REVIEW.md)
+
+- [NT12 deterministic feature/response matrix](NT12_MATRIX_REVIEW.md)
+
+- [NT13 live owner music review worksheet — pending observations](NT13_LIVE_REVIEW.md)
+
+- [NT13 Audio spill-brightness proposal — preview only](NT13_SPILL_PROPOSAL.md)
+
+- [NT13 approved Audio spill lift — applied, live re-review pending](NT13_SPILL_IMPLEMENTATION.md)

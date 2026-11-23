@@ -1,0 +1,1148 @@
+{
+  "scene": "nocturne",
+  "quality": "standard",
+  "diagnostics": false,
+  "pcmHash": "c56d925c49e8b0679f4d056c332bb9f4e2f1cd0d58fb1e30676b0db1f9c5ac77",
+  "viewport": [
+    1440,
+    810
+  ],
+  "deviceScale": 1,
+  "volume": 0.5,
+  "reactivity": 1,
+  "reduced": false,
+  "errors": [],
+  "snapshots": [
+    {
+      "name": "manual-all-on",
+      "record": {
+        "audioTime": 55,
+        "now": 64.18140000000037,
+        "camera": [
+          0,
+          1.6,
+          5
+        ],
+        "quaternion": [
+          0.02749653398522794,
+          0,
+          0,
+          0.999621898829152
+        ],
+        "features": {
+          "version": 1,
+          "session": 7,
+          "frame": 335,
+          "updatedAtSeconds": 64.1643,
+          "status": "inactive",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 2,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          }
+        },
+        "renderer": {
+          "toneMapping": 4,
+          "exposure": 1,
+          "colorSpace": "srgb",
+          "dpr": 1,
+          "drawingSize": [
+            1440,
+            810
+          ],
+          "shadows": false,
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+        },
+        "cost": {
+          "dt": 0.016600000001490117,
+          "calls": 196,
+          "triangles": 25534,
+          "geometries": 114,
+          "textures": 6
+        },
+        "channels": {
+          "magentaMain": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 1
+          },
+          "magentaSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 1
+          },
+          "cyanWindows": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 1
+          },
+          "cyanDetails": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 1
+          },
+          "cyanPanel": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 1
+          },
+          "violet": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 1
+          },
+          "violetSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 1
+          },
+          "bridge": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 1
+          }
+        },
+        "spill": {
+          "magentaMain": 1,
+          "magentaSecondary": 1,
+          "cyanWindows": 1,
+          "cyanDetails": 1,
+          "cyanPanel": 1,
+          "violet": 1,
+          "violetSecondary": 1,
+          "bridge": 1
+        },
+        "bridgeSections": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "atmosphere": {
+          "level": 0,
+          "magenta": 0.24,
+          "cyan": 0.85,
+          "violet": 0.16,
+          "fogNear": 17,
+          "fogFar": 74
+        },
+        "emitters": [
+          {
+            "channel": "magentaMain",
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "magentaSecondary",
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "violet",
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 0,
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 1,
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 2,
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 3,
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 4,
+            "intensity": 1.3,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 5,
+            "intensity": 1.3,
+            "toneMapped": false
+          }
+        ],
+        "points": [
+          {
+            "channel": "magentaMain",
+            "full": 50,
+            "intensity": 50
+          },
+          {
+            "channel": "bridge",
+            "full": 40,
+            "intensity": 40
+          },
+          {
+            "channel": "cyanWindows",
+            "full": 65,
+            "intensity": 65
+          },
+          {
+            "channel": "cyanDetails",
+            "full": 40,
+            "intensity": 40
+          },
+          {
+            "channel": "cyanPanel",
+            "full": 30,
+            "intensity": 30
+          },
+          {
+            "channel": "violet",
+            "full": 12,
+            "intensity": 12
+          },
+          {
+            "channel": "violetSecondary",
+            "full": 12,
+            "intensity": 12
+          }
+        ],
+        "actualAtmosphere": {
+          "gate": [
+            0.3094645817863657,
+            0.6872660542403943,
+            1.0356855447126043
+          ],
+          "haze": [
+            0.3094645817863657,
+            0.6872660542403943,
+            1.0356855447126043
+          ],
+          "fogColor": [
+            0.007087997389801641,
+            0.014495477861032979,
+            0.021988875566924884
+          ],
+          "near": 17,
+          "far": 74
+        },
+        "floorVisible": true
+      }
+    },
+    {
+      "name": "manual-all-off",
+      "record": {
+        "audioTime": 55,
+        "now": 65.11490000000038,
+        "camera": [
+          0,
+          1.6,
+          5
+        ],
+        "quaternion": [
+          0.02749653398522794,
+          0,
+          0,
+          0.999621898829152
+        ],
+        "features": {
+          "version": 1,
+          "session": 7,
+          "frame": 391,
+          "updatedAtSeconds": 65.0976,
+          "status": "inactive",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 2,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          }
+        },
+        "renderer": {
+          "toneMapping": 4,
+          "exposure": 1,
+          "colorSpace": "srgb",
+          "dpr": 1,
+          "drawingSize": [
+            1440,
+            810
+          ],
+          "shadows": false,
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+        },
+        "cost": {
+          "dt": 0.016699999999254943,
+          "calls": 196,
+          "triangles": 25534,
+          "geometries": 114,
+          "textures": 6
+        },
+        "channels": {
+          "magentaMain": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "magentaSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanWindows": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanDetails": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanPanel": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violet": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violetSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "bridge": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          }
+        },
+        "spill": {
+          "magentaMain": 0,
+          "magentaSecondary": 0,
+          "cyanWindows": 0,
+          "cyanDetails": 0,
+          "cyanPanel": 0,
+          "violet": 0,
+          "violetSecondary": 0,
+          "bridge": 0
+        },
+        "bridgeSections": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "atmosphere": {
+          "level": 0,
+          "magenta": 0,
+          "cyan": 0,
+          "violet": 0,
+          "fogNear": 17,
+          "fogFar": 74
+        },
+        "emitters": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "magentaSecondary",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "violet",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 0,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 1,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 2,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 3,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 4,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 5,
+            "intensity": 0,
+            "toneMapped": false
+          }
+        ],
+        "points": [
+          {
+            "channel": "magentaMain",
+            "full": 50,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "full": 40,
+            "intensity": 0
+          },
+          {
+            "channel": "cyanWindows",
+            "full": 65,
+            "intensity": 0
+          },
+          {
+            "channel": "cyanDetails",
+            "full": 40,
+            "intensity": 0
+          },
+          {
+            "channel": "cyanPanel",
+            "full": 30,
+            "intensity": 0
+          },
+          {
+            "channel": "violet",
+            "full": 12,
+            "intensity": 0
+          },
+          {
+            "channel": "violetSecondary",
+            "full": 12,
+            "intensity": 0
+          }
+        ],
+        "actualAtmosphere": {
+          "gate": [
+            0,
+            0,
+            0
+          ],
+          "haze": [
+            0,
+            0,
+            0
+          ],
+          "fogColor": [
+            0.0015176349176470587,
+            0.0021246888847058823,
+            0.0033465357620980074
+          ],
+          "near": 17,
+          "far": 74
+        },
+        "floorVisible": true
+      }
+    },
+    {
+      "name": "audio-after-manual",
+      "record": {
+        "audioTime": 12.767363,
+        "now": 66.23140000000038,
+        "camera": [
+          0,
+          1.6,
+          5
+        ],
+        "quaternion": [
+          0.02749653398522794,
+          0,
+          0,
+          0.999621898829152
+        ],
+        "features": {
+          "version": 1,
+          "session": 10,
+          "frame": 45,
+          "updatedAtSeconds": 66.21430000000001,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0.07070248455712162,
+            "mid": 0.07515802641867785,
+            "high": 7.078321868521559e-06,
+            "overall": 0.10318706463410683,
+            "six": {
+              "subBass": 0.010872309722508303,
+              "bass": 0.06986153593965619,
+              "lowMids": 0.05656248066239861,
+              "highMids": 0.04949156201646399,
+              "presence": 3.3559152442864222e-06,
+              "air": 6.669140320454916e-06
+            }
+          },
+          "sequence": 1,
+          "events": [
+            {
+              "session": 10,
+              "sequence": 1,
+              "band": "low",
+              "timeSeconds": 65.9143,
+              "emittedAtSeconds": 65.96430000000001,
+              "strength": 0.07070310211096616
+            }
+          ],
+          "context": {
+            "intensity": 0.06566393877836929,
+            "brightness": 0.25828729792314037,
+            "brightnessValid": true,
+            "activity": 0.007307039909567391,
+            "session": 5,
+            "time": 66.21430000000001,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.10318706463410683,
+            "brightnessTarget": 0.36292432211453013,
+            "activityTarget": 0.01767577552774154,
+            "broadRms": 0.051593532317053416,
+            "centroidHz": 531.922846772002,
+            "countRate": 0.25,
+            "strengthRate": 0.01767577552774154,
+            "eventCount": 1,
+            "sequence": 1,
+            "overflow": false
+          }
+        },
+        "renderer": {
+          "toneMapping": 4,
+          "exposure": 1,
+          "colorSpace": "srgb",
+          "dpr": 1,
+          "drawingSize": [
+            1440,
+            810
+          ],
+          "shadows": false,
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+        },
+        "cost": {
+          "dt": 0.016600000001490117,
+          "calls": 196,
+          "triangles": 25534,
+          "geometries": 114,
+          "textures": 6
+        },
+        "channels": {
+          "magentaMain": {
+            "sustainTarget": 0.08294812956603802,
+            "accent": 0.029424009944268636,
+            "level": 0.23515849627438828
+          },
+          "magentaSecondary": {
+            "sustainTarget": 0.03172515116763225,
+            "accent": 0,
+            "level": 0.06181373057700374
+          },
+          "cyanWindows": {
+            "sustainTarget": 0.027998334035289375,
+            "accent": 0,
+            "level": 0.047273951295201976
+          },
+          "cyanDetails": {
+            "sustainTarget": 0.0452499845299189,
+            "accent": 0,
+            "level": 0.08650673180567958
+          },
+          "cyanPanel": {
+            "sustainTarget": 0.0643390306214032,
+            "accent": 0,
+            "level": 0.12089874127559803
+          },
+          "violet": {
+            "sustainTarget": 1.9885178364054726e-06,
+            "accent": 0,
+            "level": 4.321442202000733e-06
+          },
+          "violetSecondary": {
+            "sustainTarget": 1.9885178364054726e-06,
+            "accent": 0,
+            "level": 4.321442202000733e-06
+          },
+          "bridge": {
+            "sustainTarget": 0,
+            "accent": 0.0133936312294901,
+            "level": 0.025732130981815867
+          }
+        },
+        "spill": {
+          "magentaMain": 0.35273774441158245,
+          "magentaSecondary": 0.06181373057700374,
+          "cyanWindows": 0.09454790259040395,
+          "cyanDetails": 0.17301346361135916,
+          "cyanPanel": 0.12089874127559803,
+          "violet": 4.321442202000733e-06,
+          "violetSecondary": 4.321442202000733e-06,
+          "bridge": 0.025732130981815867
+        },
+        "bridgeSections": [
+          0.014507601238972632,
+          0.1021638426528631,
+          0.037721341999059466,
+          0,
+          0,
+          0
+        ],
+        "atmosphere": {
+          "level": 0.007552833771602264,
+          "magenta": 0.0018138024389058466,
+          "cyan": 0.006419066955570947,
+          "violet": 0.001207331069735059,
+          "fogNear": 17,
+          "fogFar": 73.99982355889613
+        },
+        "emitters": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0.3057060451567048,
+            "toneMapped": false
+          },
+          {
+            "channel": "magentaSecondary",
+            "intensity": 0.08035784975010486,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0.06145613668376257,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0.11245875134738346,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0.15716836365827744,
+            "toneMapped": false
+          },
+          {
+            "channel": "violet",
+            "intensity": 5.617874862600953e-06,
+            "toneMapped": false
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 5.617874862600953e-06,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 0,
+            "intensity": 0.01885988161066442,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 1,
+            "intensity": 0.13281299544872205,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 2,
+            "intensity": 0.04903774459877731,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 3,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 4,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 5,
+            "intensity": 0,
+            "toneMapped": false
+          }
+        ],
+        "points": [
+          {
+            "channel": "magentaMain",
+            "full": 50,
+            "intensity": 17.636887220579123
+          },
+          {
+            "channel": "bridge",
+            "full": 40,
+            "intensity": 1.0292852392726346
+          },
+          {
+            "channel": "cyanWindows",
+            "full": 65,
+            "intensity": 6.1456136683762566
+          },
+          {
+            "channel": "cyanDetails",
+            "full": 40,
+            "intensity": 6.920538544454367
+          },
+          {
+            "channel": "cyanPanel",
+            "full": 30,
+            "intensity": 3.626962238267941
+          },
+          {
+            "channel": "violet",
+            "full": 12,
+            "intensity": 5.1857306424008795e-05
+          },
+          {
+            "channel": "violetSecondary",
+            "full": 12,
+            "intensity": 5.1857306424008795e-05
+          }
+        ],
+        "actualAtmosphere": {
+          "gate": [
+            0.0023379696128860428,
+            0.005189997598780917,
+            0.007820516790490787
+          ],
+          "haze": [
+            0.0023379696128860428,
+            0.005189997598780917,
+            0.007820516790490787
+          ],
+          "fogColor": [
+            0.0015597183706790075,
+            0.002218108841483939,
+            0.0034873050643268416
+          ],
+          "near": 17,
+          "far": 73.99982355889613
+        },
+        "floorVisible": true
+      }
+    },
+    {
+      "name": "paused-after-audio",
+      "record": {
+        "audioTime": 12.96,
+        "now": 67.1815,
+        "camera": [
+          0,
+          1.6,
+          5
+        ],
+        "quaternion": [
+          0.02749653398522794,
+          0,
+          0,
+          0.999621898829152
+        ],
+        "features": {
+          "version": 1,
+          "session": 11,
+          "frame": 45,
+          "updatedAtSeconds": 67.1643,
+          "status": "inactive",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 6,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          }
+        },
+        "renderer": {
+          "toneMapping": 4,
+          "exposure": 1,
+          "colorSpace": "srgb",
+          "dpr": 1,
+          "drawingSize": [
+            1440,
+            810
+          ],
+          "shadows": false,
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+        },
+        "cost": {
+          "dt": 0.016700000001117588,
+          "calls": 196,
+          "triangles": 25534,
+          "geometries": 114,
+          "textures": 6
+        },
+        "channels": {
+          "magentaMain": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "magentaSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanWindows": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanDetails": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "cyanPanel": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violet": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "violetSecondary": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          },
+          "bridge": {
+            "sustainTarget": 0,
+            "accent": 0,
+            "level": 0
+          }
+        },
+        "spill": {
+          "magentaMain": 0,
+          "magentaSecondary": 0,
+          "cyanWindows": 0,
+          "cyanDetails": 0,
+          "cyanPanel": 0,
+          "violet": 0,
+          "violetSecondary": 0,
+          "bridge": 0
+        },
+        "bridgeSections": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "atmosphere": {
+          "level": 0,
+          "magenta": 0,
+          "cyan": 0,
+          "violet": 0,
+          "fogNear": 17,
+          "fogFar": 74
+        },
+        "emitters": [
+          {
+            "channel": "magentaMain",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "magentaSecondary",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanWindows",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanDetails",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "cyanPanel",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "violet",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "violetSecondary",
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 0,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 1,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 2,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 3,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 4,
+            "intensity": 0,
+            "toneMapped": false
+          },
+          {
+            "channel": "bridge",
+            "segment": 5,
+            "intensity": 0,
+            "toneMapped": false
+          }
+        ],
+        "points": [
+          {
+            "channel": "magentaMain",
+            "full": 50,
+            "intensity": 0
+          },
+          {
+            "channel": "bridge",
+            "full": 40,
+            "intensity": 0
+          },
+          {
+            "channel": "cyanWindows",
+            "full": 65,
+            "intensity": 0
+          },
+          {
+            "channel": "cyanDetails",
+            "full": 40,
+            "intensity": 0
+          },
+          {
+            "channel": "cyanPanel",
+            "full": 30,
+            "intensity": 0
+          },
+          {
+            "channel": "violet",
+            "full": 12,
+            "intensity": 0
+          },
+          {
+            "channel": "violetSecondary",
+            "full": 12,
+            "intensity": 0
+          }
+        ],
+        "actualAtmosphere": {
+          "gate": [
+            0,
+            0,
+            0
+          ],
+          "haze": [
+            0,
+            0,
+            0
+          ],
+          "fogColor": [
+            0.0015176349176470587,
+            0.0021246888847058823,
+            0.0033465357620980074
+          ],
+          "near": 17,
+          "far": 74
+        },
+        "floorVisible": true
+      }
+    }
+  ],
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "status": "passed generated R1 capture; owner artistic gate separate"
+}

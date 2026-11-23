@@ -1,7 +1,7 @@
 import { BRIDGE_SEGMENTS } from './bridge'
 import { NOCTURNE_LIGHT_COLORS } from './lighting'
 import { useLayoutEffect, useRef } from 'react'
-import { CatmullRomCurve3, InstancedMesh, Object3D, Vector3 } from 'three'
+import { CatmullRomCurve3, DynamicDrawUsage, InstancedBufferAttribute, InstancedMesh, Object3D, Vector3, type WebGLProgramParametersWithUniforms } from 'three'
 
 type Triple = [number, number, number]
 type Part = { position: Triple, size: Triple, rotation?: Triple }
@@ -100,11 +100,31 @@ for (const x of [-1.8, 1.8]) {
 // Slender metal gate bars retain the distant focal opening.
 for (let i = 0; i < 10; i++) box('steel', [-1.02 + i * 0.226, 1.9, -51.25], [0.035, 3.65, 0.055])
 
+// Preserve each authored instance/matrix and material; vary emission with one float.
+function spatialFixtureShader(shader: WebGLProgramParametersWithUniforms) {
+  shader.vertexShader = shader.vertexShader.replace('#include <common>', '#include <common>\nattribute float nocturneLevel;\nvarying float vNocturneLevel;')
+    .replace('#include <begin_vertex>', '#include <begin_vertex>\nvNocturneLevel = nocturneLevel;')
+  shader.fragmentShader = shader.fragmentShader.replace('#include <common>', '#include <common>\nvarying float vNocturneLevel;')
+    .replace('#include <emissivemap_fragment>', '#include <emissivemap_fragment>\ntotalEmissiveRadiance *= vNocturneLevel;')
+}
+const spatialShaderKey = () => 'nocturne-spatial-emission-v1'
+
 function Boxes({ finish }: { finish: Finish }) {
   const mesh = useRef<InstancedMesh>(null)
   const items = parts[finish]
+  const spatial = finish === 'steel' || finish === 'magentaSecondary' || finish === 'cyan' || finish === 'cyanDetails'
   useLayoutEffect(() => {
     if (!mesh.current) return
+    if (spatial) {
+      const depths = [...new Set(items.map(part => part.position[2]))].sort((a, b) => b - a)
+      const indices = Uint8Array.from(items, part => finish === 'steel'
+        ? part.position[1] === 4.39 && part.position[2] === -8 && part.size[0] === .09
+          ? Math.round((part.position[0] + 2.8) / .7 * 5 / 8) : 255
+        : finish === 'cyan' ? Math.round(((part.position[0] < 0 ? .1 : -5.9) - part.position[2]) / 10)
+          : depths.indexOf(part.position[2]))
+      mesh.current.userData.nocturneSpatialIndices = indices
+      mesh.current.geometry.setAttribute('nocturneLevel', new InstancedBufferAttribute(new Float32Array(items.length), 1).setUsage(DynamicDrawUsage))
+    }
     const transform = new Object3D()
     items.forEach((part, index) => {
       transform.position.set(...part.position)
@@ -116,12 +136,12 @@ function Boxes({ finish }: { finish: Finish }) {
     mesh.current.instanceMatrix.needsUpdate = true
     mesh.current.computeBoundingBox()
     mesh.current.computeBoundingSphere()
-  }, [items])
+  }, [items, spatial, finish])
   const group = finish === 'magenta' || finish === 'cyan' || finish === 'violet' ? finish : finish === 'cyanPanel' || finish === 'cyanDetails' ? 'cyan' : finish === 'magentaSecondary' || finish.startsWith('bridge') ? 'magenta' : finish === 'violetSecondary' ? 'violet' : null
   return <instancedMesh name={`nocturne-${finish}`} ref={mesh} args={[undefined, undefined, items.length]}>
     <boxGeometry args={[1, 1, 1]} />
-    <meshStandardMaterial {...finishes[finish]} color={group ? '#070a0f' : finishes[finish].color}
-      metalness={group ? 0 : finishes[finish].metalness} roughness={group ? 0.95 : finishes[finish].roughness} emissive={group ? NOCTURNE_LIGHT_COLORS[group] : '#000000'}
+    <meshStandardMaterial {...finishes[finish]} {...(spatial ? { onBeforeCompile: spatialFixtureShader, customProgramCacheKey: spatialShaderKey } : {})} color={group ? '#070a0f' : finishes[finish].color}
+      metalness={group ? 0 : finishes[finish].metalness} roughness={group ? 0.95 : finishes[finish].roughness} emissive={group ? NOCTURNE_LIGHT_COLORS[group] : finish === 'steel' ? NOCTURNE_LIGHT_COLORS.magenta : '#000000'}
       emissiveIntensity={0} toneMapped={!group} />
   </instancedMesh>
 }

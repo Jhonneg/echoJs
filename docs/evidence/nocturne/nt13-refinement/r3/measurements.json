@@ -1,0 +1,211 @@
+{
+  "changedSource": [
+    "src/scenes/nocturne/ArchitectureDetails.tsx",
+    "src/scenes/nocturne/Atmosphere.tsx",
+    "src/scenes/nocturne/LightingDriver.tsx",
+    "src/scenes/nocturne/WetGround.tsx",
+    "src/scenes/nocturne/visualState.ts"
+  ],
+  "unchangedSource": 86,
+  "runs": [
+    {
+      "quality": "standard",
+      "samples": 3285,
+      "frames": 439,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 1,
+        "drawingSize": [
+          1440,
+          810
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "calls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "meanFrameSeconds": 0.016715677321156308,
+      "depthPeak": 1.8488895582888818,
+      "depthLate": 0.050077650911761265,
+      "contourInstances": 9,
+      "contourPeak": 0.037665702402591705,
+      "contourPeakTime": 29.336
+    },
+    {
+      "quality": "low",
+      "samples": 3293,
+      "frames": 439,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 0.75,
+        "drawingSize": [
+          1080,
+          607
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "calls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "meanFrameSeconds": 0.016686547221378502,
+      "depthPeak": 1.8425408125274865,
+      "depthLate": 0.050000111096556166,
+      "contourInstances": 9,
+      "contourPeak": 0.03764346241950989,
+      "contourPeakTime": 29.356321
+    },
+    {
+      "quality": "standard-reduced",
+      "samples": 3294,
+      "frames": 437,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 1,
+        "drawingSize": [
+          1440,
+          810
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "calls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "meanFrameSeconds": 0.01668973891924671,
+      "depthPeak": 1.7556605417917766,
+      "depthLate": 0.1522833660303301,
+      "contourInstances": 9,
+      "contourPeak": 0,
+      "contourPeakTime": 0
+    }
+  ],
+  "crops": [
+    {
+      "phase": "r2",
+      "name": "quiet",
+      "values": {
+        "floor": 0.01771191935,
+        "bridge": 0.018029827002,
+        "depthWall": 0.02128402414,
+        "gate": 0.03188673804
+      }
+    },
+    {
+      "phase": "r2",
+      "name": "dense",
+      "values": {
+        "floor": 0.0329155728,
+        "bridge": 0.04581267248,
+        "depthWall": 0.038761760799999996,
+        "gate": 0.129577146
+      }
+    },
+    {
+      "phase": "r2",
+      "name": "silent",
+      "values": {
+        "floor": 0.0167224414,
+        "bridge": 0.015736820313999998,
+        "depthWall": 0.02113821892,
+        "gate": 0.03188107756
+      }
+    },
+    {
+      "phase": "r2",
+      "name": "manual-all-on",
+      "values": {
+        "floor": 0.09920875564000001,
+        "bridge": 0.1570481154,
+        "depthWall": 0.10029879059999999,
+        "gate": 0.6112489642
+      }
+    },
+    {
+      "phase": "r2",
+      "name": "manual-all-off",
+      "values": {
+        "floor": 0.016846350205999998,
+        "bridge": 0.015680510262,
+        "depthWall": 0.020642195979999996,
+        "gate": 0.026647903879999997
+      }
+    },
+    {
+      "phase": "r3",
+      "name": "quiet",
+      "values": {
+        "floor": 0.017716283578,
+        "bridge": 0.018039521910000002,
+        "depthWall": 0.021264596339999997,
+        "gate": 0.03188673804
+      }
+    },
+    {
+      "phase": "r3",
+      "name": "dense",
+      "values": {
+        "floor": 0.0367193295,
+        "bridge": 0.05026676205999999,
+        "depthWall": 0.040713913520000006,
+        "gate": 0.14173318299999998
+      }
+    },
+    {
+      "phase": "r3",
+      "name": "silent",
+      "values": {
+        "floor": 0.016726657124,
+        "bridge": 0.015736820313999998,
+        "depthWall": 0.02113821892,
+        "gate": 0.03188107756
+      }
+    },
+    {
+      "phase": "r3",
+      "name": "manual-all-on",
+      "values": {
+        "floor": 0.10042291148,
+        "bridge": 0.15964194059999998,
+        "depthWall": 0.1043770784,
+        "gate": 0.6694950409999998
+      }
+    },
+    {
+      "phase": "r3",
+      "name": "manual-all-off",
+      "values": {
+        "floor": 0.016846350205999998,
+        "bridge": 0.015680510262,
+        "depthWall": 0.020642195979999996,
+        "gate": 0.026647903879999997
+      }
+    }
+  ],
+  "restingPixelDifference": "0 (0)"
+}

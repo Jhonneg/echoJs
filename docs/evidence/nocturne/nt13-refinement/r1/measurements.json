@@ -1,0 +1,415 @@
+{
+  "changedSourceFiles": [
+    "src/scenes/nocturne/NocturneScene.tsx",
+    "src/scenes/nocturne/visualState.ts"
+  ],
+  "unchangedSourceFiles": 88,
+  "runs": [
+    {
+      "quality": "standard",
+      "samples": 3304,
+      "frames": 439,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 1,
+        "drawingSize": [
+          1440,
+          810
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "meanFrameSeconds": 0.01667039951573808,
+      "drawCalls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "stages": [
+        {
+          "name": "quiet",
+          "channels": {
+            "magentaMain": 1.258691616608172e-7,
+            "magentaSecondary": 9.73037903823372e-8,
+            "cyanWindows": 0.00527971618144663,
+            "cyanDetails": 1.232261343903584e-7,
+            "cyanPanel": 0.044913293640038016,
+            "violet": 0.000002761893310785888,
+            "violetSecondary": 0.000002761893310785888,
+            "bridge": 0
+          }
+        },
+        {
+          "name": "bass",
+          "channels": {
+            "magentaMain": 0.26655524370088995,
+            "magentaSecondary": 0.09390697931134542,
+            "cyanWindows": 0.0001946588146903836,
+            "cyanDetails": 0.00015764384947056272,
+            "cyanPanel": 0.000016648996760336874,
+            "violet": 0.000004174261219289958,
+            "violetSecondary": 0.000004174261219289958,
+            "bridge": 0.010537999469719226
+          },
+          "panelPeak": 0.000049937498536816125
+        },
+        {
+          "name": "dense",
+          "channels": {
+            "magentaMain": 0.2738891392614292,
+            "magentaSecondary": 0.08788857115922312,
+            "cyanWindows": 0.07325058838160535,
+            "cyanDetails": 0.10707559718993584,
+            "cyanPanel": 0.19904752228799302,
+            "violet": 0.050928882543529334,
+            "violetSecondary": 0.04876949505388984,
+            "bridge": 0.020296817490140288
+          }
+        },
+        {
+          "name": "silent",
+          "channels": {
+            "magentaMain": 0,
+            "magentaSecondary": 0,
+            "cyanWindows": 0,
+            "cyanDetails": 0,
+            "cyanPanel": 0,
+            "violet": 0,
+            "violetSecondary": 0,
+            "bridge": 0
+          }
+        }
+      ]
+    },
+    {
+      "quality": "low",
+      "samples": 3289,
+      "frames": 439,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 0.75,
+        "drawingSize": [
+          1080,
+          607
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "meanFrameSeconds": 0.016704560656734462,
+      "drawCalls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "stages": [
+        {
+          "name": "quiet",
+          "channels": {
+            "magentaMain": 9.841279147959898e-8,
+            "magentaSecondary": 8.527630844019293e-8,
+            "cyanWindows": 0.005275399208673185,
+            "cyanDetails": 4.427554492536545e-8,
+            "cyanPanel": 0.044911825342096326,
+            "violet": 0.000002761800254508545,
+            "violetSecondary": 0.000002761800254508545,
+            "bridge": 0
+          }
+        },
+        {
+          "name": "bass",
+          "channels": {
+            "magentaMain": 0.26695431189573804,
+            "magentaSecondary": 0.09393074692452184,
+            "cyanWindows": 0.00019551279655002687,
+            "cyanDetails": 0.00017091984569268012,
+            "cyanPanel": 0.000019307298230888898,
+            "violet": 0.000004258629775999027,
+            "violetSecondary": 0.000004258629775999027,
+            "bridge": 0.01115322281299699
+          },
+          "panelPeak": 0.00007173962078542128
+        },
+        {
+          "name": "dense",
+          "channels": {
+            "magentaMain": 0.2735330740015589,
+            "magentaSecondary": 0.08790132442307537,
+            "cyanWindows": 0.07336892147341423,
+            "cyanDetails": 0.10707139571163195,
+            "cyanPanel": 0.19957700292411085,
+            "violet": 0.050894050948707734,
+            "violetSecondary": 0.04838019510840025,
+            "bridge": 0.01993951841001595
+          }
+        },
+        {
+          "name": "silent",
+          "channels": {
+            "magentaMain": 0,
+            "magentaSecondary": 0,
+            "cyanWindows": 0,
+            "cyanDetails": 0,
+            "cyanPanel": 0,
+            "violet": 0,
+            "violetSecondary": 0,
+            "bridge": 0
+          }
+        }
+      ]
+    },
+    {
+      "quality": "standard-reduced",
+      "samples": 3286,
+      "frames": 436,
+      "renderer": {
+        "toneMapping": 4,
+        "exposure": 1,
+        "colorSpace": "srgb",
+        "dpr": 1,
+        "drawingSize": [
+          1440,
+          810
+        ],
+        "shadows": false,
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)"
+      },
+      "meanFrameSeconds": 0.01673420572124112,
+      "drawCalls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ],
+      "stages": [
+        {
+          "name": "quiet",
+          "channels": {
+            "magentaMain": 7.714572411248957e-8,
+            "magentaSecondary": 7.228243629657501e-8,
+            "cyanWindows": 0.004491900914183157,
+            "cyanDetails": 2.5323550662724968e-8,
+            "cyanPanel": 0.037216943547973856,
+            "violet": 0.0000022856917530403603,
+            "violetSecondary": 0.0000022856917530403603,
+            "bridge": 0
+          }
+        },
+        {
+          "name": "bass",
+          "channels": {
+            "magentaMain": 0.21642296231574842,
+            "magentaSecondary": 0.08872545543502848,
+            "cyanWindows": 0.00029461789473526396,
+            "cyanDetails": 0.00011269397234167147,
+            "cyanPanel": 0.0020916108807255153,
+            "violet": 0.000003968669912868295,
+            "violetSecondary": 0.000003968669912868295,
+            "bridge": 0
+          },
+          "panelPeak": 0.007364258050746924
+        },
+        {
+          "name": "dense",
+          "channels": {
+            "magentaMain": 0.20166958566138302,
+            "magentaSecondary": 0.08231003918198339,
+            "cyanWindows": 0.07069329716370225,
+            "cyanDetails": 0.10624258014407241,
+            "cyanPanel": 0.17582723117377036,
+            "violet": 0.027879724962266678,
+            "violetSecondary": 0.027879724962266678,
+            "bridge": 0
+          }
+        },
+        {
+          "name": "silent",
+          "channels": {
+            "magentaMain": 0,
+            "magentaSecondary": 0,
+            "cyanWindows": 0,
+            "cyanDetails": 0,
+            "cyanPanel": 0,
+            "violet": 0,
+            "violetSecondary": 0,
+            "bridge": 0
+          }
+        }
+      ]
+    }
+  ],
+  "displayCrops": [
+    {
+      "phase": "r0",
+      "name": "quiet",
+      "crops": {
+        "floor": 0.01600044833,
+        "leftWall": 0.03181161275199999,
+        "rightWall": 0.0060814104919999995,
+        "bridge": 0.014804523072,
+        "gate": 0.031900758220000006
+      }
+    },
+    {
+      "phase": "r0",
+      "name": "dense",
+      "crops": {
+        "floor": 0.02426839842,
+        "leftWall": 0.08561997846,
+        "rightWall": 0.057048196196,
+        "bridge": 0.03186139952,
+        "gate": 0.12948129214
+      }
+    },
+    {
+      "phase": "r0",
+      "name": "silent",
+      "crops": {
+        "floor": 0.015315405592,
+        "leftWall": 0.009657439423999999,
+        "rightWall": 0.006070555904,
+        "bridge": 0.013707461326,
+        "gate": 0.0322318011
+      }
+    },
+    {
+      "phase": "r0",
+      "name": "manual-all-off",
+      "crops": {
+        "floor": 0.01481536112,
+        "leftWall": 0.009131939747999997,
+        "rightWall": 0.005572745547999999,
+        "bridge": 0.013570337239999999,
+        "gate": 0.02627090328
+      }
+    },
+    {
+      "phase": "r1",
+      "name": "quiet",
+      "crops": {
+        "floor": 0.017711304468,
+        "leftWall": 0.052624557175999995,
+        "rightWall": 0.007007669316,
+        "bridge": 0.01803225144,
+        "gate": 0.03188673804
+      }
+    },
+    {
+      "phase": "r1",
+      "name": "dense",
+      "crops": {
+        "floor": 0.03459582908,
+        "leftWall": 0.13512266822,
+        "rightWall": 0.08852652332000001,
+        "bridge": 0.048120141,
+        "gate": 0.129577146
+      }
+    },
+    {
+      "phase": "r1",
+      "name": "silent",
+      "crops": {
+        "floor": 0.016721835022,
+        "leftWall": 0.011112389804,
+        "rightWall": 0.0065637510439999994,
+        "bridge": 0.015736820313999998,
+        "gate": 0.03188107756
+      }
+    },
+    {
+      "phase": "r1",
+      "name": "manual-all-off",
+      "crops": {
+        "floor": 0.016846350205999998,
+        "leftWall": 0.011038609036,
+        "rightWall": 0.0061266596619999995,
+        "bridge": 0.015680510262,
+        "gate": 0.026647903879999997
+      }
+    }
+  ],
+  "sameTraceCalibration": {
+    "quiet": {
+      "magentaMain": {
+        "before": 6.261028781437564e-8,
+        "after": 1.2522056710643633e-7
+      },
+      "magentaSecondary": {
+        "before": 4.8448282759178804e-8,
+        "after": 9.689656079469864e-8
+      },
+      "cyanWindows": {
+        "before": 0.0026471549359958005,
+        "after": 0.005280311938219294
+      },
+      "cyanDetails": {
+        "before": 6.067232868111629e-8,
+        "after": 1.2134463809619652e-7
+      },
+      "cyanPanel": {
+        "before": 0.022969811279745525,
+        "after": 0.04490809215769108
+      },
+      "violet": {
+        "before": 0.000001380784572347842,
+        "after": 0.0000027615653315688805
+      },
+      "violetSecondary": {
+        "before": 0.000001380784572347842,
+        "after": 0.0000027615653315688805
+      },
+      "bridge": {
+        "before": 0,
+        "after": 0
+      }
+    },
+    "dense": {
+      "magentaMain": {
+        "before": 0.15899172447002305,
+        "after": 0.2729994164734176
+      },
+      "magentaSecondary": {
+        "before": 0.04589217665820472,
+        "after": 0.0877515909246111
+      },
+      "cyanWindows": {
+        "before": 0.03807711826121333,
+        "after": 0.07335969794603554
+      },
+      "cyanDetails": {
+        "before": 0.05655899109365721,
+        "after": 0.10706262794829514
+      },
+      "cyanPanel": {
+        "before": 0.11146711946022116,
+        "after": 0.1995334666976238
+      },
+      "violet": {
+        "before": 0.026579780325776774,
+        "after": 0.05075794071986074
+      },
+      "violetSecondary": {
+        "before": 0.025058262429662557,
+        "after": 0.04801666815279688
+      },
+      "bridge": {
+        "before": 0.010631167498326129,
+        "after": 0.019943117016578114
+      }
+    }
+  }
+}

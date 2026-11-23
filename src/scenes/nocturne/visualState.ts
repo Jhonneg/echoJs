@@ -1,3 +1,4 @@
+import { createSpatialResponse, updateSpatialResponse, SPATIAL_COUNTS, SPATIAL_CHANNELS, type SpatialChannel } from './spatial.ts'
 import type { MusicFeatureReader } from '../../audio/musicFeatures.ts'
 import { clampSignal } from '../../audio/signal.ts'
 import type { NocturneLighting, NocturneLightingMode } from './lighting.ts'
@@ -15,6 +16,9 @@ export const NOCTURNE_VISUAL_CHANNELS = [
 export type NocturneVisualChannel = typeof NOCTURNE_VISUAL_CHANNELS[number]
 export type NocturneVisualEnvelope = { sustainTarget: number, accent: number, level: number }
 export type NocturneVisualState = {
+  environment: { depthLight: number },
+  spatial: ReturnType<typeof createSpatialResponse>,
+  instances: Record<SpatialChannel, Float64Array>,
   context: ReturnType<typeof createAtmosphereResponse>,
   broad: ReturnType<typeof createNocturneResponse>,
   panel: ReturnType<typeof createCyanPanelResponse>,
@@ -25,17 +29,31 @@ export type NocturneVisualState = {
   channels: Record<NocturneVisualChannel, NocturneVisualEnvelope>,
   // Derived source-light levels. The existing planar reflection renders the real fixtures.
   reflections: Record<NocturneVisualChannel, number>,
+  // Final normalized point-light delivery, distinct from emitter/reflection-source levels.
+  spill: Record<NocturneVisualChannel, number>,
   atmosphere: { level: number, magenta: number, cyan: number, violet: number, fogNear: number, fogFar: number },
 }
 export function createNocturneVisualState(): NocturneVisualState {
   return {
+    environment: { depthLight: 0 },
+    spatial: createSpatialResponse(),
+    instances: { magentaSecondary: new Float64Array(5), cyanWindows: new Float64Array(5), cyanDetails: new Float64Array(6) },
     context: createAtmosphereResponse(), broad: createNocturneResponse(), panel: createCyanPanelResponse(), magenta: createMagentaResponse(), midrange: createMidrangeResponse(), bridge: createBridgeResponse(), violet: createVioletResponse(),
     channels: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, { sustainTarget: 0, accent: 0, level: 0 }])) as NocturneVisualState['channels'],
     reflections: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, 0])) as NocturneVisualState['reflections'],
+    spill: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, 0])) as NocturneVisualState['spill'],
     atmosphere: { level: 0, magenta: 0, cyan: 0, violet: 0, fogNear: 17, fogFar: 74 },
   }
 }
 
+// Scene-local display calibration: lift modest signals without a floor or hard knee.
+// Zero stays off; full output stays full; controllers retain their original timing.
+export function calibrateNocturneLevel(level: number) {
+  const x = clampSignal(level)
+  return 2 * x / (1 + x)
+}
+
+const audioSpillGains: Partial<Record<NocturneVisualChannel, number>> = { magentaMain: 1.5, cyanWindows: 2, cyanDetails: 2 }
 const violetChannels = ['violet', 'violetSecondary'] as const
 export function updateNocturneVisualState(state: NocturneVisualState, reader: MusicFeatureReader,
   mode: NocturneLightingMode, manual: NocturneLighting, reactivity: number, reducedMotion: boolean,
@@ -77,7 +95,31 @@ export function updateNocturneVisualState(state: NocturneVisualState, reader: Mu
   panel.sustainTarget = state.panel.sustainTarget
   panel.accent = state.panel.accent
   panel.level = mode === 'manual' ? clampSignal(manual.cyanPanel) : state.panel.level
-  for (const name of NOCTURNE_VISUAL_CHANNELS) state.reflections[name] = state.channels[name].level
+  updateSpatialResponse(state.spatial, view, state.midrange, state.panel, nowSeconds, reactivity, reducedMotion, mode === 'manual')
+  for (const name of SPATIAL_CHANNELS) {
+    const output = state.channels[name], values = state.instances[name], accents = state.spatial.groups[name].accents
+    const body = name === 'magentaSecondary' ? state.magenta.secondaryBody : name === 'cyanWindows' ? state.midrange.windowBody : state.midrange.detailBody
+    let total = 0, accentTotal = 0
+    for (let i = 0; i < SPATIAL_COUNTS[name]; i++) {
+      values[i] = mode === 'manual' ? output.level : calibrateNocturneLevel(body + accents[i])
+      total += values[i]; accentTotal += accents[i]
+    }
+    if (mode !== 'manual') output.level = total / values.length
+    output.accent = accentTotal / values.length
+  }
+  if (mode !== 'manual') {
+    for (const name of NOCTURNE_VISUAL_CHANNELS) {
+      if (name !== 'bridge' && !SPATIAL_CHANNELS.includes(name as SpatialChannel)) state.channels[name].level = calibrateNocturneLevel(state.channels[name].level)
+    }
+    // Calibrate the actual section sources, then derive their shared spill mean.
+    for (let i = 0; i < state.bridge.levels.length; i++) state.bridge.levels[i] = calibrateNocturneLevel(state.bridge.levels[i])
+    bridge.level = state.bridge.levels.reduce((sum, value) => sum + value, 0) / state.bridge.levels.length
+  }
+  for (const name of NOCTURNE_VISUAL_CHANNELS) {
+    const final = state.channels[name].level
+    state.reflections[name] = final
+    state.spill[name] = clampSignal(final * (mode === 'manual' ? 1 : audioSpillGains[name] ?? 1))
+  }
   const atmosphere = state.atmosphere, manualMode = mode === 'manual'
   updateAtmosphereResponse(state.context, view, deltaSeconds, nowSeconds, reactivity, reducedMotion, manualMode)
   const { level, density, tint } = state.context
@@ -87,15 +129,26 @@ export function updateNocturneVisualState(state: NocturneVisualState, reader: Mu
   atmosphere.violet = manualMode ? state.broad.violet * .16 : level * (.16 + .04 * tint)
   atmosphere.fogNear = 17
   atmosphere.fogFar = 74 - 8 * density
+  state.environment.depthLight = manualMode ? .65 * Math.max(clampSignal(manual.magenta), clampSignal(manual.cyan), clampSignal(manual.violet)) : level
   return state
 }
 
 // This adapter writes final values only; it has no audio or browser-capture dependencies.
 export type NocturneVisualTargets = {
-  emitters: readonly { channel: NocturneVisualChannel, segment?: number, material: { emissiveIntensity: number } }[],
+  emitters: readonly { channel: NocturneVisualChannel, segment?: number, instances?: { channel: SpatialChannel | 'bridge', scale?: number, indices: Uint8Array, attribute: { array: Float32Array, needsUpdate: boolean } }, material: { emissiveIntensity: number } }[],
   lights: readonly { channel: NocturneVisualChannel, light: { intensity: number }, full: number }[],
 }
 export function applyNocturneVisualState(targets: NocturneVisualTargets, state: NocturneVisualState) {
-  for (const { channel, segment, material } of targets.emitters) material.emissiveIntensity = (segment === undefined ? state.channels[channel].level : state.bridge.levels[segment]) * 1.3
-  for (const { channel, light, full } of targets.lights) light.intensity = state.channels[channel].level * full
+  for (const { channel, segment, material, instances } of targets.emitters) {
+    material.emissiveIntensity = instances ? 1.3 : (segment === undefined ? state.channels[channel].level : state.bridge.levels[segment]) * 1.3
+    if (instances) {
+      const levels = instances.channel === 'bridge' ? state.bridge.levels : state.instances[instances.channel]
+      for (let i = 0; i < instances.indices.length; i++) {
+        const index = instances.indices[i]
+        instances.attribute.array[i] = index === 255 ? 0 : levels[index] * (instances.scale ?? 1)
+      }
+      instances.attribute.needsUpdate = true
+    }
+  }
+  for (const { channel, light, full } of targets.lights) light.intensity = state.spill[channel] * full
 }

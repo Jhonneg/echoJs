@@ -1,6 +1,6 @@
 ECHO — Music Intelligence Migration Tracker
 
-Version: 1.11 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented; owner authorized NT09 continuation; NT09 existing surfaces verified; NT10 implemented; NT11 assessment ready, owner artistic approval pending; audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
+Version: 1.13.2 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented; owner authorized NT09 continuation; NT09 existing surfaces verified; NT10 implemented; NT11 continuation accepted; NT12 deterministic verification passed; NT13 approved Audio spill lift applied; live re-review pending; audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
 Destination: docs/MUSIC_INTELLIGENCE_MIGRATION.md
 Current execution scope: Noctune only. Future intention: remove shared legacy analysis after every consumer has migrated.
 
@@ -372,7 +372,7 @@ Known risks / blockers:
 Owner review decision:
 Next phase:
 
-Next action: review NT11 staged coordination before NT12. Current mappings retained; native/music/device acceptance is not inferred from generated checks.
+Next action: live bass re-review of the approved applied spill lift and remaining NT13 cases. No DSP change or captured-media inspection; final musical approval pending.
 
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
@@ -455,3 +455,27 @@ Owner “proceed” authorizes NT10 after NT09. Intensity controls capped distan
 Owner “proceed” authorizes NT11 after NT10. Existing MI mappings were reviewed together using a generated seven-stage arrangement and per-render feature/response/delivery traces. No added global intensity multiplier, shared limiter, rolling-energy interpretation or DSP change was justified. Approved cyan and every existing controller remain unchanged.
 
 [NT11 evidence](reports/nocturne/NT11_COORDINATION_REVIEW.md) records normal/reduced synchronized clips, actual material/point delivery, bounded violet/bridge overlap and90 byte-identical source files relative to task start. Technical assessment passed; owner artistic/grouped environment approval remains pending. NT12 deterministic matrix and NT13 owner-authorized live music review have not started.
+
+
+## NT12 checkpoint — deterministic contract/processor/PCM matrix passed
+
+Owner continuation authorizes NT12 after the NT11 report.54 explicit-feature cases cover band roles, isolated/duplicate events, held energy, mixed bands, local rise qualification, dynamics, stale/inactive/session, Manual/zero/reduced at30/60/120 Hz.36 synthetic-spectrum configurations verify100/450/1000/8000 Hz band roles through unchanged production MI at44.1/48/96 kHz.28 actual browser PCM/control criteria pass with real analyser output and final material/point values.
+
+[NT12 report](reports/nocturne/NT12_MATRIX_REVIEW.md) distinguishes ideal deterministic inputs, browser FFT leakage and residual fades. All90 production source hashes match task start, including shared MI/DSP/capture. No interface incompatibility or production defect found. NT13 live real-music review is next after owner continuation; real-song feel, native capture/audibility and device performance remain manual pending.
+
+
+## NT13 checkpoint — live owner review prepared
+
+Owner “continue” authorizes review preparation. [Source/case worksheet and approval ledger](reports/nocturne/NT13_LIVE_REVIEW.md) are ready and the existing local app is running. Source preference, listening cases, owner observations and musical approval are not yet supplied. All90 source hashes match NT12; no MI/scene changes or capture/recording instrumentation added. NT13 is in progress, not passed; NT14 remains unstarted.
+
+
+NT13 brightness feedback: owner reports bass tracking but dim Audio corridor versus Manual. [Matched local spill proposal](reports/nocturne/NT13_SPILL_PROPOSAL.md) is ready in a temporary copy; no production changes. Owner choice and live re-review precede further tuning/NT14. Preserve approved cyan and independent fixture response; no DSP/global-exposure adjustment proposed.
+
+
+NT13 applied checkpoint: owner “do the lift” approves the [Audio spill correction](reports/nocturne/NT13_SPILL_IMPLEMENTATION.md). Main magenta point1.5×, window/detail points2×, bounded by original full intensity; Manual unchanged. Final spill is a separate unified-state output; emitters/approved cyan/other points/atmosphere/timing and all89 other source files remain unchanged. Generated checks pass; live owner re-review still required. NT14 is not started.
+
+## NT13-R0 current dependency audit — 2026-11-22
+
+The earlier pre-migration source snapshots above are historical. Current `App` passes Noctune only `analysis.musicFeatures`; Noctune passes no `AudioSignal` into the shared Canvas and disables legacy camera tilt. `signal.ts` supplies shared math/types only. The response layer borrows one feature view per update and sends final scene values through the driver; no browser capture details enter scene code. Noctune activity uses the same reader. Other landscapes/shared Canvas retain legacy support; this is zero Noctune signal consumption, not removal of every transitive legacy-support module.
+
+All six energies, all three broad onset streams, intensity/activity and valid brightness are used. The old broad response is computed but no longer drives Audio emitters/atmosphere; Manual uses its direct group values. Metadata and broad aggregate energy are available but are not additional final Audio brightness controls. See [as-is mapping](NOCTUNE_VISUAL_MAPPING.md#nt13-r0-current-worktree-audit--2026-11-22) and [measured R0 audit](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r0--ground-truth-checkpoint-2026-11-22). No blocking interface incompatibility or analysis defect was found. Keep MI unchanged; R1 calibration requires separate owner checkpoint approval.
