@@ -1,0 +1,114 @@
+{
+  "status": "BL03 stone correction technically verified; owner visual review pending",
+  "resources": {
+    "before": {
+      "calls": 7,
+      "triangles": 4808,
+      "geometries": 7,
+      "textures": 1,
+      "programs": 5
+    },
+    "after": {
+      "calls": 8,
+      "triangles": 5022,
+      "geometries": 8,
+      "textures": 1,
+      "programs": 5
+    },
+    "low": {
+      "calls": 8,
+      "triangles": 1598,
+      "geometries": 8,
+      "textures": 1,
+      "programs": 5
+    },
+    "addedTriangles": 214
+  },
+  "timing": {
+    "baseline": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 18.300000000745058,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17.299999998882413,
+        "maximumMs": 18.5,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17.699999999254942,
+        "maximumMs": 18.699999999254942,
+        "over33ms": 0
+      }
+    ],
+    "current": [
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.699999999254942,
+        "over33ms": 0
+      },
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.300000000745058,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 16.90000000037253,
+        "maximumMs": 17.300000000745058,
+        "over33ms": 0
+      }
+    ],
+    "medianRatio": 1,
+    "limits": "Three 10s headless ANGLE windows, 1440x900 DPR1. Vsync-limited cadence, not GPU execution time or native hardware certification."
+  },
+  "differences": [
+    {
+      "phase": "resting",
+      "protectedPixelsChanged": 0,
+      "heroPixelsChanged": 39454,
+      "waterPixelsChanged": 34288,
+      "frontMean": 45.63122222222159,
+      "sideMean": 72.74236111111112,
+      "seamAlignment": {
+        "seam": 744,
+        "reflection": 744.0371146913852,
+        "errorPixels": 0.03711469138522716
+      }
+    },
+    {
+      "phase": "illuminated",
+      "protectedPixelsChanged": 0,
+      "heroPixelsChanged": 39454,
+      "waterPixelsChanged": 34248,
+      "frontMean": 45.4033333333334,
+      "sideMean": 72.27694444444408,
+      "seamAlignment": {
+        "seam": 744,
+        "reflection": 743.967281803161,
+        "errorPixels": 0.03271819683902777
+      }
+    }
+  ],
+  "source": {
+    "changed": [
+      "src/scenes/bloom/BloomScene.tsx",
+      "src/scenes/bloom/monolith.ts"
+    ],
+    "preserved": 100
+  },
+  "reference": "Owner-supplied e9db88c2-38de-4c1f-a9d2-f061b5053b89.png; conceptual comparison only, never a runtime texture",
+  "limits": "Camera/terrain/auroras/shared illumination unchanged. Body/fragment reflection remains an inexpensive authored approximation, not a real-time scene reflection. No audio migration or BL05."
+}

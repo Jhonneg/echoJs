@@ -171,3 +171,17 @@ VP02: high-mid contour rise uses scene curve1.15s/(s+.15),35ms eased attack,180m
 VP03 adjusts only depth/material/horizon color distribution. Existing atmospheric2/4s easing (4/6s reduced), all hit envelopes and camera route/speed remain; near/mid/far separation adds no new motion.
 
 Current Crimson walking override (owner2026-11-22): fixed24 units/second, independent of energy, profile, pause, silence, stale/disconnected source or Reactivity. No speed envelope or catch-up; keep existing50ms delta cap, logical distance/rebase/loaded-terrain guard. Reduced motion freezes travel and resuming uses the fixed speed without resetting distance. Prior Crimson audio-driven travel sections are historical; other worlds and all musical effect envelopes remain unchanged.
+
+## Bloom BL06 — current mapping (supersedes legacy halo tables above)
+
+Bloom now consumes calibrated MusicFeaturesV1 six-band energy/context/events, not legacy fast/flux envelopes. Preserve intrinsic aurora drift, gentle water and sparse downhill travel. Fixed sustained knee E/(E+.18) yields ~.19/.44/.70 for quiet/moderate/strong generated band energy. Sustained attack/release: low bands .4/.65s, remaining bands .12/.65s; reduced illumination .8/1.5s. Context intensity evolves at1.2/2s.
+
+Low energy plus restrained context drives aurora illumination/expansion and slow bounded hero lift (≤.30 world units) and yaw (≤.08rad). High mids drive seam sustain and brief .22s qualified accents, including surrounding stone and matching lake glow. Rose/mint trail bodies follow low/high mids independently; presence/air add fine core highlights. Qualified local pulses use two fixed slots per lane, progress downhill at .45 path units/s and fade over1.2s. Low events create small bounded rings. Lake effects consume final scene outputs. No new objects or instrument/beat-grid claims.
+
+An event must be fresh, unique within its session, compatible with its broad band and supported by at least .012 measured six-band rise near the actual attack time (±90ms). Onset strength uses a fixed .12 knee, weighted by rise/(rise+.04); do not normalize every event to1. Gain0 removes music response, source changes reset it, silence releases toward the approved luminous idle. Reduced motion holds authored hero pose and freezes clocks/impulses. Whole-scene musical choreography tuning remains BL07.
+
+## Bloom BL07 — current choreography tuning
+
+The fixed energy/onset calibration and seam sustain/attack mapping from BL06 are retained. Environmental context intensity now uses2.4s attack/3.8s release; brightness3/4s; activity.8/1.4s. These are scene envelopes over measured descriptors, not phrase/chorus recognition. Low-band aurora illumination can lead a build while longer environmental color/light follows smoothly.
+
+Monolith lift/yaw targets keep the existing coefficients and bounds. An exact critically damped step follows those targets with.65s lift/.9s yaw tuning (omega=2/tuning), persistent velocity and small settling snap tolerance. No scale changes, overshoot beyond bounds or oscillatory beat-spinning. Gain0, new sessions and reduced motion clear velocities and return the authored pose. Trail musical speed gains are.035rose/.065mint above a shared.125cycles/s idle rate. Fresh low rings use that event's qualified amplitude instead of retaining a previous louder hit. Final pose/light still drives water. All other scene motion settings are preserved.

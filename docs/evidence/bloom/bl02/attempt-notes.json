@@ -1,0 +1,7 @@
+{
+  "notes": [
+    "Initial smoke assumed0renderer textures and stopped on the actual count1; removed that assumption and measured baseline/candidate, both1. No authored texture introduced.",
+    "First terrain smoke exposed steep inner/foreground edges enclosing the lake. Tapered inner closures below frame and completed foreground descent behind z=-2lake plane; geometry/source checks and browser captures rerun on final terrain.",
+    "Candidate benchmark contains2isolated >33.4ms headless frames, maximum140.2ms, with unchanged16.7msmedian and17.0\u201317.1msp95. Cause not established; no native-performance claim."
+  ]
+}

@@ -506,3 +506,72 @@ Record generated actual-MI distributions and equal-opacity polar contour measure
 ## Lavender gentle sun size pulse alongside organic corona — 2026-11-23
 
 Owner requests a little sun pulsation after the organic-corona implementation. Permit disk/haze size1+.08sunPulse, preserving existing MI pulse/brightness timing. This supersedes the fixed-core restriction only. Keep unscaled distance for corona; no changes to its noise/accents/footprint or shared illumination. No new phase or commit authorized.
+
+
+## Lavender stronger sun pulse — 2026-11-23
+
+Owner finds the.08radius pulse barely visible and requests more. Raise only the independent sun/haze size coefficient to.24 (3×modulation). Preserve the MI sunPulse mapping/timing, brightness and unscaled corona coordinates; no corona/engine/other-landscape changes.
+
+
+## Bloom BL02 3D terrain / orthographic composition — 2026-11-23
+
+Owner selects orthographic framing and approves BL02 only. Build two static closed indexed mountain banks from authored silhouette cross-sections, smooth normals, matte vertex colors, existing lights and depth fog. Disable Bloom camera tilt now for the level composition gate, while retaining all existing halo/lake/audio behavior until later phases. No shared-engine changes or new dependencies/assets/render passes.
+
+Keep actual shore slopes rather than visible closure walls; complete foreground descent behind the current lake plane so the lake remains broad.64×15/32×7cell grids include closures within5000/1500terrain triangle budgets. Dispose replaced/unmounted geometry explicitly. Technical checks do not approve aesthetics; stop at BL02. The new monolith concept is specified by the roadmap's written direction; available old reference board is not an exact new-scene target.
+
+
+## Bloom BL02 ridge / shoreline refinement — 2026-11-23
+
+Owner approves the proposed first refinement: natural ridge structure and softer shoreline endings. Keep projection, lights/materials/fog, hero, lake and audio unchanged. Replace straight profile joins with monotone cubic interpolation; add broad offset spurs and gentle static depth warp for connected shoulders/saddles. Separate a shallow submerged toe from the buried closure so visible mountains descend to the lake rather than ending as cliffs. Preserve the same closed topology/quality budgets and keep BL03 unstarted.
+
+
+## Bloom BL02 depth / rock / portrait refinement — 2026-11-23
+
+Owner clarifies continuation means remaining mountain refinements, not BL03. Separate cool distant/darker middle/near color bands within the existing palette, and bake broad face variation/selected convex crest tint into existing vertex colors. Keep rough nonmetallic material, lighting/fog and all renderer resources unchanged. Bring connected inner shoulders into the existing portrait frustum using shared world-space geometry, without aspect-specific mountains or camera changes. Maintain the open shoreline from the prior refinement. No hero/lake/audio/other-landscape changes or phase advancement.
+
+
+## Bloom BL02 stronger range composition — 2026-11-23
+
+Owner requests further mountain improvement after the detail pass. Strengthen range hierarchy with offset middle/near crests overlapping the far skyline, diagonal drainage depressions and restrained cavity/face contrast. Keep the existing closed topology, camera, lights/fog, halo, lake and audio. Make this a visible structural refinement rather than adding surface noise or new objects. Preserve prior evidence; stop for mountain visual review without starting BL03.
+
+
+## Bloom BL03 static monolith / reflection transition — 2026-11-23
+
+Owner “proceed” approves the presented BL03 plan. Replace eight torus fragments with one solid graphite/basalt-like rectangular slab (1.2×3.6×.5 at.6/2.25, yaw−.22), narrow rose seam and dark inset border. No optional fragments. Keep mountains/camera/lights/palette and no new reflection pass. Hero stays at the authored hover; old bass scaling, fragment motion and ring reflection are retired. Existing legacy sky/water response remains until BL06; no MI migration now.
+
+A single authored pose supplies projected body/front/side/seam bounds to the existing water shader. Reflection compresses mirrored height by.82, adds gentle horizontal breakup/attenuation and subtle contact ripples. No full-scene capture or physical planar reflection; verify alignment and absence of the old circular ghost. Stop for BL03 visual review before BL04.
+
+
+## Bloom BL03 luminous beam refinement — 2026-11-23
+
+Owner says the seam reads as a stripe and requests a light beam. Replace the dark rectangular seam border with a localized soft additive glow and feather the bright central core/endpoints. Keep emission confined to the existing monolith surface; increase the matching lake seam glow, with no full-frame bloom, extra lights or phase advancement. Static hero and all surrounding scene/audio systems stay unchanged.
+
+
+## Bloom BL03 visual approval / BL04 planning — 2026-11-23
+
+Owner explicitly approves the monolith/beam/reflection with “alright looks good to me” and requests continuation. Record BL03 visual acceptance only; no inference of native/permitted-song verification. Plan BL04 autonomous auroras and shared ambient light next, following the existing per-phase approval workflow.
+
+
+## Bloom BL04 autonomous aurora illumination — 2026-11-23
+
+Owner “aproved” approves the concrete BL04 plan:2soft shader curtains,1at Low, slow autonomous movement and coordinated color/light across terrain, haze, monolith and lake. Integrate folds into existing sky/water passes rather than adding transparent full-screen meshes or volumetrics. Reuse the existing directional light and fog with restrained shared modulation; keep monolith/beam/geometry/camera/audio unchanged. No trails or MI linkage until later phases. Reduced motion freezes aurora phase/hue/illumination.
+
+## 2026-11-23 — bounded post-BL04 BL03 stone correction
+
+Owner approves reopening the monolith only against the newly supplied Resonant Monolith concept. Use a closed chamfered cross-section with an actual seam groove, deterministic procedural stone shading and two static asymmetric fragments. Retain the existing standard directional-light/fog path, adding restrained stone-only side fill and shared aurora-tinted material illumination rather than changing the global key or mountains. Update only the hero/fragment analytic lake image. Geometry stays stationary; no audio mapping, BL05, global bloom, render target or dependency. Current source/reflection comparisons—not the older acceptance—are the next owner visual gate.
+
+## 2026-11-23 — BL05 terrain-attached downhill ribbons
+
+Owner approves two autonomous trails at Standard and one at Low, before BL06 music linkage. Sample the actual indexed terrain triangles rather than the smoother height function: otherwise Low ribbons can float above or disappear into its coarser surface. Reuse both generated bank geometries unchanged and batch the ribbons into one draw. Static topology, a bounded scene-local shader clock, staggered accents and derivative antialiasing provide direction without dynamic buffers or full-scene bloom. Preserve depth testing to allow terrain/lake occlusion. Reduced motion freezes phase; do not add public diagnostic controls or audio inputs.
+
+## 2026-11-23 — BL06 Music Intelligence migration and explicit material controls
+
+Owner approves replacing Bloom's legacy signal input with the existing borrowed feature reader. Keep all calibrated analysis/capture behavior unchanged. One scene-local controller owns bounded energy/rise histories, event watermark/session/freshness guards, independent musical envelopes and autonomous clocks; meshes never read features individually. Tune from generated production-MI calibration, using a fixed monotonic knee rather than adaptive song normalization. Preserve the two approved trail lanes and add separate high-band fine highlights, not more geometry. Drive reflected hero bounds/core from final pose/light values, and use spatial low-cost lake effects rather than a render target.
+
+Browser pixel checks exposed a stale implicit stone/core uniform binding despite valid scalar core output. The stone now owns explicit seam/aurora uniforms updated through its material ref, with regression identity tests and screenshot brightness evidence. Default trail opacity is capped at .95, altering only five resting core pixels outside the corrected stone area; approved character and all terrain/sky/camera remain. Old compatibility helpers/debug source remain unreferenced by Bloom runtime, avoiding unnecessary shared-camera/test rewrites. BL07 choreography awaits its own approval.
+
+## 2026-11-23 — BL07 independent environmental evolution and monolith inertia
+
+Owner approves a bounded choreography refinement. Keep the accepted seam calibration and intrinsic clocks, geometry/materials/camera and MI engine untouched. Slow the environmental context envelope, then place an exact critically damped motion step after the existing lift/yaw targets. This lets the sky lead a build and the monolith follow/settle without adding scaling, oscillatory spring overshoot or a physics dependency. Preserve all existing pose bounds and update the same final-pose reflection. Separate the two musical trail speed gains while retaining their idle speed.
+
+Low rings previously latched the maximum strength across successive events until timeout. Merge compatible low sub-band strength only within one event, then use that event's fresh strength/age; quiet hits cannot inherit old loudness. Validate with the same production-MI generated sequence replayed against preserved BL06 code, plus actual generated audio/source lifecycle. Test-phase labels never imply musical-section detection. Do not approve aesthetics or native/real-song gates from numeric replay alone.

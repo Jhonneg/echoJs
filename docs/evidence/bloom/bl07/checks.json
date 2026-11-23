@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-23",
+  "passed": [
+    "generated38s schedule through existing production MI",
+    "node tests/bloomChoreography.test.mjs (5 cases)",
+    "npm test (53 files)",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run build",
+    "fresh preserved-BL06 replay baseline and candidate browser runs",
+    "matched sequence/delivered-output/pixel/source assessment",
+    "actual generated audio band isolation, quality/source/scene continuity, reduced motion"
+  ],
+  "pending": [
+    "owner visual/listening approval",
+    "real-song acceptance",
+    "native hardware/picker certification"
+  ],
+  "limits": [
+    "Annotated no-audio video replays an authored test schedule; no section or instrument recognition is claimed.",
+    "Headless frame cadence is vsync-limited, not GPU execution timing."
+  ],
+  "productionChanged": [
+    "src/scenes/bloom/music.ts"
+  ],
+  "preservedExistingSources": 103,
+  "noCommit": true
+}

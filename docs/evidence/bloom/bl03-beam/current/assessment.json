@@ -1,0 +1,102 @@
+{
+  "status": "BL03 technical/reflection checks pass; owner monolith visual gate pending",
+  "resources": {
+    "baseline": {
+      "calls": 7,
+      "triangles": 4808,
+      "geometries": 7,
+      "textures": 1,
+      "programs": 5
+    },
+    "standard": {
+      "calls": 7,
+      "triangles": 4808,
+      "geometries": 7,
+      "textures": 1,
+      "programs": 5
+    },
+    "low": {
+      "calls": 7,
+      "triangles": 1384,
+      "geometries": 7,
+      "textures": 1,
+      "programs": 5
+    }
+  },
+  "baselineProvenance": "Retained preceding BL03 production capture, same authored freeze/camera/device/quality protocol; not a new measurement.",
+  "timing": {
+    "baseline": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.5,
+        "over33ms": 0
+      },
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 18.600000001490116,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 19,
+        "over33ms": 0
+      }
+    ],
+    "candidate": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 16.800000000745058,
+        "maximumMs": 16.90000000037253,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17.09999999962747,
+        "maximumMs": 18.299999998882413,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17.40000000037253,
+        "maximumMs": 19.09999999962747,
+        "over33ms": 0
+      }
+    ],
+    "medianRatio": 1,
+    "scope": "Three10s fixed-scene headless windows at1440x900 DPR1, GTX1660SUPER via ANGLE. Vsync-limited cadence; not GPU execution timing or native-window certification. Candidate has 0 frames >33.4ms; max 19.1ms. Native review pending."
+  },
+  "protectedMountains": {
+    "changedPixels": 0,
+    "maximumChannelDifference": 0
+  },
+  "protectedSky": {
+    "changedPixels": 0,
+    "maximumChannelDifference": 0
+  },
+  "heroChange": {
+    "changedPixels": 6930,
+    "maximumChannelDifference": 167
+  },
+  "seamAlignment": {
+    "heroX": 747.0350877192982,
+    "reflectionX": 747.4133679978628,
+    "differencePixels": 0.37828027856460267
+  },
+  "source": {
+    "changedExisting": [
+      "src/scenes/bloom/BloomScene.tsx"
+    ],
+    "preservedExisting": 100,
+    "newProduction": []
+  },
+  "limits": "BL03 uses an authored analytic monolith reflection, not physically complete planar reflections. Hero is static; Bloom legacy sky/water audio remains until BL06. No aurora/trails yet. Owner art review and native performance remain separate."
+}

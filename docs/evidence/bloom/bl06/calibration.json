@@ -1,0 +1,257 @@
+{
+  "method": "Known Blackman-windowed periodic FFT tone bins, 48kHz/2048, existing createMusicAnalysis; synthetic spectra, not captured audio.",
+  "report": [
+    {
+      "band": "subBass",
+      "amplitude": 0.03,
+      "peakLinearEnergy": 0.042202965586820795,
+      "peakContextIntensity": 0.036088557208676666,
+      "eventStrengths": [
+        0.0423148358190838,
+        0.0423148358190838,
+        0.0423148358190838
+      ],
+      "broadBands": [
+        "low"
+      ]
+    },
+    {
+      "band": "subBass",
+      "amplitude": 0.1,
+      "peakLinearEnergy": 0.1406765456959833,
+      "peakContextIntensity": 0.12029518522676923,
+      "eventStrengths": [
+        0.14104944631793637,
+        0.14104944631793637,
+        0.14104944631793637
+      ],
+      "broadBands": [
+        "low"
+      ]
+    },
+    {
+      "band": "subBass",
+      "amplitude": 0.3,
+      "peakLinearEnergy": 0.4220296016289069,
+      "peakContextIntensity": 0.36088552595062706,
+      "eventStrengths": [
+        0.42314830409493265,
+        0.42314830409493265,
+        0.42314830409493265
+      ],
+      "broadBands": [
+        "low"
+      ]
+    },
+    {
+      "band": "bass",
+      "amplitude": 0.03,
+      "peakLinearEnergy": 0.04242641107222782,
+      "peakContextIntensity": 0.03618371508482621,
+      "eventStrengths": [
+        0.04242641107222782,
+        0.04242641107222782,
+        0.04242641107222782
+      ],
+      "broadBands": [
+        "low"
+      ]
+    },
+    {
+      "band": "bass",
+      "amplitude": 0.1,
+      "peakLinearEnergy": 0.14142136367691674,
+      "peakContextIntensity": 0.12061237801805992,
+      "eventStrengths": [
+        0.14142136367691674,
+        0.14142136367691674,
+        0.14142136367691674
+      ],
+      "broadBands": [
+        "low"
+      ]
+    },
+    {
+      "band": "bass",
+      "amplitude": 0.3,
+      "peakLinearEnergy": 0.4242640567686371,
+      "peakContextIntensity": 0.3618371048334535,
+      "eventStrengths": [
+        0.4242640567686371,
+        0.4242640567686371,
+        0.4242640567686371
+      ],
+      "broadBands": [
+        "low"
+      ]
+    },
+    {
+      "band": "lowMids",
+      "amplitude": 0.03,
+      "peakLinearEnergy": 0.04242641107222782,
+      "peakContextIntensity": 0.03618371508482621,
+      "eventStrengths": [
+        0.04242641107222782,
+        0.04242641107222782,
+        0.04242641107222782
+      ],
+      "broadBands": [
+        "mid"
+      ]
+    },
+    {
+      "band": "lowMids",
+      "amplitude": 0.1,
+      "peakLinearEnergy": 0.14142136367691674,
+      "peakContextIntensity": 0.12061237801805992,
+      "eventStrengths": [
+        0.14142136367691674,
+        0.14142136367691674,
+        0.14142136367691674
+      ],
+      "broadBands": [
+        "mid"
+      ]
+    },
+    {
+      "band": "lowMids",
+      "amplitude": 0.3,
+      "peakLinearEnergy": 0.4242640567686371,
+      "peakContextIntensity": 0.3618371048334535,
+      "eventStrengths": [
+        0.4242640567686371,
+        0.4242640567686371,
+        0.4242640567686371
+      ],
+      "broadBands": [
+        "mid"
+      ]
+    },
+    {
+      "band": "highMids",
+      "amplitude": 0.03,
+      "peakLinearEnergy": 0.04242641107222782,
+      "peakContextIntensity": 0.03618371508482621,
+      "eventStrengths": [
+        0.04242641107222782,
+        0.04242641107222782,
+        0.04242641107222782
+      ],
+      "broadBands": [
+        "mid"
+      ]
+    },
+    {
+      "band": "highMids",
+      "amplitude": 0.1,
+      "peakLinearEnergy": 0.14142136367691674,
+      "peakContextIntensity": 0.12061237801805992,
+      "eventStrengths": [
+        0.14142136367691674,
+        0.14142136367691674,
+        0.14142136367691674
+      ],
+      "broadBands": [
+        "mid"
+      ]
+    },
+    {
+      "band": "highMids",
+      "amplitude": 0.3,
+      "peakLinearEnergy": 0.4242640567686371,
+      "peakContextIntensity": 0.3618371048334535,
+      "eventStrengths": [
+        0.4242640567686371,
+        0.4242640567686371,
+        0.4242640567686371
+      ],
+      "broadBands": [
+        "mid"
+      ]
+    },
+    {
+      "band": "presence",
+      "amplitude": 0.03,
+      "peakLinearEnergy": 0.04242641107222782,
+      "peakContextIntensity": 0.03618371508482621,
+      "eventStrengths": [
+        0.04242641107222782,
+        0.04242641107222782,
+        0.04242641107222782
+      ],
+      "broadBands": [
+        "high"
+      ]
+    },
+    {
+      "band": "presence",
+      "amplitude": 0.1,
+      "peakLinearEnergy": 0.14142136367691674,
+      "peakContextIntensity": 0.12061237801805992,
+      "eventStrengths": [
+        0.14142136367691674,
+        0.14142136367691674,
+        0.14142136367691674
+      ],
+      "broadBands": [
+        "high"
+      ]
+    },
+    {
+      "band": "presence",
+      "amplitude": 0.3,
+      "peakLinearEnergy": 0.4242640567686371,
+      "peakContextIntensity": 0.3618371048334535,
+      "eventStrengths": [
+        0.4242640567686371,
+        0.4242640567686371,
+        0.4242640567686371
+      ],
+      "broadBands": [
+        "high"
+      ]
+    },
+    {
+      "band": "air",
+      "amplitude": 0.03,
+      "peakLinearEnergy": 0.04242641107222782,
+      "peakContextIntensity": 0.03618371508482621,
+      "eventStrengths": [
+        0.04242641107222782,
+        0.04242641107222782,
+        0.04242641107222782
+      ],
+      "broadBands": [
+        "high"
+      ]
+    },
+    {
+      "band": "air",
+      "amplitude": 0.1,
+      "peakLinearEnergy": 0.14142136367691674,
+      "peakContextIntensity": 0.12061237801805992,
+      "eventStrengths": [
+        0.14142136367691674,
+        0.14142136367691674,
+        0.14142136367691674
+      ],
+      "broadBands": [
+        "high"
+      ]
+    },
+    {
+      "band": "air",
+      "amplitude": 0.3,
+      "peakLinearEnergy": 0.4242640567686371,
+      "peakContextIntensity": 0.3618371048334535,
+      "eventStrengths": [
+        0.4242640567686371,
+        0.4242640567686371,
+        0.4242640567686371
+      ],
+      "broadBands": [
+        "high"
+      ]
+    }
+  ]
+}

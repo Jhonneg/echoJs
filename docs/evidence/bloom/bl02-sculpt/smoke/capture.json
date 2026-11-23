@@ -1,0 +1,361 @@
+{
+  "baseline": false,
+  "smoke": true,
+  "temporary": "/tmp/echo-bloom-bl02-w8gqHO",
+  "errors": [],
+  "screenshots": [
+    {
+      "name": "desktop-standard",
+      "row": {
+        "dt": 0.016600000001490117,
+        "cost": {
+          "calls": 28,
+          "triangles": 24760,
+          "geometries": 28,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "a526410b-e611-45eb-9951-9a523b96c454",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "a170bb8e-140a-4f3f-bab9-28e096438896",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "halo": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1.25,
+            1.25,
+            1.25
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "wide-standard",
+      "row": {
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 28,
+          "triangles": 24760,
+          "geometries": 28,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "a526410b-e611-45eb-9951-9a523b96c454",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "a170bb8e-140a-4f3f-bab9-28e096438896",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 81
+        },
+        "halo": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1.25,
+            1.25,
+            1.25
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "portrait-standard",
+      "row": {
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 28,
+          "triangles": 24760,
+          "geometries": 28,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "a526410b-e611-45eb-9951-9a523b96c454",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "a170bb8e-140a-4f3f-bab9-28e096438896",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 57.35294117647059
+        },
+        "halo": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1.25,
+            1.25,
+            1.25
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "desktop-low",
+      "row": {
+        "dt": 0.016700000001117588,
+        "cost": {
+          "calls": 28,
+          "triangles": 21336,
+          "geometries": 28,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "7a956008-77b2-4647-af50-ff1425f7e58a",
+            "triangles": 682,
+            "vertices": 343
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "3e31b96f-0f9e-4658-9aee-1009fb461bc9",
+            "triangles": 682,
+            "vertices": 343
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "halo": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1.25,
+            1.25,
+            1.25
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    },
+    {
+      "name": "wide-low",
+      "row": {
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 28,
+          "triangles": 21336,
+          "geometries": 28,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "7a956008-77b2-4647-af50-ff1425f7e58a",
+            "triangles": 682,
+            "vertices": 343
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "3e31b96f-0f9e-4658-9aee-1009fb461bc9",
+            "triangles": 682,
+            "vertices": 343
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 81
+        },
+        "halo": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1.25,
+            1.25,
+            1.25
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    },
+    {
+      "name": "portrait-low",
+      "row": {
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 28,
+          "triangles": 21336,
+          "geometries": 28,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "7a956008-77b2-4647-af50-ff1425f7e58a",
+            "triangles": 682,
+            "vertices": 343
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "3e31b96f-0f9e-4658-9aee-1009fb461bc9",
+            "triangles": 682,
+            "vertices": 343
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 57.35294117647059
+        },
+        "halo": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1.25,
+            1.25,
+            1.25
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    }
+  ],
+  "checks": [],
+  "performance": [],
+  "source": "Isolated production build with temporary scalar/resource probes; generated local PCM only. No owner media. Headless performance is not native-device certification.",
+  "sourceUnchanged": true,
+  "status": "BL02 visual smoke captured"
+}

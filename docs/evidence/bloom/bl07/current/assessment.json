@@ -1,0 +1,193 @@
+{
+  "status": "BL07 technical choreography checks pass; owner visual/listening review pending",
+  "resources": {
+    "calls": 9,
+    "triangles": 5342,
+    "geometries": 9,
+    "textures": 1,
+    "programs": 6
+  },
+  "timing": {
+    "baseline": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 17.300000000745058
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 17.300000000745058
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 17.300000000745058
+      }
+    ],
+    "current": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 17.300000000745058
+      },
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 17.300000000745058
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 17.199999999254942
+      }
+    ],
+    "limits": "Three10s headless ANGLE windows at1440x900 DPR1. Vsync-limited cadence, not native GPU execution/hardware certification."
+  },
+  "motion": {
+    "baseline": {
+      "maximum": 0.9041165757510612,
+      "rms": 0.31765302451437405
+    },
+    "current": {
+      "maximum": 0.05309434018653292,
+      "rms": 0.018439940441660876
+    }
+  },
+  "checkpoints": [
+    {
+      "time": 6,
+      "before": {
+        "context": 0.04220861355940302,
+        "heroY": 2.2836063484205074,
+        "aurora": 0.3076556133515251
+      },
+      "after": {
+        "context": 0.030842257054234087,
+        "heroY": 2.281260518900745,
+        "aurora": 0.30629165057090485,
+        "seam": 1.0664262972075629
+      }
+    },
+    {
+      "time": 9,
+      "before": {
+        "context": 0.07458098975513201,
+        "heroY": 2.3127692736176235,
+        "aurora": 0.3542922550130248
+      },
+      "after": {
+        "context": 0.060022295440816324,
+        "heroY": 2.301051670717634,
+        "aurora": 0.3525452116953069,
+        "seam": 1.1382211347420246
+      }
+    },
+    {
+      "time": 14.5,
+      "before": {
+        "context": 0.280211626310642,
+        "heroY": 2.383553954206032,
+        "aurora": 0.45076848718761753
+      },
+      "after": {
+        "context": 0.23640703849369635,
+        "heroY": 2.371709203562848,
+        "aurora": 0.44551193664958405,
+        "seam": 1.2560020929966726
+      }
+    },
+    {
+      "time": 16,
+      "before": {
+        "context": 0.3222523866819895,
+        "heroY": 2.3861546608878097,
+        "aurora": 0.4587474824205204
+      },
+      "after": {
+        "context": 0.28410071221161864,
+        "heroY": 2.3814465016788726,
+        "aurora": 0.45416928148407587,
+        "seam": 1.9249351225185496
+      }
+    },
+    {
+      "time": 21.5,
+      "before": {
+        "context": 0.32930980447173797,
+        "heroY": 2.333120533841624,
+        "aurora": 0.39249887457499183
+      },
+      "after": {
+        "context": 0.3279960254488492,
+        "heroY": 2.373789496577679,
+        "aurora": 0.3923412210922452,
+        "seam": 1.1126009161688666
+      }
+    },
+    {
+      "time": 24,
+      "before": {
+        "context": 0.16450595005581653,
+        "heroY": 2.2706721575526023,
+        "aurora": 0.31725787342836737
+      },
+      "after": {
+        "context": 0.22128850641257136,
+        "heroY": 2.28374315953608,
+        "aurora": 0.32407178019117794,
+        "seam": 1.0023686499361848
+      }
+    },
+    {
+      "time": 37,
+      "before": {
+        "context": 0.00042800608617265173,
+        "heroY": 2.2500513607303407,
+        "aurora": 0.25088713680399854
+      },
+      "after": {
+        "context": 0.00819038154728673,
+        "heroY": 2.2511724500448587,
+        "aurora": 0.25181862185933224,
+        "seam": 1
+      }
+    }
+  ],
+  "participation": {
+    "sky": {
+      "changedPixels": 68315,
+      "totalDifference": 506783
+    },
+    "mountains": {
+      "changedPixels": 49558,
+      "totalDifference": 144321
+    },
+    "hero": {
+      "changedPixels": 42756,
+      "totalDifference": 328230
+    },
+    "lake": {
+      "changedPixels": 137583,
+      "totalDifference": 694657
+    }
+  },
+  "source": {
+    "changed": [
+      "src/scenes/bloom/music.ts"
+    ],
+    "preserved": 103
+  },
+  "generatedBandIsolation": {
+    "bassFalseHighMid": 0,
+    "lowMidBesideHeldHighFalseAccent": 0,
+    "highMidAccentPeak": 0.5371980571492627
+  },
+  "limits": "Annotated video replays authored test phases from generated spectra through production MI. No captured media or section/instrument inference; no audio in video. Native performance/real-song acceptance remains separate. BL08 unstarted."
+}

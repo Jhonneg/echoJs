@@ -1,12 +1,14 @@
 import { Component, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { Color, Group, OrthographicCamera, ShaderMaterial, Mesh, MeshStandardMaterial, Shape, Vector2, Vector3 } from 'three'
-import type { AudioSignal } from '../../audio/signal'
-import { createBloomResponse, updateBloomResponse, updateFragmentResponse } from './reactivity'
-import { createBassMotion, resetBassMotion, updateBassMotion } from '../../engine/bassMotion'
+import { AdditiveBlending, Color, DirectionalLight, Fog, Group, OrthographicCamera, ShaderMaterial, Vector2, Vector4 } from 'three'
+import type { MusicFeatureReader } from '../../audio/musicFeatures'
+import { createBloomMusic, updateBloomMusic } from './music'
 import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
-import { bassMotionVariant } from '../../engine/bassMotionVariant'
+import { createMountainGeometry } from './mountains'
+import { MONOLITH, STONE_FRAGMENTS, createMonolithGeometry, createStoneFragmentGeometry, createStoneMaterial, monolithProjection } from './monolith'
+import { auroraFragment } from './aurora'
+import { createTrailGeometry, trailVertex, trailFragment } from './trails'
 import './bloom.css'
 
 const vertex = `varying vec2 vUv;
@@ -17,48 +19,78 @@ uniform vec3 midnight;
 uniform vec3 lavender;
 uniform vec3 rose;
 uniform float atmosphere;
+${auroraFragment}
 void main() {
   float y = vUv.y * 20.0 - 10.0;
   vec3 color = mix(lavender, midnight, smoothstep(0.0, 5.5, y));
   float horizon = exp(-abs(y) * 1.1);
   color = mix(color, rose, horizon * (0.42 + atmosphere * 0.12));
+  vec2 skyPosition=vec2(vUv.x*40.0-20.0,y);
+  color+=auroraField(skyPosition)*0.65;
+  color=mix(color,auroraColor,auroraStrength*0.045*exp(-abs(y)*1.1));
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`
 
-// Authored reflection approximation; gentle phase motion and the same halo offsets.
-// No render target, ray tracing or captured image is involved.
+// Authored orthographic reflection: no render target or scene capture.
 const waterFragment = `varying vec2 vUv;
 uniform vec3 midnight;
 uniform vec3 indigo;
 uniform vec3 moonlight;
 uniform vec3 rose;
 uniform float time;
-uniform vec2 haloOffset;
-uniform float haloScale;
-uniform float haloRotation;
-uniform float bass;
-uniform float treble;
+uniform float seamLevel;
+uniform float ringAge;
+uniform float ringStrength;
+uniform vec2 trailLights;
 uniform float atmosphere;
+uniform vec2 bodyBounds;
+uniform float frontRight;
+uniform vec2 bodyDepth;
+uniform vec2 seamDepth;
+uniform float seamX;
+uniform float seamWidth;
+uniform float anchorX;
+${auroraFragment}
 void main() {
   vec2 p = vec2(vUv.x * 40.0 - 20.0, vUv.y * 10.0 - 10.0);
   float depth = -p.y;
   vec3 color = mix(indigo, midnight, smoothstep(0.0, 7.0, depth));
   color += rose * atmosphere * 0.035 * exp(-depth * 0.4);
-  float distortion = sin(depth * 94.0 - time * 1.7) * 0.035 + sin(depth * 43.0 + time * 0.95) * 0.045;
-  distortion *= 1.0 + bass * 2.5;
-  vec2 ring = vec2(p.x - 0.6 - haloOffset.x + distortion, (p.y + 1.90 + haloOffset.y * 0.82) / 0.82) / haloScale;
-  float distanceToRing = abs(length(ring) - 1.54);
-  float broken = smoothstep(-0.65, -0.1, sin((atan(ring.y, ring.x) + haloRotation) * 7.0 + 0.4));
-  float bands = 0.45 + 0.55 * pow(0.5 + 0.5 * sin(depth * 110.0 - time * 1.35), 3.0);
-  float reflection = exp(-distanceToRing * 52.0) * bands * (1.0 - broken * 0.75);
-  float glow = exp(-distanceToRing * 5.0) * 0.10;
-  float fade = exp(-depth * 0.23);
-  color += moonlight * reflection * fade * (0.52 + treble * 0.32) + rose * glow * fade;
-  float wash = exp(-pow((p.x - 0.6 - haloOffset.x) / (0.7 + depth * 0.25), 2.0)) * exp(-depth * 0.7);
-  color += rose * wash * 0.07;
+  float distortion = sin(depth * 47.0 - time * 1.2) * 0.018 + sin(depth * 93.0 + time * 0.9) * 0.009;
+  color+=auroraField(vec2(p.x+distortion,depth/0.82))*0.30*exp(-depth*0.22);
+  float x = p.x + distortion;
+  float aa = max(fwidth(x), 0.008);
+  float vertical = smoothstep(bodyDepth.x-0.025,bodyDepth.x+0.025,depth)
+    * (1.0-smoothstep(bodyDepth.y-0.07,bodyDepth.y+0.07,depth));
+  float bevelInset=0.028*(1.0-smoothstep(0.0,0.04,min(depth-bodyDepth.x,bodyDepth.y-depth)));
+  float body = smoothstep(bodyBounds.x+bevelInset-aa,bodyBounds.x+bevelInset+aa,x)
+    * (1.0-smoothstep(bodyBounds.y-bevelInset-aa,bodyBounds.y-bevelInset+aa,x)) * vertical;
+  float side = smoothstep(frontRight-aa,frontRight+aa,x);
+  float bands = 0.55 + 0.45 * pow(0.5 + 0.5 * sin(depth * 95.0 - time * 1.1), 3.0);
+  float fade = exp(-depth * 0.26);
+  color = mix(color, mix(vec3(0.035,0.033,0.050),vec3(0.070,0.052,0.080),side),body*fade*0.74);
+  // Small subordinate fragment impressions; no additional reflection pass.
+  ${STONE_FRAGMENTS.map(f => `{
+    vec2 q=vec2((x-(${f.x.toFixed(4)}))/${(f.width/2).toFixed(4)},(depth-${((f.y-MONOLITH.waterY)*MONOLITH.reflectionCompression).toFixed(4)})/${(f.height/2*MONOLITH.reflectionCompression).toFixed(4)});
+    float fragment=1.0-smoothstep(0.7,1.0,abs(q.x)+abs(q.y));
+    color=mix(color,vec3(0.055,0.048,0.067),fragment*fade*0.45);
+  }`).join('\n')}
+  float seamVertical = smoothstep(seamDepth.x-0.035,seamDepth.x+0.035,depth)
+    * (1.0-smoothstep(seamDepth.y-0.06,seamDepth.y+0.06,depth));
+  float seam = 1.0-smoothstep(seamWidth*0.5,seamWidth*0.5+aa,abs(x-seamX));
+  float glow = exp(-pow((x-seamX)/0.16,2.0))*0.16;
+  color += moonlight * (seam * 0.52 + glow * seamLevel) * seamLevel * seamVertical * fade * bands;
+  float ellipse = length(vec2((p.x-anchorX)/1.2,(depth-0.10)*4.0));
+  float rings = pow(0.5+0.5*cos(ellipse*21.0-time*0.7),16.0)
+    * exp(-ellipse*2.5)*(1.0-smoothstep(0.35,0.65,depth));
+  color += rose*rings*0.035;
+  float triggeredRing=exp(-pow(abs((ellipse-ringAge*1.4)/0.08),2.0))*exp(-ringAge*1.7)*ringStrength;
+  color+=rose*triggeredRing*0.10*(1.0-smoothstep(0.4,0.75,depth));
+  vec2 shoreGlint=exp(-pow(abs((vec2(p.x)-vec2(-2.45,3.0))/0.22),vec2(2.0)));
+  color+=(vec3(0.80,0.34,0.52)*shoreGlint.x*trailLights.x+vec3(0.34,0.80,0.70)*shoreGlint.y*trailLights.y)*0.025*exp(-depth*0.8)*bands;
   float ripple = pow(0.5 + 0.5 * sin(depth * 80.0 + sin(p.x * 2.5) - time * 1.4), 18.0);
-  color += (indigo * ripple * (0.16 + bass * 0.38) + moonlight * ripple * treble * 0.045) * exp(-depth * 0.2);
+  color += (indigo * ripple * 0.16) * exp(-depth * 0.2);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`
@@ -77,125 +109,126 @@ function Framing() {
   return null
 }
 
-const ridges: [number, number][][] = [
-  [[-20, 0.7], [-9, 1.5], [-7.2, 2.3], [-6.7, 1.9], [-5.8, 2.5], [-4.1, 1.2], [-2.5, 0.8], [-0.8, 0.35], [1.5, 0.5], [3.1, 1.3], [4, 1.0], [5.6, 2.2], [6.7, 1.7], [8, 2.4], [11, 1.1], [20, 0.9]],
-  [[-20, 0.4], [-8.4, 0.7], [-6.3, 1.5], [-5.6, 1.1], [-4.7, 1.6], [-3, 0.7], [-1.8, 0.3], [0, 0.15], [2.3, 0.25], [3.8, 0.9], [4.7, 0.7], [6.2, 1.6], [7.1, 1.2], [9.5, 0.6], [20, 0.4]],
-  [[-20, -0.2], [-9, 0.2], [-6, 0.7], [-4.9, 0.5], [-3.2, 0.8], [-2, 0.25], [-0.6, 0.04], [1.6, 0.03], [3.4, 0.3], [4.8, 0.65], [5.5, 0.4], [7.2, 0.85], [9, 0.2], [20, -0.1]],
-]
-
-function Mountains({ points, color, z, base = -0.12 }: { points: [number, number][], color: string, z: number, base?: number }) {
-  const shape = useMemo(() => {
-    const outline = new Shape()
-    outline.moveTo(-20, base)
-    points.forEach(([x, y]) => outline.lineTo(x, y))
-    outline.lineTo(20, base)
-    outline.closePath()
-    return outline
-  }, [points, base])
-  return <mesh position={[0, 0, z]}><shapeGeometry args={[shape]} /><meshBasicMaterial color={color} /></mesh>
+function Mountains({ quality, material }: { quality: GraphicsQuality, material: RefObject<ShaderMaterial | null> }) {
+  const banks = useMemo(() => [createMountainGeometry(-1, quality), createMountainGeometry(1, quality)], [quality])
+  const geometry = useMemo(() => createTrailGeometry(banks, quality), [banks, quality])
+  const uniforms = useMemo(() => ({ trailPhases: { value: new Vector2(0,.43) }, trailLevels: { value: new Vector2(1,1) },
+    trailShimmer: { value: new Vector2() }, trailPulseProgress: { value: new Vector4(2,2,2,2) }, trailPulseStrength: { value: new Vector4() } }), [])
+  useLayoutEffect(() => () => { banks.forEach(g => g.dispose()); geometry.dispose() }, [banks, geometry])
+  return <>
+    {banks.map((bank, i) => <mesh key={i} name={i === 0 ? 'bloom-left-bank' : 'bloom-right-bank'}>
+      <primitive object={bank} attach="geometry" />
+      <meshStandardMaterial vertexColors roughness={1} metalness={0} />
+    </mesh>)}
+    <mesh name="bloom-trails" geometry={geometry} renderOrder={1}>
+      <shaderMaterial ref={material} vertexShader={trailVertex} fragmentShader={trailFragment} uniforms={uniforms}
+        transparent blending={AdditiveBlending} depthWrite={false} depthTest
+        polygonOffset polygonOffsetFactor={-1} polygonOffsetUnits={-1} toneMapped={false} />
+    </mesh>
+  </>
 }
 
-const arcs = [
-  [0.06, 0.73], [0.87, 0.47], [1.40, 0.66], [2.15, 0.54],
-  [2.82, 0.84], [3.79, 0.68], [4.57, 0.62], [5.33, 0.75],
-]
-const arcPivots = arcs.map(([, length]) => new Vector3(Math.cos(length / 2) * 1.58, Math.sin(length / 2) * 1.58, 0))
+// Local emissive falloff, rather than full-frame bloom or a hard painted strip.
+const beamFragment = `varying vec2 vUv;
+uniform float strength;
+uniform float falloff;
+uniform float seamLevel;
+void main() {
+  float x = (vUv.x - 0.5) * 2.0;
+  float profile = exp(-x*x*falloff);
+  float ends = smoothstep(0.0,0.045,vUv.y)*(1.0-smoothstep(0.955,1.0,vUv.y));
+  vec3 light = mix(vec3(1.0,0.48,0.73),vec3(1.0,0.94,0.97),pow(profile,3.0));
+  gl_FragColor = vec4(light,profile*strength*seamLevel*ends);
+  #include <colorspace_fragment>
+}`
 
-const haloMotionLimit = 24 * Math.PI / 180
-
-function Halo({ groupRef }: { groupRef: RefObject<Group | null> }) {
-  return (
-    <group ref={groupRef} position={[0.6, 1.95, 0]} rotation={[0.06, -0.23, 0.12]}>
-      {arcs.map(([start, length], i) => (
-        <group name="halo-fragment" key={start} rotation={[0, 0, start]} position={[0, 0, i % 3 === 0 ? 0.05 : 0]}>
-          <group name="fragment-pivot" pivot={arcPivots[i]}>
-          <mesh name="halo-body">
-            <torusGeometry args={[1.58, 0.075, 6, 48, length]} />
-            <meshStandardMaterial color="#81769E" emissive="#C69AB7" emissiveIntensity={0.28} roughness={0.4} metalness={0.35} />
-          </mesh>
-          <mesh position={[0, 0, 0.065]}>
-            <torusGeometry args={[1.56, 0.018, 8, 48, length]} />
-            <meshBasicMaterial color="#F6D5EC" />
-          </mesh>
-          <mesh>
-            <torusGeometry args={[1.57, 0.14, 12, 48, length]} />
-            <meshBasicMaterial color="#C69AB7" transparent opacity={0.07} depthWrite={false} />
-          </mesh>
-          </group>
-        </group>
-      ))}
+function Monolith({ auroraColor, auroraStrength, hero, seam, stone }: { auroraColor: Color, auroraStrength: { value: number }, hero: RefObject<Group | null>, seam: RefObject<ShaderMaterial | null>, stone: RefObject<ReturnType<typeof createStoneMaterial> | null> }) {
+  const m = MONOLITH
+  const geometry = useMemo(() => createMonolithGeometry(), [])
+  const fragments = useMemo(() => STONE_FRAGMENTS.map((_, i) => createStoneFragmentGeometry(i)), [])
+  const core = useMemo(() => ({strength:{value:.96},falloff:{value:2.8},seamLevel:{value:1}}), [])
+  const material = useMemo(() => createStoneMaterial(auroraColor, auroraStrength), [auroraColor, auroraStrength])
+  useLayoutEffect(() => () => { geometry.dispose(); fragments.forEach(g => g.dispose()); material.dispose() }, [geometry, fragments, material])
+  return <>
+    <group ref={hero} name="bloom-monolith" position={[m.x,m.y,0]} rotation={[0,m.yaw,0]}>
+      <mesh name="monolith-body" geometry={geometry}><primitive object={material} attach="material" ref={stone} /></mesh>
+      <mesh name="monolith-seam" position={[m.seamX,0,m.seamZ]}>
+        <planeGeometry args={[m.seamWidth,m.seamHeight]} />
+        <shaderMaterial ref={seam} vertexShader={vertex} fragmentShader={beamFragment} uniforms={core}
+          transparent blending={AdditiveBlending} depthWrite={false} toneMapped={false} /></mesh>
     </group>
-  )
+    {STONE_FRAGMENTS.map((f, i) => <mesh key={i} name={`monolith-fragment-${i}`} position={[f.x,f.y,0]}
+      geometry={fragments[i]} material={material} />)}
+  </>
 }
 
-function Composition({ reducedMotion, signal, reactivity, onRenderTime }: { reducedMotion: boolean, signal: AudioSignal, reactivity: number, onRenderTime: (now: number) => void }) {
-  const halo = useRef<Group>(null)
+function Composition({ reducedMotion, musicFeatures, reactivity, onRenderTime, quality }: { reducedMotion: boolean, musicFeatures: MusicFeatureReader, reactivity: number, onRenderTime: (now: number) => void, quality: GraphicsQuality }) {
+  const keyLight = useRef<DirectionalLight>(null)
+  const fog = useRef<Fog>(null)
+  const colors = useMemo(() => ({mint:new Color('#9CD7C8'),rose:new Color('#C69AB7'),light:new Color(),baseKey:new Color('#F6D5EC'),baseFog:new Color('#81769E')}), [])
   const lake = useRef<ShaderMaterial>(null)
   const skyMaterial = useRef<ShaderMaterial>(null)
-  const response = useRef(createBloomResponse())
-  const haloBassMotion = useRef(createBassMotion())
-  const elapsed = useRef(0)
-  const fragmentResponse = useRef({ x: 0, y: 0, rotation: 0, highlight: 0 })
+  const response = useRef(createBloomMusic())
+  const stone = useRef<ReturnType<typeof createStoneMaterial>>(null)
+  const hero = useRef<Group>(null), seam = useRef<ShaderMaterial>(null), trails = useRef<ShaderMaterial>(null)
   useFrame((_, delta) => {
-    if (!halo.current || !lake.current || !skyMaterial.current) return
-    const dt = Math.min(delta, 0.05)
+    if (!lake.current || !skyMaterial.current) return
     const now = performance.now()
     onRenderTime(now)
-    updateBloomResponse(response.current, signal, reactivity)
-    const audio = response.current
-    const motionEnabled = !reducedMotion && reactivity > 0 && bassMotionVariant !== 'off'
-    if (!motionEnabled) {
-      resetBassMotion(haloBassMotion.current)
+    const state = updateBloomMusic(response.current, musicFeatures, delta, now / 1000, reactivity, reducedMotion)
+    const out = state.output, p = state.projection
+    colors.light.copy(colors.mint).lerp(colors.rose,out.auroraHue)
+    for(let i=0;i<2;i++) {
+      const material=i===0?lake.current:skyMaterial.current
+      material.uniforms.auroraTime.value=state.ambient.time
+      material.uniforms.auroraStrength.value=out.auroraStrength
+      material.uniforms.auroraColor.value.copy(colors.light)
+      material.uniforms.auroraExpansion.value=out.auroraExpansion
+      material.uniforms.auroraDetail.value=out.auroraDetail
     }
-    const haloMotion = motionEnabled ? updateBassMotion(haloBassMotion.current, audio.bass, dt, 8) : 0
-    const haloRotation = bassMotionVariant === 'halo' || bassMotionVariant === 'both' ? haloMotion * haloMotionLimit : 0
-    // Reduced motion freezes drift/ripple phases and suppresses reactive geometry.
-    if (!reducedMotion) elapsed.current += dt
-    const time = elapsed.current
-    const x = Math.sin(time * 0.40) * 0.13
-    const y = Math.sin(time * 0.50) * 0.14
-    const scale = 1.25 * (reducedMotion ? 1 : 1 + audio.bass * 0.20)
-    halo.current.position.set(0.6 + x, 2.25 + y, 0)
-    halo.current.rotation.z = 0.12 + haloRotation
-    halo.current.scale.setScalar(scale)
-    halo.current.children.forEach((fragment, i) => {
-      updateFragmentResponse(fragmentResponse.current, arcs[i][0] + arcs[i][1] / 2, i,
-        reducedMotion ? 0 : audio.midrange, reducedMotion ? 0 : audio.treble)
-      const motion = fragmentResponse.current
-      fragment.position.x = motion.x
-      fragment.position.y = motion.y
-      const pivot = fragment.getObjectByName('fragment-pivot')
-      if (pivot) pivot.rotation.z = motion.rotation
-      const body = fragment.getObjectByName('halo-body') as Mesh | undefined
-      if (body?.material instanceof MeshStandardMaterial) {
-        body.material.emissiveIntensity = 0.28 + audio.glow * 0.55 + motion.highlight
-      }
-    })
+    if(keyLight.current){keyLight.current.color.copy(colors.baseKey).lerp(colors.light,out.auroraStrength*.65);keyLight.current.intensity=3+out.auroraStrength*.8}
+    if(fog.current)fog.current.color.copy(colors.baseFog).lerp(colors.light,out.auroraStrength*.12)
+    if(hero.current){hero.current.position.y=out.heroY;hero.current.rotation.y=out.heroYaw}
+    if(seam.current)seam.current.uniforms.seamLevel.value=out.seamLevel
+    if(stone.current){stone.current.seamLevel.value=out.seamLevel;stone.current.auroraStrength.value=out.auroraStrength}
+    if(trails.current){
+      const u=trails.current.uniforms,a=state.trails[0],b=state.trails[1]
+      u.trailPhases.value.set(a.phase,b.phase);u.trailLevels.value.set(a.level,b.level);u.trailShimmer.value.set(a.shimmer,b.shimmer)
+      u.trailPulseProgress.value.set(a.pulses[0].progress,a.pulses[1].progress,b.pulses[0].progress,b.pulses[1].progress)
+      u.trailPulseStrength.value.set(a.pulses[0].strength,a.pulses[1].strength,b.pulses[0].strength,b.pulses[1].strength)
+    }
     const uniforms = lake.current.uniforms
-    uniforms.time.value = time
-    uniforms.haloOffset.value.set(x, y)
-    uniforms.haloScale.value = scale
-    uniforms.haloRotation.value = haloRotation
-    uniforms.bass.value = reducedMotion ? 0 : audio.bass
-    uniforms.treble.value = reducedMotion ? 0 : audio.treble
-    uniforms.atmosphere.value = audio.glow
-    skyMaterial.current.uniforms.atmosphere.value = audio.glow
+    uniforms.time.value=state.time;uniforms.seamLevel.value=out.seamLevel
+    uniforms.ringAge.value=state.ringAge;uniforms.ringStrength.value=state.ringStrength
+    uniforms.trailLights.value.set(state.trails[0].level-1+state.trails[0].shimmer+state.trails[0].pulses[0].strength+state.trails[0].pulses[1].strength,
+      state.trails[1].level-1+state.trails[1].shimmer+state.trails[1].pulses[0].strength+state.trails[1].pulses[1].strength)
+    uniforms.bodyBounds.value.set(p.left,p.right);uniforms.frontRight.value=p.frontRight
+    uniforms.bodyDepth.value.set(p.bottom,p.top);uniforms.seamDepth.value.set(p.seamBottom,p.seamTop)
+    uniforms.seamX.value=p.seamX;uniforms.seamWidth.value=p.seamWidth
+    uniforms.atmosphere.value=out.atmosphere
+    skyMaterial.current.uniforms.atmosphere.value=out.atmosphere
 
   })
-  const sky = useMemo(() => ({ atmosphere: { value: 0 }, midnight: { value: new Color('#101322') }, lavender: { value: new Color('#81769E') }, rose: { value: new Color('#C69AB7') } }), [])
-  const water = useMemo(() => ({ bass: { value: 0 }, treble: { value: 0 }, atmosphere: { value: 0 }, haloScale: { value: 1 }, haloRotation: { value: 0 }, time: { value: 0 }, haloOffset: { value: new Vector2() }, midnight: { value: new Color('#101322') }, indigo: { value: new Color('#353451') }, moonlight: { value: new Color('#F6D5EC') }, rose: { value: new Color('#C69AB7') } }), [])
+  const sky = useMemo(() => ({ auroraExpansion:{value:0},auroraDetail:{value:0},auroraTime:{value:0},auroraStrength:{value:.24},auroraColor:{value:new Color()},auroraLayers:{value:quality==='low'?1:2},atmosphere: { value: 0 }, midnight: { value: new Color('#101322') }, lavender: { value: new Color('#81769E') }, rose: { value: new Color('#C69AB7') } }), [quality])
+  const water = useMemo(() => {
+    const p = monolithProjection()
+    return { auroraExpansion:{value:0},auroraDetail:{value:0},auroraTime:{value:0},auroraStrength:{value:.24},auroraColor:{value:new Color()},auroraLayers:{value:quality==='low'?1:2},seamLevel:{value:1},ringAge:{value:3},ringStrength:{value:0},trailLights:{value:new Vector2()}, atmosphere: { value: 0 }, time: { value: 0 },
+      bodyBounds: { value: new Vector2(p.left,p.right) }, frontRight: { value: p.frontRight },
+      bodyDepth: { value: new Vector2(p.bottom,p.top) }, seamDepth: { value: new Vector2(p.seamBottom,p.seamTop) },
+      seamX: { value: p.seamX }, seamWidth: { value: p.seamWidth }, anchorX: { value: MONOLITH.x },
+      midnight: { value: new Color('#101322') }, indigo: { value: new Color('#353451') },
+      moonlight: { value: new Color('#F6D5EC') }, rose: { value: new Color('#C69AB7') } }
+  }, [quality])
   return (
     <>
       <Framing />
       <mesh position={[0, 0, -10]}><planeGeometry args={[40, 20]} /><shaderMaterial ref={skyMaterial} vertexShader={vertex} fragmentShader={skyFragment} uniforms={sky} toneMapped={false} /></mesh>
-      <Mountains points={ridges[0]} color="#65617E" z={-7} />
-      <Mountains points={ridges[1]} color="#45445F" z={-6} />
-      <Mountains points={ridges[2]} color="#292D44" z={-5} />
+      <fog ref={fog} attach="fog" args={['#81769E', 22, 31]} />
+      <Mountains quality={quality} material={trails} />
       <mesh position={[0, -5.02, -2]}><planeGeometry args={[40, 10]} /><shaderMaterial ref={lake} vertexShader={vertex} fragmentShader={waterFragment} uniforms={water} toneMapped={false} /></mesh>
       <ambientLight intensity={1.2} />
-      <directionalLight position={[-3, 5, 6]} intensity={3} color="#F6D5EC" />
-      <Halo groupRef={halo} />
-      <Mountains points={[[-20, -4.8], [-8, -4.5], [-6.4, -4.15], [-5.7, -4.3], [-5.2, -4.55], [-3.9, -4.8], [1, -5.3], [5.2, -4.9], [6.5, -4.6], [7, -4.2], [8.5, -4.1], [10, -4.5], [20, -4.8]]} color="#101322" z={2} base={-6} />
+      <directionalLight ref={keyLight} position={[-3, 5, 6]} intensity={3} color="#F6D5EC" />
+      <Monolith auroraColor={colors.light} auroraStrength={sky.auroraStrength} hero={hero} seam={seam} stone={stone} />
     </>
   )
 }
@@ -214,13 +247,13 @@ function subscribeReducedMotion(onChange: () => void) {
 }
 function getReducedMotion() { return window.matchMedia(motionQuery).matches }
 
-export default function BloomScene({ signal, onRenderTime, reactivity, quality }: { signal: AudioSignal, onRenderTime: (now: number) => void, reactivity: number, quality: GraphicsQuality }) {
+export default function BloomScene({ musicFeatures, onRenderTime, reactivity, quality }: { musicFeatures: MusicFeatureReader, onRenderTime: (now: number) => void, reactivity: number, quality: GraphicsQuality }) {
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
   return (
-    <section className="bloom-stage" aria-label="Bloom: a luminous fragmented halo over a tranquil lake at twilight">
+    <section className="bloom-stage" aria-label="Bloom: a levitating stone monolith over a tranquil lake at twilight">
       <SceneBoundary>
-        <LandscapeCanvas signal={signal} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="bloom-fallback">Bloom needs WebGL to display. You can still choose audio from the controls below.</p>}>
-          <Composition reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} onRenderTime={onRenderTime} />
+        <LandscapeCanvas cameraTilt={false} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="bloom-fallback">Bloom needs WebGL to display. You can still choose audio from the controls below.</p>}>
+          <Composition reducedMotion={reducedMotion} musicFeatures={musicFeatures} reactivity={reactivity} onRenderTime={onRenderTime} quality={quality} />
         </LandscapeCanvas>
       </SceneBoundary>
       <div className="bloom-brand" aria-hidden="true">Bloom</div>

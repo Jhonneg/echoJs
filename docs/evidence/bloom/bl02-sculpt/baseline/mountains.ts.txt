@@ -1,0 +1,138 @@
+import { BufferGeometry, Float32BufferAttribute, Color } from 'three'
+import type { GraphicsQuality } from '../../engine/quality'
+
+const profiles: [number, number][][] = [
+  [[-20, 0.7], [-9, 1.5], [-7.2, 2.3], [-6.7, 1.9], [-5.8, 2.5], [-4.1, 1.2], [-2.5, 0.8], [-0.8, 0.35], [1.5, 0.5], [2.8, 1.9], [3.6, 1.05], [4, 1.0], [5.6, 2.2], [6.7, 1.7], [8, 2.4], [11, 1.1], [20, 0.9]],
+  [[-20, 0.4], [-8.4, 0.7], [-6.3, 1.5], [-5.6, 1.1], [-4.7, 1.6], [-3, 0.7], [-1.8, 0.3], [0, 0.15], [2.3, 0.25], [3.8, 0.9], [4.7, 0.7], [6.2, 1.6], [7.1, 1.2], [9.5, 0.6], [20, 0.4]],
+  [[-20, -0.2], [-9, 0.2], [-6, 0.7], [-4.9, 0.5], [-3.2, 0.8], [-2, 0.25], [-0.6, 0.04], [1.6, 0.03], [3.4, 0.3], [4.8, 0.65], [5.5, 0.4], [7.2, 0.85], [9, 0.2], [20, -0.1]],
+  [[-20, -4.8], [-8, -4.5], [-6.4, -4.15], [-5.7, -4.3], [-5.2, -4.55], [-3.9, -4.8], [1, -5.3], [5.2, -4.9], [6.5, -4.6], [7, -4.2], [8.5, -4.1], [10, -4.5], [20, -4.8]],
+]
+// Reach the low foreground profile behind the existing lake plane (z=-2).
+// This keeps the near banks at the bottom corners instead of enclosing the lake.
+const sections = [-8, -6, -3, -2.2]
+const smoothstep = (t: number) => { const x = Math.max(0, Math.min(1, t)); return x * x * (3 - 2 * x) }
+const mix = (a: number, b: number, t: number) => a + (b - a) * t
+
+function profileHeight(points: [number, number][], x: number) {
+  if (x <= points[0][0]) return points[0][1]
+  // Monotone cubic shoulders keep authored saddles without straight ramp joins
+  // or overshooting peaks. All slopes are computed only during mesh creation.
+  const tangent = (at: number) => {
+    const slope = (i: number) => (points[i + 1][1] - points[i][1]) / (points[i + 1][0] - points[i][0])
+    if (at === 0) return slope(0)
+    if (at === points.length - 1) return slope(at - 1)
+    const before = slope(at - 1), after = slope(at)
+    if (before * after <= 0) return 0
+    const left = points[at][0] - points[at - 1][0], right = points[at + 1][0] - points[at][0]
+    const a = 2 * right + left, b = right + 2 * left
+    return (a + b) / (a / before + b / after)
+  }
+  for (let i = 1; i < points.length; i++) {
+    if (x <= points[i][0]) {
+      const [a, b] = [points[i - 1], points[i]]
+      const width = b[0] - a[0], t = (x - a[0]) / width, t2 = t * t, t3 = t2 * t
+      return (2 * t3 - 3 * t2 + 1) * a[1] + (t3 - 2 * t2 + t) * width * tangent(i - 1)
+        + (-2 * t3 + 3 * t2) * b[1] + (t3 - t2) * width * tangent(i)
+    }
+  }
+  return points[points.length - 1][1]
+}
+
+export function bankInnerEdge(z: number, side: -1 | 1) {
+  return .6 + side * mix(1.15, 2.75, smoothstep((z + 8) / 10))
+}
+
+export function sampleMountainHeight(x: number, z: number) {
+  let section = 0
+  while (section < sections.length - 2 && z > sections[section + 1]) section++
+  const t = smoothstep((z - sections[section]) / (sections[section + 1] - sections[section]))
+  const depth = Math.max(0, Math.min(1, (z + 8) / 10))
+  const side = x < .6 ? -1 : 1
+  const sampleX = x + .45 * Math.sin(z * .7 + side * 1.3) * Math.sin(Math.PI * depth)
+  const height = mix(profileHeight(profiles[section], sampleX), profileHeight(profiles[section + 1], sampleX), t)
+  const shoreDistance = Math.abs(x - bankInnerEdge(z, side))
+  const fold = .12 * Math.sin((x + .45 * z) * .95 + side * .7) * Math.sin(Math.PI * depth)
+  // Broad, offset spurs break the continuous wall into connected shoulders.
+  const spurs = .22 * Math.sin(x * .72 + side * .8) * Math.exp(-Math.pow((z + 6.3 + .28 * Math.sin(x * .55)) / .9, 2))
+    + .14 * Math.cos(x * 1.05 + side) * Math.exp(-Math.pow((z + 4.5 + .35 * Math.sin(x * .45)) / .85, 2))
+  // Connected inner shoulders stay recognizable within the portrait frustum,
+  // using the same world geometry at every aspect ratio.
+  const shoulderX = side === -1 ? -2.65 : 3.1
+  const shoulder = (side === -1 ? .5 : .38) * Math.exp(-Math.pow((sampleX - shoulderX) / .95, 2))
+    * Math.exp(-Math.pow((z + 7.2) / 1.9, 2))
+  // Separate the buried closure from the visible foot of the mountain. Blending
+  // directly up from -11.9 made the visible shoreline nearly vertical.
+  const foot = mix(-.3, -5.65, smoothstep((z + 3.3) / 1.1))
+  const shore = smoothstep((shoreDistance - .24) / (1.5 + .4 * depth))
+  const surface = mix(foot, height + fold + spurs + shoulder, shore)
+  return mix(-11.9, surface, smoothstep(shoreDistance / .24))
+}
+
+// Two bounded solids; top cells, closed side walls and a bottom fan share indices.
+// No streaming, animation, external asset, or reconstruction during frame updates.
+export function createMountainGeometry(side: -1 | 1, quality: GraphicsQuality) {
+  const columns = quality === 'low' ? 32 : 64, rows = quality === 'low' ? 7 : 15
+  const positions: number[] = [], colors: number[] = [], indices: number[] = []
+  const far = new Color('#53536F'), mid = new Color('#302D46'), near = new Color('#101322')
+  const color = new Color()
+  for (let row = 0; row <= rows; row++) {
+    const depth = row / rows, z = mix(-8, 2, depth), inner = bankInnerEdge(z, side)
+    for (let col = 0; col <= columns; col++) {
+      const x = side === -1 ? mix(-20, inner, col / columns) : mix(inner, 20, col / columns)
+      positions.push(x, sampleMountainHeight(x, z), z)
+      // Hold a cool distant band, then separate the darker middle/near range.
+      color.copy(far).lerp(mid, smoothstep((depth - .12) / .32)).lerp(near, smoothstep((depth - .5) / .5))
+      colors.push(color.r, color.g, color.b)
+    }
+  }
+  const stride = columns + 1
+  for (let row = 0; row < rows; row++) for (let col = 0; col < columns; col++) {
+    const a = row * stride + col, b = a + 1, c = a + stride, d = c + 1
+    indices.push(a, c, b, b, c, d)
+  }
+  const perimeter: number[] = []
+  for (let col = 0; col < columns; col++) perimeter.push(col)
+  for (let row = 0; row < rows; row++) perimeter.push(row * stride + columns)
+  for (let col = columns; col > 0; col--) perimeter.push(rows * stride + col)
+  for (let row = rows; row > 0; row--) perimeter.push(row * stride)
+  const bottomStart = positions.length / 3
+  for (const at of perimeter) {
+    positions.push(positions[at * 3], -12, positions[at * 3 + 2])
+    colors.push(near.r, near.g, near.b)
+  }
+  const center = positions.length / 3
+  positions.push(side === -1 ? -11 : 11, -12, -3)
+  colors.push(near.r, near.g, near.b)
+  for (let i = 0; i < perimeter.length; i++) {
+    const next = (i + 1) % perimeter.length, a = perimeter[i], b = perimeter[next]
+    const c = bottomStart + i, d = bottomStart + next
+    indices.push(a, b, c, b, d, c, center, c, d)
+  }
+  const geometry = new BufferGeometry()
+  geometry.setAttribute('position', new Float32BufferAttribute(positions, 3))
+  geometry.setIndex(indices)
+  geometry.computeVertexNormals()
+  // Broad rock-face variation and selected convex crest light are baked once.
+  // Existing rough, nonmetallic material supplies the actual directional shading.
+  const normals = geometry.getAttribute('normal'), rockLight = new Color('#82718B')
+  for (let row = 0; row <= rows; row++) for (let col = 0; col <= columns; col++) {
+    const at = row * stride + col, offset = at * 3
+    const x = positions[offset], y = positions[offset + 1], z = positions[offset + 2]
+    const left = row * stride + Math.max(0, col - 1), right = row * stride + Math.min(columns, col + 1)
+    const width = (positions[right * 3] - positions[left * 3]) * .5
+    const convex = Math.max(0, (2 * y - positions[left * 3 + 1] - positions[right * 3 + 1]) / Math.max(.01, width * width))
+    const submerged = smoothstep((y + .2) / .7)
+    const ridge = smoothstep(convex / 1.8) * submerged * smoothstep((normals.getY(at) + .1) / .7)
+    const variation = .94 + .055 * Math.sin(x * .82 + z * .63 + y * .35)
+      + .025 * Math.sin(x * 1.3 - z * .5)
+    const facing = -.28 * normals.getX(at) + .65 * normals.getY(at) + .70 * normals.getZ(at)
+    const faceTone = .88 + .09 * smoothstep((facing - .25) / .3) + .06 * smoothstep((facing - .75) / .15)
+    color.setRGB(colors[offset], colors[offset + 1], colors[offset + 2]).multiplyScalar(variation * faceTone)
+    color.lerp(rockLight, ridge * .10)
+    colors[offset] = color.r; colors[offset + 1] = color.g; colors[offset + 2] = color.b
+  }
+  geometry.setAttribute('color', new Float32BufferAttribute(colors, 3))
+  geometry.computeBoundingBox()
+  geometry.computeBoundingSphere()
+  return geometry
+}

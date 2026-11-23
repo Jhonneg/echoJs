@@ -1,0 +1,38 @@
+export const AURORA_PERIOD = Math.PI * 200
+export const createAurora = () => ({ time: 0, strength: .24, hue: .5 })
+export function updateAurora(state: ReturnType<typeof createAurora>, delta: number, reduced: boolean) {
+  if (!reduced) state.time=(state.time+Math.max(0,Math.min(.05,Number.isFinite(delta)?delta:0)))%AURORA_PERIOD
+  state.strength=.24+.06*Math.sin(state.time*.08)
+  state.hue=.5+.35*Math.sin(state.time*.05)
+  return state
+}
+// Shared world-space folds for the sky and their authored lake impression.
+export const auroraFragment = `
+uniform float auroraTime;
+uniform float auroraStrength;
+uniform float auroraLayers;
+uniform float auroraExpansion;
+uniform float auroraDetail;
+uniform vec3 auroraColor;
+vec3 auroraField(vec2 p) {
+  vec3 light=vec3(0.0);
+  for(int i=0;i<2;i++) {
+    float layer=float(i);
+    if(layer>=auroraLayers)continue;
+    float x=p.x+layer*2.1;
+    float base=2.25+layer*1.1+0.6*sin(x*0.43+auroraTime*0.04+layer*1.6)
+      +0.20*sin(x*0.95-auroraTime*0.03)+auroraExpansion*(0.5+0.5*sin(x*0.43));
+    float above=p.y-base;
+    float curtain=exp(-pow(abs(above)/0.95,2.0))*smoothstep(-0.15,0.25,above)
+      *(1.0-smoothstep(5.2,6.8,p.y));
+    float fibers=0.4+0.6*pow(0.5+0.5*sin(x*9.0+3.0*sin(x*0.7+auroraTime*0.08)+p.y*1.1),2.0);
+    float edge=exp(-pow(abs(above)/0.16,2.0))*0.8;
+    float span=exp(-pow(abs(x+1.0)/7.5,4.0));
+    fibers*=1.0+auroraDetail*sin(x*14.0+auroraTime*0.08);
+    vec3 ribbonHue=mix(vec3(0.18,0.72,0.50),vec3(0.56,0.20,0.43),layer);
+    vec3 hue=mix(auroraColor,ribbonHue,0.65);
+    light+=hue*(curtain*fibers*0.55+edge)*span*(1.0-layer*0.35);
+  }
+  return light*auroraStrength;
+}
+`

@@ -1,0 +1,17 @@
+// One authored resting pose; shared by the solid and its analytic lake image.
+export const MONOLITH = {
+  x: .6, y: 2.25, width: 1.2, height: 3.6, depth: .5, yaw: -.22,
+  seamX: -.24, seamWidth: .028, seamHeight: 3.15, seamZ: .258,
+  waterY: -.02, reflectionCompression: .82,
+} as const
+
+export function monolithProjection() {
+  const m=MONOLITH,c=Math.cos(m.yaw),s=Math.sin(m.yaw)
+  const frontCenter=m.x+s*m.depth/2,half=c*m.width/2
+  const bottom=m.y-m.height/2,top=m.y+m.height/2
+  return {left:frontCenter-half,frontRight:frontCenter+half,right:m.x+half-s*m.depth/2,
+    seamX:m.x+c*m.seamX+s*m.seamZ,seamWidth:c*m.seamWidth,
+    bottom:(bottom-m.waterY)*m.reflectionCompression,top:(top-m.waterY)*m.reflectionCompression,
+    seamBottom:(m.y-m.seamHeight/2-m.waterY)*m.reflectionCompression,
+    seamTop:(m.y+m.seamHeight/2-m.waterY)*m.reflectionCompression}
+}

@@ -1,0 +1,420 @@
+{
+  "status": "BL06 technical migration/controlled verification passed; owner visual/listening review pending",
+  "resources": {
+    "calls": 9,
+    "triangles": 5342,
+    "geometries": 9,
+    "textures": 1,
+    "programs": 6
+  },
+  "timing": {
+    "baseline": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 17.199999999254942
+      },
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 17.300000000745058
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 19.100000001490116
+      }
+    ],
+    "current": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 16.90000000037253,
+        "maxMs": 18.800000000745058
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maxMs": 18.09999999962747
+      },
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 16.90000000037253,
+        "maxMs": 19.699999999254942
+      }
+    ],
+    "limits": "Headless ANGLE GTX1660SUPER, 1440x900 DPR1, three10s windows. Vsync cadence, not native/GPU execution certification."
+  },
+  "actualGeneratedAudio": {
+    "bassEnergy": 0.13364518301505549,
+    "highMidQuiet": 0.042418314688117395,
+    "highMidLoud": 0.1413930133300107,
+    "seamQuiet": 1.0954318472932527,
+    "seamLoud": 1.2207101950714885,
+    "highMidAttack": 0.4931952676143445,
+    "falseHighMidFromBass": 0,
+    "falseHighMidFromLowMid": 0,
+    "silenceSeam": 1,
+    "mixed": 2.4164396565101023
+  },
+  "activeTiming": {
+    "samples": 100,
+    "medianMs": 16.699999999254942,
+    "p95Ms": 16.800000000745058,
+    "limits": "Sampled render deltas during generated mixed-frequency playback; not a continuous GPU execution measurement."
+  },
+  "seamObservedMeanRed": {
+    "silence": 79.30751879699248,
+    "high-mid-quiet": 83.42456140350878,
+    "high-mid-moderate": 89.40852130325814,
+    "high-mid-loud": 96.20701754385965,
+    "high-mid-attack": 126.9563909774436,
+    "high-mid-release": 99.38345864661655
+  },
+  "idleComparison": {
+    "changedPixels": 9398,
+    "maxChannelDifference": 8,
+    "protectedPixelsChanged": 0
+  },
+  "matrix": [
+    {
+      "name": "silence",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.18,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0,
+        "auroraDetail": 0,
+        "atmosphere": 0,
+        "heroY": 2.25,
+        "heroYaw": -0.38,
+        "seamLevel": 1,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1,
+          "shimmer": 0
+        },
+        {
+          "level": 1,
+          "shimmer": 0
+        }
+      ]
+    },
+    {
+      "name": "bass-only",
+      "energy": {
+        "subBass": 0,
+        "bass": 0.424,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.3267442708827345,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0.09338271783446744,
+        "auroraDetail": 0,
+        "atmosphere": 0,
+        "heroY": 2.370063494358601,
+        "heroYaw": -0.37986521569041165,
+        "seamLevel": 1,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1,
+          "shimmer": 0
+        },
+        {
+          "level": 1,
+          "shimmer": 0
+        }
+      ]
+    },
+    {
+      "name": "low-mid",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0.424,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.18,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0,
+        "auroraDetail": 0,
+        "atmosphere": 0,
+        "heroY": 2.25,
+        "heroYaw": -0.38,
+        "seamLevel": 1,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1.456270640576604,
+          "shimmer": 0
+        },
+        {
+          "level": 1,
+          "shimmer": 0
+        }
+      ]
+    },
+    {
+      "name": "treble-only",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0.424
+      },
+      "output": {
+        "auroraStrength": 0.18,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0,
+        "auroraDetail": 0.06317631227624695,
+        "atmosphere": 0,
+        "heroY": 2.25,
+        "heroYaw": -0.38,
+        "seamLevel": 1,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1,
+          "shimmer": 0
+        },
+        {
+          "level": 1,
+          "shimmer": 0.08423508303499593
+        }
+      ]
+    },
+    {
+      "name": "high-mid-loud",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0.424,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.18,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0,
+        "auroraDetail": 0,
+        "atmosphere": 0,
+        "heroY": 2.25,
+        "heroYaw": -0.38,
+        "seamLevel": 1.3509088686583381,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1,
+          "shimmer": 0
+        },
+        {
+          "level": 1.4561815292558395,
+          "shimmer": 0
+        }
+      ]
+    },
+    {
+      "name": "context-only",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.27322214938758016,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0.06214809959172011,
+        "auroraDetail": 0,
+        "atmosphere": 0.27189793571377546,
+        "heroY": 2.34322214938758,
+        "heroYaw": -0.37994348787667903,
+        "seamLevel": 1,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1,
+          "shimmer": 0
+        },
+        {
+          "level": 1,
+          "shimmer": 0
+        }
+      ]
+    },
+    {
+      "name": "high-mid-attack",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0.424,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.18,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0,
+        "auroraDetail": 0,
+        "atmosphere": 0,
+        "heroY": 2.25,
+        "heroYaw": -0.38,
+        "seamLevel": 2.004163130007546,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1,
+          "shimmer": 0
+        },
+        {
+          "level": 1.1943471602877005,
+          "shimmer": 0
+        }
+      ]
+    },
+    {
+      "name": "stale",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0.424,
+        "highMids": 0.424,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.18,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0,
+        "auroraDetail": 0,
+        "atmosphere": 0,
+        "heroY": 2.25,
+        "heroYaw": -0.38,
+        "seamLevel": 1.257949572531006,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1.3308119770793931,
+          "shimmer": 0
+        },
+        {
+          "level": 1.3353344442903077,
+          "shimmer": 0
+        }
+      ]
+    },
+    {
+      "name": "gain-zero",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0.424,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.18,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0,
+        "auroraDetail": 0,
+        "atmosphere": 0,
+        "heroY": 2.25,
+        "heroYaw": -0.38,
+        "seamLevel": 1,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1,
+          "shimmer": 0
+        },
+        {
+          "level": 1,
+          "shimmer": 0
+        }
+      ]
+    },
+    {
+      "name": "reduced-high-mid",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0.424,
+        "presence": 0,
+        "air": 0
+      },
+      "output": {
+        "auroraStrength": 0.18,
+        "auroraHue": 0.5682816127056448,
+        "auroraExpansion": 0,
+        "auroraDetail": 0,
+        "atmosphere": 0,
+        "heroY": 2.25,
+        "heroYaw": -0.38,
+        "seamLevel": 1.1097593922124402,
+        "lowPulse": 0
+      },
+      "trails": [
+        {
+          "level": 1,
+          "shimmer": 0
+        },
+        {
+          "level": 1.1426872098761722,
+          "shimmer": 0
+        }
+      ]
+    }
+  ],
+  "source": {
+    "changed": [
+      "src/App.tsx",
+      "src/scenes/bloom/BloomScene.tsx",
+      "src/scenes/bloom/aurora.ts",
+      "src/scenes/bloom/monolith.ts",
+      "src/scenes/bloom/trails.ts"
+    ],
+    "preserved": 98,
+    "newProduction": [
+      "src/scenes/bloom/music.ts"
+    ]
+  },
+  "limitations": "No captured/owner media. Controlled/generated evidence does not certify real-song listening. Legacy reactivity helper remains for historical tests/unused debug component but is absent from Bloom runtime wiring. BL07 unstarted."
+}

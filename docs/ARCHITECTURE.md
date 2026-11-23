@@ -303,3 +303,57 @@ Wave amplitude begins at.018+.202envelope+.045detail, capped.22. Radial offsets 
 
 
 Owner sun adjustment (2026-11-23): sun disk/haze radius now scales by1+.08sunPulse for a gentle independent bass pulse. This supersedes the fixed-size core from the focused noise refinement. Existing sun brightness/timing remain; corona still uses unscaled sunDistance and its procedural mapping is unchanged.
+
+
+Owner visibility adjustment (2026-11-23): sun disk/haze size is now1+.24sunPulse, replacing the preceding gentle.08coefficient. All pulse timing/brightness and procedural corona mappings remain unchanged.
+
+
+## Bloom BL02 — static bounded 3D mountain banks (2026-11-23)
+
+`scenes/bloom/mountains.ts` constructs two indexed closed solids across x±20/z−8…2 using authored silhouette cross-sections, smooth depth interpolation, broad fixed folds and tapered inner shores. Bottoms close at y−12. Standard64×15/Low32×7cells per bank yield4788/1364terrain triangles including walls/bottom fans. Normals and color attributes are computed once; matte MeshStandardMaterial uses existing lights. Scene fog #81769E at22…31camera-distance adds depth; halo is nearer than fog start, and custom sky/water shaders remain unaffected.
+
+Bloom memoizes geometry by side/quality, attaches it as a primitive and explicitly disposes it on replacement/unmount. No per-frame terrain changes, shadows, textures/assets, extra render passes or frame-rate React state. Shared host/camera projection/zoom stay unchanged; only Bloom sets cameraTilt=false. Public props, AudioSignal response, hero and lake shaders remain; MI migration is BL06. Other landscapes and shared analysis are untouched.
+
+
+Bloom BL02 shape refinement (2026-11-23): authored profile knots now join through monotone cubic Hermite tangents; broad fixed spurs and a small depth-dependent warp separate connected shoulders. The shoreline has two stages: buried inner closure to shallow submerged toe, then a gradual rise to the mountain body. Foreground toe descends behind the existing water plane. These calculations run during geometry creation only; mesh topology, LOD, materials, static lighting, fog, camera and all audio mappings remain unchanged.
+
+
+Bloom BL02 remaining mountain refinements (2026-11-23): static depth color transitions hold a cooler distant band before blending to darker middle/foreground. Broad baked face tones follow computed normals, low-frequency position variation and bounded convex-crest tint; existing matte MeshStandardMaterial and lights remain unchanged. Inner shoulder height features and one authored right crest provide readable landforms within portrait x±3.4 using identical world geometry at every aspect ratio. No camera/resize-dependent terrain, textures, new uniforms, shader pass or per-frame color work; existing buffers/topology/LOD/disposal stay intact.
+
+
+Bloom BL02 stronger range sculpting (2026-11-23): middle and near authored profiles now place crests away from distant peaks for real overlap. A bounded diagonal drainage field subtracts up to.42world units from selected middle slopes; baked face/cavity tones emphasize connected relief. The distant-to-middle vertex color transition happens earlier in depth. All calculations remain geometry-creation work; topology, shaders/materials, rendering resources and frame updates are unchanged.
+
+
+## Bloom BL03 — static monolith and authored lake image (2026-11-23)
+
+`monolith.ts` owns the resting pose/dimensions/seam and computes yawed orthographic x bounds, visible front/side boundary, seam x and vertically mirrored/compressed lake extents relative to waterY−.02. The scene renders one rough nonmetallic body box, dark seam border and narrow pastel seam (3draws). No motion/controller/geometry updates on the hero yet.
+
+Water consumes this same projection as fixed uniforms; its analytic body silhouette and seam reflection fade with depth, receive mild time-driven horizontal distortion and surface breakup, plus tiny ellipses under the projection anchor. No render target, shadow or extra reflection geometry. Ring uniforms/equations, torus geometry, fragment pivots, bass-motion imports and frame mutations are removed from BloomScene. Existing legacy response still drives only sky/base water pending BL06. Camera/mountain geometry/lighting are preserved. Reduced motion freezes water phase; quality/source changes preserve static hero and source identity.
+
+
+BL03 beam refinement (2026-11-23): the former black border plane now renders a.34world-wide local additive falloff at the seam. The narrow core uses the same shader with a sharper luminous center; both planes feather vertically and have depthWrite=false with normal depth testing. Bounds/pose unchanged, still3hero draws. Corresponding analytic reflection glow widens gently. No fullscreen bloom, render target, real light or runtime state is added.
+
+
+## Bloom BL04 — shared autonomous aurora (2026-11-23)
+
+`aurora.ts` owns one bounded autonomous time/strength/hue state and reusable world-space curtain field. Shader fold count is2Standard/1Low via uniforms, in existing sky/water materials; no new geometry/passes/textures. Mint/rose ribbons have coherent low-frequency base motion and soft fine folds. The lake reuses mirrored/compressed world coordinates and the same clock/color/strength, behind the monolith reflection.
+
+Existing scene driver updates shared color/strength once per frame, mutates sky/water uniforms, tints the existing directional key (+bounded intensity) for mountain/monolith surfaces and slightly tints fog/horizon haze. No new lights/shadows or React state. Reduced motion freezes the shared clock/hue/strength; invalid/stalled deltas are bounded and harmonic rates join the628.3185s phase wrap. This subsystem never reads audio, events or context; prior legacy sky/base-water response remains pending BL06.
+
+### Bloom BL03 stone correction (post-BL04)
+
+Scene-local `monolith.ts` generates the closed bevel/groove solid and two low-poly fragments once. One shared rough standard stone material retains built-in lighting/fog, with procedural static variation/normal relief and bounded local side/seam emission through the WebGL material compile hook. Its aurora uniforms reference existing shared light color/strength; it neither owns nor alters the BL04 clock/key/fog driver. The luminous core is physically behind stone lips. Explicit cleanup releases authored geometries/material; no frame-rate React state or new passes/lights. The existing water shader approximates beveled body, core and subordinate fragment impressions; camera/terrain/aurora fields remain unchanged.
+
+### Bloom BL05 trails
+
+Scene-local `trails.ts` barycentrically samples upward-facing triangles from the existing quality-specific bank geometries. `Mountains` owns both bank resources and a single batched ribbon geometry, releasing them on quality replacement/unmount. Standard has two 80-segment routes, Low one 40-segment route; no terrain vertices/materials change. Custom static lane/UV attributes drive pastel core/glow and a bounded autonomous 8s traveling pulse through one additive depth-tested shader. A material ref receives time outside React state; reduced motion freezes it. BL05 adds no audio-reader, shared illumination, lake reflection or capture coupling; those music mappings remain BL06.
+
+### Bloom BL06 — current audio/render contract
+
+App supplies `analysis.musicFeatures` to Bloom. `music.ts` reads MusicFeaturesV1 exactly once per frame, copies six-band energies/context and keeps only fixed-size scalar histories plus bounded lane pulses. `musicFeaturesFresh` gates musical response; `(session, sequence)` and attack-time six-band rises qualify broad low/mid/high events. Sources, seeks, rollback, timing gaps, disabled gain, priming and stale input cannot replay old attacks. Intrinsic aurora/water/trail clocks remain independent of playback; reduced motion freezes them and hero motion, suppressing impulses while permitting slow sustained light. The scene imports signal.ts only for numeric helpers/band names, never AudioSignal. Historical `reactivity.ts`/unused BloomDebugControls are not in the runtime Bloom import chain.
+
+The controller exposes final aurora/light, pose/seam, trail level/phase/shimmer/pulses, ring and reusable reflection projection outputs. One Composition driver writes existing group/material refs and shader uniforms; no frame-rate React state. Stone shader controls are material-owned properties (explicit refs), preventing stale cloned uniform links. Dynamic monolithProjection fills an existing object from final y/yaw. Terrain and stone/fragment geometry generators, camera, source handlers, other scenes and shared MI stay unchanged. No additional draw, texture, geometry, light or render target.
+
+### Bloom BL07 — choreography refinement
+
+Only the scene-local music controller changes. Four persistent motion scalars (lift/yaw and velocities) feed an exact critically damped analytic step with existing bounds. It follows independently from the slower environmental envelopes and faster band/attack controls. No new render resources, frame allocations, analysis reads or React state. Existing material refs and reusable final-pose projection remain the sole delivered output path to the hero and lake. Lane speeds preserve autonomous base travel while giving low/high mids distinct musical rates. One primary low ring uses the latest qualified event's strength/age, merging compatible sub-band qualifications within that event only. All borrowed-view, bounded-history, freshness/session and reduced-motion safeguards remain.

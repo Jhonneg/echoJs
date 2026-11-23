@@ -1,0 +1,118 @@
+{
+  "status": "BL04 aurora/illumination checks pass; owner visual gate pending",
+  "resources": {
+    "baseline": {
+      "calls": 7,
+      "triangles": 4808,
+      "geometries": 7,
+      "textures": 1,
+      "programs": 5
+    },
+    "standard": {
+      "calls": 7,
+      "triangles": 4808,
+      "geometries": 7,
+      "textures": 1,
+      "programs": 5
+    },
+    "low": {
+      "calls": 7,
+      "triangles": 1384,
+      "geometries": 7,
+      "textures": 1,
+      "programs": 5
+    }
+  },
+  "baselineProvenance": "Retained approved BL03 beam capture at identical frozen clock/camera/quality, not a fresh benchmark.",
+  "timing": {
+    "baseline": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 16.800000000745058,
+        "maximumMs": 16.90000000037253,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17.09999999962747,
+        "maximumMs": 18.299999998882413,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17.40000000037253,
+        "maximumMs": 19.09999999962747,
+        "over33ms": 0
+      }
+    ],
+    "candidate": [
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.200000001117587,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.90000000037253,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.200000001117587,
+        "over33ms": 0
+      }
+    ],
+    "medianRatio": 1,
+    "scope": "Three10s fixed-scene headless windows at1440x900 DPR1, GTX1660SUPER via ANGLE. Vsync-limited cadence; not GPU execution timing or native-window certification. Candidate has 0 frames >33.4ms; max 17.9ms. Native review pending."
+  },
+  "protectedMountains": {
+    "changedPixels": 106113,
+    "maximumChannelDifference": 29
+  },
+  "protectedSky": {
+    "changedPixels": 23659,
+    "maximumChannelDifference": 18
+  },
+  "heroChange": {
+    "changedPixels": 111721,
+    "maximumChannelDifference": 42
+  },
+  "seamAlignment": {
+    "heroX": 747.0350877192982,
+    "reflectionX": 747.4133679978628,
+    "differencePixels": 0.37828027856460267
+  },
+  "source": {
+    "changedExisting": [
+      "src/scenes/bloom/BloomScene.tsx"
+    ],
+    "preservedExisting": 100,
+    "newProduction": [
+      "src/scenes/bloom/aurora.ts"
+    ]
+  },
+  "limits": "BL04 auroras/shared illumination are autonomous; monolith stays static and legacy background audio remains until BL06. No trails/MI migration. Owner art review and native performance remain separate.",
+  "illumination": {
+    "mountains": {
+      "pixels": 82064,
+      "totalDifference": 104506
+    },
+    "monolith": {
+      "pixels": 8000,
+      "totalDifference": 8000
+    },
+    "lake": {
+      "pixels": 57498,
+      "totalDifference": 340909
+    }
+  }
+}

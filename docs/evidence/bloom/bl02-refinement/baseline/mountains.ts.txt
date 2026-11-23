@@ -1,0 +1,92 @@
+import { BufferGeometry, Float32BufferAttribute, Color } from 'three'
+import type { GraphicsQuality } from '../../engine/quality'
+
+const profiles: [number, number][][] = [
+  [[-20, 0.7], [-9, 1.5], [-7.2, 2.3], [-6.7, 1.9], [-5.8, 2.5], [-4.1, 1.2], [-2.5, 0.8], [-0.8, 0.35], [1.5, 0.5], [3.1, 1.3], [4, 1.0], [5.6, 2.2], [6.7, 1.7], [8, 2.4], [11, 1.1], [20, 0.9]],
+  [[-20, 0.4], [-8.4, 0.7], [-6.3, 1.5], [-5.6, 1.1], [-4.7, 1.6], [-3, 0.7], [-1.8, 0.3], [0, 0.15], [2.3, 0.25], [3.8, 0.9], [4.7, 0.7], [6.2, 1.6], [7.1, 1.2], [9.5, 0.6], [20, 0.4]],
+  [[-20, -0.2], [-9, 0.2], [-6, 0.7], [-4.9, 0.5], [-3.2, 0.8], [-2, 0.25], [-0.6, 0.04], [1.6, 0.03], [3.4, 0.3], [4.8, 0.65], [5.5, 0.4], [7.2, 0.85], [9, 0.2], [20, -0.1]],
+  [[-20, -4.8], [-8, -4.5], [-6.4, -4.15], [-5.7, -4.3], [-5.2, -4.55], [-3.9, -4.8], [1, -5.3], [5.2, -4.9], [6.5, -4.6], [7, -4.2], [8.5, -4.1], [10, -4.5], [20, -4.8]],
+]
+// Reach the low foreground profile behind the existing lake plane (z=-2).
+// This keeps the near banks at the bottom corners instead of enclosing the lake.
+const sections = [-8, -6, -3, -2.2]
+const smoothstep = (t: number) => { const x = Math.max(0, Math.min(1, t)); return x * x * (3 - 2 * x) }
+const mix = (a: number, b: number, t: number) => a + (b - a) * t
+
+function profileHeight(points: [number, number][], x: number) {
+  for (let i = 1; i < points.length; i++) {
+    if (x <= points[i][0]) {
+      const [a, b] = [points[i - 1], points[i]]
+      return mix(a[1], b[1], (x - a[0]) / (b[0] - a[0]))
+    }
+  }
+  return points[points.length - 1][1]
+}
+
+export function bankInnerEdge(z: number, side: -1 | 1) {
+  return .6 + side * mix(1.15, 2.75, smoothstep((z + 8) / 10))
+}
+
+export function sampleMountainHeight(x: number, z: number) {
+  let section = 0
+  while (section < sections.length - 2 && z > sections[section + 1]) section++
+  const t = smoothstep((z - sections[section]) / (sections[section + 1] - sections[section]))
+  const height = mix(profileHeight(profiles[section], x), profileHeight(profiles[section + 1], x), t)
+  const depth = Math.max(0, Math.min(1, (z + 8) / 10))
+  const side = x < .6 ? -1 : 1
+  const shoreDistance = Math.abs(x - bankInnerEdge(z, side))
+  const fold = .12 * Math.sin((x + .45 * z) * .95 + side * .7) * Math.sin(Math.PI * depth)
+  // Sink the inner closure below the frame, with a sloping shore above it.
+  // A vertical inner wall would read as a cut block in the orthographic lake.
+  const shore = smoothstep(shoreDistance / (.65 + 1.6 * depth))
+  return mix(-11.9, height + fold, shore)
+}
+
+// Two bounded solids; top cells, closed side walls and a bottom fan share indices.
+// No streaming, animation, external asset, or reconstruction during frame updates.
+export function createMountainGeometry(side: -1 | 1, quality: GraphicsQuality) {
+  const columns = quality === 'low' ? 32 : 64, rows = quality === 'low' ? 7 : 15
+  const positions: number[] = [], colors: number[] = [], indices: number[] = []
+  const far = new Color('#45445F'), mid = new Color('#292D44'), near = new Color('#101322')
+  const color = new Color()
+  for (let row = 0; row <= rows; row++) {
+    const depth = row / rows, z = mix(-8, 2, depth), inner = bankInnerEdge(z, side)
+    for (let col = 0; col <= columns; col++) {
+      const x = side === -1 ? mix(-20, inner, col / columns) : mix(inner, 20, col / columns)
+      positions.push(x, sampleMountainHeight(x, z), z)
+      color.copy(far).lerp(mid, smoothstep(depth / .6)).lerp(near, smoothstep((depth - .55) / .45))
+      colors.push(color.r, color.g, color.b)
+    }
+  }
+  const stride = columns + 1
+  for (let row = 0; row < rows; row++) for (let col = 0; col < columns; col++) {
+    const a = row * stride + col, b = a + 1, c = a + stride, d = c + 1
+    indices.push(a, c, b, b, c, d)
+  }
+  const perimeter: number[] = []
+  for (let col = 0; col < columns; col++) perimeter.push(col)
+  for (let row = 0; row < rows; row++) perimeter.push(row * stride + columns)
+  for (let col = columns; col > 0; col--) perimeter.push(rows * stride + col)
+  for (let row = rows; row > 0; row--) perimeter.push(row * stride)
+  const bottomStart = positions.length / 3
+  for (const at of perimeter) {
+    positions.push(positions[at * 3], -12, positions[at * 3 + 2])
+    colors.push(near.r, near.g, near.b)
+  }
+  const center = positions.length / 3
+  positions.push(side === -1 ? -11 : 11, -12, -3)
+  colors.push(near.r, near.g, near.b)
+  for (let i = 0; i < perimeter.length; i++) {
+    const next = (i + 1) % perimeter.length, a = perimeter[i], b = perimeter[next]
+    const c = bottomStart + i, d = bottomStart + next
+    indices.push(a, b, c, b, d, c, center, c, d)
+  }
+  const geometry = new BufferGeometry()
+  geometry.setAttribute('position', new Float32BufferAttribute(positions, 3))
+  geometry.setAttribute('color', new Float32BufferAttribute(colors, 3))
+  geometry.setIndex(indices)
+  geometry.computeVertexNormals()
+  geometry.computeBoundingBox()
+  geometry.computeBoundingSphere()
+  return geometry
+}

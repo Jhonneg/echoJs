@@ -144,13 +144,13 @@ test('equal-band rises have distinct depth dynamics without changing zero-input 
   f.step({gain:0});assert.ok(f.state.ridges.every(x=>x.sustained===0&&x.accent===0))
 })
 
-test('Lavender has no legacy input path and other App scene signal deliveries remain',()=>{
+test('Lavender retains its MI input alongside the migrated Bloom and existing Crimson delivery',()=>{
   const app=readFileSync('src/App.tsx','utf8')
   assert.match(app,/<LavenderPeaksScene quality=\{quality\} musicFeatures=\{analysis.musicFeatures!\}/)
   for(const file of ['LavenderPeaksScene.tsx','motion.ts','response.ts']){
     const source=readFileSync('src/scenes/lavender-peaks/'+file,'utf8')
     assert.doesNotMatch(source,/AudioSignal|signal\.(fast|slow|transient|flux|intensity|sixBands)|signal=\{/)
   }
-  assert.match(app,/<BloomScene signal=\{analysis.signal\}/)
+  assert.match(app,/<BloomScene musicFeatures=\{analysis.musicFeatures!\}/)
   assert.match(app,/<CrimsonHorizonScene.*signal=\{analysis.signal\}/)
 })

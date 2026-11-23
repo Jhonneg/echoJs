@@ -110,3 +110,33 @@ Nocturne left cyan fixture (2026-11-22): owner visually approves the single rece
 Owner chose expressive/controlled expansion while retaining each landscape's atmosphere. [ANIMATION_REFINEMENT.md](ANIMATION_REFINEMENT.md) records Crimson as pilot with subtle coherent bank deformation, localized ridge/sun accents and slow haze, subject to feature-quality and scene-specific reviews. Preserve the burgundy valley, nightshade sky, pink sun, open corridor and camera character. Other landscapes retain their current identities, including Lavender's silhouettes/shared depth motion and Nocturne's stationary industry/smooth illumination/idle readability. This is a design direction, not evidence of newly implemented or visually accepted effects; no current palette, material or geometry baseline changes here.
 
 Crimson star visibility follow-up (2026-11-22): owner approved slightly larger/brighter existing sky specks and faint resting visibility. Preserve sparse Standard/Low selection and dark pink nightshade palette; existing air accents brighten the same stars. No additional particles/bloom or sun/camera changes. Approved by owner “looks better now” (2026-11-22).
+
+
+## Bloom Resonant Monolith — BL02 composition checkpoint (2026-11-23)
+
+The owner-approved [new Bloom roadmap](BLOOM_RESONANT_MONOLITH_ROADMAP.md) supersedes earlier flat-mountain-only constraints for Bloom. BL02 implements genuine static3D banks while retaining the halo and analytic reflective lake temporarily. Keep orthographic, level framing, asymmetric broad ridges, matte lavender/indigo slopes, fading depth and open water. Avoid channel-like enclosing walls: taper inner shores below frame and place the foreground descent behind the existing water plane. Bright hero/reflection stay focal; mountain volume remains readable in silence. BL02 artistic approval is pending; monolith/aurora/trails are later gated phases. Other landscapes' approved directions are unchanged.
+
+
+BL02 owner-requested shape refinement: favor rounded irregular shoulders, secondary spurs and uneven saddles over straight pointed ramps. Keep a shallow toe meeting the lake, with closure walls buried below view. This first pass changes ridge/shore shape only; further material/depth/framing changes require their own review.
+
+
+BL02 remaining mountain refinements (owner continuation,2026-11-23): cool faint distance, darker middle slopes and restrained near shoulders separate depth; broad matte face variation and selected crest tint replace uniform soft gradients. Connected asymmetrical inner shoulders stay recognizable in portrait without changing the level orthographic camera or crowding the halo/lake opening. These remain within the mountain review; BL03 is not started.
+
+
+BL02 further owner-requested improvement: prefer visibly overlapping ranges, offset substantial middle peaks and connected drainage valleys over a continuous soft wall. Reserve the brightest feature for the hero; maintain misty distance, dark readable rock and open lake/halo space. No extra decorative objects or noisy fine rock texture.
+
+
+## Bloom BL03 monolith composition checkpoint — 2026-11-23
+
+Owner approves replacing the segmented halo with a tall solid graphite slab, restrained yaw exposing one side, authored resting hover and one narrow rose seam with a dark inset border. No small floating fragments in this first composition. Preserve the approved mountain range and open lake; monolith and its broken dark/seam reflection become the focus. No circular ring remains except subtle waterline ripples. Hero is static until later MI work. BL03 appearance/reflection require owner review before auroras.
+
+
+BL04 aurora checkpoint (2026-11-23):2restrained mint/lavender/rose shader curtains frame the approved static monolith, reduced to1at Low quality. Favor soft ribbons and faint folds over regular grey bars, particles or a bright sky wash. Their shared ambient color gently reaches rock, stone, haze and lake; geometry/beam/camera stay fixed. Autonomous movement is slow and freezes under reduced motion. Owner review required before BL05.
+
+### Bloom post-BL04 BL03 owner correction
+
+The owner-supplied `references/bloom/e9db88c2-38de-4c1f-a9d2-f061b5053b89.png` now guides the hero: a dark graphite front, visibly lighter lavender right side, restrained stone fractures/grain and chamfered edges, with a narrow rose seam cut into the solid. Two small, unequal angular stone fragments hover asymmetrically, larger left/mid-height and smaller right/lower. Retain the current camera, BL02 terrain and BL04 auroras rather than copying the reference's terrain/trails/sky. Revised browser evidence awaits owner review; conceptual realism is a direction, not an exact raster match.
+
+### Bloom BL05 trail checkpoint
+
+Two sparse asymmetrical light paths descend from the existing shoulders toward the lake: rose on the left, mint on the right. Low retains only the rose path. Follow the rendered terrain, with narrow antialiased cores, restrained soft halos, feathered endpoints and offset traveling highlights; preserve the monolith as the brightest focal point. Portrait naturally crops the upper route sections rather than reframing the camera. Motion is autonomous until BL06; reduced motion holds a static glow. Current matched-phase browser screenshots/video await owner visual review.

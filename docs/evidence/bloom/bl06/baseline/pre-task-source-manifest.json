@@ -1,0 +1,414 @@
+[
+  {
+    "file": "src/App.tsx",
+    "sha256": "7fdaf34a976c727056ae64a29372fea189440f72c8f948b8aa1caf34907dc51f"
+  },
+  {
+    "file": "src/audio/analysis.ts",
+    "sha256": "28cf0def41ae125c779572f9269fd0a18a1e2dbe379668598ddf32a9791ec795"
+  },
+  {
+    "file": "src/audio/features.ts",
+    "sha256": "bbaf3b60aaf29e08abd99afb8daaacd9a724cb84ad09b061b7c5fee1d19f6b4e"
+  },
+  {
+    "file": "src/audio/flux.ts",
+    "sha256": "3fe831ec0c4ce8d9cc0b843193e39e8d71e4846fcaf77816dac9fe7b23e99dab"
+  },
+  {
+    "file": "src/audio/localFile.ts",
+    "sha256": "2eba75e80f734e0f0a1df997922b65c5e2bdd06b5c49812ca5ec343dccab58a6"
+  },
+  {
+    "file": "src/audio/music/analysis.ts",
+    "sha256": "df3968778d574c391ad37923d5da4636de48a1d7c96895b3345ce830494a0ff7"
+  },
+  {
+    "file": "src/audio/music/context.ts",
+    "sha256": "88cc6c9f9c5a0a6223a9f87a68165e79a246157d645e7ca7f88172f59d3e47bf"
+  },
+  {
+    "file": "src/audio/music/energy.ts",
+    "sha256": "8846abbedbed0cae124094a9daa59ca5e149f9bf4469aac7c5bfa090f3ada15e"
+  },
+  {
+    "file": "src/audio/music/onsets.ts",
+    "sha256": "d7aa528753b3da37a6fe99d22430b58db36fa07259f7d5eb122a88ed52b5e3d2"
+  },
+  {
+    "file": "src/audio/musicFeatures.ts",
+    "sha256": "54596883f868a7f7cd937cab7c35beff848b6aa7c43af0c551c5a9597e3ee0a9"
+  },
+  {
+    "file": "src/audio/signal.ts",
+    "sha256": "256f28f6a898ec48605742c43863e11f647a03d6ecc7551d82d46becf9af02c7"
+  },
+  {
+    "file": "src/audio/sixBands.ts",
+    "sha256": "b8531766e0df46aebc93230270a8a2041675bad1c81da513b15141d569432add"
+  },
+  {
+    "file": "src/audio/tabCapture.ts",
+    "sha256": "7e26215bfe6e4176e397505c444dff06d953a792e1ba2151b50644b38ee29a1c"
+  },
+  {
+    "file": "src/components/AudioControls.tsx",
+    "sha256": "965b9d5e05c40ec98acfbfbd2cca07201a3793d6903265e7b8a437820e512b7d"
+  },
+  {
+    "file": "src/components/BloomDebugControls.tsx",
+    "sha256": "28b2de728161c64236650715ad37a43fbf616c88ddbb34b34af5dc058d183fdf"
+  },
+  {
+    "file": "src/components/FullscreenControls.tsx",
+    "sha256": "b9c1ee224821bfb712bf3e336b7a1fa6e7a9c992b54b237944688393fd6c643f"
+  },
+  {
+    "file": "src/components/NocturneLightingControls.tsx",
+    "sha256": "36ac3b3fb36e2c1cb7d244305edc5b901249a78f30c384747f54267d9c44c89c"
+  },
+  {
+    "file": "src/components/PerformancePanel.tsx",
+    "sha256": "adc24f6dc34845394f89792b0f9023290554aca7ff639225adf501162da89209"
+  },
+  {
+    "file": "src/components/PerformanceProbe.tsx",
+    "sha256": "3e9eedbf4b94dffbf710caaf89371fcf9741e9a60fd476bfb3df640e913eafa1"
+  },
+  {
+    "file": "src/components/SignalDiagnostics.tsx",
+    "sha256": "06e0f668fe62f58204caaf0e250d573f3563e31ce5fb9a5018e6c69057417239"
+  },
+  {
+    "file": "src/dev/audioLab/CrimsonPreview.tsx",
+    "sha256": "2b7412bfeb6ab64510c317ec7650b997453bc8d4079cdb006760c8f5302d85fd"
+  },
+  {
+    "file": "src/dev/audioLab/adaptive.ts",
+    "sha256": "521e9cc1d02e40c19a9664ad37b8730a38876b58aaa70db8b84b1ee1979ad4c4"
+  },
+  {
+    "file": "src/dev/audioLab/baseline.ts",
+    "sha256": "f6ca97f31150787a883d1adf20294c13ecb3601cd77d49382320a57d2aa88886"
+  },
+  {
+    "file": "src/dev/audioLab/context.ts",
+    "sha256": "a1ab485f7ca5336d6a6bedc6ba185470a73c7018f409f90db99c930856853ead"
+  },
+  {
+    "file": "src/dev/audioLab/contextComparison.ts",
+    "sha256": "2b16772799af455dc4f6ae70b1ce4820fddae6e686faafaf0e28ae27c72c25ce"
+  },
+  {
+    "file": "src/dev/audioLab/diagnostics.ts",
+    "sha256": "edb806e188b684e18ed196cb621e3ae6fd4c5ba91204af3101317a09d339fb3e"
+  },
+  {
+    "file": "src/dev/audioLab/energy.ts",
+    "sha256": "12e9faae279e6d821c2f0943ea39f9a7fb92ffde2ad0a0b8ceeb367112c08adf"
+  },
+  {
+    "file": "src/dev/audioLab/energyComparison.ts",
+    "sha256": "39720130007304d8a9ba67265a596dc3e652d33824000563ef54148370e37d92"
+  },
+  {
+    "file": "src/dev/audioLab/fixtures.ts",
+    "sha256": "fcf9861ac28ec1201863df18b659097fa12286b6adf02e76a35954040f430c38"
+  },
+  {
+    "file": "src/dev/audioLab/main.ts",
+    "sha256": "5fcf9b6bc71f282b7065ecaa5d8d02b9e046b65bf578af314f8562a90ba015eb"
+  },
+  {
+    "file": "src/dev/audioLab/mountCrimsonPreview.ts",
+    "sha256": "c9554966f75d5d575c9465dd3aa172fafb72c966d83fe44d7efc2fbb9568d2af"
+  },
+  {
+    "file": "src/dev/audioLab/musicBridge.ts",
+    "sha256": "3df47c72621141c55f5305b213d919d7cdc6040d6262b060217437367af766f6"
+  },
+  {
+    "file": "src/dev/audioLab/onsetComparison.ts",
+    "sha256": "b04ea20bc38ddb10f7d7e12724568ca709aa08a9ccecb85ad6699d41307e6bff"
+  },
+  {
+    "file": "src/dev/audioLab/onsets.ts",
+    "sha256": "d008b2761eac6a178ec5033db72fc3b9e3f84be141dddde8bb010c7bc93a4513"
+  },
+  {
+    "file": "src/dev/audioLab/rangeComparison.ts",
+    "sha256": "a65c2bacb8d70fee42061ab79d18a98fc3dd7dbfe33f6bdb98bbf094037fdf42"
+  },
+  {
+    "file": "src/dev/audioLab/review.ts",
+    "sha256": "f2ef8928e64df67ba2d9bc7ac05d280676024fbfa43ecabf16b68a7cca8d391c"
+  },
+  {
+    "file": "src/dev/audioLab/sources.ts",
+    "sha256": "1651c5e54b0b07ab90d82866b961a01f42c70ed7494e8a9736dba92703cb20de"
+  },
+  {
+    "file": "src/dev/audioLab/style.css",
+    "sha256": "4a5e446335b8b4101441b82bf0dcfa5c14026e77d5f6a2f592b91057e4de2a08"
+  },
+  {
+    "file": "src/dev/mi05/index.html",
+    "sha256": "32af534bedec5795794e3dbc3fc50a88916483cf41e16caab5ef4915267ca624"
+  },
+  {
+    "file": "src/dev/mi05/main.tsx",
+    "sha256": "addde60c63a25ae54f53b2c3500375f499f2f9b8a3c156a627f5c9aeb57537d6"
+  },
+  {
+    "file": "src/dev/mi05/style.css",
+    "sha256": "a296fe9da6d0d901242b5c3b0bf80975057581f450213c506635e34d7b3402cf"
+  },
+  {
+    "file": "src/dev/mi05/vm02Review.ts",
+    "sha256": "4c86a123bd4f7204c01a9d8d2eb5bcf2eae4e648cb7a543b4336b0ba6eaf18fb"
+  },
+  {
+    "file": "src/dev/mi05/vp00Review.ts",
+    "sha256": "f0272d16ebf53dfaf988391d3df992300cb2c82d8925777b335ea55caf81ea55"
+  },
+  {
+    "file": "src/engine/LandscapeCanvas.tsx",
+    "sha256": "e4996f26e7b00368cf1ccc3b8fd13d6aeb3e659672b52ed2c1fea6bf9d45dc06"
+  },
+  {
+    "file": "src/engine/bassMotion.ts",
+    "sha256": "0afc27d6a96817861d85d8d3034ffc969f9b69d060cf7d613c694954e82fb2b3"
+  },
+  {
+    "file": "src/engine/bassMotionVariant.ts",
+    "sha256": "2f5d3b663f18ced87289e92e0544d4f3b08b9a068258ee8a756e3c934fce0f77"
+  },
+  {
+    "file": "src/engine/cameraTilt.ts",
+    "sha256": "e8c62acf7b4c4695b0a3b8cc7a129fc086f56bc8bb11cbaa5b40f540db7c4067"
+  },
+  {
+    "file": "src/engine/performance.ts",
+    "sha256": "f66cd00c13a00b8815714cf60d2a6c231240a265318b1cf3e9d2624379cb66bf"
+  },
+  {
+    "file": "src/engine/quality.ts",
+    "sha256": "689903d7ef479210d3fdda7959841ee7025cd2c150b4f738b5cfa3af61dc50c0"
+  },
+  {
+    "file": "src/index.css",
+    "sha256": "079bc04954171bbc40e4aba9aaf4992332c9576d35dfea7a947237094623407a"
+  },
+  {
+    "file": "src/main.tsx",
+    "sha256": "d4f3a194baaa2acd3b537cb707d426e7c66c306578102de433b31f15e7cd6b00"
+  },
+  {
+    "file": "src/scenes/bloom/BloomScene.tsx",
+    "sha256": "18dc9da1895b5de2b0ecb92f36854e37bf131842d3211ed80136a4b46dcdb9ed"
+  },
+  {
+    "file": "src/scenes/bloom/aurora.ts",
+    "sha256": "77ffb49b5eb7405a9b6ed8001d92ddb6c63cf4c9749048d73083696a77998d5b"
+  },
+  {
+    "file": "src/scenes/bloom/bloom.css",
+    "sha256": "829e2b7595af486e07d0e22ddae10e9aa9ab0eaee06c43f0477b078c41d60fac"
+  },
+  {
+    "file": "src/scenes/bloom/monolith.ts",
+    "sha256": "8afb8bdd00999112873810ac87a1e0a0614f5725246ea6665a50a74ec12f8529"
+  },
+  {
+    "file": "src/scenes/bloom/mountains.ts",
+    "sha256": "fdd02a5d97d574a7b8f19afb44471e721bd33557f54f6e2c78a356c5abab128f"
+  },
+  {
+    "file": "src/scenes/bloom/reactivity.ts",
+    "sha256": "3e5d624ffda1302f95a58e5888dbf9075dc9cfb0217d750438af0ca45ea3253f"
+  },
+  {
+    "file": "src/scenes/bloom/trails.ts",
+    "sha256": "100f8d30f9b096a3190bab57417e53367b837b90b072401c24d61474e346c6e0"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/CrimsonHorizonScene.tsx",
+    "sha256": "a8bc18abdef6548fb35d9361a212be21b7720d8e107abf9c95c6f488d3ebdb13"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/atmosphere.ts",
+    "sha256": "1376e1cb89e1b51023ab507eb00ff894ddbbde233ecff4daa5b48509034be3af"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/cameraMotion.ts",
+    "sha256": "e16e23df69de8b037aee43eccd098ecbcd364812961fea0f1d64e0978ba9cb74"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/contours.ts",
+    "sha256": "0bde7a03f7b0d64d1809b93c7592f198004306eaffc70aec8df6b0015e9b7a7d"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/crimson-horizon.css",
+    "sha256": "9a9476c94f5c5a752f03ca299d4e3b11fa434c93483b0382b5af4843a43ef0c7"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/journey.ts",
+    "sha256": "986e59bb7df7614489eb35abb50a9ce878549f27d1ea17e7706d94faf1e99d3f"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/material.ts",
+    "sha256": "ae89bfe38d71d04077b9a4dc2c8b7a631bec9d6700c4a27746f06aa5d11e98da"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/musicPilot.ts",
+    "sha256": "ec6b27ae5f2ee4a6245806c044511e24d93574830e83614be79defbe41f299ab"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/noise.ts",
+    "sha256": "9e56e4e02c6edc60c6297d3bd16b342ce346f4f8cdd27e8e26f518fb94fc7344"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/response.ts",
+    "sha256": "00611a75fa7a5bbf64ade688be1d58631cf39c19f543703f4e936ad4cb172ae9"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/terrain.ts",
+    "sha256": "7dff8d08b8b3f84414a60b3c944d4b225504ace9d6e0c661c8a5453d64146fda"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/terrain.worker.ts",
+    "sha256": "7c0ddbd39454d216d38368a05f0ec137609711eba31b364b62fd7a01556e30b0"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/terrainStream.ts",
+    "sha256": "e088c60a24161e439353d54104a961c5ed3bd5acc688e61ebe9e4d2dd4e11dfd"
+  },
+  {
+    "file": "src/scenes/crimson-horizon/valley.ts",
+    "sha256": "28bd67983bcb32aed05b5cb42e1dc2947d09eb64cf8807d2e93fe4f25667c8d2"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/LavenderPeaksScene.tsx",
+    "sha256": "4ce013e7dcf418bfbb6197fee03eda89e2241a66acaafe8aee2575b71186863f"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/atmosphere.ts",
+    "sha256": "1b2079b32000b518a56cfd817c272675d4ba83ccc1f83371dbd8f50e90d8867f"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/corona.ts",
+    "sha256": "df4a61132d644fdf6b67af90bd7fbc27c88399293b6b238e3c81b3c2484490ec"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/illumination.ts",
+    "sha256": "5604a1fdece5979111cb650f470ec7e91df733425befcbaf8ceb103ba9195a4a"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/lavender-peaks.css",
+    "sha256": "51f23b107a78b10533f6bd2f9567f605bd05d44744ba45abb9d6176a2dc14e84"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/motion.ts",
+    "sha256": "2c97405dfe9c6de45c309edd65f53531bbe25562e8edeb548f3982604cff50d6"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/response.ts",
+    "sha256": "1664a23dba4649a270f035874090d5f809dabfe6f563557dd614cf129927c655"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/shading.ts",
+    "sha256": "775371c15523cd646443dd57e508b6437fd187ce597e93b02fe83abf0522b4cf"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/sunPulse.ts",
+    "sha256": "c413ba0b8eaf1c51acd04fc7a297df3e40dbc5b64e7c235b07c0eb22b339ea6a"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/terrain.ts",
+    "sha256": "55b8ff617ea732cd7e09d7ca3340ac73dbbc9fc180f0283c89b93f57e0d76794"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/terrainProfiles.ts",
+    "sha256": "076b6b25b2393fda2622199a5824b4c73e88d38e7c1217f04a6f724b4ed97963"
+  },
+  {
+    "file": "src/scenes/lavender-peaks/traces.ts",
+    "sha256": "6c72b4208f8ccce1dfde0b15d4017eb72a31f7e8cd32ac6f4c1199e6c622385e"
+  },
+  {
+    "file": "src/scenes/nocturne/ArchitectureDetails.tsx",
+    "sha256": "1f604ec62a50c9979467b32d6c09f00891c350b5be0e1bf02077ed49d7bca0a0"
+  },
+  {
+    "file": "src/scenes/nocturne/Atmosphere.tsx",
+    "sha256": "45d695f90dbb669690f3cdf1e2ed181da25c6bbbd5b4797505a1354598f47d23"
+  },
+  {
+    "file": "src/scenes/nocturne/LightingDriver.tsx",
+    "sha256": "d0c4d88c103c9d9a73fbccf1c62dc93ffcdd08f12d1dc9fc4e4e1bcbb749c1ee"
+  },
+  {
+    "file": "src/scenes/nocturne/NocturneScene.tsx",
+    "sha256": "661e367aec841f36658c5b05057282c530d2849ad8b997725228e1abf2ec722a"
+  },
+  {
+    "file": "src/scenes/nocturne/WallSurface.tsx",
+    "sha256": "34ecd021a20c286415740f6f137581cbbd69a47e3b6a0a56cfaf3e5b5775a0f9"
+  },
+  {
+    "file": "src/scenes/nocturne/WetGround.tsx",
+    "sha256": "8cf06b062dde34b0ef072e640c34cc7db00b19844620d5ae24319b7c9c4ce66e"
+  },
+  {
+    "file": "src/scenes/nocturne/activity.ts",
+    "sha256": "c7561369b14ca4dea3e3edd21f427955339c61aace65f9f8e4a2175112f131ea"
+  },
+  {
+    "file": "src/scenes/nocturne/atmosphereResponse.ts",
+    "sha256": "c3fe6d796e4dcc148f21800166cf4da168fab7b0a8ce1302e035aa83cf6001fc"
+  },
+  {
+    "file": "src/scenes/nocturne/bridge.ts",
+    "sha256": "5117d445b81e8c85ffed9b99d040571bd0833dcc823a51f5a7bac148431fe29e"
+  },
+  {
+    "file": "src/scenes/nocturne/cyanPanel.ts",
+    "sha256": "340ae429ae1aa2f0f92862ee1250b17492eb6968c0675aac0eac8d1ce93b8a9c"
+  },
+  {
+    "file": "src/scenes/nocturne/lighting.ts",
+    "sha256": "e8d7361bf812fd15d6d6887ab4291219c1299cb3b0645bb005d3af03411c4976"
+  },
+  {
+    "file": "src/scenes/nocturne/magenta.ts",
+    "sha256": "3d1fbcac8788765cd8f0b848732bc553252e80aba000d2e9ff339b3dc0f3440f"
+  },
+  {
+    "file": "src/scenes/nocturne/midrange.ts",
+    "sha256": "2699d1bb00cab8c4141e1a39823698aa3733bf8ead0ef89dee5b47c6cd2836a0"
+  },
+  {
+    "file": "src/scenes/nocturne/nocturne.css",
+    "sha256": "8dd821eb1bf9bddb49fde927494956915bb717f39c724ab2b335e336a4c97ad9"
+  },
+  {
+    "file": "src/scenes/nocturne/reactivity.ts",
+    "sha256": "b79e5b4a70948679579aa5c2b5d9555a07c0a2485bcdc740d4f5ad6bffcdd03e"
+  },
+  {
+    "file": "src/scenes/nocturne/spatial.ts",
+    "sha256": "636ce6463fcc64b660f059e64cd023bda483763daf6b6248f2cdf047b732addc"
+  },
+  {
+    "file": "src/scenes/nocturne/violet.ts",
+    "sha256": "3f4f89292a9994f00027bd60afedb88f9ac985e033c1724a9316e57531ab64e1"
+  },
+  {
+    "file": "src/scenes/nocturne/visualState.ts",
+    "sha256": "85e5263d7c79839506742da342bb84d8faeeec7c3bb7162b3c2f7de67be11e2c"
+  },
+  {
+    "file": "src/scenes/scene.ts",
+    "sha256": "100d5cbd41581b32fa48aa7f03e3b4c95ae09f4aceb80532bfe8154e8a68eadf"
+  }
+]

@@ -1,6 +1,6 @@
 # ECHO — Lavender Peaks: Music Intelligence + Living Landscape Roadmap
 
-**Status:** LP08/LP09 remain skipped by owner. Separately approved organic bass-corona refinement is implemented and verified with generated/browser/optical evidence (2026-11-23). Owner subsequently requests gentle independent sun size pulsation (1+.08sunPulse) alongside the existing brightness pulse; no shared MI or other-landscape changes. Stop for this refinement's visual review; no roadmap phase reactivated.
+**Status:** LP08/LP09 remain skipped by owner. Separately approved organic bass-corona refinement is implemented and verified with generated/browser/optical evidence (2026-11-23). Owner subsequently requests a stronger independent sun size pulse (1+.24sunPulse, raised from.08after visibility feedback) alongside the existing brightness pulse; no shared MI or other-landscape changes. Stop for this refinement's visual review; no roadmap phase reactivated.
 **Phases:** LP01–LP09  
 **Experience:** A coordinated *living 2D mountain symphony*. The music seems to pass through the sun, mountain ridges, mist, and sky.  
 **Visual reference:** The latest approved Lavender Peaks three-panel storyboard (with the **smaller** corona), and the user's animated noise-orb reference. Attach these images/video to the local coding agent when beginning visual implementation.
@@ -96,7 +96,7 @@ These are starting ranges for artistic tuning, **not mandatory constants**; comp
 
 ### LP04 — Small procedural 2D noise corona
 
-**Most recent owner adjustment (2026-11-23):** “make the sun pulsate a bit too” supersedes the fixed-core restriction. Permit only gentle independent disk/haze scaling1+.08sunPulse. Organic corona uses unscaled coordinates and is preserved.
+**Most recent owner adjustment (2026-11-23):** Sun pulsation supersedes the fixed-core restriction. Owner finds the gentle.08pulse barely visible; use stronger independent disk/haze scaling1+.24sunPulse. Organic corona uses unscaled coordinates and is preserved.
 
 **Latest owner-approved refinement (2026-11-23):** Organic bass-driven perimeter supersedes the regular bass harmonics and restored core expansion. Keep fixed-size circular core plus owner-selected gentle brightness/haze pulse. Two-octave periodic value noise, separately phased/scaled3strands,80/450ms bass-target envelope and bounded650ms localized onset lobes replace the insufficiently visible deformation. Retain1.65×core hard footprint and existing corona-driven lighting. Generated measured bass.134/.267 and onset strengths up to.212 ground calibration; acceptance measures rendered silhouette at equal opacity. Existing art/geometry/camera/MI remain. See current PROGRESS and `evidence/lavender-peaks/corona-noise/`; LP08/LP09 remain skipped.
 

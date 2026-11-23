@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-23",
+  "passed": [
+    "npm run lint",
+    "npm run build (includes TypeScript)",
+    "npm test (50 files)",
+    "fresh baseline and candidate browser verification",
+    "matched-phase pixel/resource/camera/aurora assessment"
+  ],
+  "pending": [
+    "owner visual review",
+    "native hardware performance certification"
+  ],
+  "attempts": [
+    "First fragment GLSL interpolation emitted x--0.5500; fixed by parenthesizing the negative literal and reran all final captures.",
+    "First stone surface was too pale; darkened graphite and reduced relief before final checks."
+  ],
+  "noCommit": true
+}

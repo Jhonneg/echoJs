@@ -1,0 +1,96 @@
+{
+  "status": "BL02 technical/resource/optical checks pass; owner visual gate pending",
+  "resources": {
+    "baseline": {
+      "calls": 28,
+      "triangles": 24760,
+      "geometries": 28,
+      "textures": 1,
+      "programs": 6
+    },
+    "standard": {
+      "calls": 28,
+      "triangles": 24760,
+      "geometries": 28,
+      "textures": 1,
+      "programs": 6
+    },
+    "low": {
+      "calls": 28,
+      "triangles": 21336,
+      "geometries": 28,
+      "textures": 1,
+      "programs": 6
+    }
+  },
+  "timing": {
+    "baseline": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17.59999999962747,
+        "maximumMs": 20.800000000745058,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.700000001117587,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.200000001117587,
+        "over33ms": 0
+      }
+    ],
+    "candidate": [
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.200000001117587,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.200000001117587,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 16.90000000037253,
+        "maximumMs": 17.200000001117587,
+        "over33ms": 0
+      }
+    ],
+    "medianRatio": 1,
+    "scope": "Three10s fixed-scene headless windows at1440x900 DPR1, GTX1660SUPER via ANGLE. Vsync-limited cadence; not GPU execution timing or native-window certification. Candidate has 0 frames >33.4ms; max 17.2ms. Native review pending."
+  },
+  "protectedLake": {
+    "changedPixels": 0,
+    "maximumChannelDifference": 0
+  },
+  "protectedSky": {
+    "changedPixels": 0,
+    "maximumChannelDifference": 0
+  },
+  "changedTerrain": {
+    "changedPixels": 85874,
+    "maximumChannelDifference": 76
+  },
+  "source": {
+    "changedExisting": [
+      "src/scenes/bloom/mountains.ts"
+    ],
+    "preservedExisting": 99,
+    "newProduction": []
+  },
+  "limits": "BL02 keeps the original analytic lake/halo and legacy Bloom audio; no monolith/aurora/trails/MI migration yet. Owner art review and native performance remain separate."
+}

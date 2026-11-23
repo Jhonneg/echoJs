@@ -1,0 +1,6314 @@
+{
+  "baseline": false,
+  "smoke": true,
+  "temporary": "/tmp/echo-bloom-bl02-gYlPII",
+  "errors": [],
+  "screenshots": [
+    {
+      "name": "desktop-standard",
+      "row": {
+        "dt": 0.016399999998509884,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 0,
+          "frame": 0,
+          "status": "inactive",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "wide-standard",
+      "row": {
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 81
+        },
+        "input": {
+          "session": 0,
+          "frame": 0,
+          "status": "inactive",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "portrait-standard",
+      "row": {
+        "dt": 0.0165,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 57.35294117647059
+        },
+        "input": {
+          "session": 0,
+          "frame": 0,
+          "status": "inactive",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "desktop-low",
+      "row": {
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 9,
+          "triangles": 1678,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 0,
+          "frame": 0,
+          "status": "inactive",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 1,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    },
+    {
+      "name": "wide-low",
+      "row": {
+        "dt": 0.016700000001117588,
+        "cost": {
+          "calls": 9,
+          "triangles": 1678,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 81
+        },
+        "input": {
+          "session": 0,
+          "frame": 0,
+          "status": "inactive",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 1,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    },
+    {
+      "name": "portrait-low",
+      "row": {
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 9,
+          "triangles": 1678,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 57.35294117647059
+        },
+        "input": {
+          "session": 0,
+          "frame": 0,
+          "status": "inactive",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 1,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    },
+    {
+      "name": "silence",
+      "row": {
+        "dt": 0.016700000001117588,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 0,
+          "frame": 0,
+          "status": "inactive",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "bass-only",
+      "row": {
+        "dt": 0.016700000001117588,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 74,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0.424,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.6684660087811718,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.3270625219318578,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0.09358524122936406,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.370323881580611,
+            "heroYaw": -0.3798649233774806,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07773722104591757,
+            "frontRight": 1.0367204547003113,
+            "right": 1.2777372210459175,
+            "seamX": 0.27217347273412873,
+            "seamWidth": 0.022289153514924578,
+            "bottom": 0.4840655828961011,
+            "top": 3.4360655828961004,
+            "seamBottom": 0.6685655828961011,
+            "seamTop": 3.251565582896101
+          },
+          "count": 64,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.370323881580611,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.3798649233774806,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0.09358524122936406,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.3270625219318578,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07773722104591757,
+              1.2777372210459175
+            ],
+            "frontRight": 1.0367204547003113,
+            "bodyDepth": [
+              0.4840655828961011,
+              3.4360655828961004
+            ],
+            "seamDepth": [
+              0.6685655828961011,
+              3.251565582896101
+            ],
+            "seamX": 0.27217347273412873,
+            "seamWidth": 0.022289153514924578,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "low-mid",
+      "row": {
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 73,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0.424,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.7019548848175178,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1.4562706751313865,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 64,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0.4562706751313865,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1.4562706751313865,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "high-mid",
+      "row": {
+        "dt": 0.016899999998509885,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 73,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.7019549378901937,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.3509774689450968,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.456270709628626,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 64,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.3509774689450968,
+          "seam": 1.3509774689450968,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.3509774689450968,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.45627070962862604
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1.456270709628626
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "treble-only",
+      "row": {
+        "dt": 0.01680000000074506,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 73,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0.424
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.7019548582479909,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0.06317593724231918,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0.0842345829897589,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 64,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0.06317593724231918,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.0842345829897589
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0.0842345829897589
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "high-mid-quiet",
+      "row": {
+        "dt": 0.016299999998882413,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 62,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.0424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.0424,
+              "sustained": 0.19060760973390128,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.0953038048669506,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.1238949463270358,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 61,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.0953038048669506,
+          "seam": 1.0953038048669506,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.0953038048669506,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.1238949463270358
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1.1238949463270358
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "high-mid-moderate",
+      "row": {
+        "dt": 0.016700000001117588,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 62,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.1414,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.1414,
+              "sustained": 0.4398581292860632,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.2199290646430316,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.285907784035941,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 61,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.2199290646430316,
+          "seam": 1.2199290646430316,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.2199290646430316,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.28590778403594097
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1.285907784035941
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "high-mid-loud",
+      "row": {
+        "dt": 0.016799999998882414,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 61,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.7018178781060447,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.3509089390530225,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.456181620768929,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 60,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.3509089390530225,
+          "seam": 1.3509089390530225,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.3509089390530225,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.4561816207689291
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1.456181620768929
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "context-only",
+      "row": {
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 110,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 1,
+            "activity": 1,
+            "brightness": 1,
+            "brightnessValid": false
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0.7799352226199748,
+            "brightness": 0.5,
+            "activity": 0.9735685317630282
+          },
+          "output": {
+            "auroraStrength": 0.273592226714397,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0.06239481780959799,
+            "auroraDetail": 0,
+            "atmosphere": 0.2729773279169912,
+            "heroY": 2.343592226714397,
+            "heroYaw": -0.37994343571922295,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774344932530308,
+            "frontRight": 1.0366792886032217,
+            "right": 1.2777434493253033,
+            "seamX": 0.2721598255152965,
+            "seamWidth": 0.022288454758570497,
+            "bottom": 0.4621456259058056,
+            "top": 3.4141456259058054,
+            "seamBottom": 0.6466456259058057,
+            "seamTop": 3.229645625905805
+          },
+          "count": 64,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.343592226714397,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.37994343571922295,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0.06239481780959799,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.273592226714397,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0.2729773279169912,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774344932530308,
+              1.2777434493253033
+            ],
+            "frontRight": 1.0366792886032217,
+            "bodyDepth": [
+              0.4621456259058056,
+              3.4141456259058054
+            ],
+            "seamDepth": [
+              0.6466456259058057,
+              3.229645625905805
+            ],
+            "seamX": 0.2721598255152965,
+            "seamWidth": 0.022288454758570497,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "high-mid-attack",
+      "row": {
+        "dt": 0.016899999998509885,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 20,
+          "status": "active",
+          "sequence": 1,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 1,
+              "sequence": 1,
+              "band": "mid",
+              "strength": 0.424,
+              "timeSeconds": 15.768199999999256,
+              "emittedAtSeconds": 15.808199999999255
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.2989956312118469,
+              "accent": 0.6595581944699505,
+              "sequence": 1,
+              "strength": 0.7122210953346856
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.940967648969864,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.1943471602877005,
+              "shimmer": 0,
+              "cursor": 1,
+              "pulses": [
+                {
+                  "progress": 0.015569999999832254,
+                  "strength": 0.6927286682156221
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 19,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.940967648969864,
+          "seam": 1.940967648969864,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.940967648969864,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.8870758285033226
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1.1943471602877005
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              0.015569999999832254,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0.6927286682156221,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "high-mid-release",
+      "row": {
+        "dt": 0.016600000001490117,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 52,
+          "status": "active",
+          "sequence": 1,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 1,
+              "sequence": 1,
+              "band": "mid",
+              "strength": 0.424,
+              "timeSeconds": 15.768199999999256,
+              "emittedAtSeconds": 15.808199999999255
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.6972449657506146,
+              "accent": 0.05846266763045929,
+              "sequence": 1,
+              "strength": 0.7122210953346856
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.4187776840318584,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.4532092277378994,
+              "shimmer": 0,
+              "cursor": 1,
+              "pulses": [
+                {
+                  "progress": 0.2554650000005028,
+                  "strength": 0.4442504101890016
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 51,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.4187776840318584,
+          "seam": 1.4187776840318584,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.4187776840318584,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.897459637926901
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1.4532092277378994
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              0.2554650000005028,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0.4442504101890016,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "silence-fade",
+      "row": {
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 170,
+          "status": "active",
+          "sequence": 1,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0.043954444231544376,
+              "accent": 0,
+              "sequence": 1,
+              "strength": 0.7122210953346856
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.0219772221157721,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.0285703887505038,
+              "shimmer": 0,
+              "cursor": 1,
+              "pulses": [
+                {
+                  "progress": 1.140480000000167,
+                  "strength": 0.0862691209657179
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 64,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.0219772221157721,
+          "seam": 1.0219772221157721,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.0219772221157721,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.11483950971622167
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1.0285703887505038
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              1.140480000000167,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0.0862691209657179,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "low-mid-beside-held-high",
+      "row": {
+        "dt": 0.016799999998882414,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 65,
+          "status": "active",
+          "sequence": 1,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0.424,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 1,
+              "sequence": 1,
+              "band": "mid",
+              "strength": 0.424,
+              "timeSeconds": 19.530599999999627,
+              "emittedAtSeconds": 19.570599999999626
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.29933131725844647,
+              "accent": 0.6598580617946396,
+              "sequence": 1,
+              "strength": 0.7122210953346856
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.7018897266222485,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.3509448633111243,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1.19456535621799,
+              "shimmer": 0,
+              "cursor": 1,
+              "pulses": [
+                {
+                  "progress": 0.017280000000168598,
+                  "strength": 0.6929018720316055
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.4562283223044616,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 64,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.3509448633111243,
+          "seam": 1.3509448633111243,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.3509448633111243,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0.8874672282495956,
+              0.45622832230446164
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1.19456535621799,
+              1.4562283223044616
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              0.017280000000168598,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0.6929018720316055,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "stale",
+      "row": {
+        "dt": 0.016700000001117588,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 76,
+          "status": "active",
+          "sequence": 1,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0.424,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 1,
+              "sequence": 1,
+              "band": "mid",
+              "strength": 0.424,
+              "timeSeconds": 19.530599999999627,
+              "emittedAtSeconds": 19.570599999999626
+            }
+          ]
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0.5079738441487767,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0.5159782654278772,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.2579891327139385,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1.3301829986967049,
+              "shimmer": 0,
+              "cursor": 1,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.3353858725281202,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.2579891327139385,
+          "seam": 1.2579891327139385,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.2579891327139385,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0.33018299869670487,
+              0.33538587252812024
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1.3301829986967049,
+              1.3353858725281202
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "priming",
+      "row": {
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 82,
+          "status": "priming",
+          "sequence": 1,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0.424,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 1,
+              "sequence": 1,
+              "band": "mid",
+              "strength": 0.424,
+              "timeSeconds": 19.530599999999627,
+              "emittedAtSeconds": 19.570599999999626
+            }
+          ]
+        },
+        "response": {
+          "fresh": false,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0.3285154288863864,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0.3336920259096002,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.1668460129548002,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1.213535028776151,
+              "shimmer": 0,
+              "cursor": 1,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.2168998168412402,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.1668460129548002,
+          "seam": 1.1668460129548002,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.1668460129548002,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0.21353502877615105,
+              0.21689981684124016
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1.213535028776151,
+              1.2168998168412402
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "gain-zero",
+      "row": {
+        "dt": 0.01680000000074506,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 28,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": false,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1,
+          "seam": 1,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "reduced-high-mid",
+      "row": {
+        "dt": 0.016799999998882414,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "input": {
+          "session": 1,
+          "frame": 57,
+          "status": "active",
+          "sequence": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.424,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "enabled": true,
+          "bands": [
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0.424,
+              "sustained": 0.21957908915184957,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            },
+            {
+              "energy": 0,
+              "sustained": 0,
+              "accent": 0,
+              "sequence": 0,
+              "strength": 0
+            }
+          ],
+          "context": {
+            "intensity": 0,
+            "brightness": 0.5,
+            "activity": 0
+          },
+          "output": {
+            "auroraStrength": 0.18,
+            "auroraHue": 0.5682816127056448,
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "atmosphere": 0,
+            "heroY": 2.25,
+            "heroYaw": -0.38,
+            "seamLevel": 1.1097895445759247,
+            "lowPulse": 0
+          },
+          "trails": [
+            {
+              "phase": 0,
+              "level": 1,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            },
+            {
+              "phase": 0.43,
+              "level": 1.1427264079487023,
+              "shimmer": 0,
+              "cursor": 0,
+              "pulses": [
+                {
+                  "progress": 2,
+                  "strength": 0
+                },
+                {
+                  "progress": 2,
+                  "strength": 0
+                }
+              ]
+            }
+          ],
+          "projection": {
+            "left": -0.07774793390512558,
+            "frontRight": 1.0366496287866869,
+            "right": 1.2777479339051254,
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "bottom": 0.38539999999999996,
+            "top": 3.3373999999999993,
+            "seamBottom": 0.5699,
+            "seamTop": 3.1529
+          },
+          "count": 0,
+          "time": 0,
+          "ringAge": 3,
+          "ringStrength": 0
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "delivered": {
+          "stoneSeam": 1.1097895445759247,
+          "seam": 1.1097895445759247,
+          "water": {
+            "auroraExpansion": 0,
+            "auroraDetail": 0,
+            "auroraTime": 58.90486225480862,
+            "auroraStrength": 0.18,
+            "auroraColor": [
+              0.46444060629095774,
+              0.47700732308868604,
+              0.5184513385639943
+            ],
+            "auroraLayers": 2,
+            "seamLevel": 1.1097895445759247,
+            "ringAge": 3,
+            "ringStrength": 0,
+            "trailLights": [
+              0,
+              0.14272640794870228
+            ],
+            "atmosphere": 0,
+            "time": 0,
+            "bodyBounds": [
+              -0.07774793390512558,
+              1.2777479339051254
+            ],
+            "frontRight": 1.0366496287866869,
+            "bodyDepth": [
+              0.38539999999999996,
+              3.3373999999999993
+            ],
+            "seamDepth": [
+              0.5699,
+              3.1529
+            ],
+            "seamX": 0.2721499946177634,
+            "seamWidth": 0.022287951253836247,
+            "anchorX": 0.6,
+            "midnight": [
+              0.005181516700061659,
+              0.006512090790025684,
+              0.015996293361446288
+            ],
+            "indigo": [
+              0.035601314869097636,
+              0.0343398068028541,
+              0.08228270712149792
+            ],
+            "moonlight": [
+              0.9215818562755338,
+              0.6653872982754769,
+              0.8387990117372213
+            ],
+            "rose": [
+              0.5647115056965487,
+              0.3231432091022285,
+              0.4735314961384573
+            ]
+          },
+          "trails": {
+            "trailPhases": [
+              0,
+              0.43
+            ],
+            "trailLevels": [
+              1,
+              1.1427264079487023
+            ],
+            "trailShimmer": [
+              0,
+              0
+            ],
+            "trailPulseProgress": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "trailPulseStrength": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "geometry": "48c3cb55-3f2c-4734-9a26-a881b09d882d",
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    }
+  ],
+  "checks": [],
+  "performance": [],
+  "source": "Isolated production build with temporary scalar/resource probes; generated local PCM only. No owner media. Headless performance is not native-device certification.",
+  "sourceUnchanged": true,
+  "status": "BL06 matrix smoke captured"
+}

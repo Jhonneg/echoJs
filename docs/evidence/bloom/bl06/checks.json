@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-23",
+  "passed": [
+    "calibration through existing production Music Intelligence",
+    "npm run lint",
+    "npm run typecheck / npm run build",
+    "npm test (52 files)",
+    "node tests/bloomMusic.test.mjs (14 cases)",
+    "fresh preserved-source baseline browser run",
+    "candidate matrix plus actual generated WAV production analysis",
+    "material/pose/reflection delivered-output and observed-pixel assessment"
+  ],
+  "pending": [
+    "owner visual/listening review",
+    "real-song acceptance",
+    "native picker/hardware certification"
+  ],
+  "attemptNotes": [
+    "Corrected old baseline draw-count and probe assumptions.",
+    "Updated historical Lavender assertion expecting the superseded Bloom signal prop.",
+    "Attack assertion now uses screenshot-aligned captured values rather than a later decayed sample.",
+    "Pixel brightness check exposed stale implicit stone/core uniform sharing; explicit material-owned seam/aurora bindings plus regression and fresh full evidence resolved it."
+  ],
+  "noCommit": true
+}

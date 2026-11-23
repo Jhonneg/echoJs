@@ -1,0 +1,1888 @@
+{
+  "baseline": false,
+  "smoke": true,
+  "temporary": "/tmp/echo-bloom-bl02-fkT6gx",
+  "errors": [],
+  "screenshots": [
+    {
+      "name": "desktop-standard",
+      "row": {
+        "trails": {
+          "geometry": "09dd5328-ff4d-4385-9dc9-e8e9042e2764",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "38d3e9d1-ef2c-44d3-987c-41ad8be8e950",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "d40b02d9-4c41-4f55-8f32-7256f8b8c726",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "wide-standard",
+      "row": {
+        "trails": {
+          "geometry": "09dd5328-ff4d-4385-9dc9-e8e9042e2764",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016600000001490117,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "38d3e9d1-ef2c-44d3-987c-41ad8be8e950",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "d40b02d9-4c41-4f55-8f32-7256f8b8c726",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 81
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "portrait-standard",
+      "row": {
+        "trails": {
+          "geometry": "09dd5328-ff4d-4385-9dc9-e8e9042e2764",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "38d3e9d1-ef2c-44d3-987c-41ad8be8e950",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "d40b02d9-4c41-4f55-8f32-7256f8b8c726",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 57.35294117647059
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "desktop-low",
+      "row": {
+        "trails": {
+          "geometry": "d155c9a4-bca1-476a-9f3a-53aab5f1f919",
+          "vertices": 82,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016600000001490117,
+        "cost": {
+          "calls": 9,
+          "triangles": 1678,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "69a853ce-e844-4312-881d-04255e93178e",
+            "triangles": 682,
+            "vertices": 343
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "9dc11da5-cf18-4fe7-a74a-9331cfb62ca2",
+            "triangles": 682,
+            "vertices": 343
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 1,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    },
+    {
+      "name": "wide-low",
+      "row": {
+        "trails": {
+          "geometry": "d155c9a4-bca1-476a-9f3a-53aab5f1f919",
+          "vertices": 82,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016600000001490117,
+        "cost": {
+          "calls": 9,
+          "triangles": 1678,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "69a853ce-e844-4312-881d-04255e93178e",
+            "triangles": 682,
+            "vertices": 343
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "9dc11da5-cf18-4fe7-a74a-9331cfb62ca2",
+            "triangles": 682,
+            "vertices": 343
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 81
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 1,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    },
+    {
+      "name": "portrait-low",
+      "row": {
+        "trails": {
+          "geometry": "d155c9a4-bca1-476a-9f3a-53aab5f1f919",
+          "vertices": 82,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016799999998882414,
+        "cost": {
+          "calls": 9,
+          "triangles": 1678,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "69a853ce-e844-4312-881d-04255e93178e",
+            "triangles": 682,
+            "vertices": 343
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "9dc11da5-cf18-4fe7-a74a-9331cfb62ca2",
+            "triangles": 682,
+            "vertices": 343
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 57.35294117647059
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 1,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        }
+      }
+    },
+    {
+      "name": "desktop-resting",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "desktop-illuminated",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 19.634954084936208,
+          "strength": 0.3,
+          "hue": 0.7910143643058909
+        },
+        "dt": 0.016799999998882414,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 19.634954084936208,
+          "auroraStrength": 0.3,
+          "auroraColor": [
+            0.5161725083533344,
+            0.39762553512381266,
+            0.495276230902741
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "trails-hidden",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 8,
+          "triangles": 5022,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "trails-zero",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.01680000000074506,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "trails-dim",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "trails-full",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "travel-1.2",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.01680000000074506,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "travel-2.4",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016599999999627472,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    },
+    {
+      "name": "travel-3.6",
+      "row": {
+        "trails": {
+          "geometry": "b6eebea0-8680-437a-9557-772bde608278",
+          "vertices": 324,
+          "time": 0,
+          "level": 1
+        },
+        "aurora": {
+          "time": 58.90486225480862,
+          "strength": 0.18,
+          "hue": 0.5682816127056448
+        },
+        "dt": 0.016699999999254943,
+        "cost": {
+          "calls": 9,
+          "triangles": 5342,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 6
+        },
+        "banks": [
+          {
+            "name": "bloom-left-bank",
+            "geometry": "022dff4e-563e-4c31-851c-957a6a6144f4",
+            "triangles": 2394,
+            "vertices": 1199
+          },
+          {
+            "name": "bloom-right-bank",
+            "geometry": "69bd0985-9955-41e5-8f4a-863491fd3a9d",
+            "triangles": 2394,
+            "vertices": 1199
+          }
+        ],
+        "camera": {
+          "position": [
+            0,
+            0,
+            20
+          ],
+          "quaternion": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "zoom": 90
+        },
+        "hero": {
+          "position": [
+            0.6,
+            2.25,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            -0.38,
+            0,
+            "XYZ"
+          ]
+        },
+        "water": {
+          "auroraTime": 58.90486225480862,
+          "auroraStrength": 0.18,
+          "auroraColor": [
+            0.46444060629095774,
+            0.47700732308868604,
+            0.5184513385639943
+          ],
+          "auroraLayers": 2,
+          "bass": 0,
+          "treble": 0,
+          "atmosphere": 0,
+          "time": 0,
+          "bodyBounds": [
+            -0.07774793390512558,
+            1.2777479339051254
+          ],
+          "frontRight": 1.0366496287866869,
+          "bodyDepth": [
+            0.38539999999999996,
+            3.3373999999999993
+          ],
+          "seamDepth": [
+            0.5699,
+            3.1529
+          ],
+          "seamX": 0.2721499946177634,
+          "seamWidth": 0.022287951253836247,
+          "anchorX": 0.6,
+          "midnight": [
+            0.005181516700061659,
+            0.006512090790025684,
+            0.015996293361446288
+          ],
+          "indigo": [
+            0.035601314869097636,
+            0.0343398068028541,
+            0.08228270712149792
+          ],
+          "moonlight": [
+            0.9215818562755338,
+            0.6653872982754769,
+            0.8387990117372213
+          ],
+          "rose": [
+            0.5647115056965487,
+            0.3231432091022285,
+            0.4735314961384573
+          ]
+        },
+        "elapsed": 0,
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        }
+      }
+    }
+  ],
+  "checks": [],
+  "performance": [],
+  "source": "Isolated production build with temporary scalar/resource probes; generated local PCM only. No owner media. Headless performance is not native-device certification.",
+  "sourceUnchanged": true,
+  "status": "BL05 visual smoke captured"
+}

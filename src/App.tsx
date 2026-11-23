@@ -44,7 +44,7 @@ export default function App() {
       <main className="experience">
         <h1 className="sr-only">{sceneNames[scene]} — music visualizer</h1>
         {scene === 'bloom'
-          ? <BloomScene signal={analysis.signal} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
+          ? <BloomScene musicFeatures={analysis.musicFeatures!} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
           : scene === 'lavender-peaks'
             ? <LavenderPeaksScene quality={quality} musicFeatures={analysis.musicFeatures!} reactivity={reactivity} />
             : scene === 'nocturne'

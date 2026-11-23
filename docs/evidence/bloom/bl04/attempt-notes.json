@@ -1,0 +1,7 @@
+{
+  "notes": [
+    "First smoke exposed undefined GLSL negative-base pow causing black pixels without a console error. Corrected signed inputs with abs; all final captures were regenerated.",
+    "Color/structure tuned from grey regular folds toward softer mint/rose ribbons before the final full verification.",
+    "Baseline is retained approved BL03 beam evidence with explicit provenance. Video isolates live aurora motion while its temporary water-distortion clock is held; no such control ships."
+  ]
+}

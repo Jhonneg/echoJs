@@ -1,0 +1,121 @@
+{
+  "status": "BL05 trails technically verified; owner visual review pending",
+  "resources": {
+    "before": {
+      "calls": 8,
+      "triangles": 5022,
+      "geometries": 8,
+      "textures": 1,
+      "programs": 5
+    },
+    "after": {
+      "calls": 9,
+      "triangles": 5342,
+      "geometries": 9,
+      "textures": 1,
+      "programs": 6
+    },
+    "low": {
+      "calls": 9,
+      "triangles": 1678,
+      "geometries": 9,
+      "textures": 1,
+      "programs": 6
+    },
+    "addedTriangles": 320
+  },
+  "timing": {
+    "baseline": [
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 18.300000000745058,
+        "over33ms": 0
+      },
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.199999999254942,
+        "over33ms": 0
+      },
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 16.90000000037253,
+        "maximumMs": 19.5,
+        "over33ms": 0
+      }
+    ],
+    "current": [
+      {
+        "frames": 600,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.300000000745058,
+        "over33ms": 0
+      },
+      {
+        "frames": 601,
+        "medianMs": 16.699999999254942,
+        "p95Ms": 17,
+        "maximumMs": 17.199999999254942,
+        "over33ms": 0
+      },
+      {
+        "frames": 600,
+        "medianMs": 16.600000001490116,
+        "p95Ms": 17.09999999962747,
+        "maximumMs": 17.200000001117587,
+        "over33ms": 0
+      }
+    ],
+    "medianRatio": 1,
+    "limits": "Three 10s headless ANGLE windows, 1440x900 DPR1. Vsync-limited cadence, not GPU execution time or native hardware certification."
+  },
+  "differences": [
+    {
+      "phase": "resting",
+      "protectedPixelsChanged": 0,
+      "trailPixelsChanged": 1914
+    },
+    {
+      "phase": "illuminated",
+      "protectedPixelsChanged": 0,
+      "trailPixelsChanged": 1918
+    }
+  ],
+  "motion": [
+    {
+      "time": 1.2,
+      "centerX": 362.013666821838,
+      "centerY": 301.734195245081
+    },
+    {
+      "time": 2.4,
+      "centerX": 384.0323157886789,
+      "centerY": 312.8133687699614
+    },
+    {
+      "time": 3.6,
+      "centerX": 416.8549526365949,
+      "centerY": 329.38046896487026
+    }
+  ],
+  "diagnosticEnergy": {
+    "dim": 72201,
+    "full": 160092
+  },
+  "source": {
+    "changed": [
+      "src/scenes/bloom/BloomScene.tsx"
+    ],
+    "preserved": 101,
+    "newProduction": [
+      "src/scenes/bloom/trails.ts"
+    ]
+  },
+  "reference": "Owner-supplied e9db88c2-38de-4c1f-a9d2-f061b5053b89.png; conceptual comparison only, never a runtime texture",
+  "limits": "Autonomous scene-local trail animation only, not Music Intelligence. Camera/terrain/monolith/fragments/auroras/shared lighting and lake are unchanged. No BL06."
+}
