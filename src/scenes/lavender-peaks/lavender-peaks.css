@@ -2,4 +2,4 @@
 .lavender-stage canvas { display: block; width: 100%; height: 100%; }
 .lavender-brand { position: absolute; top: max(var(--scene-gutter), env(safe-area-inset-top)); left: max(var(--scene-gutter), env(safe-area-inset-left)); color: #322e50; font-size: 1.05rem; letter-spacing: 0.4em; pointer-events: none; }
 .lavender-fallback { position: absolute; top: 40%; left: var(--scene-gutter); right: var(--scene-gutter); max-width: 28rem; margin: 0 auto; padding: 1rem; background: #483c67; color: #fff4f8; border-radius: 0.5rem; }
-.lavender-stage ~ .audio-chooser .chooser-trigger { color: #322e50; text-shadow: 0 1px 8px #e7d4ed; }
+.lavender-stage ~ .experience-controls .chooser-trigger { color: #322e50; text-shadow: 0 1px 8px #e7d4ed; }

@@ -219,11 +219,11 @@ export default function BloomScene({ signal, onRenderTime, reactivity, quality }
   return (
     <section className="bloom-stage" aria-label="Bloom: a luminous fragmented halo over a tranquil lake at twilight">
       <SceneBoundary>
-        <LandscapeCanvas signal={signal} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="bloom-fallback">Bloom needs WebGL to display. You can still use the Bloom menu to choose audio.</p>}>
+        <LandscapeCanvas signal={signal} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="bloom-fallback">Bloom needs WebGL to display. You can still choose audio from the controls below.</p>}>
           <Composition reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} onRenderTime={onRenderTime} />
         </LandscapeCanvas>
       </SceneBoundary>
-      <div className="bloom-brand" aria-hidden="true">ECHO</div>
+      <div className="bloom-brand" aria-hidden="true">Bloom</div>
     </section>
   )
 }

@@ -1,0 +1,5 @@
+{
+  "status": "failed and stopped; not checkpoint evidence",
+  "observation": "Sky visible but ridge shaders did not render. Initial helper omitted console shader errors. Lint also rejected reading response.current during JSX render.",
+  "correction": "Rename GLSL reserved identifier patch to localPatch; pass response ref, read it in frame callback; collect console errors and require matched-rest pixels before playback. Fresh full capture required."
+}

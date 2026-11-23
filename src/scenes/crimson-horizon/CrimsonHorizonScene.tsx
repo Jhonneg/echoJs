@@ -253,7 +253,7 @@ export default function CrimsonHorizonScene({ signal, reactivity, quality, pilot
         <Composition quality={quality} pilot={pilot} target={target} reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} attempt={attempt} onStatus={setStatus} />
       </LandscapeCanvas>
     </SceneBoundary>
-    <div className="crimson-brand" aria-hidden="true">ECHO</div>
+    <div className="crimson-brand" aria-hidden="true">Crimson Horizon</div>
     {status !== 'ready' && <div className="crimson-status" role="status">
       {status === 'error' ? <>The landscape could not load. <button onClick={() => setAttempt(value => value + 1)}>Retry landscape</button></>
         : status === 'loading' ? 'Preparing landscape…' : 'Loading terrain…'}

@@ -110,6 +110,6 @@ export default function NocturneScene({ musicFeatures, quality, lighting, lighti
         <LightingDriver musicFeatures={musicFeatures} mode={lightingMode} manual={lighting} reactivity={reactivity} reducedMotion={reducedMotion} />
       </LandscapeCanvas>
     </SceneBoundary>
-    <div className="nocturne-brand" aria-hidden="true">ECHO</div>
+    <div className="nocturne-brand" aria-hidden="true">Nocturne</div>
   </section>
 }

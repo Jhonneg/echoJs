@@ -1,83 +1,44 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { silentSignal, SIX_BAND_NAMES } from '../src/audio/signal.ts'
-import { createLayerMotion, updateLayerMotion, updateSunPulse, ridgeHeight, TERRAIN_PERIOD } from '../src/scenes/lavender-peaks/motion.ts'
+import { createLayerMotion, updateLayerMotion, ridgeHeight, TERRAIN_PERIOD, DRIFT_SPEEDS } from '../src/scenes/lavender-peaks/motion.ts'
 import { ridges } from '../src/scenes/lavender-peaks/terrain.ts'
 
-function advance(signal, depth, seconds, hz = 60) {
+function advance(depth, seconds, hz = 60) {
   const motion = createLayerMotion()
-  for (let i = 0; i < seconds * hz; i++) updateLayerMotion(motion, signal, depth, 1, false, 1 / hz)
+  for (let i = 0; i < seconds * hz; i++) updateLayerMotion(motion, depth, false, 1 / hz)
   return motion
 }
 
-test('shared music energy moves all ridges together while preserving depth speed ratios', () => {
-  const limits = [0.15, 0.25, 0.45, 0.65, 0.9, 1.2]
-  const signal = silentSignal()
-  signal.intensity = 0.6
-  // Conflicting spectral content must no longer select individual mountains.
-  signal.sixBands.air = 1
-  const motions = limits.map((_, depth) => advance(signal, depth, 2))
-  for (const [depth, limit] of limits.entries()) {
-    assert.ok(motions[depth].speed > 0.59 * limit && motions[depth].speed <= 0.6 * limit)
-    assert.ok(Math.abs(motions[depth].offset / limit - motions[0].offset / limits[0]) < 1e-10)
-    if (depth > 0) assert.ok(motions[depth].speed > motions[depth - 1].speed)
+test('autonomous rightward drift retains depth hierarchy without any audio input', () => {
+  const motions = ridges.map((_, depth) => advance(depth, 10))
+  for (let i = 0; i < 6; i++) {
+    assert.equal(motions[i].speed, DRIFT_SPEEDS[i])
+    assert.ok(Math.abs(motions[i].offset - DRIFT_SPEEDS[i] * 10) < 1e-10)
+    if (i) assert.ok(motions[i].offset > motions[i-1].offset)
   }
-  signal.intensity = 0.2
-  assert.ok(advance(signal, 5, 2).offset < motions[5].offset)
-  signal.intensity = 0
-  for (let depth = 0; depth < 6; depth++) assert.equal(advance(signal, depth, 2).offset, 0)
 })
 
-test('higher frequency balance moves all mountains faster at equal intensity', () => {
-  const limits = [0.15, 0.25, 0.45, 0.65, 0.9, 1.2]
-  let previous = 0
-  for (const band of SIX_BAND_NAMES) {
-    const signal = silentSignal()
-    signal.intensity = 0.6
-    signal.sixBands[band] = 1
-    const motions = limits.map((_, depth) => advance(signal, depth, 2))
-    assert.ok(motions[5].speed > previous)
-    previous = motions[5].speed
-    for (let depth = 0; depth < 6; depth++) {
-      assert.ok(motions[depth].speed > 0 && motions[depth].speed <= limits[depth])
-      assert.ok(Math.abs(motions[depth].speed / limits[depth] - motions[0].speed / limits[0]) < 1e-10)
+test('travel is cadence independent through many complete wraps', () => {
+  for (let depth = 0; depth < 6; depth++) {
+    const baseline = advance(depth, 1000)
+    assert.ok(Math.abs(baseline.offset) < 1e-8 || Math.abs(baseline.offset - TERRAIN_PERIOD) < 1e-8 ||
+      Math.abs(baseline.offset - (DRIFT_SPEEDS[depth] * 1000) % TERRAIN_PERIOD) < 1e-8)
+    for (const hz of [30, 120]) {
+      const motion = advance(depth, 1000, hz)
+      const difference = Math.abs(motion.offset - baseline.offset)
+      assert.ok(difference < 1e-8 || Math.abs(difference - TERRAIN_PERIOD) < 1e-8)
     }
-    // Changing tone loudness alone must not change the normalized frequency balance.
-    signal.sixBands[band] = 0.2
-    assert.ok(Math.abs(advance(signal, 5, 2).speed - motions[5].speed) < 1e-10)
   }
 })
 
-test('travel is consistent at 30, 60 and 120 Hz and wraps seamlessly over long playback', () => {
-  const signal = silentSignal()
-  signal.intensity = 1
-  const baseline = advance(signal, 5, 150, 60)
-  for (const hz of [30, 120]) {
-    const motion = advance(signal, 5, 150, hz)
-    assert.ok(Math.abs(motion.offset - baseline.offset) < 1e-8)
-  }
-  assert.ok(baseline.offset >= 0 && baseline.offset < TERRAIN_PERIOD)
-})
-
-test('silence settles without returning; zero reactivity and reduced motion freeze immediately', () => {
-  const signal = silentSignal()
-  signal.intensity = 1
-  const motion = advance(signal, 0, 2)
-  const before = motion.offset
-  signal.intensity = 0
-  for (let i = 0; i < 300; i++) updateLayerMotion(motion, signal, 0, 1, false, 1 / 60)
-  assert.equal(motion.speed, 0)
-  assert.ok(motion.offset > before)
-  const settled = motion.offset
-  updateLayerMotion(motion, signal, 0, 1, false, 1 / 60)
-  assert.equal(motion.offset, settled)
-  signal.intensity = 1
-  for (const [gain, reduced] of [[0, false], [1, true]]) {
-    motion.speed = 0.25
-    updateLayerMotion(motion, signal, 0, gain, reduced, 1 / 60)
-    assert.equal(motion.offset, settled)
-    assert.equal(motion.speed, 0)
-  }
+test('reduced motion freezes in place; resume continues without resetting and invalid delta cannot jump', () => {
+  const motion = advance(5, 3), before = motion.offset
+  updateLayerMotion(motion, 5, true, 1)
+  assert.equal(motion.offset, before); assert.equal(motion.speed, 0)
+  for (const delta of [NaN, Infinity, -1]) updateLayerMotion(motion, 5, false, delta)
+  assert.equal(motion.offset, before)
+  updateLayerMotion(motion, 5, false, 100)
+  assert.ok(Math.abs(motion.offset - before - .24 * .05) < 1e-10)
 })
 
 test('periodic ridges agree across repeated tiles and boundary slopes', () => {
@@ -120,37 +81,4 @@ test('authored sequences keep broad variation and continuous seams over their wh
     const after = (height(-edge + epsilon) - height(-edge)) / epsilon
     assert.ok(Math.abs(before - after) < 0.002)
   }
-})
-
-
-test('shared energy makes every foreground ridge travel faster than the ridge behind it', () => {
-  const signal = silentSignal()
-  signal.intensity = 0.6
-  let previous = 0
-  for (let depth = 0; depth < 6; depth++) {
-    const motion = advance(signal, depth, 2)
-    assert.ok(motion.offset > previous)
-    previous = motion.offset
-  }
-})
-
-
-test('sun pulses on bass, remains bounded and decays, and respects disable settings', () => {
-  const signal = silentSignal()
-  signal.fast.midrange = signal.fast.treble = 1
-  signal.transient.midrange = signal.transient.treble = 1
-  assert.equal(updateSunPulse(0, signal, 1, false, 1 / 60), 0)
-  signal.fast.bass = signal.transient.bass = 1
-  let pulse = 0
-  for (let i = 0; i < 30; i++) pulse = updateSunPulse(pulse, signal, 1, false, 1 / 60)
-  assert.ok(pulse > 0.99 && pulse <= 1)
-  assert.ok(updateSunPulse(0, signal, 0.5, false, 1 / 60) < updateSunPulse(0, signal, 1, false, 1 / 60))
-  assert.equal(updateSunPulse(pulse, signal, 0, false, 1 / 60), 0)
-  assert.equal(updateSunPulse(pulse, signal, 1, true, 1 / 60), 0)
-  signal.fast.bass = signal.transient.bass = 0
-  signal.flux.bass = 1
-  assert.ok(updateSunPulse(0, signal, 1, false, 1 / 60) > 0)
-  signal.flux.bass = 0
-  for (let i = 0; i < 120; i++) pulse = updateSunPulse(pulse, signal, 1, false, 1 / 60)
-  assert.ok(pulse < 0.0002)
 })

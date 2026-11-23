@@ -1,0 +1,14 @@
+{
+  "scope": "Development verification attempts; final current/ evidence is captured after fixes. No owner media.",
+  "attempts": [
+    {
+      "result": "Interrupted",
+      "detail": "First full capture exited143 before recording/report; no audit browser remained. Rerun required."
+    },
+    {
+      "result": "Numeric integration passed, accent optical fixture failed",
+      "detail": "All regular on/off footprint/occlusion cases passed; the accent-only subtraction also changed held ridge shading because it used a later telemetry response. Fixed pair helper to return the exact held render state. This was a fixture error, not an unbounded corona. Final full capture rerun required."
+    }
+  ],
+  "additionalGuard": "Avoid undefined atan(0,0) in zero-coverage sun center; no intentional visible change."
+}

@@ -1,0 +1,354 @@
+{
+  "restComparison": {
+    "changedPixels": 0,
+    "totalPixels": 1166400,
+    "maxChannelDifference": 0,
+    "meanChannelDifference": 0
+  },
+  "wrapComparison": {
+    "changedPixels": 87,
+    "totalPixels": 1166400,
+    "maxChannelDifference": 1,
+    "meanChannelDifference": 0.000024862825788751714
+  },
+  "rows": 1074,
+  "frames": 428,
+  "renderer": {
+    "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+    "dpr": 1
+  },
+  "cost": {
+    "calls": 7,
+    "triangles": 4616,
+    "geometries": 7,
+    "textures": 0
+  },
+  "windows": [
+    {
+      "label": "bass",
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 0.04614488252128155,
+        "bass": 0.1335853825935803,
+        "lowMids": 0.000045928933190696787,
+        "highMids": 0.00000217668134987816,
+        "presence": 0.000003781086709652854,
+        "air": 0.000006924918451104451
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.000027178621658643138,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0.000014918559841169647,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.000013584948082471585,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.00020156747816586518,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0.34141857837770995,
+          "maxAccent": 0.0014633443278433112
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.15281933460938477,
+          "maxAccent": 0.0005070402422337068
+        }
+      ],
+      "meanSunPulse": 0.0730486641410926
+    },
+    {
+      "label": "lowMid",
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 0.0000034369089084343295,
+        "bass": 0.000016138921145380642,
+        "lowMids": 0.14132983521673195,
+        "highMids": 0.0000045124586899146626,
+        "presence": 0.000002858415651429311,
+        "air": 0.000006527085675481529
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.000026587171639947225,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0.00001335109284919659,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.00003062182875295686,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.3544893303590716,
+          "maxAccent": 0.001331122744573522
+        },
+        {
+          "band": "bass",
+          "sustained": 0.07898862191962056,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.035437006562162865,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 0.0001100238994382941
+    },
+    {
+      "label": "highMidQuiet",
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 4.1268030211885264e-7,
+        "bass": 2.446600793434554e-7,
+        "lowMids": 0.000008427942065943329,
+        "highMids": 0.042399011718394865,
+        "presence": 0.000002147659203091442,
+        "air": 0.000006891971972278369
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.00002754390523758763,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0.00000998107105693838,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.14227394404824825,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.08143851950744242,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0.006500691536329365,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.0029132401897411565,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 6.318471597158153e-7
+    },
+    {
+      "label": "highMidLoud",
+      "count": 31,
+      "meanEnergy": {
+        "subBass": 0.0000013228402721064043,
+        "bass": 7.777816918382849e-7,
+        "lowMids": 0.00002807887258852131,
+        "highMids": 0.14132867580163477,
+        "presence": 9.753108242302736e-7,
+        "air": 0.00000799366809376366
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.00003188565615230909,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0.000006244658769588816,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.35689953540887565,
+          "maxAccent": 0.00037401294892633655
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.006859385189721305,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0.0005422824937652628,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.00024596544257527965,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 0.0000013677183770345756
+    },
+    {
+      "label": "air",
+      "count": 31,
+      "meanEnergy": {
+        "subBass": 0.0000011402645405240506,
+        "bass": 1.261019737803554e-9,
+        "lowMids": 2.3310821715962147e-9,
+        "highMids": 6.386747575387217e-9,
+        "presence": 8.297142764562861e-8,
+        "air": 0.14132118171642155
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.3544451948117269,
+          "maxAccent": 0.0014365952757507817
+        },
+        {
+          "band": "presence",
+          "sustained": 0.0000027379263063781087,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.08134176559908496,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.0005794040243060846,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0.00004466592246487013,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.000024236372626429,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 9.225933875351488e-7
+    },
+    {
+      "label": "mixed",
+      "count": 63,
+      "meanEnergy": {
+        "subBass": 0.034609802159313724,
+        "bass": 0.10018872434742757,
+        "lowMids": 0.08479902871206822,
+        "highMids": 0.08479877475798314,
+        "presence": 0.000003654186395827146,
+        "air": 0.056532050163552436
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.18264210880261267,
+          "maxAccent": 0.0002477560102062405
+        },
+        {
+          "band": "presence",
+          "sustained": 0.000015237698184336298,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.2526436402834943,
+          "maxAccent": 0.0005667714391531575
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.2508408846787404,
+          "maxAccent": 0.000688873902543646
+        },
+        {
+          "band": "bass",
+          "sustained": 0.2833328722787631,
+          "maxAccent": 0.0008234620181298648
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.12044453689671845,
+          "maxAccent": 0.0003047384142117034
+        }
+      ],
+      "meanSunPulse": 0.05977866297295855
+    },
+    {
+      "label": "lateSilence",
+      "count": 50,
+      "meanEnergy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 0
+    }
+  ],
+  "maxHighMidAccent": 0.18183460760533923,
+  "maxHeldHighMidAccent": 0,
+  "maxBassSunPulse": 0.2022109326602552,
+  "checks": [
+    "Generated PCM through actual production analysis; constant six-ridge drift in all passages; actual sky uniform equals response; fixed camera",
+    "Quiet/loud high-mid response >2:1; bass/low-mid isolation; high-mid attacks qualified; held high mids reject low-mid attacks; music response zero in late silence",
+    "Gain0 clears music while drift continues; stale publication releases sun; reduced motion freezes drift and suppresses sun; whole-period geometry snapshots",
+    "Standard/Low and scene re-entry retain generated local source; retained events do not accent on re-entry"
+  ],
+  "sourceUnchangedDuringCapture": true,
+  "errors": []
+}

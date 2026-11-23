@@ -422,3 +422,39 @@ Owner replies “Approve all five visual criteria” and “all worked” to the
 ## 2026-11-23 — Owner skips NT14 and NT15
 
 Honor the explicit direction “we skip nt 14 and 15.” Record both roadmap phases as skipped, not successful verification or completed closeout. Preserve NT13/R5 approval, current code, existing evidence and documented limitations. No additional implementation, benchmark, handoff package, commit or push is implied. No further Noctune phase is queued.
+
+## 2026-11-23 — Direct landscape/audio actions; smaller Options scope
+
+Implement the owner's explicit UI request across all landscapes. Move existing source/landscape controls to a persistent bottom toolbar; keep status/quality/disconnect/Nocturne preview under Options. Replace per-scene ECHO labels with landscape names. Remove Reactivity/fullscreen controls from the public host and retain full-default1 scene response rather than change audio mappings. Keep local volume, reduced motion, native capture prompts and source continuity. This is separate work from NT14/NT15, which remain skipped. No new dependency, global desktop change or commit authorization.
+
+## 2026-11-23 — Public controls visually approved
+
+Owner says “looks good” after reviewing the updated interface. Record the UI task as approved; preserve current implementation. No further change, commit or push is authorized by this feedback.
+
+
+## Lavender Peaks LP01 execution choices — 2026-11-23
+
+Owner explicitly selects continuous gentle drift rather than retaining audio-dependent travel, and the attached three-panel storyboard plus written description rather than waiting for an animated orb reference. Preserve six authored profiles and approved UI; do not restore a public speed/Reactivity/fullscreen control. Begin with fixed silhouettes and independent band shading. Exact far-to-near air/presence/highMids/lowMids/bass/subBass mapping and initial scene constants are proposed in the authoritative Lavender roadmap for approval before LP02, not claimed as an existing contract.
+
+Retain the established generated-capture + owner live/text-only listening evidence policy: no owner media recording or inspection. LP01 is an audit with documentation and temporary-copy probes only. Shared Music Intelligence, other scenes and existing uncommitted work remain untouched. Visual approvals after LP04/LP07 and LP09 closeout are still mandatory; no commit/push authorized.
+
+
+## Lavender Peaks LP02 approval and scope — 2026-11-23
+
+Owner “proceed” after LP01 accepts the documented mapping and authorizes the MI migration. Implement six-band scalar response/lifecycle foundations and the approved autonomous drift now, while retaining existing sun shader and ridge gradients. LP03 makes the independent ridge responses visible; do not introduce corona/contour illumination early. No existing MI engine change is needed. Read the borrowed view once/frame, copy bounded scalars, qualify broad events with own-band rises, seed sequence on session/re-entry, and clear musical events on invalid/disabled/reduced input.
+
+Keep live scalar sampling in reduced motion to avoid stale demand-rendered response. This has a rendering-duty cost versus prior reduced-mode demand rendering; record it for LP08 rather than claiming identical power/performance. Source hashes preserve the other88existing source files and prior UI work. Live real-song observations remain pending, not approved by “proceed.” Stop at LP02 review; no commit/push.
+
+
+## Lavender Peaks LP03 — shading before deformation (2026-11-23)
+
+Owner “proceed” after LP02 authorizes independent six-ridge visual behavior. Keep authored profiles fixed, as selected in the migration plan. Vary only existing materials: softer high-frequency distant response, more expressive middle slopes, slower weighted foreground. Separate sustain from brief qualified-event tint patches; reserve travelling contours for LP06 and the small corona for LP04. Existing drift, sun, camera, palette, quality/UI and other landscapes remain unchanged.
+
+Use local periodic color fields rather than vertex displacement, tile-local discontinuities or shared global-intensity flashes. Band-specific attack/release settings now belong with the corresponding visual weights. Use a source-time held-state ablation to compare the original LP02 gradient against LP03 under identical geometry/sun/input; this is a renderer comparison, not a recording of owner audio or a native-device performance certificate. Retain actual failure evidence separately, and require console/pixel checks before accepting generated browser captures.
+
+
+## Lavender Peaks LP04 — small corona candidate (2026-11-23)
+
+Owner “proceed” after LP03 authorizes LP04 only. Extend the existing sky shader rather than adding another renderer/effect stack. Keep the sun core fixed and replace its interim rigid bass pulse with small irregular strand deformation and local accents. Hard outer radius1.35×sun radius; three translucent ivory/rose strands, no particles, orange wireframe or full-screen exposure change. Existing six ridge shading, geometry, drift, camera and UI are untouched.
+
+Separate autonomous rest, sustained envelope/detail and qualified-event accents. Low mids alone retain only intrinsic rest. Accent sensitivity is a bounded scene-local2.5 multiplier, preserving shared MI extraction unchanged. Reduced motion freezes strand shape; zero Reactivity preserves faint autonomous rest. Use generated recordings and text-only owner listening; no private media capture. Stop after LP04 for explicit owner approval of corona scale/motion before LP05 illumination, as required by the roadmap. No commit/push.

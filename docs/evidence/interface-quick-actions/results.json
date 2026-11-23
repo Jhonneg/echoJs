@@ -1,0 +1,188 @@
+{
+  "source": "Production build, fresh headless Brave/CDP profile, generated local WAV only. Play wrapper observes the real generated element; sharing rejection explicitly mocked, native picker/audibility not verified.",
+  "errors": [],
+  "screenshots": [
+    "bloom-toolbar",
+    "nocturne-toolbar",
+    "lavender-peaks-toolbar",
+    "crimson-horizon-toolbar",
+    "desktop-player",
+    "desktop-options",
+    "portrait-toolbar",
+    "portrait-options",
+    "narrow-toolbar",
+    "narrow-options",
+    "short-toolbar",
+    "short-options"
+  ],
+  "checks": [
+    "External landscape/source controls; four matching scene titles; generated playback and same audio element retained across all scenes/quality",
+    {
+      "viewport": "portrait",
+      "bounds": {
+        "viewport": [
+          390,
+          844
+        ],
+        "page": [
+          390,
+          844
+        ],
+        "items": [
+          {
+            "selector": "#scene-select",
+            "x": 20,
+            "y": 621.640625,
+            "right": 253.125,
+            "bottom": 665.640625,
+            "width": 233.125,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".primary-button",
+            "x": 20,
+            "y": 675.234375,
+            "right": 190.203125,
+            "bottom": 719.234375,
+            "width": 170.203125,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".file-button",
+            "x": 199.796875,
+            "y": 675.234375,
+            "right": 370,
+            "bottom": 719.234375,
+            "width": 170.203125,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".chooser-trigger",
+            "x": 262.71875,
+            "y": 621.640625,
+            "right": 370,
+            "bottom": 665.640625,
+            "width": 107.28125,
+            "height": 44,
+            "hit": true
+          }
+        ]
+      }
+    },
+    {
+      "viewport": "narrow",
+      "bounds": {
+        "viewport": [
+          320,
+          568
+        ],
+        "page": [
+          320,
+          568
+        ],
+        "items": [
+          {
+            "selector": "#scene-select",
+            "x": 20,
+            "y": 345.640625,
+            "right": 183.125,
+            "bottom": 389.640625,
+            "width": 163.125,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".primary-button",
+            "x": 20,
+            "y": 399.234375,
+            "right": 155.203125,
+            "bottom": 443.234375,
+            "width": 135.203125,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".file-button",
+            "x": 164.796875,
+            "y": 399.234375,
+            "right": 300,
+            "bottom": 443.234375,
+            "width": 135.203125,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".chooser-trigger",
+            "x": 192.71875,
+            "y": 345.640625,
+            "right": 300,
+            "bottom": 389.640625,
+            "width": 107.28125,
+            "height": 44,
+            "hit": true
+          }
+        ]
+      }
+    },
+    {
+      "viewport": "short",
+      "bounds": {
+        "viewport": [
+          844,
+          390
+        ],
+        "page": [
+          844,
+          390
+        ],
+        "items": [
+          {
+            "selector": "#scene-select",
+            "x": 33.75,
+            "y": 207.484375,
+            "right": 232.75,
+            "bottom": 251.484375,
+            "width": 199,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".primary-button",
+            "x": 242.34375,
+            "y": 207.484375,
+            "right": 334.515625,
+            "bottom": 251.484375,
+            "width": 92.171875,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".file-button",
+            "x": 344.109375,
+            "y": 207.484375,
+            "right": 456.203125,
+            "bottom": 251.484375,
+            "width": 112.09375,
+            "height": 44,
+            "hit": true
+          },
+          {
+            "selector": ".chooser-trigger",
+            "x": 465.796875,
+            "y": 207.484375,
+            "right": 573.078125,
+            "bottom": 251.484375,
+            "width": 107.28125,
+            "height": 44,
+            "hit": true
+          }
+        ]
+      }
+    },
+    "Keyboard Options open/Escape focus, responsive action hit targets/panel bounds, real generated pause/play/disconnect and file focus restore, external Share action with mocked denial"
+  ],
+  "status": "passed"
+}

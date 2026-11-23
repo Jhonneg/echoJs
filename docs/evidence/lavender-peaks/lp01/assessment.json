@@ -1,0 +1,173 @@
+{
+  "windows": [
+    {
+      "label": "bass",
+      "start": 3,
+      "end": 4.8,
+      "count": 29,
+      "meanEnergy": {
+        "subBass": 0.046145621926049596,
+        "bass": 0.1335751980807955,
+        "lowMids": 0.00004499753198299288,
+        "highMids": 0.0000021363591023098104,
+        "presence": 0.0000037807838529281026,
+        "air": 0.000006924448254240111
+      },
+      "meanLegacyIntensity": 0.37504482696854025,
+      "meanContextIntensity": 0.12703303908432376,
+      "meanNearestSpeed": 0.1613460769319736,
+      "meanSunPulse": 0.11679920851050105,
+      "maxSunPulse": 0.1704132224519443
+    },
+    {
+      "label": "lowMid",
+      "start": 6,
+      "end": 7.8,
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 0.0000034192155984921218,
+        "bass": 0.000016200628425387893,
+        "lowMids": 0.14132040104271174,
+        "highMids": 0.000004502155180473455,
+        "presence": 0.000002858189073440682,
+        "air": 0.000006526480687691505
+      },
+      "meanLegacyIntensity": 0.4484511421305432,
+      "meanContextIntensity": 0.140937639897485,
+      "meanNearestSpeed": 0.2956150316609396,
+      "meanSunPulse": 0.00037978854048109693,
+      "maxSunPulse": 0.002653949757974038
+    },
+    {
+      "label": "highMidQuiet",
+      "start": 9,
+      "end": 10.8,
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 3.9788822632479954e-7,
+        "bass": 2.104368642738902e-7,
+        "lowMids": 0.000008414586205809613,
+        "highMids": 0.042396191710254966,
+        "presence": 0.0000021475908881794613,
+        "air": 0.000006891509083073922
+      },
+      "meanLegacyIntensity": 0.300504403033329,
+      "meanContextIntensity": 0.07220691931729979,
+      "meanNearestSpeed": 0.2664021701000304,
+      "meanSunPulse": 5.103183849558451e-10,
+      "maxSunPulse": 3.734269672628442e-9
+    },
+    {
+      "label": "highMidLoud",
+      "start": 12,
+      "end": 13.8,
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 0.0000013248687234967456,
+        "bass": 8.296863452883477e-7,
+        "lowMids": 0.00002809645906239651,
+        "highMids": 0.14131925490290628,
+        "presence": 9.745277976878567e-7,
+        "air": 0.00000799322495182353
+      },
+      "meanLegacyIntensity": 0.4183890673123928,
+      "meanContextIntensity": 0.1325784065550728,
+      "meanNearestSpeed": 0.3477810015096895,
+      "meanSunPulse": 5.082867945973726e-16,
+      "maxSunPulse": 3.558810848286779e-15
+    },
+    {
+      "label": "air",
+      "start": 15,
+      "end": 16.8,
+      "count": 33,
+      "meanEnergy": {
+        "subBass": 0.0000011400674415139684,
+        "bass": 1.4539307214228829e-9,
+        "lowMids": 2.573730472571505e-9,
+        "highMids": 6.7077719910427595e-9,
+        "presence": 8.31489008729759e-8,
+        "air": 0.14131177734731745
+      },
+      "meanLegacyIntensity": 0.45050686762526926,
+      "meanContextIntensity": 0.14098805304990644,
+      "meanNearestSpeed": 0.5402651136515733,
+      "meanSunPulse": 7.728379822349172e-22,
+      "maxSunPulse": 5.767332928658147e-21
+    },
+    {
+      "label": "mixed",
+      "start": 45,
+      "end": 48.8,
+      "count": 63,
+      "meanEnergy": {
+        "subBass": 0.034609224766066767,
+        "bass": 0.10018148317451644,
+        "lowMids": 0.08479338260382488,
+        "highMids": 0.0847931319047409,
+        "presence": 0.0000036477625602778443,
+        "air": 0.05652828861352578
+      },
+      "meanLegacyIntensity": 0.4784265070796375,
+      "meanContextIntensity": 0.164390682450348,
+      "meanNearestSpeed": 0.3442976754485025,
+      "meanSunPulse": 0.09580705536109665,
+      "maxSunPulse": 0.15042111985312437
+    },
+    {
+      "label": "lateSilence",
+      "start": 61,
+      "end": 64.5,
+      "count": 50,
+      "meanEnergy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "meanLegacyIntensity": 0.0006452780066884295,
+      "meanContextIntensity": 0.00002500552861612305,
+      "meanNearestSpeed": 0.0005670097385765183,
+      "meanSunPulse": 3.486746241719855e-26,
+      "maxSunPulse": 4.197675844197835e-25
+    }
+  ],
+  "rows": 1076,
+  "frames": 424,
+  "sourceUnchanged": true,
+  "loop": {
+    "seconds": 90.361,
+    "wraps": [
+      0,
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sampledP95FrameMs": 17,
+    "qualification": "Headless instrumented development build; cadence is not target-device performance certification."
+  },
+  "gpu": {
+    "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+    "dpr": 1
+  },
+  "drawCost": {
+    "calls": 7,
+    "triangles": 4616,
+    "geometries": 7,
+    "textures": 0
+  },
+  "wrapPixelFilesIdentical": false,
+  "errors": [],
+  "maxScreenshotBracketSeconds": 0.21333300000000044,
+  "wrapComparison": {
+    "changedPixels": 87,
+    "totalPixels": 1166400,
+    "maxChannelDifference": 1,
+    "meanChannelDifference": 0.000024862825788751714,
+    "qualification": "Not byte-identical; subpixel rasterization roundoff at whole-period translation."
+  }
+}

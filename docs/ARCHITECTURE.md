@@ -231,3 +231,37 @@ Three evidence layers now verify the existing interface: explicit MusicFeatures 
 ## Nocturne NT13 — separate final point spill
 
 Owner-approved Audio readability correction adds a stable spill record to the unified visual state. Derive bounded final point values from each fixture's own level (main1.5, windows/details2, others1; Manual1), then the renderer adapter multiplies by original point full intensity. Emission/reflection-source levels and all controllers stay unchanged. No response logic moves into LightingDriver; no new light/pass/material or audio dependency. [Applied verification](reports/nocturne/NT13_SPILL_IMPLEMENTATION.md).
+
+## Public controls update — 2026-11-23
+
+Owner's direct-controls request supersedes the earlier M05 layout: each scene shows its own name at the top left; a shared bottom toolbar exposes `#scene-select`, Share a tab and Open audio file outside `details.audio-chooser`. The summary is now Options, containing status, disconnect/cancel, quality and Nocturne's existing Audio/Manual preview. Local player/volume remains outside the panel. The toolbar/player wrap together on smaller viewports; open mobile Options temporarily hides the player as before. Pointer dismissal leaves focus on the clicked action; Escape/Close restore Options focus, disconnect restores the external source control.
+
+App no longer mounts FullscreenControls or owns adjustable Reactivity state: scene inputs retain the existing constant1 default. The historical fullscreen utility and scene Reactivity contracts remain in source; no shared analysis/render response rewrite. Source adapters and source lifetime stay unchanged across scene/quality selection. Scene edits are label text only, plus updated Bloom fallback copy; geometry/cameras/materials are unchanged. Lavender's light-background Options color rule now targets the new wrapper.
+
+
+## Lavender Peaks LP01 audit — 2026-11-23
+
+The current runtime remains legacy: App passes `analysis.signal`; all six ridge offsets consume the same overall-intensity × six-band spectral-balance drive, with depth speed limits .15/.25/.45/.65/.9/1.2. Sun pulse alone consumes broad bass fast/transient/flux. The current shared-response refinements supersede historical L02/L03 independent mappings above. Ridge geometry and gradients are static; the level orthographic R3F scene uses seven opaque shader meshes, not physical lighting. Shared camera tilt is disabled.
+
+The [Lavender roadmap audit](LAVENDER_PEAKS_MUSIC_INTELLIGENCE_ROADMAP.md#lp01-audit-and-proposed-migration--2026-11-23) documents the complete inventory, baseline and proposed reader-only migration. Music Intelligence is already enabled centrally, but not consumed by Lavender. `MusicFeatureReader.read()` returns a borrowed reused view, not an immutable snapshot; histories must copy bounded scalars. The host already accepts no AudioSignal with `cameraTilt={false}`, so no shared-host change is required. Proposed independent shading/qualified contour accents and autonomous drift are not implemented or approved through this audit. All91 production source hashes are unchanged.
+
+
+## Lavender Peaks LP02 — reader-only integration (2026-11-23)
+
+Owner continuation approves the LP01 design. This supersedes the current-runtime legacy description above: App passes only `musicFeatures`; `response.ts` owns bounded six-band scalar histories, independent sustained levels and qualified broad onset accents with session/freshness/sequence guards. No `AudioSignal` reaches Lavender or its disabled camera tilt. Fixed autonomous drift replaces all audio-driven speeds; silence/gain0 retain movement, reduced motion freezes it. Existing sun shader receives calibrated low sustain plus qualified low attacks. The original gradients/geometry/camera remain unchanged; visible ridge shading is LP03, procedural corona LP04.
+
+Continuous frame sampling (including reduced mode) allows incoming scalar response/fades without a new invalidation scheduler. Reduced mode suppresses travel/accents/sun pulse, retaining calm sustained values. History storage is6656typed bytes, no per-frame React state or new renderer resources. The [LP02 checkpoint](LAVENDER_PEAKS_MUSIC_INTELLIGENCE_ROADMAP.md#lp02-migration-checkpoint--2026-11-23) distinguishes verified numeric response from future visible ridge delivery and pending hardware/music acceptance. Other landscapes and shared analysis are unchanged.
+
+
+## Lavender Peaks LP03 — independent ridge shading (2026-11-23)
+
+Owner continuation authorizes LP03. Each existing ridge material now receives only its assigned scene response's `sustained`/`accent` uniforms. Stable memoized uniforms/material refs are updated in frame callbacks: response/motion at priority-1, material delivery at-.5, automatic rendering retained. Context7 R3F9.8.2 objects/hooks documentation confirms ref uniform mutation and negative callback ordering. No frame-rate React state, new geometries, lights, passes, textures or engine changes.
+
+`shading.ts` defines per-layer pastel tint/upper strength, restrained lower-slope weighting, stationary accent masks and attack/release settings. Upper tint follows the existing vertical gradient plus a smooth24-unit periodic horizontal variation; the brief accent is a bounded soft patch with a different integer harmonic. All spatial fields repeat with authored terrain. Geometry and normals remain static; no travelling contour or corona is added early. Foreground responses are slower and retain darker lower slopes. Zero musical values restore the exact base gradient. The LP03 checkpoint in the authoritative Lavender roadmap contains rendered attribution and review status; owner music/visual approval is separate from controlled tests.
+
+
+## Lavender Peaks LP04 — bounded 2D corona (2026-11-23)
+
+The existing sky ShaderMaterial now draws the pale fixed-size sun plus three coherent wavy strands. `corona.ts` owns adjustable bounds and a separate scene-local state: integrated intrinsic phase, smoothed low-band envelope, high-mid/upper-band detail, and low/qualified-high-mid/high accents from existing ridge responses. No new analyzer, media access, geometry, lights, passes, textures or frame-rate React state. The obsolete intermediate sunPulse/sunSustained path is removed from response.ts; ridge qualification/shading/dynamics remain intact.
+
+Core radius and sun center remain .75/[1.6,1.9]; new strand influence is clipped/faded within1.35×core radius. Existing static sky wash/haze stays unchanged; rigid musical scaling and haze pumping are removed. Antialiasing uses fwidth before the localized branch (Three r186 official shader example checked through Context7). Opaque ridge meshes naturally occlude the sky effect. Harmonic edge functions are deterministic/angle-periodic; all phase coefficients are hundredths, allowing a continuous628.3185s intrinsic-clock wrap. Zero gain retains intrinsic rest, stale input releases modulation, sessions clear old modulation without resetting phase, reduced motion freezes phase/shape and suppresses event accents while brightness may follow calm smoothing. Environmental illumination stays LP05.

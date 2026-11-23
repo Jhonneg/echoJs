@@ -1,0 +1,103 @@
+{
+  "rate": 48000,
+  "seconds": 65,
+  "sections": [
+    {
+      "start": 0,
+      "end": 2,
+      "label": "silence"
+    },
+    {
+      "start": 2,
+      "end": 5,
+      "label": "bass100Hz sustain"
+    },
+    {
+      "start": 5,
+      "end": 8,
+      "label": "low-mid450Hz sustain"
+    },
+    {
+      "start": 8,
+      "end": 11,
+      "label": "quiet high-mid1000Hz sustain"
+    },
+    {
+      "start": 11,
+      "end": 14,
+      "label": "loud high-mid1000Hz sustain"
+    },
+    {
+      "start": 14,
+      "end": 17,
+      "label": "high8000Hz sustain"
+    },
+    {
+      "start": 17,
+      "end": 19,
+      "label": "silence release"
+    },
+    {
+      "start": 19,
+      "end": 22,
+      "label": "isolated100Hz attacks"
+    },
+    {
+      "start": 22,
+      "end": 25,
+      "label": "isolated1000Hz attacks"
+    },
+    {
+      "start": 25,
+      "end": 28,
+      "label": "isolated8000Hz attacks"
+    },
+    {
+      "start": 28,
+      "end": 33,
+      "label": "bass+held1000Hz, bass attacks only"
+    },
+    {
+      "start": 33,
+      "end": 38,
+      "label": "low-mid450Hz attacks near held1000Hz"
+    },
+    {
+      "start": 38,
+      "end": 44,
+      "label": "rising/falling1000Hz dynamics"
+    },
+    {
+      "start": 44,
+      "end": 49,
+      "label": "dense100/450/1000/8000Hz mix"
+    },
+    {
+      "start": 49,
+      "end": 65,
+      "label": "silence recovery"
+    }
+  ],
+  "attacks": {
+    "low": [
+      19.2,
+      20.1,
+      29,
+      31
+    ],
+    "mid": [
+      22.2,
+      23.1
+    ],
+    "high": [
+      25.2,
+      26.1
+    ],
+    "lowMid": [
+      34,
+      35.4,
+      36.8
+    ]
+  },
+  "peak": 0.49507533623818056
+}

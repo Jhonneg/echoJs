@@ -19,24 +19,29 @@ button, .file-button, select { min-height: 44px; border: 1px solid #83718f; bord
 button, select { cursor: pointer; }
 button:disabled { opacity: 0.5; cursor: default; }
 button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid #f6d5ec; outline-offset: 3px; }
-.audio-chooser { position: absolute; z-index: 2; left: max(var(--scene-gutter), env(safe-area-inset-left)); bottom: max(var(--scene-gutter), env(safe-area-inset-bottom)); }
+.experience-controls { position: absolute; z-index: 2; left: max(var(--scene-gutter), env(safe-area-inset-left)); right: max(var(--scene-gutter), env(safe-area-inset-right)); bottom: max(var(--scene-gutter), env(safe-area-inset-bottom)); display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; pointer-events: none; }
+.experience-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; max-width: 100%; pointer-events: auto; }
+.landscape-switcher { min-width: 0; }
+.landscape-switcher select { max-width: 100%; font-size: 0.8rem; }
+.audio-chooser { position: static; }
 .chooser-trigger { display: flex; align-items: center; gap: 0.7rem; min-height: 44px; width: fit-content; padding: 0.4rem 0.15rem; color: #f6d5ec; font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; list-style: none; text-shadow: 0 1px 8px #101322; }
 .chooser-trigger::-webkit-details-marker { display: none; }
 .chooser-trigger svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.2; }
 .audio-chooser[open] > .chooser-trigger svg { transform: rotate(180deg); }
-.audio-controls { position: absolute; bottom: calc(100% + 0.65rem); left: 0; width: min(22rem, calc(100vw - var(--scene-gutter) - var(--scene-gutter))); max-height: calc(100vh - var(--scene-gutter) - var(--scene-gutter) - 3.5rem); max-height: calc(100dvh - var(--scene-gutter) - var(--scene-gutter) - 3.5rem); overflow-y: auto; overscroll-behavior: contain; padding: 1rem; border: 1px solid #65546f; border-radius: 0.75rem; background: rgb(18 19 31 / 97%); box-shadow: 0 12px 48px rgb(0 0 0 / 25%); font-size: 0.8rem; }
+.audio-controls { position: absolute; bottom: calc(100% + 0.65rem); left: 0; width: min(22rem, calc(100vw - var(--scene-gutter) - var(--scene-gutter))); max-height: max(3rem, calc(100dvh - var(--scene-gutter) - var(--scene-gutter) - 8rem)); overflow-y: auto; overscroll-behavior: contain; padding: 1rem; border: 1px solid #65546f; border-radius: 0.75rem; background: rgb(18 19 31 / 97%); box-shadow: 0 12px 48px rgb(0 0 0 / 25%); font-size: 0.8rem; }
 .chooser-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .chooser-header h2 { margin: 0; font-size: 1rem; font-weight: 500; }
 .chooser-close { width: 44px; flex-shrink: 0; padding: 0; font-size: 1.4rem; border-color: transparent; background: transparent; }
 .audio-controls p { margin: 0.5rem 0 0; }
 .source-status, .source-help { color: #cfc0d6; }
 .file-name { color: #f6d5ec; overflow-wrap: anywhere; }
-.source-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+.source-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0; }
+.source-actions > * { font-size: 0.8rem; }
 .primary-button { background: #c69ab7; border-color: #c69ab7; color: #171421; }
 .file-button { position: relative; display: inline-flex; align-items: center; overflow: hidden; cursor: pointer; }
 .file-button input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
 .file-button:focus-within { outline: 2px solid #f6d5ec; outline-offset: 3px; }
-.scene-player { position: absolute; z-index: 2; right: max(var(--scene-gutter), env(safe-area-inset-right)); bottom: max(var(--scene-gutter), env(safe-area-inset-bottom)); width: min(20rem, calc(100vw - var(--scene-gutter) - var(--scene-gutter))); display: grid; gap: 0.45rem; padding: 0.65rem 0.75rem; border: 1px solid #65546f; border-radius: 0.75rem; background: rgb(18 19 31 / 88%); box-shadow: 0 8px 32px rgb(0 0 0 / 22%); font-size: 0.75rem; }
+.scene-player { pointer-events: auto; margin-left: auto; width: min(20rem, calc(100vw - var(--scene-gutter) - var(--scene-gutter))); display: grid; gap: 0.45rem; padding: 0.65rem 0.75rem; border: 1px solid #65546f; border-radius: 0.75rem; background: rgb(18 19 31 / 88%); box-shadow: 0 8px 32px rgb(0 0 0 / 22%); font-size: 0.75rem; }
 .scene-player-title { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #f6d5ec; }
 .scene-player-actions { display: flex; align-items: center; gap: 0.65rem; }
 .scene-player-actions .slider-control { flex: 1; min-width: 0; }
@@ -47,12 +52,15 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .slider-control input { flex: 1; width: 0; min-width: 2rem; accent-color: #c69ab7; }
 .slider-control output { min-width: 2.5rem; text-align: right; font-variant-numeric: tabular-nums; }
 .quality-control { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; color: #d2c5da; }
-.fullscreen-controls { display: grid; gap: 0.35rem; }
-.fullscreen-hint { color: #c4b6cf; font-size: 0.7rem; }
-.fullscreen-message:empty { display: none; }
 .audio-controls .privacy-note { margin-top: 1rem; color: #a99db6; font-size: 0.7rem; }
 @media (max-width: 360px) { .audio-controls { padding: 0.8rem; } }
 @media (max-width: 740px) {
-  .scene-player { left: max(var(--scene-gutter), env(safe-area-inset-left)); right: auto; bottom: calc(max(var(--scene-gutter), env(safe-area-inset-bottom)) + 3.5rem); }
-  .audio-chooser[open] ~ .scene-player { display: none; }
+  .experience-toolbar { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "landscape options" "sources sources"; }
+  .landscape-switcher { grid-area: landscape; }
+  .landscape-switcher select { width: 100%; }
+  .source-actions { grid-area: sources; }
+  .source-actions > * { flex: 1; justify-content: center; min-width: 0; }
+  .audio-chooser { grid-area: options; }
+  .scene-player { width: 100%; }
+  .experience-controls:has(.audio-chooser[open]) .scene-player { display: none; }
 }

@@ -1,0 +1,164 @@
+{
+  "status": "passed bounded visible corona, mountain occlusion, dynamic range and separate mid accent",
+  "method": "Actual paired on/off PNGs; fixed offsets/time; pixel footprint from fixed orthographic framing and independently sampled authored profiles.1px Standard/2px Low tolerance;3px mountain-edge exclusion. Changes in projected ridge interiors must stay zero apart from1level roundoff.",
+  "cases": {
+    "rest": {
+      "changedPixels": 1767,
+      "totalAbsoluteChannelDifference": 12194,
+      "maxChannelDifference": 9,
+      "bbox": [
+        767,
+        216,
+        887,
+        285
+      ],
+      "maximumVisibleRadius": 0.9116002902386754,
+      "maximumVisibleRadiusRatio": 1.2154670536515673,
+      "outsideFootprintPixels": 0,
+      "mountainInteriorLeaks": 0,
+      "clippedWhitePixels": 0
+    },
+    "strong": {
+      "changedPixels": 1936,
+      "totalAbsoluteChannelDifference": 28099,
+      "maxChannelDifference": 21,
+      "bbox": [
+        766,
+        216,
+        887,
+        286
+      ],
+      "maximumVisibleRadius": 0.9610022774317867,
+      "maximumVisibleRadiusRatio": 1.281336369909049,
+      "outsideFootprintPixels": 0,
+      "mountainInteriorLeaks": 0,
+      "clippedWhitePixels": 0
+    },
+    "isolated-bass": {
+      "changedPixels": 1815,
+      "totalAbsoluteChannelDifference": 18635,
+      "maxChannelDifference": 16,
+      "bbox": [
+        767,
+        216,
+        886,
+        285
+      ],
+      "maximumVisibleRadius": 0.9195111124239097,
+      "maximumVisibleRadiusRatio": 1.226014816565213,
+      "outsideFootprintPixels": 0,
+      "mountainInteriorLeaks": 0,
+      "clippedWhitePixels": 0
+    },
+    "isolated-low-mid": {
+      "changedPixels": 1767,
+      "totalAbsoluteChannelDifference": 12194,
+      "maxChannelDifference": 9,
+      "bbox": [
+        767,
+        216,
+        887,
+        285
+      ],
+      "maximumVisibleRadius": 0.9116002902386754,
+      "maximumVisibleRadiusRatio": 1.2154670536515673,
+      "outsideFootprintPixels": 0,
+      "mountainInteriorLeaks": 0,
+      "clippedWhitePixels": 0
+    },
+    "isolated-high-mid": {
+      "changedPixels": 1787,
+      "totalAbsoluteChannelDifference": 15910,
+      "maxChannelDifference": 13,
+      "bbox": [
+        767,
+        216,
+        886,
+        285
+      ],
+      "maximumVisibleRadius": 0.9195111124239097,
+      "maximumVisibleRadiusRatio": 1.226014816565213,
+      "outsideFootprintPixels": 0,
+      "mountainInteriorLeaks": 0,
+      "clippedWhitePixels": 0
+    },
+    "isolated-air": {
+      "changedPixels": 1776,
+      "totalAbsoluteChannelDifference": 13035,
+      "maxChannelDifference": 10,
+      "bbox": [
+        767,
+        216,
+        887,
+        284
+      ],
+      "maximumVisibleRadius": 0.9116002902386754,
+      "maximumVisibleRadiusRatio": 1.2154670536515673,
+      "outsideFootprintPixels": 0,
+      "mountainInteriorLeaks": 0,
+      "clippedWhitePixels": 0
+    },
+    "qualified-mid-accent": {
+      "changedPixels": 1857,
+      "totalAbsoluteChannelDifference": 18045,
+      "maxChannelDifference": 15,
+      "bbox": [
+        767,
+        215,
+        887,
+        285
+      ],
+      "maximumVisibleRadius": 0.9420303205462829,
+      "maximumVisibleRadiusRatio": 1.2560404273950438,
+      "outsideFootprintPixels": 0,
+      "mountainInteriorLeaks": 0,
+      "clippedWhitePixels": 0
+    },
+    "low-quality": {
+      "changedPixels": 2062,
+      "totalAbsoluteChannelDifference": 18645,
+      "maxChannelDifference": 13,
+      "bbox": [
+        766,
+        216,
+        887,
+        284
+      ],
+      "maximumVisibleRadius": 0.9399894929804167,
+      "maximumVisibleRadiusRatio": 1.253319323973889,
+      "outsideFootprintPixels": 0,
+      "mountainInteriorLeaks": 0,
+      "clippedWhitePixels": 0
+    }
+  },
+  "midAccent": {
+    "changedPixels": 1655,
+    "totalAbsoluteChannelDifference": 9056,
+    "maxChannelDifference": 14,
+    "bbox": [
+      768,
+      215,
+      887,
+      280
+    ],
+    "maximumVisibleRadius": 0.9420303205462829,
+    "maximumVisibleRadiusRatio": 1.2560404273950438,
+    "outsideFootprintPixels": 0,
+    "mountainInteriorLeaks": 0,
+    "clippedWhitePixels": 0
+  },
+  "temporal": {
+    "rest": {
+      "samples": 54,
+      "seconds": 7.94989999999851,
+      "firstPhase": 0.05,
+      "lastPhase": 7.99989999999851
+    },
+    "strong": {
+      "samples": 54,
+      "seconds": 7.949599999999624,
+      "firstPhase": 0.05009999999962747,
+      "lastPhase": 7.999699999999251
+    }
+  }
+}

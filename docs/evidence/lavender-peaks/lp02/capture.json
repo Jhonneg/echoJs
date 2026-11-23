@@ -1,0 +1,3117 @@
+{
+  "source": "Fresh headless Brave/CDP, isolated production-build copy, generated WAV only. No captured or owner media.",
+  "temporary": "/tmp/echo-lavender-lp02-yyI6Uo",
+  "errors": [],
+  "snapshots": [
+    {
+      "name": "matched-rest",
+      "row": {
+        "now": 1.5555,
+        "audioTime": null,
+        "dt": 0.0165,
+        "features": {
+          "version": 1,
+          "session": 0,
+          "frame": 0,
+          "updatedAtSeconds": 0,
+          "status": "inactive",
+          "sampleRate": 0,
+          "fftSize": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          }
+        },
+        "response": {
+          "fresh": false,
+          "session": 0,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0.03
+          },
+          {
+            "offset": 0,
+            "speed": 0.05
+          },
+          {
+            "offset": 0,
+            "speed": 0.09
+          },
+          {
+            "offset": 0,
+            "speed": 0.13
+          },
+          {
+            "offset": 0,
+            "speed": 0.18
+          },
+          {
+            "offset": 0,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "no-audio-drift",
+      "row": {
+        "now": 2.6720999999996273,
+        "audioTime": null,
+        "dt": 0.016599999999627472,
+        "features": {
+          "version": 1,
+          "session": 0,
+          "frame": 0,
+          "updatedAtSeconds": 0,
+          "status": "inactive",
+          "sampleRate": 0,
+          "fftSize": 0,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          }
+        },
+        "response": {
+          "fresh": false,
+          "session": 0,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.02999400000002233,
+            "speed": 0.03
+          },
+          {
+            "offset": 0.04999000000003725,
+            "speed": 0.05
+          },
+          {
+            "offset": 0.08998200000006706,
+            "speed": 0.09
+          },
+          {
+            "offset": 0.12997400000009682,
+            "speed": 0.13
+          },
+          {
+            "offset": 0.17996400000013413,
+            "speed": 0.18
+          },
+          {
+            "offset": 0.23995200000017863,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.02999400000002233,
+          0.04999000000003725,
+          0.08998200000006706,
+          0.12997400000009682,
+          0.17996400000013413,
+          0.23995200000017863
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "bass",
+      "row": {
+        "now": 6.555299999998883,
+        "audioTime": 3.522667,
+        "dt": 0.016699999999254943,
+        "features": {
+          "version": 1,
+          "session": 4,
+          "frame": 224,
+          "updatedAtSeconds": 6.538399999999999,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0.14133102417604573,
+            "mid": 0.00004012810024377654,
+            "high": 0.000007439129514335148,
+            "overall": 0.14133103006861267,
+            "six": {
+              "subBass": 0.046168676469343736,
+              "bass": 0.13357736225767855,
+              "lowMids": 0.000039995929414291526,
+              "highMids": 0.0000019200197795795854,
+              "presence": 0.000003780216967455243,
+              "air": 0.000006924896469812862
+            }
+          },
+          "sequence": 1,
+          "events": [
+            {
+              "session": 4,
+              "sequence": 1,
+              "band": "low",
+              "timeSeconds": 5.0551,
+              "emittedAtSeconds": 5.1052,
+              "strength": 0.14132297697549376
+            }
+          ],
+          "context": {
+            "intensity": 0.12182813292367202,
+            "brightness": 0.00000212306610986444,
+            "brightnessValid": true,
+            "activity": 0.03338634408744027,
+            "session": 1,
+            "time": 6.538399999999999,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.14133103006861267,
+            "brightnessTarget": 0,
+            "activityTarget": 0.03533074424387344,
+            "broadRms": 0.07066551503430633,
+            "centroidHz": 99.99964942923987,
+            "countRate": 0.25,
+            "strengthRate": 0.03533074424387344,
+            "eventCount": 1,
+            "sequence": 1,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 4,
+          "sequence": 1,
+          "count": 64,
+          "sunSustained": 0.07223093260935326,
+          "sunPulse": 0.07300148627600207,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0.00002769881863344596,
+              "sustained": 0.00002705561570581484,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0.000015120639232633029,
+              "sustained": 0.000014869884912728193,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0.000007680020135156074,
+              "sustained": 0.000014843692197329247,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0.00015995812696134536,
+              "sustained": 0.00020593805335385944,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0.3482409949102896,
+              "sustained": 0.33980329613267757,
+              "accent": 0.00013981189507106506
+            },
+            {
+              "band": "subBass",
+              "target": 0.15588642600468464,
+              "sustained": 0.15211231728539276,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.14648999999999995,
+            "speed": 0.03
+          },
+          {
+            "offset": 0.24414999999999978,
+            "speed": 0.05
+          },
+          {
+            "offset": 0.43946999999999903,
+            "speed": 0.09
+          },
+          {
+            "offset": 0.6347900000000009,
+            "speed": 0.13
+          },
+          {
+            "offset": 0.8789399999999981,
+            "speed": 0.18
+          },
+          {
+            "offset": 1.1719199999999996,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.14648999999999995,
+          0.24414999999999978,
+          0.43946999999999903,
+          0.6347900000000009,
+          0.8789399999999981,
+          1.1719199999999996
+        ],
+        "sunPulse": 0.07300148627600207,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "low-mid",
+      "row": {
+        "now": 9.555599999999627,
+        "audioTime": 6.509333,
+        "dt": 0.017,
+        "features": {
+          "version": 1,
+          "session": 4,
+          "frame": 404,
+          "updatedAtSeconds": 9.5383,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0.000016084284254125975,
+            "mid": 0.14132985468132325,
+            "high": 0.000006876505088247695,
+            "overall": 0.14132985576386353,
+            "six": {
+              "subBass": 0.0000026604692383293783,
+              "bass": 0.00001586272685887984,
+              "lowMids": 0.14132985459557953,
+              "highMids": 0.00000455436084409848,
+              "presence": 0.000002858770934859919,
+              "air": 0.0000065274691290778854
+            }
+          },
+          "sequence": 2,
+          "events": [
+            {
+              "session": 4,
+              "sequence": 1,
+              "band": "low",
+              "timeSeconds": 5.0551,
+              "emittedAtSeconds": 5.1052,
+              "strength": 0.14132297697549376
+            },
+            {
+              "session": 4,
+              "sequence": 2,
+              "band": "mid",
+              "timeSeconds": 8.0717,
+              "emittedAtSeconds": 8.1217,
+              "strength": 0.14125663906734987
+            }
+          ],
+          "context": {
+            "intensity": 0.14087943987350632,
+            "brightness": 0.3097972739524596,
+            "brightnessValid": true,
+            "activity": 0.053838165599474956,
+            "session": 1,
+            "time": 9.5383,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.14132985576386353,
+            "brightnessTarget": 0.3266062709294673,
+            "activityTarget": 0.035314159766837466,
+            "broadRms": 0.07066492788193177,
+            "centroidHz": 450.000029099187,
+            "countRate": 0.25,
+            "strengthRate": 0.035314159766837466,
+            "eventCount": 1,
+            "sequence": 2,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 4,
+          "sequence": 2,
+          "count": 64,
+          "sunSustained": 0.000012866599603119179,
+          "sunPulse": 0.00009713490740316069,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0.00002610919480845915,
+              "sustained": 0.000026719806869998353,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0.000011434952979794796,
+              "sustained": 0.000013881368927408703,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0.000018217111507196555,
+              "sustained": 0.00003409767869308173,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0.36115275370859984,
+              "sustained": 0.3523150835985807,
+              "accent": 0.0001592692578854141
+            },
+            {
+              "band": "bass",
+              "target": 0.00006344688167330323,
+              "sustained": 0.10081389021376684,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0.0000106417637049776,
+              "sustained": 0.04523282250641558,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.2364990000000221,
+            "speed": 0.03
+          },
+          {
+            "offset": 0.3941650000000382,
+            "speed": 0.05
+          },
+          {
+            "offset": 0.7094970000000657,
+            "speed": 0.09
+          },
+          {
+            "offset": 1.0248290000000972,
+            "speed": 0.13
+          },
+          {
+            "offset": 1.4189940000001313,
+            "speed": 0.18
+          },
+          {
+            "offset": 1.8919920000001769,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.2364990000000221,
+          0.3941650000000382,
+          0.7094970000000657,
+          1.0248290000000972,
+          1.4189940000001313,
+          1.8919920000001769
+        ],
+        "sunPulse": 0.00009713490740316069,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "high-mid-quiet",
+      "row": {
+        "now": 12.621900000000373,
+        "audioTime": 9.581333,
+        "dt": 0.01680000000074506,
+        "features": {
+          "version": 1,
+          "session": 4,
+          "frame": 588,
+          "updatedAtSeconds": 12.604899999999999,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 4.0755049493479727e-7,
+            "mid": 0.042399017217806666,
+            "high": 0.000007086248146475371,
+            "overall": 0.04239901781193613,
+            "six": {
+              "subBass": 3.787099152648719e-7,
+              "bass": 1.5058620787333666e-7,
+              "lowMids": 0.000008392761170137495,
+              "highMids": 0.04239901636477351,
+              "presence": 0.000002147860550340339,
+              "air": 0.000006891930190902322
+            }
+          },
+          "sequence": 2,
+          "events": [
+            {
+              "session": 4,
+              "sequence": 1,
+              "band": "low",
+              "timeSeconds": 5.0551,
+              "emittedAtSeconds": 5.1052,
+              "strength": 0.14132297697549376
+            },
+            {
+              "session": 4,
+              "sequence": 2,
+              "band": "mid",
+              "timeSeconds": 8.0717,
+              "emittedAtSeconds": 8.1217,
+              "strength": 0.14125663906734987
+            }
+          ],
+          "context": {
+            "intensity": 0.07719221346555497,
+            "brightness": 0.49218307764481894,
+            "brightnessValid": true,
+            "activity": 0.021580443296599215,
+            "session": 1,
+            "time": 12.604899999999999,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.04239901781193613,
+            "brightnessTarget": 0.5000000715307304,
+            "activityTarget": 0,
+            "broadRms": 0.021199508905968063,
+            "centroidHz": 1000.0003294112415,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 2,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 4,
+          "sequence": 2,
+          "count": 64,
+          "sunSustained": 3.260398644370054e-7,
+          "sunPulse": 5.036717172156026e-7,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0.00002756696080533151,
+              "sustained": 0.00002754192458966165,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0.00000859136838911641,
+              "sustained": 0.000010270412345545844,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0.1450039637338585,
+              "sustained": 0.14203548722657922,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0.00003356991770334283,
+              "sustained": 0.09837770243592159,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 6.023444686742691e-7,
+              "sustained": 0.007853188817374067,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0.0000015148373663237651,
+              "sustained": 0.0035191064444726845,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.3284880000000453,
+            "speed": 0.03
+          },
+          {
+            "offset": 0.5474800000000751,
+            "speed": 0.05
+          },
+          {
+            "offset": 0.9854640000001323,
+            "speed": 0.09
+          },
+          {
+            "offset": 1.4234480000001923,
+            "speed": 0.13
+          },
+          {
+            "offset": 1.9709280000002647,
+            "speed": 0.18
+          },
+          {
+            "offset": 2.6279040000003624,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.3284880000000453,
+          0.5474800000000751,
+          0.9854640000001323,
+          1.4234480000001923,
+          1.9709280000002647,
+          2.6279040000003624
+        ],
+        "sunPulse": 5.036717172156026e-7,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "high-mid-loud",
+      "row": {
+        "now": 15.538699999999254,
+        "audioTime": 12.504,
+        "dt": 0.016699999999254943,
+        "features": {
+          "version": 1,
+          "session": 4,
+          "frame": 763,
+          "updatedAtSeconds": 15.5214,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0.000001450871078998524,
+            "mid": 0.14132867248693054,
+            "high": 0.000008038540210236358,
+            "overall": 0.14132867272298721,
+            "six": {
+              "subBass": 0.0000011138077061644146,
+              "bass": 9.297630244116541e-7,
+              "lowMids": 0.000028135601601674555,
+              "highMids": 0.1413286696855507,
+              "presence": 9.723340509368208e-7,
+              "air": 0.000007993197590515646
+            }
+          },
+          "sequence": 3,
+          "events": [
+            {
+              "session": 4,
+              "sequence": 2,
+              "band": "mid",
+              "timeSeconds": 8.0717,
+              "emittedAtSeconds": 8.1217,
+              "strength": 0.14125663906734987
+            },
+            {
+              "session": 4,
+              "sequence": 3,
+              "band": "mid",
+              "timeSeconds": 14.038200000000002,
+              "emittedAtSeconds": 14.0881,
+              "strength": 0.06114058077036815
+            }
+          ],
+          "context": {
+            "intensity": 0.12905699060562853,
+            "brightness": 0.4999771151209838,
+            "brightnessValid": true,
+            "activity": 0.014717943081429445,
+            "session": 1,
+            "time": 15.5214,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.14132867272298721,
+            "brightnessTarget": 0.5000000091885729,
+            "activityTarget": 0.015285145192592038,
+            "broadRms": 0.07066433636149361,
+            "centroidHz": 1000.0000423149429,
+            "countRate": 0.25,
+            "strengthRate": 0.015285145192592038,
+            "eventCount": 1,
+            "sequence": 3,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 4,
+          "sequence": 3,
+          "count": 64,
+          "sunSustained": 0.0000011606901271518705,
+          "sunPulse": 0.000001397166626508385,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0.000031971768135422486,
+              "sustained": 0.00003185775472127361,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0.000003889321076870011,
+              "sustained": 0.000006904519446722358,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0.36115081933330956,
+              "sustained": 0.3555366014804248,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0.00011252974203873685,
+              "sustained": 0.008759307751166423,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0.0000037190382663495506,
+              "sustained": 0.0006941181648860681,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0.00000445521097566439,
+              "sustained": 0.0003137635937242333,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.41599200000001274,
+            "speed": 0.03
+          },
+          {
+            "offset": 0.6933200000000173,
+            "speed": 0.05
+          },
+          {
+            "offset": 1.2479760000000388,
+            "speed": 0.09
+          },
+          {
+            "offset": 1.8026320000000455,
+            "speed": 0.13
+          },
+          {
+            "offset": 2.4959520000000777,
+            "speed": 0.18
+          },
+          {
+            "offset": 3.327936000000102,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.41599200000001274,
+          0.6933200000000173,
+          1.2479760000000388,
+          1.8026320000000455,
+          2.4959520000000777,
+          3.327936000000102
+        ],
+        "sunPulse": 0.000001397166626508385,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "air",
+      "row": {
+        "now": 18.538199999999254,
+        "audioTime": 15.510154,
+        "dt": 0.016599999999627472,
+        "features": {
+          "version": 1,
+          "session": 4,
+          "frame": 943,
+          "updatedAtSeconds": 18.5213,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0.0000011396891803446958,
+            "mid": 1.633154121885203e-8,
+            "high": 0.14132118171829655,
+            "overall": 0.141321181722893,
+            "six": {
+              "subBass": 0.0000011396876756960736,
+              "bass": 1.8519344604449051e-9,
+              "lowMids": 2.937694771392505e-9,
+              "highMids": 7.243320735251026e-9,
+              "presence": 8.34325005770193e-8,
+              "air": 0.14132118171827265
+            }
+          },
+          "sequence": 4,
+          "events": [
+            {
+              "session": 4,
+              "sequence": 3,
+              "band": "mid",
+              "timeSeconds": 14.038200000000002,
+              "emittedAtSeconds": 14.0881,
+              "strength": 0.06114058077036815
+            },
+            {
+              "session": 4,
+              "sequence": 4,
+              "band": "high",
+              "timeSeconds": 17.0713,
+              "emittedAtSeconds": 17.121299999999998,
+              "strength": 0.14131314317584817
+            }
+          ],
+          "context": {
+            "intensity": 0.14098869621685123,
+            "brightness": 0.9275958629594871,
+            "brightnessValid": true,
+            "activity": 0.04138414697918398,
+            "session": 1,
+            "time": 18.5213,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.141321181722893,
+            "brightnessTarget": 0.9515449934768019,
+            "activityTarget": 0.03532828579396204,
+            "broadRms": 0.0706605908614465,
+            "centroidHz": 7999.999999293752,
+            "countRate": 0.25,
+            "strengthRate": 0.03532828579396204,
+            "eventCount": 1,
+            "sequence": 4,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 4,
+          "sequence": 4,
+          "count": 64,
+          "sunSustained": 9.117471878421359e-7,
+          "sunPulse": 9.214469650509555e-7,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0.36113859489470534,
+              "sustained": 0.35195685178776165,
+              "accent": 0.00017220188952451056
+            },
+            {
+              "band": "presence",
+              "target": 3.3372989093239993e-7,
+              "sustained": 0.000003463389634276309,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 2.8973282101553005e-8,
+              "sustained": 0.10587150287995929,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 1.1750778947489214e-8,
+              "sustained": 0.0007541284384937282,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 7.407737786905042e-9,
+              "sustained": 0.00005813390102205002,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0.0000045587299206710654,
+              "sustained": 0.000030169857405381572,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.5059770000000136,
+            "speed": 0.03
+          },
+          {
+            "offset": 0.8432950000000151,
+            "speed": 0.05
+          },
+          {
+            "offset": 1.5179310000000459,
+            "speed": 0.09
+          },
+          {
+            "offset": 2.192567000000051,
+            "speed": 0.13
+          },
+          {
+            "offset": 3.0358620000000918,
+            "speed": 0.18
+          },
+          {
+            "offset": 4.047816000000108,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.5059770000000136,
+          0.8432950000000151,
+          1.5179310000000459,
+          2.192567000000051,
+          3.0358620000000918,
+          4.047816000000108
+        ],
+        "sunPulse": 9.214469650509555e-7,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "high-mid-attacks",
+      "row": {
+        "now": 26.121599999999628,
+        "audioTime": 23.085333,
+        "dt": 0.017099999999627472,
+        "features": {
+          "version": 1,
+          "session": 4,
+          "frame": 1398,
+          "updatedAtSeconds": 26.1043,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 7,
+          "events": [
+            {
+              "session": 4,
+              "sequence": 4,
+              "band": "high",
+              "timeSeconds": 17.0713,
+              "emittedAtSeconds": 17.121299999999998,
+              "strength": 0.14131314317584817
+            },
+            {
+              "session": 4,
+              "sequence": 5,
+              "band": "low",
+              "timeSeconds": 22.2712,
+              "emittedAtSeconds": 22.321099999999998,
+              "strength": 0.21199749369767407
+            },
+            {
+              "session": 4,
+              "sequence": 6,
+              "band": "low",
+              "timeSeconds": 23.1711,
+              "emittedAtSeconds": 23.2211,
+              "strength": 0.21199717198996323
+            },
+            {
+              "session": 4,
+              "sequence": 7,
+              "band": "mid",
+              "timeSeconds": 25.2377,
+              "emittedAtSeconds": 25.2877,
+              "strength": 0.14919175903402
+            }
+          ],
+          "context": {
+            "intensity": 0.02526551246330063,
+            "brightness": 0.024000223738018505,
+            "brightnessValid": false,
+            "activity": 0.13606822158258172,
+            "session": 1,
+            "time": 26.1043,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0.14329660618041434,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0.75,
+            "strengthRate": 0.14329660618041434,
+            "eventCount": 3,
+            "sequence": 7,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 4,
+          "sequence": 7,
+          "count": 64,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0.002318561782784642,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0.05876769971130672,
+              "accent": 0.003640243713640827
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0.00028142410320147786,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0.015125975083012843,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0.007756594586845081,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.7334790000000212,
+            "speed": 0.03
+          },
+          {
+            "offset": 1.222465000000042,
+            "speed": 0.05
+          },
+          {
+            "offset": 2.200437000000086,
+            "speed": 0.09
+          },
+          {
+            "offset": 3.1784090000001224,
+            "speed": 0.13
+          },
+          {
+            "offset": 4.400874000000172,
+            "speed": 0.18
+          },
+          {
+            "offset": 5.86783200000017,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.7334790000000212,
+          1.222465000000042,
+          2.200437000000086,
+          3.1784090000001224,
+          4.400874000000172,
+          5.86783200000017
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "mixed",
+      "row": {
+        "now": 49.054,
+        "audioTime": 46.018667,
+        "dt": 0.01690000000037253,
+        "features": {
+          "version": 1,
+          "session": 4,
+          "frame": 2774,
+          "updatedAtSeconds": 49.036699999999996,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0.10599852939308167,
+            "mid": 0.11992362266338998,
+            "high": 0.05653202284447413,
+            "overall": 0.16974461144052638,
+            "six": {
+              "subBass": 0.034619240193108296,
+              "bass": 0.10018580958373234,
+              "lowMids": 0.0847989525145846,
+              "highMids": 0.08479866108207133,
+              "presence": 0.00000353181856684231,
+              "air": 0.056532022768009726
+            }
+          },
+          "sequence": 20,
+          "events": [
+            {
+              "session": 4,
+              "sequence": 17,
+              "band": "mid",
+              "timeSeconds": 39.870400000000004,
+              "emittedAtSeconds": 39.9204,
+              "strength": 0.15279506395814904
+            },
+            {
+              "session": 4,
+              "sequence": 18,
+              "band": "low",
+              "timeSeconds": 47.0702,
+              "emittedAtSeconds": 47.1202,
+              "strength": 0.10599814467597865
+            },
+            {
+              "session": 4,
+              "sequence": 19,
+              "band": "mid",
+              "timeSeconds": 47.0702,
+              "emittedAtSeconds": 47.1202,
+              "strength": 0.10476800097417113
+            },
+            {
+              "session": 4,
+              "sequence": 20,
+              "band": "high",
+              "timeSeconds": 47.0702,
+              "emittedAtSeconds": 47.1202,
+              "strength": 0.0565248821189579
+            }
+          ],
+          "context": {
+            "intensity": 0.1624513555047591,
+            "brightness": 0.553952086301683,
+            "brightnessValid": true,
+            "activity": 0.06546495240387365,
+            "session": 1,
+            "time": 49.036699999999996,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.16974461144052638,
+            "brightnessTarget": 0.5549917586508736,
+            "activityTarget": 0.06682275694227692,
+            "broadRms": 0.08487230572026319,
+            "centroidHz": 1288.200659923648,
+            "countRate": 0.75,
+            "strengthRate": 0.06682275694227692,
+            "eventCount": 3,
+            "sequence": 20,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 4,
+          "sequence": 20,
+          "count": 64,
+          "sunSustained": 0.05954998161020021,
+          "sunPulse": 0.059595974617997094,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0.18442452523400604,
+              "sustained": 0.18312208751572318,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0.000014127074690310494,
+              "sustained": 0.000015384585354340246,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0.25328255736746835,
+              "sustained": 0.25281570622911914,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0.2532832073627547,
+              "sustained": 0.25149857132343806,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0.2860932877400821,
+              "sustained": 0.2840762863152739,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0.121633520522435,
+              "sustained": 0.12076180733921532,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 1.4214510000000262,
+            "speed": 0.03
+          },
+          {
+            "offset": 2.3690850000000854,
+            "speed": 0.05
+          },
+          {
+            "offset": 4.264353000000105,
+            "speed": 0.09
+          },
+          {
+            "offset": 6.159621000000137,
+            "speed": 0.13
+          },
+          {
+            "offset": 8.52870600000021,
+            "speed": 0.18
+          },
+          {
+            "offset": 11.37160800000021,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          1.4214510000000262,
+          2.3690850000000854,
+          4.264353000000105,
+          6.159621000000137,
+          8.52870600000021,
+          11.37160800000021
+        ],
+        "sunPulse": 0.059595974617997094,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "silence",
+      "row": {
+        "now": 66.10290000000037,
+        "audioTime": 63.064,
+        "dt": 0.016600000001490117,
+        "features": {
+          "version": 1,
+          "session": 4,
+          "frame": 3797,
+          "updatedAtSeconds": 66.086,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 20,
+          "events": [],
+          "context": {
+            "intensity": 0.000014570764662625502,
+            "brightness": 3.7156547346499034e-13,
+            "brightnessValid": false,
+            "activity": 2.0109774832967264e-8,
+            "session": 1,
+            "time": 66.086,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 20,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 4,
+          "sequence": 20,
+          "count": 64,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 1.9329180000000332,
+            "speed": 0.03
+          },
+          {
+            "offset": 3.2215300000000693,
+            "speed": 0.05
+          },
+          {
+            "offset": 5.7987540000001205,
+            "speed": 0.09
+          },
+          {
+            "offset": 8.375978000000137,
+            "speed": 0.13
+          },
+          {
+            "offset": 11.597508000000241,
+            "speed": 0.18
+          },
+          {
+            "offset": 15.463344000000266,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          1.9329180000000332,
+          3.2215300000000693,
+          5.7987540000001205,
+          8.375978000000137,
+          11.597508000000241,
+          15.463344000000266
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "zero-reactivity",
+      "row": {
+        "now": 69.253,
+        "audioTime": 64.045333,
+        "dt": 0.01630000000074506,
+        "features": {
+          "version": 1,
+          "session": 5,
+          "frame": 124,
+          "updatedAtSeconds": 69.2359,
+          "status": "inactive",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 2,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": false,
+          "session": 5,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 2.024943000000035,
+            "speed": 0.03
+          },
+          {
+            "offset": 3.3749050000000653,
+            "speed": 0.05
+          },
+          {
+            "offset": 6.0748290000001175,
+            "speed": 0.09
+          },
+          {
+            "offset": 8.774753000000134,
+            "speed": 0.13
+          },
+          {
+            "offset": 12.149658000000235,
+            "speed": 0.18
+          },
+          {
+            "offset": 16.19954400000028,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          2.024943000000035,
+          3.3749050000000653,
+          6.0748290000001175,
+          8.774753000000134,
+          12.149658000000235,
+          16.19954400000028
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "stale-fade",
+      "row": {
+        "now": 72.71979999999888,
+        "audioTime": 64.045333,
+        "dt": 0.016699999999254943,
+        "features": {
+          "version": 1,
+          "session": 104,
+          "frame": 229,
+          "updatedAtSeconds": 69.2305,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0.14133065871253067,
+            "mid": 0.00005034531049107075,
+            "high": 0.000007439085764110918,
+            "overall": 0.14133066787540527,
+            "six": {
+              "subBass": 0.04612672106068501,
+              "bass": 0.1335914693994627,
+              "lowMids": 0.00005022091916822631,
+              "highMids": 0.00000236649564112233,
+              "presence": 0.000003781053073664349,
+              "air": 0.000006924803201628187
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0.10249456833950796,
+            "brightness": 0.000005303272316987923,
+            "brightnessValid": true,
+            "activity": 0.02986689502429426,
+            "session": 1,
+            "time": 6.0218,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.14133066787540527,
+            "brightnessTarget": 0.0000011718173552545166,
+            "activityTarget": 0.03533074424387344,
+            "broadRms": 0.07066533393770263,
+            "centroidHz": 100.00053964329085,
+            "countRate": 0.25,
+            "strengthRate": 0.03533074424387344,
+            "eventCount": 1,
+            "sequence": 1,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": false,
+          "session": 104,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0.033670106210629214,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0.015059469938210864,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 2.128949999999989,
+            "speed": 0.03
+          },
+          {
+            "offset": 3.5482499999999852,
+            "speed": 0.05
+          },
+          {
+            "offset": 6.386849999999978,
+            "speed": 0.09
+          },
+          {
+            "offset": 9.225449999999945,
+            "speed": 0.13
+          },
+          {
+            "offset": 12.773699999999955,
+            "speed": 0.18
+          },
+          {
+            "offset": 17.031599999999912,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          2.128949999999989,
+          3.5482499999999852,
+          6.386849999999978,
+          9.225449999999945,
+          12.773699999999955,
+          17.031599999999912
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true
+      }
+    },
+    {
+      "name": "reduced-motion",
+      "row": {
+        "now": 73.56979999999888,
+        "audioTime": 64.045333,
+        "dt": 0.016699999999254943,
+        "features": {
+          "version": 1,
+          "session": 104,
+          "frame": 274,
+          "updatedAtSeconds": 73.56969999999926,
+          "status": "active",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0.14133065871253067,
+            "mid": 0.00005034531049107075,
+            "high": 0.000007439085764110918,
+            "overall": 0.14133066787540527,
+            "six": {
+              "subBass": 0.04612672106068501,
+              "bass": 0.1335914693994627,
+              "lowMids": 0.00005022091916822631,
+              "highMids": 0.00000236649564112233,
+              "presence": 0.000003781053073664349,
+              "air": 0.000006924803201628187
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0.10249456833950796,
+            "brightness": 0.000005303272316987923,
+            "brightnessValid": true,
+            "activity": 0.02986689502429426,
+            "session": 1,
+            "time": 6.0218,
+            "primed": true,
+            "state": "running",
+            "intensityTarget": 0.14133066787540527,
+            "brightnessTarget": 0.0000011718173552545166,
+            "activityTarget": 0.03533074424387344,
+            "broadRms": 0.07066533393770263,
+            "centroidHz": 100.00053964329085,
+            "countRate": 0.25,
+            "strengthRate": 0.03533074424387344,
+            "eventCount": 1,
+            "sequence": 1,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": true,
+          "session": 104,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0.000027698445581374178,
+              "sustained": 0.00002201532036585337,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0.000015123983556319352,
+              "sustained": 0.000012020867460669612,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0.0000094658929605116,
+              "sustained": 0.00000752369534464685,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0.0002008433305262339,
+              "sustained": 0.00015963459941785842,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0.3482649643085359,
+              "sustained": 0.2831671518413496,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0.1557668314951973,
+              "sustained": 0.1266508392924938,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 2.147436000000023,
+            "speed": 0
+          },
+          {
+            "offset": 3.5790600000000397,
+            "speed": 0
+          },
+          {
+            "offset": 6.4423080000000805,
+            "speed": 0
+          },
+          {
+            "offset": 9.305556000000086,
+            "speed": 0
+          },
+          {
+            "offset": 12.884616000000161,
+            "speed": 0
+          },
+          {
+            "offset": 17.179488000000184,
+            "speed": 0
+          }
+        ],
+        "positions": [
+          2.147436000000023,
+          3.5790600000000397,
+          6.4423080000000805,
+          9.305556000000086,
+          12.884616000000161,
+          17.179488000000184
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true
+      }
+    },
+    {
+      "name": "wrap-origin",
+      "row": {
+        "now": 74.06929999999888,
+        "audioTime": 64.045333,
+        "dt": 0.016699999999254943,
+        "features": {
+          "version": 1,
+          "session": 5,
+          "frame": 413,
+          "updatedAtSeconds": 74.05239999999999,
+          "status": "inactive",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 2,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": false,
+          "session": 5,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0
+          },
+          {
+            "offset": 0,
+            "speed": 0
+          },
+          {
+            "offset": 0,
+            "speed": 0
+          },
+          {
+            "offset": 0,
+            "speed": 0
+          },
+          {
+            "offset": 0,
+            "speed": 0
+          },
+          {
+            "offset": 0,
+            "speed": 0
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "wrap-full-period",
+      "row": {
+        "now": 74.3195,
+        "audioTime": 64.045333,
+        "dt": 0.01640000000037253,
+        "features": {
+          "version": 1,
+          "session": 5,
+          "frame": 428,
+          "updatedAtSeconds": 74.30239999999999,
+          "status": "inactive",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 2,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": false,
+          "session": 5,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 24,
+            "speed": 0
+          },
+          {
+            "offset": 24,
+            "speed": 0
+          },
+          {
+            "offset": 24,
+            "speed": 0
+          },
+          {
+            "offset": 24,
+            "speed": 0
+          },
+          {
+            "offset": 24,
+            "speed": 0
+          },
+          {
+            "offset": 24,
+            "speed": 0
+          }
+        ],
+        "positions": [
+          24,
+          24,
+          24,
+          24,
+          24,
+          24
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "low-quality",
+      "row": {
+        "now": 74.78629999999889,
+        "audioTime": 64.045333,
+        "dt": 0.016699999999254943,
+        "features": {
+          "version": 1,
+          "session": 5,
+          "frame": 456,
+          "updatedAtSeconds": 74.769,
+          "status": "inactive",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 2,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": false,
+          "session": 5,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.011009999999999614,
+            "speed": 0.03
+          },
+          {
+            "offset": 0.018350000000001726,
+            "speed": 0.05
+          },
+          {
+            "offset": 0.033029999999998845,
+            "speed": 0.09
+          },
+          {
+            "offset": 0.04770999999999953,
+            "speed": 0.13
+          },
+          {
+            "offset": 0.06606000000000124,
+            "speed": 0.18
+          },
+          {
+            "offset": 0.08808000000000046,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.011009999999999614,
+          0.018350000000001726,
+          0.033029999999998845,
+          0.04770999999999953,
+          0.06606000000000124,
+          0.08808000000000046
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 0.75
+        },
+        "override": false
+      }
+    },
+    {
+      "name": "scene-reentry",
+      "row": {
+        "now": 75.46540000000037,
+        "audioTime": 64.045333,
+        "dt": 0.0045,
+        "features": {
+          "version": 1,
+          "session": 5,
+          "frame": 475,
+          "updatedAtSeconds": 75.4524,
+          "status": "inactive",
+          "sampleRate": 96000,
+          "fftSize": 4096,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "sequence": 0,
+          "events": [],
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0,
+            "session": 2,
+            "time": 0,
+            "primed": false,
+            "state": "inactive",
+            "intensityTarget": 0,
+            "brightnessTarget": 0,
+            "activityTarget": 0,
+            "broadRms": 0,
+            "centroidHz": null,
+            "countRate": 0,
+            "strengthRate": 0,
+            "eventCount": 0,
+            "sequence": 0,
+            "overflow": false
+          }
+        },
+        "response": {
+          "fresh": false,
+          "session": 5,
+          "sequence": 0,
+          "count": 0,
+          "sunSustained": 0,
+          "sunPulse": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0
+            }
+          ]
+        },
+        "motion": [
+          {
+            "offset": 0.00035400000002235173,
+            "speed": 0.03
+          },
+          {
+            "offset": 0.0005900000000372529,
+            "speed": 0.05
+          },
+          {
+            "offset": 0.001062000000067055,
+            "speed": 0.09
+          },
+          {
+            "offset": 0.0015340000000968576,
+            "speed": 0.13
+          },
+          {
+            "offset": 0.00212400000013411,
+            "speed": 0.18
+          },
+          {
+            "offset": 0.002832000000178814,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0.00035400000002235173,
+          0.0005900000000372529,
+          0.001062000000067055,
+          0.0015340000000968576,
+          0.00212400000013411,
+          0.002832000000178814
+        ],
+        "sunPulse": 0,
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 0
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": false
+      }
+    }
+  ],
+  "checks": [
+    "Generated PCM through actual production analysis; constant six-ridge drift in all passages; actual sky uniform equals response; fixed camera",
+    "Quiet/loud high-mid response >2:1; bass/low-mid isolation; high-mid attacks qualified; held high mids reject low-mid attacks; music response zero in late silence",
+    "Gain0 clears music while drift continues; stale publication releases sun; reduced motion freezes drift and suppresses sun; whole-period geometry snapshots",
+    "Standard/Low and scene re-entry retain generated local source; retained events do not accent on re-entry"
+  ],
+  "windows": [
+    {
+      "label": "bass",
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 0.04614488252128155,
+        "bass": 0.1335853825935803,
+        "lowMids": 0.000045928933190696787,
+        "highMids": 0.00000217668134987816,
+        "presence": 0.000003781086709652854,
+        "air": 0.000006924918451104451
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.000027178621658643138,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0.000014918559841169647,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.000013584948082471585,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.00020156747816586518,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0.34141857837770995,
+          "maxAccent": 0.0014633443278433112
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.15281933460938477,
+          "maxAccent": 0.0005070402422337068
+        }
+      ],
+      "meanSunPulse": 0.0730486641410926
+    },
+    {
+      "label": "lowMid",
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 0.0000034369089084343295,
+        "bass": 0.000016138921145380642,
+        "lowMids": 0.14132983521673195,
+        "highMids": 0.0000045124586899146626,
+        "presence": 0.000002858415651429311,
+        "air": 0.000006527085675481529
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.000026587171639947225,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0.00001335109284919659,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.00003062182875295686,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.3544893303590716,
+          "maxAccent": 0.001331122744573522
+        },
+        {
+          "band": "bass",
+          "sustained": 0.07898862191962056,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.035437006562162865,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 0.0001100238994382941
+    },
+    {
+      "label": "highMidQuiet",
+      "count": 30,
+      "meanEnergy": {
+        "subBass": 4.1268030211885264e-7,
+        "bass": 2.446600793434554e-7,
+        "lowMids": 0.000008427942065943329,
+        "highMids": 0.042399011718394865,
+        "presence": 0.000002147659203091442,
+        "air": 0.000006891971972278369
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.00002754390523758763,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0.00000998107105693838,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.14227394404824825,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.08143851950744242,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0.006500691536329365,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.0029132401897411565,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 6.318471597158153e-7
+    },
+    {
+      "label": "highMidLoud",
+      "count": 31,
+      "meanEnergy": {
+        "subBass": 0.0000013228402721064043,
+        "bass": 7.777816918382849e-7,
+        "lowMids": 0.00002807887258852131,
+        "highMids": 0.14132867580163477,
+        "presence": 9.753108242302736e-7,
+        "air": 0.00000799366809376366
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.00003188565615230909,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0.000006244658769588816,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.35689953540887565,
+          "maxAccent": 0.00037401294892633655
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.006859385189721305,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0.0005422824937652628,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.00024596544257527965,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 0.0000013677183770345756
+    },
+    {
+      "label": "air",
+      "count": 31,
+      "meanEnergy": {
+        "subBass": 0.0000011402645405240506,
+        "bass": 1.261019737803554e-9,
+        "lowMids": 2.3310821715962147e-9,
+        "highMids": 6.386747575387217e-9,
+        "presence": 8.297142764562861e-8,
+        "air": 0.14132118171642155
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.3544451948117269,
+          "maxAccent": 0.0014365952757507817
+        },
+        {
+          "band": "presence",
+          "sustained": 0.0000027379263063781087,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.08134176559908496,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.0005794040243060846,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0.00004466592246487013,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.000024236372626429,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 9.225933875351488e-7
+    },
+    {
+      "label": "mixed",
+      "count": 63,
+      "meanEnergy": {
+        "subBass": 0.034609802159313724,
+        "bass": 0.10018872434742757,
+        "lowMids": 0.08479902871206822,
+        "highMids": 0.08479877475798314,
+        "presence": 0.000003654186395827146,
+        "air": 0.056532050163552436
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0.18264210880261267,
+          "maxAccent": 0.0002477560102062405
+        },
+        {
+          "band": "presence",
+          "sustained": 0.000015237698184336298,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0.2526436402834943,
+          "maxAccent": 0.0005667714391531575
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0.2508408846787404,
+          "maxAccent": 0.000688873902543646
+        },
+        {
+          "band": "bass",
+          "sustained": 0.2833328722787631,
+          "maxAccent": 0.0008234620181298648
+        },
+        {
+          "band": "subBass",
+          "sustained": 0.12044453689671845,
+          "maxAccent": 0.0003047384142117034
+        }
+      ],
+      "meanSunPulse": 0.05977866297295855
+    },
+    {
+      "label": "lateSilence",
+      "count": 50,
+      "meanEnergy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "meanResponse": [
+        {
+          "band": "air",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "presence",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "highMids",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "lowMids",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "bass",
+          "sustained": 0,
+          "maxAccent": 0
+        },
+        {
+          "band": "subBass",
+          "sustained": 0,
+          "maxAccent": 0
+        }
+      ],
+      "meanSunPulse": 0
+    }
+  ],
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "sourceUnchanged": true,
+  "status": "LP02 migration verified with generated input; LP03 visual ridge behavior and live owner listening pending"
+}

@@ -2,7 +2,7 @@
 
 **Your music. Another world.**
 
-A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks previews sideways mountain motion driven by shared music intensity and frequency balance and a bass-pulsing sun. Crimson Horizon travels forward at a constant pace through an endless 3D ridged valley, with a gentle mouse-following viewpoint. Its pink sun responds to musical energy and strong bass hits, while its surrounding glow follows musical activity against a nightshade sky. Silence dims the sun while travel continues. ECHO branding and the selected scene name appear initially. Source and scene settings live in the compact chooser opened by the scene name at the bottom left; selecting a local file also shows a compact player on the landscape.
+A client-side audio visualizer with full-viewport landscapes. Bloom starts with ambient motion and can react to audio; Lavender Peaks previews sideways mountain motion driven by shared music intensity and frequency balance and a bass-pulsing sun. Crimson Horizon travels forward at a constant pace through an endless 3D ridged valley, with a gentle mouse-following viewpoint. Its pink sun responds to musical energy and strong bass hits, while its surrounding glow follows musical activity against a nightshade sky. Silence dims the sun while travel continues. The landscape name appears at the top left. Landscape selection, Share a tab and Open audio file are available directly in the bottom toolbar. Options opens the remaining settings; selecting a local file also shows a compact player on the landscape.
 
 ## Run locally
 
@@ -19,17 +19,15 @@ For the temporary bass-motion comparison, restart the dev server with `VITE_BASS
 
 ## Use ECHO
 
-Click the scene name to open the chooser, or focus it with Tab and press Space/Enter. Bloom is selected initially.
+Bloom is selected initially. Use the bottom toolbar to change landscape, share a permitted audio tab or open a local audio file. Open Options for status and the remaining settings; keyboard users can focus Options and press Space/Enter.
 
 - **Share a tab:** choose a permitted browser tab and enable Share tab audio in the native picker. Keep playback in that tab. The browser also requests video; ECHO does not read or display it.
 - **Open audio file:** select a local browser-supported file, then use the on-scene Play/Pause/Replay and volume controls. Volume affects local playback only.
-- **Disconnect / Cancel sharing:** release the selected source or cancel ECHO's pending sharing request. Close a pending native picker yourself too.
-- **Landscape:** switch between Bloom, Lavender Peaks and the Crimson Horizon 3D preview without stopping audio. The choice lasts for the page session.
-- **Reactivity:** changes Bloom’s visual amplitude or Lavender Peaks’ travel speed and sun pulse, not sound volume. Lavender Peaks moves all six ridges together: low-frequency passages move slower and high-frequency passages move faster, with overall intensity controlling strength. Distant layers remain slower than the foreground. In Crimson Horizon, Reactivity scales the lighting and sun response; forward travel stays at24 units/second, including silence, pause, disconnected input and zero Reactivity. Music energy controls sun brightness; musical activity controls the surrounding glow. Mouse movement shifts its viewpoint even during silence; leaving the landscape returns it to center. Reduced motion freezes the camera and slows sun brightness changes.
-- **Graphics quality:** Standard preserves the existing drawing resolution; Low is softer and renders fewer pixels. The choice lasts for the page session.
-- **Enter/Exit fullscreen:** expands the landscape and chooser using the browser's native API. Native Escape remains available.
+- **Disconnect / Cancel sharing (in Options):** release the selected source or cancel ECHO's pending sharing request. Close a pending native picker yourself too.
+- **Landscape:** switch between Bloom, Nocturne, Lavender Peaks and Crimson Horizon without stopping audio. The choice lasts for the page session.
+- **Graphics quality (in Options):** Standard preserves the existing drawing resolution; Low is softer and renders fewer pixels. The choice lasts for the page session.
 
-Close the chooser using its close button, the scene label, Escape or a click on the landscape. Closing it keeps playback running. On small/short screens the chooser scrolls internally; the landscape remains full-screen without page scrolling. Reduced-motion preferences remain supported.
+Close Options using its close button, Options again, Escape or a click outside the panel. Closing it keeps playback running. On small/short screens the panel scrolls internally and the toolbar stacks without page scrolling. Visual response stays at its full default strength, with reduced-motion preferences respected. Local playback volume remains adjustable; Reactivity and fullscreen buttons are not part of the public controls.
 
 Audio stays on your device. ECHO does not record or upload it. The reference environment is desktop Brave on Arch Linux; other browser/OS combinations and mobile capture remain unverified. Browser capture restrictions apply; this is not a streaming-provider integration or arbitrary system-audio capture tool.
 

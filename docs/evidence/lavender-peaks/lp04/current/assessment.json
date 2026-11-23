@@ -1,0 +1,190 @@
+{
+  "music": {
+    "rows": 1065,
+    "frames": 445,
+    "maxMidAccent": 0.4913104068825435,
+    "heldHighMidFalseAccent": 0,
+    "maxLowAccent": 0.4554586827613039,
+    "maxHighAccent": 0.4554516980834893,
+    "cost": {
+      "calls": 7,
+      "triangles": 4616,
+      "geometries": 7,
+      "textures": 0
+    },
+    "renderer": {
+      "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+      "dpr": 1
+    }
+  },
+  "opticalStatus": "passed bounded visible corona, mountain occlusion, dynamic range and separate mid accent",
+  "restStrongDifferenceRatio": 2.304329998359849,
+  "maxScreenshotBracketSeconds": 0.23466700000000174,
+  "sourceTimeRange": [
+    0.152,
+    64.184
+  ],
+  "lateSilence": [
+    {
+      "audioTime": 63.042667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.106667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.149333,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.213333,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.298667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.362667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.426667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.490667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.554667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.618667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.682667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.746667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.832,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.896,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.938667,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 63.981333,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 64.064245,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 64.109333,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 64.152,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    },
+    {
+      "audioTime": 64.216,
+      "envelope": 0,
+      "detail": 0,
+      "lowAccent": 0,
+      "midAccent": 0,
+      "highAccent": 0
+    }
+  ],
+  "qualification": "Generated source soundtrack and screenshot request brackets; not sample-accurate captured audio or owner media. Optical state pairs held exactly."
+}

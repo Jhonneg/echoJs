@@ -1,5 +1,9 @@
 # POC roadmap — one task at a time
 
+## Current task — Lavender Peaks LP04 owner visual gate (2026-11-23)
+
+Follow [Lavender Peaks LP01–LP09](LAVENDER_PEAKS_MUSIC_INTELLIGENCE_ROADMAP.md) sequentially. Owner “proceed” after LP03 authorizes LP04. Small corona is implemented and generated/optical verified; **explicit owner visual approval is required before LP05 illumination**. LP05–LP09 unstarted. Live real-song review remains pending; later visual gates follow LP07/LP09. Preserve approved UI and Noctune NT14/NT15 skips. See current PROGRESS and authoritative Lavender roadmap; no new parallel context file.
+
 Current order is intentional: validate external audio before investing in graphics. Plan/approve each task separately; mark actual status only in PROGRESS.md. Each gate requires owner sign-off. If a required check cannot run, record a blocker; do not mark the gate passed or silently expand scope.
 
 ## P01 — Scaffold (next)
@@ -325,3 +329,7 @@ NT13-R5 checkpoint (2026-11-23): owner “proceed” authorizes final comparison
 NT13/R5 approval (2026-11-23): owner explicitly answers **“Approve all five visual criteria”** and **“all worked”** for all listed current-build music cases. [Decision/evidence](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r5--aligned-comparison-and-owner-gate-2026-11-23). NT13 review gate complete; historical pending entries above are superseded. Next is NT14 after continuation; no commit/push authorized.
 
 Owner scope update (2026-11-23): “we skip nt 14 and 15.” NT14 and NT15 are **skipped by owner**, not marked verified/completed. NT13/R5 approval and existing implementation/evidence stand. No next Noctune phase, new technical work or commit/push is authorized by this instruction.
+
+Direct-controls UI request (2026-11-23, separate from skipped Noctune NT14/NT15): owner authorizes top-left landscape names, removal of Reactivity/fullscreen controls and always-visible landscape/Share a tab/Open audio file actions. Implemented with remaining settings under Options and full-default visual response.41 test files/typecheck/lint/build and generated-only desktop/responsive browser checks pass; current status/evidence in PROGRESS. Native sharing picker remains a human check, not a mocked success claim. Stop after this UI task; no commit/push authorized.
+
+Direct-controls UI approval (2026-11-23): owner “looks good” approves the completed toolbar/name/control changes. UI task complete; no additional work or commit/push authorization inferred.
