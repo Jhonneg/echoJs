@@ -1,0 +1,55 @@
+{
+  "baseline": false,
+  "smoke": false,
+  "temporary": "/tmp/echo-bloom-bl02-OWSli0",
+  "errors": [],
+  "screenshots": [],
+  "checks": [
+    "water-ripples: 80 timestamped browser frames, annotated feature controls, no audio",
+    "complete-scene: 186 timestamped browser frames, annotated feature controls, no audio"
+  ],
+  "performance": [
+    {
+      "frames": 300,
+      "median": 16.699999999720603,
+      "p95": 17,
+      "max": 17.299999999813735,
+      "cost": {
+        "calls": 13,
+        "triangles": 6852,
+        "geometries": 9,
+        "textures": 1,
+        "programs": 7
+      }
+    },
+    {
+      "frames": 300,
+      "median": 16.699999999720603,
+      "p95": 17,
+      "max": 17.199999999720603,
+      "cost": {
+        "calls": 13,
+        "triangles": 6852,
+        "geometries": 9,
+        "textures": 1,
+        "programs": 7
+      }
+    },
+    {
+      "frames": 300,
+      "median": 16.699999999720603,
+      "p95": 17,
+      "max": 17.199999999720603,
+      "cost": {
+        "calls": 13,
+        "triangles": 6852,
+        "geometries": 9,
+        "textures": 1,
+        "programs": 7
+      }
+    }
+  ],
+  "source": "Isolated production build with temporary scalar/resource probes; generated local PCM only. No owner media. Headless performance is not native-device certification.",
+  "sourceUnchanged": true,
+  "status": "BL07 perceptibility motion captured"
+}

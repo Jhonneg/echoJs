@@ -1,0 +1,239 @@
+{
+  "implementation": "Remaining implementation gaps addressed; BL07 owner/native acceptance is still open",
+  "changedExisting": [
+    "src/scenes/bloom/BloomScene.tsx",
+    "src/scenes/bloom/lifecycle.ts"
+  ],
+  "newProduction": [
+    "src/scenes/bloom/reflection.ts"
+  ],
+  "preservedSources": 103,
+  "cost": {
+    "calls": 13,
+    "triangles": 6532,
+    "geometries": 9,
+    "textures": 1,
+    "programs": 7
+  },
+  "timing": [
+    {
+      "samples": 300,
+      "medianMs": 16.699999999953434,
+      "p95Ms": 17.5,
+      "maximumMs": 19.100000000093132
+    },
+    {
+      "samples": 300,
+      "medianMs": 16.699999999953434,
+      "p95Ms": 17.5,
+      "maximumMs": 18.699999999953434
+    },
+    {
+      "samples": 300,
+      "medianMs": 16.699999999953434,
+      "p95Ms": 17,
+      "maximumMs": 18.9000000001397
+    }
+  ],
+  "impulses": [
+    {
+      "band": "subBass-attack",
+      "input": {
+        "subBass": 0.424,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "qualified": [
+        0.5269073644199166,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "left": 0,
+      "right": 0
+    },
+    {
+      "band": "bass-attack",
+      "input": {
+        "subBass": 0,
+        "bass": 0.424,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "qualified": [
+        0,
+        0.5261893440474653,
+        0,
+        0,
+        0,
+        0
+      ],
+      "left": 0,
+      "right": 0
+    },
+    {
+      "band": "lowMids-attack",
+      "input": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0.424,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "qualified": [
+        0,
+        0,
+        0.5259502214234004,
+        0,
+        0,
+        0
+      ],
+      "left": 0.018376759775194217,
+      "right": 0
+    },
+    {
+      "band": "highMids-attack",
+      "input": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0.424,
+        "presence": 0,
+        "air": 0
+      },
+      "qualified": [
+        0,
+        0,
+        0,
+        0.48728196339647,
+        0,
+        0
+      ],
+      "left": 1.7598799966701087e-8,
+      "right": 0.018670394520181627
+    },
+    {
+      "band": "presence-attack",
+      "input": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0.424,
+        "air": 0
+      },
+      "qualified": [
+        0,
+        0,
+        0,
+        0,
+        0.5259502214234004,
+        0
+      ],
+      "left": 7.993010501443974e-23,
+      "right": 1.767118399553013e-8
+    },
+    {
+      "band": "air-attack",
+      "input": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0.424
+      },
+      "qualified": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.4875035055448941
+      ],
+      "left": 1.9599923938982386e-37,
+      "right": 4.333209147687005e-23
+    }
+  ],
+  "fullSilhouetteViews": [
+    {
+      "view": "mask-left",
+      "expectedPixels": 32230,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-right",
+      "expectedPixels": 32235,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-top",
+      "expectedPixels": 32289,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-bottom",
+      "expectedPixels": 32117,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-top-left",
+      "expectedPixels": 31819,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-top-right",
+      "expectedPixels": 32313,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-bottom-left",
+      "expectedPixels": 32059,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-bottom-right",
+      "expectedPixels": 32314,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-center",
+      "expectedPixels": 32130,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    }
+  ],
+  "cleanup": [
+    "Three quality and full landscape replacement cycles restore9geometries/7programs/13draws; shared reflection geometry and materials release correctly"
+  ],
+  "passed": [
+    "55 test files",
+    "lint",
+    "typecheck/build (existing chunk warning)",
+    "nine camera GPU silhouette masks versus actual source triangles",
+    "six separate bands and independently qualified stone impulses",
+    "repeated quality and landscape replacement without resource growth"
+  ],
+  "manualPending": [
+    "native pointer feel and real shared-tab floating control",
+    "owner real-song visual/musical acceptance",
+    "native hardware performance certification"
+  ],
+  "limits": "Geometry-based projected wet reflections, not a full physical scene reflection; automatic silhouette tolerance1px. Isolated fine-pointer emulation is declared. No captured media or audio recording. No BL08/commit/push."
+}

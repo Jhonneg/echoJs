@@ -1,6 +1,6 @@
 # Bloom — Resonant Monolith rework roadmap
 
-Status: **Owner approved BL07 plan. Whole-landscape choreography is implemented and technically verified with matched generated-input video, screenshots and actual generated-audio regression; owner visual/listening review pending. Geometry/camera/materials and shared analysis are preserved. BL08–BL09 remain unstarted.**
+Status: **BL08 owner-approved. BL09 explicitly SKIPPED by owner; no comparison/acceptance execution. Preserve approved visuals and documented evidence limitations. No commit/push authorized.**
 
 Original BL01 audit baseline: `origin/main` commit `0860050` (`lp04`, 2026-11-23). This is the latest **committed** public snapshot inspected for this plan. The owner's separate VS Code working tree may contain uncommitted changes; Codex must compare it before edits. No production, analysis, scene or application code was changed in this planning pass.
 
@@ -127,6 +127,11 @@ These are **design mappings**, not preapproved coefficients or implemented featu
 
 ### BL07 — whole-landscape musical choreography
 
+**Latest focused refinement (2026-11-23):** Owner requests stronger perceptibility while preserving the working composition/lifecycle. Implemented larger independently phased stone orbits/rotation,10Standard/6Low distinct downhill paths with body/detail event routing, direct local mountain aurora fill plus stronger stone/haze response, high-mid beam spill/contrast and larger antialiased tapered ripples. [Full audit/results/films](evidence/bloom/bl07-perceptibility/README.md).56test files and controlled browser/material-pixel/camera/resource checks pass. Autonomous floating is measured throughout12seconds of zero-energy playback; dedicated pointer footage covers extremes/leave/blur/reduced motion. Owner art/music/native acceptance remains OPEN. No BL08 or commit/push.
+
+**Consolidated owner refinement (2026-11-23), superseding earlier BL07 scope:** Playback-state-driven water-rest/ascent/autonomous hover/descent, explicit shared-tab floating pause control, independent stones and fine-pointer orthographic parallax. Preserve stone/terrain geometry. Existing analytic reflections now receive projected camera-space final poses. Stronger aurora/beam/ripples and4trails per bank (Low2) provide independent six-band activity. Current evidence: `docs/evidence/bloom/bl07-complete/`, `bl07-complete-controls/`, `bl07-complete-camera/`.54test files and controlled browser checks pass; owner aesthetics/listening and native input/hardware acceptance remain pending. Do not begin BL08.
+
+
 **Implemented/verified; owner review pending (2026-11-23):** Slower context evolution, sky-leading critically damped monolith lift/yaw, lane-specific sustained travel and fresh proportional low-event rings. Existing seam sustain/qualified attacks are unchanged frame-for-frame. Motion uses the existing bounded lift/yaw; no new monolith scaling or geometry is introduced. `music.ts` is the only production change. Matched BL06/current38s generated-MI schedule, annotated fixed-camera videos, output traces and screenshots: `docs/evidence/bloom/bl07/current/`.53test files, build/lint/typecheck, delivered-light/reflection checks, band/source/reduced regressions and fresh headless cadence pass. Stop for owner review before BL08; native/real-song acceptance remains separate.
 
 
@@ -137,11 +142,17 @@ These are **design mappings**, not preapproved coefficients or implemented featu
 
 ### BL08 — visual polish and performance
 
+**Owner-approved after controlled audit (2026-11-23):** Owner authorizes advance after endorsing the BL07 visuals. All107production sources preserved. Twelve Standard/Low resting/active frames across desktop/wide/portrait, actual DPR1/1.5/.75 drawing buffers, nine2s timing samples, three resource cleanup cycles and reduced-motion checks pass. Existing Low fallback suffices; no visual tuning justified.56test files/lint/typecheck/build pass. [Review/measurements](evidence/bloom/bl08/README.md). Known dependency Clock deprecation remains; no WebGL errors. Native/GPU/real-song acceptance is not inferred. No BL09 or commit/push.
+
 - Tune fog layering, horizon/vertical composition, nuanced rock materials, aurora blending, reflection distortion, responsive camera framing and static readability.
 - Profile geometry/draw calls, shader/pixel costs, frame times and memory at Standard/Low. Provide a shader-light/geometry-low fallback if necessary; preserve source handling, scene switching and reduced motion.
 - **Gate:** desktop/wide/portrait on/off screenshots, no obvious frame drops, correct cleanup after scene switch, no WebGL warnings. Report tested hardware and any unmeasured performance separately.
 
 ### BL09 — musical acceptance and comparison with other ECHO landscapes
+
+**SKIPPED BY OWNER (2026-11-23):** “skip this” supersedes the proposed plan below. Do not execute or request its acceptance review. Skipped checks are not passed; retain existing evidence limitations. No further production work or commit/push authorized.
+
+**Proposed plan (2026-11-23), following owner BL08 approval:** Acceptance/evidence only; no production changes. Replay identical generated silence/bass/mid/treble/attacks/layered/slow/build-release inputs through existing analysis across Bloom/Crimson/Nocturne/Lavender at equivalent viewport/quality/source settings, retaining authored cameras/motion. Deliver a synchronized annotated scene comparison plus numeric response/frame-cadence evidence. Exercise transport/source switching, reduced motion and both qualities. Collect owner text observations for permitted local music/native controls without recording owner media. Assess the five criteria below; keep missing native/real-song evidence explicit. Report discrepancies before proposing corrective code. Phase-plan approval required before execution; no automatic commit/push.
 
 - Capture same permitted tracks or generated, time-annotated scenes for Bloom, Crimson, Nocturne and Lavender Peaks with equivalent capture conditions.
 - Review five owner-facing criteria: **(1)** whole-frame participation, **(2)** band separation, **(3)** attack clarity without strobe, **(4)** musical build/quiet storytelling, **(5)** Bloom's serene identity and visual depth.
@@ -158,3 +169,23 @@ These are **design mappings**, not preapproved coefficients or implemented featu
 ### Historical BL02 planning request (fulfilled; current next action is owner visual review)
 
 > Read `AGENTS.md`, `docs/PROGRESS.md` and `docs/BLOOM_RESONANT_MONOLITH_ROADMAP.md`. This roadmap's BL01 audit was made against public commit `0860050`, so verify the exact current local working tree and any user edits first. **Plan BL02 only**: real 3D mountains, depth/fog, lake and camera framing, preserving the old halo temporarily. Show the proposed geometry/shader approach, affected files, expected performance, responsive visual verification and acceptance gate. Do not implement BL03–BL09 or modify shared Music Intelligence/other landscapes. Stop and wait for approval before coding.
+
+
+## Consolidated BL07 — ten-section acceptance traceability (2026-11-23)
+
+This matrix supersedes broad earlier completion summaries. “Implemented” does not imply owner artistic/native acceptance.
+
+| Owner section | Implementation and evidence | Remaining acceptance |
+|---|---|---|
+|1 Playback monolith|Explicit source lifecycle; water rest,3–4s ascent,6s autonomous float,4–5s descent; quiet playback remains elevated; actual file pause/resume/disconnect/replacement evidence retained.|Native shared-tab floating control remains manual, using the owner-selected explicit fallback.|
+|2 Suspended stones|Independent delayed hover/orbit/rotation; qualified low/high-mid impulses now added independently, bounded at.04world units and suppressed at rest/reduced motion.|Owner judges prominence/restraint.|
+|3 Parallax|Existing orthographic camera, bounded±2.5°/±1.2°,250ms smoothing, leave/blur return, reduced/coarse gates; real browser pointer events under declared fine-pointer emulation.|Native pointer feel and aesthetics.|
+|4 Aurora environment|Shared final aurora response drives curtains, existing directional light, stone, haze and colored lake, with restrained ambient baseline.|Owner judges rest/moderate/strong contrast.|
+|5 Trails|4perbankStandard/2Low, actual terrain attachment, distinct roles/widths/phases/rates, faint idle and qualified local pulses; individual six-band browser matrix.|Owner judges density/depth.|
+|6 Beam|Recessed narrow core, opening halo, adjacent stone glow; sustained high mids and qualified accents; same final beam level in water/core/stone.|Owner judges beam strength.|
+|7 Water|Visible ambient/event rings; reflected body/beam/fragments now use actual shared source triangles with projected wet distortion. Nine-view GPU masks match CPU silhouettes within1px with no missing/extra pixels; no full-scene reflection pass.|Normal wet/material appearance remains artistic review.|
+|8 Choreography|Slow environmental context, sustained band voices and qualified fast accents; playback float stays independent. Final annotated control-sequence movie covers buildup/attacks/quiet/descent.|Real-song musical feel requires owner listening.|
+|9 Constraints|Other scenes/shared MI/approved source geometry preserved; no dependency/React hot state/RT/texture added.13draws,6532/2148triangles; repeated scene/quality replacements clean up.|Native target-window performance remains manual.|
+|10 Verification/approval|55test files, lint/typecheck/build, controlled six-band matrix, actual file lifecycle, source/stale/replay/reduced tests, camera/GPU masks, measured output values, cleanup and annotated footage PASS.|**OPEN: native mouse/shared-tab behavior, real-song listening and owner visual/musical approval. BL07 is not fully accepted.**|
+
+Final evidence: [annotated expressiveness movie](evidence/bloom/bl07-musical-review/current/expressiveness-final.mp4), [camera footage](evidence/bloom/bl07-final-gaps/current/lifecycle-and-parallax.mp4), [silhouette report](evidence/bloom/bl07-optics/current/silhouette-assessment.json), [measurements](evidence/bloom/bl07-final-gaps/assessment.json). No captured media or audio recording. Current reflection is a stylized camera-projected wet image with exact source silhouettes, not a claim of physical ray-traced optics. No BL08 or commit/push.

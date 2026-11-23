@@ -1,8 +1,8 @@
 # POC roadmap — one task at a time
 
-## Current task — Bloom BL07 choreography visual/listening review (2026-11-23)
+## Current checkpoint — Bloom BL09 skipped by owner (2026-11-23)
 
-Owner approved BL07. Implemented slower environmental evolution, critically damped monolith lift/yaw, lane-specific musical trail rates and proportional fresh low-event rings, preserving existing seam accents and all geometry/camera/materials. Matched BL06/BL07 annotated sequence videos, screenshots and technical verification are in `docs/evidence/bloom/bl07/current/`. Stop for owner visual/listening review. BL08 remains unstarted; native/real-song acceptance is not inferred. No commit/push/deploy.
+BL08 is owner-approved. Owner explicitly skips BL09 acceptance/comparison; do not run it or mark its tests passed. Preserve current Bloom visuals and documented verification limitations. Await the next owner-selected task; no production changes, commit/push/deploy.
 
 Current order is intentional: validate external audio before investing in graphics. Plan/approve each task separately; mark actual status only in PROGRESS.md. Each gate requires owner sign-off. If a required check cannot run, record a blocker; do not mark the gate passed or silently expand scope.
 

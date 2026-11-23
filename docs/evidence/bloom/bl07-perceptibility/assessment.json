@@ -1,0 +1,214 @@
+{
+  "checks": [
+    "Matched input/camera/monolith pose; final controller→actual material bindings; separate material-only pixel comparisons with unchanged sky; quiet autonomous float; visible independent stone movement; parallax/reduced return; ring origin/range; individual and complete films; source/geometry protection"
+  ],
+  "mapping": [
+    {
+      "name": "resting",
+      "energy": {
+        "subBass": 0,
+        "bass": 0,
+        "lowMids": 0,
+        "highMids": 0,
+        "presence": 0,
+        "air": 0
+      },
+      "aurora": 0.18,
+      "mountainExcess": 0,
+      "seamBefore": 1,
+      "seamAfter": 1
+    },
+    {
+      "name": "moderate",
+      "energy": {
+        "subBass": 0.141,
+        "bass": 0.141,
+        "lowMids": 0.141,
+        "highMids": 0.141,
+        "presence": 0.141,
+        "air": 0.141
+      },
+      "aurora": 0.47502983101100854,
+      "mountainExcess": 0.29502983101100855,
+      "seamBefore": 1.3733644859813083,
+      "seamAfter": 1.5490654205607475
+    },
+    {
+      "name": "energetic",
+      "energy": {
+        "subBass": 0.424,
+        "bass": 0.424,
+        "lowMids": 0.424,
+        "highMids": 0.424,
+        "presence": 0.424,
+        "air": 0.424
+      },
+      "aurora": 0.6755867264130113,
+      "mountainExcess": 0.4955867264130113,
+      "seamBefore": 1.596688741721854,
+      "seamAfter": 1.8774834437086088
+    }
+  ],
+  "illumination": {
+    "mountains": {
+      "region": "450x150+130+285",
+      "meanAbsoluteChannelDelta": 7.0135654320987655,
+      "changedPixels": 55228,
+      "maxPixelChannelDelta": 19.333333333333332,
+      "unaffectedSky": {
+        "meanAbsoluteChannelDelta": 0,
+        "changedPixels": 0,
+        "maxPixelChannelDelta": 0
+      }
+    },
+    "stone": {
+      "region": "65x275+750+100",
+      "meanAbsoluteChannelDelta": 9.647067599067599,
+      "changedPixels": 17875,
+      "maxPixelChannelDelta": 27,
+      "unaffectedSky": {
+        "meanAbsoluteChannelDelta": 0,
+        "changedPixels": 0,
+        "maxPixelChannelDelta": 0
+      }
+    },
+    "haze": {
+      "region": "160x75+50+240",
+      "meanAbsoluteChannelDelta": 4.893555555555555,
+      "changedPixels": 9795,
+      "maxPixelChannelDelta": 8,
+      "unaffectedSky": {
+        "meanAbsoluteChannelDelta": 0,
+        "changedPixels": 0,
+        "maxPixelChannelDelta": 0
+      }
+    },
+    "lake": {
+      "region": "1000x260+200+510",
+      "meanAbsoluteChannelDelta": 6.86776282051282,
+      "changedPixels": 156929,
+      "maxPixelChannelDelta": 39,
+      "unaffectedSky": {
+        "meanAbsoluteChannelDelta": 0,
+        "changedPixels": 0,
+        "maxPixelChannelDelta": 0
+      }
+    }
+  },
+  "motion": {
+    "monolithQuietYSpan": 0.21593926437805155,
+    "fragments": [
+      {
+        "xPixels": 25.198449584796567,
+        "yPixels": 27.01775682746326,
+        "rotationRadians": 0.7597667549088652
+      },
+      {
+        "xPixels": 25.19888477763151,
+        "yPixels": 26.99695427471341,
+        "rotationRadians": 0.7597229708757938
+      }
+    ],
+    "cameraPositionSpans": [
+      1.7256663945405095,
+      0.8251339821756478
+    ],
+    "beamAttack": {
+      "sustained": 1.5490654205607475,
+      "accent": 2.6839721193436756,
+      "surfaceMeanDelta": 37.06285714285714
+    },
+    "rippleRadiusAt2Seconds": {
+      "beforeWorld": 2.04,
+      "afterWorld": 3.1500000000000004,
+      "beforePixels": 183.6,
+      "afterPixels": 283.50000000000006
+    }
+  },
+  "performance": {
+    "before": [
+      {
+        "frames": 300,
+        "median": 16.699999999720603,
+        "p95": 17,
+        "max": 26.899999999906868,
+        "cost": {
+          "calls": 13,
+          "triangles": 6532,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 7
+        }
+      },
+      {
+        "frames": 300,
+        "median": 16.699999999720603,
+        "p95": 17,
+        "max": 17.100000000093132,
+        "cost": {
+          "calls": 13,
+          "triangles": 6532,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 7
+        }
+      },
+      {
+        "frames": 301,
+        "median": 16.699999999720603,
+        "p95": 17.100000000093132,
+        "max": 17.299999999813735,
+        "cost": {
+          "calls": 13,
+          "triangles": 6532,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 7
+        }
+      }
+    ],
+    "after": [
+      {
+        "frames": 300,
+        "median": 16.699999999720603,
+        "p95": 17,
+        "max": 17.299999999813735,
+        "cost": {
+          "calls": 13,
+          "triangles": 6852,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 7
+        }
+      },
+      {
+        "frames": 300,
+        "median": 16.699999999720603,
+        "p95": 17,
+        "max": 17.199999999720603,
+        "cost": {
+          "calls": 13,
+          "triangles": 6852,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 7
+        }
+      },
+      {
+        "frames": 300,
+        "median": 16.699999999720603,
+        "p95": 17,
+        "max": 17.199999999720603,
+        "cost": {
+          "calls": 13,
+          "triangles": 6852,
+          "geometries": 9,
+          "textures": 1,
+          "programs": 7
+        }
+      }
+    ],
+    "limitation": "Headless ANGLE vsync frame cadence; not GPU execution time/native-window certification."
+  },
+  "unchangedSources": 101
+}

@@ -70,6 +70,7 @@ varying vec3 stoneNormal;
 uniform vec3 stoneAuroraColor;
 uniform float stoneAuroraStrength;
 uniform float stoneSeamLevel;
+uniform float stoneAuroraExcess;
 float stoneHash(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}
 float stoneNoise(vec3 p){
   vec3 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);
@@ -83,11 +84,12 @@ float stoneNoise(vec3 p){
 // Built-in directional lighting/fog stays intact. A bounded, stone-only right
 // fill reveals depth without altering the approved light on terrain or auroras.
 export function createStoneMaterial(auroraColor: Color, auroraStrength: { value: number }) {
-  const material = Object.assign(new MeshStandardMaterial({ color: '#373441', roughness: .97, metalness: 0 }), { seamLevel: { value: 1 }, auroraStrength: { value: auroraStrength.value } })
+  const material = Object.assign(new MeshStandardMaterial({ color: '#373441', roughness: .97, metalness: 0 }), { seamLevel: { value: 1 }, auroraStrength: { value: auroraStrength.value }, auroraExcess: { value: 0 } })
   material.onBeforeCompile = shader => {
     shader.uniforms.stoneAuroraColor = { value: auroraColor }
     shader.uniforms.stoneAuroraStrength = material.auroraStrength
     shader.uniforms.stoneSeamLevel = material.seamLevel
+    shader.uniforms.stoneAuroraExcess = material.auroraExcess
     shader.vertexShader = 'varying vec3 stonePosition; varying vec3 stoneNormal;\n' + shader.vertexShader
     shader.vertexShader = shader.vertexShader.replace('#include <begin_vertex>',
       '#include <begin_vertex>\nstonePosition=position;stoneNormal=normalize(mat3(modelMatrix)*normal);')
@@ -112,13 +114,15 @@ export function createStoneMaterial(auroraColor: Color, auroraStrength: { value:
       #include <emissivemap_fragment>
       float rightFace=pow(max(dot(normalize(stoneNormal),normalize(vec3(0.85,0.25,0.35))),0.0),2.0);
       totalEmissiveRadiance+=(vec3(0.065,0.045,0.075)+stoneAuroraColor*stoneAuroraStrength*0.13)*rightFace*stoneValue;
-      float seamFalloff=exp(-abs(stonePosition.x+0.24)*45.0/stoneSeamLevel);
+      totalEmissiveRadiance+=stoneAuroraColor*stoneAuroraExcess*0.20*(0.25+rightFace)*stoneValue;
+      float activeSeam=max(0.0,stoneSeamLevel-1.0);
+      float seamFalloff=exp(-abs(stonePosition.x+0.24)*45.0/(stoneSeamLevel+activeSeam*0.5));
       float seamEnd=1.0-smoothstep(1.49,1.64,abs(stonePosition.y));
       float frontFace=smoothstep(0.27,0.32,stonePosition.z);
-      totalEmissiveRadiance+=vec3(0.36,0.10,0.19)*seamFalloff*seamEnd*frontFace*stoneSeamLevel;
+      totalEmissiveRadiance+=vec3(0.36,0.10,0.19)*seamFalloff*seamEnd*frontFace*(stoneSeamLevel+activeSeam*0.9);
     `)
   }
-  material.customProgramCacheKey = () => 'bloom-stone-v2'
+  material.customProgramCacheKey = () => 'bloom-stone-v3'
   return material
 }
 

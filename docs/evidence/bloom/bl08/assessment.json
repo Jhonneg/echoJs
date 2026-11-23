@@ -1,0 +1,82 @@
+{
+  "status": "BL08 controlled audit PASS; owner review/native measurements remain open",
+  "productionFilesUnchanged": 107,
+  "groups": [
+    {
+      "quality": "standard",
+      "deviceDpr": 1,
+      "renderDpr": 1,
+      "drawingBuffer": [
+        1440,
+        900
+      ],
+      "uniqueGeometryBytes": 180372,
+      "triangles": 6852,
+      "median": [
+        16.699999999254942,
+        16.700000000186265,
+        16.699999999254942
+      ],
+      "p95": [
+        16.799999999813735,
+        16.799999999813735,
+        16.799999999813735
+      ],
+      "max": 16.90000000037253
+    },
+    {
+      "quality": "standard",
+      "deviceDpr": 2,
+      "renderDpr": 1.5,
+      "drawingBuffer": [
+        2160,
+        1350
+      ],
+      "uniqueGeometryBytes": 180372,
+      "triangles": 6852,
+      "median": [
+        16.699999999254942,
+        16.700000000186265,
+        16.699999999254942
+      ],
+      "p95": [
+        16.799999999813735,
+        16.799999999813735,
+        16.799999999813735
+      ],
+      "max": 16.899999999441206
+    },
+    {
+      "quality": "low",
+      "deviceDpr": 2,
+      "renderDpr": 0.75,
+      "drawingBuffer": [
+        1080,
+        675
+      ],
+      "uniqueGeometryBytes": 64404,
+      "triangles": 2308,
+      "median": [
+        16.700000000186265,
+        16.699999999254942,
+        16.700000000186265
+      ],
+      "p95": [
+        16.799999999813735,
+        16.799999999813735,
+        16.799999999813735
+      ],
+      "max": 17.09999999962747
+    }
+  ],
+  "errors": [],
+  "unexpectedWarnings": [],
+  "knownClockDeprecations": 19,
+  "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+  "limitations": [
+    "Headless frame cadence includes temporary probe overhead; not GPU execution time or native-device certification.",
+    "Unique geometry-array bytes exclude driver allocations, framebuffer/AA attachments, programs and CPU heap.",
+    "Shared-tab/native pointer/live-song gates carried forward; no captured media or approval inferred."
+  ],
+  "decision": "Preserve approved visuals and existing Low fallback; no production changes justified by this audit."
+}

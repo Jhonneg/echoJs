@@ -1,0 +1,60 @@
+{
+  "method": "CPU rasterization of actual source triangles at recorded final world/camera matrices versus isolated GPU reflection masks; no water distortion in masks only; 1px antialias tolerance.",
+  "results": [
+    {
+      "view": "mask-left",
+      "expectedPixels": 32227,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-right",
+      "expectedPixels": 32218,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-top",
+      "expectedPixels": 32269,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-bottom",
+      "expectedPixels": 32127,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-top-left",
+      "expectedPixels": 31821,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-top-right",
+      "expectedPixels": 32284,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-bottom-left",
+      "expectedPixels": 32030,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-bottom-right",
+      "expectedPixels": 32302,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    },
+    {
+      "view": "mask-center",
+      "expectedPixels": 32106,
+      "missingBeyond1px": 0,
+      "extraBeyond1px": 0
+    }
+  ],
+  "limits": "Checks silhouette alignment of body, beam and both faceted fragments; material aesthetics/native hardware remain owner review."
+}

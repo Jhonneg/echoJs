@@ -94,7 +94,7 @@ test('pose projection stays aligned through bounded musical lift/yaw and reuses 
 test('migration removes all legacy runtime wiring from Bloom and does not install camera tilt',()=>{
  const scene=readFileSync('src/scenes/bloom/BloomScene.tsx','utf8'),app=readFileSync('src/App.tsx','utf8')
  assert.doesNotMatch(scene,/AudioSignal|updateBloomResponse|createBloomResponse|signal=\{/)
- assert.match(scene,/cameraTilt=\{false\}/);assert.match(app,/<BloomScene musicFeatures=\{analysis.musicFeatures!\}/)
+ assert.match(scene,/cameraTilt=\{false\}/);assert.match(app,/<BloomScene[^>]*musicFeatures=\{analysis.musicFeatures!\}/)
 })
 
 test('existing production analysis feeds calibrated generated attacks to the correct Bloom voice',async()=>{

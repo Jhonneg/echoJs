@@ -17,6 +17,7 @@ export default function App() {
   })
   const [local, setLocal] = useState<LocalFileState>({ status: 'empty', name: '', message: 'Select a permitted local audio file.' })
   const [source, setSource] = useState<'tab' | 'file'>('tab')
+  const [bloomFloating, setBloomFloating] = useState(true)
   const reactivity = 1
   const [quality, setQuality] = useState<GraphicsQuality>('standard')
   const [nocturneLightingMode, setNocturneLightingMode] = useState<NocturneLightingMode>('audio')
@@ -44,19 +45,20 @@ export default function App() {
       <main className="experience">
         <h1 className="sr-only">{sceneNames[scene]} — music visualizer</h1>
         {scene === 'bloom'
-          ? <BloomScene musicFeatures={analysis.musicFeatures!} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
+          ? <BloomScene playing={source === 'file' ? local.status === 'playing' : capture.status === 'connected' && bloomFloating} musicFeatures={analysis.musicFeatures!} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
           : scene === 'lavender-peaks'
             ? <LavenderPeaksScene quality={quality} musicFeatures={analysis.musicFeatures!} reactivity={reactivity} />
             : scene === 'nocturne'
               ? <NocturneScene musicFeatures={analysis.musicFeatures!} quality={quality} lighting={nocturneLighting} lightingMode={nocturneLightingMode} reactivity={reactivity} />
               : <CrimsonHorizonScene pilot={analysis.musicFeatures ? { reader: analysis.musicFeatures, profile: 'candidate' } : undefined} quality={quality} signal={analysis.signal} reactivity={reactivity} />}
-        <AudioControls source={source} capture={capture} local={local} analysis={analysis}
+        <AudioControls bloomFloating={bloomFloating} onBloomFloating={setBloomFloating} source={source} capture={capture} local={local} analysis={analysis}
           scene={scene} onScene={setScene}
           nocturneLightingMode={nocturneLightingMode} onNocturneLightingMode={setNocturneLightingMode}
           nocturneLighting={nocturneLighting} onNocturneLighting={setNocturneLighting}
           volume={volume}
           quality={quality} onQuality={setQuality}
           onShare={() => {
+            setBloomFloating(true)
             if (source === 'file') localController.current?.clear()
             setSource('tab')
             void controller.current?.connect()

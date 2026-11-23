@@ -1,0 +1,141 @@
+import { SIX_BAND_NAMES, clampSignal, smooth } from '../../audio/signal.ts'
+import { musicFeaturesFresh, type MusicFeatureReader } from '../../audio/musicFeatures.ts'
+import { createAurora, updateAurora, AURORA_PERIOD } from './aurora.ts'
+import { MONOLITH, monolithProjection } from './monolith.ts'
+
+const HISTORY = 64
+const broadBands = ['low', 'low', 'mid', 'mid', 'high', 'high'] as const
+// Calibrated linear tone energies: .042 quiet, .141 moderate, .424 strong.
+// Monotonic fixed knee, never normalized against the current song maximum.
+export const bloomDrive = (value: number) => { const x = clampSignal(value); return x / (x + .18) }
+const bandState = () => ({ energy: 0, sustained: 0, accent: 0, sequence: 0, strength: 0 })
+const pulse = () => ({ progress: 2, strength: 0 })
+export function createBloomMusic() {
+  return {
+    session: -1, sequence: 0, frame: -1, sampleTime: -1, cursor: 0, count: 0, enabled: false, fresh: false,
+    times: new Float64Array(HISTORY), energies: new Float64Array(HISTORY * 6), rises: new Float64Array(HISTORY * 6),
+    bands: SIX_BAND_NAMES.map(bandState), context: { intensity: 0, brightness: .5, activity: 0 },
+    ambient: createAurora(), time: 0,
+    motion: { lift: 0, liftVelocity: 0, yaw: 0, yawVelocity: 0 },
+    trails: [0, .43].map(phase => ({ phase, level: 1, shimmer: 0, cursor: 0, pulses: [pulse(), pulse()] })),
+    lowPulse: 0, ringAge: 3, ringStrength: 0,
+    output: { auroraStrength: .24, auroraHue: .5, auroraExpansion: 0, auroraDetail: 0, atmosphere: 0,
+      heroY: MONOLITH.y as number, heroYaw: MONOLITH.yaw as number, seamLevel: 1, lowPulse: 0 },
+    projection: monolithProjection(),
+  }
+}
+export type BloomMusic = ReturnType<typeof createBloomMusic>
+
+function clearAttacks(state: BloomMusic) {
+  state.count = state.cursor = 0; state.frame = -1; state.sampleTime = -1
+  state.lowPulse = state.ringStrength = 0; state.ringAge = 3
+  for (const band of state.bands) { band.accent = band.strength = 0; band.sequence = 0 }
+  for (const trail of state.trails) for (const p of trail.pulses) { p.progress = 2; p.strength = 0 }
+}
+
+function resetMotion(state: BloomMusic) {
+  state.motion.lift = state.motion.liftVelocity = state.motion.yaw = state.motion.yawVelocity = 0
+}
+
+// One borrowed read per render frame. Only bounded scalar copies survive it.
+export function updateBloomMusic(state: BloomMusic, reader: MusicFeatureReader, delta: number,
+  now: number, amount: number, reduced: boolean) {
+  const view = reader.read(), gain = clampSignal(amount)
+  const dt = Number.isFinite(delta) ? Math.max(0, Math.min(.05, delta)) : 0
+  const fresh = musicFeaturesFresh(view, now), enabled = fresh && gain > 0
+  const sessionChanged = state.session !== view.session
+  const rollback = view.frame < state.frame || view.updatedAtSeconds < state.sampleTime
+  const gap = state.sampleTime >= 0 && view.updatedAtSeconds - state.sampleTime > .25
+  const reset = sessionChanged || rollback || gap || enabled !== state.enabled
+  if (reset || !enabled || reduced) {
+    clearAttacks(state); state.sequence = view.sequence
+    if (sessionChanged || gain === 0) {
+      resetMotion(state)
+      for (const band of state.bands) band.sustained = 0
+      state.context.intensity = state.context.activity = 0; state.context.brightness = .5
+    }
+  }
+  state.session = view.session; state.fresh = fresh; state.enabled = enabled
+  if (enabled && !reduced && view.frame !== state.frame) {
+    const at = state.cursor
+    for (let b = 0; b < 6; b++) {
+      const value = clampSignal(view.energy.six[SIX_BAND_NAMES[b]])
+      let earlier = state.count ? state.energies[((at - 1 + HISTORY) % HISTORY) * 6 + b] : value
+      for (let i = 0; i < state.count; i++) {
+        const index = (at - 1 - i + HISTORY) % HISTORY
+        if (view.updatedAtSeconds - state.times[index] >= .06) { earlier = state.energies[index * 6 + b]; break }
+      }
+      state.energies[at * 6 + b] = value; state.rises[at * 6 + b] = Math.max(0, value - earlier)
+    }
+    state.times[at] = view.updatedAtSeconds
+    state.cursor = (at + 1) % HISTORY; state.count = Math.min(HISTORY, state.count + 1)
+    state.frame = view.frame; state.sampleTime = view.updatedAtSeconds
+  }
+  for (let i = 0; i < 6; i++) {
+    const band = state.bands[i]
+    band.energy = enabled ? clampSignal(view.energy.six[SIX_BAND_NAMES[i]]) : 0
+    const target = bloomDrive(band.energy) * gain
+    band.sustained = gain === 0 ? 0 : smooth(band.sustained, target, dt, reduced ? .8 : i < 2 ? .4 : .12, reduced ? 1.5 : .65)
+    if (target === 0 && band.sustained < .0001) band.sustained = 0
+    band.accent *= Math.exp(-dt / .22)
+    if (band.accent < .0001) band.accent = 0
+  }
+  state.context.intensity = smooth(state.context.intensity, enabled ? clampSignal(view.context.intensity) * gain : 0, dt, 2.4, 3.8)
+  state.context.activity = smooth(state.context.activity, enabled ? clampSignal(view.context.activity) * gain : 0, dt, .8, 1.4)
+  const hueTarget = enabled && view.context.brightnessValid ? .5 + (clampSignal(view.context.brightness) - .5) * gain : .5
+  state.context.brightness = smooth(state.context.brightness, hueTarget, dt, 3, 4)
+  if (gain === 0) { state.context.intensity = state.context.activity = 0; state.context.brightness = .5 }
+  for (const event of view.events) {
+    if (event.session !== view.session || event.sequence <= state.sequence) continue
+    state.sequence = event.sequence
+    const age = now - event.emittedAtSeconds, peakAge = now - event.timeSeconds
+    if (reset || !enabled || reduced || !Number.isFinite(age) || age < 0 || age > .25 ||
+      !Number.isFinite(peakAge) || peakAge < age || peakAge > .5) continue
+    let lowStrength = 0
+    for (let b = 0; b < 6; b++) {
+      if (broadBands[b] !== event.band) continue
+      let rise = 0
+      for (let i = 0; i < state.count; i++) {
+        const at = (state.cursor - 1 - i + HISTORY) % HISTORY
+        if (Math.abs(state.times[at] - event.timeSeconds) <= .09) rise = Math.max(rise, state.rises[at * 6 + b])
+      }
+      if (rise < .012) continue
+      const band = state.bands[b], strength = clampSignal(event.strength)
+      band.strength = strength / (strength + .12) * rise / (rise + .04) * gain
+      band.accent = Math.max(band.accent, band.strength); band.sequence = event.sequence
+      if (b < 2) lowStrength = Math.max(lowStrength, band.strength)
+      else {
+        const trail = state.trails[b === 2 || b === 4 ? 0 : 1]
+        const p = trail.pulses[trail.cursor]; trail.cursor = (trail.cursor + 1) % trail.pulses.length
+        p.progress = age * .45; p.strength = band.strength * (b >= 4 ? .35 : 1)
+      }
+    }
+    // One primary ring per qualified low event; a weak later hit never inherits
+    // the preceding ring strength. Compatible low sub-bands merge only here.
+    if (lowStrength > 0) { state.ringStrength = lowStrength; state.ringAge = age }
+  }
+  state.sequence = Math.max(state.sequence, view.sequence)
+  if (!reduced) { state.time = (state.time + dt) % AURORA_PERIOD; state.ringAge = Math.min(3, state.ringAge + dt) }
+  if (state.ringAge >= 3) state.ringStrength = 0
+  state.lowPulse = Math.max(state.bands[0].accent, state.bands[1].accent)
+  const ambient = updateAurora(state.ambient, dt, reduced)
+  const low = Math.max(state.bands[0].sustained, state.bands[1].sustained)
+  const out = state.output, high = state.bands[3]
+  out.auroraStrength = Math.min(.9, ambient.strength + .40 * low + .26 * state.context.intensity + .06 * state.lowPulse)
+  out.auroraHue = clampSignal(ambient.hue + .18 * (state.context.brightness - .5))
+  out.auroraExpansion = .14 * low + .08 * state.context.intensity
+  out.auroraDetail = .07 * state.bands[4].sustained + .09 * state.bands[5].sustained
+  out.atmosphere = state.context.intensity * .35
+  // Playback lifecycle owns pose; musical energy never moves the base hover.
+  out.heroY = MONOLITH.y; out.heroYaw = MONOLITH.yaw
+  out.seamLevel = 1 + .85 * high.sustained + 1.5 * high.accent
+  out.lowPulse = state.lowPulse
+  for (let lane = 0; lane < 2; lane++) {
+    const trail = state.trails[lane], body = state.bands[lane + 2].sustained
+    trail.level = 1 + .65 * body; trail.shimmer = .12 * state.bands[lane + 4].sustained
+    if (!reduced) trail.phase = (trail.phase + dt * (.125 + (lane === 0 ? .035 : .065) * body)) % 1
+    for (const p of trail.pulses) if (!reduced && p.progress < 1.3) { p.progress += dt * .45; p.strength *= Math.exp(-dt / 1.2) }
+  }
+  monolithProjection(out.heroY, out.heroYaw, state.projection)
+  return state
+}

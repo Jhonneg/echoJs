@@ -151,6 +151,6 @@ test('Lavender retains its MI input alongside the migrated Bloom and existing Cr
     const source=readFileSync('src/scenes/lavender-peaks/'+file,'utf8')
     assert.doesNotMatch(source,/AudioSignal|signal\.(fast|slow|transient|flux|intensity|sixBands)|signal=\{/)
   }
-  assert.match(app,/<BloomScene musicFeatures=\{analysis.musicFeatures!\}/)
+  assert.match(app,/<BloomScene[^>]*musicFeatures=\{analysis.musicFeatures!\}/)
   assert.match(app,/<CrimsonHorizonScene.*signal=\{analysis.signal\}/)
 })

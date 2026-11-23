@@ -12,6 +12,8 @@ import { sceneNames, type SceneId } from "../scenes/scene";
 import { nocturneHasSignal } from "../scenes/nocturne/activity";
 
 type Props = {
+  bloomFloating: boolean;
+  onBloomFloating(value: boolean): void;
   nocturneLightingMode: NocturneLightingMode;
   onNocturneLightingMode(value: NocturneLightingMode): void;
   nocturneLighting: NocturneLighting;
@@ -247,6 +249,10 @@ export function AudioControls(props: Props) {
                     : "Disconnect"}
                 </button>
               )}
+              {props.scene === "bloom" && source === "tab" && capture.status === "connected" && <>
+                <button onClick={() => props.onBloomFloating(!props.bloomFloating)}>{props.bloomFloating ? "Pause floating" : "Resume floating"}</button>
+                <p className="source-help">Floating follows this control while sharing. Playback stays controlled in your source tab.</p>
+              </>}
               <div className="experience-settings">
                 {props.scene === "lavender-peaks" && (
                   <p className="source-help">

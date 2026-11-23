@@ -1,0 +1,15 @@
+{
+  "baseline": false,
+  "smoke": false,
+  "temporary": "/tmp/echo-bloom-bl02-P4edbU",
+  "errors": [],
+  "screenshots": [],
+  "checks": [
+    "autonomous-floating: 335 timestamped browser frames, annotated feature controls, no audio",
+    "mouse-parallax: 194 timestamped browser frames, annotated feature controls, no audio"
+  ],
+  "performance": [],
+  "source": "Isolated production build with temporary scalar/resource probes; generated local PCM only. No owner media. Headless performance is not native-device certification.",
+  "sourceUnchanged": true,
+  "status": "BL07 perceptibility motion captured"
+}

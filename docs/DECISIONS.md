@@ -575,3 +575,23 @@ Browser pixel checks exposed a stale implicit stone/core uniform binding despite
 Owner approves a bounded choreography refinement. Keep the accepted seam calibration and intrinsic clocks, geometry/materials/camera and MI engine untouched. Slow the environmental context envelope, then place an exact critically damped motion step after the existing lift/yaw targets. This lets the sky lead a build and the monolith follow/settle without adding scaling, oscillatory spring overshoot or a physics dependency. Preserve all existing pose bounds and update the same final-pose reflection. Separate the two musical trail speed gains while retaining their idle speed.
 
 Low rings previously latched the maximum strength across successive events until timeout. Merge compatible low sub-band strength only within one event, then use that event's fresh strength/age; quiet hits cannot inherit old loudness. Validate with the same production-MI generated sequence replayed against preserved BL06 code, plus actual generated audio/source lifecycle. Test-phase labels never imply musical-section detection. Do not approve aesthetics or native/real-song gates from numeric replay alone.
+
+## 2026-11-23 — consolidated BL07 supersedes intensity-driven lift
+
+Owner explicitly requests complete refinement and chooses a shared-tab-only manual floating control. Local source lifecycle is authoritative; silent playing media keeps floating, while pause/disconnect selects smooth descent. Do not infer source transport from MI amplitude or legacy AudioSignal. Preserve continuous phase/velocity across state changes. Add fine-pointer orbit only inside Bloom and keep backdrop horizon fixed; project final optical anchors into the existing lake shader rather than adding an unmeasured full-scene reflector. Fine-pointer capability is explicitly emulated only for automated camera evidence because headless reports no hover hardware; owner native feel remains a gate.
+
+## 2026-11-23 — close BL07 code/optical evidence gaps without claiming native acceptance
+
+Owner reposts the consolidated request after completion was overstated. Add the missing qualified independent stone impulses and replace bounding-box reflection silhouettes with the exact shared source triangle buffers. This adds four lightweight draws, not an unmeasured full-scene reflection technique. Validate the GPU silhouettes against CPU triangle rasterization across all nine pointer positions with1px antialias tolerance; keep wet/lighting diagnostics out of production. Record native pointer/shared-tab/real-song and owner approval as open section10 gates, even when implementation/controlled checks pass. No BL08 or automatic commit.
+
+## 2026-11-23 — BL07 perceptibility follows delivered pixels, not only control activity
+
+The owner's follow-up identifies visual weakness despite working controller values. Preserve source/MI/lifecycle/geometry and tune scene-local scale, contrast and route placement. Direct material-owned aurora excess uses the same final color/strength as sky/lake but only lights exposed mountain/stone faces; do not raise global ambient or change the shared engine. Keep body/detail pulse classification within the existing bounded slots. Compare identical inputs/camera/pose and isolate final surface controls to prove actual pixels respond. Enlarged low rings taper before the existing3s event cap to avoid a visible cutoff. All automated/annotated evidence supports owner review; it cannot approve aesthetics, native controls or actual-song listening. No BL08 or commit/push.
+
+## 2026-11-23 — BL08 preserves approved visuals when audit finds no necessary correction
+
+Owner approves the visual direction and authorizes BL08. Responsive/quality/resource checks support keeping the current production scene. Existing Low mode supplies lower geometry, one aurora layer and reduced DPR; do not add another fallback or tune accepted materials without evidence of need. Record shader/GPU/driver-memory/native measurements as unmeasured instead of deriving them from vsync cadence and CPU buffer sizes. Separate the installed R3F-created Clock deprecation from WebGL errors; dependency migration would affect the shared host and is outside this Bloom pass. Carry native/real-song gates forward; BL09 still requires owner authorization.
+
+## 2026-11-23 — owner skips Bloom BL09
+
+Owner explicitly skips the proposed final cross-landscape musical acceptance phase. Preserve the approved BL08/Bloom baseline and stop; do not re-request the skipped gate or claim its tests passed. Existing evidence limitations remain factual. This instruction does not authorize further production changes, commit or push.

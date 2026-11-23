@@ -1,0 +1,13 @@
+# BL07 perceptibility audit — before tuning (2026-11-23)
+
+Saved pre-task sources and hashes in `baseline/`. Browser `baseline/capture.json` records actual final material values at fixed camera/pose/ambient time after six seconds of the real scene controller at60Hz. Inputs use the existing production-MI calibration: quiet .042, moderate .141, strong .424 linear energy; no owner media. No shared analysis changes proposed.
+
+| Effect | Delivered baseline / root cause | Bounded correction |
+|---|---|---|
+| Fragments | Controller x±.065/y±.085/z±.06 and rotation±.17rad. At1440×900 these are only±5.85/7.65 screen pixels. Signal is present; autonomous movement is too small/slow for18–30px stones. | Increase independent motion bounds/frequencies, retain geometry and delayed playback rise/reduced suppression. |
+| Trails | Eight Standard/four Low ribbons, but secondary routes recursively offset the same two paths. Energetic levels1.456/shimmer.084 are delivered correctly; core attenuation and projection overlap make multiple routes read as a few crest lines. | Ten/six distinct terrain-attached drainage routes; stronger active cores/halos; separate mid-body versus presence/air pulse classification inside the existing bounded slots. |
+| Aurora surface light | Strength .180/.475/.676 for rest/moderate/energetic reaches stone/lake; mountain materials have no direct local aurora binding and rely on the directional light. Material delivery is working elsewhere; missing direct surface modulation limits readability. | Add normal/position-masked fill to existing mountain materials and stronger stone-face/haze musical excess; preserve resting light, sky, geometry and ambient/global lighting settings. |
+| Beam | Delivered seam1/1.373/1.597; narrow core already near white. Only a small surrounding stone falloff changes, so brightness clipping masks the response. | Increase sustained/attack range and localized stone spill with a bounded active gain; retain narrow core and exact idle behavior. |
+| Ripples | Actual ring strength/age reaches water. Edge .08world width, expansion.85/s and exp(-age*.85), plus depth fade .9–1.6, fade larger rings before they read clearly. | Larger ellipse/travel range, sharper antialiased edge and bounded halo/slower decay; use projected water-foot origin. |
+
+The monolith's six-second autonomous float already continues with zero features; keep its ascent/phase/height untouched. Pointer movement is independent and bounded; preserve it and demonstrate it separately. Native pointer feel, permitted-song listening and owner visual acceptance remain manual. No BL08, commit or push.

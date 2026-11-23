@@ -9,7 +9,7 @@ const broadBands = ['low', 'low', 'mid', 'mid', 'high', 'high'] as const
 // Monotonic fixed knee, never normalized against the current song maximum.
 export const bloomDrive = (value: number) => { const x = clampSignal(value); return x / (x + .18) }
 const bandState = () => ({ energy: 0, sustained: 0, accent: 0, sequence: 0, strength: 0 })
-const pulse = () => ({ progress: 2, strength: 0 })
+const pulse = () => ({ progress: 2, strength: 0, detail: 0 })
 export function createBloomMusic() {
   return {
     session: -1, sequence: 0, frame: -1, sampleTime: -1, cursor: 0, count: 0, enabled: false, fresh: false,
@@ -33,20 +33,6 @@ function clearAttacks(state: BloomMusic) {
   for (const trail of state.trails) for (const p of trail.pulses) { p.progress = 2; p.strength = 0 }
 }
 
-// Exact critically damped step, stable across render cadences. Position and
-// velocity are independent of the light envelopes; no spring overshoot/spinning.
-function settle(motion: BloomMusic['motion'], position: 'lift' | 'yaw', velocity: 'liftVelocity' | 'yawVelocity',
-  target: number, dt: number, seconds: number, lower: number, upper: number) {
-  const omega = 2 / seconds, offset = motion[position] - target
-  const j = motion[velocity] + omega * offset, decay = Math.exp(-omega * dt)
-  const value = target + (offset + j * dt) * decay
-  const speed = (motion[velocity] - omega * j * dt) * decay
-  motion[position] = Math.max(lower, Math.min(upper, value))
-  motion[velocity] = value !== motion[position] ? 0 : speed
-  if (Math.abs(motion[position] - target) < .00003 && Math.abs(motion[velocity]) < .00003) {
-    motion[position] = target; motion[velocity] = 0
-  }
-}
 function resetMotion(state: BloomMusic) {
   state.motion.lift = state.motion.liftVelocity = state.motion.yaw = state.motion.yawVelocity = 0
 }
@@ -121,7 +107,7 @@ export function updateBloomMusic(state: BloomMusic, reader: MusicFeatureReader, 
       else {
         const trail = state.trails[b === 2 || b === 4 ? 0 : 1]
         const p = trail.pulses[trail.cursor]; trail.cursor = (trail.cursor + 1) % trail.pulses.length
-        p.progress = age * .45; p.strength = band.strength * (b >= 4 ? .35 : 1)
+        p.progress = age * .45; p.strength = band.strength * (b >= 4 ? .75 : 1); p.detail = b >= 4 ? 1 : 0
       }
     }
     // One primary ring per qualified low event; a weak later hit never inherits
@@ -135,19 +121,14 @@ export function updateBloomMusic(state: BloomMusic, reader: MusicFeatureReader, 
   const ambient = updateAurora(state.ambient, dt, reduced)
   const low = Math.max(state.bands[0].sustained, state.bands[1].sustained)
   const out = state.output, high = state.bands[3]
-  out.auroraStrength = Math.min(.7, ambient.strength + .22 * low + .12 * state.context.intensity + .04 * state.lowPulse)
+  out.auroraStrength = Math.min(.9, ambient.strength + .40 * low + .26 * state.context.intensity + .06 * state.lowPulse)
   out.auroraHue = clampSignal(ambient.hue + .18 * (state.context.brightness - .5))
   out.auroraExpansion = .14 * low + .08 * state.context.intensity
   out.auroraDetail = .07 * state.bands[4].sustained + .09 * state.bands[5].sustained
   out.atmosphere = state.context.intensity * .35
-  if (reduced || gain === 0) resetMotion(state)
-  else {
-    settle(state.motion, 'lift', 'liftVelocity', .12 * state.context.intensity + .18 * low, dt, .65, 0, .3)
-    settle(state.motion, 'yaw', 'yawVelocity', .055 * low * Math.sin(state.time * .22) + .025 * state.context.activity * Math.sin(state.time * .14), dt, .9, -.08, .08)
-  }
-  out.heroY = MONOLITH.y + state.motion.lift
-  out.heroYaw = MONOLITH.yaw + state.motion.yaw
-  out.seamLevel = 1 + .50 * high.sustained + 1.2 * high.accent
+  // Playback lifecycle owns pose; musical energy never moves the base hover.
+  out.heroY = MONOLITH.y; out.heroYaw = MONOLITH.yaw
+  out.seamLevel = 1 + 1.25 * high.sustained + 1.9 * high.accent
   out.lowPulse = state.lowPulse
   for (let lane = 0; lane < 2; lane++) {
     const trail = state.trails[lane], body = state.bands[lane + 2].sustained

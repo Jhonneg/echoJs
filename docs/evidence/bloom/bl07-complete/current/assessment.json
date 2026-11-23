@@ -1,0 +1,131 @@
+{
+  "status": "Implementation and measured browser checks pass; owner visual/musical acceptance pending",
+  "changed": [
+    "src/App.tsx",
+    "src/components/AudioControls.tsx",
+    "src/scenes/bloom/BloomScene.tsx",
+    "src/scenes/bloom/music.ts",
+    "src/scenes/bloom/trails.ts"
+  ],
+  "preserved": 99,
+  "newProduction": [
+    "src/scenes/bloom/lifecycle.ts"
+  ],
+  "lifecycle": {
+    "rest": 1.78,
+    "hovering": {
+      "phase": 2.862619225951035,
+      "elapsed": 26.733600000000003,
+      "amount": 0.9999898397892057,
+      "velocity": 0.000014703461193489233,
+      "oscillation": 0.9999999999999987,
+      "y": 2.4577329563184835,
+      "yaw": -0.3354375156594639,
+      "fragments": [
+        {
+          "x": 0.024660445070136622,
+          "y": 0.30411727391351107,
+          "z": 1.2555134262734444,
+          "rotation": 0.028901313101660064
+        },
+        {
+          "x": -0.06081915309599321,
+          "y": 0.15762440766592078,
+          "z": -0.8788310605984501,
+          "rotation": 0.16439037612630625
+        }
+      ]
+    },
+    "quietY": 2.3688947207364426,
+    "pausedY": 1.7895077736933254
+  },
+  "camera": [
+    {
+      "name": "pointer-left",
+      "yaw": 0,
+      "pitch": 0,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-right",
+      "yaw": 0,
+      "pitch": 0,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-top",
+      "yaw": 0,
+      "pitch": 0,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-bottom",
+      "yaw": 0,
+      "pitch": 0,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-center",
+      "yaw": 0,
+      "pitch": 0,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-left",
+      "yaw": -2.454116842619742,
+      "pitch": 0,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-right",
+      "yaw": 2.4255504397899657,
+      "pitch": 0,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-top",
+      "yaw": 0.02851945653020021,
+      "pitch": 1.1730335274597465,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-bottom",
+      "yaw": 0.0000012968546316571414,
+      "pitch": -1.1593791864372163,
+      "seamErrorPx": 0
+    },
+    {
+      "name": "pointer-center",
+      "yaw": 5.883002633767135e-11,
+      "pitch": -0.013610105766300474,
+      "seamErrorPx": 0
+    }
+  ],
+  "maxSeamGeometricErrorPx": 0,
+  "cost": {
+    "calls": 9,
+    "triangles": 6302,
+    "geometries": 9,
+    "textures": 1,
+    "programs": 6
+  },
+  "performance": [
+    {
+      "frames": 300,
+      "median": 16.699999999953434,
+      "p95": 16.79999999993015
+    },
+    {
+      "frames": 300,
+      "median": 16.699999999953434,
+      "p95": 16.79999999993015
+    },
+    {
+      "frames": 300,
+      "median": 16.699999999953434,
+      "p95": 16.800000000046566
+    }
+  ],
+  "pointerProfile": "Fine pointer emulated only in isolated camera run; actual browser pointer events. Native pointer feel manual pending.",
+  "limits": "Analytic reflection uses projected body bounds and fragment impressions with wet distortion, not a physical scene reflection pass. Geometric seam alignment is measured; full optical fidelity and aesthetics require owner review. Native tab picker/device performance and real-song listening remain manual."
+}
