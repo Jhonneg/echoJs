@@ -1,0 +1,603 @@
+{
+  "status": "passed localized sky/slopes/mist, delayed contour glints, emitter protection and world anchoring",
+  "method": "Actual held on/off/component renders classified by unchanged sampled profiles.3px silhouette exclusion;1channel interior roundoff. Mixed offsets and full-period render checks complement CPU periodicity tests.",
+  "depth": {
+    "far": 188.58301068241684,
+    "middle": 164.64171707319917,
+    "near": 128.58302343394166
+  },
+  "cases": {
+    "rest": {
+      "layers": [
+        {
+          "pixels": 80951,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 15428856.554797877,
+          "meanDisplayLuma": 190.595008768241,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 44093,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 7815383.816000786,
+          "meanDisplayLuma": 177.2477222235,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 61452,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 10183371.008396374,
+          "meanDisplayLuma": 165.7126050966018,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 88299,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 13326982.84439457,
+          "meanDisplayLuma": 150.93016732233173,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 46870,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 6239942.702399987,
+          "meanDisplayLuma": 133.13297850223995,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 8310,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 995833.2848000699,
+          "meanDisplayLuma": 119.83553367028519,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 377567,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 78615268.60736136,
+          "meanDisplayLuma": 208.21541238339518,
+          "meanAbsoluteChannelDifference": 0
+        }
+      ],
+      "totalAbsoluteChannelDifference": 0,
+      "outsideFieldPixels": 0,
+      "protectedEmitterChanges": 0,
+      "emitterRoundingPixels": 0,
+      "wideGlintPixels": 0,
+      "wrongMistPixels": 0,
+      "clippedWhitePixels": 0
+    },
+    "strong": {
+      "layers": [
+        {
+          "pixels": 80951,
+          "changed": 44956,
+          "totalDifference": 218978,
+          "maxDifference": 14,
+          "luma": 15765282.41941067,
+          "meanDisplayLuma": 194.75092857914873,
+          "meanAbsoluteChannelDifference": 0.9016894994091076
+        },
+        {
+          "pixels": 44093,
+          "changed": 22030,
+          "totalDifference": 77355,
+          "maxDifference": 8,
+          "luma": 8043228.686199206,
+          "meanDisplayLuma": 182.41509278568495,
+          "meanAbsoluteChannelDifference": 0.5847867008368676
+        },
+        {
+          "pixels": 61452,
+          "changed": 19262,
+          "totalDifference": 35386,
+          "maxDifference": 3,
+          "luma": 10695896.746594476,
+          "meanDisplayLuma": 174.05286640946554,
+          "meanAbsoluteChannelDifference": 0.19194384777278745
+        },
+        {
+          "pixels": 88299,
+          "changed": 8708,
+          "totalDifference": 12006,
+          "maxDifference": 2,
+          "luma": 13706703.90060343,
+          "meanDisplayLuma": 155.2305677369328,
+          "meanAbsoluteChannelDifference": 0.04532327659429892
+        },
+        {
+          "pixels": 46870,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 6342053.15940199,
+          "meanDisplayLuma": 135.3115673010879,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 8310,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 1012610.7252000698,
+          "meanDisplayLuma": 121.8544795667954,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 377567,
+          "changed": 101782,
+          "totalDifference": 253791,
+          "maxDifference": 3,
+          "luma": 78735038.4525619,
+          "meanDisplayLuma": 208.5326271961318,
+          "meanAbsoluteChannelDifference": 0.22405824661583243
+        }
+      ],
+      "totalAbsoluteChannelDifference": 597516,
+      "outsideFieldPixels": 0,
+      "protectedEmitterChanges": 0,
+      "emitterRoundingPixels": 0,
+      "wideGlintPixels": 0,
+      "wrongMistPixels": 0,
+      "clippedWhitePixels": 0
+    },
+    "sky": {
+      "layers": [
+        {
+          "pixels": 80951,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 15669720.152818108,
+          "meanDisplayLuma": 193.5704333833814,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 44093,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 8010318.047999098,
+          "meanDisplayLuma": 181.6687013357925,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 61452,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 10680538.272195129,
+          "meanDisplayLuma": 173.80294005394663,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 88299,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 13701764.209002133,
+          "meanDisplayLuma": 155.17462495613918,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 46870,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 6342053.15940199,
+          "meanDisplayLuma": 135.3115673010879,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 8310,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 1012610.7252000698,
+          "meanDisplayLuma": 121.8544795667954,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 377567,
+          "changed": 101782,
+          "totalDifference": 253791,
+          "maxDifference": 3,
+          "luma": 78735038.4525619,
+          "meanDisplayLuma": 208.5326271961318,
+          "meanAbsoluteChannelDifference": 0.22405824661583243
+        }
+      ],
+      "totalAbsoluteChannelDifference": 253791,
+      "outsideFieldPixels": 0,
+      "protectedEmitterChanges": 0,
+      "emitterRoundingPixels": 0,
+      "wideGlintPixels": 0,
+      "wrongMistPixels": 0,
+      "clippedWhitePixels": 0
+    },
+    "slopes": {
+      "layers": [
+        {
+          "pixels": 80951,
+          "changed": 41445,
+          "totalDifference": 190437,
+          "maxDifference": 14,
+          "luma": 15753572.027612831,
+          "meanDisplayLuma": 194.60626833038296,
+          "meanAbsoluteChannelDifference": 0.7841657298859804
+        },
+        {
+          "pixels": 44093,
+          "changed": 18095,
+          "totalDifference": 41245,
+          "maxDifference": 4,
+          "luma": 8028274.931599259,
+          "meanDisplayLuma": 182.07595154784795,
+          "meanAbsoluteChannelDifference": 0.31180308287785663
+        },
+        {
+          "pixels": 61452,
+          "changed": 19259,
+          "totalDifference": 35319,
+          "maxDifference": 3,
+          "luma": 10695869.611794475,
+          "meanDisplayLuma": 174.05242484857246,
+          "meanAbsoluteChannelDifference": 0.19158042049078955
+        },
+        {
+          "pixels": 88299,
+          "changed": 8695,
+          "totalDifference": 11931,
+          "maxDifference": 2,
+          "luma": 13706674.503403427,
+          "meanDisplayLuma": 155.23023480904004,
+          "meanAbsoluteChannelDifference": 0.04504014768004168
+        },
+        {
+          "pixels": 46870,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 6342053.15940199,
+          "meanDisplayLuma": 135.3115673010879,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 8310,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 1012610.7252000698,
+          "meanDisplayLuma": 121.8544795667954,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 377567,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 78623080.19436076,
+          "meanDisplayLuma": 208.23610165708538,
+          "meanAbsoluteChannelDifference": 0
+        }
+      ],
+      "totalAbsoluteChannelDifference": 278932,
+      "outsideFieldPixels": 0,
+      "protectedEmitterChanges": 0,
+      "emitterRoundingPixels": 0,
+      "wideGlintPixels": 0,
+      "wrongMistPixels": 0,
+      "clippedWhitePixels": 0
+    },
+    "mist": {
+      "layers": [
+        {
+          "pixels": 80951,
+          "changed": 8381,
+          "totalDifference": 29363,
+          "maxDifference": 4,
+          "luma": 15681864.368616078,
+          "meanDisplayLuma": 193.72045272592158,
+          "meanAbsoluteChannelDifference": 0.12090853314556542
+        },
+        {
+          "pixels": 44093,
+          "changed": 10772,
+          "totalDifference": 36216,
+          "maxDifference": 4,
+          "luma": 8025159.93479951,
+          "meanDisplayLuma": 182.00530548612048,
+          "meanAbsoluteChannelDifference": 0.2737849545279296
+        },
+        {
+          "pixels": 61452,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 10680538.272195129,
+          "meanDisplayLuma": 173.80294005394663,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 88299,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 13701764.209002133,
+          "meanDisplayLuma": 155.17462495613918,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 46870,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 6342053.15940199,
+          "meanDisplayLuma": 135.3115673010879,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 8310,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 1012610.7252000698,
+          "meanDisplayLuma": 121.8544795667954,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 377567,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 78623080.19436076,
+          "meanDisplayLuma": 208.23610165708538,
+          "meanAbsoluteChannelDifference": 0
+        }
+      ],
+      "totalAbsoluteChannelDifference": 65579,
+      "outsideFieldPixels": 0,
+      "protectedEmitterChanges": 0,
+      "emitterRoundingPixels": 0,
+      "wideGlintPixels": 0,
+      "wrongMistPixels": 0,
+      "clippedWhitePixels": 0
+    },
+    "glints": {
+      "layers": [
+        {
+          "pixels": 80951,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 15428856.554797877,
+          "meanDisplayLuma": 190.595008768241,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 44093,
+          "changed": 2192,
+          "totalDifference": 3061,
+          "maxDifference": 2,
+          "luma": 7816675.23740073,
+          "meanDisplayLuma": 177.27701080445263,
+          "meanAbsoluteChannelDifference": 0.023140483372266193
+        },
+        {
+          "pixels": 61452,
+          "changed": 4083,
+          "totalDifference": 8727,
+          "maxDifference": 4,
+          "luma": 10576503.207996054,
+          "meanDisplayLuma": 172.10999166822972,
+          "meanAbsoluteChannelDifference": 0.0473377595521708
+        },
+        {
+          "pixels": 88299,
+          "changed": 2409,
+          "totalDifference": 4517,
+          "maxDifference": 3,
+          "luma": 13328553.04479487,
+          "meanDisplayLuma": 150.94795008771186,
+          "meanAbsoluteChannelDifference": 0.01705191074266602
+        },
+        {
+          "pixels": 46870,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 6238269.702399987,
+          "meanDisplayLuma": 133.09728402816273,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 8310,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 995580.574400059,
+          "meanDisplayLuma": 119.80512327317196,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 377567,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 78618354.27016121,
+          "meanDisplayLuma": 208.22358487410503,
+          "meanAbsoluteChannelDifference": 0
+        }
+      ],
+      "totalAbsoluteChannelDifference": 16305,
+      "outsideFieldPixels": 0,
+      "protectedEmitterChanges": 0,
+      "emitterRoundingPixels": 0,
+      "wideGlintPixels": 0,
+      "wrongMistPixels": 0,
+      "clippedWhitePixels": 0
+    },
+    "shifted": {
+      "layers": [
+        {
+          "pixels": 81974,
+          "changed": 46847,
+          "totalDifference": 212240,
+          "maxDifference": 11,
+          "luma": 15928909.95801025,
+          "meanDisplayLuma": 194.31661207224548,
+          "meanAbsoluteChannelDifference": 0.863037873797383
+        },
+        {
+          "pixels": 57911,
+          "changed": 20349,
+          "totalDifference": 59404,
+          "maxDifference": 8,
+          "luma": 10527728.6889978,
+          "meanDisplayLuma": 181.79151955583222,
+          "meanAbsoluteChannelDifference": 0.3419269799059476
+        },
+        {
+          "pixels": 54103,
+          "changed": 17069,
+          "totalDifference": 35626,
+          "maxDifference": 4,
+          "luma": 9389276.531597681,
+          "meanDisplayLuma": 173.54447131578067,
+          "meanAbsoluteChannelDifference": 0.21949491402201973
+        },
+        {
+          "pixels": 82089,
+          "changed": 18079,
+          "totalDifference": 27881,
+          "maxDifference": 2,
+          "luma": 12782495.211610297,
+          "meanDisplayLuma": 155.71508011560985,
+          "meanAbsoluteChannelDifference": 0.11321451920070492
+        },
+        {
+          "pixels": 55249,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 7474338.402001199,
+          "meanDisplayLuma": 135.28459161253957,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 7915,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 964819.5846000527,
+          "meanDisplayLuma": 121.89761018320311,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 368314,
+          "changed": 100260,
+          "totalDifference": 259162,
+          "maxDifference": 3,
+          "luma": 77022659.85003945,
+          "meanDisplayLuma": 209.12227026406669,
+          "meanAbsoluteChannelDifference": 0.2345480577261069
+        }
+      ],
+      "totalAbsoluteChannelDifference": 594313,
+      "outsideFieldPixels": 0,
+      "protectedEmitterChanges": 0,
+      "emitterRoundingPixels": 0,
+      "wideGlintPixels": 0,
+      "wrongMistPixels": 0,
+      "clippedWhitePixels": 0
+    },
+    "low": {
+      "layers": [
+        {
+          "pixels": 80951,
+          "changed": 27227,
+          "totalDifference": 47147,
+          "maxDifference": 3,
+          "luma": 15453301.921399051,
+          "meanDisplayLuma": 190.89698609528048,
+          "meanAbsoluteChannelDifference": 0.19413801764853636
+        },
+        {
+          "pixels": 44093,
+          "changed": 12209,
+          "totalDifference": 17494,
+          "maxDifference": 2,
+          "luma": 7824900.115400028,
+          "meanDisplayLuma": 177.4635455831998,
+          "meanAbsoluteChannelDifference": 0.13225077298739785
+        },
+        {
+          "pixels": 61452,
+          "changed": 6769,
+          "totalDifference": 7772,
+          "maxDifference": 1,
+          "luma": 10641139.1733973,
+          "meanDisplayLuma": 173.16180390218872,
+          "meanAbsoluteChannelDifference": 0.042157564711753345
+        },
+        {
+          "pixels": 88299,
+          "changed": 2137,
+          "totalDifference": 2330,
+          "maxDifference": 1,
+          "luma": 13331274.552396158,
+          "meanDisplayLuma": 150.97877158740368,
+          "meanAbsoluteChannelDifference": 0.00879587160292491
+        },
+        {
+          "pixels": 46870,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 6239647.432999839,
+          "meanDisplayLuma": 133.12667874972988,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 8310,
+          "changed": 0,
+          "totalDifference": 0,
+          "maxDifference": 0,
+          "luma": 995717.3244000878,
+          "meanDisplayLuma": 119.82157935019107,
+          "meanAbsoluteChannelDifference": 0
+        },
+        {
+          "pixels": 377567,
+          "changed": 48107,
+          "totalDifference": 58797,
+          "maxDifference": 1,
+          "luma": 78678984.25236198,
+          "meanDisplayLuma": 208.38416559805805,
+          "meanAbsoluteChannelDifference": 0.05190866786557088
+        }
+      ],
+      "totalAbsoluteChannelDifference": 133540,
+      "outsideFieldPixels": 0,
+      "protectedEmitterChanges": 0,
+      "emitterRoundingPixels": 7,
+      "wideGlintPixels": 0,
+      "wrongMistPixels": 0,
+      "clippedWhitePixels": 0
+    }
+  }
+}

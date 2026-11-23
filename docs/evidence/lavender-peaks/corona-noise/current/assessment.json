@@ -1,0 +1,262 @@
+{
+  "status": "Silhouette acceptance targets passed",
+  "geometry": {
+    "silence": {
+      "meanRadialRms": 0.006628760747338611,
+      "rmsFractionOfRestRadius": 0.006831573072941565,
+      "meanAbsoluteRadiusChange": 0,
+      "deformationRms": 0,
+      "maximumDisplacement": 0.014962221691844468,
+      "maximumRadius": 0.9827775235581858,
+      "temporalP99Per100ms": 0.0021862158284878808,
+      "maximumDisplacementFractionOfRestRadius": 0.015420003031852593,
+      "maximumDisplacementFractionOfCoreRadius": 0.01994962892245929
+    },
+    "moderate": {
+      "meanRadialRms": 0.049474599331157436,
+      "rmsFractionOfRestRadius": 0.05098831493066145,
+      "meanAbsoluteRadiusChange": 0.011112607758106107,
+      "deformationRms": 0.04286885115653053,
+      "maximumDisplacement": 0.1008149888556934,
+      "maximumRadius": 1.0557851388198025,
+      "temporalP99Per100ms": 0.012608478406107348,
+      "maximumDisplacementFractionOfRestRadius": 0.10389950542293684,
+      "maximumDisplacementFractionOfCoreRadius": 0.13441998514092454
+    },
+    "strong": {
+      "meanRadialRms": 0.06800526135927297,
+      "rmsFractionOfRestRadius": 0.0700859376327451,
+      "meanAbsoluteRadiusChange": 0.01715710086392227,
+      "deformationRms": 0.061405496433882795,
+      "maximumDisplacement": 0.12941393829085335,
+      "maximumRadius": 1.0859976846125898,
+      "temporalP99Per100ms": 0.017582260329153554,
+      "maximumDisplacementFractionOfRestRadius": 0.13337346297286015,
+      "maximumDisplacementFractionOfCoreRadius": 0.1725519177211378
+    }
+  },
+  "thresholds": {
+    "moderateRms": true,
+    "strongRms": true,
+    "strongOverModerate": true,
+    "shapeOverMeanRadius": true,
+    "smoothTemporal": true
+  },
+  "coreRadius": 0.75,
+  "restingOuterStrandRadius": 0.9703124999999999,
+  "hardOuterRadius": 1.2374999999999998,
+  "maximumRadiusRatio": 1.65,
+  "signals": {
+    "moderate": {
+      "bass": {
+        "median": 0.13358275818157855,
+        "p95": 0.1335909801173169
+      },
+      "subBass": {
+        "median": 0.04615768265038444,
+        "p95": 0.04616833455595488
+      },
+      "envelope": {
+        "median": 0.6242419580648337,
+        "p95": 0.624245652649925
+      },
+      "maximumAccent": 0
+    },
+    "strong": {
+      "bass": {
+        "median": 0.2671661815581551,
+        "p95": 0.2671813531600498
+      },
+      "subBass": {
+        "median": 0.09229809907005462,
+        "p95": 0.09233677937208111
+      },
+      "envelope": {
+        "median": 0.9559379665159543,
+        "p95": 0.9559441975904255
+      },
+      "maximumAccent": 0
+    },
+    "bass-free": {
+      "bass": {
+        "median": 0.00000802394056230789,
+        "p95": 0.00000862014596267067
+      },
+      "subBass": {
+        "median": 0.0000019336099628227497,
+        "p95": 0.0000028768819608322744
+      },
+      "envelope": {
+        "median": 0.000054921093694612485,
+        "p95": 0.00005556183870980423
+      },
+      "maximumAccent": 0
+    }
+  },
+  "onset": [
+    {
+      "time": 23.437333,
+      "angle": 2.366603695369518,
+      "maximumDisplacement": 0.05661820108431859,
+      "fractionOfCircumference": 0.16111111111111112
+    },
+    {
+      "time": 23.501333,
+      "angle": 2.2238407923287995,
+      "maximumDisplacement": 0.04704978709191887,
+      "fractionOfCircumference": 0.15
+    },
+    {
+      "time": 23.565333,
+      "angle": 2.1158823129322437,
+      "maximumDisplacement": 0.04086585313074076,
+      "fractionOfCircumference": 0.14722222222222223
+    },
+    {
+      "time": 23.629333,
+      "angle": 1.9675240249988637,
+      "maximumDisplacement": 0.03127643030187477,
+      "fractionOfCircumference": 0.1361111111111111
+    },
+    {
+      "time": 23.693333,
+      "angle": 1.819496251291768,
+      "maximumDisplacement": 0.024166694008054157,
+      "fractionOfCircumference": 0.12777777777777777
+    },
+    {
+      "time": 23.736,
+      "angle": 1.7130974467281121,
+      "maximumDisplacement": 0.018871340391605096,
+      "fractionOfCircumference": 0.11944444444444445
+    },
+    {
+      "time": 23.8,
+      "angle": 1.6043768720782623,
+      "maximumDisplacement": 0.012859006118110416,
+      "fractionOfCircumference": 0.10833333333333334
+    },
+    {
+      "time": 23.842667,
+      "angle": 1.4984838412861559,
+      "maximumDisplacement": 0.00877000935341088,
+      "fractionOfCircumference": 0.08611111111111111
+    },
+    {
+      "time": 23.906667,
+      "angle": 1.3471093425678107,
+      "maximumDisplacement": 0.004489776402739509,
+      "fractionOfCircumference": 0.041666666666666664
+    }
+  ],
+  "attacks": {
+    "isolated": {
+      "freshNotices": 1,
+      "maximumDeliveredLobes": 1
+    },
+    "2Hz": {
+      "freshNotices": 10,
+      "maximumDeliveredLobes": 2
+    },
+    "4Hz": {
+      "freshNotices": 16,
+      "maximumDeliveredLobes": 3
+    },
+    "bass-free": {
+      "freshNotices": 0,
+      "maximumDeliveredLobes": 0
+    }
+  },
+  "performance": {
+    "baseline": [
+      {
+        "frames": 240,
+        "frameMs": {
+          "median": 16.700000000186265,
+          "p95": 17
+        },
+        "cpuSubmissionMs": {
+          "median": 0.10000000055879354,
+          "p95": 0.20000000018626451
+        }
+      },
+      {
+        "frames": 240,
+        "frameMs": {
+          "median": 16.699999999254942,
+          "p95": 17
+        },
+        "cpuSubmissionMs": {
+          "median": 0.10000000055879354,
+          "p95": 0.20000000018626451
+        }
+      },
+      {
+        "frames": 241,
+        "frameMs": {
+          "median": 16.699999999254942,
+          "p95": 17
+        },
+        "cpuSubmissionMs": {
+          "median": 0.09999999962747097,
+          "p95": 0.20000000018626451
+        }
+      }
+    ],
+    "candidate": [
+      {
+        "frames": 240,
+        "frameMs": {
+          "median": 16.700000000186265,
+          "p95": 17
+        },
+        "cpuSubmissionMs": {
+          "median": 0.10000000055879354,
+          "p95": 0.20000000018626451
+        }
+      },
+      {
+        "frames": 240,
+        "frameMs": {
+          "median": 16.699999999254942,
+          "p95": 17
+        },
+        "cpuSubmissionMs": {
+          "median": 0.10000000055879354,
+          "p95": 0.20000000018626451
+        }
+      },
+      {
+        "frames": 241,
+        "frameMs": {
+          "median": 16.699999999254942,
+          "p95": 17
+        },
+        "cpuSubmissionMs": {
+          "median": 0.09999999962747097,
+          "p95": 0.20000000018626451
+        }
+      }
+    ],
+    "scope": "Headless Brave, same fixed camera and held envelope/detail/lighting at1440x810 DPR1, three4s windows after warmup. CPU submission is not GPU execution time; frame cadence is vsync limited. Native-window performance not certified."
+  },
+  "resources": {
+    "calls": 7,
+    "triangles": 4616,
+    "geometries": 7,
+    "textures": 1
+  },
+  "renderer": {
+    "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+    "dpr": 1
+  },
+  "method": "Actual rendered outer-strand centerline,360polar rays at24matched phases; equal opacity, isolated outer strand and no mountain occlusion in development-only diagnostics. Normal videos retain occlusion and all three strands.",
+  "environment": {
+    "changedPixels": 221618,
+    "maximumChannelDifference": 18,
+    "protectedEmitterChanges": 0,
+    "moderateLight": 0.34338222284085024,
+    "strongLight": 0.5259190208094626,
+    "method": "Matched sky/slope/mist/glint illumination on/off; same held corona, sun, atmosphere, ridge responses and clock."
+  }
+}

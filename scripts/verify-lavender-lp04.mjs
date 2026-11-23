@@ -7,6 +7,8 @@ import {tmpdir} from 'node:os'
 import {createServer} from 'node:net'
 import assert from 'node:assert/strict'
 const repository=process.cwd(),output=join(repository,'docs/evidence/lavender-peaks/lp04',process.env.ECHO_LP04_SMOKE==='1'?'smoke':'current')
+assert.ok(!(await readFile('src/scenes/lavender-peaks/LavenderPeaksScene.tsx','utf8')).includes('skyIllumination'),
+  'LP04 harness requires the pre-spill scene; use retained approved LP04 evidence or verify-lavender-lp05.mjs after LP05')
 const temporary=await mkdtemp(join(tmpdir(),'echo-lavender-lp04-')),root=join(temporary,'app')
 const pause=ms=>new Promise(r=>setTimeout(r,ms))
 const port=()=>new Promise(r=>{const s=createServer();s.listen(0,'127.0.0.1',()=>{const p=s.address().port;s.close(()=>r(p))})})

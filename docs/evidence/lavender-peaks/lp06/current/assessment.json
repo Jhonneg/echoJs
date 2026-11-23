@@ -1,0 +1,95 @@
+{
+  "music": {
+    "rows": 1084,
+    "frames": 461,
+    "shortFrames": 106,
+    "cost": {
+      "calls": 7,
+      "triangles": 4616,
+      "geometries": 7,
+      "textures": 1
+    },
+    "renderer": {
+      "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+      "dpr": 1
+    },
+    "activeRecipients": [
+      4,
+      3,
+      2,
+      0
+    ],
+    "maxActive": 3
+  },
+  "logicalStrokes": 17,
+  "peaks": [
+    {
+      "ridge": 0,
+      "maxOpacity": 0.23846150416508838
+    },
+    {
+      "ridge": 1,
+      "maxOpacity": 0
+    },
+    {
+      "ridge": 2,
+      "maxOpacity": 0.23478786648945682
+    },
+    {
+      "ridge": 3,
+      "maxOpacity": 0.1718715479561514
+    },
+    {
+      "ridge": 4,
+      "maxOpacity": 0.23846509825144457
+    },
+    {
+      "ridge": 5,
+      "maxOpacity": 0
+    }
+  ],
+  "maxScreenshotBracketSeconds": 0.12796900000000022,
+  "sourceTimeRange": [
+    0.2373335,
+    64.13066649999999
+  ],
+  "motion": {
+    "low": {
+      "ridge": 4,
+      "samples": 15,
+      "direction": 1,
+      "firstHead": -1.0100000000000264,
+      "lastHead": 2.466285714284922
+    },
+    "mid": {
+      "ridge": 2,
+      "samples": 13,
+      "direction": 1,
+      "firstHead": -1.254573913043501,
+      "lastHead": 3.614991304347811
+    },
+    "high": {
+      "ridge": 0,
+      "samples": 10,
+      "direction": -1,
+      "firstHead": 2.475811764704801,
+      "lastHead": -2.1118117647064167
+    }
+  },
+  "movementCentroids": [
+    -0.5314943237273336,
+    0.8910001789228841,
+    2.274516307352128
+  ],
+  "seamHeads": [
+    11.86,
+    11.99,
+    -11.88
+  ],
+  "seamCentroids": [
+    5.720883002207507,
+    5.830138460785753,
+    5.955555555555557
+  ],
+  "note": "Generated source audio, bracketed screenshots and observed rendered uniforms. Controlled optical replays are distinguished from actual PCM motion. No owner media."
+}

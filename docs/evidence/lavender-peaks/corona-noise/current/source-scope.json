@@ -1,0 +1,8 @@
+{
+  "changedProductionFiles": [
+    "src/scenes/lavender-peaks/corona.ts",
+    "src/scenes/lavender-peaks/LavenderPeaksScene.tsx"
+  ],
+  "preservedExistingProductionFiles": 97,
+  "newProductionFiles": []
+}

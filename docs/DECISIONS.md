@@ -458,3 +458,51 @@ Use local periodic color fields rather than vertex displacement, tile-local disc
 Owner “proceed” after LP03 authorizes LP04 only. Extend the existing sky shader rather than adding another renderer/effect stack. Keep the sun core fixed and replace its interim rigid bass pulse with small irregular strand deformation and local accents. Hard outer radius1.35×sun radius; three translucent ivory/rose strands, no particles, orange wireframe or full-screen exposure change. Existing six ridge shading, geometry, drift, camera and UI are untouched.
 
 Separate autonomous rest, sustained envelope/detail and qualified-event accents. Low mids alone retain only intrinsic rest. Accent sensitivity is a bounded scene-local2.5 multiplier, preserving shared MI extraction unchanged. Reduced motion freezes strand shape; zero Reactivity preserves faint autonomous rest. Use generated recordings and text-only owner listening; no private media capture. Stop after LP04 for explicit owner approval of corona scale/motion before LP05 illumination, as required by the roadmap. No commit/push.
+
+
+## Lavender Peaks LP04 approval / LP05 scope — 2026-11-23
+
+Owner “aproved” after the review and next-phase explanation approves the corona scale/motion; “continue” confirms LP05. Treat that visual gate as approved, without claiming real-song/native/device checks occurred. Add only local sky/slopes/mist and delayed glints; keep the approved corona module/settings, profiles, six-band response, camera, drift, UI and other landscapes intact. No LP06 travelling strokes yet, no commit/push.
+
+Use one tiny immutable profile texture rather than approximate edge distances, vertex deformation, six new overlay meshes or per-fragment Gaussian terrain reconstruction. This adds one4632byte texture but preserves silhouette geometry/draw count and gives exact sampled contour attachment through scrolling. Reference Three r186 DataTexture defaults/docs via Context7; nearest/manual interpolation avoids float-linear capability assumptions. Exclude the approved emitter footprint from sky tint. Share one bounded source for all environmental color masks, and limit the2nearest layers to their existing independent band treatment. Record actual GPU cost as pending LP08 rather than inferring it from draw count.
+
+
+## Lavender Peaks LP06 scope and trace budget — 2026-11-23
+
+Owner “proceed” after LP05 authorizes travelling contour highlights only. Use the existing narrow-band qualification result, not rising brightness or a new audio detector, to spawn traces. Keep a global3slot pool, one/ridge, no unbounded event queues. Prefer sparse readable movement: consume busy/full-pool events without restarts, stagger simultaneous starts, and preserve strength ordering within a bounded scene-local opacity calibration. Different bands retain stable recipients/directions; no instrument/beat claims.
+
+Reuse the immutable terrain profile texture and existing materials to preserve geometry, camera and draw count. Bind heads/tails in periodic local coordinates so they move with terrain, while the LP05 sun field remains in world coordinates. Retain approved corona/environmental lighting and all other scenes. Generated PCM demonstrates real integrated motion; held-state path/seam replays independently test optical continuity. Owner real-song/coherence and final hardware checks remain pending; stop at LP06 before LP07. No commit/push authorized.
+
+
+## Lavender corona readability refinement — 2026-11-23
+
+Owner “yes parove” explicitly approves the current/proposed comparison after reporting that the corona felt small and its music response was hard to perceive. Apply only the demonstrated scene-local shape changes: strand radius1.15×, sustained wave3×, local accent displacement1.8×, amplitude cap.22 and hard footprint1.65×fixed core. Preserve MI, signal qualification/timing, intrinsic rest, reduced-motion behavior, opacity/palette and remaining scene. Existing sky exclusion follows the updated emitter footprint automatically; no new light source or environmental response algorithm. No LP07 authorization inferred.
+
+
+## Lavender independent sun pulse — 2026-11-23
+
+Owner explicitly supersedes the fixed-core behavior while preserving the approved corona. Restore the original disk/haze visual equations,20/80 body/attack weighting and40ms/220ms smoothing. Use existing MI low-band targets and qualified accents; do not restore legacy AudioSignal reads. Keep unscaled radial distance for corona drawing, its existing settings/state and LP05 lighting source. This permits the disk to pulse independently without scaling the whole emitter/corona. No next-phase authorization inferred.
+
+
+## Lavender LP07 slow atmosphere and hierarchy — 2026-11-23
+
+Owner continuation authorizes LP07 only. Preserve corona and restored sun pulse, own-band ridge responses and existing delayed local lighting. Copy slow context during the existing MI read, then use2/4s density/warmth envelopes (4/6s reduced) for restrained sky/valley/depth color modulation. Existing geometry and profile texture suffice; avoid particles, new draw calls, random motion or context driving attacks. Keep the3slot staggered trace pool and apply at most25% context-dependent opacity restraint for dense passages. Context warmth requires valid brightness; gain0/session clears and stale releases. Protect emitter pixels from broad sky treatment. Generated cases validate behavior; acoustic/electronic real-song feel requires owner text review before the LP07 gate can close.
+
+
+## Lavender LP08 / LP09 skipped by owner — 2026-11-23
+
+Owner explicitly requests skipping LP08 and LP09. Retain current implementation and historical evidence; mark these phases skipped rather than verified/completed. Do not infer LP07 listening/visual approval or final real-music/performance acceptance. No new phase or implementation is authorized by the skip; await the next task.
+
+
+## Lavender organic bass corona — 2026-11-23
+
+Owner approves the focused implementation plan after requesting visible noise-driven silhouette deformation. Keep the existing1.65×core footprint, pastel2D strands, mountain occlusion and environmental light. Latest stable-core instruction supersedes restored disk expansion; owner selects retaining only its gentle bass brightness/haze pulse. Shared MI and all other landscapes remain unchanged; LP08/LP09 stay skipped.
+
+Replace regular bass harmonics with deterministic angular/time-periodic quintic value noise,2octaves and3distinct strand scales/phases. Use existing gain-scaled bass/sub-bass targets rather than cascaded slow ridge envelopes:65/35 blend divided by.45,80ms/450ms smoothing, amplitude.018+.202×drive capped.22. Preserve high-mid/upper detail; keep smooth radial bounds outside core and within existing footprint. Qualified low notices spawn3bounded650ms travelling lobes, deduplicated by session/sequence and scaled against actual observed onset strengths using.22reference. No new audio detector or event interpretation. Same envelope/lobe activity feeds existing illumination.
+
+Record generated actual-MI distributions and equal-opacity polar contour measurements; brightness/mean-radius changes alone cannot pass silhouette acceptance. Compare identical headless fixed-scene frame timing, distinguish CPU submission from GPU execution/native performance, and stop for owner visual review without committing.
+
+
+## Lavender gentle sun size pulse alongside organic corona — 2026-11-23
+
+Owner requests a little sun pulsation after the organic-corona implementation. Permit disk/haze size1+.08sunPulse, preserving existing MI pulse/brightness timing. This supersedes the fixed-core restriction only. Keep unscaled distance for corona; no changes to its noise/accents/footprint or shared illumination. No new phase or commit authorized.

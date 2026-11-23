@@ -1,0 +1,7 @@
+{
+  "scope": "LP06 optical verification refinements; no owner media.",
+  "notes": [
+    "Low-DPR attribution excludes3px silhouette boundaries rather than2px Standard, avoiding2 antialiased boundary pixels being misclassified as another ridge.1channel rounding remains reported/tolerated.",
+    "The reusable seam intent object was later mutated in diagnostic pair records; actual per-snapshot material uniforms and positions were correctly captured. Pixel assessment now uses those authoritative observed snapshots. Future pair intent records are deep-copied. Actual render evidence and production source are unchanged."
+  ]
+}

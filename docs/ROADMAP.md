@@ -1,8 +1,8 @@
 # POC roadmap — one task at a time
 
-## Current task — Lavender Peaks LP04 owner visual gate (2026-11-23)
+## Current task — focused Lavender organic corona review (2026-11-23)
 
-Follow [Lavender Peaks LP01–LP09](LAVENDER_PEAKS_MUSIC_INTELLIGENCE_ROADMAP.md) sequentially. Owner “proceed” after LP03 authorizes LP04. Small corona is implemented and generated/optical verified; **explicit owner visual approval is required before LP05 illumination**. LP05–LP09 unstarted. Live real-song review remains pending; later visual gates follow LP07/LP09. Preserve approved UI and Noctune NT14/NT15 skips. See current PROGRESS and authoritative Lavender roadmap; no new parallel context file.
+Owner approved the focused organic bass-corona plan. Implement visible periodic noise deformation, travelling qualified bass accents and owner-requested gentle independent sun size/brightness pulse, inside the existing footprint. Generated/browser/optical verification and comparison evidence accompany the review checkpoint; see PROGRESS. LP08 verification/performance and LP09 closeout remain skipped, not completed. Their full extended/native/real-song matrix is not inferred from this focused task's checks. Preserve current other scenes and prior work; stop for owner visual review, with no automatic next phase or commit.
 
 Current order is intentional: validate external audio before investing in graphics. Plan/approve each task separately; mark actual status only in PROGRESS.md. Each gate requires owner sign-off. If a required check cannot run, record a blocker; do not mark the gate passed or silently expand scope.
 

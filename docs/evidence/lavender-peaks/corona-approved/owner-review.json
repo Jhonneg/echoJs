@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-23",
+  "ownerReply": "yes parove",
+  "scope": "Approve the larger more expressive corona shown in corona-review/current-proposed-corona.mp4; apply only this refinement",
+  "LP07Authorized": false,
+  "checks": {
+    "testFilesPassed": 45,
+    "lint": "passed",
+    "typecheck": "passed via tsc -b in npm run build",
+    "build": "passed; existing chunk size warning",
+    "browser": "Approved corona captured and lifecycle checks passed",
+    "productionFilesChangedSinceLP06": [
+      "src/scenes/lavender-peaks/corona.ts"
+    ]
+  },
+  "attemptNotes": "First lifecycle harness chose a silent recorded high-mid gap, causing its nonzero sustain assertion to fail. Corrected only the scene-contract fixture to explicit highMids=.4; fresh final capture passed. No production correction was needed."
+}

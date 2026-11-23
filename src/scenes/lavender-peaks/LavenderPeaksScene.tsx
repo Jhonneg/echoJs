@@ -1,6 +1,6 @@
 import { Component, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode, type RefObject } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { Color, Group, OrthographicCamera, ShaderMaterial, Shape } from 'three'
+import { Color, DataTexture, FloatType, Group, NearestFilter, OrthographicCamera, RedFormat, ShaderMaterial, Shape } from 'three'
 import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
@@ -8,14 +8,22 @@ import { createLayerMotion, updateLayerMotion, ridgeHeight, TERRAIN_PERIOD } fro
 import { createLavenderResponse, updateLavenderResponse, type LavenderResponse } from './response'
 import { RIDGE_SHADING } from './shading'
 import { CORONA_SETTINGS, coronaFragment, createCorona, updateCorona } from './corona'
+import { createIllumination, updateIllumination, skyIllumination, ridgeIllumination, type Illumination } from './illumination'
+import { createTerrainProfiles, PROFILE_WIDTH } from './terrainProfiles'
+import { createTraces, updateTraces, traceFragment, type Traces } from './traces'
 import { ridges, type Ridge } from './terrain'
+import { createSunPulse, updateSunPulse } from './sunPulse'
+import { createAtmosphere, updateAtmosphere, atmosphereSky, atmosphereRidge, type Atmosphere } from './atmosphere'
 import './lavender-peaks.css'
 
 const vertex = `varying vec2 vPosition;
 void main() { vPosition = position.xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`
 
 const skyFragment = `varying vec2 vPosition;
+uniform float sunPulse;
 ${coronaFragment}
+${skyIllumination}
+${atmosphereSky}
 void main() {
   float height = smoothstep(-5.8, 5.8, vPosition.y);
   vec3 cream = vec3(1.0, 0.87, 0.84);
@@ -23,14 +31,17 @@ void main() {
   vec3 color = mix(cream, lavender, height);
   float halo = exp(-pow(vPosition.x / 5.8, 2.0) - pow((vPosition.y + 0.9) / 3.7, 2.0));
   color = mix(color, vec3(1.0, 0.94, 0.86), halo * 0.55);
+  color = atmosphereSkyColor(color, vPosition);
   // Fixed behind the first large peak; opaque ridges reveal it as they travel.
   vec2 sunOffset = vPosition - vec2(1.6, 1.9);
   float sunDistance = length(sunOffset);
-  float sunDisc = 1.0 - smoothstep(0.68, 0.75, sunDistance);
-  float sunHaze = exp(-pow(sunDistance / 1.1, 2.0)) * 0.055;
-  color = mix(color, vec3(1.0, 0.94, 0.83), sunDisc * 0.38 + sunHaze);
+  float pulsedSunDistance = sunDistance / (1.0 + sunPulse * 0.24);
+  float sunDisc = 1.0 - smoothstep(0.68, 0.75, pulsedSunDistance);
+  float sunHaze = exp(-pow(pulsedSunDistance / 1.1, 2.0)) * (0.055 + sunPulse * 0.02);
+  color = mix(color, vec3(1.0, 0.94, 0.83), sunDisc * (0.38 + sunPulse * 0.08) + sunHaze);
   // Derivatives are evaluated before the localized branch, keeping Low quality soft.
   color = applyCorona(color, sunOffset, sunDistance, max(fwidth(sunDistance), 0.006));
+  color = mix(color, vec3(1.0, 0.84, 0.76), coronaLight * coronaSkyMask(vPosition) * 0.16);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`
@@ -47,6 +58,9 @@ uniform float upperStrength;
 uniform float lowerWeight;
 uniform float accentStrength;
 uniform float phase;
+${ridgeIllumination}
+${atmosphereRidge}
+${traceFragment}
 void main() {
   float blend = smoothstep(bottom, top, vPosition.y);
   vec3 color = mix(lowerColor, upperColor, blend);
@@ -60,11 +74,19 @@ void main() {
   float localPatch = pow(0.5 + 0.5 * sin(cycle * 2.0 + phase), 4.0);
   float accentMask = smoothstep(0.4, 1.0, blend) * localPatch;
   color = mix(color, vec3(0.97, 0.86, 0.89), accent * accentStrength * accentMask);
+  color = illuminateRidge(color, vPosition);
+  color = atmosphereRidgeColor(color, vPosition, blend);
+  color = illuminateTrace(color, vPosition);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`
 
-function RidgeLayer({ ridge, index, halfWidth, response }: { ridge: Ridge, index: number, halfWidth: number, response: RefObject<LavenderResponse> }) {
+function RidgeLayer({ ridge, index, halfWidth, response, illumination, motion, profiles, traces, atmosphere }: {
+  ridge: Ridge, index: number, halfWidth: number, response: RefObject<LavenderResponse>,
+  illumination: RefObject<Illumination>, motion: RefObject<ReturnType<typeof createLayerMotion>[]>, profiles: DataTexture,
+  traces: RefObject<Traces>,
+  atmosphere: RefObject<Atmosphere>,
+}) {
   const material = useRef<ShaderMaterial>(null)
   const uniforms = useMemo(() => {
     const settings = RIDGE_SHADING[index]
@@ -74,12 +96,28 @@ function RidgeLayer({ ridge, index, halfWidth, response }: { ridge: Ridge, index
       sustained: { value: 0 }, accent: { value: 0 }, tint: { value: new Color(settings.tint) },
       upperStrength: { value: settings.upper }, lowerWeight: { value: settings.lower },
       accentStrength: { value: settings.accent }, phase: { value: settings.phase },
+      terrainProfiles: { value: profiles }, ridgeIndex: { value: index }, terrainOffset: { value: 0 }, nextOffset: { value: 0 },
+      coronaLight: { value: 0 }, mistLight: { value: 0 }, glintLight: { value: 0 },
+      atmosphereDensity: { value: 0 }, atmosphereWarmth: { value: 0 },
+      traceHead: { value: 0 }, traceOpacity: { value: 0 }, traceDirection: { value: 1 }, traceTail: { value: 1 },
     }
-  }, [ridge, index])
+  }, [ridge, index, profiles])
   useFrame(() => {
     if (!material.current) return
     material.current.uniforms.sustained.value = response.current.ridges[index].sustained
     material.current.uniforms.accent.value = response.current.ridges[index].accent
+    material.current.uniforms.coronaLight.value = illumination.current.coronaLight
+    material.current.uniforms.mistLight.value = illumination.current.mist
+    material.current.uniforms.glintLight.value = illumination.current.glints[index]
+    material.current.uniforms.atmosphereDensity.value = atmosphere.current.density
+    material.current.uniforms.atmosphereWarmth.value = atmosphere.current.warmth
+    material.current.uniforms.terrainOffset.value = motion.current[index].offset
+    material.current.uniforms.nextOffset.value = motion.current[Math.min(index + 1, ridges.length - 1)].offset
+    const slot = traces.current.slots.find(candidate => candidate.active && candidate.ridge === index)
+    material.current.uniforms.traceHead.value = slot?.head ?? 0
+    material.current.uniforms.traceOpacity.value = (slot?.opacity ?? 0) * (1 - .25 * atmosphere.current.density)
+    material.current.uniforms.traceDirection.value = slot?.direction ?? 1
+    material.current.uniforms.traceTail.value = slot?.tail ?? 1
   }, -.5)
   const shape = useMemo(() => {
     const outline = new Shape()
@@ -118,17 +156,32 @@ type MotionProps = { musicFeatures: MusicFeatureReader, reactivity: number, redu
 function Composition({ musicFeatures, reactivity, reducedMotion }: MotionProps) {
   const sky = useRef<ShaderMaterial>(null)
   const skyUniforms = useMemo(() => ({
+    sunPulse: { value: 0 },
+    atmosphereDensity: { value: 0 }, atmosphereWarmth: { value: 0 },
+    coronaBassPulses: { value: new Float32Array(6) },
     coronaTime: { value: 0 }, coronaEnvelope: { value: 0 }, coronaDetail: { value: 0 },
     coronaLowAccent: { value: 0 }, coronaMidAccent: { value: 0 }, coronaHighAccent: { value: 0 },
     coronaMotion: { value: 1 }, coronaSunRadius: { value: CORONA_SETTINGS.sunRadius },
     coronaRadiusRatio: { value: CORONA_SETTINGS.maximumRadiusRatio },
     coronaBaseAmplitude: { value: CORONA_SETTINGS.baseAmplitude }, coronaMaxAmplitude: { value: CORONA_SETTINGS.maximumAmplitude },
     coronaBaseOpacity: { value: CORONA_SETTINGS.restingOpacity }, coronaMaxOpacity: { value: CORONA_SETTINGS.maximumOpacity },
+    coronaLight: { value: 0 },
   }), [])
   const corona = useRef(createCorona())
+  const sunPulse = useRef(createSunPulse())
+  const atmosphere = useRef(createAtmosphere())
+  const illumination = useRef(createIllumination())
+  const profiles = useMemo(() => {
+    const texture = new DataTexture(createTerrainProfiles(), PROFILE_WIDTH, ridges.length, RedFormat, FloatType)
+    texture.minFilter = texture.magFilter = NearestFilter
+    texture.needsUpdate = true
+    return texture
+  }, [])
+  useLayoutEffect(() => () => profiles.dispose(), [profiles])
   const groups = useRef<(Group | null)[]>([])
   const motion = useRef(ridges.map(() => createLayerMotion()))
   const response = useRef(createLavenderResponse())
+  const traces = useRef(createTraces())
   const size = useThree(state => state.size)
   const zoom = Math.min(size.height / 12, size.width / 7)
   // One extra period covers the entire rightward offset, including ultra-wide views.
@@ -138,25 +191,34 @@ function Composition({ musicFeatures, reactivity, reducedMotion }: MotionProps) 
   useFrame((_, delta) => {
     updateLavenderResponse(response.current, musicFeatures, delta, performance.now() / 1000, reactivity, reducedMotion)
     updateCorona(corona.current, response.current, delta, reactivity, reducedMotion)
+    updateSunPulse(sunPulse.current, response.current, delta, reactivity, reducedMotion)
+    updateAtmosphere(atmosphere.current, response.current, delta, reactivity, reducedMotion)
+    updateIllumination(illumination.current, corona.current, response.current.fresh, delta, reactivity, reducedMotion)
     if (sky.current) {
       const uniforms = sky.current.uniforms, state = corona.current
+      uniforms.sunPulse.value = sunPulse.current.value
+      uniforms.atmosphereDensity.value = atmosphere.current.density
+      uniforms.atmosphereWarmth.value = atmosphere.current.warmth
+      uniforms.coronaBassPulses.value.set(state.pulseUniforms)
       uniforms.coronaTime.value = state.time
       uniforms.coronaEnvelope.value = state.envelope; uniforms.coronaDetail.value = state.detail
       uniforms.coronaLowAccent.value = state.lowAccent; uniforms.coronaMidAccent.value = state.midAccent
       uniforms.coronaHighAccent.value = state.highAccent; uniforms.coronaMotion.value = state.motion
       uniforms.coronaBaseOpacity.value = reducedMotion ? CORONA_SETTINGS.reducedOpacity : CORONA_SETTINGS.restingOpacity
+      uniforms.coronaLight.value = illumination.current.coronaLight
     }
     for (let depth = 0; depth < ridges.length; depth++) {
       updateLayerMotion(motion.current[depth], depth, reducedMotion, delta)
       const group = groups.current[depth]
       if (group) group.position.x = motion.current[depth].offset
     }
+    updateTraces(traces.current, response.current, motion.current, performance.now() / 1000, reactivity, reducedMotion)
   }, -1)
   return <>
     <Framing />
     <mesh position={[0, 0, -10]}><planeGeometry args={[skyWidth, skyHeight]} /><shaderMaterial ref={sky} uniforms={skyUniforms} vertexShader={vertex} fragmentShader={skyFragment} toneMapped={false} /></mesh>
     {ridges.map((ridge, index) => <group key={index} ref={group => { groups.current[index] = group }}>
-      <RidgeLayer ridge={ridge} index={index} halfWidth={halfWidth} response={response} />
+      <RidgeLayer ridge={ridge} index={index} halfWidth={halfWidth} response={response} illumination={illumination} motion={motion} profiles={profiles} traces={traces} atmosphere={atmosphere} />
     </group>)}
   </>
 }

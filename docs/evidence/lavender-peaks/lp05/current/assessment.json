@@ -1,0 +1,130 @@
+{
+  "music": {
+    "rows": 1046,
+    "frames": 427,
+    "maxMidAccent": 0.4914082752475212,
+    "heldHighMidFalseAccent": 0,
+    "maxLowAccent": 0.4911867998621905,
+    "maxHighAccent": 0.5299158901101509,
+    "cost": {
+      "calls": 7,
+      "triangles": 4616,
+      "geometries": 7,
+      "textures": 1
+    },
+    "renderer": {
+      "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+      "dpr": 1
+    }
+  },
+  "windows": [
+    {
+      "label": "bass",
+      "samples": 29,
+      "lowEnergy": 0.1413122634505384,
+      "highMidEnergy": 0.0000021682587343770106,
+      "coronaLight": 0.1280856186837119,
+      "mist": 0.10732719759201484,
+      "glintMax": [
+        0.028834511029994073,
+        0.028825020050413035,
+        0.039902204270554416
+      ]
+    },
+    {
+      "label": "lowMidAfterBass",
+      "samples": 29,
+      "lowEnergy": 0.00001653869386722421,
+      "highMidEnergy": 0.000004506728145198888,
+      "coronaLight": 0.10716554069724958,
+      "mist": 0.1309079707724109,
+      "glintMax": [
+        0,
+        0.0001708462164938947,
+        0.0003544002149636912
+      ]
+    },
+    {
+      "label": "highMidQuiet",
+      "samples": 30,
+      "lowEnergy": 4.304807577713148e-7,
+      "highMidEnergy": 0.042393436769471736,
+      "coronaLight": 0.04765051477050659,
+      "mist": 0.06210658811375139,
+      "glintMax": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "highMidLoud",
+      "samples": 30,
+      "lowEnergy": 0.0000015251556733086165,
+      "highMidEnergy": 0.14131007209256993,
+      "coronaLight": 0.07192296088062143,
+      "mist": 0.07026277763425642,
+      "glintMax": [
+        0.006372237714812056,
+        0.00982064473064586,
+        0.01768309937634438
+      ]
+    },
+    {
+      "label": "mixed",
+      "samples": 61,
+      "lowEnergy": 0.1059842973630823,
+      "highMidEnergy": 0.08478761227792306,
+      "coronaLight": 0.17234806391548455,
+      "mist": 0.16234364563616213,
+      "glintMax": [
+        0.029661085776449693,
+        0.029693469913492563,
+        0.02969666453749663
+      ]
+    },
+    {
+      "label": "lateSilence",
+      "samples": 17,
+      "lowEnergy": 0,
+      "highMidEnergy": 0,
+      "coronaLight": 0,
+      "mist": 0.00004257080798452829,
+      "glintMax": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "firstLowGlintPeaks": [
+    {
+      "ridge": 1,
+      "audioTime": 19.565333,
+      "level": 0.27436484210626116
+    },
+    {
+      "ridge": 2,
+      "audioTime": 19.757333,
+      "level": 0.27099005803242815
+    },
+    {
+      "ridge": 3,
+      "audioTime": 19.864,
+      "level": 0.26746186135716404
+    }
+  ],
+  "opticalStatus": "passed localized sky/slopes/mist, delayed contour glints, emitter protection and world anchoring",
+  "depth": {
+    "far": 188.58301068241684,
+    "middle": 164.64171707319917,
+    "near": 128.58302343394166
+  },
+  "lowEmitterRoundingPixels": 7,
+  "maxScreenshotBracketSeconds": 0.23466700000000174,
+  "sourceTimeRange": [
+    0.152,
+    63.981333500000005
+  ],
+  "clock": "Generated source playback seconds + bracketed screenshots; not sample-accurate captured output or owner media."
+}

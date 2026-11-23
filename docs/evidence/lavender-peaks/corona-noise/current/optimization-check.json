@@ -1,0 +1,6 @@
+{
+  "change": "Compute shared angular onset sum/derivative once per fragment rather than once per strand",
+  "matchedGeometryFrames": 72,
+  "totalGeometryFrames": 72,
+  "method": "SHA256 of equal-opacity PNGs at identical held features/clock/camera before and after optimization"
+}

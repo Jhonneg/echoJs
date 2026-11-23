@@ -1,0 +1,44 @@
+{
+  "status": "LP07 generated/material and optical checks pass; owner real-song/visual gate pending",
+  "protectedEmitter": {
+    "samples": 4836,
+    "changedPixels": 0,
+    "scope": "Exposed upper emitter circle in matched on/off sky pixels; excludes mountain occluders"
+  },
+  "quietDifference": {
+    "changedPixels": 0,
+    "totalPixels": 1166400,
+    "maxChannelDifference": 0,
+    "meanChannelDifference": 0
+  },
+  "activeDifference": {
+    "changedPixels": 984019,
+    "totalPixels": 1166400,
+    "maxChannelDifference": 3,
+    "meanChannelDifference": 0.5868338477366255
+  },
+  "lateSilence": {
+    "session": 4,
+    "density": 0.014749014189536386,
+    "warmth": 0.0064846315906138905
+  },
+  "maximumDensityRate": 0.07332339457217961,
+  "maximumDensity": 0.2697013754517839,
+  "maximumWarmth": 0.2883277870011594,
+  "sourceChanges": [
+    "src/scenes/lavender-peaks/LavenderPeaksScene.tsx",
+    "src/scenes/lavender-peaks/response.ts"
+  ],
+  "otherExistingSourcesPreserved": 95,
+  "resources": {
+    "calls": 7,
+    "triangles": 4616,
+    "geometries": 7,
+    "textures": 1
+  },
+  "renderer": {
+    "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+    "dpr": 1
+  },
+  "limits": "Generated PCM validates actual MI delivery; not a real acoustic/electronic listening gate or native performance benchmark. Mist/sky/contrast use bounded color modulation, not particles or geometric displacement."
+}

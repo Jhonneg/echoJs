@@ -1,6 +1,6 @@
 # ECHO — Lavender Peaks: Music Intelligence + Living Landscape Roadmap
 
-**Status:** Owner “proceed” after LP03 authorizes LP04 (2026-11-23). Small 2D corona implemented; generated/optical checks pass. **Explicit owner approval of corona scale/motion is required before LP05.** LP05–LP09 unstarted; live owner music review remains pending.  
+**Status:** LP08/LP09 remain skipped by owner. Separately approved organic bass-corona refinement is implemented and verified with generated/browser/optical evidence (2026-11-23). Owner subsequently requests gentle independent sun size pulsation (1+.08sunPulse) alongside the existing brightness pulse; no shared MI or other-landscape changes. Stop for this refinement's visual review; no roadmap phase reactivated.
 **Phases:** LP01–LP09  
 **Experience:** A coordinated *living 2D mountain symphony*. The music seems to pass through the sun, mountain ridges, mist, and sky.  
 **Visual reference:** The latest approved Lavender Peaks three-panel storyboard (with the **smaller** corona), and the user's animated noise-orb reference. Attach these images/video to the local coding agent when beginning visual implementation.
@@ -96,6 +96,14 @@ These are starting ranges for artistic tuning, **not mandatory constants**; comp
 
 ### LP04 — Small procedural 2D noise corona
 
+**Most recent owner adjustment (2026-11-23):** “make the sun pulsate a bit too” supersedes the fixed-core restriction. Permit only gentle independent disk/haze scaling1+.08sunPulse. Organic corona uses unscaled coordinates and is preserved.
+
+**Latest owner-approved refinement (2026-11-23):** Organic bass-driven perimeter supersedes the regular bass harmonics and restored core expansion. Keep fixed-size circular core plus owner-selected gentle brightness/haze pulse. Two-octave periodic value noise, separately phased/scaled3strands,80/450ms bass-target envelope and bounded650ms localized onset lobes replace the insufficiently visible deformation. Retain1.65×core hard footprint and existing corona-driven lighting. Generated measured bass.134/.267 and onset strengths up to.212 ground calibration; acceptance measures rendered silhouette at equal opacity. Existing art/geometry/camera/MI remain. See current PROGRESS and `evidence/lavender-peaks/corona-noise/`; LP08/LP09 remain skipped.
+
+**Historical owner direction (2026-11-23; core expansion superseded by the focused organic-corona refinement above):** Restore the sun disk/haze’s original bass pulse look and timing independently via existing MI low targets/qualified attacks. This supersedes fixed-core/no-rigid-disk-scaling requirements for the disk only; approved corona remains unchanged. Verified at the LP06 checkpoint; LP07 unstarted. See current PROGRESS.
+
+**Approved refinement (2026-11-23):** Owner “yes parove” approves the matched current/proposed corona preview. Strand radii grow15%, sustained deformation3× and local accent displacement1.8×; amplitude cap.22 and footprint cap1.65×fixed .75 core supersede the initial1.35/.11 bounds. Retain palette/opacity, band qualification, response timing, reduced-motion policy, authored terrain/camera and shared MI. This is a focused refinement at the LP06 checkpoint, not authorization to start LP07. See PROGRESS and `evidence/lavender-peaks/corona-approved/`.
+
 **Objective:** Replace the conventional sun halo with a bounded, organic, musically expressive corona.
 
 **Approved look**
@@ -157,7 +165,11 @@ These are starting ranges for artistic tuning, **not mandatory constants**; comp
 
 **Exit gate:** Musical passages look meaningfully different, the whole 2D composition participates, and there is no confusing strobing, terrain shaking or permanent maximum illumination.
 
+**LP07 implementation checkpoint — 2026-11-23:** Slow context density/warmth use2/4s smoothing (4/6s reduced), copied during the single MI read. Existing delayed corona light/glints/mist and staggered contour pool form the causal sequence; no new event detector or timing retune. Restrained sky gradient/temperature, far valley mist and inter-layer contrast use existing materials/profile texture. Busy context reduces trace opacity by≤25%; independent band outputs unchanged. Approved corona/sun algorithms untouched. Generated actual-MI run1029samples/234frames, quiet no-change, matched exposed emitter no-change, gain/reduced/stale/session/Low checks pass. See PROGRESS and `evidence/lavender-peaks/lp07/current/`. **Owner visual approval and soft acoustic/busy electronic text listening remain pending; stop before LP08.**
+
 ### LP08 — Verification and performance checkpoint
+
+**Status: SKIPPED BY OWNER — 2026-11-23.** Original scope below is retained for reference; its exit gate is not claimed passed.
 
 **Objective:** Confirm reactivity, smoothness, lifecycle and performance before owner review.
 
@@ -174,6 +186,8 @@ These are starting ranges for artistic tuning, **not mandatory constants**; comp
 **Exit gate:** No obvious crashes, lifecycle bugs, visual seam discontinuities, severe frame-rate regressions, or lost manual controls. Record evidence and known untested conditions.
 
 ### LP09 — Real-music comparison and closeout
+
+**Status: SKIPPED BY OWNER — 2026-11-23.** Original scope below is retained for reference; its exit gate is not claimed passed.
 
 **Objective:** Decide whether Lavender Peaks has achieved its artistic identity without spending indefinitely on one landscape.
 
@@ -329,6 +343,62 @@ Owner “proceed” authorizes LP04 after the LP03 checkpoint. Other landscapes,
 -Preserved all91other existing production files against LP03 hashes. Production changes are Lavender scene, removal of obsolete sun fields in response, and new corona module. Updated/replaced sun tests, added corona tests and verification helpers, guarded historical LP03 helper, and updated existing docs/evidence. No commit/push/deploy. The earlier interrupted run and held-state accent-fixture correction are recorded in [attempt notes](evidence/lavender-peaks/lp04/attempt-notes.json); fresh complete evidence follows those corrections. The accent fixture had compared later ridge state by mistake; it now holds the exact original state. No scope or engine redesign was needed.
 
 **Stop for owner approval:** Review corona footprint, organic motion, restraint at strong input and distinguishable musical accents. The roadmap requires **“Human visual approval before expanding into the rest of the landscape.”** LP05 sky/slopes/mist illumination must wait. Real-song owner listening, native audio/fullscreen and final quality/device matrix remain pending, not inferred from generated checks or continuation.
+
+## LP05 environmental illumination checkpoint — 2026-11-23
+
+Owner [approves LP04](evidence/lavender-peaks/lp04/owner-review.json) with “aproved” after the corona review and next-phase explanation; “continue” confirms LP05. That approves corona scale/motion, without implying real-song/native/device verification. This checkpoint adds only environmental illumination. LP06 travelling strokes are not implemented.
+
+**One causal source:** `illumination.ts` derives bounded `coronaLight` from the unchanged approved corona: .55 envelope + .30 detail + .35 maximum accent, clamped0–1, with .12s rise/.7s fall. Inputs already include gain. Mist follows it with .45s rise/1.1s fall. Selected ridge glints use delayed positive changes of this same scalar at180/340/500ms, with .025/.22s smoothing. These are visual propagation, not another audio/onset detector. Held levels settle without ongoing glints. Histories are fixed256scalar samples; gain0/session reset clears all lighting/history, stale/reduced suppresses glints, reduced light transitions use .8/1.5s. Recovery holds the oldest known scalar as prehistory, preventing artificial glints when a steady source resumes.
+
+**2D rendering:** Existing sky/ridge shaders perform bounded color mixes; no new meshes, lights, shadows, passes, dependencies or frame-rate React state. Sky wash is localized around[1.6,1.9], excludes the approved core/corona footprint and fades smoothly. Adjacent slope/rim warmth falls with depth and distance. Mist is painted just above selected next-ridge valleys. Delayed glints hug selected silhouettes; no travelling heads/tails yet. The two nearest ridges receive none of this shared spill and retain their own band shading. Foreground/depth hierarchy remains intact.
+
+To anchor light to the sun rather than repeated tiles, materials use actual world x = local x + terrain offset. One shared193×6 RedFormat/FloatType nearest-filter texture stores the exact unchanged1/8-unit profiles, including their repeat endpoints. Two nearest samples interpolate the authored outline; mist samples the next ridge using its own offset. This4632byte data payload avoids extra meshes, per-frame geometry changes or float-linear-extension assumptions. The texture uploads at creation and is disposed on unmount. Approved `corona.ts`, response/shading, profiles, motion, camera, UI, MI and other landscapes are unchanged.
+
+**Review evidence:** [matched spill-off/on image](evidence/lavender-peaks/lp05/current/spill-comparison.png), [detail crop](evidence/lavender-peaks/lp05/current/spill-detail.png), [quiet/active fixed-camera comparison](evidence/lavender-peaks/lp05/current/quiet-active-comparison.mp4), [generated-music demonstration](evidence/lavender-peaks/lp05/current/generated-music-demo.mp4). The spill-off image is a held-state LP04 reference ablation; both sides have identical approved corona, band responses, transforms and clock. Quiet/active clips use controlled source fixtures; detail crops do not change the camera. [Source schedule](evidence/lavender-peaks/lp05/current/generated-schedule.json), [trace](evidence/lavender-peaks/lp05/current/trace.json), [summary](evidence/lavender-peaks/lp05/current/assessment.json), [optical checks](evidence/lavender-peaks/lp05/current/optical-assessment.json), [browser checks](evidence/lavender-peaks/lp05/current/capture.json). No owner media recorded/inspected.
+
+**Verification:**
+
+-44 test files pass, including8 illumination/profile scenarios plus10 corona/13 ridge-response/6 motion scenarios; lint/typecheck/build pass. Existing large-chunk warning remains. The new held-source recovery regression failed before the prehistory correction and passed after; a complete fresh capture follows the fix. [Development notes](evidence/lavender-peaks/lp05/attempt-notes.json) retain that distinction.
+-Fresh isolated production-build Brave/CDP:1046live samples/427frames. Every sky/ridge illumination uniform equals the shared response in the same frame, while individual sustained/accent uniforms retain their independent responses. Actual generated low/mid/high corona accent peaks .49119/.49141/.52992; held high mids beside low-mid attacks create0high-mid accents. Scene/quality re-entry, gain0, stale, reduced freeze/glint suppression and active period±24/mixed-offset anchoring pass. Source-time screenshots have up to235ms request brackets, not sample-accurate output capture.
+-Actual component pixel changes: sky101782; adjacent-slope layer041445; mist19153 across selected layers0/1; delayed glints8684 across layers1/2/3. No off-source/global exposure, foreground changes, over-wide glints, misplaced mist or clipped-white pixels in the assessed interiors. Protected sky emitter pixels are unchanged in Standard; Low has7single-channel rounding differences only, explicitly within tolerance. Quiet adds0pixels of new spill. Active far/middle/near display-luma means188.58/164.64/128.58 retain depth.
+-Recorded first low-event glint peaks occur in order at19.565/19.757/19.864source seconds; these are sampled peak observations, not exact latency guarantees. Late silence has coronaLight0, glints0 and mean mist .000043: a negligible release tail, not persistent illumination. CPU tests verify eventual exact0. The low-mid window immediately after bass still contains the prior bass/mist release; do not mislabel that carryover as low-mid-driven activation.
+-Resource counts remain7calls/4616triangles/7geometries; textures0→1. Added fixed4144byte visual-history storage and4632byte texture payload; actual driver allocation/GPU time not certified. Bundle +~4.62kB minified/~1.39kB gzip over LP04. Profile lookup, extra fragment math and reduced-mode duty need final LP08 measurement; draw count alone does not prove unchanged performance.
+-Production changes: Lavender scene integration plus new illumination/profile helpers. All93other existing source files match approved LP04 hashes, including corona, MI and other scenes. Updated focused tests, capture/pixel helpers and existing docs/evidence; historical LP04 capture helper now fails early on LP05 to protect approved evidence. No commit/push/deploy; existing uncommitted work preserved.
+
+**Checkpoint:** LP05 implemented and technically verified; stop for visual/music review. Real-song coherence, native/fullscreen, continuous multi-minute/multiple-speed and final hardware matrix remain pending. LP06 travelling ridge illumination is next only after continuation; LP07/LP09 owner gates remain.
+
+## LP06 travelling contour checkpoint — 2026-11-23
+
+Owner “proceed” authorizes LP06 after the LP05 checkpoint. No shared MI, other-landscape, approved corona, LP05 illumination, authored profile, camera, drift or UI change. This phase adds only qualified-event travelling ridge highlights. LP07 choreography remains unstarted.
+
+**Event contract:** The existing scene-local response retains latest accepted sequence/emission-seconds/strength scalars per narrow band, alongside its existing sustained/accent values. These are qualifications of real broad MI events using the already-validated own-band rises; no new analysis/onset system or raw media history. Traces consume each notice once and choose one dominant narrow recipient per broad event. Session/re-entry seeds cursors; stale, gain0 and reduced motion clear strokes and consume old notices. Invalid/future/>250ms-old notices are rejected. Sustained/global intensity alone cannot spawn strokes.
+
+**Budget and appearance:** Three fixed slots globally, at most one per ridge. Busy/full-pool notices are dropped, never queued or used to restart a visible head. Simultaneous accepted starts are at least120ms apart. Strength maps proportionally through a bounded2.5×scene calibration, maximum opacity .45; a70ms attack and220ms end fade frame a bright ivory/rose head and weaker fading tail. Profiles remain static. Role defaults, far→near:
+
+| Recipient | Direction | Nominal delay | Duration | Travel / tail (world units) |
+| --- | --- | --- | --- | --- |
+| Air / ridge0 | left | .18s | .85s | 5.2 / .75 |
+| Presence / ridge1 | right | .18s | .95s | 5.0 / .85 |
+| High mids / ridge2 | right | .10s | 1.15s | 5.6 / 1.05 |
+| Low mids / ridge3 | left | .10s | 1.25s | 5.6 / 1.10 |
+| Bass / ridge4 | right | 0 | 1.40s | 4.0 / 1.25 |
+| Sub-bass / ridge5 | left | 0 | 1.50s | 4.5 / 1.35 |
+
+The existing material/profile sampler draws a narrow antialiased contour mask. Head/tail distance is periodic over24units; local phase stays attached to terrain while its offset changes. No new geometry/depth, texture, light, shadow or pass. LP05's shared light stays world/sun-anchored; its stationary delayed glints and the new travelling strokes remain separate.
+
+**Evidence:** [annotated isolated actual-PCM attacks](evidence/lavender-peaks/lp06/current/annotated-attacks-demo.mp4), [full generated-music run](evidence/lavender-peaks/lp06/current/generated-music-demo.mp4), [early/middle/late detail](evidence/lavender-peaks/lp06/current/travel-sequence.png), [controlled high-mid trace](evidence/lavender-peaks/lp06/current/high-mid-trace-on.png), [optical movement/seam report](evidence/lavender-peaks/lp06/current/optical-assessment.json), [signal/material summary](evidence/lavender-peaks/lp06/current/assessment.json), [capture/checks](evidence/lavender-peaks/lp06/current/capture.json), [source schedule](evidence/lavender-peaks/lp06/current/generated-schedule.json). The annotated short clip replays real generated100/1000/8000Hz attacks through existing MI, fixed camera and temporary frozen terrain. The full run keeps normal autonomous drift. Crops are labeled detail views, not camera edits. No owner media captured/inspected.
+
+**Verification:**
+
+-45test files pass, including11trace scenarios plus the existing corona/illumination/response/motion suites; lint/typecheck/build pass. Same reset accepts the first new sequence1, no sustained-only stroke, no stale/re-entry replay, bounded global/recipient counts, strength ordering and direction/lifetime checks. Existing large-chunk warning remains.
+-Fresh isolated production-build Brave/CDP capture:1084live samples/461frames;17logical strokes, at most3active; actual recipients4/3/2/0 on the generated matrix. Presence/sub-bass routing is covered by six-band contract unit fixtures, not claimed as six perfect PCM isolations. Every actual trace material uniform matches its active slot in the same frame. Band sustain/accent values remain unchanged. Late silence has no traces; low-mid-only attacks beside held high mids create no high-mid-specific trace. Gain/stale/reduced/Low/re-entry and generated-source identity checks pass.
+-Short actual-PCM motion capture has106frames. Low head moves -1.010→2.466world phase, mid -1.255→3.615, high2.476→-2.112 in the expected directions. Capture sampling and screenshot brackets do not establish native playback/performance or sample-accurate output recording; full-run screenshot brackets reach128ms.
+-Controlled rendered light centroids move -0.531→.891→2.275world x; head mean pixel difference9.03–9.77 versus tail1.92–2.41. These are RGB differences, not physical emission or owner perceptibility approval. At a visible seam, phases11.86→11.99→-11.88 yield continuous centroids5.721→5.830→5.956, with no tile jump. Equivalent±24translations pass≤1channel difference. Own-ridge/contour/path confinement, no sky/other-ridge changes beyond rounding, Low quality and no clipped-white pixels pass.
+-Optical metadata uses authoritative observed per-snapshot uniforms/positions. A reusable seam intent object initially aliased later phases in diagnostic records; render snapshots were correct. Assessment now reads those observations, future intent records are deep-copied, and the distinction is retained in [verification notes](evidence/lavender-peaks/lp06/attempt-notes.json). Low attribution excludes3px boundaries versus2px Standard to avoid antialias edge misclassification. This did not require production art changes.
+-Resources remain7calls/4616triangles/7geometries/1shared texture. Fixed three-object pool, six counters, retained scalar notices and four extra uniforms/material; no frame-rate React state or new dependency. Bundle +~3.64kB minified/~1.00kB gzip over LP05. Actual incremental GPU cost stays LP08; screenshot cadence is not an FPS certificate.
+-Production changes: scene integration, scalar notices in response, new traces module. All94other existing source files match LP05 hashes, including approved corona and LP05 lighting/profile helpers, MI and other scenes. Tests/helpers/existing docs/evidence updated; historical LP05 capture helper now fails early on the post-trace scene. No commit/push/deploy; existing changes preserved.
+
+**Checkpoint:** LP06 implemented and technically verified. Stop for owner visual/music review; real-song feel, native/device and final multi-minute/multiple-speed checks remain pending. Next is LP07 unified atmosphere/choreography only after continuation, followed by its explicit owner visual gate.
 
 ## 4. Implementation process to avoid back-and-forth
 

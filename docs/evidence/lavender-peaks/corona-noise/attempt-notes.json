@@ -1,0 +1,6 @@
+{
+  "notes": [
+    "The initial scalar probe shallow-copied corona state while retaining nested pool references in its recorded row array. Those two nested fields were omitted from the final trace; copied sky uniforms, scalar cursor/envelopes, and deep serialized snapshots remain authoritative. The reusable probe now copies nested pool values. No production correction was required.",
+    "Additional onset and matched-view diagnostics replay the same actual-MI values and clock from generated PCM; they do not repeat analysis or represent owner media."
+  ]
+}

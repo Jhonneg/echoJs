@@ -15,7 +15,9 @@ export function createLavenderResponse() {
   return {
     session: -1, sequence: 0, frame: -1, sampleTime: -1, cursor: 0, count: 0,
     fresh: false,
-    ridges: RIDGE_BANDS.map(band => ({ band: band as SixBandName, target: 0, sustained: 0, accent: 0 })),
+    context: { intensity: 0, brightness: 0, brightnessValid: false, activity: 0 },
+    ridges: RIDGE_BANDS.map(band => ({ band: band as SixBandName, target: 0, sustained: 0, accent: 0,
+      onsetSequence: 0, onsetTimeSeconds: 0, onsetStrength: 0 })),
     times: new Float64Array(HISTORY),
     energies: new Float64Array(HISTORY * 6), rises: new Float64Array(HISTORY * 6),
   }
@@ -31,10 +33,17 @@ export function updateLavenderResponse(state: LavenderResponse, reader: MusicFea
   if (reset) {
     state.session = view.session; state.sequence = view.sequence
     state.frame = -1; state.sampleTime = -1; state.count = state.cursor = 0
-    for (const ridge of state.ridges) ridge.sustained = ridge.target = ridge.accent = 0
+    for (const ridge of state.ridges) {
+      ridge.sustained = ridge.target = ridge.accent = 0
+      ridge.onsetSequence = ridge.onsetTimeSeconds = ridge.onsetStrength = 0
+    }
   }
   state.fresh = musicFeaturesFresh(view, nowSeconds)
   const enabled = state.fresh && gain > 0
+  state.context.intensity = enabled ? clampSignal(view.context.intensity) : 0
+  state.context.activity = enabled ? clampSignal(view.context.activity) : 0
+  state.context.brightnessValid = enabled && view.context.brightnessValid
+  state.context.brightness = state.context.brightnessValid ? clampSignal(view.context.brightness) : 0
   if (!enabled || reducedMotion) {
     state.count = state.cursor = 0; state.frame = -1; state.sampleTime = -1
     for (const ridge of state.ridges) ridge.accent = 0
@@ -86,8 +95,13 @@ export function updateLavenderResponse(state: LavenderResponse, reader: MusicFea
         if (Math.abs(state.times[index] - event.timeSeconds) <= .09)
           rise = Math.max(rise, state.rises[index * 6 + band])
       }
-      if (rise >= .02) state.ridges[band].accent = Math.max(state.ridges[band].accent,
-        clampSignal(event.strength) * clampSignal(rise / .2) * gain)
+      if (rise >= .02) {
+        const ridge = state.ridges[band], strength = clampSignal(event.strength) * clampSignal(rise / .2) * gain
+        ridge.accent = Math.max(ridge.accent, strength)
+        // Retain only this qualified scalar notice, never the borrowed publication.
+        ridge.onsetSequence = event.sequence; ridge.onsetTimeSeconds = event.emittedAtSeconds
+        ridge.onsetStrength = strength
+      }
     }
   }
   state.sequence = Math.max(state.sequence, view.sequence)

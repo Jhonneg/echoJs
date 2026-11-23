@@ -1,0 +1,17 @@
+{
+  "scope": "LP05 development verification; final current evidence follows the recovery fix. No owner media.",
+  "findings": [
+    {
+      "issue": "React immutability lint for memoized texture needsUpdate in effect",
+      "resolution": "Set upload flag at texture creation, keep disposal in layout cleanup."
+    },
+    {
+      "issue": "Low screenshot comparison counted7single-channel emitter rounding pixels as a visual change",
+      "resolution": "Use the already documented1channel roundoff tolerance and retain rounding count; Standard emitter pixels unchanged."
+    },
+    {
+      "issue": "Unknown scalar prehistory assumed black and could manufacture a glint when stale/reduced sampling resumed at held light",
+      "resolution": "Hold oldest known scalar value outside sampled history. New regression failed before correction and passed after; full capture rerun with final source."
+    }
+  ]
+}

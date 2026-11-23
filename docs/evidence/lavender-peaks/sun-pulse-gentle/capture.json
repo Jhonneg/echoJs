@@ -1,0 +1,2902 @@
+{
+  "source": "Generated scene-contract inputs through production MI consumer, fixed camera/terrain. No captured media, no audio track; video labels identify test sequence.",
+  "temporary": "/tmp/echo-lavender-lp06-DmUVbZ",
+  "errors": [],
+  "snapshots": [
+    {
+      "name": "rest",
+      "row": {
+        "now": 1.9229000000003724,
+        "audioTime": null,
+        "dt": 0.016700000000186264,
+        "delivered": [
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          }
+        ],
+        "features": {
+          "version": 1,
+          "session": 9101,
+          "frame": 13,
+          "sequence": 0,
+          "status": "active",
+          "updatedAtSeconds": 1.922800000000745,
+          "sampleRate": 48000,
+          "fftSize": 2048,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": []
+        },
+        "response": {
+          "fresh": true,
+          "session": 9101,
+          "sequence": 0,
+          "count": 12,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            }
+          ]
+        },
+        "corona": {
+          "session": 9101,
+          "time": 1.2215000000009313,
+          "envelope": 0,
+          "detail": 0,
+          "lowAccent": 0,
+          "midAccent": 0,
+          "highAccent": 0,
+          "motion": 1,
+          "lastBassSequence": 0,
+          "pulses": [
+            {
+              "age": 1.1999000000003726,
+              "strength": 0,
+              "sequence": 0
+            },
+            {
+              "age": 1.1999000000003726,
+              "strength": 0,
+              "sequence": 0
+            },
+            {
+              "age": 1.1999000000003726,
+              "strength": 0,
+              "sequence": 0
+            }
+          ],
+          "pulseUniforms": {
+            "0": 0.949999988079071,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          }
+        },
+        "traces": {
+          "session": 9101,
+          "slots": [
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            }
+          ]
+        },
+        "illumination": {
+          "session": 9101,
+          "coronaLight": 0,
+          "mist": 0,
+          "glints": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "skyUniforms": {
+          "sunPulse": 0,
+          "atmosphereDensity": 0,
+          "atmosphereWarmth": 0,
+          "coronaBassPulses": {
+            "0": 0.949999988079071,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          },
+          "coronaTime": 1.2215000000009313,
+          "coronaEnvelope": 0,
+          "coronaDetail": 0,
+          "coronaLowAccent": 0,
+          "coronaMidAccent": 0,
+          "coronaHighAccent": 0,
+          "coronaMotion": 1,
+          "coronaSunRadius": 0.75,
+          "coronaRadiusRatio": 1.65,
+          "coronaBaseAmplitude": 0.018,
+          "coronaMaxAmplitude": 0.22,
+          "coronaBaseOpacity": 0.16,
+          "coronaMaxOpacity": 0.46,
+          "coronaLight": 0
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0.03
+          },
+          {
+            "offset": 0,
+            "speed": 0.05
+          },
+          {
+            "offset": 0,
+            "speed": 0.09
+          },
+          {
+            "offset": 0,
+            "speed": 0.13
+          },
+          {
+            "offset": 0,
+            "speed": 0.18
+          },
+          {
+            "offset": 0,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 1
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true,
+        "held": false
+      }
+    },
+    {
+      "name": "bass-attack",
+      "row": {
+        "now": 2.1729000000003724,
+        "audioTime": null,
+        "dt": 0.016700000000186264,
+        "delivered": [
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.3411688043374089,
+            "mist": 0.044579414882640736,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.3411688043374089,
+            "mist": 0.044579414882640736,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.3411688043374089,
+            "mist": 0.044579414882640736,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.3411688043374089,
+            "mist": 0.044579414882640736,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": -1.0094285714280389,
+            "traceOpacity": 0.44709398921315036,
+            "traceDirection": 1,
+            "traceTail": 1.25,
+            "sustained": 0.1268168259581838,
+            "accent": 0.5169253724828007,
+            "coronaLight": 0.3411688043374089,
+            "mist": 0.044579414882640736,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.3411688043374089,
+            "mist": 0.044579414882640736,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          }
+        ],
+        "features": {
+          "version": 1,
+          "session": 9101,
+          "frame": 28,
+          "sequence": 1,
+          "status": "active",
+          "updatedAtSeconds": 2.1728000000007452,
+          "sampleRate": 48000,
+          "fftSize": 2048,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0.4,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 9101,
+              "sequence": 1,
+              "band": "low",
+              "strength": 0.7,
+              "timeSeconds": 2.0747000000001865,
+              "emittedAtSeconds": 2.1047000000001863
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "session": 9101,
+          "sequence": 1,
+          "count": 27,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "bass",
+              "target": 0.6153846153846154,
+              "sustained": 0.1268168259581838,
+              "accent": 0.5169253724828007,
+              "onsetSequence": 1,
+              "onsetTimeSeconds": 2.1047000000001863,
+              "onsetStrength": 0.7
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            }
+          ]
+        },
+        "corona": {
+          "session": 9101,
+          "time": 1.4715000000009315,
+          "envelope": 0.7525733628045082,
+          "detail": 0,
+          "lowAccent": 0.8052991479284797,
+          "midAccent": 0,
+          "highAccent": 0,
+          "motion": 1,
+          "lastBassSequence": 1,
+          "pulses": [
+            {
+              "age": 0.06670000000018626,
+              "strength": 1,
+              "sequence": 1
+            },
+            {
+              "age": 1.4499000000003728,
+              "strength": 0,
+              "sequence": 0
+            },
+            {
+              "age": 1.4499000000003728,
+              "strength": 0,
+              "sequence": 0
+            }
+          ],
+          "pulseUniforms": {
+            "0": 2.3076579570770264,
+            "1": 0.8052991628646851,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          }
+        },
+        "traces": {
+          "session": 9101,
+          "slots": [
+            {
+              "active": true,
+              "ridge": 4,
+              "sequence": 1,
+              "startsAt": 2.1062000000001864,
+              "startLocal": -1.2,
+              "strength": 0.7,
+              "direction": 1,
+              "duration": 1.4,
+              "distance": 4,
+              "tail": 1.25,
+              "head": -1.0094285714280389,
+              "opacity": 0.44709398921315036
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            }
+          ]
+        },
+        "illumination": {
+          "session": 9101,
+          "coronaLight": 0.3411688043374089,
+          "mist": 0.044579414882640736,
+          "glints": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "skyUniforms": {
+          "sunPulse": 0.5192347295640424,
+          "atmosphereDensity": 0,
+          "atmosphereWarmth": 0,
+          "coronaBassPulses": {
+            "0": 2.3076579570770264,
+            "1": 0.8052991628646851,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          },
+          "coronaTime": 1.4715000000009315,
+          "coronaEnvelope": 0.7525733628045082,
+          "coronaDetail": 0,
+          "coronaLowAccent": 0.8052991479284797,
+          "coronaMidAccent": 0,
+          "coronaHighAccent": 0,
+          "coronaMotion": 1,
+          "coronaSunRadius": 0.75,
+          "coronaRadiusRatio": 1.65,
+          "coronaBaseAmplitude": 0.018,
+          "coronaMaxAmplitude": 0.22,
+          "coronaBaseOpacity": 0.16,
+          "coronaMaxOpacity": 0.46,
+          "coronaLight": 0.3411688043374089
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0.03
+          },
+          {
+            "offset": 0,
+            "speed": 0.05
+          },
+          {
+            "offset": 0,
+            "speed": 0.09
+          },
+          {
+            "offset": 0,
+            "speed": 0.13
+          },
+          {
+            "offset": 0,
+            "speed": 0.18
+          },
+          {
+            "offset": 0,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 1
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true,
+        "held": false
+      }
+    },
+    {
+      "name": "bass-sustain",
+      "row": {
+        "now": 5.256,
+        "audioTime": null,
+        "dt": 0.016599999999627472,
+        "delivered": [
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.49083083293570745,
+            "mist": 0.4973948710136238,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.49083083293570745,
+            "mist": 0.4973948710136238,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.49083083293570745,
+            "mist": 0.4973948710136238,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.49083083293570745,
+            "mist": 0.4973948710136238,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0.6111289655915018,
+            "accent": 0,
+            "coronaLight": 0.49083083293570745,
+            "mist": 0.4973948710136238,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.49083083293570745,
+            "mist": 0.4973948710136238,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          }
+        ],
+        "features": {
+          "version": 1,
+          "session": 9101,
+          "frame": 213,
+          "sequence": 1,
+          "status": "active",
+          "updatedAtSeconds": 5.255900000000373,
+          "sampleRate": 48000,
+          "fftSize": 2048,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0.4,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 9101,
+              "sequence": 1,
+              "band": "low",
+              "strength": 0.7,
+              "timeSeconds": 2.0747000000001865,
+              "emittedAtSeconds": 2.1047000000001863
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "session": 9101,
+          "sequence": 1,
+          "count": 64,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "bass",
+              "target": 0.6153846153846154,
+              "sustained": 0.6111289655915018,
+              "accent": 0,
+              "onsetSequence": 1,
+              "onsetTimeSeconds": 2.1047000000001863,
+              "onsetStrength": 0.7
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            }
+          ]
+        },
+        "corona": {
+          "session": 9101,
+          "time": 4.554600000000562,
+          "envelope": 0.8888888888888887,
+          "detail": 0,
+          "lowAccent": 0,
+          "midAccent": 0,
+          "highAccent": 0,
+          "motion": 1,
+          "lastBassSequence": 1,
+          "pulses": [
+            {
+              "age": 3.1497999999998103,
+              "strength": 1,
+              "sequence": 1
+            },
+            {
+              "age": 4.533000000000003,
+              "strength": 0,
+              "sequence": 0
+            },
+            {
+              "age": 4.533000000000003,
+              "strength": 0,
+              "sequence": 0
+            }
+          ],
+          "pulseUniforms": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          }
+        },
+        "traces": {
+          "session": 9101,
+          "slots": [
+            {
+              "active": false,
+              "ridge": 4,
+              "sequence": 1,
+              "startsAt": 2.1062000000001864,
+              "startLocal": -1.2,
+              "strength": 0.7,
+              "direction": 1,
+              "duration": 1.4,
+              "distance": 4,
+              "tail": 1.25,
+              "head": 2.752285714285179,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            }
+          ]
+        },
+        "illumination": {
+          "session": 9101,
+          "coronaLight": 0.49083083293570745,
+          "mist": 0.4973948710136238,
+          "glints": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "skyUniforms": {
+          "sunPulse": 0.1230800182367342,
+          "atmosphereDensity": 0,
+          "atmosphereWarmth": 0,
+          "coronaBassPulses": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          },
+          "coronaTime": 4.554600000000562,
+          "coronaEnvelope": 0.8888888888888887,
+          "coronaDetail": 0,
+          "coronaLowAccent": 0,
+          "coronaMidAccent": 0,
+          "coronaHighAccent": 0,
+          "coronaMotion": 1,
+          "coronaSunRadius": 0.75,
+          "coronaRadiusRatio": 1.65,
+          "coronaBaseAmplitude": 0.018,
+          "coronaMaxAmplitude": 0.22,
+          "coronaBaseOpacity": 0.16,
+          "coronaMaxOpacity": 0.46,
+          "coronaLight": 0.49083083293570745
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0.03
+          },
+          {
+            "offset": 0,
+            "speed": 0.05
+          },
+          {
+            "offset": 0,
+            "speed": 0.09
+          },
+          {
+            "offset": 0,
+            "speed": 0.13
+          },
+          {
+            "offset": 0,
+            "speed": 0.18
+          },
+          {
+            "offset": 0,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 1
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true,
+        "held": false
+      }
+    },
+    {
+      "name": "silence",
+      "row": {
+        "now": 9.872400000000372,
+        "audioTime": null,
+        "dt": 0.016599999999627472,
+        "delivered": [
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.002133333641981989,
+            "mist": 0.03390900609227683,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.002133333641981989,
+            "mist": 0.03390900609227683,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.002133333641981989,
+            "mist": 0.03390900609227683,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.002133333641981989,
+            "mist": 0.03390900609227683,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0.030467260314915184,
+            "accent": 0,
+            "coronaLight": 0.002133333641981989,
+            "mist": 0.03390900609227683,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.002133333641981989,
+            "mist": 0.03390900609227683,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          }
+        ],
+        "features": {
+          "version": 1,
+          "session": 9101,
+          "frame": 490,
+          "sequence": 1,
+          "status": "active",
+          "updatedAtSeconds": 9.872400000000372,
+          "sampleRate": 48000,
+          "fftSize": 2048,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 9101,
+              "sequence": 1,
+              "band": "low",
+              "strength": 0.7,
+              "timeSeconds": 2.0747000000001865,
+              "emittedAtSeconds": 2.1047000000001863
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "session": 9101,
+          "sequence": 1,
+          "count": 64,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0.030467260314915184,
+              "accent": 0,
+              "onsetSequence": 1,
+              "onsetTimeSeconds": 2.1047000000001863,
+              "onsetStrength": 0.7
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            }
+          ]
+        },
+        "corona": {
+          "session": 9101,
+          "time": 9.171100000000575,
+          "envelope": 0,
+          "detail": 0,
+          "lowAccent": 0,
+          "midAccent": 0,
+          "highAccent": 0,
+          "motion": 1,
+          "lastBassSequence": 1,
+          "pulses": [
+            {
+              "age": 7.76629999999983,
+              "strength": 1,
+              "sequence": 1
+            },
+            {
+              "age": 9.149500000000014,
+              "strength": 0,
+              "sequence": 0
+            },
+            {
+              "age": 9.149500000000014,
+              "strength": 0,
+              "sequence": 0
+            }
+          ],
+          "pulseUniforms": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          }
+        },
+        "traces": {
+          "session": 9101,
+          "slots": [
+            {
+              "active": false,
+              "ridge": 4,
+              "sequence": 1,
+              "startsAt": 2.1062000000001864,
+              "startLocal": -1.2,
+              "strength": 0.7,
+              "direction": 1,
+              "duration": 1.4,
+              "distance": 4,
+              "tail": 1.25,
+              "head": 2.752285714285179,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            }
+          ]
+        },
+        "illumination": {
+          "session": 9101,
+          "coronaLight": 0.002133333641981989,
+          "mist": 0.03390900609227683,
+          "glints": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "skyUniforms": {
+          "sunPulse": 0,
+          "atmosphereDensity": 0,
+          "atmosphereWarmth": 0,
+          "coronaBassPulses": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          },
+          "coronaTime": 9.171100000000575,
+          "coronaEnvelope": 0,
+          "coronaDetail": 0,
+          "coronaLowAccent": 0,
+          "coronaMidAccent": 0,
+          "coronaHighAccent": 0,
+          "coronaMotion": 1,
+          "coronaSunRadius": 0.75,
+          "coronaRadiusRatio": 1.65,
+          "coronaBaseAmplitude": 0.018,
+          "coronaMaxAmplitude": 0.22,
+          "coronaBaseOpacity": 0.16,
+          "coronaMaxOpacity": 0.46,
+          "coronaLight": 0.002133333641981989
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0.03
+          },
+          {
+            "offset": 0,
+            "speed": 0.05
+          },
+          {
+            "offset": 0,
+            "speed": 0.09
+          },
+          {
+            "offset": 0,
+            "speed": 0.13
+          },
+          {
+            "offset": 0,
+            "speed": 0.18
+          },
+          {
+            "offset": 0,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 1
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true,
+        "held": false
+      }
+    },
+    {
+      "name": "high-mid-only",
+      "row": {
+        "now": 10.672900000000373,
+        "audioTime": null,
+        "dt": 0.0165,
+        "delivered": [
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.08550000268136666,
+            "mist": 0.04989055666490972,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.08550000268136666,
+            "mist": 0.04989055666490972,
+            "glint": 0.05757621036265913,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0.5321727192208372,
+            "accent": 0,
+            "coronaLight": 0.08550000268136666,
+            "mist": 0.04989055666490972,
+            "glint": 0.058536227949152954,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.08550000268136666,
+            "mist": 0.04989055666490972,
+            "glint": 0.035314873938583374,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0.01786992873940495,
+            "accent": 0,
+            "coronaLight": 0.08550000268136666,
+            "mist": 0.04989055666490972,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.08550000268136666,
+            "mist": 0.04989055666490972,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          }
+        ],
+        "features": {
+          "version": 1,
+          "session": 9101,
+          "frame": 538,
+          "sequence": 1,
+          "status": "active",
+          "updatedAtSeconds": 10.672700000000185,
+          "sampleRate": 48000,
+          "fftSize": 2048,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0,
+              "lowMids": 0,
+              "highMids": 0.4,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 9101,
+              "sequence": 1,
+              "band": "low",
+              "strength": 0.7,
+              "timeSeconds": 2.0747000000001865,
+              "emittedAtSeconds": 2.1047000000001863
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "session": 9101,
+          "sequence": 1,
+          "count": 64,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0.6153846153846154,
+              "sustained": 0.5321727192208372,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0.01786992873940495,
+              "accent": 0,
+              "onsetSequence": 1,
+              "onsetTimeSeconds": 2.1047000000001863,
+              "onsetStrength": 0.7
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            }
+          ]
+        },
+        "corona": {
+          "session": 9101,
+          "time": 9.971400000000388,
+          "envelope": 0,
+          "detail": 0.3201629895196334,
+          "lowAccent": 0,
+          "midAccent": 0,
+          "highAccent": 0,
+          "motion": 1,
+          "lastBassSequence": 1,
+          "pulses": [
+            {
+              "age": 8.566599999999646,
+              "strength": 1,
+              "sequence": 1
+            },
+            {
+              "age": 9.949799999999827,
+              "strength": 0,
+              "sequence": 0
+            },
+            {
+              "age": 9.949799999999827,
+              "strength": 0,
+              "sequence": 0
+            }
+          ],
+          "pulseUniforms": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          }
+        },
+        "traces": {
+          "session": 9101,
+          "slots": [
+            {
+              "active": false,
+              "ridge": 4,
+              "sequence": 1,
+              "startsAt": 2.1062000000001864,
+              "startLocal": -1.2,
+              "strength": 0.7,
+              "direction": 1,
+              "duration": 1.4,
+              "distance": 4,
+              "tail": 1.25,
+              "head": 2.752285714285179,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            }
+          ]
+        },
+        "illumination": {
+          "session": 9101,
+          "coronaLight": 0.08550000268136666,
+          "mist": 0.04989055666490972,
+          "glints": [
+            0,
+            0.05757621036265913,
+            0.058536227949152954,
+            0.035314873938583374,
+            0,
+            0
+          ]
+        },
+        "skyUniforms": {
+          "sunPulse": 0,
+          "atmosphereDensity": 0,
+          "atmosphereWarmth": 0,
+          "coronaBassPulses": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          },
+          "coronaTime": 9.971400000000388,
+          "coronaEnvelope": 0,
+          "coronaDetail": 0.3201629895196334,
+          "coronaLowAccent": 0,
+          "coronaMidAccent": 0,
+          "coronaHighAccent": 0,
+          "coronaMotion": 1,
+          "coronaSunRadius": 0.75,
+          "coronaRadiusRatio": 1.65,
+          "coronaBaseAmplitude": 0.018,
+          "coronaMaxAmplitude": 0.22,
+          "coronaBaseOpacity": 0.16,
+          "coronaMaxOpacity": 0.46,
+          "coronaLight": 0.08550000268136666
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0.03
+          },
+          {
+            "offset": 0,
+            "speed": 0.05
+          },
+          {
+            "offset": 0,
+            "speed": 0.09
+          },
+          {
+            "offset": 0,
+            "speed": 0.13
+          },
+          {
+            "offset": 0,
+            "speed": 0.18
+          },
+          {
+            "offset": 0,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 1
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true,
+        "held": false
+      }
+    },
+    {
+      "name": "reduced",
+      "row": {
+        "now": 11.472900000000372,
+        "audioTime": null,
+        "dt": 0.017,
+        "delivered": [
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.5746374353448499,
+            "mist": 0.3663900626150111,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.5746374353448499,
+            "mist": 0.3663900626150111,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0.6020498780073029,
+            "accent": 0,
+            "coronaLight": 0.5746374353448499,
+            "mist": 0.3663900626150111,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.5746374353448499,
+            "mist": 0.3663900626150111,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0.39423815046242433,
+            "accent": 0,
+            "coronaLight": 0.5746374353448499,
+            "mist": 0.3663900626150111,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0.5746374353448499,
+            "mist": 0.3663900626150111,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          }
+        ],
+        "features": {
+          "version": 1,
+          "session": 9101,
+          "frame": 586,
+          "sequence": 1,
+          "status": "active",
+          "updatedAtSeconds": 11.472800000000746,
+          "sampleRate": 48000,
+          "fftSize": 2048,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0.4,
+              "lowMids": 0,
+              "highMids": 0.4,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 9101,
+              "sequence": 1,
+              "band": "low",
+              "strength": 0.7,
+              "timeSeconds": 2.0747000000001865,
+              "emittedAtSeconds": 2.1047000000001863
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "session": 9101,
+          "sequence": 1,
+          "count": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0.6153846153846154,
+              "sustained": 0.6020498780073029,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "bass",
+              "target": 0.6153846153846154,
+              "sustained": 0.39423815046242433,
+              "accent": 0,
+              "onsetSequence": 1,
+              "onsetTimeSeconds": 2.1047000000001863,
+              "onsetStrength": 0.7
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            }
+          ]
+        },
+        "corona": {
+          "session": 9101,
+          "time": 10.488400000000388,
+          "envelope": 0.885502218531278,
+          "detail": 0.3840852433868965,
+          "lowAccent": 0,
+          "midAccent": 0,
+          "highAccent": 0,
+          "motion": 0,
+          "lastBassSequence": 1,
+          "pulses": [
+            {
+              "age": 9.366700000000202,
+              "strength": 0,
+              "sequence": 1
+            },
+            {
+              "age": 10.749900000000384,
+              "strength": 0,
+              "sequence": 0
+            },
+            {
+              "age": 10.749900000000384,
+              "strength": 0,
+              "sequence": 0
+            }
+          ],
+          "pulseUniforms": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          }
+        },
+        "traces": {
+          "session": 9101,
+          "slots": [
+            {
+              "active": false,
+              "ridge": 4,
+              "sequence": 1,
+              "startsAt": 2.1062000000001864,
+              "startLocal": -1.2,
+              "strength": 0.7,
+              "direction": 1,
+              "duration": 1.4,
+              "distance": 4,
+              "tail": 1.25,
+              "head": 2.752285714285179,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            }
+          ]
+        },
+        "illumination": {
+          "session": 9101,
+          "coronaLight": 0.5746374353448499,
+          "mist": 0.3663900626150111,
+          "glints": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "skyUniforms": {
+          "sunPulse": 0,
+          "atmosphereDensity": 0,
+          "atmosphereWarmth": 0,
+          "coronaBassPulses": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          },
+          "coronaTime": 10.488400000000388,
+          "coronaEnvelope": 0.885502218531278,
+          "coronaDetail": 0.3840852433868965,
+          "coronaLowAccent": 0,
+          "coronaMidAccent": 0,
+          "coronaHighAccent": 0,
+          "coronaMotion": 0,
+          "coronaSunRadius": 0.75,
+          "coronaRadiusRatio": 1.65,
+          "coronaBaseAmplitude": 0.018,
+          "coronaMaxAmplitude": 0.22,
+          "coronaBaseOpacity": 0.1,
+          "coronaMaxOpacity": 0.46,
+          "coronaLight": 0.5746374353448499
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0.03
+          },
+          {
+            "offset": 0,
+            "speed": 0.05
+          },
+          {
+            "offset": 0,
+            "speed": 0.09
+          },
+          {
+            "offset": 0,
+            "speed": 0.13
+          },
+          {
+            "offset": 0,
+            "speed": 0.18
+          },
+          {
+            "offset": 0,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 1
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true,
+        "held": false
+      }
+    },
+    {
+      "name": "gain-zero",
+      "row": {
+        "now": 11.905700000000186,
+        "audioTime": null,
+        "dt": 0.016200000000186263,
+        "delivered": [
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          },
+          {
+            "traceHead": 0,
+            "traceOpacity": 0,
+            "traceDirection": 1,
+            "traceTail": 1,
+            "sustained": 0,
+            "accent": 0,
+            "coronaLight": 0,
+            "mist": 0,
+            "glint": 0,
+            "offset": 0,
+            "nextOffset": 0
+          }
+        ],
+        "features": {
+          "version": 1,
+          "session": 9101,
+          "frame": 612,
+          "sequence": 1,
+          "status": "active",
+          "updatedAtSeconds": 11.905700000000186,
+          "sampleRate": 48000,
+          "fftSize": 2048,
+          "energy": {
+            "low": 0,
+            "mid": 0,
+            "high": 0,
+            "overall": 0,
+            "six": {
+              "subBass": 0,
+              "bass": 0.4,
+              "lowMids": 0,
+              "highMids": 0.4,
+              "presence": 0,
+              "air": 0
+            }
+          },
+          "context": {
+            "intensity": 0,
+            "brightness": 0,
+            "brightnessValid": false,
+            "activity": 0
+          },
+          "events": [
+            {
+              "session": 9101,
+              "sequence": 1,
+              "band": "low",
+              "strength": 0.7,
+              "timeSeconds": 2.0747000000001865,
+              "emittedAtSeconds": 2.1047000000001863
+            }
+          ]
+        },
+        "response": {
+          "fresh": true,
+          "session": 9101,
+          "sequence": 1,
+          "count": 0,
+          "ridges": [
+            {
+              "band": "air",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "presence",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "highMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "lowMids",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            },
+            {
+              "band": "bass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 1,
+              "onsetTimeSeconds": 2.1047000000001863,
+              "onsetStrength": 0.7
+            },
+            {
+              "band": "subBass",
+              "target": 0,
+              "sustained": 0,
+              "accent": 0,
+              "onsetSequence": 0,
+              "onsetTimeSeconds": 0,
+              "onsetStrength": 0
+            }
+          ]
+        },
+        "corona": {
+          "session": 9101,
+          "time": 10.805100000000575,
+          "envelope": 0,
+          "detail": 0,
+          "lowAccent": 0,
+          "midAccent": 0,
+          "highAccent": 0,
+          "motion": 1,
+          "lastBassSequence": 1,
+          "pulses": [
+            {
+              "age": 9.799599999999646,
+              "strength": 0,
+              "sequence": 1
+            },
+            {
+              "age": 11.182799999999828,
+              "strength": 0,
+              "sequence": 0
+            },
+            {
+              "age": 11.182799999999828,
+              "strength": 0,
+              "sequence": 0
+            }
+          ],
+          "pulseUniforms": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          }
+        },
+        "traces": {
+          "session": 9101,
+          "slots": [
+            {
+              "active": false,
+              "ridge": 4,
+              "sequence": 1,
+              "startsAt": 2.1062000000001864,
+              "startLocal": -1.2,
+              "strength": 0.7,
+              "direction": 1,
+              "duration": 1.4,
+              "distance": 4,
+              "tail": 1.25,
+              "head": 2.752285714285179,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            },
+            {
+              "active": false,
+              "ridge": -1,
+              "sequence": 0,
+              "startsAt": 0,
+              "startLocal": 0,
+              "strength": 0,
+              "direction": 1,
+              "duration": 1,
+              "distance": 0,
+              "tail": 1,
+              "head": 0,
+              "opacity": 0
+            }
+          ]
+        },
+        "illumination": {
+          "session": 9101,
+          "coronaLight": 0,
+          "mist": 0,
+          "glints": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "skyUniforms": {
+          "sunPulse": 0,
+          "atmosphereDensity": 0,
+          "atmosphereWarmth": 0,
+          "coronaBassPulses": {
+            "0": 1.0513194799423218,
+            "1": 0,
+            "2": 0.949999988079071,
+            "3": 0,
+            "4": 0.949999988079071,
+            "5": 0
+          },
+          "coronaTime": 10.805100000000575,
+          "coronaEnvelope": 0,
+          "coronaDetail": 0,
+          "coronaLowAccent": 0,
+          "coronaMidAccent": 0,
+          "coronaHighAccent": 0,
+          "coronaMotion": 1,
+          "coronaSunRadius": 0.75,
+          "coronaRadiusRatio": 1.65,
+          "coronaBaseAmplitude": 0.018,
+          "coronaMaxAmplitude": 0.22,
+          "coronaBaseOpacity": 0.16,
+          "coronaMaxOpacity": 0.46,
+          "coronaLight": 0
+        },
+        "motion": [
+          {
+            "offset": 0,
+            "speed": 0.03
+          },
+          {
+            "offset": 0,
+            "speed": 0.05
+          },
+          {
+            "offset": 0,
+            "speed": 0.09
+          },
+          {
+            "offset": 0,
+            "speed": 0.13
+          },
+          {
+            "offset": 0,
+            "speed": 0.18
+          },
+          {
+            "offset": 0,
+            "speed": 0.24
+          }
+        ],
+        "positions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "camera": [
+          0,
+          0,
+          20
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "zoom": 67.5,
+        "cost": {
+          "calls": 7,
+          "triangles": 4616,
+          "geometries": 7,
+          "textures": 1
+        },
+        "renderer": {
+          "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+          "dpr": 1
+        },
+        "override": true,
+        "held": false
+      }
+    }
+  ],
+  "checks": [
+    "Actual sunPulse uniform: bass attack > sustain, silence fade, high-mid exclusion, reduced-motion and gain0 suppression"
+  ],
+  "frames": [
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-0.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.4894384063552926,
+      "time": 2.273
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-1.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.3955738007334653,
+      "time": 2.4229000000003724
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-2.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.3139675927888487,
+      "time": 2.556200000000186
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-3.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.23736188945990364,
+      "time": 2.7229000000003727
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-4.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.196240173244647,
+      "time": 2.8561000000005587
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-5.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.16369351208181898,
+      "time": 3.022800000000745
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-6.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.14800010212893822,
+      "time": 3.156200000000186
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-7.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.1372585711341882,
+      "time": 3.306100000000559
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-8.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.13054387280738872,
+      "time": 3.472800000000745
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-9.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12722587718577433,
+      "time": 3.622800000000745
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-10.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.1253636311595483,
+      "time": 3.7729000000003725
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-11.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12432867596902586,
+      "time": 3.9227000000001864
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-12.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.1237999712892796,
+      "time": 4.0561000000005585
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-13.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12341583783713647,
+      "time": 4.222900000000372
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-14.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12324831115526494,
+      "time": 4.372900000000373
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-15.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12316347535748877,
+      "time": 4.523200000000187
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-16.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12312075200621657,
+      "time": 4.672900000000372
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-17.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12309910738054178,
+      "time": 4.822700000000186
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-18.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12308814160621985,
+      "time": 4.972600000000559
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-19.jpg",
+      "label": "Bass sustain after attack",
+      "pulse": 0.12308304366217822,
+      "time": 5.105900000000372
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-20.jpg",
+      "label": "Silence release",
+      "pulse": 0.12307874324791658,
+      "time": 5.3727000000001865
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-21.jpg",
+      "label": "Silence release",
+      "pulse": 0.06224051521601348,
+      "time": 5.522800000000745
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-22.jpg",
+      "label": "Silence release",
+      "pulse": 0.031474823613949925,
+      "time": 5.672800000000745
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-23.jpg",
+      "label": "Silence release",
+      "pulse": 0.015916714668749686,
+      "time": 5.822800000000745
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-24.jpg",
+      "label": "Silence release",
+      "pulse": 0.008041716226056586,
+      "time": 5.972900000000372
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-25.jpg",
+      "label": "Silence release",
+      "pulse": 0.004070368070815884,
+      "time": 6.1227000000001865
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-26.jpg",
+      "label": "Silence release",
+      "pulse": 0.002059307567654957,
+      "time": 6.272600000000558
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-27.jpg",
+      "label": "Silence release",
+      "pulse": 0.0010413850565641819,
+      "time": 6.422600000000559
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-28.jpg",
+      "label": "Silence release",
+      "pulse": 0.0005266249942790929,
+      "time": 6.572600000000559
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-29.jpg",
+      "label": "Silence release",
+      "pulse": 0.0002660705333780925,
+      "time": 6.722900000000372
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-30.jpg",
+      "label": "Silence release",
+      "pulse": 0.0001345509926754335,
+      "time": 6.872800000000745
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-31.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 7.022800000000745
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-32.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 7.172700000000186
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-33.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 7.322600000000559
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-34.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 7.473
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-35.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 7.623
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-36.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 7.772700000000186
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-37.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 7.9225
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-38.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 8.0725
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-39.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 8.222800000000746
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-40.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 8.372700000000187
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-41.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 8.522700000000187
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-42.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 8.672700000000185
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-43.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 8.822700000000186
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-44.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 8.972700000000186
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-45.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 9.122700000000187
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-46.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 9.272800000000744
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-47.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 9.4225
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-48.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 9.5725
+    },
+    {
+      "path": "/tmp/echo-lavender-lp06-DmUVbZ/frame-49.jpg",
+      "label": "Silence release",
+      "pulse": 0,
+      "time": 9.7225
+    }
+  ],
+  "sourceUnchanged": true,
+  "status": "Restored sun pulse browser checks passed"
+}

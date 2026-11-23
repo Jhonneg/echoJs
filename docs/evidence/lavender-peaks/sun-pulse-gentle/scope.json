@@ -1,0 +1,7 @@
+{
+  "radiusScale": "1 + 0.08 * sunPulse",
+  "maximumExpansion": 0.08,
+  "observedAttackExpansion": 0.04153877836512339,
+  "coronaChanged": false,
+  "onlyChangedProductionFile": "src/scenes/lavender-peaks/LavenderPeaksScene.tsx"
+}

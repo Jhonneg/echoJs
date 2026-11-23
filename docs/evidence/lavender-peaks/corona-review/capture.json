@@ -1,0 +1,19 @@
+{
+  "source": "Current LP06 recorded actual-MI states from generated PCM, replayed at fixed terrain/camera with identical features and clock on both sides; detail crops. Not owner media.",
+  "temporary": "/tmp/echo-lavender-lp06-22kFle",
+  "errors": [],
+  "snapshots": [],
+  "checks": [],
+  "frames": 90,
+  "proposal": {
+    "ringScale": 1.15,
+    "sustainedWaveMultiplier": 3,
+    "localAccentMultiplier": 1.8,
+    "maximumAmplitude": 0.22,
+    "maximumRadiusRatio": 1.65,
+    "coreRadiusUnchanged": 0.75,
+    "productionApplied": false
+  },
+  "sourceUnchanged": true,
+  "status": "Review proposal only; no production changes"
+}
