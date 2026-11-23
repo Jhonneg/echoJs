@@ -1,6 +1,6 @@
 ECHO — Noctune 2.0 Visual Mapping Specification
 
-Plan version: 1.13.2 · Prepared: 2026-11-22 · Status: Proposed artistic contract; partially source-checked at e627ff821e84dd0f8e781fa9b259805d4822ac39, owner review pending
+Plan version: 1.13.2 · Prepared: 2026-11-22 · Status: Implemented mapping; owner visual/music approval recorded 2026-11-23. Current implementation/evidence in NT13-R0–R5 sections; earlier proposal/source snapshots remain historical.
 Destination: docs/NOCTUNE_VISUAL_MAPPING.md · Primary plan: NOCTUNE_MASTER_ROADMAP.md
 
 1. Creative brief
@@ -725,3 +725,7 @@ Secondary/window/detail `instances` store calibrated per-fixture levels; their s
 - Existing gate-haze coefficient.22→.28; fog, gate response, exposure, R1 static fill, geometry and palette stay as authored. Manual off remains the same resting scene; Manual full includes the new environment response.
 
 The steel batch adds197 scalar attributes,9 mapped, with the same shader extension used in R2. The adapter supports scaled bridge sources and sentinel255. Point count is now8, not7; draw/geometry/texture counts remain196/114/6. Device performance/artistic approval are separate gates.
+
+## NT13-R4 verification — 2026-11-23
+
+No new visual mapping or production tuning. [Assessment/evidence](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r4--integration-and-target-machine-checkpoint-2026-11-23) verifies existing roles under isolated spectra, separated attacks, dense sustain, silence and lifecycle controls. Standard high-mid energy.0424/.1413 delivers left-panel means.1045/.3104; qualifying attacks add up to.105 final level above body, while bass/low-mid attacks do not create panel accents. Source histories, nonlinear calibration and actual material/point/instance delivery remain distinct. All91 R3 source hashes are preserved. Owner-native window recovery passes; final artistic/music perception belongs to the R5 review.

@@ -1,0 +1,881 @@
+{
+  "productionUnchanged": 91,
+  "ownerWindowReview": {
+    "date": "2026-11-23",
+    "target": "Linux / NVIDIA GTX 1660 SUPER, explicitly selected by owner",
+    "question": "In Nocturne at http://127.0.0.1:5183/ with permitted audio, does playback/lighting recover after minimizing and restoring the window, and can you leave fullscreen with Escape?",
+    "ownerResponse": "Both work normally",
+    "minimizeRestore": "owner-reported pass",
+    "nativeFullscreenEscape": "owner-reported pass",
+    "limits": "Text observation only. No owner media inspected or recorded; does not establish all real-song listening cases or final Crimson parity. Exact browser/version was not supplied with this reply."
+  },
+  "runs": [
+    {
+      "quality": "standard",
+      "samples": 3893,
+      "frames": 519,
+      "pcmHash": "6acf550b36a43a1f5416b4cbc4e70958e3b2eb928622f3cc13e39ad48daf0fe9",
+      "build": "isolated instrumented production build",
+      "initialHarnessFailure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(fresh.environment.depthIntensity>0)\n",
+      "cases": [
+        {
+          "name": "silence",
+          "highMidEnergyMean": 0,
+          "panelMean": 0,
+          "panelPeak": 0,
+          "panelAccentPeak": 0,
+          "magentaMean": 0,
+          "bridgePeak": 0,
+          "cyanPointMean": 0,
+          "panelDeliveredAccentPeak": 0
+        },
+        {
+          "name": "bass",
+          "highMidEnergyMean": 0.0000021602334289962613,
+          "panelMean": 0.000005828792990713509,
+          "panelPeak": 0.000006102868031611067,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.2847761527562705,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.00017486378972140514,
+          "panelDeliveredAccentPeak": 8.470329472543003e-22
+        },
+        {
+          "name": "low-mid",
+          "highMidEnergyMean": 0.0000045053636255867895,
+          "panelMean": 0.000011951720268241834,
+          "panelPeak": 0.000013032970960082084,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.010793738887975983,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.000358551608047255,
+          "panelDeliveredAccentPeak": 1.6940658945086007e-21
+        },
+        {
+          "name": "quiet-high-mid",
+          "highMidEnergyMean": 0.04239011638222598,
+          "panelMean": 0.10445792433231488,
+          "panelPeak": 0.10445792572683359,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.000019812143829355157,
+          "bridgePeak": 0,
+          "cyanPointMean": 3.133737729969448,
+          "panelDeliveredAccentPeak": 1.3877787807814457e-17
+        },
+        {
+          "name": "loud-high-mid",
+          "highMidEnergyMean": 0.14129899949883937,
+          "panelMean": 0.3103665691659003,
+          "panelPeak": 0.31036657137232976,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.0000032056056457065867,
+          "bridgePeak": 0,
+          "cyanPointMean": 9.310997074977008,
+          "panelDeliveredAccentPeak": 5.551115123125783e-17
+        },
+        {
+          "name": "treble",
+          "highMidEnergyMean": 6.679034544432746e-9,
+          "panelMean": 0.00019700335309103784,
+          "panelPeak": 0.0015850357717756656,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.0000012232135544721298,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.005910100592731131,
+          "panelDeliveredAccentPeak": 2.168404344971009e-19
+        },
+        {
+          "name": "low-attacks",
+          "highMidEnergyMean": 0.00000638500390356762,
+          "panelMean": 0.000016408281347389094,
+          "panelPeak": 0.00018626237968928053,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.18752663793976204,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.0004922484404216727,
+          "panelDeliveredAccentPeak": 2.710505431213761e-20
+        },
+        {
+          "name": "high-mid-attacks",
+          "highMidEnergyMean": 0.020975811056303032,
+          "panelMean": 0.11122599934255863,
+          "panelPeak": 0.44540830993890235,
+          "panelAccentPeak": 0.07418327442877942,
+          "magentaMean": 0.0003751760807426406,
+          "bridgePeak": 0,
+          "cyanPointMean": 3.336779980276758,
+          "panelDeliveredAccentPeak": 0.10500983329012459
+        },
+        {
+          "name": "high-attacks",
+          "highMidEnergyMean": 1.6553570032919176e-7,
+          "panelMean": 4.2984619710374605e-7,
+          "panelPeak": 0.000004748429031259933,
+          "panelAccentPeak": 0,
+          "magentaMean": 5.769311045260882e-8,
+          "bridgePeak": 0.4504219789655773,
+          "cyanPointMean": 0.00001289538591311238,
+          "panelDeliveredAccentPeak": 4.235164736271502e-22
+        },
+        {
+          "name": "bass-near-high-mid",
+          "highMidEnergyMean": 0.07065015713619983,
+          "panelMean": 0.16823907352445286,
+          "panelPeak": 0.16824583844505997,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.26541819869800953,
+          "bridgePeak": 0,
+          "cyanPointMean": 5.047172205733584,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "low-mid-near-high-mid",
+          "highMidEnergyMean": 0.07064917958649836,
+          "panelMean": 0.16824216358751978,
+          "panelPeak": 0.16824675830096525,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.0026763076664049965,
+          "bridgePeak": 0,
+          "cyanPointMean": 5.047264907625597,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "dense",
+          "highMidEnergyMean": 0.0847809763609132,
+          "panelMean": 0.198547682878434,
+          "panelPeak": 0.19854784826095612,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.22128626243539842,
+          "bridgePeak": 0,
+          "cyanPointMean": 5.956430486353019,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "late-silence",
+          "highMidEnergyMean": 0,
+          "panelMean": 0,
+          "panelPeak": 0,
+          "panelAccentPeak": 0,
+          "magentaMean": 0,
+          "bridgePeak": 0,
+          "cyanPointMean": 0,
+          "panelDeliveredAccentPeak": 0
+        }
+      ],
+      "integration": [
+        {
+          "name": "positive-generated-input",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19869311842366655,
+          "depth": 0.2619566736900104,
+          "syntheticReader": false
+        },
+        {
+          "name": "zero-reactivity",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": false
+        },
+        {
+          "name": "manual-at-zero-reactivity",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 1,
+          "depth": 11.700000000000001,
+          "syntheticReader": false
+        },
+        {
+          "name": "actual-seek-new-session",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.3105783813109082,
+          "depth": 0.1759556790634978,
+          "syntheticReader": false
+        },
+        {
+          "name": "synthetic-stale-reader",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": true
+        },
+        {
+          "name": "synthetic-session-retained-event",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 3.245584563117887,
+          "syntheticReader": true
+        },
+        {
+          "name": "scene-switch-return",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19869267426680975,
+          "depth": 0.5223577124966239,
+          "syntheticReader": false
+        },
+        {
+          "name": "quality-switch-same-canvas",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19869355578112444,
+          "depth": 1.172583280331667,
+          "syntheticReader": false
+        },
+        {
+          "name": "dynamic-reduced-motion",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19600072703676708,
+          "depth": 0.30381444917848205,
+          "syntheticReader": false
+        },
+        {
+          "name": "portrait-controls-open",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19869315089137055,
+          "depth": 0.26182310827919225,
+          "syntheticReader": false
+        },
+        {
+          "name": "wide-controls-open",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19869351389389128,
+          "depth": 0.6598767370863828,
+          "syntheticReader": false
+        },
+        {
+          "name": "fullscreen-native-api",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19869314351031855,
+          "depth": 0.27045734323458737,
+          "syntheticReader": false
+        },
+        {
+          "name": "background-return",
+          "statusOfCheck": "passed",
+          "visibilityWhileBackgrounded": "hidden",
+          "hiddenObserved": true,
+          "status": "active",
+          "panel": 0.19869380699059475,
+          "depth": 0.4048137110464917,
+          "syntheticReader": false
+        },
+        {
+          "name": "abrupt-generated-file-disconnect",
+          "statusOfCheck": "passed",
+          "status": "inactive",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": false
+        },
+        {
+          "name": "generated-file-reconnect",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19869351980811248,
+          "depth": 0.26189029817800247,
+          "syntheticReader": false
+        },
+        {
+          "name": "browser-lifecycle-freeze-return",
+          "statusOfCheck": "manual pending: CDP freeze did not resume animation frames",
+          "sampleAge": 1.783799999999811,
+          "status": "active",
+          "panel": 0.19869350004152622,
+          "depth": 0.32340639324357245,
+          "syntheticReader": false
+        }
+      ],
+      "maxFixtureLevel": 0.6474032496534414
+    },
+    {
+      "quality": "low",
+      "samples": 3893,
+      "frames": 519,
+      "pcmHash": "6acf550b36a43a1f5416b4cbc4e70958e3b2eb928622f3cc13e39ad48daf0fe9",
+      "build": "isolated instrumented production build",
+      "initialHarnessFailure": "Error: Timed out window.__r0Latest.features.status===\"active\" && window.__r0Latest.channels.cyanPanel.level>.06",
+      "cases": [
+        {
+          "name": "silence",
+          "highMidEnergyMean": 0,
+          "panelMean": 0,
+          "panelPeak": 0,
+          "panelAccentPeak": 0,
+          "magentaMean": 0,
+          "bridgePeak": 0,
+          "cyanPointMean": 0,
+          "panelDeliveredAccentPeak": 0
+        },
+        {
+          "name": "bass",
+          "highMidEnergyMean": 0.0000021519363931118213,
+          "panelMean": 0.000005805117209278602,
+          "panelPeak": 0.000005979168313905944,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.28489663020963596,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.00017415351627835803,
+          "panelDeliveredAccentPeak": 8.470329472543003e-22
+        },
+        {
+          "name": "low-mid",
+          "highMidEnergyMean": 0.000004510305372762108,
+          "panelMean": 0.000011925123168613734,
+          "panelPeak": 0.000012753180791373784,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.010810222418726792,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.00035775369505841186,
+          "panelDeliveredAccentPeak": 1.6940658945086007e-21
+        },
+        {
+          "name": "quiet-high-mid",
+          "highMidEnergyMean": 0.04241032732362325,
+          "panelMean": 0.10450513011502718,
+          "panelPeak": 0.10450513315132177,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.000023031472335495867,
+          "bridgePeak": 0,
+          "cyanPointMean": 3.135153903450816,
+          "panelDeliveredAccentPeak": 1.3877787807814457e-17
+        },
+        {
+          "name": "loud-high-mid",
+          "highMidEnergyMean": 0.14136637024636434,
+          "panelMean": 0.31049157765978147,
+          "panelPeak": 0.31049158046559466,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.0000029465581855265844,
+          "bridgePeak": 0,
+          "cyanPointMean": 9.314747329793436,
+          "panelDeliveredAccentPeak": 5.551115123125783e-17
+        },
+        {
+          "name": "treble",
+          "highMidEnergyMean": 6.662630761161342e-9,
+          "panelMean": 0.00020437022020995942,
+          "panelPeak": 0.0016438069185398766,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.0000010123496073466128,
+          "bridgePeak": 0.0023821192326144887,
+          "cyanPointMean": 0.0061311066062987914,
+          "panelDeliveredAccentPeak": 2.168404344971009e-19
+        },
+        {
+          "name": "low-attacks",
+          "highMidEnergyMean": 0.000006848327352543893,
+          "panelMean": 0.000017586476829154433,
+          "panelPeak": 0.00018628717403606303,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.19211499790651923,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.000527594304874633,
+          "panelDeliveredAccentPeak": 2.710505431213761e-20
+        },
+        {
+          "name": "high-mid-attacks",
+          "highMidEnergyMean": 0.020187359083124745,
+          "panelMean": 0.10900626745065693,
+          "panelPeak": 0.4430219274848136,
+          "panelAccentPeak": 0.07421890107983455,
+          "magentaMean": 0.0004356474676886394,
+          "bridgePeak": 0,
+          "cyanPointMean": 3.270188023519708,
+          "panelDeliveredAccentPeak": 0.10091979415684782
+        },
+        {
+          "name": "high-attacks",
+          "highMidEnergyMean": 1.6010541143186364e-7,
+          "panelMean": 4.115309380370401e-7,
+          "panelPeak": 0.0000042107544167391305,
+          "panelAccentPeak": 0,
+          "magentaMean": 5.938996898508861e-8,
+          "bridgePeak": 0.45058823903070444,
+          "cyanPointMean": 0.000012345928141111206,
+          "panelDeliveredAccentPeak": 4.235164736271502e-22
+        },
+        {
+          "name": "bass-near-high-mid",
+          "highMidEnergyMean": 0.07068392864083807,
+          "panelMean": 0.16831271057333017,
+          "panelPeak": 0.16831802204294102,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.26826592275586475,
+          "bridgePeak": 0,
+          "cyanPointMean": 5.049381317199904,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "low-mid-near-high-mid",
+          "highMidEnergyMean": 0.07068295670890784,
+          "panelMean": 0.16831565230791926,
+          "panelPeak": 0.16832020600995312,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.002674840729025156,
+          "bridgePeak": 0,
+          "cyanPointMean": 5.04946956923758,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "dense",
+          "highMidEnergyMean": 0.08482138391613485,
+          "panelMean": 0.19863291778230655,
+          "panelPeak": 0.19863308715918765,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.22141795382349633,
+          "bridgePeak": 0.00002921514826524596,
+          "cyanPointMean": 5.958987533469206,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "late-silence",
+          "highMidEnergyMean": 0,
+          "panelMean": 0,
+          "panelPeak": 0,
+          "panelAccentPeak": 0,
+          "magentaMean": 0,
+          "bridgePeak": 0,
+          "cyanPointMean": 0,
+          "panelDeliveredAccentPeak": 0
+        }
+      ],
+      "integration": [
+        {
+          "name": "positive-generated-input",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19859838268876623,
+          "depth": 0.26176040452474386,
+          "syntheticReader": false
+        },
+        {
+          "name": "zero-reactivity",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": false
+        },
+        {
+          "name": "manual-at-zero-reactivity",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 1,
+          "depth": 11.700000000000001,
+          "syntheticReader": false
+        },
+        {
+          "name": "actual-seek-new-session",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.3104386620303136,
+          "depth": 0.1691554139216732,
+          "syntheticReader": false
+        },
+        {
+          "name": "synthetic-stale-reader",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": true
+        },
+        {
+          "name": "synthetic-session-retained-event",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 3.2481205073367208,
+          "syntheticReader": true
+        },
+        {
+          "name": "scene-switch-return",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.1985976551086418,
+          "depth": 0.5199934901475561,
+          "syntheticReader": false
+        },
+        {
+          "name": "quality-switch-same-canvas",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.1985987570630468,
+          "depth": 1.164348250241036,
+          "syntheticReader": false
+        },
+        {
+          "name": "dynamic-reduced-motion",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19655305830692654,
+          "depth": 0.3104986938766258,
+          "syntheticReader": false
+        },
+        {
+          "name": "portrait-controls-open",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19859837992467175,
+          "depth": 0.27028419412700794,
+          "syntheticReader": false
+        },
+        {
+          "name": "wide-controls-open",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19859869168084673,
+          "depth": 0.6594694466402202,
+          "syntheticReader": false
+        },
+        {
+          "name": "fullscreen-native-api",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.1985983500230258,
+          "depth": 0.27036826771647965,
+          "syntheticReader": false
+        },
+        {
+          "name": "background-return",
+          "statusOfCheck": "passed",
+          "visibilityWhileBackgrounded": "hidden",
+          "hiddenObserved": true,
+          "status": "active",
+          "panel": 0.1985990214086224,
+          "depth": 0.4137650823775091,
+          "syntheticReader": false
+        },
+        {
+          "name": "abrupt-generated-file-disconnect",
+          "statusOfCheck": "passed",
+          "status": "inactive",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": false
+        },
+        {
+          "name": "generated-file-reconnect",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.198598715067803,
+          "depth": 0.2617067615989539,
+          "syntheticReader": false
+        },
+        {
+          "name": "browser-lifecycle-freeze-return",
+          "statusOfCheck": "manual pending: CDP freeze did not resume animation frames",
+          "sampleAge": 1.7074999999999996,
+          "status": "active",
+          "panel": 0.1985986110016892,
+          "depth": 0.3498547879379529,
+          "syntheticReader": false
+        }
+      ],
+      "maxFixtureLevel": 0.6487228247184208
+    },
+    {
+      "quality": "standard-reduced",
+      "samples": 3896,
+      "frames": 508,
+      "pcmHash": "6acf550b36a43a1f5416b4cbc4e70958e3b2eb928622f3cc13e39ad48daf0fe9",
+      "build": "isolated instrumented production build",
+      "initialHarnessFailure": "Error: Timed out window.__r0Latest.features.status===\"active\" && window.__r0Latest.channels.cyanPanel.level>.06",
+      "cases": [
+        {
+          "name": "silence",
+          "highMidEnergyMean": 0,
+          "panelMean": 0,
+          "panelPeak": 0,
+          "panelAccentPeak": 0,
+          "magentaMean": 0,
+          "bridgePeak": 0,
+          "cyanPointMean": 0,
+          "panelDeliveredAccentPeak": 0
+        },
+        {
+          "name": "bass",
+          "highMidEnergyMean": 0.0000021506465710723013,
+          "panelMean": 0.000007271996247778225,
+          "panelPeak": 0.00000868794501653516,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.25069130309158966,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.00021815988743334664,
+          "panelDeliveredAccentPeak": 1.6940658945086007e-21
+        },
+        {
+          "name": "low-mid",
+          "highMidEnergyMean": 0.000004508736682802161,
+          "panelMean": 0.000017748084754629462,
+          "panelPeak": 0.000022615083770556226,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.06969529061005962,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.0005324425426388836,
+          "panelDeliveredAccentPeak": 3.3881317890172014e-21
+        },
+        {
+          "name": "quiet-high-mid",
+          "highMidEnergyMean": 0.04240445085715697,
+          "panelMean": 0.09111069616540486,
+          "panelPeak": 0.09992926926075882,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.004718504954315055,
+          "bridgePeak": 0,
+          "cyanPointMean": 2.7333208849621458,
+          "panelDeliveredAccentPeak": 1.3877787807814457e-17
+        },
+        {
+          "name": "loud-high-mid",
+          "highMidEnergyMean": 0.1413467802488989,
+          "panelMean": 0.28481037532372644,
+          "panelPeak": 0.301894270297071,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.00031488783112032504,
+          "bridgePeak": 0,
+          "cyanPointMean": 8.544311259711796,
+          "panelDeliveredAccentPeak": 5.551115123125783e-17
+        },
+        {
+          "name": "treble",
+          "highMidEnergyMean": 6.627929792016514e-9,
+          "panelMean": 0.07815003324078494,
+          "panelPeak": 0.1376778247910824,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.000021936613842773078,
+          "bridgePeak": 0,
+          "cyanPointMean": 2.3445009972235495,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "low-attacks",
+          "highMidEnergyMean": 0.000005781977795468833,
+          "panelMean": 0.0006332931074404689,
+          "panelPeak": 0.003243699857525446,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.0475136199527243,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.018998793223214062,
+          "panelDeliveredAccentPeak": 4.336808689942018e-19
+        },
+        {
+          "name": "high-mid-attacks",
+          "highMidEnergyMean": 0.02210181596976963,
+          "panelMean": 0.05753657695381664,
+          "panelPeak": 0.10133884128646241,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.006187094248057847,
+          "bridgePeak": 0,
+          "cyanPointMean": 1.726097308614499,
+          "panelDeliveredAccentPeak": 1.3877787807814457e-17
+        },
+        {
+          "name": "high-attacks",
+          "highMidEnergyMean": 1.446761974060666e-7,
+          "panelMean": 0.007619974749483598,
+          "panelPeak": 0.017971829294202213,
+          "panelAccentPeak": 0,
+          "magentaMean": 1.1815108209409846e-8,
+          "bridgePeak": 0,
+          "cyanPointMean": 0.22859924248450778,
+          "panelDeliveredAccentPeak": 3.469446951953614e-18
+        },
+        {
+          "name": "bass-near-high-mid",
+          "highMidEnergyMean": 0.07067403134767597,
+          "panelMean": 0.15773532175495106,
+          "panelPeak": 0.16769330917272843,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.16993309406820098,
+          "bridgePeak": 0,
+          "cyanPointMean": 4.732059652648533,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "low-mid-near-high-mid",
+          "highMidEnergyMean": 0.07067355614762248,
+          "panelMean": 0.16827201820908627,
+          "panelPeak": 0.1682940459158929,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.021677015241503148,
+          "bridgePeak": 0,
+          "cyanPointMean": 5.048160546272584,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "dense",
+          "highMidEnergyMean": 0.08480962746160979,
+          "panelMean": 0.1947212866989744,
+          "panelPeak": 0.19838992827411198,
+          "panelAccentPeak": 0,
+          "magentaMean": 0.20780631615651127,
+          "bridgePeak": 0,
+          "cyanPointMean": 5.841638600969231,
+          "panelDeliveredAccentPeak": 2.7755575615628914e-17
+        },
+        {
+          "name": "late-silence",
+          "highMidEnergyMean": 0,
+          "panelMean": 0,
+          "panelPeak": 0,
+          "panelAccentPeak": 0,
+          "magentaMean": 0,
+          "bridgePeak": 0,
+          "cyanPointMean": 0,
+          "panelDeliveredAccentPeak": 0
+        }
+      ],
+      "integration": [
+        {
+          "name": "positive-generated-input",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.144666322320556,
+          "depth": 0.1952924935571078,
+          "syntheticReader": false
+        },
+        {
+          "name": "zero-reactivity",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": false
+        },
+        {
+          "name": "manual-at-zero-reactivity",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 1,
+          "depth": 11.700000000000001,
+          "syntheticReader": false
+        },
+        {
+          "name": "actual-seek-new-session",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.19088362129342884,
+          "depth": 0.08955385311332607,
+          "syntheticReader": false
+        },
+        {
+          "name": "synthetic-stale-reader",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": true
+        },
+        {
+          "name": "synthetic-session-retained-event",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0,
+          "depth": 1.7548117443628466,
+          "syntheticReader": true
+        },
+        {
+          "name": "scene-switch-return",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.1252648530056883,
+          "depth": 0.25415713692440034,
+          "syntheticReader": false
+        },
+        {
+          "name": "quality-switch-same-canvas",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.18366934018357534,
+          "depth": 0.6832920750321609,
+          "syntheticReader": false
+        },
+        {
+          "name": "dynamic-reduced-motion",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.16759180375179003,
+          "depth": 0.33704352325673825,
+          "syntheticReader": false
+        },
+        {
+          "name": "portrait-controls-open",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.14693945699851504,
+          "depth": 0.2057197383811381,
+          "syntheticReader": false
+        },
+        {
+          "name": "wide-controls-open",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.17826177444920546,
+          "depth": 0.44930837109913624,
+          "syntheticReader": false
+        },
+        {
+          "name": "fullscreen-native-api",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.13982839583294232,
+          "depth": 0.17466024656840984,
+          "syntheticReader": false
+        },
+        {
+          "name": "background-return",
+          "statusOfCheck": "passed",
+          "visibilityWhileBackgrounded": "hidden",
+          "hiddenObserved": true,
+          "status": "active",
+          "panel": 0.15200770030259494,
+          "depth": 0.2215426701622694,
+          "syntheticReader": false
+        },
+        {
+          "name": "abrupt-generated-file-disconnect",
+          "statusOfCheck": "passed",
+          "status": "inactive",
+          "panel": 0,
+          "depth": 0,
+          "syntheticReader": false
+        },
+        {
+          "name": "generated-file-reconnect",
+          "statusOfCheck": "passed",
+          "status": "active",
+          "panel": 0.14581210249620727,
+          "depth": 0.2004859194675391,
+          "syntheticReader": false
+        },
+        {
+          "name": "browser-lifecycle-freeze-return",
+          "statusOfCheck": "manual pending: CDP freeze did not resume animation frames",
+          "sampleAge": 1.7147000000001853,
+          "status": "active",
+          "panel": 0.15596104137862565,
+          "depth": 0.2538407842861034,
+          "syntheticReader": false
+        }
+      ],
+      "maxFixtureLevel": 0.3058836428538622
+    }
+  ],
+  "automationLimitations": [
+    "Forced CDP freeze did not restart requestAnimationFrame; this is not claimed as a passing simulated lifecycle test. Real background-tab return passed and owner reports native minimize/restore and Escape work."
+  ],
+  "manualPending": [
+    "Owner perception of high-mid accent/hierarchy and final real-song parity remain separate from numeric checks."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "targetApproved": "Owner selected this Linux / GTX1660 SUPER machine",
+  "os": "linux 7.2.11-arch1-1",
+  "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+  "method": "Isolated production build; 5 s warmup + 30 s sampling per quality; no capture/other agent GPU runs during sampling. Timer spans outer renderer render including planar-reflection recursion. Headless Brave, not a headed-owner-window approval.",
+  "runs": [],
+  "errors": [],
+  "failure": "AssertionError [ERR_ASSERTION]: Actual nonzero MI input during benchmark"
+}

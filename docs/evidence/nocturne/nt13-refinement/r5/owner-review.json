@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-23",
+  "visualQuestion": "After reviewing the linked comparison, do you approve Noctune’s quiet visibility, directional movement, band specificity, foreground/depth participation and expressiveness versus Crimson?",
+  "visualAnswer": "Approve all five visual criteria",
+  "musicQuestion": "For the final real-song gate, which current-build cases have you listened to locally—bass-heavy, midrange-dense, sustained ambient, light/percussive, and quiet-to-loud—and what worked or needs adjustment? Anonymous case labels and text notes are enough; keep audio on your device.",
+  "musicAnswer": "all worked",
+  "criteria": {"restingVisibility":"owner-approved","spatialMovement":"owner-approved","musicSpecificity":"owner-approved","wholeSceneParticipation":"owner-approved","expressiveParityWithCrimson":"owner-approved"},
+  "listeningCases": {"bassHeavy":"owner-reported worked","midrangeDense":"owner-reported worked","sustainedAmbient":"owner-reported worked","lightPercussive":"owner-reported worked","quietToLoud":"owner-reported worked"},
+  "decision": "R5 and NT13 approved; next phase NT14 not started",
+  "provenance": "Explicit owner text responses to the listed questions. No owner media inspected or recorded; detailed passage labels/timestamps not supplied. No commit/push authorization inferred."
+}

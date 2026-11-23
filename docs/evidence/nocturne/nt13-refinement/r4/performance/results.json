@@ -1,0 +1,122 @@
+{
+  "targetApproved": "Owner selected this Linux / GTX1660 SUPER machine",
+  "os": "linux 7.2.11-arch1-1",
+  "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+  "method": "Isolated production build; 5 s warmup + 30 s sampling per quality; no capture/other agent GPU runs during sampling. Timer spans outer renderer render including planar-reflection recursion. Headless Brave, not a headed-owner-window performance approval. Other desktop activity is uncontrolled; owner native-window review may overlap.",
+  "runs": [
+    {
+      "quality": "standard",
+      "environment": {
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "viewport": [
+          1440,
+          810
+        ],
+        "visibility": "visible",
+        "exposure": 1,
+        "toneMapping": 4,
+        "colorSpace": "srgb",
+        "shadows": false
+      },
+      "durationSeconds": 30.00239999999944,
+      "positiveInputFrames": 1195,
+      "sustainedInputFrames": 841,
+      "frameMs": {
+        "samples": 1800,
+        "mean": 16.666277777777676,
+        "p50": 16.699999999254942,
+        "p95": 17,
+        "p99": 17.100000000558794,
+        "max": 17.40000000037253
+      },
+      "fps": 60.001400032667796,
+      "cpuRenderMs": {
+        "samples": 1800,
+        "mean": 2.5126666666826027,
+        "p50": 2.5,
+        "p95": 3,
+        "p99": 3.7999999998137355,
+        "max": 5.7000000001862645
+      },
+      "gpuMs": {
+        "samples": 1800,
+        "mean": 4.4253715200000014,
+        "p50": 4.39088,
+        "p95": 5.37808,
+        "p99": 8.511008,
+        "max": 8.711744
+      },
+      "timerAvailable": true,
+      "invalidQueries": 0,
+      "framesOver33ms": 0,
+      "calls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ]
+    },
+    {
+      "quality": "low",
+      "environment": {
+        "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2, OpenGL ES 3.2)",
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "viewport": [
+          1440,
+          810
+        ],
+        "visibility": "visible",
+        "exposure": 1,
+        "toneMapping": 4,
+        "colorSpace": "srgb",
+        "shadows": false
+      },
+      "durationSeconds": 30.001099999999628,
+      "positiveInputFrames": 1194,
+      "sustainedInputFrames": 841,
+      "frameMs": {
+        "samples": 1800,
+        "mean": 16.665777777777986,
+        "p50": 16.699999999254942,
+        "p95": 17,
+        "p99": 17.100000000558794,
+        "max": 17.200000000186265
+      },
+      "fps": 60.003200170675015,
+      "cpuRenderMs": {
+        "samples": 1800,
+        "mean": 2.4315555555590738,
+        "p50": 2.400000000372529,
+        "p95": 2.7999999998137355,
+        "p99": 3.3999999994412065,
+        "max": 5.099999999627471
+      },
+      "gpuMs": {
+        "samples": 1800,
+        "mean": 3.5332414044444467,
+        "p50": 3.004448,
+        "p95": 5.529888,
+        "p99": 5.68784,
+        "max": 8.740992
+      },
+      "timerAvailable": true,
+      "invalidQueries": 0,
+      "framesOver33ms": 0,
+      "calls": [
+        196
+      ],
+      "geometries": [
+        114
+      ],
+      "textures": [
+        6
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "Measured on owner-selected GPU target; headed interaction/comfort separate"
+}

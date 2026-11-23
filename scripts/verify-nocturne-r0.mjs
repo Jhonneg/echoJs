@@ -8,10 +8,11 @@ import assert from 'node:assert/strict'
 import {createServer} from 'node:net'
 const sceneName=process.env.ECHO_R0_SCENE||'nocturne',quality=process.env.ECHO_R0_QUALITY||'standard'
 const phase=process.env.ECHO_NOCTURNE_REFINEMENT_PHASE||'r0',reduced=process.env.ECHO_R0_REDUCED==='1'
-assert.ok(['r0','r1','r2','r3','r4'].includes(phase))
+assert.ok(['r0','r1','r2','r3','r4','r5'].includes(phase))
+const controlsOnly=phase==='r4'&&process.env.ECHO_R4_CONTROLS_ONLY==='1'
 const diagnostics=process.env.ECHO_R0_DIAGNOSTICS==='1'
 assert.ok(['nocturne','crimson-horizon'].includes(sceneName));assert.ok(['standard','low'].includes(quality))
-const repository=process.cwd(),base=join(repository,'docs/evidence/nocturne/nt13-refinement',phase),output=join(base,sceneName,quality+(reduced?'-reduced':''),diagnostics?'diagnostics':'baseline')
+const repository=process.cwd(),base=join(repository,'docs/evidence/nocturne/nt13-refinement',phase),output=join(base,sceneName,quality+(reduced?'-reduced':''),controlsOnly?'controls':diagnostics?'diagnostics':'baseline')
 await mkdir(output,{recursive:true})
 async function files(dir){return(await Promise.all((await readdir(dir,{withFileTypes:true})).map(e=>e.isDirectory()?files(join(dir,e.name)):[join(dir,e.name)]))).flat()}
 const manifest=await Promise.all((await files('src')).map(async file=>({file,sha256:createHash('sha256').update(await readFile(file)).digest('hex')})))
@@ -65,10 +66,10 @@ await writeFile(crimsonFile,crimson)
 const localFile=join(root,'src/audio/localFile.ts');await writeFile(localFile,(await readFile(localFile,'utf8')).replace('      element = current','      element = current\n      ;(window as any).__r0Audio=current'))
 const freePort=()=>new Promise(r=>{const s=createServer();s.listen(0,'127.0.0.1',()=>{const p=s.address().port;s.close(()=>r(p))})}),pause=ms=>new Promise(r=>setTimeout(r,ms))
 const [port,debugPort]=await Promise.all([freePort(),freePort()])
-if(phase==='r4'){const build=spawnSync(process.execPath,[join(root,'node_modules/vite/bin/vite.js'),'build'],{cwd:root,encoding:'utf8'});assert.equal(build.status,0,build.stderr)}
-const server=spawn(process.execPath,[join(root,'node_modules/vite/bin/vite.js'),...(phase==='r4'?['preview']:[]),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd:root,stdio:'ignore'})
+if(phase==='r4'||phase==='r5'){const build=spawnSync(process.execPath,[join(root,'node_modules/vite/bin/vite.js'),'build'],{cwd:root,encoding:'utf8'});assert.equal(build.status,0,build.stderr)}
+const server=spawn(process.execPath,[join(root,'node_modules/vite/bin/vite.js'),...(['r4','r5'].includes(phase)?['preview']:[]),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd:root,stdio:'ignore'})
 const browser=spawn('brave',['--headless','--enable-gpu','--use-angle=gl','--mute-audio','--no-sandbox','--disable-dev-shm-usage',`--user-data-dir=${join(temporary,'profile')}`,`--remote-debugging-port=${debugPort}`,'about:blank'],{stdio:'ignore'})
-let ws;const errors=[],frames=[],snapshots=[],evidence={scene:sceneName,quality,diagnostics,pcmHash,viewport:[1440,810],deviceScale:1,volume:.5,reactivity:1,reduced,build:phase==='r4'?'isolated instrumented production build':'isolated instrumented development app',navigations:[],errors}
+let ws;const errors=[],frames=[],snapshots=[],evidence={scene:sceneName,quality,diagnostics,pcmHash,viewport:[1440,810],deviceScale:1,volume:.5,reactivity:1,reduced,build:['r4','r5'].includes(phase)?'isolated instrumented production build':'isolated instrumented development app',navigations:[],errors}
 try{
  let pages;for(let i=0;i<120;i++){try{pages=await(await fetch(`http://127.0.0.1:${debugPort}/json`)).json();break}catch{}await pause(100)}assert.ok(pages)
  ws=new WebSocket(pages[0].webSocketDebuggerUrl);await new Promise(r=>ws.addEventListener('open',r,{once:true}));let id=0;const pending=new Map()
@@ -91,6 +92,7 @@ try{
  }else{
   const dom=await send('DOM.getDocument',{depth:-1}),file=await send('DOM.querySelector',{nodeId:dom.root.nodeId,selector:'input[type=file]'});await send('DOM.setFileInputFiles',{nodeId:file.nodeId,files:[audioPath]});await wait('!!document.querySelector(".scene-player button")')
   await evaluate(`document.querySelector('details.audio-chooser').open=false;document.querySelector('.scene-player button').click();true`);await wait('window.__r0Audio && !window.__r0Audio.paused && window.__r0Audio.currentTime>.05')
+  if(!controlsOnly){
   let next=0,lastPrint=-1
   while(true){
    const r=await evaluate('window.__r0Latest'),t=r.audioTime
@@ -111,7 +113,7 @@ try{
    if(phase==='r3'||phase==='r4'){await evaluate("document.querySelector('details.audio-chooser').open=true;true");await snapshot('manual-controls-open');await evaluate("document.querySelector('details.audio-chooser').open=false;true")}
    assert.equal(manual.renderer.exposure,rows[0].renderer.exposure);assert.equal(manual.renderer.toneMapping,rows[0].renderer.toneMapping)
    await evaluate(`Array.from(document.querySelectorAll('.nocturne-lighting-presets button')).find(x=>x.textContent==='All off').click();true`);await snapshot('manual-all-off')
-   if(phase==='r1'||phase==='r2'||phase==='r3'||phase==='r4'){
+   if(phase==='r1'||phase==='r2'||phase==='r3'||phase==='r4'||phase==='r5'){
     await select('nocturne-lighting-mode','audio')
     await evaluate('window.__r0Audio.currentTime=12;window.__r0Audio.play();true')
     await wait('window.__r0Latest.channels.cyanPanel.level>.04')
@@ -123,8 +125,9 @@ try{
     await snapshot('paused-after-audio')
    }
   }
+  }
  }
  if(phase==='r4'){const {runR4Controls}=await import('./nocturne-r4-controls.mjs');evidence.integration={checks:[]};evidence.integration=await runR4Controls({send,evaluate,wait,select,pause,snapshot,targetId:pages[0].id,reduced,checks:evidence.integration.checks})}
- if(phase==='r2'||phase==='r3'||phase==='r4')evidence.generatedFramesDirectory=temporary;
- evidence.snapshots=snapshots;evidence.browser=await evaluate('navigator.userAgent');assert.deepEqual(errors,[]);evidence.status=`passed generated ${phase.toUpperCase()} capture; owner artistic gate separate`;console.log('PASS',sceneName,quality,diagnostics?'diagnostics':frames.length+' frames')
+ if(phase==='r2'||phase==='r3'||phase==='r4'||phase==='r5')evidence.generatedFramesDirectory=temporary;
+ evidence.snapshots=snapshots;evidence.browser=await evaluate('navigator.userAgent');assert.deepEqual(errors,[]);evidence.status=controlsOnly?'completed R4 controls; forced-freeze emulation remains separately flagged':`passed generated ${phase.toUpperCase()} capture; owner artistic gate separate`;console.log('PASS',sceneName,quality,diagnostics?'diagnostics':frames.length+' frames')
 }catch(e){evidence.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(evidence,null,2));ws?.close();browser.kill();server.kill()}

@@ -1,6 +1,6 @@
 # ECHO — Noctune NT13 Refinement Roadmap
 
-**Status:** Owner gave positive R2 visual feedback and authorized R3. R3 environment cues implemented with generated evidence; owner checkpoint pending. R4–R5 not started; final real-song/artistic gates remain open.  
+**Status:** R0–R5 refinement review complete. Owner explicitly approves all five visual criteria and reports all listed current-build real-song cases worked (2026-11-23). NT13 approved; owner explicitly skipped NT14 and NT15 on 2026-11-23.
 **Scope:** Noctune visual response following its Music Intelligence migration.  
 **Goal:** Turn the alley into a *living instrument*: music travels through its architecture, atmosphere, and reflections while retaining Noctune's stationary-camera, nighttime identity.  
 **Reference:** Compare the user-provided NT13 Noctune and Crimson Horizon recordings and Noctune's brighter manual-preview composition. The recording comparison is a visual review, not a verified frame-aligned signal audit.
@@ -14,6 +14,12 @@ Owner approved **R0 only**, one phase at a time, and selected **generated captur
 R2 subsequently authorized by owner “proceed” after the R1 report. [Spatial checkpoint/evidence](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r2--spatial-choreography-checkpoint-2026-11-22): secondary magenta echoes, qualified-mid window/detail depth sequences, high-onset bridge traversal; instancing/geometry/camera/MI retained. Automated direction/delivery checks pass; perceived movement, Low Manual-on reference discrepancy and real-song review remain documented. Stop before R3 pending checkpoint review.
 
 R3 authorized by owner “its looking greats, lets keep going” following R2. [Environment checkpoint](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r3--environment-participation-checkpoint-2026-11-22): existing bridge-rib accents, source-coherent wet highlights, slow local depth spill and modest haze lift. One added unshadowed point; no added geometry, global exposure change or MI changes. R4 awaits separate review/continuation.
+
+R4 authorized by “lets move” and resumed with “continue.” [R4 evidence/limits](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r4--integration-and-target-machine-checkpoint-2026-11-23): no production changes; generated isolation/lifecycle checks, actual hidden-tab return, owner native minimize/Escape confirmation and30s measurements on the selected GTX1660 SUPER. Forced CDP freeze remains an explicitly unverified extra automation case. Stop before R5 pending checkpoint review; no automatic final NT13/NT14 approval.
+
+R5 authorized by “proceed” after R4. [Aligned comparison and owner gate](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r5--aligned-comparison-and-owner-gate-2026-11-23): fresh Standard/Low pairs, Noctune fixed camera, generated source-time alignment and Manual references. All91 production sources unchanged. Approved evidence-policy revision still applies: generated captures plus owner live/text-only real-song review. No artistic approval or NT14 continuation is inferred from technical success.
+
+Final R5 decision (2026-11-23): owner answers **“Approve all five visual criteria”** and **“all worked”** to the current-build listening-case question. [Exact approval](evidence/nocturne/nt13-refinement/r5/owner-review.json). This closes NT13 under the revised generated-capture/live-text policy. Historical pending checkpoints below remain as the record of preparation. NT14 requires the next task continuation; no commit/push authorization is implied.
 
 ## 1. Why this follow-up exists
 

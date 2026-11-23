@@ -1,0 +1,26 @@
+{
+  "scene": "crimson-horizon",
+  "quality": "low",
+  "diagnostics": false,
+  "pcmHash": "c56d925c49e8b0679f4d056c332bb9f4e2f1cd0d58fb1e30676b0db1f9c5ac77",
+  "viewport": [
+    1440,
+    810
+  ],
+  "deviceScale": 1,
+  "volume": 0.5,
+  "reactivity": 1,
+  "reduced": false,
+  "build": "isolated instrumented production build",
+  "navigations": [
+    {
+      "url": "http://127.0.0.1:35013/",
+      "time": 1795412969692
+    }
+  ],
+  "errors": [],
+  "generatedFramesDirectory": "/tmp/echo-r0-bYG4pv",
+  "snapshots": [],
+  "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "status": "passed generated R5 capture; owner artistic gate separate"
+}

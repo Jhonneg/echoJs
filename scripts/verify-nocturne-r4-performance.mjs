@@ -44,7 +44,7 @@ const probe=`
   useFrame((_,dt)=>{
     const w=window as any,p=w.__r4Perf;if(!p)return
     w.__r4Drain?.()
-    if(p.measuring)p.frames.push({dt,calls:gl.info.render.calls,triangles:gl.info.render.triangles,geometries:gl.info.memory.geometries,textures:gl.info.memory.textures,dpr:gl.getPixelRatio(),camera:camera.position.toArray(),visibility:document.visibilityState})
+    if(p.measuring)p.frames.push({audioTime:(w.__r4Audio?.currentTime??0),status:musicFeatures.read().status,energy:musicFeatures.read().energy.overall,dt,calls:gl.info.render.calls,triangles:gl.info.render.triangles,geometries:gl.info.memory.geometries,textures:gl.info.memory.textures,dpr:gl.getPixelRatio(),camera:camera.position.toArray(),visibility:document.visibilityState})
     gl.info.reset()
   },-2)
 `
@@ -56,7 +56,7 @@ const pause=ms=>new Promise(r=>setTimeout(r,ms)),port=()=>new Promise(r=>{const 
 const [httpPort,debugPort]=await Promise.all([port(),port()])
 const server=spawn(process.execPath,[join(repository,'node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port',String(httpPort),'--strictPort'],{cwd:root,stdio:'ignore'})
 const browser=spawn('brave',['--headless','--enable-gpu','--use-angle=gl','--mute-audio','--no-sandbox','--disable-dev-shm-usage',`--user-data-dir=${join(temporary,'profile')}`,`--remote-debugging-port=${debugPort}`,'about:blank'],{stdio:'ignore'})
-let ws;const report={targetApproved:'Owner selected this Linux / GTX1660 SUPER machine',os:process.platform+' '+release(),cpu:cpus()[0]?.model,method:'Isolated production build; 5 s warmup + 30 s sampling per quality; no capture/other agent GPU runs during sampling. Timer spans outer renderer render including planar-reflection recursion. Headless Brave, not a headed-owner-window approval.',runs:[],errors:[]}
+let ws;const report={targetApproved:'Owner selected this Linux / GTX1660 SUPER machine',os:process.platform+' '+release(),cpu:cpus()[0]?.model,method:'Isolated production build; 5 s warmup + 30 s sampling per quality; no capture/other agent GPU runs during sampling. Timer spans outer renderer render including planar-reflection recursion. Headless Brave, not a headed-owner-window performance approval. Other desktop activity is uncontrolled; owner native-window review may overlap.',runs:[],errors:[]}
 try{
  let pages;for(let i=0;i<150;i++){try{pages=await(await fetch(`http://127.0.0.1:${debugPort}/json`)).json();break}catch{}await pause(100)}assert.ok(pages)
  ws=new WebSocket(pages[0].webSocketDebuggerUrl);await new Promise(r=>ws.addEventListener('open',r,{once:true}));let id=0;const pending=new Map()
@@ -68,7 +68,7 @@ try{
  await send('Runtime.enable');await send('Page.enable');await send('DOM.enable');await send('Emulation.setDeviceMetricsOverride',{width:1440,height:810,deviceScaleFactor:1,mobile:false})
  for(let i=0;i<100;i++){try{if((await fetch(`http://127.0.0.1:${httpPort}/`)).ok)break}catch{}await pause(100)}
  await send('Page.navigate',{url:`http://127.0.0.1:${httpPort}/`});await wait('!!document.getElementById("scene-select")');await select('scene-select','nocturne');await wait('!!window.__r4Perf')
- const dom=await send('DOM.getDocument',{depth:-1}),input=await send('DOM.querySelector',{nodeId:dom.root.nodeId,selector:'input[type=file]'});await send('DOM.setFileInputFiles',{nodeId:input.nodeId,files:['/tmp/echo-nocturne-r4-review.wav']});await wait('!!document.querySelector(".scene-player button")')
+ const dom=await send('DOM.getDocument',{depth:-1}),input=await send('DOM.querySelector',{nodeId:dom.root.nodeId,selector:'input[type=file]'});await send('DOM.setFileInputFiles',{nodeId:input.nodeId,files:['/tmp/echo-nocturne-r4-review.wav']});await wait('!!document.querySelector(".scene-player button")');await evaluate('document.querySelector(".scene-player button").click();true');await wait('window.__r4Audio && !window.__r4Audio.paused && window.__r4Audio.currentTime>.1')
  const stats=a=>{const sorted=[...a].sort((x,y)=>x-y);return{samples:a.length,mean:a.reduce((x,y)=>x+y,0)/a.length,p50:sorted[Math.floor(a.length*.5)],p95:sorted[Math.floor(a.length*.95)],p99:sorted[Math.floor(a.length*.99)],max:sorted.at(-1)}}
  for(const quality of ['standard','low']){
   await select('graphics-quality',quality)
@@ -78,8 +78,10 @@ try{
   await pause(30000)
   await evaluate('window.__r4Perf.measuring=false;window.__r4Perf.ended=performance.now();true');await pause(500)
   const data=await evaluate('window.__r4Perf'),intervals=data.frames.map(f=>f.dt*1000)
-  assert.ok(data.frames.length>300);assert.ok(data.frames.every(f=>f.visibility==='visible'&&f.calls===196&&f.dpr===(quality==='low'?.75:1)));assert.ok(data.environment.gpu.includes('1660'))
-  const sample={quality,environment:data.environment,durationSeconds:(data.ended-data.started)/1000,frameMs:stats(intervals),fps:1000/(intervals.reduce((a,b)=>a+b,0)/intervals.length),cpuRenderMs:stats(data.cpuRenderMs),gpuMs:data.gpuMs.length?stats(data.gpuMs):null,timerAvailable:data.timerAvailable,invalidQueries:data.invalidQueries,framesOver33ms:intervals.filter(x=>x>33.333).length,calls:[...new Set(data.frames.map(f=>f.calls))],geometries:[...new Set(data.frames.map(f=>f.geometries))],textures:[...new Set(data.frames.map(f=>f.textures))]}
+  await writeFile(join(output,quality+'-raw.json'),JSON.stringify(data))
+  const sustained=data.frames.filter(f=>[[5.5,7.5],[8.5,10.5],[11.5,13.5],[14.5,16.5],[28.5,34.5]].some(([a,b])=>f.audioTime>=a&&f.audioTime<=b))
+  assert.ok(data.frames.length>300);assert.ok(sustained.length>data.frames.length*.3&&sustained.every(f=>f.status==='active'&&f.energy>.001),'Nonzero MI during the fixture sustained passages; planned gaps remain allowed');assert.ok(data.frames.every(f=>f.visibility==='visible'&&f.calls===196&&f.dpr===(quality==='low'?.75:1)));assert.ok(data.environment.gpu.includes('1660'))
+  const sample={quality,environment:data.environment,durationSeconds:(data.ended-data.started)/1000,positiveInputFrames:data.frames.filter(f=>f.energy>.001).length,sustainedInputFrames:sustained.length,frameMs:stats(intervals),fps:1000/(intervals.reduce((a,b)=>a+b,0)/intervals.length),cpuRenderMs:stats(data.cpuRenderMs),gpuMs:data.gpuMs.length?stats(data.gpuMs):null,timerAvailable:data.timerAvailable,invalidQueries:data.invalidQueries,framesOver33ms:intervals.filter(x=>x>33.333).length,calls:[...new Set(data.frames.map(f=>f.calls))],geometries:[...new Set(data.frames.map(f=>f.geometries))],textures:[...new Set(data.frames.map(f=>f.textures))]}
   report.runs.push(sample);await writeFile(join(output,quality+'-raw.json'),JSON.stringify(data));console.log(JSON.stringify(sample))
  }
  assert.deepEqual(report.errors,[]);await preserved();report.status='Measured on owner-selected GPU target; headed interaction/comfort separate'

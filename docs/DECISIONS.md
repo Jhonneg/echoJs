@@ -406,3 +406,19 @@ Owner “proceed” after R1 authorizes R2 only. Reuse current fixture geometry/
 ## 2026-11-22 — NT13-R3 restrained environmental participation
 
 Owner “its looking greats, lets keep going” supplies positive R2 visual feedback and authorizes R3. Reuse9 existing structural ribs for scaled real bridge accents, enhance only bright pixels of the real wet reflection and add one local unshadowed far-depth point driven by existing slow context. Preserve the approved fixtures, R1 resting fill, R2 choreography, camera and analysis. A small haze coefficient lift supports depth. Accept the explicit7→8 point cost for motivated wall/gate illumination rather than add new geometry/passes or global exposure. Real-song/device approval is still outstanding; R4 requires separate continuation.
+
+## 2026-11-23 — NT13-R4 preserve approved appearance; measure selected hardware
+
+Owner authorizes R4, selects this Linux/GTX1660 SUPER as target and reports native minimize/restore and fullscreen Escape both work. Preserve all91 production sources: no reproducible signal/delivery issue justifies visual tuning. Use generated spectrum/lifecycle inputs, explicit temporary reader simulations and source-scheduled benchmark validation. Retain failed harness attempts rather than relabel them; assess completed matrix data separately from passing replacement UI checks. Forced headless CDP freeze did not resume rAF and stays unverified; actual hidden-tab/native-owner checks are the applicable passing evidence. Establish30s target frame/GPU observations without inventing a hard budget or claiming isolated Low-quality speedup. R5/final real-song approval and NT14 remain separate.
+
+## 2026-11-23 — NT13-R5 matched-source comparison, owner-only artistic decision
+
+Owner “proceed” after R4 authorizes fresh final comparisons, not automatic NT13 approval. Align separate Noctune/Crimson recordings by measured generated-source time and use one generated soundtrack; preserve Noctune fixed pose and Crimson authored travel, labeling that confound. Same exposure/viewport/quality does not equalize scene-specific material/light semantics. Preserve all91 production sources and the approved appearance. Review the five roadmap criteria with evidence, but leave quiet legibility, perceptual clarity and expressive parity to the owner. Existing generated-capture plus live/text-only owner-song policy persists; never capture private music or infer all listening cases from prior bass/appearance/native-window notes. No new tuning or NT14 without the required decision/continuation.
+
+## 2026-11-23 — NT13/R5 owner approval recorded
+
+Owner replies “Approve all five visual criteria” and “all worked” to the explicit current-build question listing all five listening cases. Accept these text observations as the required owner artistic/music decision under the approved privacy-preserving review policy; do not demand track names/audio or infer additional technical measurements. Close R5/NT13. Preserve all91 production sources and comparison evidence. Stop at the phase boundary: NT14 is next after continuation, and artistic approval is not commit/push authorization.
+
+## 2026-11-23 — Owner skips NT14 and NT15
+
+Honor the explicit direction “we skip nt 14 and 15.” Record both roadmap phases as skipped, not successful verification or completed closeout. Preserve NT13/R5 approval, current code, existing evidence and documented limitations. No additional implementation, benchmark, handoff package, commit or push is implied. No further Noctune phase is queued.

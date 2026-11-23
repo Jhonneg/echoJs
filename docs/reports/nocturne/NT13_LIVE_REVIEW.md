@@ -1,5 +1,7 @@
 # NT13 — live owner music review
 
+**Latest decision — 2026-11-23: NT13/R5 approved.** Owner approves all five visual criteria and reports all listed current-build real-song cases worked. [Exact owner responses](../../evidence/nocturne/nt13-refinement/r5/owner-review.json). Earlier pending/brightness entries below are historical checkpoints. NT14 is next, not started.
+
 Prepared2026-11-22 after owner “continue” following NT12. **In progress: the permitted-tab source and bass case are selected; bass tracking is reported as following the music, but the owner finds Audio too dim versus Manual; the owner-approved focused spill lift is applied; live re-review and remaining cases/approval are pending.** No musical result is recorded below until the owner supplies it. NT14 is not started. No production change, agent commit, push or deployment.
 
 The [master roadmap, NT13](../../NOCTUNE_MASTER_ROADMAP.md) requires: “Gate: owner approves real-song feel.” Synthetic correctness from [NT12](NT12_MATRIX_REVIEW.md) cannot close that gate. Repository [AGENTS.md](../../../AGENTS.md) also says: “never record, upload, transmit, persist or inspect captured media content.” Real-song playback/review therefore stays with the owner; the agent collects text observations only.
@@ -22,11 +24,11 @@ One track may cover several cases. These are listening situations, not genre cla
 
 | Case | Required character | Source / optional label and times | Live result |
 | --- | --- | --- | --- |
-| A | Bass/percussion-heavy | Owner label: “bass”; permitted browser tab; excerpt times unspecified | Owner: magenta follows bass; corridor too dim versus Manual. Brightness revision requested; cyan/fade notes pending |
-| B | Midrange-dense | Pending owner | Not reviewed |
-| C | Sustained ambient | Pending owner | Not reviewed |
-| D | Light/percussive | Pending owner | Not reviewed |
-| E | Dynamic quiet → loud → quiet | Pending owner | Not reviewed |
+| A | Bass/percussion-heavy | Owner label: “bass”; permitted browser tab; excerpt times unspecified | Historical: magenta follows bass; corridor too dim before refinement. R5: owner includes current bass-heavy case in “all worked” |
+| B | Midrange-dense | Owner current-build review; no passage label supplied | R5: included in “all worked”; no issue reported |
+| C | Sustained ambient | Owner current-build review; no passage label supplied | R5: included in “all worked”; no issue reported |
+| D | Light/percussive | Owner current-build review; no passage label supplied | R5: included in “all worked”; no issue reported |
+| E | Dynamic quiet → loud → quiet | Owner current-build review; no passage label supplied | R5: included in “all worked”; no issue reported |
 
 For each case, report what you actually noticed:
 
@@ -285,3 +287,140 @@ Counts remain196 whole-frame draw calls including reflection,114 geometries,6 te
 Verification files: existing `tests/nocturneVisualState.test.mjs` and `scripts/verify-nocturne-r0.mjs` extended for environment buffers and open/closed controls; new `scripts/compare-nocturne-r3.mjs`, generated evidence and existing docs updated. Production changes are limited to the five files above. Prior uncommitted changes preserved. No commit/push/deploy.
 
 **Stop for R3 review.** The local preview at http://127.0.0.1:5183/ serves the rebuilt phase after refresh. R4 integration/restraint/accessibility is next only after owner continuation. Final real-song/artistic parity and device performance remain pending. Suggested focused commit only if authorized: `Extend Noctune music response into bridge and depth`.
+
+## NT13-R4 — integration and target-machine checkpoint, 2026-11-23
+
+**Technical verification ready — visual checkpoint review pending.** Owner “lets move” authorizes R4; later “continue” resumes it. All91 production source files match the R3 manifest. No appearance/controller/analysis changes were needed: preserve the approved R1–R3 composition and mappings. R5/final real-song parity and NT14 remain separate gates; no commit/push/deployment.
+
+### Signal specificity, timescales and restraint
+
+[Signal checkpoint frames](../../evidence/nocturne/nt13-refinement/r4/signal-checkpoint.jpg) and [assessment](../../evidence/nocturne/nt13-refinement/r4/assessment.json). A generated65s matrix extends the existing NT12 source opt-in:0–2 silence,2–5 bass100Hz,5–8 low-mid450Hz,8–11 quiet1000Hz,11–14 loud1000Hz,14–17 treble8000Hz,17–19 release,19–28 separated low/mid/high attacks,28–33 bass near held1000Hz,33–38 low-mid attacks near held1000Hz,38–44 quiet/loud dynamics,44–49 dense four-frequency sustain,49–65 silence. The original generator's default60s output is preserved; refinement mode uses a separate generated WAV/schedule.
+
+| Generated run | Validated per-render rows / frames | Video |
+| --- | --- | --- |
+| Standard |3893 /519|[Video](../../evidence/nocturne/nt13-refinement/r4/nocturne/standard/baseline/generated-baseline.mp4)|
+| Low |3893 /519|[Video](../../evidence/nocturne/nt13-refinement/r4/nocturne/low/baseline/generated-baseline.mp4)|
+| Reduced motion |3896 /508|[Video](../../evidence/nocturne/nt13-refinement/r4/nocturne/standard-reduced/baseline/generated-baseline.mp4)|
+
+Same1440×810/deviceScale1, fixed Noctune camera, player50%, Reactivity1 and actual96kHz/4096 analysis; each capture records actual quality/DPR, exposure1/ACES4/sRGB. Instrumented isolated **production builds** exclude dev-server behavior. Videos mux generated source audio, not captured browser output. Requested8Hz screenshots retain timing brackets; images are not exact transient-peak or sample-accurate sound-output measurements. Agent inspected only generated input/app scenes.
+
+Standard measured case means/peaks:
+
+| Case | High-mid energy | Final left-cyan level | Accent result |
+| --- | --- | --- | --- |
+| Quiet sustained1000Hz |.0424 mean|.1045 mean|0 after settling|
+| Loud sustained1000Hz |.1413 mean|.3104 mean|0 after settling|
+| Separated1000Hz attacks |.0210 interval mean|.1112 interval mean|Raw peak.0742; final additive increment up to.1050|
+| Low-mid attacks near held1000Hz |.0706 mean|.1682 mean|0 high-mid accents|
+| Bass-only / low-mid-only |Only tiny FFT leakage|Peak<.001|0 high-mid accents|
+| Late silence62–64.7s |0|0|All fixture/instance outputs exactly0|
+
+Loud input remains clearly stronger without a hard full-brightness plateau. The maximum final fixture level in the entire generated normal/Low matrix is.6474/.6487, leaving headroom; reduced maximum.3059. The attack increment is calculated as `f(body+accent)−f(body)`, respecting the existing nonlinear R1 curve, not equating raw accent to actual brightness. A.105 final increment gives.1365 added panel material intensity and3.15 added point intensity at its own30 full scale. Actual emitter/attribute/point delivery is independently checked. The video provides the corresponding scene; owner perception is not certified by these numbers.
+
+Reduced motion suppresses all transient/spatial accents while preserving ordered sustained response (quiet/loud panel means.0911/.2848). Normal main/secondary low response, mid depth sequences, narrow high bridge/violet response and slow context remain distinct. Bass-only/low attacks cannot trigger the bridge. Held high mids remain stable during bass/low-mid activity. Sustained dense sound does not generate a free-running chase; finite sequences expire. Existing tenths-of-second accents, roughly one-second travel and multi-second atmosphere provide the requested timescale separation without retuning approved appearance.
+
+### UI, lifecycle and accessibility evidence
+
+Replacement integration runs are in each quality directory's **`controls/capture.json`** with screenshots. They contain16 records each: positive real generated input; zero Reactivity; Manual at zero gain; actual seek/new MI session; explicit synthetic stale reader; explicit new-session retained-event/context-only reader; scene switching; quality changes retaining the same Canvas/audio; dynamic reduced motion; portrait390×844; wide1920×810; actual headless fullscreen API; real hidden-tab return; abrupt file disconnect; file reconnect; forced-freeze diagnostic.
+
+Passed actual-output checks: zero kills fixture/depth output; Manual still works at zero gain; Audio return uses fresh band response; stale/retained events do not replay; context-only input cannot activate fixtures; source/audio identity survives scene/quality/fullscreen changes; portrait controls fit without page overflow; actual second-page activation sets document visibility **hidden**, and returning restores rendering/analysis. Abrupt Disconnect releases the generated element/src, publishes inactive MI and clears fixtures/depth; selecting the generated source again yields a fresh working session. Reduced motion removes bridge/rib travel and accents. Source picker/permissions and owner captured media were not automated or inspected.
+
+[Portrait controls](../../evidence/nocturne/nt13-refinement/r4/nocturne/standard/controls/portrait-controls-open.png), [wide controls](../../evidence/nocturne/nt13-refinement/r4/nocturne/standard/controls/wide-controls-open.png), [zero Reactivity](../../evidence/nocturne/nt13-refinement/r4/nocturne/standard/controls/zero-reactivity.png), [reduced motion](../../evidence/nocturne/nt13-refinement/r4/nocturne/standard/controls/dynamic-reduced-motion.png), [disconnect](../../evidence/nocturne/nt13-refinement/r4/nocturne/standard/controls/abrupt-generated-file-disconnect.png).
+
+**Owner native-window evidence:** owner explicitly selected this Linux/GTX1660 SUPER as the target and answered **“Both work normally”** to playback/lighting recovery after minimizing/restoring and native fullscreen Escape. [Exact question/response](../../evidence/nocturne/nt13-refinement/r4/owner-review.json). This is text observation, not remote inspection; browser/version and musical excerpts were not supplied. It closes the physical minimize/Escape observation for this checkpoint without claiming all musical listening cases passed.
+
+**Retained automation limitation:** forced `Page.setWebLifecycleState(frozen→active)` in the headless harness did not restart requestAnimationFrame even after bring-to-front; its stale sample is explicitly marked **not passed**. Do not treat that artificial case as a successful freeze test or infer that normal owner restoration fails. Actual background-tab and owner-native restoration pass. The forced-freeze cause remains unconfirmed and no production workaround was introduced.
+
+**Earlier harness failures:** baseline directories retain failed post-capture control attempts. The65s video/feature traces were complete and are independently validated by `compare-nocturne-r4.mjs`; successful replacement controls are stored separately rather than relabeling the old attempt as wholly passed. Fixes were limited to test setup: explicitly mark synthetic active inputs, wait for current post-seek data, use the real Play/controller resume path and keep a positive test passage available during startup. Failed forced-freeze recovery was isolated from required Disconnect checks. No production bug/analysis fix is claimed from these harness corrections. Brave CDP remains the available automation fallback, not Playwright.
+
+### Owner-selected target performance
+
+[Results](../../evidence/nocturne/nt13-refinement/r4/performance/results.json) and per-quality raw timing rows. Target: Linux7.2.11-arch1-1, AMD Ryzen5 5600G CPU, ANGLE/**NVIDIA GTX1660 SUPER** hardware renderer; headless Brave/Chrome156,1440×810 CSS, Standard DPR1 / Low.75. Separate instrumented production copy, generated input,5s warmup then30s sample per quality, no screenshots or concurrent agent capture runs. Other desktop activity is uncontrolled; owner native-window review may overlap. This is measured target hardware, not a headed-owner-window performance guarantee.
+
+GPU timing uses supported `EXT_disjoint_timer_query_webgl2` around the outer renderer call, including nested planar reflection; availability/disjoint handling follows the installed Three r186 implementation. It measures renderer GPU execution, not compositor/monitor presentation or audible latency. Frame cadence and CPU render-submit times are separate. Warmup is excluded; outliers are retained.
+
+| Metric | Standard | Low |
+| --- | --- | --- |
+| Sample duration / frames |30.002s /1800|30.001s /1800|
+| Mean scene cadence |60.0FPS|60.0FPS|
+| p95 / max frame interval |17.0 /17.4ms|17.0 /17.2ms|
+| Mean / p95 GPU render |4.43 /5.38ms|3.53 /5.53ms|
+| p95 CPU render submit |3.0ms|2.8ms|
+| Frames>33.3ms / disjoint queries |0 /0|0 /0|
+
+Low's mean GPU time is lower, but p95 is not uniformly lower; this single sequential pair is not a statistically isolated speedup claim. Both are frame-paced near60Hz. Existing project performance targets are guidelines, so these measurements establish the selected-device baseline rather than inventing a new hard acceptance threshold. No performance tuning was indicated by these samples.
+
+Input validation verifies841 samples in known sustained signal windows per quality have active, nonzero MI. The fixture deliberately includes silent attack gaps:1195/1194 of1800 frames have positive overall energy. An initial benchmark wrongly required70% positive frames and was rejected; its failure metadata is retained in `initial-invalid-validation.json`, and no timing from it is accepted. The replacement uses the actual sustained schedule, not a loosened analysis threshold.
+
+Resources stay196 whole-frame draw calls,114 geometries,6 textures,8 points; no R4 added lights, shaders, overdraw or passes. Existing cost includes one planar-reflection pass/5 floor texture taps, additive haze,8 unshadowed point contributions and544 brightness floats from R2/R3. A direct pixel-overdraw heatmap or isolated per-shader GPU delta was not measured; counts/topology and total GPU timings are reported instead. NT14 remains a separate later review.
+
+### Files, verification and next checkpoint
+
+Passed41 test files, lint/typecheck/build (existing bundle warning),39 spectrum-window assessments across3 modes, current actual UI/output checks in3 replacement control sets, source-hash preservation and two30s target performance samples. Forced CDP freeze remains separately flagged; owner native observations are not mislabeled automated. No production change, dependency, camera adjustment or new analysis.
+
+Verification work: extend `generate-nocturne-matrix-review.mjs` opt-in source and shared `verify-nocturne-r0.mjs`; `nocturne-r4-controls.mjs`, `compare-nocturne-r4.mjs`, `verify-nocturne-r4-performance.mjs`; generated R4 evidence and existing docs. Temporary instrumentation stays outside production sources. Prior user work preserved; no agent commit/push/deploy. Suggested verification commit only if authorized: `Verify Noctune integration and target GPU performance`.
+
+**Stop for the R4 checkpoint.** Next is R5's aligned Crimson comparison and owner musical/artistic decision, using the approved generated-capture plus live/text-only owner-song policy. Do not close NT13 or start NT14 on this technical evidence alone.
+
+## NT13-R5 — aligned comparison and owner gate, 2026-11-23
+
+**Owner approved — R5/NT13 review gate complete (2026-11-23).** Owner “proceed” after R4 authorizes this phase. No production changes or further visual tuning; all91 source hashes match R3/R4, including MI, approved scene geometry/camera, fixture mappings and Crimson. No commit/push/deployment. Owner explicitly approves all five criteria and reports all listed current-build real-song cases worked. NT14 is next, not started.
+
+### Reviewable comparisons
+
+- [Standard source-aligned comparison](../../evidence/nocturne/nt13-refinement/r5/standard-comparison.mp4).
+- [Low source-aligned comparison](../../evidence/nocturne/nt13-refinement/r5/low-comparison.mp4).
+- [Quiet / dense / silent paired frames](../../evidence/nocturne/nt13-refinement/r5/paired-states.jpg); [encoded-video inspection frame](../../evidence/nocturne/nt13-refinement/r5/paired-video-frame.jpg).
+- Noctune Standard [Manual All on](../../evidence/nocturne/nt13-refinement/r5/nocturne/standard/baseline/manual-all-on.png) and [Manual All off](../../evidence/nocturne/nt13-refinement/r5/nocturne/standard/baseline/manual-all-off.png). Low and full-resolution individual videos/stills/trace/capture metadata are in each scene/quality baseline directory.
+- [Comparison measurements / stage values](../../evidence/nocturne/nt13-refinement/r5/comparison.json), [generated source schedule](../../evidence/nocturne/nt13-refinement/r5/generated-schedule.json), [source manifest](../../evidence/nocturne/nt13-refinement/r5/source-manifest.json).
+
+Every individual run uses the same55s generated NT11 arrangement and WAV SHA256,1440×810 CSS/deviceScale1, player50%, Reactivity1, normal motion. Standard DPR1/Low.75, exposure1/ACES4/sRGB/shadows off are asserted. Instrumentation lives in isolated production builds. Captures: Noctune Standard3305 rows, Crimson Standard3296; Noctune Low3294, Crimson Low3296;439 screenshots each. Actual96kHz/4096 analysis is logged. Runtime/console errors are empty.
+
+Paired videos trim both individual timelines to **source time0.500–54.500s**, reset their presentation clocks, then combine them with one generated WAV soundtrack offset by0.500s. Each is54s,1440×466, with camera labels, elapsed time and source-phase legend. The same source time—not a guessed visual match—defines alignment. Sound is generated-source muxing, not recorded browser output. Requested8Hz screenshots and measured request brackets (up to213ms across runs), plus25fps composite resampling, prevent sample-accurate onset/perceptual claims. Individual raw traces retain actual consumed feature/output timestamps.
+
+Noctune camera position **and quaternion** are fixed for every consumed sample. Crimson retains authored travel/rebasing, with poses recorded; its journey phase is not synchronized across quality runs. Those camera effects contribute expressiveness and are not mistaken for music-driven architectural motion. Shared exposure does not make scene-specific shader/material tone mapping or raw response units photometrically equivalent. The comparison is an owner art-direction review, not a luminance or equal-camera-motion benchmark.
+
+### Input → response → visible result
+
+Representative Standard steady-window means, with event roles confirmed in the existing exact delivery/spatial/R4 isolation checks. Times refer to the source schedule; short-event envelopes should be watched in the video, not inferred from a single still.
+
+| Source time / musical role | Existing MI input | Noctune final output | Visible role |
+| --- | --- | --- | --- |
+| Quiet0.7–2.5s |High mids.0177|Left cyan.0449 / point1.347; main magenta effectively0|Restrained local cyan and stable dark architecture; no decorative travel|
+| Bass5–8.8s |Bass.1035 + low events|Main magenta.2678; left point~.001 from negligible leakage|Dominant magenta weight/attacks and secondary near→far echoes; cyan does not follow bass|
+| Mids11–14.8s |Low mids.0566 / high mids.0495|Left cyan.1209 / point3.626; window/detail bodies and qualified sequences on attacks|Architectural cyan distinct from continuing bass response|
+| Dense16–22.8s |Bass.0926 / high mids.0729; staggered low/mid/high events|Main.2739, left cyan.2004 / point6.012, depth point1.699|Multiple spatial roles, sparse bridge/rib heads, real colored reflections and slow background depth|
+| Breakdown26–28.8s |High mids.0247; low energy absent|Left cyan.0623; main~.0001, depth1.096 with intentional slow context tail|Localized sustained light with the larger bass fixture fading away|
+| Late silence52–54.7s |All six energies0|All fixture/instance outputs0; depth point~.051|No spatial events or fixture latch; faint static visibility and slow environmental recovery|
+
+Crimson's same dense source produces body mean.3048, low accent mean.1288, mid.0273, high.0486, glowActivity.3531, with Candidate weight1. These are **Crimson-specific controls**, not comparable light-brightness units. Its visible cues remain central sun/glow, contours/valley response, narrow details and authored camera travel. Noctune's cues remain source lights, architecture, wet reflections and depth; neither scene was changed to mimic the other.
+
+### Five-criterion assessment
+
+| Criterion | Evidence / technical finding | Owner gate |
+| --- | --- | --- |
+| Resting visibility |Quiet and Manual-off references retain bridge/door/curb silhouettes, with substantial negative space. Shared exposure stays fixed; minimum fill does not depend on song intensity.|Owner approved quiet visibility; Manual All on remains an upper bound.|
+| Spatial movement |R2 ordered per-instance peaks plus fresh fixed-camera video show bass depth echoes, mid depth progression and high bridge/rib traversal. Bodies stay separate from finite accents.|Owner approved directional movement and perceptual clarity.|
+| Music specificity |R4 isolated bands, quiet/loud/attacks and near-band tests pass; fresh R5 actual material/attribute/point delivery matches outputs. Silence clears every fixture.|Owner approved music specificity and reports all listed current-build listening cases worked.|
+| Whole-scene participation |Foreground real wet reflections, midground fixtures/bridge/contours and background gate/haze/local depth spill appear in active captures and recede during silence.|Owner approved foreground/depth participation and restraint.|
+| Artistic parity with Crimson |Same-source/time-aligned Standard/Low pairs expose both expressive behaviors while retaining their identities and explicit camera difference.|Owner explicitly approved expressive parity with Crimson; this is an artistic decision, not a numerical brightness claim.|
+
+No new implementation defect is established by these captures. There is no evidence-based reason to change the approved geometry, camera, MI or every fixture group. If owner identifies a specific failed criterion/passage, make a bounded scene-local proposal and repeat the relevant comparison; do not tune speculatively before that observation.
+
+### Owner review / final decision ledger
+
+The owner-approved evidence method is **generated captures plus live owner review**. This intentionally replaces the roadmap's recorded real-song method under repository privacy rules. Keep permitted-tab music on the owner's device: the agent does not attach a debugger, capture audio/video, inspect private media or persist a live feature history. The owner may compare scenes live and provide anonymous passage labels/text observations.
+
+Existing historical case A says magenta follows bass but the corridor was too dark before subsequent revisions. Later positive R2 appearance feedback and R4 native minimize/Escape confirmation are recorded separately. They were not used to infer final approval. The owner subsequently answered the explicit current-build case question covering bass-heavy, midrange-dense, sustained ambient, light/percussive and quiet-to-loud with **“all worked.”** Detailed passage labels/timestamps were not supplied or required. No owner media was accessed.
+
+Decision status: **owner-approved; R5 and NT13 review gate complete.** Exact visual reply: **“Approve all five visual criteria.”** Exact reply to the five current-build listening cases: **“all worked.”** [Approval record](../../evidence/nocturne/nt13-refinement/r5/owner-review.json). This approval is explicit owner evidence, not inferred from “proceed” or automated tests.
+
+### Verification / boundaries
+
+Passed41 test files, lint/typecheck/build (existing bundle warning), all4 fresh production-copy captures, identical source/settings checks, fixed Noctune pose, actual scalar/float32-buffer/point/depth delivery, exact late fixture silence and Manual reference checks. Encoded Standard comparison was inspected; stream metadata confirms video+audio and54s duration. Source hash assertions preserve all91 files and the production bundle remains `index-DsoqOwhx.js`. No new production cost; R4's selected-target performance results remain the applicable measurements, not the8Hz capture cadence.
+
+Files: existing `scripts/verify-nocturne-r0.mjs` extended for R5 production captures; new `scripts/compare-nocturne-r5.mjs`; generated R5 evidence and existing progress/roadmap/verification/decision/report docs. Prior uncommitted work preserved. No dependency, production modification, commit, push or deployment. Suggested evidence commit only if authorized: `Prepare aligned Noctune and Crimson final review`.
+
+**Stop at the approved R5 checkpoint.** NT13 is complete on explicit owner approval. NT14 performance/accessibility/lifecycle review is the next task after continuation; R4 measurements may be reused as relevant prior evidence, not automatic NT14 completion. No commit/push is authorized by this artistic approval.
+
+Subsequent owner scope decision (2026-11-23): **“we skip nt 14 and 15.”** NT13/R5 remains approved. NT14/NT15 are skipped, not marked passed; existing evidence/limitations remain. No further phase or commit is queued. This supersedes the earlier “NT14 next” handoff language above.

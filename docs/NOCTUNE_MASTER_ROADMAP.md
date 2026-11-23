@@ -1,6 +1,6 @@
 ECHO — Noctune 2.0: Living Instrument Master Roadmap
 
-Plan version: 1.13.2 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented; owner authorized NT09 continuation; NT09 existing surfaces verified; NT10 implemented; NT11 continuation accepted; NT12 deterministic verification passed; NT13 approved Audio spill lift applied; live re-review pending; current-worktree audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
+Plan version: 1.13.2 · Prepared: 2026-11-22 · Status: NT01 approved; NT02/NT03 implemented; NT04 approved; NT05–NT08 implemented; owner authorized NT09 continuation; NT09 existing surfaces verified; NT10 implemented; NT11 continuation accepted; NT12 deterministic verification passed; NT13/R5 owner-approved 2026-11-23 after refinement and live review; NT14/NT15 skipped by owner 2026-11-23; current-worktree audit at e627ff821e84dd0f8e781fa9b259805d4822ac39
 Target repository: https://github.com/Jhonneg/echoJs · Destination: docs/NOCTUNE_MASTER_ROADMAP.md
 
 This is the canonical plan for Noctune's Music Intelligence migration and visual mapping. It supersedes the earlier partial NT/NM suggestions. The phase IDs NT01–NT15 below are the only IDs to use going forward.
@@ -225,6 +225,8 @@ Gate: owner approves real-song feel; if not, tune visual response first and retu
 
 NT14 — Performance, accessibility, and lifecycle
 
+Status: **Skipped by owner, 2026-11-23.** Requirements below are retained for reference; this phase is not marked passed.
+
 Objective: Keep the experience viable in production.
 
 Tasks: compare baseline/final FPS and frame time at each quality level on relevant hardware; monitor draw calls, point-light/shadow cost, reflection/postprocess cost, and resource disposal. Verify fullscreen, reduced motion, zero Reactivity, quality switching, disconnect/reconnect, scene swaps, and multi-minute playback.
@@ -232,6 +234,8 @@ Tasks: compare baseline/final FPS and frame time at each quality level on releva
 Gate: no unacceptable regression relative to the documented baseline; manual device performance remains marked pending until measured.
 
 NT15 — Closeout and handoff
+
+Status: **Skipped by owner, 2026-11-23.** Requirements below are retained for reference; no closeout/commit authorization is implied.
 
 Objective: Leave trustworthy documentation and an auditable state.
 
@@ -395,23 +399,23 @@ Test evidence
 
 NT13
 
-Live review prepared; owner source/cases/observations pending; not complete
+Complete: owner approves all five R5 visual criteria and reports all five current-build listening cases worked (2026-11-23)
 
 Owner musical approval
 
 NT14
 
-Pending
+Skipped by owner, 2026-11-23; not marked verified
 
 Hardware/performance approval
 
 NT15
 
-Pending
+Skipped by owner, 2026-11-23
 
 Final handoff
 
-Next action: owner refreshes the rebuilt app and repeats bass listening with the approved spill lift, then completes remaining NT13 cases. Musical approval pending; NT14 unstarted.
+Current disposition (2026-11-23): NT13/R5 owner gate is complete. Owner explicitly skipped NT14 and NT15; no further phase is queued and no commit is authorized.
 
 NT01 reconciliation (2026-11-22): [Approved current-repository audit](reports/nocturne/NT01_MIGRATION_AUDIT.md). NT01 approved by owner; NT02 implementation authorized. The audit supplies exact runtime/UI dependencies, context semantics, material constraints and lifecycle safeguards. Historical “pending audit” descriptions above refer to the original proposal; this checkpoint supersedes them.
 
@@ -452,4 +456,4 @@ NT13 brightness feedback: owner reports bass tracking but dim Audio corridor ver
 
 NT13 applied checkpoint: owner “do the lift” approves the [Audio spill correction](reports/nocturne/NT13_SPILL_IMPLEMENTATION.md). Main magenta point1.5×, window/detail points2×, bounded by original full intensity; Manual unchanged. Final spill is a separate unified-state output; emitters/approved cyan/other points/atmosphere/timing and all89 other source files remain unchanged. Generated checks pass; live owner re-review still required. NT14 is not started.
 
-NT13 refinement follow-up (2026-11-22): owner requested the [R0–R5 refinement roadmap](NOCTUNE_NT13_REFINEMENT_ROADMAP.md) one phase at a time. R0 audit, R1 calibration, R2 spatial choreography and owner-authorized R3 environment cues have generated evidence; [latest checkpoint](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r3--environment-participation-checkpoint-2026-11-22) awaits owner review. This does not close NT13's real-song/artistic gate or authorize R4/NT14 automatically.
+NT13 refinement follow-up (2026-11-22): owner requested the [R0–R5 refinement roadmap](NOCTUNE_NT13_REFINEMENT_ROADMAP.md) one phase at a time. R0–R4 technical/refinement evidence and owner-authorized R5 aligned comparisons are ready; [latest owner gate](reports/nocturne/NT13_LIVE_REVIEW.md#nt13-r5--aligned-comparison-and-owner-gate-2026-11-23) records explicit approval of all five criteria and all listed current-build listening cases. R4/R5 change no production source. NT13 is approved; NT14 is next, not automatically started.

@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-23",
+  "target": "Linux / NVIDIA GTX 1660 SUPER, explicitly selected by owner",
+  "question": "In Nocturne at http://127.0.0.1:5183/ with permitted audio, does playback/lighting recover after minimizing and restoring the window, and can you leave fullscreen with Escape?",
+  "ownerResponse": "Both work normally",
+  "minimizeRestore": "owner-reported pass",
+  "nativeFullscreenEscape": "owner-reported pass",
+  "limits": "Text observation only. No owner media inspected or recorded; does not establish all real-song listening cases or final Crimson parity. Exact browser/version was not supplied with this reply."
+}
