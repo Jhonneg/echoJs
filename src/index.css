@@ -28,7 +28,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .chooser-trigger::-webkit-details-marker { display: none; }
 .chooser-trigger svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.2; }
 .audio-chooser[open] > .chooser-trigger svg { transform: rotate(180deg); }
-.audio-controls { position: absolute; bottom: calc(100% + 0.65rem); left: 0; width: min(22rem, calc(100vw - var(--scene-gutter) - var(--scene-gutter))); max-height: max(3rem, calc(100dvh - var(--scene-gutter) - var(--scene-gutter) - 8rem)); overflow-y: auto; overscroll-behavior: contain; padding: 1rem; border: 1px solid #65546f; border-radius: 0.75rem; background: rgb(18 19 31 / 97%); box-shadow: 0 12px 48px rgb(0 0 0 / 25%); font-size: 0.8rem; }
+.audio-controls { position: absolute; bottom: calc(100% + 0.65rem); left: 0; width: min(22rem, calc(100vw - var(--scene-gutter) - var(--scene-gutter))); max-height: max(3rem, calc(100dvh - var(--scene-gutter) - var(--scene-gutter) - var(--controls-height, 8rem) - 0.65rem)); overflow-y: auto; overscroll-behavior: contain; padding: 1rem; border: 1px solid #65546f; border-radius: 0.75rem; background: rgb(18 19 31 / 97%); box-shadow: 0 12px 48px rgb(0 0 0 / 25%); font-size: 0.8rem; }
 .chooser-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .chooser-header h2 { margin: 0; font-size: 1rem; font-weight: 500; }
 .chooser-close { width: 44px; flex-shrink: 0; padding: 0; font-size: 1.4rem; border-color: transparent; background: transparent; }
@@ -63,4 +63,14 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
   .audio-chooser { grid-area: options; }
   .scene-player { width: 100%; }
   .experience-controls:has(.audio-chooser[open]) .scene-player { display: none; }
+}
+
+/* APP01: low-rate source health stays visible outside the Options disclosure. */
+.audio-feedback { flex: 0 0 100%; pointer-events: auto; }
+.audio-feedback-body { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; width: fit-content; max-width: min(38rem, 100%); padding: .5rem .75rem; border: 1px solid #65546f; border-radius: .5rem; background: rgb(18 19 31 / 94%); color: #eee5f0; font-size: .8rem; }
+.audio-feedback p { margin: 0; flex: 1; min-width: min(12rem, 100%); overflow-wrap: anywhere; }
+.audio-feedback button { font-size: .8rem; }
+.audio-feedback[data-tone="error"] .audio-feedback-body { border-color: #c69ab7; }
+@media (max-height: 420px) {
+  .audio-controls { position: fixed; left: max(var(--scene-gutter), env(safe-area-inset-left)); top: max(var(--scene-gutter), env(safe-area-inset-top)); bottom: auto; max-height: calc(100dvh - var(--scene-gutter) - var(--scene-gutter)); }
 }

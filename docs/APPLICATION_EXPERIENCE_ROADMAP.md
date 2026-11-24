@@ -1,0 +1,21 @@
+# ECHO — application experience roadmap
+
+Owner approves implementation of the read-only audit plan (2026-11-23). Execute one phase at a time, stopping at each owner review checkpoint. All four landscapes are considered visually complete; their geometry, materials, palette, camera, musical mapping and motion remain frozen. Existing local changes must be preserved. No automatic commit, push or deployment.
+
+| Phase | Boundary | Required checkpoint | Status |
+|---|---|---|---|
+| APP01 — audio health and visible recovery | Typed analysis-start results and health; propagate graph failure; release failed capture tracks; visible feedback/recovery outside Options. No DSP or scene changes. | Desktop/portrait source-state evidence; fault injection and generated-audio retries; owner visual review. | Implemented; controlled checks PASS; owner review pending. |
+| APP02 — controls, accessibility and source transitions | Consistent playback access with Options open, safer source replacement, accurate help, neutral canvas accessibility content and actual failure announcements. Preserve toolbar and scenes. | Keyboard/focus/accessibility/enlarged text, narrow/short screens and all approved backgrounds; owner flow/visual review. | Not started. |
+| APP03 — startup, switching and rendering recovery | Application-level scene-module loading/error/retry and shared rendering-health feedback; measure cold-entry gaps, resource cleanup and existing quality behavior. | Cold/warm entry, source/reader continuity, context loss, repeated switching and sustained samples; owner loading/recovery review. | Not started. |
+| APP04 — browser and lifecycle qualification | Explicit tested capability matrix and application integration checks for source replacement, background/restore, disconnect and reduced motion. | Native Chromium sharing/audibility; Firefox/Safari local playback/fallback; actual mobile checks; owner support/recovery review. | Not started. |
+| APP05 — documentation and application acceptance | Consolidate current behavior/contracts/indexes; archive superseded instructions without rewriting history; finalize release matrix. Maintain progress throughout earlier phases. | Links/checks, passed/failed/manual-pending evidence, complete application-flow review. | Not started. |
+
+## APP01 implementation contract
+
+`AudioStartResult` is `{ok:true}|{ok:false,message:string}`. `prepare()` and stream `start()` return it; failed stream preparation does not open the picker, and failed attachment releases acquired tracks before publishing error. `startElement()` retains its boolean API for existing diagnostic consumers. Local adapters propagate prepare failures and expose a typed blocked-play retry flag. The lab adapter's interface follows the result contract; its behavior is otherwise unchanged.
+
+`analysis.health` reports idle/starting/running/suspended/error independently of capture/transport and MusicFeaturesV1. Its snapshot reflects the current AudioContext and latched preparation/graph/resume failures, without changing analysis sampling, feature calculations, event qualification or session semantics. UI health/activity is sampled at the existing500ms interval; source publications update the display immediately. No hot musical frames enter React state.
+
+The toolbar has one stable polite live status region outside Options, with contextual Cancel/Retry sharing/Reconnect/Resume/Open file/Retry Play actions. Silent connected tabs remain connected; paused files are not labeled as silent tabs. A completed recovery returns focus if its button disappears. Controls height is measured outside React state to bound the existing popup; very short windows use a bounded fixed popup. Broader APP02 layout/accessibility work remains deferred.
+
+[APP01 evidence and limitations](evidence/application/app01/README.md). APP01 does not make source replacement transactional, change the existing narrow-screen player rule, correct landscape help or change canvas fallbacks; those belong to APP02. No removed Reactivity/fullscreen controls, new services, capture workarounds, uploads or dependencies.

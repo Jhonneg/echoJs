@@ -595,3 +595,7 @@ Owner approves the visual direction and authorizes BL08. Responsive/quality/reso
 ## 2026-11-23 — owner skips Bloom BL09
 
 Owner explicitly skips the proposed final cross-landscape musical acceptance phase. Preserve the approved BL08/Bloom baseline and stop; do not re-request the skipped gate or claim its tests passed. Existing evidence limitations remain factual. This instruction does not authorize further production changes, commit or push.
+
+## 2026-11-23 — APP01 separates audio ownership, processing health and musical activity
+
+Owner approves the application audit roadmap. Implement only its first reviewable phase: typed analysis-start results plus independent processing health, propagated to existing adapters and a visible shell status/recovery area. A received track is insufficient to declare successful analysis. Preserve all approved scene files, musical calculations and the boolean element-attachment API used by development diagnostics. UI status uses the existing low-rate timer; musical features stay outside React state. Error reasons survive teardown in the owning source publication. Context-specific recovery actions do not trigger permissions automatically, and synthetic fault checks are never labeled native capture verification. Stop for APP01 review; broader layout, transactional switching, startup, compatibility and documentation reorganization remain later phases.

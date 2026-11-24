@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "onlyProductionChange": "Far ridge peak at x1.6: amplitude3.7→3.2",
+  "unchangedSources": 106,
+  "startingHeightAtSunX": 1.8249272180436105,
+  "sunCenterY": 1.9,
+  "checks": [
+    "Desktop/portrait/reduced-motion browser frames",
+    "Camera, initial offsets and render costs unchanged",
+    "Other source hashes preserved",
+    "Sun and corona mappings untouched"
+  ]
+}

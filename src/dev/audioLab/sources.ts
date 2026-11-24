@@ -1,9 +1,10 @@
+import type { AudioStartResult } from '../../audio/health.ts'
 import { createLocalFile } from '../../audio/localFile.ts'
 import { createTabCapture, type CaptureStatus } from '../../audio/tabCapture.ts'
 
 interface LabAnalysis {
-  prepare(): void
-  start(stream: MediaStream): void
+  prepare(): AudioStartResult
+  start(stream: MediaStream): AudioStartResult
   startElement(element: HTMLAudioElement): boolean
   resume(): void
   stop(): void

@@ -1,3 +1,5 @@
+import type { AudioStartResult } from './health.ts'
+
 export type CaptureStatus = 'disconnected' | 'connecting' | 'connected' | 'ended' | 'error' | 'unsupported'
 export interface CaptureState {
   status: CaptureStatus
@@ -6,8 +8,8 @@ export interface CaptureState {
 }
 
 interface AnalysisLifecycle {
-  prepare(): void
-  start(stream: MediaStream): void
+  prepare(): AudioStartResult
+  start(stream: MediaStream): AudioStartResult
   stop(): void
 }
 
@@ -47,7 +49,14 @@ export function createTabCapture(onChange: (state: CaptureState) => void, analys
     pending = true
     publish('connecting', 'Choose a browser tab and enable Share tab audio. The native picker also requests video.')
     try {
-      analysis?.prepare()
+      const prepared = analysis?.prepare()
+      if (analysis && prepared?.ok !== true) {
+        pending = false
+        const message = prepared?.ok === false ? prepared.message : 'Audio preparation did not complete. Retry sharing.'
+        release()
+        publish('error', message)
+        return
+      }
       // Keep this call before any await to preserve the button's user activation.
       const acquired = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true })
       if (disposed || request !== generation) {
@@ -72,7 +81,13 @@ export function createTabCapture(onChange: (state: CaptureState) => void, analys
         ended()
         return
       }
-      analysis?.start(acquired)
+      const started = analysis?.start(acquired)
+      if (analysis && started?.ok !== true) {
+        const message = started?.ok === false ? started.message : 'Audio analysis did not start. Retry sharing.'
+        release()
+        publish('error', message)
+        return
+      }
       publish('connected', 'Audio track present. Keep playback in the source tab.')
     } catch (error) {
       if (disposed || request !== generation) return

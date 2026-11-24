@@ -1,8 +1,8 @@
 # POC roadmap — one task at a time
 
-## Current checkpoint — Bloom BL09 skipped by owner (2026-11-23)
+## Current checkpoint — APP01 owner review (2026-11-23)
 
-BL08 is owner-approved. Owner explicitly skips BL09 acceptance/comparison; do not run it or mark its tests passed. Preserve current Bloom visuals and documented verification limitations. Await the next owner-selected task; no production changes, commit/push/deploy.
+Owner approved the application-experience plan. APP01 audio health/visible recovery is implemented and controlled checks pass; [roadmap](APPLICATION_EXPERIENCE_ROADMAP.md) and [evidence](evidence/application/app01/README.md). Approved landscapes remain unchanged, including the pre-existing Lavender startup adjustment. Await APP01 visual review before APP02. Bloom BL09 stays skipped. No commit/push/deploy.
 
 Current order is intentional: validate external audio before investing in graphics. Plan/approve each task separately; mark actual status only in PROGRESS.md. Each gate requires owner sign-off. If a required check cannot run, record a blocker; do not mark the gate passed or silently expand scope.
 

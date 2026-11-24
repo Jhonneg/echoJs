@@ -1,13 +1,17 @@
+import type { AnalysisHealth, AudioStartResult } from './health.ts'
+
 export interface LocalFileState {
   status: 'empty' | 'ready' | 'playing' | 'paused' | 'ended' | 'error'
   name: string
+  retryPlayback?: boolean
   message: string
 }
 interface LocalAnalysis {
-  prepare(): void
+  prepare(): AudioStartResult
   startElement(element: HTMLAudioElement): boolean
   resume(): void
   stop(): void
+  readonly health?: AnalysisHealth
 }
 
 export function createLocalFile(onChange: (state: LocalFileState) => void, analysis: LocalAnalysis) {
@@ -20,8 +24,8 @@ export function createLocalFile(onChange: (state: LocalFileState) => void, analy
   let name = ''
   let removeListeners = () => {}
 
-  function publish(status: LocalFileState['status'], message: string) {
-    if (!disposed) onChange({ status, name, message })
+  function publish(status: LocalFileState['status'], message: string, retryPlayback = false) {
+    if (!disposed) onChange({ status, name, message, retryPlayback })
   }
   function release() {
     generation++
@@ -82,10 +86,16 @@ export function createLocalFile(onChange: (state: LocalFileState) => void, analy
     const current = element
     const request = generation
     if (!attached) {
-      analysis.prepare()
-      if (!analysis.startElement(current)) {
+      const prepared = analysis.prepare()
+      if (!prepared.ok) {
         release()
-        publish('error', 'Audio analysis could not start. Select the file again to retry.')
+        publish('error', prepared.message)
+        return
+      }
+      if (!analysis.startElement(current)) {
+        const reason = analysis.health?.status === 'error' ? analysis.health.message : 'Audio analysis could not start. Select the file again to retry.'
+        release()
+        publish('error', reason)
         return
       }
       attached = true
@@ -98,7 +108,7 @@ export function createLocalFile(onChange: (state: LocalFileState) => void, analy
       if (disposed || request !== generation) return
       // Keep the existing element/node for gesture-based retry; never create a second node.
       publish('paused', error instanceof Error && error.name === 'NotAllowedError'
-        ? 'Playback was blocked. Click Play again to retry.' : 'Playback could not start. Retry Play or select another file.')
+        ? 'Playback was blocked. Click Play again to retry.' : 'Playback could not start. Retry Play or select another file.', true)
     }
   }
   return {

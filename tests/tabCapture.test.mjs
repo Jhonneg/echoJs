@@ -130,8 +130,8 @@ test('analysis starts with acquired stream and stops with capture lifecycle', as
   navigator.mediaDevices.getDisplayMedia = () => new Promise((done) => { resolve = done })
   const calls = []
   const capture = createTabCapture(() => {}, {
-    prepare() { calls.push('prepare') },
-    start(stream) { assert.equal(stream.getAudioTracks().length, 1); calls.push('start') },
+    prepare() { calls.push('prepare'); return {ok:true} },
+    start(stream) { assert.equal(stream.getAudioTracks().length, 1); calls.push('start'); return {ok:true} },
     stop() { calls.push('stop') },
   })
   const pending = capture.connect()
@@ -143,4 +143,18 @@ test('analysis starts with acquired stream and stops with capture lifecycle', as
   value.getTracks()[0].dispatchEvent(new Event('ended'))
   assert.deepEqual(calls, ['prepare', 'start', 'stop'])
   stopped(value)
+})
+
+test('prepare failure never opens the picker or reports a connected source',async()=>{
+ const {requests,states}=setup();let stops=0
+ const capture=createTabCapture(s=>states.push(s),{prepare:()=>({ok:false,message:'Context unavailable'}),start:()=>assert.fail('start after prepare failure'),stop(){stops++}})
+ await capture.connect();assert.equal(requests.length,0);assert.equal(states.at(-1).status,'error');assert.equal(states.at(-1).message,'Context unavailable');assert.equal(stops,1)
+})
+test('graph attachment failure releases every acquired track and permits a successful retry',async()=>{
+ const {requests,states}=setup();let succeeds=false
+ const capture=createTabCapture(s=>states.push(s),{prepare:()=>({ok:true}),start:()=>succeeds?{ok:true}:{ok:false,message:'Graph failed'},stop(){}})
+ const first=capture.connect(),bad=stream();requests[0].resolve(bad);await first
+ stopped(bad);assert.equal(states.at(-1).status,'error');assert.equal(states.at(-1).message,'Graph failed');assert.equal(states.at(-1).audioTracks,0)
+ succeeds=true;const retry=capture.connect(),good=stream();requests[1].resolve(good);await retry
+ assert.equal(states.at(-1).status,'connected');capture.dispose();stopped(good)
 })

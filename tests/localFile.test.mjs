@@ -29,7 +29,7 @@ function setup() {
   URL.createObjectURL = () => `blob:test-${++next}`
   URL.revokeObjectURL = (url) => revoked.push(url)
   const analysis = {
-    prepare() { calls.push('prepare') },
+    prepare() { calls.push('prepare'); return {ok:true} },
     startElement(element) { calls.push(element); return true },
     resume() { calls.push('resume') },
     stop() { calls.push('stop') },
@@ -117,4 +117,12 @@ test('graph failure releases local resources', async () => {
   await file.play()
   assert.equal(states.at(-1).status, 'error')
   assert.deepEqual(revoked, ['blob:test-1'])
+})
+
+test('prepare failure preserves its reason, releases the selected file and never attaches or plays',async()=>{
+ const {file,analysis,elements,states,revoked,calls}=setup()
+ analysis.prepare=()=>({ok:false,message:'Web Audio unavailable'})
+ file.select({name:'tone.wav'});await file.play()
+ assert.equal(states.at(-1).status,'error');assert.equal(states.at(-1).message,'Web Audio unavailable')
+ assert.equal(elements[0].plays,0);assert.ok(!calls.includes(elements[0]));assert.equal(revoked.length,1)
 })

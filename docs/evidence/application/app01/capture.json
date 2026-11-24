@@ -1,0 +1,1809 @@
+{
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "screenshots": [
+    {
+      "name": "initial-desktop",
+      "row": {
+        "feedback": "Choose a shared tab or a local audio file.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 0
+        },
+        "audio": null,
+        "focus": "\n    Bloom — music visualizerBloom needs WebGL to display. You can still choose audio from the controls below.BloomChoose a shared tab or a local audio file.Change landscapeNocturneBloomLavender PeaksCrimson HorizonShare a tabOpen audio fileOptionsChoose your audio×Choose a shared tab or a local audio file.Graphics qualityStandardLowAudio stays on your device. Nothing is recorded or uploaded. Close this panel to enjoy the scene; Disconnect ends the source.\n  \n\n",
+        "streamTracks": [],
+        "captureCalls": 0,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 758.015625,
+          "width": 258.625,
+          "height": 37.1875,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 593.03125,
+          "width": 352,
+          "height": 248.578125,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "initial-portrait",
+      "row": {
+        "feedback": "Choose a shared tab or a local audio file.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 0
+        },
+        "audio": null,
+        "focus": "\n    Bloom — music visualizerBloom needs WebGL to display. You can still choose audio from the controls below.BloomChoose a shared tab or a local audio file.Change landscapeNocturneBloomLavender PeaksCrimson HorizonShare a tabOpen audio fileOptionsChoose your audio×Choose a shared tab or a local audio file.Graphics qualityStandardLowAudio stays on your device. Nothing is recorded or uploaded. Close this panel to enjoy the scene; Disconnect ends the source.\n  \n\n",
+        "streamTracks": [],
+        "captureCalls": 0,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 676.421875,
+          "width": 258.625,
+          "height": 37.1875,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 511.4375,
+          "width": 350,
+          "height": 248.578125,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "unsupported-desktop",
+      "row": {
+        "feedback": "Tab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.",
+        "visible": true,
+        "action": "Open audio file",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 0
+        },
+        "audio": null,
+        "focus": "\n    Bloom — music visualizerBloom needs WebGL to display. You can still choose audio from the controls below.BloomTab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.Open audio fileChange landscapeNocturneBloomLavender PeaksCrimson HorizonShare a tabOpen audio fileOptionsChoose your audio×Tab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.Graphics qualityStandardLowAudio stays on your device. Nothing is recorded or uploaded. Close this panel to enjoy the scene; Disconnect ends the source.\n  \n\n",
+        "streamTracks": [],
+        "captureCalls": 0,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 558.109375,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 573.84375,
+          "width": 352,
+          "height": 267.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "unsupported-portrait",
+      "row": {
+        "feedback": "Tab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.",
+        "visible": true,
+        "action": "Open audio file",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 0
+        },
+        "audio": null,
+        "focus": "\n    Bloom — music visualizerBloom needs WebGL to display. You can still choose audio from the controls below.BloomTab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.Open audio fileChange landscapeNocturneBloomLavender PeaksCrimson HorizonShare a tabOpen audio fileOptionsChoose your audio×Tab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.Graphics qualityStandardLowAudio stays on your device. Nothing is recorded or uploaded. Close this panel to enjoy the scene; Disconnect ends the source.\n  \n\n",
+        "streamTracks": [],
+        "captureCalls": 0,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 638.046875,
+          "width": 350,
+          "height": 75.5625,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 492.25,
+          "width": 350,
+          "height": 267.765625,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "denied-desktop",
+      "row": {
+        "feedback": "Sharing was cancelled or denied, or blocked by browser policy. You can retry.",
+        "visible": true,
+        "action": "Retry sharing",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 2
+        },
+        "audio": null,
+        "focus": "\n    Bloom — music visualizerBloom needs WebGL to display. You can still choose audio from the controls below.BloomSharing was cancelled or denied, or blocked by browser policy. You can retry.Retry sharingChange landscapeNocturneBloomLavender PeaksCrimson HorizonShare a tabOpen audio fileOptionsChoose your audio×Sharing was cancelled or denied, or blocked by browser policy. You can retry.Graphics qualityStandardLowAudio stays on your device. Nothing is recorded or uploaded. Close this panel to enjoy the scene; Disconnect ends the source.\n  \n\n",
+        "streamTracks": [],
+        "captureCalls": 1,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 574.703125,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 573.84375,
+          "width": 352,
+          "height": 267.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "denied-portrait",
+      "row": {
+        "feedback": "Sharing was cancelled or denied, or blocked by browser policy. You can retry.",
+        "visible": true,
+        "action": "Retry sharing",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 2
+        },
+        "audio": null,
+        "focus": "\n    Bloom — music visualizerBloom needs WebGL to display. You can still choose audio from the controls below.BloomSharing was cancelled or denied, or blocked by browser policy. You can retry.Retry sharingChange landscapeNocturneBloomLavender PeaksCrimson HorizonShare a tabOpen audio fileOptionsChoose your audio×Sharing was cancelled or denied, or blocked by browser policy. You can retry.Graphics qualityStandardLowAudio stays on your device. Nothing is recorded or uploaded. Close this panel to enjoy the scene; Disconnect ends the source.\n  \n\n",
+        "streamTracks": [],
+        "captureCalls": 1,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 638.046875,
+          "width": 350,
+          "height": 75.5625,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 492.25,
+          "width": 350,
+          "height": 267.765625,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "missing-audio-desktop",
+      "row": {
+        "feedback": "No audio track received. Retry, select a browser tab, and enable Share tab audio.",
+        "visible": true,
+        "action": "Retry sharing",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 4
+        },
+        "audio": null,
+        "focus": "Retry sharing",
+        "streamTracks": [],
+        "captureCalls": 2,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 598.421875,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 573.84375,
+          "width": 352,
+          "height": 267.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "missing-audio-portrait",
+      "row": {
+        "feedback": "No audio track received. Retry, select a browser tab, and enable Share tab audio.",
+        "visible": true,
+        "action": "Retry sharing",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 4
+        },
+        "audio": null,
+        "focus": "Retry sharing",
+        "streamTracks": [],
+        "captureCalls": 2,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 638.046875,
+          "width": 350,
+          "height": 75.5625,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 492.25,
+          "width": 350,
+          "height": 267.765625,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "pending-desktop",
+      "row": {
+        "feedback": "Choose a browser tab and enable Share tab audio.",
+        "visible": true,
+        "action": "Cancel sharing",
+        "options": false,
+        "health": {
+          "status": "starting",
+          "message": "Preparing audio analysis."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 5
+        },
+        "audio": null,
+        "focus": "Cancel sharing",
+        "streamTracks": [],
+        "captureCalls": 3,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 436.53125,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 490.65625,
+          "width": 352,
+          "height": 350.953125,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "pending-portrait",
+      "row": {
+        "feedback": "Choose a browser tab and enable Share tab audio.",
+        "visible": true,
+        "action": "Cancel sharing",
+        "options": false,
+        "health": {
+          "status": "starting",
+          "message": "Preparing audio analysis."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 5
+        },
+        "audio": null,
+        "focus": "Cancel sharing",
+        "streamTracks": [],
+        "captureCalls": 3,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 651.609375,
+          "width": 350,
+          "height": 62,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 409.0625,
+          "width": 350,
+          "height": 350.953125,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "prepare-failure-desktop",
+      "row": {
+        "feedback": "Web Audio could not start. Retry sharing or choose a supported local file.",
+        "visible": true,
+        "action": "Retry sharing",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 8
+        },
+        "audio": null,
+        "focus": "Share a tab",
+        "streamTracks": [
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 3,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 550.765625,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 573.84375,
+          "width": 352,
+          "height": 267.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "prepare-failure-portrait",
+      "row": {
+        "feedback": "Web Audio could not start. Retry sharing or choose a supported local file.",
+        "visible": true,
+        "action": "Retry sharing",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 8
+        },
+        "audio": null,
+        "focus": "Share a tab",
+        "streamTracks": [
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 3,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 638.046875,
+          "width": 350,
+          "height": 75.5625,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 492.25,
+          "width": 350,
+          "height": 267.765625,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "graph-failure-desktop",
+      "row": {
+        "feedback": "Audio analysis could not start. Reconnect or select the file again to retry.",
+        "visible": true,
+        "action": "Retry sharing",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 11
+        },
+        "audio": null,
+        "focus": "Retry sharing",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 4,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 546.484375,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 573.84375,
+          "width": 352,
+          "height": 267.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "graph-failure-portrait",
+      "row": {
+        "feedback": "Audio analysis could not start. Reconnect or select the file again to retry.",
+        "visible": true,
+        "action": "Retry sharing",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 11
+        },
+        "audio": null,
+        "focus": "Retry sharing",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 4,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 638.046875,
+          "width": 350,
+          "height": 75.5625,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 492.25,
+          "width": 350,
+          "height": 267.765625,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "connected-desktop",
+      "row": {
+        "feedback": "Listening to your shared tab.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "active",
+          "session": 13
+        },
+        "audio": null,
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "live"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 758.015625,
+          "width": 187.5,
+          "height": 37.1875,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 490.65625,
+          "width": 352,
+          "height": 350.953125,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "connected-portrait",
+      "row": {
+        "feedback": "Listening to your shared tab.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "active",
+          "session": 13
+        },
+        "audio": null,
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "live"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 676.421875,
+          "width": 187.5,
+          "height": 37.1875,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 409.0625,
+          "width": 350,
+          "height": 350.953125,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "silent-desktop",
+      "row": {
+        "feedback": "Tab connected · waiting for sound.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "active",
+          "session": 13
+        },
+        "audio": null,
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "live"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 758.015625,
+          "width": 220.921875,
+          "height": 37.1875,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 490.65625,
+          "width": 352,
+          "height": 350.953125,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "silent-portrait",
+      "row": {
+        "feedback": "Tab connected · waiting for sound.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "active",
+          "session": 13
+        },
+        "audio": null,
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "live"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 676.421875,
+          "width": 220.921875,
+          "height": 37.1875,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 409.0625,
+          "width": 350,
+          "height": 350.953125,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "suspended-desktop",
+      "row": {
+        "feedback": "Audio is suspended by the browser. Resume to continue.",
+        "visible": true,
+        "action": "Resume audio",
+        "options": false,
+        "health": {
+          "status": "suspended",
+          "message": "Audio is suspended by the browser. Resume to continue."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 14
+        },
+        "audio": null,
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "live"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 467.09375,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 471.46875,
+          "width": 352,
+          "height": 370.140625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "suspended-portrait",
+      "row": {
+        "feedback": "Audio is suspended by the browser. Resume to continue.",
+        "visible": true,
+        "action": "Resume audio",
+        "options": false,
+        "health": {
+          "status": "suspended",
+          "message": "Audio is suspended by the browser. Resume to continue."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 14
+        },
+        "audio": null,
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "live"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 651.609375,
+          "width": 350,
+          "height": 62,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 389.875,
+          "width": 350,
+          "height": 370.140625,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "resume-rejected-desktop",
+      "row": {
+        "feedback": "Audio could not resume. Try Resume audio again, or reconnect.",
+        "visible": true,
+        "action": "Resume audio",
+        "options": false,
+        "health": {
+          "status": "suspended",
+          "message": "Audio could not resume. Try Resume audio again, or reconnect."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 14
+        },
+        "audio": null,
+        "focus": "Resume audio",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "live"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 506.203125,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 471.46875,
+          "width": 352,
+          "height": 370.140625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "resume-rejected-portrait",
+      "row": {
+        "feedback": "Audio could not resume. Try Resume audio again, or reconnect.",
+        "visible": true,
+        "action": "Resume audio",
+        "options": false,
+        "health": {
+          "status": "suspended",
+          "message": "Audio could not resume. Try Resume audio again, or reconnect."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 14
+        },
+        "audio": null,
+        "focus": "Resume audio",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "live"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 651.609375,
+          "width": 350,
+          "height": 62,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 389.875,
+          "width": 350,
+          "height": 370.140625,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "decode-error-desktop",
+      "row": {
+        "feedback": "This file could not be played. Select a browser-supported audio file, such as WAV or MP3.",
+        "visible": true,
+        "action": "Open audio file",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 18
+        },
+        "audio": {
+          "time": 0,
+          "paused": true,
+          "src": false
+        },
+        "focus": "Share a tab",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 733.203125,
+          "width": 608,
+          "height": 62,
+          "bottom": 795.203125
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 490.65625,
+          "width": 352,
+          "height": 350.953125,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "decode-error-portrait",
+      "row": {
+        "feedback": "This file could not be played. Select a browser-supported audio file, such as WAV or MP3.",
+        "visible": true,
+        "action": "Open audio file",
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 18
+        },
+        "audio": {
+          "time": 0,
+          "paused": true,
+          "src": false
+        },
+        "focus": "Share a tab",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 638.046875,
+          "width": 350,
+          "height": 75.5625,
+          "bottom": 713.609375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 409.0625,
+          "width": 350,
+          "height": 350.953125,
+          "bottom": 760.015625
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "file-ready-desktop",
+      "row": {
+        "feedback": "File selected. Click Play to begin.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 20
+        },
+        "audio": {
+          "time": 0,
+          "paused": true,
+          "src": true
+        },
+        "focus": "Share a tab",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 710.046875,
+          "width": 213.78125,
+          "height": 37.1875,
+          "bottom": 747.234375
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 509.84375,
+          "width": 352,
+          "height": 331.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "file-ready-portrait",
+      "row": {
+        "feedback": "File selected. Click Play to begin.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "idle",
+          "message": "Audio is not active."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 20
+        },
+        "audio": {
+          "time": 0,
+          "paused": true,
+          "src": true
+        },
+        "focus": "Share a tab",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 571.65625,
+          "width": 213.78125,
+          "height": 37.1875,
+          "bottom": 608.84375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 323.484375,
+          "width": 350,
+          "height": 331.765625,
+          "bottom": 655.25
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "play-blocked-desktop",
+      "row": {
+        "feedback": "Playback was blocked. Click Play again to retry.",
+        "visible": true,
+        "action": "Retry Play",
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 22
+        },
+        "audio": {
+          "time": 0,
+          "paused": true,
+          "src": true
+        },
+        "focus": "Share a tab",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 1,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 685.234375,
+          "width": 390.671875,
+          "height": 62,
+          "bottom": 747.234375
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 509.84375,
+          "width": 352,
+          "height": 331.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "play-blocked-portrait",
+      "row": {
+        "feedback": "Playback was blocked. Click Play again to retry.",
+        "visible": true,
+        "action": "Retry Play",
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 22
+        },
+        "audio": {
+          "time": 0,
+          "paused": true,
+          "src": true
+        },
+        "focus": "Share a tab",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 1,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 546.84375,
+          "width": 350,
+          "height": 62,
+          "bottom": 608.84375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 323.484375,
+          "width": 350,
+          "height": 331.765625,
+          "bottom": 655.25
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "file-playing-desktop",
+      "row": {
+        "feedback": "Playing local audio.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "active",
+          "session": 22
+        },
+        "audio": {
+          "time": 0.194667,
+          "paused": false,
+          "src": true
+        },
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 1,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 710.046875,
+          "width": 136.28125,
+          "height": 37.1875,
+          "bottom": 747.234375
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 509.84375,
+          "width": 352,
+          "height": 331.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "file-playing-portrait",
+      "row": {
+        "feedback": "Playing local audio.",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "active",
+          "session": 22
+        },
+        "audio": {
+          "time": 0.493333,
+          "paused": false,
+          "src": true
+        },
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 1,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 571.65625,
+          "width": 136.28125,
+          "height": 37.1875,
+          "bottom": 608.84375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 323.484375,
+          "width": 350,
+          "height": 331.765625,
+          "bottom": 655.25
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "file-paused-desktop",
+      "row": {
+        "feedback": "Playback paused",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 23
+        },
+        "audio": {
+          "time": 0.578667,
+          "paused": true,
+          "src": true
+        },
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 1,
+        "viewport": [
+          1440,
+          900
+        ],
+        "feedbackBounds": {
+          "x": 48,
+          "y": 710.046875,
+          "width": 123.46875,
+          "height": 37.1875,
+          "bottom": 747.234375
+        },
+        "optionsBounds": {
+          "x": 423.046875,
+          "y": 509.84375,
+          "width": 352,
+          "height": 331.765625,
+          "bottom": 841.609375
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "file-paused-portrait",
+      "row": {
+        "feedback": "Playback paused",
+        "visible": true,
+        "options": false,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 23
+        },
+        "audio": {
+          "time": 0.578667,
+          "paused": true,
+          "src": true
+        },
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 1,
+        "viewport": [
+          390,
+          844
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 571.65625,
+          "width": 123.46875,
+          "height": 37.1875,
+          "bottom": 608.84375
+        },
+        "optionsBounds": {
+          "x": 262.71875,
+          "y": 323.484375,
+          "width": 350,
+          "height": 331.765625,
+          "bottom": 655.25
+        },
+        "panelScrollable": false,
+        "scene": "bloom"
+      }
+    },
+    {
+      "name": "short-options-short",
+      "row": {
+        "feedback": "Playback paused",
+        "visible": true,
+        "options": true,
+        "health": {
+          "status": "running",
+          "message": "Audio analysis is running."
+        },
+        "music": {
+          "status": "inactive",
+          "session": 23
+        },
+        "audio": {
+          "time": 0.578667,
+          "paused": true,
+          "src": true
+        },
+        "focus": "Bloom options",
+        "streamTracks": [
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ],
+          [
+            "ended"
+          ]
+        ],
+        "captureCalls": 5,
+        "nodes": 1,
+        "viewport": [
+          320,
+          256
+        ],
+        "feedbackBounds": {
+          "x": 20,
+          "y": 88.421875,
+          "width": 123.46875,
+          "height": 37.1875,
+          "bottom": 125.609375
+        },
+        "optionsBounds": {
+          "x": 20,
+          "y": 20,
+          "width": 280,
+          "height": 216,
+          "bottom": 236
+        },
+        "panelScrollable": true,
+        "scene": "bloom"
+      }
+    }
+  ],
+  "checks": [
+    "Status/recovery visible with Options closed at desktop and portrait; short Options bounds; prepare/graph failure release and retry; no picker after failed prepare; stale stream disposal; resume rejection/retry; actual decoder error; generated file blocked-play retry without duplicate graph; file play/pause/switch/disconnect; named live region. Native picker/audibility/screen-reader speech remain manual."
+  ],
+  "source": "Actual production build. Generated WAV/oscillator only; getDisplayMedia and graph failures explicitly simulated. No owner media; no native picker/audibility certification.",
+  "accessibility": [
+    {
+      "role": "RootWebArea",
+      "name": "ECHO — Audio visualizer"
+    },
+    {
+      "role": "generic",
+      "name": ""
+    },
+    {
+      "role": "main",
+      "name": ""
+    },
+    {
+      "role": "heading",
+      "name": "Bloom — music visualizer"
+    },
+    {
+      "role": "region",
+      "name": "Bloom: a levitating stone monolith over a tranquil lake at twilight"
+    },
+    {
+      "role": "generic",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "Bloom"
+    },
+    {
+      "role": "StaticText",
+      "name": " — music visualizer"
+    },
+    {
+      "role": "generic",
+      "name": ""
+    },
+    {
+      "role": "status",
+      "name": ""
+    },
+    {
+      "role": "group",
+      "name": "Landscape and audio actions"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Bloom"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": " — music visualizer"
+    },
+    {
+      "role": "Canvas",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "Choose a shared tab or a local audio file."
+    },
+    {
+      "role": "generic",
+      "name": ""
+    },
+    {
+      "role": "button",
+      "name": "Share a tab"
+    },
+    {
+      "role": "LabelText",
+      "name": ""
+    },
+    {
+      "role": "group",
+      "name": ""
+    },
+    {
+      "role": "paragraph",
+      "name": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Choose a shared tab or a local audio file."
+    },
+    {
+      "role": "LabelText",
+      "name": ""
+    },
+    {
+      "role": "combobox",
+      "name": "Change landscape"
+    },
+    {
+      "role": "StaticText",
+      "name": "Share a tab"
+    },
+    {
+      "role": "StaticText",
+      "name": "Open audio file"
+    },
+    {
+      "role": "button",
+      "name": "Open audio file"
+    },
+    {
+      "role": "DisclosureTriangle",
+      "name": "Bloom options"
+    },
+    {
+      "role": "generic",
+      "name": ""
+    },
+    {
+      "role": "StaticText",
+      "name": "Bloom needs WebGL to display. You can still choose audio from the controls below."
+    },
+    {
+      "role": "StaticText",
+      "name": "Change landscape"
+    },
+    {
+      "role": "MenuListPopup",
+      "name": ""
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Share a tab"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Open audio file"
+    },
+    {
+      "role": "StaticText",
+      "name": "OPTIONS"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "Change landscape"
+    },
+    {
+      "role": "option",
+      "name": "Nocturne"
+    },
+    {
+      "role": "option",
+      "name": "Bloom"
+    },
+    {
+      "role": "option",
+      "name": "Lavender Peaks"
+    },
+    {
+      "role": "option",
+      "name": "Crimson Horizon"
+    },
+    {
+      "role": "InlineTextBox",
+      "name": "OPTIONS"
+    }
+  ],
+  "unchangedExistingSources": 101,
+  "status": "APP01 controlled browser checks PASS"
+}

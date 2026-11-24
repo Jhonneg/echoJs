@@ -9,7 +9,8 @@ import type { CaptureState } from "../audio/tabCapture";
 import type { LocalFileState } from "../audio/localFile";
 import type { GraphicsQuality } from "../engine/quality";
 import { sceneNames, type SceneId } from "../scenes/scene";
-import { nocturneHasSignal } from "../scenes/nocturne/activity";
+import { musicFeaturesFresh } from "../audio/musicFeatures";
+import { audioFeedback } from "./audioFeedback";
 
 type Props = {
   bloomFloating: boolean;
@@ -37,6 +38,7 @@ type Props = {
 
 export function AudioControls(props: Props) {
   const { source, capture, local, analysis } = props;
+  const controls = useRef<HTMLDivElement>(null);
   const chooser = useRef<HTMLDetailsElement>(null);
   const trigger = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -67,35 +69,31 @@ export function AudioControls(props: Props) {
   }, []);
   const shareButton = useRef<HTMLButtonElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
+  const recoveryButton = useRef<HTMLButtonElement>(null);
+  const restoreRecoveryFocus = useRef(false);
   const restoreFocus = useRef<"tab" | "file" | null>(null);
-  // Sample status only; hot signal values remain outside React state.
-  const [activity, setActivity] = useState({
-    playing: false,
-    suspended: false,
-  });
+  // Only sample low-rate health/activity; no feature frames enter React state.
+  const [activity, setActivity] = useState(() => ({ health: analysis.health, receiving: false }));
   useEffect(() => {
-    const timer = window.setInterval(
-      () =>
-        setActivity((previous) => {
-          const playing =
-            props.scene === "nocturne"
-              ? nocturneHasSignal(
-                  analysis.musicFeatures,
-                  performance.now() / 1000,
-                )
-              : analysis.signal.isPlaying;
-          const suspended =
-            analysis.message.startsWith("Suspended") ||
-            analysis.message.startsWith("Audio context could not resume");
-          return previous.playing === playing &&
-            previous.suspended === suspended
-            ? previous
-            : { playing, suspended };
-        }),
-      500,
-    );
+    const timer = window.setInterval(() => {
+      const health = analysis.health, view = analysis.musicFeatures?.read();
+      const receiving = !!view && musicFeaturesFresh(view, performance.now() / 1000)
+        && Math.max(view.energy.low, view.energy.mid, view.energy.high) > .001;
+      setActivity(previous => previous.receiving === receiving
+        && previous.health.status === health.status && previous.health.message === health.message
+        ? previous : { health, receiving });
+    }, 500);
     return () => clearInterval(timer);
-  }, [analysis, props.scene]);
+  }, [analysis]);
+  useEffect(() => {
+    const element = controls.current;
+    if (!element) return;
+    const measure = () => element.style.setProperty('--controls-height', `${element.getBoundingClientRect().height}px`);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   const sharing =
     source === "tab" &&
@@ -115,9 +113,12 @@ export function AudioControls(props: Props) {
     hasFile && local.status !== "error" && local.status !== "playing";
   const playing = hasFile && local.status === "playing";
   const showPlayer = hasFile && local.status !== "error";
-  const connected =
-    source === "file" ? playing : capture.status === "connected";
-  const suspended = connected && activity.suspended;
+  const feedback = audioFeedback(source, capture, local, analysis.health, activity.receiving);
+  useEffect(() => {
+    if (feedback.action || !restoreRecoveryFocus.current) return;
+    restoreRecoveryFocus.current = false;
+    if (document.activeElement === document.body) trigger.current?.focus({ preventScroll: true });
+  }, [feedback.action]);
   const title =
     source === "file" && local.status !== "empty"
       ? "Local audio"
@@ -126,23 +127,35 @@ export function AudioControls(props: Props) {
         : source === "tab" && capture.status === "connected"
           ? "Shared tab"
           : "Choose your audio";
-  const status = suspended
-    ? "Audio is suspended by the browser. Resume to continue."
-    : source === "file"
-      ? local.status === "empty"
-        ? "Choose a shared tab or a local audio file."
-        : local.message
-      : capture.status === "connected"
-        ? activity.playing
-          ? "Listening to your shared tab."
-          : "Tab connected · waiting for sound."
-        : capture.status === "disconnected"
-          ? "Choose a shared tab or a local audio file."
-          : capture.message;
+  const disconnect = () => {
+    restoreFocus.current = source;
+    props.onDisconnect();
+  };
+  const recovery = () => {
+    restoreRecoveryFocus.current = document.activeElement === recoveryButton.current;
+    switch (feedback.action) {
+      case 'resume': analysis.resume(); break;
+      case 'retry-tab': props.onShare(); break;
+      case 'reconnect-tab': props.onDisconnect(); props.onShare(); break;
+      case 'choose-file': fileInput.current?.click(); break;
+      case 'cancel': disconnect(); break;
+      case 'play': props.onPlay(); break;
+    }
+  };
+  const recoveryLabel = feedback.action && {
+    resume: 'Resume audio', 'retry-tab': 'Retry sharing', 'reconnect-tab': 'Reconnect audio',
+    'choose-file': 'Open audio file', cancel: 'Cancel sharing', play: 'Retry Play',
+  }[feedback.action];
 
   return (
     <>
-      <div className="experience-controls">
+      <div className="experience-controls" ref={controls}>
+        <div className="audio-feedback" data-tone={feedback.tone}>
+          <div className="audio-feedback-body">
+            <p id="audio-feedback-status" role="status" aria-atomic="true">{feedback.text}</p>
+            {recoveryLabel && <button ref={recoveryButton} onClick={recovery}>{recoveryLabel}</button>}
+          </div>
+        </div>
         <div
           className="experience-toolbar"
           role="group"
@@ -169,6 +182,7 @@ export function AudioControls(props: Props) {
             <button
               ref={shareButton}
               className="primary-button"
+              aria-describedby="audio-feedback-status"
               disabled={sharing}
               onClick={props.onShare}
             >
@@ -181,6 +195,7 @@ export function AudioControls(props: Props) {
                 type="file"
                 accept="audio/*"
                 aria-label="Open audio file"
+                aria-describedby="audio-feedback-status"
                 onChange={(event) => {
                   const selected = event.currentTarget.files?.[0];
                   event.currentTarget.value = "";
@@ -224,12 +239,7 @@ export function AudioControls(props: Props) {
                   {local.name}
                 </p>
               )}
-              <p className="source-status" role="status" aria-atomic="true">
-                {status}
-              </p>
-              {suspended && (
-                <button onClick={analysis.resume}>Resume audio</button>
-              )}
+              <p className="source-status">{feedback.text}</p>
               {source === "tab" && capture.status === "connecting" && (
                 <p className="source-help">
                   Choose a tab and enable Share tab audio. Cancel here ends
@@ -239,10 +249,7 @@ export function AudioControls(props: Props) {
               {canDisconnect && (
                 <button
                   className="disconnect-button"
-                  onClick={() => {
-                    restoreFocus.current = source;
-                    props.onDisconnect();
-                  }}
+                  onClick={disconnect}
                 >
                   {capture.status === "connecting" && source === "tab"
                     ? "Cancel sharing"

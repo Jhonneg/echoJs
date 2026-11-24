@@ -22,7 +22,7 @@ function setup() {
   let urls=0
   URL.createObjectURL = () => `blob:synthetic-${++urls}`
   URL.revokeObjectURL = value => revoked.push(value)
-  const analysis = { prepare() { calls.push('prepare') }, start(stream) { calls.push(stream) },
+  const analysis = { prepare() { calls.push('prepare'); return {ok:true} }, start(stream) { calls.push(stream); return {ok:true} },
     startElement(element) { calls.push(element); return true }, resume() { calls.push('resume') }, stop() { calls.push('stop') } }
   const sources = createLabSources(analysis, state => states.push(state))
   const stream = (audio = true) => {

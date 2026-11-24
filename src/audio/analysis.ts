@@ -1,3 +1,4 @@
+import type { AnalysisHealth, AudioStartResult } from './health'
 import { createMusicAnalysis } from './music/analysis'
 import { bandLevel, bandMagnitude, binRange, emptyBands, resetSignal, silentSignal, smooth, type SignalTiming } from './signal'
 import { updateSignalFeatures } from './features'
@@ -19,6 +20,8 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink; musicIn
   let removeDiagnosticSeek = () => {}
   let frame = 0
   let message = 'Not active'
+  let failure: string | null = null
+  let resumeFailure: string | null = null
   let previous = 0
   let usingDefaultRate = false
   let flux: ReturnType<typeof createSpectralFlux> | undefined
@@ -43,6 +46,7 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink; musicIn
     timing.renderAgeMs = null
     spectrum.fill(0)
     message = 'Not active'
+    failure = resumeFailure = null
     usingDefaultRate = false
     observer?.reset()
     music?.reset()
@@ -51,12 +55,18 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink; musicIn
   function resume() {
     const current = context
     if (!current || current.state === 'closed') return
-    void current.resume().catch(() => {
-      if (current === context) message = 'Audio context could not resume. Click Resume analysis or reconnect.'
-    })
+    const failed = () => {
+      if (current === context) {
+        resumeFailure = 'Audio could not resume. Try Resume audio again, or reconnect.'
+        message = resumeFailure
+      }
+    }
+    try {
+      void current.resume().then(() => { if (current === context) resumeFailure = null }).catch(failed)
+    } catch { failed() }
   }
 
-  function prepare() {
+  function prepare(): AudioStartResult {
     stop()
     try {
       try {
@@ -68,13 +78,15 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink; musicIn
       }
       message = 'Waiting for shared audio'
       resume()
+      return { ok: true }
     } catch {
-      message = 'Web Audio is unavailable. Reconnect in desktop Chrome.'
+      message = failure = 'Web Audio could not start. Retry sharing or choose a supported local file.'
+      return { ok: false, message }
     }
   }
 
-  function startInput(makeSource: (current: AudioContext) => AudioNode, element?: HTMLAudioElement) {
-    if (!context) return false
+  function startInput(makeSource: (current: AudioContext) => AudioNode, element?: HTMLAudioElement): AudioStartResult {
+    if (!context) return { ok: false, message: failure ?? 'Audio analysis is not prepared. Reconnect to retry.' }
     try {
       const current = context
       analyser = current.createAnalyser()
@@ -136,20 +148,20 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink; musicIn
         frame = requestAnimationFrame(tick)
       }
       frame = requestAnimationFrame(tick)
-      return true
+      return { ok: true }
     } catch {
       stop()
-      message = 'Analysis could not start. Disconnect and reconnect to retry.'
-      return false
+      message = failure = 'Audio analysis could not start. Reconnect or select the file again to retry.'
+      return { ok: false, message }
     }
   }
 
   function start(stream: MediaStream) {
-    startInput((current) => current.createMediaStreamSource(stream))
+    return startInput((current) => current.createMediaStreamSource(stream))
   }
 
   function startElement(element: HTMLAudioElement) {
-    return startInput((current) => current.createMediaElementSource(element), element)
+    return startInput((current) => current.createMediaElementSource(element), element).ok
   }
 
   return {
@@ -158,6 +170,14 @@ export function createAnalysis(options?: { diagnostics?: DiagnosticSink; musicIn
     },
     musicFeatures: music?.reader, signal, timing, spectrum, prepare, start, startElement, stop, resume,
     get message() { return message },
+    get health(): AnalysisHealth {
+      if (failure) return { status: 'error', message: failure }
+      if (!context) return { status: 'idle', message: 'Audio is not active.' }
+      if (context.state === 'closed') return { status: 'error', message: 'Audio processing stopped. Reconnect or select the file again.' }
+      if (context.state !== 'running') return { status: 'suspended', message: resumeFailure ?? 'Audio is suspended by the browser. Resume to continue.' }
+      if (!analyser) return { status: 'starting', message: 'Preparing audio analysis.' }
+      return { status: 'running', message: 'Audio analysis is running.' }
+    },
     get format() {
       return { sampleRate: context?.sampleRate ?? null, fftSize: analyser?.fftSize ?? null, usingDefaultRate }
     },
