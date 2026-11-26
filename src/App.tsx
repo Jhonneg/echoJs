@@ -1,16 +1,32 @@
 import { NOCTURNE_ALL_ON, type NocturneLightingMode } from './scenes/nocturne/lighting'
-import NocturneScene from './scenes/nocturne/NocturneScene'
+// Bloom is the first landscape, so it stays in the main bundle; the others load on demand.
 import BloomScene from './scenes/bloom/BloomScene'
-import LavenderPeaksScene from './scenes/lavender-peaks/LavenderPeaksScene'
-import CrimsonHorizonScene from './scenes/crimson-horizon/CrimsonHorizonScene'
+import type NocturneSceneType from './scenes/nocturne/NocturneScene'
+import type LavenderPeaksSceneType from './scenes/lavender-peaks/LavenderPeaksScene'
+import type CrimsonHorizonSceneType from './scenes/crimson-horizon/CrimsonHorizonScene'
 import { sceneNames, type SceneId } from './scenes/scene'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { afterFirstDraw, renderHealth } from './engine/renderHealth'
+import { LandscapeBoundary, SceneStatus } from './components/SceneStatus'
 import { createLocalFile, probeAudioFile, type LocalFileState } from './audio/localFile'
 import { createAnalysis } from './audio/analysis'
 import { createTabCapture, type CaptureState } from './audio/tabCapture'
 import { AudioControls } from './components/AudioControls'
 import type { SwitchNotice } from './components/audioFeedback'
 import type { GraphicsQuality } from './engine/quality'
+
+type LoadedScenes = {
+  bloom: typeof BloomScene
+  nocturne?: typeof NocturneSceneType
+  'lavender-peaks'?: typeof LavenderPeaksSceneType
+  'crimson-horizon'?: typeof CrimsonHorizonSceneType
+}
+type DeferredScene = Exclude<SceneId, 'bloom'>
+const sceneLoaders: { [K in DeferredScene]: () => Promise<{ default: NonNullable<LoadedScenes[K]> }> } = {
+  nocturne: () => import('./scenes/nocturne/NocturneScene'),
+  'lavender-peaks': () => import('./scenes/lavender-peaks/LavenderPeaksScene'),
+  'crimson-horizon': () => import('./scenes/crimson-horizon/CrimsonHorizonScene'),
+}
 
 export default function App() {
   const [capture, setCapture] = useState<CaptureState>({
@@ -24,6 +40,56 @@ export default function App() {
   const [nocturneLightingMode, setNocturneLightingMode] = useState<NocturneLightingMode>('audio')
   const [nocturneLighting, setNocturneLighting] = useState(NOCTURNE_ALL_ON)
   const [scene, setScene] = useState<SceneId>('bloom')
+  const [loaded, setLoaded] = useState<LoadedScenes>({ bloom: BloomScene })
+  // A landscape that is still loading or failed to load; the current one stays on screen.
+  const [pending, setPending] = useState<{ id: DeferredScene, status: 'loading' | 'error' } | null>(null)
+  const sceneToken = useRef(0)
+  // Bumped to rebuild the landscape (and its canvas) after a crash or a lost context.
+  const [attempt, setAttempt] = useState(0)
+  const graphics = useSyncExternalStore(renderHealth.subscribe, renderHealth.get)
+  const requestScene = (id: SceneId) => {
+    const token = ++sceneToken.current
+    if (id === 'bloom' || loaded[id]) {
+      setPending(null)
+      setScene(id)
+      return
+    }
+    setPending({ id, status: 'loading' })
+    sceneLoaders[id]().then((module) => {
+      setLoaded((current) => ({ ...current, [id]: module.default }))
+      if (token !== sceneToken.current) return
+      setPending(null)
+      setScene(id)
+    }, () => {
+      if (token === sceneToken.current) setPending({ id, status: 'error' })
+    })
+  }
+  // Once the first landscape is up, fetch the others while the browser is idle so a later
+  // switch is immediate. Failures are ignored here and retried on demand.
+  useEffect(() => {
+    let cancelled = false
+    const preload = () => {
+      for (const id of Object.keys(sceneLoaders) as DeferredScene[]) {
+        sceneLoaders[id]().then((module) => {
+          if (!cancelled) setLoaded((current) => current[id] ? current : { ...current, [id]: module.default })
+        }, () => {})
+      }
+    }
+    // The page goes idle while the first canvas is still being set up, so wait until a
+    // landscape has actually drawn before asking for idle time.
+    let idle: number | undefined, timer: number | undefined
+    const stopWaiting = afterFirstDraw(() => {
+      if (cancelled) return
+      if (window.requestIdleCallback) idle = window.requestIdleCallback(preload, { timeout: 4000 })
+      else timer = window.setTimeout(preload, 1000)
+    })
+    return () => {
+      cancelled = true
+      stopWaiting()
+      if (idle !== undefined) window.cancelIdleCallback(idle)
+      if (timer !== undefined) clearTimeout(timer)
+    }
+  }, [])
   const [volume, setVolume] = useState(0.5)
   const localController = useRef<ReturnType<typeof createLocalFile> | null>(null)
   const [analysis] = useState(() => createAnalysis({ musicIntelligence: true }))
@@ -56,19 +122,28 @@ export default function App() {
     }
   }, [analysis])
 
+  const { nocturne: NocturneScene, 'lavender-peaks': LavenderPeaksScene, 'crimson-horizon': CrimsonHorizonScene } = loaded
+
   return (
     <>
       <main className="experience">
         <h1 className="sr-only">{sceneNames[scene]} — music visualizer</h1>
+        <LandscapeBoundary key={`${scene}:${attempt}`} name={sceneNames[scene]} onRestart={() => setAttempt((n) => n + 1)}>
         {scene === 'bloom'
           ? <BloomScene playing={source === 'file' ? local.status === 'playing' : capture.status === 'connected' && bloomFloating} musicFeatures={analysis.musicFeatures!} onRenderTime={analysis.recordRenderTime} reactivity={reactivity} quality={quality} />
           : scene === 'lavender-peaks'
-            ? <LavenderPeaksScene quality={quality} musicFeatures={analysis.musicFeatures!} reactivity={reactivity} />
+            ? LavenderPeaksScene && <LavenderPeaksScene quality={quality} musicFeatures={analysis.musicFeatures!} reactivity={reactivity} />
             : scene === 'nocturne'
-              ? <NocturneScene musicFeatures={analysis.musicFeatures!} quality={quality} lighting={nocturneLighting} lightingMode={nocturneLightingMode} reactivity={reactivity} />
-              : <CrimsonHorizonScene pilot={analysis.musicFeatures ? { reader: analysis.musicFeatures, profile: 'candidate' } : undefined} quality={quality} signal={analysis.signal} reactivity={reactivity} />}
+              ? NocturneScene && <NocturneScene musicFeatures={analysis.musicFeatures!} quality={quality} lighting={nocturneLighting} lightingMode={nocturneLightingMode} reactivity={reactivity} />
+              : CrimsonHorizonScene && <CrimsonHorizonScene pilot={analysis.musicFeatures ? { reader: analysis.musicFeatures, profile: 'candidate' } : undefined} quality={quality} signal={analysis.signal} reactivity={reactivity} />}
+        </LandscapeBoundary>
+        <SceneStatus pending={pending && { name: sceneNames[pending.id], status: pending.status }}
+          graphicsLost={graphics.status === 'lost'} lossEpisode={graphics.episode} sceneName={sceneNames[scene]}
+          onRetryLoad={() => { if (pending) requestScene(pending.id) }}
+          onDismissLoad={() => { sceneToken.current++; setPending(null) }}
+          onRestart={() => setAttempt((n) => n + 1)} />
         <AudioControls bloomFloating={bloomFloating} onBloomFloating={setBloomFloating} source={source} capture={capture} local={local} analysis={analysis}
-          scene={scene} onScene={setScene}
+          scene={scene} requestedScene={pending?.id ?? null} onScene={requestScene}
           nocturneLightingMode={nocturneLightingMode} onNocturneLightingMode={setNocturneLightingMode}
           nocturneLighting={nocturneLighting} onNocturneLighting={setNocturneLighting}
           volume={volume}

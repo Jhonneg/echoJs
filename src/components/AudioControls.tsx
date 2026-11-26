@@ -27,6 +27,8 @@ type Props = {
   notice: SwitchNotice | null;
   quality: GraphicsQuality;
   scene: SceneId;
+  // A landscape still loading (or that failed); the select shows the user's choice.
+  requestedScene: SceneId | null;
   onScene(value: SceneId): void;
   onQuality(value: GraphicsQuality): void;
   onShare(): void;
@@ -181,7 +183,7 @@ export function AudioControls(props: Props) {
             </label>
             <select
               id="scene-select"
-              value={props.scene}
+              value={props.requestedScene ?? props.scene}
               onChange={(event) =>
                 props.onScene(event.currentTarget.value as SceneId)
               }

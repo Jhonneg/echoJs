@@ -1,5 +1,16 @@
 # ECHO — current checkpoint
 
+## APP03 — IMPLEMENTED / CONTROLLED CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner "approve" authorizes the APP03 plan. Changes: App (on-demand Nocturne/Lavender/Crimson with idle preload after first draw, latest-wins switching, LandscapeBoundary, restart), AudioControls (select shows pending choice), LandscapeCanvas (context loss/restore + first-draw signal), new `engine/renderHealth.ts`, new `components/SceneStatus.tsx`, CSS. No scene, analysis, adapter, quality or dependency changes.
+- [Evidence and measurements](evidence/application/app03/README.md): initial transfer 365.8→341.5 kB; entry/switch times and frame cadence unchanged; one live WebGL context and identical resource counts after 24 switches; audio continuous. Recorded (unchanged, out of scope) one deliberate analysis reset during rapid switching in both baseline and after.
+- PASS 332 tests, lint, typecheck/build (chunk warning remains), whitespace, `verify-app03.mjs`, `verify-app02.mjs` rerun. Not run: real GPU reset/network failure, crash-boundary trigger, native performance/other browsers (APP04). APP02+APP03 uncommitted.
+- Stop for owner loading/recovery review. APP04 unstarted. Proposed commits after authorization: APP02 `feat(app): safer source switching, playback access and accessible status`; APP03 `feat(app): load landscapes on demand and recover lost graphics`.
+
+## APP02 — OWNER APPROVED ("proceed"); APP03 PLAN PENDING — 2026-11-26
+
+- Owner says "proceed" after the APP02 report: record approval and authorization to plan APP03 only. Native picker/audibility, screen-reader speech, browser zoom and device checks remain manual (APP04). APP02 work is uncommitted; commit needs separate authorization. APP03 plan presented for approval; APP03 unstarted.
+
 ## APP02 — IMPLEMENTED / CONTROLLED CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
 
 - Owner "approve" authorizes the presented APP02 plan. Production changes: App, tabCapture, localFile, AudioControls, audioFeedback, index.css; fallback strings only in the four scene files (16 changed lines, browser-verified to be fallback text only). Landscape visuals, music mapping, MI/analysis, toolbar design and dependencies unchanged.

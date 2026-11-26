@@ -2,7 +2,7 @@
 
 ## Current checkpoint — Bloom 3D water visually approved (2026-11-24)
 
-Owner approved the3°orthographic proposal. Focused water reconstruction and controlled checks now pass; [implementation/evidence](BLOOM_3D_WATER_RECONSTRUCTION.md) is visually approved by the owner (“looks good now”). Preserve this result and stop; native performance/real-song feel remain unverified. Other Bloom content, MI/other landscapes and APP01 sources are preserved; BL09 stays skipped. Water committed (`db11cb2`). APP01 owner approved 2026-11-26; APP02 implemented, owner review pending; APP03 unstarted.
+Owner approved the3°orthographic proposal. Focused water reconstruction and controlled checks now pass; [implementation/evidence](BLOOM_3D_WATER_RECONSTRUCTION.md) is visually approved by the owner (“looks good now”). Preserve this result and stop; native performance/real-song feel remain unverified. Other Bloom content, MI/other landscapes and APP01 sources are preserved; BL09 stays skipped. Water committed (`db11cb2`). APP01 owner approved 2026-11-26; APP02 owner approved; APP03 implemented, owner review pending; APP04 unstarted.
 
 Current order is intentional: validate external audio before investing in graphics. Plan/approve each task separately; mark actual status only in PROGRESS.md. Each gate requires owner sign-off. If a required check cannot run, record a blocker; do not mark the gate passed or silently expand scope.
 

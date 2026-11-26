@@ -80,3 +80,10 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
   .audio-controls { position: fixed; left: max(var(--scene-gutter), env(safe-area-inset-left)); top: max(var(--scene-gutter), env(safe-area-inset-top)); bottom: auto; max-height: calc(100dvh - var(--scene-gutter) - var(--scene-gutter)); }
 }
 .experience-controls[data-cramped] .audio-controls { position: fixed; left: max(var(--scene-gutter), env(safe-area-inset-left)); top: max(var(--scene-gutter), env(safe-area-inset-top)); bottom: auto; max-height: calc(100dvh - var(--scene-gutter) - var(--scene-gutter)); }
+
+/* APP03: landscape loading / failure / graphics status, separate from audio status. */
+.scene-status { position: absolute; z-index: 3; top: max(var(--scene-gutter), env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .6rem; width: max-content; max-width: calc(100vw - var(--scene-gutter) - var(--scene-gutter)); padding: .5rem .75rem; border: 1px solid #65546f; border-radius: .5rem; background: rgb(18 19 31 / 94%); color: #eee5f0; font-size: .8rem; }
+.scene-status p { margin: 0; flex: 1 1 14rem; overflow-wrap: anywhere; }
+.scene-status button { font-size: .8rem; }
+.scene-status[data-tone="error"] { border-color: #c69ab7; }
+.scene-status-centered { top: 40%; }

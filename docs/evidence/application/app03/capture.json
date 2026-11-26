@@ -1,0 +1,309 @@
+{
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.WebGLRenderer: WEBGL_lose_context extension not supported.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "screenshots": [
+    {
+      "name": "loading-held",
+      "row": {
+        "stage": "bloom-stage",
+        "select": "nocturne",
+        "status": "Loading Nocturne…",
+        "tone": "neutral",
+        "buttons": [],
+        "polite": "Loading Nocturne…",
+        "alert": "",
+        "audio": {
+          "time": 0.54,
+          "paused": false
+        },
+        "live": 1,
+        "chunks": []
+      }
+    },
+    {
+      "name": "load-failed",
+      "row": {
+        "stage": "bloom-stage",
+        "select": "nocturne",
+        "status": "Nocturne couldn’t load. Check your connection and retry; audio keeps playing.",
+        "tone": "error",
+        "buttons": [
+          "Retry",
+          "Stay on Bloom"
+        ],
+        "polite": "",
+        "alert": "Nocturne couldn’t load. Check your connection and retry; audio keeps playing.",
+        "audio": {
+          "time": 1.52,
+          "paused": false
+        },
+        "live": 1,
+        "chunks": [
+          {
+            "name": "NocturneScene",
+            "start": 511
+          }
+        ]
+      }
+    },
+    {
+      "name": "graphics-restoring",
+      "row": {
+        "stage": "bloom-stage",
+        "select": "bloom",
+        "status": "Graphics were interrupted — restoring…",
+        "tone": "neutral",
+        "buttons": [],
+        "polite": "Graphics were interrupted — restoring…",
+        "alert": "",
+        "audio": {
+          "time": 4.33,
+          "paused": false
+        },
+        "live": 0,
+        "chunks": [
+          {
+            "name": "NocturneScene",
+            "start": 511
+          },
+          {
+            "name": "LavenderPeaksScene",
+            "start": 511
+          },
+          {
+            "name": "CrimsonHorizonScene",
+            "start": 512
+          },
+          {
+            "name": "NocturneScene",
+            "start": 3102
+          }
+        ]
+      }
+    },
+    {
+      "name": "graphics-restored",
+      "row": {
+        "stage": "bloom-stage",
+        "select": "bloom",
+        "status": null,
+        "tone": null,
+        "buttons": [],
+        "polite": "",
+        "alert": "",
+        "audio": {
+          "time": 5.61,
+          "paused": false
+        },
+        "live": 1,
+        "chunks": [
+          {
+            "name": "NocturneScene",
+            "start": 511
+          },
+          {
+            "name": "LavenderPeaksScene",
+            "start": 511
+          },
+          {
+            "name": "CrimsonHorizonScene",
+            "start": 512
+          },
+          {
+            "name": "NocturneScene",
+            "start": 3102
+          }
+        ]
+      }
+    },
+    {
+      "name": "graphics-stuck",
+      "row": {
+        "stage": "bloom-stage",
+        "select": "bloom",
+        "status": "Bloom graphics didn’t come back. Restart the landscape; audio keeps playing.",
+        "tone": "error",
+        "buttons": [
+          "Restart landscape"
+        ],
+        "polite": "",
+        "alert": "Bloom graphics didn’t come back. Restart the landscape; audio keeps playing.",
+        "audio": {
+          "time": 9.94,
+          "paused": false
+        },
+        "live": 0,
+        "chunks": [
+          {
+            "name": "NocturneScene",
+            "start": 511
+          },
+          {
+            "name": "LavenderPeaksScene",
+            "start": 511
+          },
+          {
+            "name": "CrimsonHorizonScene",
+            "start": 512
+          },
+          {
+            "name": "NocturneScene",
+            "start": 3102
+          }
+        ]
+      }
+    },
+    {
+      "name": "graphics-restarted",
+      "row": {
+        "stage": "bloom-stage",
+        "select": "bloom",
+        "status": null,
+        "tone": null,
+        "buttons": [],
+        "polite": "",
+        "alert": "",
+        "audio": {
+          "time": 10.71,
+          "paused": false
+        },
+        "live": 1,
+        "chunks": [
+          {
+            "name": "NocturneScene",
+            "start": 511
+          },
+          {
+            "name": "LavenderPeaksScene",
+            "start": 511
+          },
+          {
+            "name": "CrimsonHorizonScene",
+            "start": 512
+          },
+          {
+            "name": "NocturneScene",
+            "start": 3102
+          }
+        ]
+      }
+    },
+    {
+      "name": "restored-crimson-horizon",
+      "row": {
+        "stage": "crimson-stage",
+        "select": "crimson-horizon",
+        "status": null,
+        "tone": null,
+        "buttons": [],
+        "polite": "",
+        "alert": "",
+        "audio": {
+          "time": 12.29,
+          "paused": false
+        },
+        "live": 1,
+        "chunks": [
+          {
+            "name": "NocturneScene",
+            "start": 511
+          },
+          {
+            "name": "LavenderPeaksScene",
+            "start": 511
+          },
+          {
+            "name": "CrimsonHorizonScene",
+            "start": 512
+          },
+          {
+            "name": "NocturneScene",
+            "start": 3102
+          }
+        ]
+      }
+    },
+    {
+      "name": "restored-lavender-peaks",
+      "row": {
+        "stage": "lavender-stage",
+        "select": "lavender-peaks",
+        "status": null,
+        "tone": null,
+        "buttons": [],
+        "polite": "",
+        "alert": "",
+        "audio": {
+          "time": 13.19,
+          "paused": false
+        },
+        "live": 1,
+        "chunks": [
+          {
+            "name": "NocturneScene",
+            "start": 511
+          },
+          {
+            "name": "LavenderPeaksScene",
+            "start": 511
+          },
+          {
+            "name": "CrimsonHorizonScene",
+            "start": 512
+          },
+          {
+            "name": "NocturneScene",
+            "start": 3102
+          },
+          {
+            "name": "LavenderPeaksScene",
+            "start": 13124
+          }
+        ]
+      }
+    }
+  ],
+  "checks": [
+    "Cold load: Bloom drawing at 637ms; other landscape chunks requested afterwards (NocturneScene@698ms, LavenderPeaksScene@699ms, CrimsonHorizonScene@700ms).",
+    "Held chunk: \"Loading Nocturne…\" announced politely, Bloom stays on screen, select shows Nocturne, audio keeps playing.",
+    "Failed chunk: alert \"Nocturne couldn’t load\" with Retry / Stay on Bloom; Retry refetches and shows Nocturne; audio uninterrupted.",
+    "Failed chunk then \"Stay on Nocturne\": message clears, select returns to Nocturne.",
+    "Slow Crimson load arriving after the user chose Bloom does not switch away from Bloom.",
+    "Context lost → \"Graphics were interrupted — restoring…\"; restored context clears the message and Bloom draws again.",
+    "Context not restored: Restart offered after 4.0s (alert); Restart rebuilds the canvas with one live context; audio uninterrupted.",
+    "Context loss/restore also clears on Crimson Horizon and Lavender Peaks."
+  ],
+  "source": "Production build, headless Brave. Chunk delay/failure via CDP interception; context loss via WEBGL_lose_context. Generated WAV only.",
+  "coldChunks": [
+    {
+      "name": "NocturneScene",
+      "start": 698
+    },
+    {
+      "name": "LavenderPeaksScene",
+      "start": 699
+    },
+    {
+      "name": "CrimsonHorizonScene",
+      "start": 700
+    }
+  ],
+  "firstFrameMs": 637,
+  "sceneFilesChanged": [
+    "src/scenes/bloom/BloomScene.tsx",
+    "src/scenes/crimson-horizon/CrimsonHorizonScene.tsx",
+    "src/scenes/lavender-peaks/LavenderPeaksScene.tsx",
+    "src/scenes/nocturne/NocturneScene.tsx"
+  ],
+  "unexpectedErrors": [],
+  "status": "APP03 controlled browser checks PASS"
+}

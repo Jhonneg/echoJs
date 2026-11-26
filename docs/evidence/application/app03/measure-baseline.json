@@ -1,0 +1,164 @@
+{
+  "label": "baseline",
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "source": "Production build, headless Brave/ANGLE, generated WAV only. Relative comparison; not native performance.",
+  "coldEntryMs": {
+    "samples": [
+      154,
+      98,
+      98
+    ],
+    "median": 98
+  },
+  "initialBytes": 365843,
+  "longestSwitchFrameMs": {
+    "median": 17,
+    "max": 17,
+    "over250": 0,
+    "of": 12
+  },
+  "switchMs": {
+    "first": {
+      "nocturne": 42,
+      "lavender-peaks": 29,
+      "crimson-horizon": 30,
+      "bloom": 29
+    },
+    "later": {
+      "nocturne": 30,
+      "lavender-peaks": 29,
+      "crimson-horizon": 30,
+      "bloom": 31
+    }
+  },
+  "continuity": {
+    "switches": 24,
+    "audioBefore": 1.5,
+    "audioAfter": 6.42,
+    "paused": false,
+    "sessionBefore": 4,
+    "sessionAfter": 5,
+    "readerStatus": "active",
+    "sessionResets": 1
+  },
+  "webgl": {
+    "contextsCreated": 37,
+    "liveBefore": [
+      {
+        "buffer": 30,
+        "texture": 6,
+        "program": 10,
+        "framebuffer": 4
+      }
+    ],
+    "liveAfter": [
+      {
+        "buffer": 30,
+        "texture": 6,
+        "program": 10,
+        "framebuffer": 4
+      }
+    ]
+  },
+  "quality": {
+    "nocturne": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "lavender-peaks": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "crimson-horizon": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "bloom": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "cadence": {
+    "nocturne": {
+      "medianMs": 16.7,
+      "p95Ms": 16.7,
+      "maxMs": 16.8
+    },
+    "lavender-peaks": {
+      "medianMs": 16.7,
+      "p95Ms": 16.7,
+      "maxMs": 16.8
+    },
+    "crimson-horizon": {
+      "medianMs": 16.7,
+      "p95Ms": 16.8,
+      "maxMs": 16.8
+    },
+    "bloom": {
+      "medianMs": 16.7,
+      "p95Ms": 16.8,
+      "maxMs": 16.8
+    }
+  },
+  "assets": {
+    "index-B357k48K.js": 1301890,
+    "index-BZ0o1CXM.css": 8537,
+    "terrain.worker-CetnzPMd.js": 2420
+  },
+  "status": "measured"
+}

@@ -1,10 +1,11 @@
-import { useLayoutEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useLayoutEffect, useRef, type ReactNode } from 'react'
 import { Canvas, useFrame, useThree, type CanvasProps } from '@react-three/fiber'
 import type { AudioSignal } from '../audio/signal'
 import { QUALITY_DPR, type GraphicsQuality } from './quality'
 import { createBassMotion, resetBassMotion } from './bassMotion'
 import { updateCameraTilt } from './cameraTilt'
 import { bassMotionVariant } from './bassMotionVariant'
+import { markDrawn, renderHealth } from './renderHealth'
 
 type MotionProps = { signal: AudioSignal, reactivity: number, reducedMotion: boolean }
 type TiltInput = { cameraTilt: false, signal?: AudioSignal } | { cameraTilt?: true, signal: AudioSignal }
@@ -28,11 +29,39 @@ function CameraTilt({ signal, reactivity, reducedMotion }: MotionProps) {
   return null
 }
 
+// Report WebGL context loss/restoration to the shell. Listeners are removed before
+// R3F disposes the renderer on unmount, so its deliberate context release is not reported.
+function RenderHealthProbe() {
+  const gl = useThree(state => state.gl)
+  useEffect(() => {
+    const canvas = gl.domElement
+    const lost = (event: Event) => { event.preventDefault(); renderHealth.set('lost') }
+    const restored = () => renderHealth.set('ok')
+    canvas.addEventListener('webglcontextlost', lost)
+    canvas.addEventListener('webglcontextrestored', restored)
+    renderHealth.set(gl.getContext().isContextLost() ? 'lost' : 'ok')
+    return () => {
+      canvas.removeEventListener('webglcontextlost', lost)
+      canvas.removeEventListener('webglcontextrestored', restored)
+      renderHealth.set('ok')
+    }
+  }, [gl])
+  // useFrame runs before R3F renders; the next animation frame follows that render.
+  const reported = useRef(false)
+  useFrame(() => {
+    if (reported.current) return
+    reported.current = true
+    requestAnimationFrame(markDrawn)
+  })
+  return null
+}
+
 // All landscapes use this host so shared camera behavior is installed once.
 export function LandscapeCanvas({ signal, reactivity, reducedMotion, quality, children, fallback, frameloop = 'always', cameraTilt = true, projection = 'orthographic', camera }:
   Omit<MotionProps, 'signal'> & TiltInput & { quality: GraphicsQuality, children: ReactNode, fallback: ReactNode, frameloop?: 'always' | 'demand', projection?: 'orthographic' | 'perspective', camera?: CanvasProps['camera'] }) {
   return <Canvas orthographic={projection === 'orthographic'} camera={camera ?? { position: [0, 0, 20], zoom: 80, near: 0.1, far: 60 }}
     frameloop={frameloop} dpr={QUALITY_DPR[quality]} gl={{ antialias: true }} fallback={fallback}>
+    <RenderHealthProbe />
     {cameraTilt && signal && <CameraTilt signal={signal} reactivity={reactivity} reducedMotion={reducedMotion} />}
     {children}
   </Canvas>
