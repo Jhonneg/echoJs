@@ -12,11 +12,12 @@ import { buildRange, rangeCells, rangeFragmentShader, rangeVertexShader } from '
 import { CURTAINS, SKY_DEFINES, auroraGain, curtainPhases, skyFragmentShader, skyVertexShader } from './sky'
 import { MONOLITH_DEFINES, crystalFragmentShader, crystalPose, crystalVertexShader, monolithFragmentShader, monolithHover, monolithVertexShader } from './monolith'
 import { RING_CENTER, WATER_SHADER, reflectionSize, waterPhases } from './water'
+import { RIVERS, riverPath, riverPhases } from './rivers'
 
 // Bloom rebuild from the Resonant Monolith reference. BR1 placed everything from measured
 // screen fractions; BR2 made the ranges real 3D terrain; BR3 added the sky dome and aurora,
-// whose light also falls on the ranges; BR4 added the stone monolith and crystals; BR5 adds
-// the reflective lake.
+// whose light also falls on the ranges; BR4 added the stone monolith and crystals; BR5 added
+// the reflective lake; BR6 adds glowing rivers on the terrain.
 
 const SKY_RADIUS = 450
 const SKY_TOP = '#3d3a68'
@@ -27,8 +28,9 @@ const SKY_TOP = '#3d3a68'
 // frame (phases are recomputed from the clock, so nothing carries over between mounts).
 type AuroraUniforms = { uPhase: { value: Vector4 }, uAuroraGain: { value: number } }
 const AURORA: AuroraUniforms = { uPhase: { value: new Vector4() }, uAuroraGain: { value: 1 } }
-// Water wave/ring phases, shared the same way.
+// Water wave/ring phases and river flow phases, shared the same way.
 const WATER_PHASE = { value: new Vector4() }
+const RIVER_PHASE = { value: new Vector3() }
 
 function FixedCamera() {
   const camera = useThree(state => state.camera)
@@ -60,12 +62,20 @@ function Sky({ quality, aurora }: { quality: GraphicsQuality, aurora: AuroraUnif
   </mesh>
 }
 
+// River paths and colours for the mountain shader (Low drops rivers listed last).
+const riverUniforms = () => ({
+  uRiverPts: { value: RIVERS.flatMap(r => riverPath(r).map(([x, y]) => new Vector2(x, y))) },
+  uRiverColor: { value: RIVERS.map(r => new Color(r.color)) },
+  uRiverStrength: { value: new Vector3(...RIVERS.map(r => r.strength)) },
+  uRiverPhase: RIVER_PHASE,
+})
+
 // Per-range material with that range's snow line and mist depth. Identical shader source, so
 // three.js compiles one program for all five.
 function useRangeMaterial(quality: GraphicsQuality, snowLine: number, mistHeight: number, aurora: AuroraUniforms) {
   const material = useMemo(() => new ShaderMaterial({
     vertexShader: rangeVertexShader, fragmentShader: rangeFragmentShader,
-    defines: { ...SKY_DEFINES, OCTAVES: quality === 'low' ? 3 : 5 },
+    defines: { ...SKY_DEFINES, OCTAVES: quality === 'low' ? 3 : 5, RIVER_COUNT: quality === 'low' ? RIVERS.filter(r => r.lowQuality).length : RIVERS.length },
     uniforms: {
       uRockDark: { value: new Color('#33283c') }, uRockLit: { value: new Color('#685571') },
       uSnow: { value: new Color('#f4f0fa') }, uHaze: { value: new Color('#a897c0') },
@@ -74,6 +84,7 @@ function useRangeMaterial(quality: GraphicsQuality, snowLine: number, mistHeight
       uSnowLine: { value: snowLine }, uHazeNear: { value: 20 }, uHazeFar: { value: 220 }, uHazeMax: { value: 0.5 }, uMistHeight: { value: mistHeight },
       uAuroraLeft: { value: new Color(CURTAINS[0].color) }, uAuroraRight: { value: new Color(CURTAINS[3].color) },
       uAuroraGain: aurora.uAuroraGain,
+      ...riverUniforms(),
     },
   }), [quality, snowLine, mistHeight, aurora])
   useEffect(() => () => material.dispose(), [material])
@@ -181,6 +192,8 @@ function Composition({ onRenderTime, quality, reducedMotion }: { onRenderTime: (
     AURORA.uAuroraGain.value = auroraGain(phases)
     const water = waterPhases(state.clock.elapsedTime, reducedMotion)
     WATER_PHASE.value.set(water[0], water[1], water[2], water[3])
+    const rivers = riverPhases(state.clock.elapsedTime, reducedMotion)
+    RIVER_PHASE.value.set(rivers[0], rivers[1], rivers[2])
     onRenderTime(performance.now())
   })
   return <>

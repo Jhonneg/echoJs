@@ -5,6 +5,7 @@
 // Pure maths (no three.js) so it can be tested; the shader strings live here too.
 import type { GraphicsQuality } from '../../engine/quality'
 import { CAMERA_HEIGHT, CAMERA_Z, heightForScreen, rangeTop, xForScreen, type RangeLayer } from './composition.ts'
+import { riverGlsl } from './rivers.ts'
 
 export const RANGE_REACH = 1.7 // |u| covered, beyond the 16:9 frame for ultra-wide screens
 
@@ -54,29 +55,40 @@ export interface RangeMesh {
   rows: number // nt + 1
 }
 
+// Column u of a range: crest height, line-of-sight slope to it, world x and face steepness.
+export function rangeColumn(layer: RangeLayer, u: number) {
+  const d = layer.distance
+  const crest = heightForScreen(Math.min(crestFraction(layer, u), 0.661), d)
+  return {
+    crest, sight: (crest - CAMERA_HEIGHT) / d, x: xForScreen((u + 1) / 2, d),
+    steep: 0.75 + 0.5 * ridged(u * 3 + layer.seed, 11.3, 2), // some faces drop faster
+  }
+}
+
+// Surface point at column u and down-slope position t (0 = crest, 1 = front edge under water).
+export function rangePoint(layer: RangeLayer, column: ReturnType<typeof rangeColumn>, u: number, t: number) {
+  const distance = layer.distance * (1 - layer.band * t)
+  // Ridges run down the slope: fine across x, stretched along t.
+  const ridge = ridged(u * 26 + layer.seed * 3.1, t * 2.4 + layer.seed, 4)
+  const fall = Math.min(1, Math.pow(t, 0.85) * column.steep)
+  // Sideways ruggedness turns faces steep (rock) instead of uniformly upward (snow).
+  const rugged = ridged(u * 64 + layer.seed * 5.7, t * 5 + layer.seed * 2.3, 3)
+  const g = (1 - fall * (1 - 0.6 * ridge)) * (1 - 0.22 * Math.sqrt(t) * (1 - rugged)) // ≤ 1, = 1 at the crest
+  const sink = smoothstep(0.72, 1, t) // the front edge runs under the water
+  const y = (CAMERA_HEIGHT + distance * column.sight * g) * (1 - sink) - 1.5 * sink
+  return { x: column.x, y, z: CAMERA_Z - distance }
+}
+
 export function buildRange(layer: RangeLayer, cells: [number, number]): RangeMesh {
   const [nx, nt] = cells, columns = nx + 1, rows = nt + 1
   const positions = new Float32Array(columns * rows * 3), rise = new Float32Array(columns * rows)
-  const d = layer.distance
   for (let i = 0; i < columns; i++) {
     const u = -RANGE_REACH + (2 * RANGE_REACH * i) / nx
-    const crest = heightForScreen(Math.min(crestFraction(layer, u), 0.661), d)
-    const sight = (crest - CAMERA_HEIGHT) / d // slope of the line of sight to the crest
-    const x = xForScreen((u + 1) / 2, d)
-    const steep = 0.75 + 0.5 * ridged(u * 3 + layer.seed, 11.3, 2) // some faces drop faster
+    const column = rangeColumn(layer, u)
     for (let j = 0; j < rows; j++) {
-      const t = j / nt, distance = d * (1 - layer.band * t)
-      // Ridges run down the slope: fine across x, stretched along t.
-      const ridge = ridged(u * 26 + layer.seed * 3.1, t * 2.4 + layer.seed, 4)
-      const fall = Math.min(1, Math.pow(t, 0.85) * steep)
-      // Sideways ruggedness turns faces steep (rock) instead of uniformly upward (snow).
-      const rugged = ridged(u * 64 + layer.seed * 5.7, t * 5 + layer.seed * 2.3, 3)
-      const g = (1 - fall * (1 - 0.6 * ridge)) * (1 - 0.22 * Math.sqrt(t) * (1 - rugged)) // ≤ 1, = 1 at the crest
-      const sink = smoothstep(0.72, 1, t) // the front edge runs under the water
-      const y = (CAMERA_HEIGHT + distance * sight * g) * (1 - sink) - 1.5 * sink
-      const k = i * rows + j
-      positions[k * 3] = x; positions[k * 3 + 1] = y; positions[k * 3 + 2] = CAMERA_Z - distance
-      rise[k] = crest > 0 ? y / crest : 0
+      const point = rangePoint(layer, column, u, j / nt), k = i * rows + j
+      positions[k * 3] = point.x; positions[k * 3 + 1] = point.y; positions[k * 3 + 2] = point.z
+      rise[k] = column.crest > 0 ? point.y / column.crest : 0
     }
   }
   const indices = new Uint32Array(nx * nt * 6)
@@ -110,6 +122,7 @@ uniform vec3 uRockDark, uRockLit, uSnow, uHaze, uSkyFill, uGroundFill, uKeyColor
 uniform float uSnowLine, uHazeNear, uHazeFar, uHazeMax, uMistHeight;
 uniform vec3 uAuroraLeft, uAuroraRight;
 uniform float uAuroraGain;
+${riverGlsl}
 varying vec3 vNormal;
 varying vec3 vWorld;
 varying float vRise;
@@ -149,6 +162,16 @@ void main() {
   float fx = 0.5 + 0.5 * vWorld.x / (max(1.0, ${CAMERA_Z.toFixed(3)} - vWorld.z) * cos(PITCH) * TAN_HALF_FOV * REF_ASPECT);
   vec3 aurora = mix(uAuroraLeft, uAuroraRight, smoothstep(0.3, 0.72, fx));
   lit += aurora * (0.025 + 0.14 * snow + 0.1 * mist) * uAuroraGain;
+  // Rivers (BR6): screen position from world position with the fixed camera, so the mirrored
+  // pass puts them on the same terrain. They glow through the mist, a little dimmed.
+  vec3 rel = vWorld - vec3(0.0, ${CAMERA_HEIGHT.toFixed(3)}, ${CAMERA_Z.toFixed(3)});
+  float cp = cos(PITCH), sp = sin(PITCH);
+  float depth = rel.y * sp - rel.z * cp;
+  vec2 f = vec2(rel.x / depth / (TAN_HALF_FOV * REF_ASPECT), (rel.y * cp + rel.z * sp) / depth / TAN_HALF_FOV);
+  f = vec2((f.x + 1.0) * 0.5, (1.0 - f.y) * 0.5);
+  // Embedded in the valleys: dimmer on steep faces, broken up by the surface detail.
+  float embed = (0.45 + 0.55 * smoothstep(0.15, 0.65, n.y)) * (0.65 + 0.35 * smoothstep(0.3, 0.7, detail));
+  lit += riverGlow(f) * embed * (1.0 - 0.45 * mist);
   gl_FragColor = vec4(lit, 1.0);
   #include <colorspace_fragment>
 }`

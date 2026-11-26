@@ -627,3 +627,7 @@ Owner chose full 3D (over painted 2.5D cards or a hybrid) for real light, snow, 
 ## 2026-11-26 — Bloom sky is a direction-based dome sharing aurora state with the ranges
 
 The sky and aurora are computed from the world view direction (mirrored below the horizon), so BR5 reflections can render a correct mirrored sky without another pass. Curtain placement uses the reference's 16:9 screen fractions. Aurora phases and brightness live in one module-level uniform set shared by the sky and range materials, because only one Bloom exists at a time and React's lint rules forbid per-frame mutation of render-created values. Phases wrap per curtain, so motion loops seamlessly; reduced motion holds a fixed pose.
+
+## 2026-11-26 — Bloom rivers are painted by the mountain shader, not separate meshes
+
+Planned ribbon meshes on single ranges were mostly hidden: flat ribbons were cut by the sloping terrain, and each range shows only a thin strip above the next. The mountain shader instead maps each fragment's world position to the reference's screen fractions with the fixed camera and adds glow near the river paths. Rivers then flow across ranges with natural occlusion and reflect correctly in the BR5 pass. Trade-off: they follow screen paths rather than individual valleys, and all terrain fragments pay the path-distance cost.

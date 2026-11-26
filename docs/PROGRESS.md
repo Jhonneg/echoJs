@@ -1,5 +1,15 @@
 # ECHO — current checkpoint
 
+## Bloom rebuild BR6 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-26
+
+- Owner asks to commit BR6. BR6 committed on main; not pushed. BR7 (framing, quality, performance) not planned or started; awaiting owner direction. Real-GPU performance of Standard (reflection + river shading; one 33.5 ms headless frame) remains unverified.
+
+## Bloom rebuild BR6 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner approved the BR6 plan. **Deviation:** the planned ribbon meshes were mostly hidden (cut by sloping ground, thin visible bands per range), so rivers are painted onto the terrain by the mountain shader from screen-fraction paths (`src/scenes/bloom/rivers.ts`; `ranges.ts` gains shared `rangeColumn`/`rangePoint` helpers and river glow).
+- [Evidence](evidence/bloom/rebuild/br6/README.md): three drafts. PASS 306 tests (5 new), lint/typecheck/build, whitespace, BR6 capture (0 errors, mirror held, reduced motion still), APP02/APP03 browser checks (committed APP evidence restored).
+- Cost: triangles unchanged; extra shading. One 33.5 ms frame in 30 s on Standard (headless; p95 16.8 ms); real-GPU impact unverified. Known: rivers follow screen paths, not individual valleys; pink softer than the reference. Stop for review. BR6 uncommitted.
+
 ## Bloom rebuild BR5 — OWNER APPROVED ("commit and proceed"); BR6 PLAN PENDING — 2026-11-26
 
 - Owner approves BR5 and asks to commit and continue. No owner report on native-GPU performance yet; the reflection cost remains unverified on real hardware. BR5 committed on main; not pushed. BR6 (glowing rivers) plan presented; BR6 unstarted.
