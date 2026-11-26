@@ -121,12 +121,13 @@ try{
  assert.ok(bundle.includes('stopped displaying'));report.checks.push('Production bundle has no "Bloom menu"/"scene menu"/old Lavender text; new fallback text present.')
 
  // Scope: only the files APP02 planned to touch differ from HEAD.
- const changed=execFileSync('git',['diff','--name-only','HEAD','--','src']).toString().trim().split('\n').filter(Boolean)
+ // Bloom is being rebuilt (BR1+); these scope checks cover APP-phase files only.
+ const changed=execFileSync('git',['diff','--name-only','HEAD','--','src',':(exclude)src/scenes/bloom',':(exclude)src/components/BloomDebugControls.tsx']).toString().trim().split('\n').filter(Boolean)
  const allowed=['src/App.tsx','src/audio/localFile.ts','src/audio/tabCapture.ts','src/components/AudioControls.tsx','src/components/audioFeedback.ts','src/index.css','src/scenes/bloom/BloomScene.tsx','src/scenes/crimson-horizon/CrimsonHorizonScene.tsx','src/scenes/lavender-peaks/LavenderPeaksScene.tsx','src/scenes/nocturne/NocturneScene.tsx',
   // APP03 builds on uncommitted APP02; its files are allowed here too.
   'src/engine/LandscapeCanvas.tsx','src/engine/renderHealth.ts','src/components/SceneStatus.tsx']
  for(const f of changed)assert.ok(allowed.includes(f),'unexpected change '+f);report.changedSources=changed
- const sceneDiff=execFileSync('git',['diff','-U0','HEAD','--','src/scenes']).toString().split('\n').filter(l=>/^[+-][^+-]/.test(l))
+ const sceneDiff=execFileSync('git',['diff','-U0','HEAD','--','src/scenes',':(exclude)src/scenes/bloom',':(exclude)src/components/BloomDebugControls.tsx']).toString().split('\n').filter(l=>/^[+-][^+-]/.test(l))
  assert.ok(sceneDiff.every(l=>l.includes('-fallback">')),'scene change outside fallback text');report.sceneLinesChanged=sceneDiff.length
  assert.deepEqual(report.errors,[]);report.status='APP02 controlled browser checks PASS';console.log(report.status)
 }catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill()}

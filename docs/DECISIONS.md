@@ -615,3 +615,11 @@ Bloom (first view) stays in the main bundle; the other three load as chunks, pre
 ## 2026-11-26 — APP04 qualifies Chromium automatically and leaves other engines to owner checks
 
 Owner chose "approve without download", so Firefox/WebKit were not installed; their rows stay MANUAL in the support matrix rather than being inferred from Chromium. Only one production change: the unsupported-sharing message now distinguishes an insecure page from a browser with no tab sharing (phones), instead of telling phone users to use localhost/HTTPS. The video-only (Firefox/Safari-style) message is left unchanged until a real browser confirms the behaviour. A forced page freeze pauses media by browser policy; the app reports it accurately and Play recovers, so no lifecycle code was added.
+
+## 2026-11-26 — Bloom is rebuilt from the Resonant Monolith reference
+
+Owner asked to scrap the previous Bloom and start over from the reference, visuals first. The scene is rebuilt on the unchanged shared app and `BloomScene` contract; old code, tests and docs remain in git history only. Layout is defined in screen fractions measured from the reference and converted for a fixed, slightly upward-pitched perspective camera with a fixed vertical field of view, so the monolith keeps its reference proportion of screen height at every aspect ratio. The reference is never loaded at runtime.
+
+## 2026-11-26 — Bloom ranges are full 3D terrain held under their approved crest line
+
+Owner chose full 3D (over painted 2.5D cards or a hybrid) for real light, snow, reflections and possible later camera motion. Each range is a height-map band in which every point stays below the camera's line of sight to its column's crest, so the approved BR1 silhouette is guaranteed and tested while ridges add relief underneath. Custom shaders must end with three.js's colour-space conversion; mist is placed relative to each range's crest because nearer ranges hide the lower slopes of the ones behind.

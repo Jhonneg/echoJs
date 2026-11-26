@@ -29,11 +29,11 @@ The [pre-tuning audit](AUDIT.md) records root causes, original delivered values 
 | Production file | Purpose |
 |---|---|
 | [BloomScene.tsx](../../../../src/scenes/bloom/BloomScene.tsx) | Surface delivery, beam/trail uniforms and ring rendering. |
-| [lifecycle.ts](../../../../src/scenes/bloom/lifecycle.ts) | Independent fragment motion bounds/frequencies. |
-| [trails.ts](../../../../src/scenes/bloom/trails.ts) | Distinct routes and body/detail shader response. |
-| [music.ts](../../../../src/scenes/bloom/music.ts) | Beam coefficients and bounded pulse classification. |
-| [monolith.ts](../../../../src/scenes/bloom/monolith.ts) | Local stone illumination/spill; geometry constructors preserved. |
-| [surface.ts](../../../../src/scenes/bloom/surface.ts) | Live mountain material uniforms and exposed-face fill. |
+| `lifecycle.ts` (removed in the 2026-11-26 Bloom rebuild; see git history before it) | Independent fragment motion bounds/frequencies. |
+| `trails.ts` (removed in the 2026-11-26 Bloom rebuild; see git history before it) | Distinct routes and body/detail shader response. |
+| `music.ts` (removed in the 2026-11-26 Bloom rebuild; see git history before it) | Beam coefficients and bounded pulse classification. |
+| `monolith.ts` (removed in the 2026-11-26 Bloom rebuild; see git history before it) | Local stone illumination/spill; geometry constructors preserved. |
+| `surface.ts` (removed in the 2026-11-26 Bloom rebuild; see git history before it) | Live mountain material uniforms and exposed-face fill. |
 
 Supporting changes: lifecycle/trail/choreography tests, new surface binding regression, isolated capture/assessment scripts, evidence and progress/contract documentation. Pre-existing App/audio-control/other edits remain untouched in this pass.
 

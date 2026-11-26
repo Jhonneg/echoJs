@@ -3,18 +3,16 @@ import assert from 'node:assert/strict'
 import { silentSignal } from '../src/audio/signal.ts'
 import { createBassMotion, updateBassMotion } from '../src/engine/bassMotion.ts'
 import { CAMERA_TILT_LIMIT, updateCameraTilt } from '../src/engine/cameraTilt.ts'
-import { createBloomResponse, updateBloomResponse } from '../src/scenes/bloom/reactivity.ts'
 
-test('shared camera roll matches the original Bloom response across frame cadences', () => {
+test('shared camera roll follows the 20% sustained / 80% accent bass mix across frame cadences', () => {
   for (const hz of [30, 60, 120]) {
     const shared = createBassMotion(), previous = createBassMotion(), signal = silentSignal()
-    const response = createBloomResponse()
     for (let i = 0; i < hz * 3; i++) {
       signal.fast.bass = i < hz ? 0.6 : 0
       signal.transient.bass = i % 15 === 0 ? 0.8 : 0
       signal.flux.bass = i % 20 === 0 ? 0.9 : 0
-      updateBloomResponse(response, signal, 0.75)
-      const expected = -updateBassMotion(previous, response.bass, 1 / hz) * CAMERA_TILT_LIMIT
+      const bass = Math.min(1, 0.2 * signal.fast.bass + 0.8 * Math.max(signal.transient.bass, signal.flux.bass)) * 0.75
+      const expected = -updateBassMotion(previous, bass, 1 / hz) * CAMERA_TILT_LIMIT
       const actual = updateCameraTilt(shared, signal, 0.75, false, 1 / hz)
       assert.equal(actual, expected)
       assert.ok(Math.abs(actual) <= CAMERA_TILT_LIMIT)

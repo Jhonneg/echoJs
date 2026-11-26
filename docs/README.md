@@ -5,6 +5,7 @@ Start with [current progress](PROGRESS.md) and [the project roadmap](ROADMAP.md)
 ## Guides and authoritative roadmaps
 
 - Product: [vision](VISION.md), [art direction](ART_DIRECTION.md), [motion](MOTION.md).
+- Bloom (current): [rebuild roadmap](BLOOM_REBUILD_ROADMAP.md). Application: [experience roadmap](APPLICATION_EXPERIENCE_ROADMAP.md).
 - Engineering: [architecture](ARCHITECTURE.md), [decisions](DECISIONS.md), [verification](VERIFICATION.md), [evaluation](EVALUATION.md).
 - Process: [workflow](WORKFLOW.md), [release checklist](RELEASE_CHECKLIST.md).
 - Application audio: [Music Intelligence roadmap](ECHO_Music_Intelligence_Roadmap.md), [animation refinement](ANIMATION_REFINEMENT.md).

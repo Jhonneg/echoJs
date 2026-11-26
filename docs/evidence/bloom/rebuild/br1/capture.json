@@ -1,0 +1,23 @@
+{
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "screenshots": [
+    "desktop",
+    "desktop-vs-reference",
+    "wide",
+    "wide-vs-reference",
+    "portrait",
+    "portrait-vs-reference"
+  ],
+  "checks": [
+    "Switched Nocturne → Lavender → Crimson → Bloom: Bloom redraws, one live WebGL context."
+  ],
+  "source": "Production build, headless Brave. Blockout only (flat placeholders).",
+  "status": "BR1 capture PASS"
+}

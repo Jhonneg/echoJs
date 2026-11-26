@@ -1,5 +1,7 @@
 # Bloom — art direction (approved conceptual direction)
 
+> **2026-11-26: Bloom is being rebuilt.** The active Bloom reference is `references/bloom/e9db88c2-38de-4c1f-a9d2-f061b5053b89.png` (Resonant Monolith): a tall cracked monolith with a bright seam hovering over a still lake, jagged snow-capped ranges in misty layers, vertical green and pink aurora, glowing valley rivers, and saturated lavender, pink and teal light. See [BLOOM_REBUILD_ROADMAP.md](BLOOM_REBUILD_ROADMAP.md). The Bloom sections below describe the previous scene and are superseded for current work.
+
 Ambient surrealism: a living album cover, not an explorable game world. Tranquil, ethereal, spacious, cinematic, mysterious. A wide reflective lake beneath soft twilight, distant layered mountains dissolving in mist, one fragmented luminous floating halo as the POC prop. Camera close to water; horizon around middle; open space; lake roughly half frame; restrained foreground silhouettes, sparse particles. Strong focal point and readable reflection; no UI competing with artwork. The owner favored tranquil reflective water and disliked a cluttered atmosphere reference; avoid dense fantasy objects, floating debris, busy flowers, loud neon and heavy bloom.
 
 ## Palette (approved working direction)

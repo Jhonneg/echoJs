@@ -1,0 +1,37 @@
+{
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "screenshots": [
+    "desktop",
+    "desktop-vs-reference",
+    "wide",
+    "wide-vs-reference",
+    "portrait",
+    "portrait-vs-reference",
+    "desktop-low",
+    "desktop-low-vs-reference"
+  ],
+  "checks": [
+    "Switched Nocturne → Lavender → Crimson → Bloom: Bloom redraws, one live WebGL context."
+  ],
+  "source": "Production build, headless Brave. Blockout only (flat placeholders).",
+  "cadence": {
+    "standard": {
+      "medianMs": 16.7,
+      "p95Ms": 16.7,
+      "maxMs": 16.8
+    },
+    "low": {
+      "medianMs": 16.7,
+      "p95Ms": 16.7,
+      "maxMs": 16.8
+    }
+  },
+  "status": "BR2 capture PASS"
+}

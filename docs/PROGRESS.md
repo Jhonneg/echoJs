@@ -1,5 +1,31 @@
 # ECHO — current checkpoint
 
+## Bloom rebuild BR2 — OWNER APPROVED ("commit and proceed"); BR3 PLAN PENDING — 2026-11-26
+
+- Owner approves BR2 and asks to commit and continue. BR1+BR2 (plus the paused-APP05 note) committed together as one checkpoint on main; not pushed. BR3 (sky + aurora) plan presented for approval; BR3 unstarted.
+
+## Bloom rebuild BR2 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner asked why not 3D, then chose full 3D over painted cards or a hybrid, and approved the revised plan. New `src/scenes/bloom/ranges.ts` (terrain and shader), per-range snow and depth settings in `composition.ts`, and `BloomScene.tsx` uses the 3D ranges. 237,920 triangles on Standard, 59,480 on Low.
+- [Evidence](evidence/bloom/rebuild/br2/README.md): eight drafts compared with the reference. Fixed a missing sRGB conversion in the custom shader, and mist that never showed (found with debug captures). PASS 289 tests (6 new), lint/typecheck/build, whitespace, BR2 capture (0 errors, 1 live context), resources identical after 24 switches, APP02/APP03 browser checks (committed APP evidence restored). Frame timing is the headless 16.7 ms cap on both qualities, not native GPU evidence. Switching back to Bloom costs about 47 ms vs about 31 ms (terrain rebuilt on mount).
+- Known gaps for later phases: flat sky and no aurora light (BR3), a dark strip at the water line (BR5), placeholder monolith (BR4). Stop for owner review. BR1+BR2 uncommitted.
+
+## Bloom rebuild BR1 — OWNER APPROVED ("proceed"); BR2 PLAN PENDING — 2026-11-26
+
+- Owner says "proceed" after the BR1 blockout report: record framing approval and authorization to plan BR2 only. BR1 uncommitted. BR2 unstarted.
+
+## Bloom rebuild BR1 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner: "scrap what was build and start over based on the references". Owner chose the Resonant Monolith reference, a fresh `src/scenes/bloom/` on the shared app, and visuals first. Plan approved. New [rebuild roadmap](BLOOM_REBUILD_ROADMAP.md) BR1–BR8 supersedes the previous Bloom roadmaps for current work.
+- BR1: removed all previous Bloom modules, their 10 tests, legacy `reactivity.ts` and its test, and the unused `BloomDebugControls`. New `composition.ts` (framing maths from reference measurements) and a blockout `BloomScene.tsx` with the same props as before. `cameraTilt` test no longer imports Bloom. APP02/APP03 scripts' scope checks exclude Bloom.
+- [Evidence](evidence/bloom/rebuild/br1/README.md): side-by-side with the reference at desktop, wide and portrait. PASS 283 tests, lint/typecheck/build, whitespace, BR1 browser capture (0 errors, 1 live context after switching), APP02/APP03 browser checks. Committed APP02/APP03 evidence images restored after reruns. Deviation: 5 links in the old BL07 evidence README pointed to deleted source files; they're now plain file names with a git-history note (no outcome text changed).
+- Stop for owner review of the blockout framing. BR2 unstarted. Not committed. APP05 still paused; APP04 manual checklist still pending.
+
+## APP05 — PLAN PRESENTED; PAUSED BY OWNER — 2026-11-26
+
+- APP02–APP04 committed (`0dcf434`, `718faa2`, `0022fe4`) and pushed by the owner. APP05 plan was presented: current-state README/ARCHITECTURE summary, verbatim archive of older PROGRESS/VERIFICATION/ARCHITECTURE/ROADMAP entries to `docs/history/`, replacement of the stale M05 RELEASE_CHECKLIST with an application release record, a whole-flow screenshot walkthrough, and doc/command checks. Open decision: AGENTS.md references project skills that do not exist (options: remove references, create them, or leave).
+- Owner: "lets stop ap05 for now". APP05 not started; no work done. APP04 manual checklist still pending owner results. Resume with "plan APP05" or send checklist results.
+
 ## APP04 — AUTOMATED CHROMIUM CHECKS PASS; OWNER MANUAL CHECKS PENDING — 2026-11-26
 
 - Owner "approve without download" authorizes APP04 without Firefox/WebKit installs. Production change: unsupported-sharing wording in `tabCapture.ts` (+1 unit test). New `scripts/verify-app04.mjs`, [support matrix](evidence/application/app04/SUPPORT_MATRIX.md), [manual checklist](evidence/application/app04/MANUAL_CHECKLIST.md), [evidence](evidence/application/app04/README.md).
