@@ -158,3 +158,23 @@ test('graph attachment failure releases every acquired track and permits a succe
  succeeds=true;const retry=capture.connect(),good=stream();requests[1].resolve(good);await retry
  assert.equal(states.at(-1).status,'connected');capture.dispose();stopped(good)
 })
+
+test('APP02: connect reports connected, failed and cancelled outcomes', async () => {
+  const { capture, requests } = setup()
+  const ok = capture.connect()
+  requests[0].resolve(stream())
+  assert.equal((await ok).status, 'connected')
+  capture.disconnect()
+  const denied = capture.connect()
+  requests[1].reject(new DOMException('no', 'NotAllowedError'))
+  const failed = await denied
+  assert.equal(failed.status, 'failed')
+  assert.match(failed.message, /cancelled or denied/)
+  const silent = capture.connect()
+  requests[2].resolve(stream(false))
+  assert.equal((await silent).status, 'failed')
+  const pending = capture.connect()
+  capture.disconnect()
+  requests[3].resolve(stream())
+  assert.equal((await pending).status, 'cancelled')
+})

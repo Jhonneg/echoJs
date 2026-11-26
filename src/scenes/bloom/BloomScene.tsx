@@ -199,7 +199,7 @@ function Composition({ playing, reducedMotion, musicFeatures, reactivity, onRend
 class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false }
   static getDerivedStateFromError() { return { failed: true } }
-  render() { return this.state.failed ? <p className="bloom-fallback">Bloom could not render. You can still choose audio from the Bloom menu, or reload to try again.</p> : this.props.children }
+  render() { return this.state.failed ? <p className="bloom-fallback">Bloom stopped displaying. Choose another landscape below, or reload the page to try again.</p> : this.props.children }
 }
 
 const motionQuery = '(prefers-reduced-motion: reduce)'
@@ -215,7 +215,7 @@ export default function BloomScene({ playing, musicFeatures, onRenderTime, react
   return (
     <section className="bloom-stage" aria-label="Bloom: a levitating stone monolith over a tranquil lake at twilight">
       <SceneBoundary>
-        <LandscapeCanvas camera={{position:[0,0,WATER_VIEW.distance],zoom:80,near:.1,far:WATER_VIEW.far}} cameraTilt={false} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="bloom-fallback">Bloom needs WebGL to display. You can still choose audio from the controls below.</p>}>
+        <LandscapeCanvas camera={{position:[0,0,WATER_VIEW.distance],zoom:80,near:.1,far:WATER_VIEW.far}} cameraTilt={false} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="bloom-fallback">Bloom can’t be shown because this browser can’t use WebGL. Audio still works: use the controls below to choose audio or another landscape.</p>}>
           <Composition playing={playing} reducedMotion={reducedMotion} musicFeatures={musicFeatures} reactivity={reactivity} onRenderTime={onRenderTime} quality={quality} />
         </LandscapeCanvas>
       </SceneBoundary>

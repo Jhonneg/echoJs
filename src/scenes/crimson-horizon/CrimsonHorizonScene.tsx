@@ -224,7 +224,7 @@ function getReducedMotion() { return window.matchMedia(motionQuery).matches }
 class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false }
   static getDerivedStateFromError() { return { failed: true } }
-  render() { return this.state.failed ? <p className="crimson-fallback">Crimson Horizon could not render. Choose another landscape from the scene menu, or reload to try again.</p> : this.props.children }
+  render() { return this.state.failed ? <p className="crimson-fallback">Crimson Horizon stopped displaying. Choose another landscape below, or reload the page to try again.</p> : this.props.children }
 }
 
 export default function CrimsonHorizonScene({ signal, reactivity, quality, pilot }: { signal: AudioSignal, reactivity: number, quality: GraphicsQuality, pilot?: CrimsonPilotInput }) {
@@ -249,7 +249,7 @@ export default function CrimsonHorizonScene({ signal, reactivity, quality, pilot
       <LandscapeCanvas cameraTilt={false} signal={signal} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion}
         projection="perspective" camera={{ position: [0, 3.5, 24], fov: 42, near: 0.5, far: 200 }}
         frameloop="always"
-        fallback={<p className="crimson-fallback">Crimson Horizon needs WebGL to display. You can still choose audio or another landscape from the scene menu.</p>}>
+        fallback={<p className="crimson-fallback">Crimson Horizon can’t be shown because this browser can’t use WebGL. Audio still works: use the controls below to choose audio or another landscape.</p>}>
         <Composition quality={quality} pilot={pilot} target={target} reducedMotion={reducedMotion} signal={signal} reactivity={reactivity} attempt={attempt} onStatus={setStatus} />
       </LandscapeCanvas>
     </SceneBoundary>

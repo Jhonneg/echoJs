@@ -1,5 +1,17 @@
 # ECHO — current checkpoint
 
+## APP02 — IMPLEMENTED / CONTROLLED CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner "approve" authorizes the presented APP02 plan. Production changes: App, tabCapture, localFile, AudioControls, audioFeedback, index.css; fallback strings only in the four scene files (16 changed lines, browser-verified to be fallback text only). Landscape visuals, music mapping, MI/analysis, toolbar design and dependencies unchanged.
+- Source switching keeps what works: an unplayable file no longer drops a connected tab or a playing file; Share from a file reloads the same file at its position if sharing is cancelled, denied or fails. Narrow screens get Play/Pause inside Options. Help text rewritten for Lavender (outdated) and added for Bloom; Nocturne mentions the bridge. Fallbacks no longer name nonexistent menus. Failures announce via role=alert, routine status via role=status. Large text: narrow toolbar wraps instead of collapsing the landscape name; Options pins to the top when there is no room.
+- [Evidence](evidence/application/app02/README.md). PASS 331 tests (5 new APP02 cases), lint, typecheck/build (existing chunk warning), whitespace, `scripts/verify-app02.mjs` browser run (0 errors; existing THREE.Clock warnings). Not run/manual: native tab picker and audibility, real screen-reader speech, other browsers/OS and real devices (APP04). 200% text was emulated by root font size, not browser zoom.
+- Stop for owner flow/visual review. APP03 unstarted. No commit/push. Proposed commit after authorization: `feat(app): safer source switching, playback access and accessible status`.
+
+## APP01 — OWNER APPROVED; APP02 PLAN PENDING — 2026-11-26
+
+- Owner chose "APP01 approved, plan APP02", accepting the audio health/recovery feedback. Record artistic/flow approval only; native sharing audibility, screen-reader speech and broader browser/OS coverage remain manual gates carried to APP04. Bloom 3D water committed by owner (`db11cb2`); APP01 code already committed. No production changes in this checkpoint.
+- Next: APP02 controls, accessibility and source transitions. Plan presented for separate owner approval under AGENTS one-phase rule; APP02 unstarted.
+
 ## Bloom post-BL08 3D water — OWNER VISUALLY APPROVED — 2026-11-24
 
 - Owner approved the proposed3°downward orthographic view. Replaced the flat lake card and screen-space reflection draws with a GPU-displaced horizontal mesh, coherent layered waves/noise/normals, restrained highlights, world-space planar scene reflection and geometric musical rings. Standard33153vertices/65536triangles; Low18721/36864; mesh density concentrates around the ripple origin. No dependencies, CPU frame geometry rebuild, React hot state or shared-host change.

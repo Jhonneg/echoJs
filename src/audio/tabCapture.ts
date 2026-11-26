@@ -7,6 +7,9 @@ export interface CaptureState {
   message: string
 }
 
+// How one connect() request ended, so callers can restore a source it replaced.
+export type ConnectResult = { status: 'connected' | 'failed' | 'cancelled' | 'skipped', message: string }
+
 interface AnalysisLifecycle {
   prepare(): AudioStartResult
   start(stream: MediaStream): AudioStartResult
@@ -23,6 +26,11 @@ export function createTabCapture(onChange: (state: CaptureState) => void, analys
   function publish(status: CaptureStatus, message: string) {
     if (!disposed) onChange({ status, audioTracks: stream?.getAudioTracks().length ?? 0, message })
   }
+  function fail(status: CaptureStatus, message: string): ConnectResult {
+    publish(status, message)
+    return { status: 'failed', message }
+  }
+  const cancelled: ConnectResult = { status: 'cancelled', message: 'Tab sharing was cancelled.' }
 
   function release() {
     analysis?.stop()
@@ -39,12 +47,10 @@ export function createTabCapture(onChange: (state: CaptureState) => void, analys
     publish('disconnected', 'Disconnected. All acquired tracks stopped.')
   }
 
-  async function connect() {
-    if (disposed || pending || stream) return
-    if (!globalThis.isSecureContext || !navigator.mediaDevices?.getDisplayMedia) {
-      publish('unsupported', 'Tab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.')
-      return
-    }
+  async function connect(): Promise<ConnectResult> {
+    if (disposed || pending || stream) return { status: 'skipped', message: '' }
+    if (!globalThis.isSecureContext || !navigator.mediaDevices?.getDisplayMedia)
+      return fail('unsupported', 'Tab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.')
     const request = ++generation
     pending = true
     publish('connecting', 'Choose a browser tab and enable Share tab audio. The native picker also requests video.')
@@ -54,43 +60,43 @@ export function createTabCapture(onChange: (state: CaptureState) => void, analys
         pending = false
         const message = prepared?.ok === false ? prepared.message : 'Audio preparation did not complete. Retry sharing.'
         release()
-        publish('error', message)
-        return
+        return fail('error', message)
       }
       // Keep this call before any await to preserve the button's user activation.
       const acquired = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true })
       if (disposed || request !== generation) {
         acquired.getTracks().forEach((track) => track.stop())
-        return
+        return cancelled
       }
       pending = false
       stream = acquired
       if (acquired.getAudioTracks().length === 0) {
         release()
-        publish('error', 'No audio track received. Retry, select a browser tab, and enable Share tab audio.')
-        return
+        return fail('error', 'No audio track received. Retry, select a browser tab, and enable Share tab audio.')
       }
+      const endedMessage = 'Browser sharing ended. Connect again to choose a tab.'
       const ended = () => {
         generation++
         release()
-        publish('ended', 'Browser sharing ended. Connect again to choose a tab.')
+        publish('ended', endedMessage)
       }
       acquired.getTracks().forEach((track) => track.addEventListener('ended', ended))
       removeListeners = () => acquired.getTracks().forEach((track) => track.removeEventListener('ended', ended))
       if (acquired.getTracks().some((track) => track.readyState === 'ended')) {
         ended()
-        return
+        return { status: 'failed', message: endedMessage }
       }
       const started = analysis?.start(acquired)
       if (analysis && started?.ok !== true) {
         const message = started?.ok === false ? started.message : 'Audio analysis did not start. Retry sharing.'
         release()
-        publish('error', message)
-        return
+        return fail('error', message)
       }
-      publish('connected', 'Audio track present. Keep playback in the source tab.')
+      const message = 'Audio track present. Keep playback in the source tab.'
+      publish('connected', message)
+      return { status: 'connected', message }
     } catch (error) {
-      if (disposed || request !== generation) return
+      if (disposed || request !== generation) return cancelled
       pending = false
       release()
       const name = error instanceof Error ? error.name : 'UnknownError'
@@ -101,7 +107,7 @@ export function createTabCapture(onChange: (state: CaptureState) => void, analys
         NotReadableError: 'The browser or operating system could not share that source. Check sharing permissions and retry.',
         AbortError: 'Sharing could not start. Try again.',
       }
-      publish('error', messages[name] ?? `Sharing failed (${name}). Try desktop Chrome and reconnect.`)
+      return fail('error', messages[name] ?? `Sharing failed (${name}). Try desktop Chrome and reconnect.`)
     }
   }
 

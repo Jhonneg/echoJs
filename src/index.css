@@ -47,6 +47,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .scene-player-actions .slider-control { flex: 1; min-width: 0; }
 .scene-player-actions .slider-control output { min-width: 2rem; }
 .disconnect-button { margin-top: 0.75rem; }
+/* APP02: Play/Pause stays reachable inside Options when the player is hidden. */
+.options-playback { display: none; margin-top: 0.75rem; }
 .experience-settings { display: grid; gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #454056; }
 .slider-control { display: flex; align-items: center; gap: 0.6rem; color: #d2c5da; }
 .slider-control input { flex: 1; width: 0; min-width: 2rem; accent-color: #c69ab7; }
@@ -55,14 +57,17 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .audio-controls .privacy-note { margin-top: 1rem; color: #a99db6; font-size: 0.7rem; }
 @media (max-width: 360px) { .audio-controls { padding: 0.8rem; } }
 @media (max-width: 740px) {
-  .experience-toolbar { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "landscape options" "sources sources"; }
-  .landscape-switcher { grid-area: landscape; }
+  /* Landscape + Options share a row, sources below. With large text, Options wraps
+     to its own row instead of squeezing the landscape name (APP02). */
+  .experience-toolbar { width: 100%; }
+  .landscape-switcher { flex: 1 1 9rem; }
   .landscape-switcher select { width: 100%; }
-  .source-actions { grid-area: sources; }
+  .audio-chooser { order: 2; }
+  .source-actions { order: 3; flex: 1 1 100%; }
   .source-actions > * { flex: 1; justify-content: center; min-width: 0; }
-  .audio-chooser { grid-area: options; }
   .scene-player { width: 100%; }
   .experience-controls:has(.audio-chooser[open]) .scene-player { display: none; }
+  .options-playback { display: flex; }
 }
 
 /* APP01: low-rate source health stays visible outside the Options disclosure. */
@@ -74,3 +79,4 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 @media (max-height: 420px) {
   .audio-controls { position: fixed; left: max(var(--scene-gutter), env(safe-area-inset-left)); top: max(var(--scene-gutter), env(safe-area-inset-top)); bottom: auto; max-height: calc(100dvh - var(--scene-gutter) - var(--scene-gutter)); }
 }
+.experience-controls[data-cramped] .audio-controls { position: fixed; left: max(var(--scene-gutter), env(safe-area-inset-left)); top: max(var(--scene-gutter), env(safe-area-inset-top)); bottom: auto; max-height: calc(100dvh - var(--scene-gutter) - var(--scene-gutter)); }

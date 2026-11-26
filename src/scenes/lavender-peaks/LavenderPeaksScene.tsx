@@ -234,7 +234,7 @@ function getReducedMotion() { return window.matchMedia(motionQuery).matches }
 class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false }
   static getDerivedStateFromError() { return { failed: true } }
-  render() { return this.state.failed ? <p className="lavender-fallback">Lavender Peaks could not render. You can still choose audio from the scene menu, or reload to try again.</p> : this.props.children }
+  render() { return this.state.failed ? <p className="lavender-fallback">Lavender Peaks stopped displaying. Choose another landscape below, or reload the page to try again.</p> : this.props.children }
 }
 
 export default function LavenderPeaksScene({ quality, musicFeatures, reactivity }: { quality: GraphicsQuality, musicFeatures: MusicFeatureReader, reactivity: number }) {
@@ -242,7 +242,7 @@ export default function LavenderPeaksScene({ quality, musicFeatures, reactivity 
   return (
     <section className="lavender-stage" aria-label="Lavender Peaks: layered mountains revealing a faint sun in a pale lavender sky">
       <SceneBoundary>
-        <LandscapeCanvas cameraTilt={false} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="lavender-fallback">Lavender Peaks needs WebGL to display. You can still use the scene menu to choose audio.</p>}>
+        <LandscapeCanvas cameraTilt={false} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion} fallback={<p className="lavender-fallback">Lavender Peaks can’t be shown because this browser can’t use WebGL. Audio still works: use the controls below to choose audio or another landscape.</p>}>
           <Composition musicFeatures={musicFeatures} reactivity={reactivity} reducedMotion={reducedMotion} />
         </LandscapeCanvas>
       </SceneBoundary>

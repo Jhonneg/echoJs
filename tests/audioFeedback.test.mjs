@@ -21,3 +21,10 @@ test('file decode and blocked-play errors retain actionable messages without con
  assert.equal(get({status:'paused',message:'Blocked',retryPlayback:true}).action,'play')
  assert.equal(get({status:'playing'}).text,'Playing local audio.')
 })
+test('APP02: a switch notice overrides source feedback; errors offer a file choice',()=>{
+ const connected={...capture,status:'connected'}
+ assert.equal(audioFeedback('tab',connected,local,running,true,{text:'Opening x.wav…',tone:'neutral'}).action,null)
+ const failed=audioFeedback('tab',connected,local,running,true,{text:'x.wav could not be played',tone:'error'})
+ assert.equal(failed.text,'x.wav could not be played');assert.equal(failed.action,'choose-file');assert.equal(failed.tone,'error')
+ assert.equal(audioFeedback('tab',connected,local,running,true,null).text,'Listening to your shared tab.')
+})

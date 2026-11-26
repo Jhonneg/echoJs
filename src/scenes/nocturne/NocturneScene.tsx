@@ -71,7 +71,7 @@ function MouseCamera({ target, reducedMotion }: { target: RefObject<{ x: number,
 class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false }
   static getDerivedStateFromError() { return { failed: true } }
-  render() { return this.state.failed ? <p className="nocturne-fallback">Nocturne could not render. Choose another landscape or reload.</p> : this.props.children }
+  render() { return this.state.failed ? <p className="nocturne-fallback">Nocturne stopped displaying. Choose another landscape below, or reload the page to try again.</p> : this.props.children }
 }
 export default function NocturneScene({ musicFeatures, quality, lighting, lightingMode, reactivity }: { musicFeatures: MusicFeatureReader, quality: GraphicsQuality, lighting: NocturneLighting, lightingMode: NocturneLightingMode, reactivity: number }) {
   const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => true)
@@ -92,7 +92,7 @@ export default function NocturneScene({ musicFeatures, quality, lighting, lighti
     <SceneBoundary>
       <LandscapeCanvas reactivity={0} reducedMotion={reducedMotion} cameraTilt={false} quality={quality}
         projection="perspective" camera={{ position: [0, 1.6, 5], rotation: [0.055, 0, 0], fov: 50, near: 0.1, far: 100 }} frameloop="always"
-        fallback={<p className="nocturne-fallback">Nocturne needs WebGL. You can choose another landscape from the scene menu.</p>}>
+        fallback={<p className="nocturne-fallback">Nocturne can’t be shown because this browser can’t use WebGL. Audio still works: use the controls below to choose audio or another landscape.</p>}>
         <MouseCamera target={target} reducedMotion={reducedMotion} />
         <Architecture />
         <ArchitectureDetails />

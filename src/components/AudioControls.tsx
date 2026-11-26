@@ -10,7 +10,7 @@ import type { LocalFileState } from "../audio/localFile";
 import type { GraphicsQuality } from "../engine/quality";
 import { sceneNames, type SceneId } from "../scenes/scene";
 import { musicFeaturesFresh } from "../audio/musicFeatures";
-import { audioFeedback } from "./audioFeedback";
+import { audioFeedback, type SwitchNotice } from "./audioFeedback";
 
 type Props = {
   bloomFloating: boolean;
@@ -24,6 +24,7 @@ type Props = {
   local: LocalFileState;
   analysis: ReturnType<typeof createAnalysis>;
   volume: number;
+  notice: SwitchNotice | null;
   quality: GraphicsQuality;
   scene: SceneId;
   onScene(value: SceneId): void;
@@ -88,11 +89,19 @@ export function AudioControls(props: Props) {
   useEffect(() => {
     const element = controls.current;
     if (!element) return;
-    const measure = () => element.style.setProperty('--controls-height', `${element.getBoundingClientRect().height}px`);
+    const measure = () => {
+      const height = element.getBoundingClientRect().height;
+      element.style.setProperty('--controls-height', `${height}px`);
+      // With large text on small screens Options has no room above the controls;
+      // flag it so CSS pins the panel to the top, like the short-window rule.
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      element.toggleAttribute('data-cramped', window.innerHeight - height < rem * 14);
+    };
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(element);
-    return () => observer.disconnect();
+    window.addEventListener('resize', measure);
+    return () => { observer.disconnect(); window.removeEventListener('resize', measure); };
   }, []);
 
   const sharing =
@@ -113,7 +122,8 @@ export function AudioControls(props: Props) {
     hasFile && local.status !== "error" && local.status !== "playing";
   const playing = hasFile && local.status === "playing";
   const showPlayer = hasFile && local.status !== "error";
-  const feedback = audioFeedback(source, capture, local, analysis.health, activity.receiving);
+  const playLabel = playing ? "Pause" : local.status === "ended" ? "Replay" : "Play";
+  const feedback = audioFeedback(source, capture, local, analysis.health, activity.receiving, props.notice);
   useEffect(() => {
     if (feedback.action || !restoreRecoveryFocus.current) return;
     restoreRecoveryFocus.current = false;
@@ -150,9 +160,13 @@ export function AudioControls(props: Props) {
   return (
     <>
       <div className="experience-controls" ref={controls}>
+        {/* Both regions stay mounted so screen readers announce changes:
+            routine updates politely, failures immediately. */}
+        <p className="sr-only" role="status" aria-atomic="true">{feedback.tone === "error" ? "" : feedback.text}</p>
+        <p className="sr-only" role="alert" aria-atomic="true">{feedback.tone === "error" ? feedback.text : ""}</p>
         <div className="audio-feedback" data-tone={feedback.tone}>
           <div className="audio-feedback-body">
-            <p id="audio-feedback-status" role="status" aria-atomic="true">{feedback.text}</p>
+            <p id="audio-feedback-status">{feedback.text}</p>
             {recoveryLabel && <button ref={recoveryButton} onClick={recovery}>{recoveryLabel}</button>}
           </div>
         </div>
@@ -240,6 +254,14 @@ export function AudioControls(props: Props) {
                 </p>
               )}
               <p className="source-status">{feedback.text}</p>
+              {showPlayer && (
+                // Narrow screens hide the floating player while Options is open.
+                <div className="options-playback">
+                  <button disabled={!playing && !canPlay} onClick={playing ? props.onPause : props.onPlay}>
+                    {playLabel}
+                  </button>
+                </div>
+              )}
               {source === "tab" && capture.status === "connecting" && (
                 <p className="source-help">
                   Choose a tab and enable Share tab audio. Cancel here ends
@@ -261,11 +283,21 @@ export function AudioControls(props: Props) {
                 <p className="source-help">Floating follows this control while sharing. Playback stays controlled in your source tab.</p>
               </>}
               <div className="experience-settings">
+                {props.scene === "bloom" && (
+                  <p className="source-help">
+                    The monolith floats while audio plays and settles when it
+                    stops. Bass fills the sky with aurora light, high mids
+                    brighten the stone's seam and mids send light down the
+                    mountains. Low hits ripple the lake. Move the mouse to shift
+                    the view slightly.
+                  </p>
+                )}
                 {props.scene === "lavender-peaks" && (
                   <p className="source-help">
-                    Lavender Peaks motion preview: all mountains move together,
-                    slower on low notes and faster on high notes. Distant ridges
-                    stay slower than the foreground.
+                    The mountains drift on their own. Each ridge answers its own
+                    range, from the highest sounds in the farthest ridge to deep
+                    bass in the nearest, and sharp hits leave light traces. Bass
+                    and low hits make the sun and its corona glow.
                   </p>
                 )}
                 {props.scene === "crimson-horizon" && (
@@ -279,7 +311,8 @@ export function AudioControls(props: Props) {
                   <p className="source-help">
                     Bass drives magenta fixtures, mids drive cyan windows, high
                     mids drive the left cyan panel, and treble drives violet
-                    accents. Overall intensity lights the distant gate and haze.
+                    accents. Low hits send light across the bridge, and overall
+                    intensity lights the distant gate and haze.
                   </p>
                 )}
                 {props.scene === "nocturne" && (
@@ -327,11 +360,7 @@ export function AudioControls(props: Props) {
                 disabled={!playing && !canPlay}
                 onClick={playing ? props.onPause : props.onPlay}
               >
-                {playing
-                  ? "Pause"
-                  : local.status === "ended"
-                    ? "Replay"
-                    : "Play"}
+                {playLabel}
               </button>
               <label className="slider-control">
                 Volume

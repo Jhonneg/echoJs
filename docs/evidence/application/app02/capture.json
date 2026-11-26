@@ -1,0 +1,456 @@
+{
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "screenshots": [
+    {
+      "name": "tab-kept-after-bad-file",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "invalid.wav could not be played, so your shared tab is still connected. Choose a browser-supported file, such as WAV or MP3, to switch.",
+        "tone": "error",
+        "action": "Open audio file",
+        "polite": "",
+        "alert": "invalid.wav could not be played, so your shared tab is still connected. Choose a browser-supported file, such as WAV or MP3, to switch.",
+        "options": false,
+        "audio": null,
+        "liveTracks": 1,
+        "optionsPlay": null,
+        "player": false,
+        "help": [
+          "Floating follows this control while sharing. Playback stays controlled in your source tab.",
+          "The monolith floats while audio plays and settles when it stops. Bass fills the sky with aurora light, high mids brighten the stone's seam and mids send light down the mountains. Low hits ripple the lake. Move the mouse to shift the view slightly."
+        ],
+        "overflow": false,
+        "focus": "Bloom — music visualizerBloom can’t be s",
+        "bounds": {
+          "controlsTop": 733.203125,
+          "controlsBottom": 852,
+          "optionsTop": 336.34375,
+          "optionsBottom": 841.609375
+        }
+      }
+    },
+    {
+      "name": "file-kept-after-bad-file",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "invalid.wav could not be played, so generated-tone.wav is still loaded. Choose a browser-supported file, such as WAV or MP3, to switch.",
+        "tone": "error",
+        "action": "Open audio file",
+        "polite": "",
+        "alert": "invalid.wav could not be played, so generated-tone.wav is still loaded. Choose a browser-supported file, such as WAV or MP3, to switch.",
+        "options": false,
+        "audio": {
+          "time": 1.782575,
+          "paused": false
+        },
+        "liveTracks": 0,
+        "optionsPlay": null,
+        "player": true,
+        "help": [
+          "The monolith floats while audio plays and settles when it stops. Bass fills the sky with aurora light, high mids brighten the stone's seam and mids send light down the mountains. Low hits ripple the lake. Move the mouse to shift the view slightly."
+        ],
+        "overflow": false,
+        "focus": "Bloom — music visualizerBloom can’t be s",
+        "bounds": {
+          "controlsTop": 685.234375,
+          "controlsBottom": 852,
+          "optionsTop": 355.53125,
+          "optionsBottom": 841.609375
+        }
+      }
+    },
+    {
+      "name": "file-restored-after-cancel",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "Tab sharing was cancelled. generated-tone.wav is loaded again. Press Play to continue.",
+        "tone": "neutral",
+        "polite": "Tab sharing was cancelled. generated-tone.wav is loaded again. Press Play to continue.",
+        "alert": "",
+        "options": false,
+        "audio": {
+          "time": 2.530667,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": null,
+        "player": true,
+        "help": [
+          "The monolith floats while audio plays and settles when it stops. Bass fills the sky with aurora light, high mids brighten the stone's seam and mids send light down the mountains. Low hits ripple the lake. Move the mouse to shift the view slightly."
+        ],
+        "overflow": false,
+        "focus": "Bloom — music visualizerBloom can’t be s",
+        "bounds": {
+          "controlsTop": 710.046875,
+          "controlsBottom": 852,
+          "optionsTop": 374.71875,
+          "optionsBottom": 841.609375
+        }
+      }
+    },
+    {
+      "name": "file-restored-after-denial",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "Sharing was cancelled or denied, or blocked by browser policy. You can retry. generated-tone.wav is loaded again. Press Play to continue.",
+        "tone": "neutral",
+        "polite": "Sharing was cancelled or denied, or blocked by browser policy. You can retry. generated-tone.wav is loaded again. Press Play to continue.",
+        "alert": "",
+        "options": false,
+        "audio": {
+          "time": 2.530667,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": null,
+        "player": true,
+        "help": [
+          "The monolith floats while audio plays and settles when it stops. Bass fills the sky with aurora light, high mids brighten the stone's seam and mids send light down the mountains. Low hits ripple the lake. Move the mouse to shift the view slightly."
+        ],
+        "overflow": false,
+        "focus": "Bloom — music visualizerBloom can’t be s",
+        "bounds": {
+          "controlsTop": 690.859375,
+          "controlsBottom": 852,
+          "optionsTop": 355.53125,
+          "optionsBottom": 841.609375
+        }
+      }
+    },
+    {
+      "name": "narrow-options-playback",
+      "width": 390,
+      "height": 844,
+      "row": {
+        "feedback": "Playing local audio.",
+        "tone": "neutral",
+        "polite": "Playing local audio.",
+        "alert": "",
+        "options": true,
+        "audio": {
+          "time": 0.44,
+          "paused": false
+        },
+        "liveTracks": 0,
+        "optionsPlay": "Pause",
+        "player": false,
+        "help": [
+          "The monolith floats while audio plays and settles when it stops. Bass fills the sky with aurora light, high mids brighten the stone's seam and mids send light down the mountains. Low hits ripple the lake. Move the mouse to shift the view slightly."
+        ],
+        "overflow": false,
+        "focus": "Bloom — music visualizerBloom can’t be s",
+        "bounds": {
+          "controlsTop": 676.421875,
+          "controlsBottom": 824,
+          "optionsTop": 162.328125,
+          "optionsBottom": 666.03125
+        }
+      }
+    },
+    {
+      "name": "help-bloom",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "Playback paused",
+        "tone": "neutral",
+        "polite": "Playback paused",
+        "alert": "",
+        "options": true,
+        "audio": {
+          "time": 0.525333,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": null,
+        "player": true,
+        "help": [
+          "The monolith floats while audio plays and settles when it stops. Bass fills the sky with aurora light, high mids brighten the stone's seam and mids send light down the mountains. Low hits ripple the lake. Move the mouse to shift the view slightly."
+        ],
+        "overflow": false,
+        "focus": "Bloom — music visualizerBloom can’t be s",
+        "bounds": {
+          "controlsTop": 710.046875,
+          "controlsBottom": 852,
+          "optionsTop": 251.953125,
+          "optionsBottom": 699.65625
+        }
+      }
+    },
+    {
+      "name": "help-lavender-peaks",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "Playback paused",
+        "tone": "neutral",
+        "polite": "Playback paused",
+        "alert": "",
+        "options": true,
+        "audio": {
+          "time": 0.525333,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": null,
+        "player": true,
+        "help": [
+          "The mountains drift on their own. Each ridge answers its own range, from the highest sounds in the farthest ridge to deep bass in the nearest, and sharp hits leave light traces. Bass and low hits make the sun and its corona glow."
+        ],
+        "overflow": false,
+        "focus": "Lavender Peaks — music visualizerLavende",
+        "bounds": {
+          "controlsTop": 710.046875,
+          "controlsBottom": 852,
+          "optionsTop": 251.953125,
+          "optionsBottom": 699.65625
+        }
+      }
+    },
+    {
+      "name": "help-nocturne",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "Playback paused",
+        "tone": "neutral",
+        "polite": "Playback paused",
+        "alert": "",
+        "options": true,
+        "audio": {
+          "time": 0.525333,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": null,
+        "player": true,
+        "help": [
+          "Bass drives magenta fixtures, mids drive cyan windows, high mids drive the left cyan panel, and treble drives violet accents. Low hits send light across the bridge, and overall intensity lights the distant gate and haze.",
+          "Lights follow the music with quick, smooth transitions. The distant gate and haze follow overall intensity."
+        ],
+        "overflow": false,
+        "focus": "Nocturne — music visualizerNocturne can’",
+        "bounds": {
+          "controlsTop": 710.046875,
+          "controlsBottom": 852,
+          "optionsTop": 104.1875,
+          "optionsBottom": 699.65625
+        }
+      }
+    },
+    {
+      "name": "help-crimson-horizon",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "Playback paused",
+        "tone": "neutral",
+        "polite": "Playback paused",
+        "alert": "",
+        "options": true,
+        "audio": {
+          "time": 0.525333,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": null,
+        "player": true,
+        "help": [
+          "Travel stays steady, even in silence. Low hits pulse the sun; low mids light the contours and high mids send brief streaks. Move the mouse to look around."
+        ],
+        "overflow": false,
+        "focus": "Crimson Horizon — music visualizerCrimso",
+        "bounds": {
+          "controlsTop": 710.046875,
+          "controlsBottom": 852,
+          "optionsTop": 290.328125,
+          "optionsBottom": 699.65625
+        }
+      }
+    },
+    {
+      "name": "text-200-1440x900",
+      "width": 1440,
+      "height": 900,
+      "row": {
+        "feedback": "Playback paused",
+        "tone": "neutral",
+        "polite": "Playback paused",
+        "alert": "",
+        "options": true,
+        "audio": {
+          "time": 0.525333,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": null,
+        "player": true,
+        "help": [
+          "Travel stays steady, even in silence. Low hits pulse the sun; low mids light the contours and high mids send brief streaks. Move the mouse to look around."
+        ],
+        "overflow": false,
+        "focus": "NocturneBloomLavender PeaksCrimson Horiz",
+        "bounds": {
+          "controlsTop": 476.078125,
+          "controlsBottom": 842.40625,
+          "optionsTop": 57.609375,
+          "optionsBottom": 455.28125
+        }
+      }
+    },
+    {
+      "name": "text-200-390x844",
+      "width": 390,
+      "height": 844,
+      "row": {
+        "feedback": "Playback paused",
+        "tone": "neutral",
+        "polite": "Playback paused",
+        "alert": "",
+        "options": true,
+        "audio": {
+          "time": 0.525333,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": "Play",
+        "player": false,
+        "help": [
+          "Travel stays steady, even in silence. Low hits pulse the sun; low mids light the contours and high mids send brief streaks. Move the mouse to look around."
+        ],
+        "overflow": false,
+        "focus": "NocturneBloomLavender PeaksCrimson Horiz",
+        "bounds": {
+          "controlsTop": 384.109375,
+          "controlsBottom": 804,
+          "optionsTop": 40,
+          "optionsBottom": 804
+        }
+      }
+    },
+    {
+      "name": "text-200-320x568",
+      "width": 320,
+      "height": 568,
+      "row": {
+        "feedback": "Playback paused",
+        "tone": "neutral",
+        "polite": "Playback paused",
+        "alert": "",
+        "options": true,
+        "audio": {
+          "time": 0.525333,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": "Play",
+        "player": false,
+        "help": [
+          "Travel stays steady, even in silence. Low hits pulse the sun; low mids light the contours and high mids send brief streaks. Move the mouse to look around."
+        ],
+        "overflow": false,
+        "focus": "NocturneBloomLavender PeaksCrimson Horiz",
+        "bounds": {
+          "controlsTop": 69.71875,
+          "controlsBottom": 528,
+          "optionsTop": 40,
+          "optionsBottom": 528
+        }
+      }
+    },
+    {
+      "name": "text-200-closed-320x568",
+      "width": 320,
+      "height": 568,
+      "row": {
+        "feedback": "Playback paused",
+        "tone": "neutral",
+        "polite": "Playback paused",
+        "alert": "",
+        "options": false,
+        "audio": {
+          "time": 0.525333,
+          "paused": true
+        },
+        "liveTracks": 0,
+        "optionsPlay": "Play",
+        "player": true,
+        "help": [
+          "Travel stays steady, even in silence. Low hits pulse the sun; low mids light the contours and high mids send brief streaks. Move the mouse to look around."
+        ],
+        "overflow": false,
+        "focus": "NocturneBloomLavender PeaksCrimson Horiz",
+        "bounds": {
+          "controlsTop": -123.046875,
+          "controlsBottom": 528,
+          "optionsTop": 203.6875,
+          "optionsBottom": 691.6875
+        }
+      }
+    }
+  ],
+  "checks": [
+    "Tab → unplayable file: tab stays connected (live tracks), error announced in role=alert, polite region cleared.",
+    "Tab → playable file: file loads, tab tracks released.",
+    "File → unplayable file: current file keeps playing and advancing.",
+    "File → Share → Cancel: file reloaded at 2.53s (was 2.53s), paused; late stream released.",
+    "File → Share → denied: file restored, denial reason kept in the message.",
+    "File → Share → connected: file released, tab connected.",
+    "390px: player hidden with Options open, Options Play/Pause works; 1440px: no duplicate control.",
+    "All four landscapes show help in Options; outdated Lavender text gone; Bloom help present.",
+    "Tab key reaches landscape select, Share, Open file, Options and Play in order: NocturneBloomLavender PeaksCrimson Horiz → Share a tab → Open audio file → Crimson Horizon options → Play →  → Crimson Horizon — music visualizerCrimso → NocturneBloomLavender PeaksCrimson Horiz",
+    "200% text: no horizontal overflow; Options panel and controls stay inside the viewport at 1440×900, 390×844 and 320×568.",
+    "Production bundle has no \"Bloom menu\"/\"scene menu\"/old Lavender text; new fallback text present."
+  ],
+  "source": "Actual production build. Generated WAV/oscillator only; getDisplayMedia explicitly simulated. No owner media; no native picker/audibility/screen-reader certification.",
+  "help": {
+    "bloom": [
+      "The monolith floats while audio plays and settles when it stops. Bass fills the sky with aurora light, high mids brighten the stone's seam and mids send light down the mountains. Low hits ripple the lake. Move the mouse to shift the view slightly."
+    ],
+    "lavender-peaks": [
+      "The mountains drift on their own. Each ridge answers its own range, from the highest sounds in the farthest ridge to deep bass in the nearest, and sharp hits leave light traces. Bass and low hits make the sun and its corona glow."
+    ],
+    "nocturne": [
+      "Bass drives magenta fixtures, mids drive cyan windows, high mids drive the left cyan panel, and treble drives violet accents. Low hits send light across the bridge, and overall intensity lights the distant gate and haze.",
+      "Lights follow the music with quick, smooth transitions. The distant gate and haze follow overall intensity."
+    ],
+    "crimson-horizon": [
+      "Travel stays steady, even in silence. Low hits pulse the sun; low mids light the contours and high mids send brief streaks. Move the mouse to look around."
+    ]
+  },
+  "keyboardOrder": [
+    "NocturneBloomLavender PeaksCrimson Horiz",
+    "Share a tab",
+    "Open audio file",
+    "Crimson Horizon options",
+    "Play",
+    "",
+    "Crimson Horizon — music visualizerCrimso",
+    "NocturneBloomLavender PeaksCrimson Horiz"
+  ],
+  "changedSources": [
+    "src/App.tsx",
+    "src/audio/localFile.ts",
+    "src/audio/tabCapture.ts",
+    "src/components/AudioControls.tsx",
+    "src/components/audioFeedback.ts",
+    "src/engine/LandscapeCanvas.tsx",
+    "src/index.css",
+    "src/scenes/bloom/BloomScene.tsx",
+    "src/scenes/crimson-horizon/CrimsonHorizonScene.tsx",
+    "src/scenes/lavender-peaks/LavenderPeaksScene.tsx",
+    "src/scenes/nocturne/NocturneScene.tsx"
+  ],
+  "sceneLinesChanged": 16,
+  "status": "APP02 controlled browser checks PASS"
+}

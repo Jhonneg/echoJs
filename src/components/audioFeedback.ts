@@ -7,9 +7,13 @@ export interface AudioFeedback {
   tone: 'neutral' | 'error'
   action: 'resume' | 'retry-tab' | 'reconnect-tab' | 'choose-file' | 'cancel' | 'play' | null
 }
+// A short-lived message about a source switch that did not replace the current source.
+export interface SwitchNotice { text: string, tone: AudioFeedback['tone'] }
+
 // Presentation only: transport, capture and analysis retain separate owners.
 export function audioFeedback(source: 'tab' | 'file', capture: CaptureState, local: LocalFileState,
-  health: AnalysisHealth, receiving: boolean): AudioFeedback {
+  health: AnalysisHealth, receiving: boolean, notice?: SwitchNotice | null): AudioFeedback {
+  if (notice) return { ...notice, action: notice.tone === 'error' ? 'choose-file' : null }
   if (source === 'file') {
     if (local.status === 'error') return { text: local.message, tone: 'error', action: 'choose-file' }
     if (local.status !== 'playing') return {

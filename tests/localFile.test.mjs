@@ -126,3 +126,37 @@ test('prepare failure preserves its reason, releases the selected file and never
  assert.equal(states.at(-1).status,'error');assert.equal(states.at(-1).message,'Web Audio unavailable')
  assert.equal(elements[0].plays,0);assert.ok(!calls.includes(elements[0]));assert.equal(revoked.length,1)
 })
+
+test('APP02: snapshot and resume restore the same file at its position', async () => {
+  const { file, elements, states } = setup()
+  const chosen = { name: 'song.wav' }
+  assert.equal(file.snapshot(), null)
+  file.select(chosen)
+  elements[0].currentTime = 42
+  const saved = file.snapshot()
+  assert.equal(saved.file, chosen)
+  assert.equal(saved.time, 42)
+  file.clear()
+  assert.equal(file.snapshot(), null)
+  file.select(saved.file, { time: saved.time, message: 'Loaded again.' })
+  assert.equal(states.at(-1).status, 'ready')
+  assert.equal(states.at(-1).message, 'Loaded again.')
+  elements[1].dispatchEvent(new Event('loadedmetadata'))
+  assert.equal(elements[1].currentTime, 42)
+  elements[1].dispatchEvent(new Event('error'))
+  assert.equal(file.snapshot(), null)
+})
+
+test('APP02: probe accepts openable files, rejects failures and timeouts, and cleans up', async () => {
+  const { elements, revoked } = setup()
+  const { probeAudioFile } = await import('../src/audio/localFile.ts')
+  const good = probeAudioFile({ name: 'a.wav' })
+  elements.at(-1).dispatchEvent(new Event('loadedmetadata'))
+  assert.equal(await good, true)
+  const bad = probeAudioFile({ name: 'b.txt' })
+  elements.at(-1).dispatchEvent(new Event('error'))
+  assert.equal(await bad, false)
+  assert.equal(await probeAudioFile({ name: 'slow.wav' }, 5), false)
+  assert.equal(revoked.length, 3)
+  assert.equal(elements.at(-1).plays, 0)
+})

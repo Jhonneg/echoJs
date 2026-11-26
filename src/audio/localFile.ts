@@ -14,6 +14,38 @@ interface LocalAnalysis {
   readonly health?: AnalysisHealth
 }
 
+// Check that the browser can open a file before it replaces a working source.
+// Uses a throwaway element that is never attached to analysis or played.
+export function probeAudioFile(file: File, timeoutMs = 8000): Promise<boolean> {
+  return new Promise((resolve) => {
+    let url: string | undefined
+    let probe: HTMLAudioElement | undefined
+    let timer: ReturnType<typeof setTimeout> | undefined
+    const finish = (ok: boolean) => {
+      if (timer === undefined) return
+      clearTimeout(timer)
+      timer = undefined
+      probe?.removeEventListener('loadedmetadata', loaded)
+      probe?.removeEventListener('error', failed)
+      probe?.removeAttribute('src')
+      probe?.load()
+      if (url) URL.revokeObjectURL(url)
+      resolve(ok)
+    }
+    const loaded = () => finish(true)
+    const failed = () => finish(false)
+    timer = setTimeout(failed, timeoutMs)
+    try {
+      probe = new Audio()
+      probe.preload = 'metadata'
+      probe.addEventListener('loadedmetadata', loaded)
+      probe.addEventListener('error', failed)
+      url = URL.createObjectURL(file)
+      probe.src = url
+    } catch { failed() }
+  })
+}
+
 export function createLocalFile(onChange: (state: LocalFileState) => void, analysis: LocalAnalysis) {
   let element: HTMLAudioElement | undefined
   let url: string | undefined
@@ -22,6 +54,7 @@ export function createLocalFile(onChange: (state: LocalFileState) => void, analy
   let disposed = false
   let volume = 0.5
   let name = ''
+  let selected: File | undefined
   let removeListeners = () => {}
 
   function publish(status: LocalFileState['status'], message: string, retryPlayback = false) {
@@ -45,12 +78,15 @@ export function createLocalFile(onChange: (state: LocalFileState) => void, analy
   function clear() {
     release()
     name = ''
+    selected = undefined
     publish('empty', 'Select a permitted local audio file. Nothing is uploaded.')
   }
-  function select(file: File) {
+  // `resume` restores a file that a failed source switch had to release.
+  function select(file: File, resume?: { time: number, message: string }) {
     if (disposed) return
     release()
     name = file.name
+    selected = file
     try {
       const current = new Audio()
       element = current
@@ -62,22 +98,29 @@ export function createLocalFile(onChange: (state: LocalFileState) => void, analy
       const ended = () => publish('ended', 'Playback ended. Play to restart.')
       const failed = () => {
         release()
+        selected = undefined
         publish('error', 'This file could not be played. Select a browser-supported audio file, such as WAV or MP3.')
       }
       current.addEventListener('playing', playing)
       current.addEventListener('pause', paused)
       current.addEventListener('ended', ended)
       current.addEventListener('error', failed)
+      const restore = () => {
+        if (element === current && resume && Number.isFinite(resume.time)) current.currentTime = resume.time
+      }
+      if (resume) current.addEventListener('loadedmetadata', restore, { once: true })
       removeListeners = () => {
         current.removeEventListener('playing', playing)
         current.removeEventListener('pause', paused)
         current.removeEventListener('ended', ended)
         current.removeEventListener('error', failed)
+        current.removeEventListener('loadedmetadata', restore)
       }
       current.src = url
-      publish('ready', 'File selected. Click Play to begin.')
+      publish('ready', resume?.message ?? 'File selected. Click Play to begin.')
     } catch {
       release()
+      selected = undefined
       publish('error', 'Could not open this file. Select another file to retry.')
     }
   }
@@ -113,6 +156,8 @@ export function createLocalFile(onChange: (state: LocalFileState) => void, analy
   }
   return {
     select, play, clear,
+    // The loaded file and position, so a source switch can put it back.
+    snapshot() { return selected ? { file: selected, time: element?.currentTime ?? 0 } : null },
     pause() { element?.pause() },
     setVolume(value: number) {
       volume = Math.max(0, Math.min(1, value))
