@@ -1,0 +1,245 @@
+{
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ],
+  "screenshots": [
+    "after-background",
+    "shared-tab-ended",
+    "phone-no-tab-sharing",
+    "phone-touch-options",
+    "video-only-share"
+  ],
+  "results": {
+    "background-hidden": {
+      "status": "PASS",
+      "detail": "visibility while away: hidden; audio 1.35s → 5.85s, playing=true; analysis running; frames resumed=true; feedback \"Playing local audio.\""
+    },
+    "background-frozen": {
+      "status": "NOTE",
+      "detail": "forced freeze: browser paused audio (5.87s → 5.87s); app showed \"Playback paused\" with button \"Play\", not an error; pressing Play resumed (6.38s), analysis running, frames running. Chrome does not normally freeze tabs that are playing sound."
+    },
+    "shared-tab-ended": {
+      "status": "PASS",
+      "detail": "feedback \"Browser sharing ended. Connect again to choose a tab.\", action Retry sharing, live tracks 0, tone neutral, Disconnect shown=false"
+    },
+    "disconnect-all-states": {
+      "status": "PASS",
+      "detail": "tab-connected:ok, tab-connecting:ok, file-ready:ok, file-playing:ok, file-paused:ok, file-ended:ok"
+    },
+    "reduced-motion-bloom": {
+      "status": "PASS",
+      "detail": "pixels changing over 1.5s in silence: normal 25.25%, reduced 0.00%"
+    },
+    "reduced-motion-nocturne": {
+      "status": "NOTE",
+      "detail": "pixels changing over 1.5s in silence: normal 0.00%, reduced 0.00% — still in silence by design, so this test cannot show a difference"
+    },
+    "reduced-motion-lavender-peaks": {
+      "status": "PASS",
+      "detail": "pixels changing over 1.5s in silence: normal 3.21%, reduced 0.00%"
+    },
+    "reduced-motion-crimson-horizon": {
+      "status": "PASS",
+      "detail": "pixels changing over 1.5s in silence: normal 12.33%, reduced 0.00%"
+    },
+    "phone-touch": {
+      "status": "PASS",
+      "detail": "fine-pointer parallax gate=false (Bloom parallax off), coarse=true; Share says \"This browser can’t share tab audio. Open a local audio file instead, or use desktop Chrome or Edge.\" with Open audio file; tap Play, open Options and Pause work=true"
+    },
+    "no-tab-audio-message": {
+      "status": "NOTE",
+      "detail": "simulated video-only share → \"No audio track received. Retry, select a browser tab, and enable Share tab audio.\" (action Retry sharing). Tracks released. Message asks to enable tab audio, which Firefox/Safari cannot do; wording unconfirmed in real Firefox/Safari (manual)."
+    }
+  },
+  "source": "Production build, headless Brave 1.x (Chromium). Generated WAV; getDisplayMedia simulated. Not native sharing, audibility, Firefox/Safari or real devices.",
+  "browser": "Brave Browser 156.1.98.63",
+  "hidden": {
+    "before": {
+      "feedback": "Playing local audio.",
+      "tone": "neutral",
+      "action": null,
+      "disconnect": true,
+      "sceneStatus": null,
+      "stage": "bloom-stage",
+      "audio": {
+        "time": 1.35,
+        "paused": false,
+        "ended": false
+      },
+      "health": "running",
+      "liveTracks": 0,
+      "visibility": "hidden",
+      "rafs": 98
+    },
+    "during": {
+      "feedback": "Playing local audio.",
+      "tone": "neutral",
+      "action": null,
+      "disconnect": true,
+      "sceneStatus": null,
+      "stage": "bloom-stage",
+      "audio": {
+        "time": 4.35,
+        "paused": false,
+        "ended": false
+      },
+      "health": "running",
+      "liveTracks": 0,
+      "visibility": "hidden",
+      "rafs": 98
+    },
+    "after": {
+      "feedback": "Playing local audio.",
+      "tone": "neutral",
+      "action": null,
+      "disconnect": true,
+      "sceneStatus": null,
+      "stage": "bloom-stage",
+      "audio": {
+        "time": 5.85,
+        "paused": false,
+        "ended": false
+      },
+      "health": "running",
+      "liveTracks": 0,
+      "visibility": "visible",
+      "rafs": 189
+    }
+  },
+  "frozen": {
+    "before": {
+      "feedback": "Playing local audio.",
+      "tone": "neutral",
+      "action": null,
+      "disconnect": true,
+      "sceneStatus": null,
+      "stage": "bloom-stage",
+      "audio": {
+        "time": 5.87,
+        "paused": false,
+        "ended": false
+      },
+      "health": "running",
+      "liveTracks": 0,
+      "visibility": "visible",
+      "rafs": 190
+    },
+    "after": {
+      "feedback": "Playback paused",
+      "tone": "neutral",
+      "action": null,
+      "disconnect": true,
+      "sceneStatus": null,
+      "stage": "bloom-stage",
+      "audio": {
+        "time": 5.87,
+        "paused": true,
+        "ended": false
+      },
+      "health": "running",
+      "liveTracks": 0,
+      "visibility": "hidden",
+      "rafs": 190
+    },
+    "recovered": {
+      "feedback": "Playing local audio.",
+      "tone": "neutral",
+      "action": null,
+      "disconnect": true,
+      "sceneStatus": null,
+      "stage": "bloom-stage",
+      "audio": {
+        "time": 6.38,
+        "paused": false,
+        "ended": false
+      },
+      "health": "running",
+      "liveTracks": 0,
+      "visibility": "visible",
+      "rafs": 269
+    }
+  },
+  "disconnect": {
+    "tab-connected": true,
+    "tab-connecting": true,
+    "file-ready": true,
+    "file-playing": true,
+    "file-paused": true,
+    "file-ended": true
+  },
+  "reducedMotion": {
+    "bloom": {
+      "normal": {
+        "mean": 6.532,
+        "changedShare": 0.2525
+      },
+      "reduced": {
+        "mean": 0,
+        "changedShare": 0
+      }
+    },
+    "nocturne": {
+      "normal": {
+        "mean": 0,
+        "changedShare": 0
+      },
+      "reduced": {
+        "mean": 0,
+        "changedShare": 0
+      }
+    },
+    "lavender-peaks": {
+      "normal": {
+        "mean": 2.519,
+        "changedShare": 0.0321
+      },
+      "reduced": {
+        "mean": 0,
+        "changedShare": 0
+      }
+    },
+    "crimson-horizon": {
+      "normal": {
+        "mean": 2.489,
+        "changedShare": 0.1233
+      },
+      "reduced": {
+        "mean": 0,
+        "changedShare": 0
+      }
+    }
+  },
+  "phone": {
+    "media": {
+      "fine": false,
+      "coarse": true
+    },
+    "feedback": "This browser can’t share tab audio. Open a local audio file instead, or use desktop Chrome or Edge.",
+    "optionsOpen": true
+  },
+  "videoOnly": {
+    "feedback": "No audio track received. Retry, select a browser tab, and enable Share tab audio.",
+    "tone": "error",
+    "action": "Retry sharing",
+    "disconnect": false,
+    "sceneStatus": null,
+    "stage": "bloom-stage",
+    "audio": null,
+    "health": "idle",
+    "liveTracks": 0,
+    "visibility": "visible",
+    "rafs": 58
+  },
+  "status": "APP04 automated checks PASS",
+  "unexpectedErrors": []
+}

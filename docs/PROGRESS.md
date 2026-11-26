@@ -1,5 +1,16 @@
 # ECHO — current checkpoint
 
+## APP04 — AUTOMATED CHROMIUM CHECKS PASS; OWNER MANUAL CHECKS PENDING — 2026-11-26
+
+- Owner "approve without download" authorizes APP04 without Firefox/WebKit installs. Production change: unsupported-sharing wording in `tabCapture.ts` (+1 unit test). New `scripts/verify-app04.mjs`, [support matrix](evidence/application/app04/SUPPORT_MATRIX.md), [manual checklist](evidence/application/app04/MANUAL_CHECKLIST.md), [evidence](evidence/application/app04/README.md).
+- PASS (headless Brave): hidden tab keeps file audio/analysis; shared-tab end; Disconnect from 6 states; reduced motion stills Bloom/Lavender/Crimson; phone/touch emulation. NOTE: forced freeze pauses media (accurate status, Play recovers); Nocturne already still in silence; simulated video-only share keeps the possibly misleading "enable Share tab audio" message pending real Firefox/Safari.
+- PASS 333 tests, lint, typecheck/build, whitespace. MANUAL: Chrome/Edge native window and sharing audibility, Firefox, Safari, real phones, Orca, real slow network/GPU reset — all in the checklist; no cell marked passed without observation.
+- Stop for owner review and manual checklist. APP05 unstarted. Owner asked to commit: APP02, APP03 and APP04 committed separately on main; not pushed.
+
+## APP03 — OWNER APPROVED ("procced"); APP04 PLAN PENDING — 2026-11-26
+
+- Owner says "procced" after the APP03 report: record approval and authorization to plan APP04 only. Real GPU reset/network failure, crash-boundary trigger and native performance remain unverified (APP04/manual). APP02+APP03 uncommitted; commits need separate authorization. APP04 unstarted.
+
 ## APP03 — IMPLEMENTED / CONTROLLED CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
 
 - Owner "approve" authorizes the APP03 plan. Changes: App (on-demand Nocturne/Lavender/Crimson with idle preload after first draw, latest-wins switching, LandscapeBoundary, restart), AudioControls (select shows pending choice), LandscapeCanvas (context loss/restore + first-draw signal), new `engine/renderHealth.ts`, new `components/SceneStatus.tsx`, CSS. No scene, analysis, adapter, quality or dependency changes.

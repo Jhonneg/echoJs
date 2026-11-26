@@ -611,3 +611,7 @@ Analysis owns one input, and preparing it closes the previous context, so a play
 ## 2026-11-26 — APP03 loads secondary landscapes on demand and reports context loss from the shared host
 
 Bloom (first view) stays in the main bundle; the other three load as chunks, preloaded at idle only after the first real frame (the page is idle during canvas setup, so plain idle scheduling fetched them before Bloom drew). Unloaded choices keep the current landscape on screen; latest choice wins. Context loss is reported by `LandscapeCanvas` into a change-only store, so no scene file or per-frame React state is involved; Restart remounts the landscape by key. A deliberate analysis reset after >250ms main-thread gaps remains and is recorded, not changed.
+
+## 2026-11-26 — APP04 qualifies Chromium automatically and leaves other engines to owner checks
+
+Owner chose "approve without download", so Firefox/WebKit were not installed; their rows stay MANUAL in the support matrix rather than being inferred from Chromium. Only one production change: the unsupported-sharing message now distinguishes an insecure page from a browser with no tab sharing (phones), instead of telling phone users to use localhost/HTTPS. The video-only (Firefox/Safari-style) message is left unchanged until a real browser confirms the behaviour. A forced page freeze pauses media by browser policy; the app reports it accurately and Play recovers, so no lifecycle code was added.

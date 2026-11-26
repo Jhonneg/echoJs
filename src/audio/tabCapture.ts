@@ -49,8 +49,11 @@ export function createTabCapture(onChange: (state: CaptureState) => void, analys
 
   async function connect(): Promise<ConnectResult> {
     if (disposed || pending || stream) return { status: 'skipped', message: '' }
-    if (!globalThis.isSecureContext || !navigator.mediaDevices?.getDisplayMedia)
-      return fail('unsupported', 'Tab sharing is unavailable. Use desktop Chrome on localhost or HTTPS.')
+    if (!globalThis.isSecureContext)
+      return fail('unsupported', 'Tab sharing needs a secure page. Open ECHO over HTTPS (or localhost), or open a local audio file.')
+    // Phones and some browsers have no tab sharing at all.
+    if (!navigator.mediaDevices?.getDisplayMedia)
+      return fail('unsupported', 'This browser can’t share tab audio. Open a local audio file instead, or use desktop Chrome or Edge.')
     const request = ++generation
     pending = true
     publish('connecting', 'Choose a browser tab and enable Share tab audio. The native picker also requests video.')
