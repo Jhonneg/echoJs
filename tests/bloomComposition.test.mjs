@@ -3,10 +3,14 @@ import { test } from 'node:test'
 import { CAMERA_HEIGHT, CAMERA_Z, CRYSTALS, HORIZON_FRACTION, MONOLITH, RANGES, projectToScreen, rangeOutline, rangeTop } from '../src/scenes/bloom/composition.ts'
 
 const aspects = { desktop: 1440 / 900, wide: 1920 / 810, portrait: 390 / 844 }
+// Box corners, turned by the monolith's yaw about its own centre.
 const corners = () => {
-  const [cx, cy] = MONOLITH.center, hw = MONOLITH.width / 2, hh = MONOLITH.height / 2, hd = MONOLITH.depth / 2
-  const out = []
-  for (const sx of [-1, 1]) for (const sy of [-1, 1]) for (const sz of [-1, 1]) out.push([cx + sx * hw, cy + sy * hh, MONOLITH.center[2] + sz * hd])
+  const [cx, cy, cz] = MONOLITH.center, hw = MONOLITH.width / 2, hh = MONOLITH.height / 2, hd = MONOLITH.depth / 2
+  const c = Math.cos(MONOLITH.yaw), s = Math.sin(MONOLITH.yaw), out = []
+  for (const sx of [-1, 1]) for (const sy of [-1, 1]) for (const sz of [-1, 1]) {
+    const x = sx * hw, z = sz * hd
+    out.push([cx + x * c + z * s, cy + sy * hh, cz - x * s + z * c])
+  }
   return out
 }
 
@@ -18,18 +22,18 @@ test('BR1: monolith is fully visible and horizontally centred at desktop, wide a
       assert.ok(p.y > 0 && p.y < 1, `${name}: monolith y ${p.y} out of frame`)
     }
     const xs = points.map(p => p.x)
-    assert.ok(Math.abs((Math.min(...xs) + Math.max(...xs)) / 2 - 0.5) < 1e-9, `${name}: not centred`)
+    assert.ok(Math.abs((Math.min(...xs) + Math.max(...xs)) / 2 - 0.5) < 0.02, `${name}: not centred`)
   }
 })
 
-test('BR1: monolith matches the reference framing in a 16:9 frame', () => {
-  const front = 0
-  const top = projectToScreen(0, MONOLITH.center[1] + MONOLITH.height / 2, front, 16 / 9)
-  const bottom = projectToScreen(0, MONOLITH.bottom, front, 16 / 9)
-  const right = projectToScreen(MONOLITH.width / 2, MONOLITH.center[1], front, 16 / 9)
-  assert.ok(Math.abs(top.y - 0.064) < 0.02, `top ${top.y}`)
-  assert.ok(Math.abs(bottom.y - 0.627) < 0.02, `bottom ${bottom.y}`)
-  assert.ok(Math.abs((right.x - 0.5) * 2 - 0.09) < 0.015, `width ${(right.x - 0.5) * 2}`)
+test('BR1/BR4: the turned monolith matches the reference framing in a 16:9 frame', () => {
+  const points = corners().map(([x, y, z]) => projectToScreen(x, y, z, 16 / 9))
+  const xs = points.map(p => p.x), ys = points.map(p => p.y)
+  const top = Math.min(...ys), bottom = Math.max(...ys), width = Math.max(...xs) - Math.min(...xs)
+  assert.ok(Math.abs(top - 0.064) < 0.025, `top ${top}`)
+  assert.ok(Math.abs(bottom - 0.627) < 0.025, `bottom ${bottom}`)
+  assert.ok(Math.abs(width - 0.09) < 0.015, `width ${width}`)
+  assert.ok(MONOLITH.yaw < 0, 'right side face should turn toward the camera')
   assert.ok(MONOLITH.bottom > 0.2, 'monolith must hover above the water')
 })
 

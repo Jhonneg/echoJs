@@ -39,16 +39,23 @@ export function projectToScreen(x: number, y: number, z: number, aspect: number)
   return { x: (ndcX + 1) / 2, y: (1 - ndcY) / 2 }
 }
 
-// Monolith: centred, top 6.4% / bottom 62.7%, 9% of the frame wide. Sized at its visible
-// front face (world z = 0); the box extends back from there.
+// Monolith: centred, top 6.4% / bottom 62.7%, 9% of the frame wide including the side face
+// that shows because the slab is turned (BR4). Sized at its front (world z = 0); the box
+// extends back from there and turns about its own centre.
 const MONOLITH_DISTANCE = CAMERA_Z
+export const MONOLITH_YAW = -0.39 // negative turns the right side face toward the camera (~22% of its width, as in the reference)
+const MONOLITH_DEPTH_RATIO = 0.68
 export const MONOLITH = (() => {
   const bottom = heightForScreen(0.627, MONOLITH_DISTANCE)
   const top = heightForScreen(0.064, MONOLITH_DISTANCE)
-  const width = 2 * xForScreen(0.545, MONOLITH_DISTANCE)
-  const depth = width * 0.68
-  return { width, height: top - bottom, depth, bottom, center: [0, (top + bottom) / 2, -depth / 2] as const }
+  const span = 2 * xForScreen(0.545, MONOLITH_DISTANCE)
+  // Turned, the visible width is width·cos + depth·sin: shrink so the total stays 9%.
+  const width = span / (Math.cos(MONOLITH_YAW) + MONOLITH_DEPTH_RATIO * Math.abs(Math.sin(MONOLITH_YAW)))
+  const depth = width * MONOLITH_DEPTH_RATIO
+  return { width, height: top - bottom, depth, bottom, yaw: MONOLITH_YAW, center: [0, (top + bottom) / 2, -depth / 2] as const }
 })()
+// Seam: a thin bright line down the front face, a little left of centre (fraction across).
+export const SEAM = { u: 0.44, halfWidth: 0.012, top: 0.035, bottom: 0.965 }
 
 // Two small crystals: left at mid height, right lower, slightly in front of the monolith.
 export const CRYSTALS = [

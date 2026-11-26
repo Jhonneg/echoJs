@@ -1,17 +1,20 @@
 import './bloom.css'
-import { Component, useEffect, useLayoutEffect, useMemo, useSyncExternalStore, type ReactNode } from 'react'
+import { Component, useEffect, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { BackSide, BufferAttribute, BufferGeometry, Color, ShaderMaterial, Vector3, Vector4 } from 'three'
+import { BackSide, BufferAttribute, BufferGeometry, Color, Mesh, OctahedronGeometry, ShaderMaterial, Vector3, Vector4 } from 'three'
+import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import { CAMERA_HEIGHT, CAMERA_PITCH, CAMERA_Z, CRYSTALS, FOV_DEGREES, MONOLITH, RANGES } from './composition'
 import { buildRange, rangeCells, rangeFragmentShader, rangeVertexShader } from './ranges'
 import { CURTAINS, SKY_DEFINES, auroraGain, curtainPhases, skyFragmentShader, skyVertexShader } from './sky'
+import { MONOLITH_DEFINES, crystalFragmentShader, crystalPose, crystalVertexShader, monolithFragmentShader, monolithHover, monolithVertexShader } from './monolith'
 
 // Bloom rebuild from the Resonant Monolith reference. BR1 placed everything from measured
-// screen fractions; BR2 made the ranges real 3D terrain; BR3 adds the sky dome and aurora,
-// whose light also falls on the ranges. Monolith, crystals and water are BR1 placeholders.
+// screen fractions; BR2 made the ranges real 3D terrain; BR3 added the sky dome and aurora,
+// whose light also falls on the ranges; BR4 adds the stone monolith and crystals. The water
+// is still a BR1 placeholder.
 
 const SKY_RADIUS = 450
 const SKY_TOP = '#3d3a68'
@@ -89,6 +92,56 @@ function Range({ index, quality, aurora }: { index: number, quality: GraphicsQua
   return <mesh geometry={geometry} material={material} />
 }
 
+const auroraLight = () => ({
+  uAuroraLeft: { value: new Color(CURTAINS[0].color) }, uAuroraRight: { value: new Color(CURTAINS[3].color) },
+  uAuroraGain: AURORA.uAuroraGain,
+})
+
+function Monolith({ quality, reducedMotion }: { quality: GraphicsQuality, reducedMotion: boolean }) {
+  const mesh = useRef<Mesh>(null)
+  const geometry = useMemo(() => new RoundedBoxGeometry(MONOLITH.width, MONOLITH.height, MONOLITH.depth, 3, 0.035), [])
+  const material = useMemo(() => new ShaderMaterial({
+    vertexShader: monolithVertexShader, fragmentShader: monolithFragmentShader,
+    defines: { ...MONOLITH_DEFINES, OCTAVES: quality === 'low' ? 3 : 5 },
+    uniforms: {
+      uSize: { value: new Vector3(MONOLITH.width, MONOLITH.height, MONOLITH.depth) },
+      uStoneDark: { value: new Color('#3a3043') }, uStoneLight: { value: new Color('#5d5067') },
+      uKeyColor: { value: new Color('#f0d2e4') }, uKeyDir: { value: new Vector3(0.9, 0.3, 0.3) },
+      uAmbient: { value: new Color('#8a80a3') }, uSeam: { value: new Color('#ffe0ef') },
+      ...auroraLight(),
+    },
+  }), [quality])
+  useEffect(() => () => { geometry.dispose(); material.dispose() }, [geometry, material])
+  useFrame(state => {
+    const hover = monolithHover(state.clock.elapsedTime, reducedMotion), m = mesh.current
+    if (!m) return
+    m.position.y = MONOLITH.center[1] + hover.y
+    m.rotation.y = MONOLITH.yaw + hover.yaw
+  })
+  return <mesh ref={mesh} geometry={geometry} material={material} position={MONOLITH.center} rotation={[0, MONOLITH.yaw, 0]} />
+}
+
+function Crystal({ index, reducedMotion }: { index: number, reducedMotion: boolean }) {
+  const crystal = CRYSTALS[index], mesh = useRef<Mesh>(null)
+  const geometry = useMemo(() => new OctahedronGeometry(crystal.size), [crystal])
+  const material = useMemo(() => new ShaderMaterial({
+    vertexShader: crystalVertexShader, fragmentShader: crystalFragmentShader,
+    uniforms: {
+      uBase: { value: new Color('#9db3b8') }, uKeyColor: { value: new Color('#e6d8ec') },
+      uKeyDir: { value: new Vector3(0.8, 0.45, 0.5) }, uAmbient: { value: new Color('#4c4660') },
+      ...auroraLight(),
+    },
+  }), [])
+  useEffect(() => () => { geometry.dispose(); material.dispose() }, [geometry, material])
+  useFrame(state => {
+    const pose = crystalPose(index, state.clock.elapsedTime, reducedMotion), m = mesh.current
+    if (!m) return
+    m.position.y = crystal.position[1] + pose.y
+    m.rotation.set(0.25, pose.spin, 0.1)
+  })
+  return <mesh ref={mesh} geometry={geometry} material={material} position={crystal.position} />
+}
+
 function Composition({ onRenderTime, quality, reducedMotion }: { onRenderTime: (now: number) => void, quality: GraphicsQuality, reducedMotion: boolean }) {
   const aurora = AURORA
   useFrame(state => {
@@ -108,19 +161,8 @@ function Composition({ onRenderTime, quality, reducedMotion }: { onRenderTime: (
       <planeGeometry args={[2400, 320]} />
       <meshBasicMaterial color="#5a4c79" />
     </mesh>
-    <mesh position={MONOLITH.center}>
-      <boxGeometry args={[MONOLITH.width, MONOLITH.height, MONOLITH.depth]} />
-      <meshBasicMaterial color="#3b3247" />
-    </mesh>
-    {/* Seam placeholder: thin bright strip on the front face, left of centre as in the reference. */}
-    <mesh position={[-MONOLITH.width * 0.12, MONOLITH.center[1], 0.005]}>
-      <planeGeometry args={[0.035, MONOLITH.height * 0.92]} />
-      <meshBasicMaterial color="#f6d3e6" />
-    </mesh>
-    {CRYSTALS.map((crystal, i) => <mesh key={i} position={crystal.position} rotation={[0.2, 0.5, 0]}>
-      <octahedronGeometry args={[crystal.size]} />
-      <meshBasicMaterial color="#8fc9c1" />
-    </mesh>)}
+    <Monolith quality={quality} reducedMotion={reducedMotion} />
+    {CRYSTALS.map((_, i) => <Crystal key={i} index={i} reducedMotion={reducedMotion} />)}
   </>
 }
 

@@ -1,5 +1,15 @@
 # ECHO — current checkpoint
 
+## Bloom rebuild BR4 — OWNER APPROVED ("commit and proceed"); BR5 PLAN PENDING — 2026-11-26
+
+- Owner approves BR4 and asks to commit and continue. BR4 committed on main; not pushed. BR5 (water) plan presented; BR5 unstarted.
+
+## Bloom rebuild BR4 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner approved the BR4 plan. New `src/scenes/bloom/monolith.ts` (stone/seam and crystal shaders, hover and crystal motion helpers). The slab is turned −0.39 rad with total width held at 9% (`composition.ts`), and `BloomScene.tsx` replaces the placeholders. Uses three's bundled `RoundedBoxGeometry` add-on; no new dependency.
+- [Evidence](evidence/bloom/rebuild/br4/README.md), including a monolith close-up next to the reference: three drafts. PASS 298 tests (5 new, framing test updated for the turn), lint/typecheck/build, whitespace, BR4 capture (0 errors, reduced motion still), APP02/APP03 browser checks (committed APP evidence restored). Frame timing is the headless cap only.
+- Known: front face slightly darker than the reference; no water contact glow or ripples yet (BR5). Stop for review. BR4 uncommitted.
+
 ## Bloom rebuild BR3 — OWNER APPROVED ("commit and proceed"); BR4 PLAN PENDING — 2026-11-26
 
 - Owner approves BR3 as is, keeping the planned 29–53 s aurora cycles, and asks to commit and continue. BR3 committed on main; not pushed. BR4 (monolith + crystals) plan presented; BR4 unstarted.
