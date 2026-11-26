@@ -73,6 +73,8 @@ uniform vec3 uRiverColor[${RIVERS.length}];
 uniform vec3 uRiverStrength;
 uniform vec3 uRiverPhase;
 uniform vec4 uRiverBox[${RIVERS.length}];
+uniform float uRiverGain; // BR8: brighter with the mids
+uniform vec2 uRiverPulse; // BR8 mid hit: position along the rivers (0 source … 1 mouth), strength
 vec3 riverGlow(vec2 f) {
   vec3 glowSum = vec3(0.0);
   for (int r = 0; r < RIVER_COUNT; r++) {
@@ -92,7 +94,9 @@ vec3 riverGlow(vec2 f) {
     float glow = exp(-pow(best / w, 2.0)) * 1.15 + exp(-pow(best / (w * 3.2), 2.0)) * 0.3;
     float flow = 0.72 + 0.28 * sin(along * 22.0 - uRiverPhase[r]);
     float ends = smoothstep(0.0, 0.08, along) * smoothstep(1.0, 0.8, along);
-    glowSum += uRiverColor[r] * glow * flow * ends * uRiverStrength[r];
+    float pd = (along - uRiverPulse.x) / 0.06;
+    float pulse = exp(-pd * pd) * uRiverPulse.y * exp(-pow(best / w, 2.0)) * 1.4;
+    glowSum += uRiverColor[r] * (glow * flow * uRiverGain + pulse) * ends * uRiverStrength[r];
   }
   return glowSum;
 }`

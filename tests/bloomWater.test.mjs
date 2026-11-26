@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { MONOLITH } from '../src/scenes/bloom/composition.ts'
-import { REFLECTION_SCALE, RING_CENTER, WATER_PERIODS, WATER_STILL_TIME, reflectionSize, waterPhases } from '../src/scenes/bloom/water.ts'
+import { REFLECTION_SCALE, RING_CENTER, WATER_PERIODS, WATER_PLANE, WATER_STILL_TIME, reflectionSize, waterFragmentShader, waterVertexShader, waterPhases } from '../src/scenes/bloom/water.ts'
 
 test('BR5: rings spread from directly under the monolith', () => {
   assert.equal(RING_CENTER[0], MONOLITH.center[0])
@@ -25,4 +25,13 @@ test('BR5: reflection resolution is half the buffer on Standard and about a thir
   assert.ok(low.width < 720 && low.width >= 1440 * 0.3)
   assert.ok(REFLECTION_SCALE.low < REFLECTION_SCALE.standard)
   assert.deepEqual(reflectionSize(10, 10, 'low'), { width: 64, height: 64 })
+})
+
+test('BR8 fix: the reflection lookup is per pixel and the lake is subdivided (no split reflection)', () => {
+  // Interpolating the projective lookup across two huge clipped triangles split the reflection
+  // on an NVIDIA GTX 1660. The lookup must be computed in the fragment shader instead.
+  assert.ok(!/varying\s+vec4\s+vUv/.test(waterVertexShader) && !/varying\s+vec4\s+vUv/.test(waterFragmentShader))
+  assert.match(waterFragmentShader, /uniform mat4 textureMatrix;/)
+  assert.match(waterFragmentShader, /textureMatrix \* vec4\(vLocal, 1\.0\)/)
+  assert.ok(WATER_PLANE.width / WATER_PLANE.segmentsX <= 25 && WATER_PLANE.depth / WATER_PLANE.segmentsZ <= 25)
 })

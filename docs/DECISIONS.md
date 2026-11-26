@@ -635,3 +635,11 @@ Planned ribbon meshes on single ranges were mostly hidden: flat ribbons were cut
 ## 2026-11-26 — Bloom framing adapts on narrow screens; GPU timers are the performance measure
 
 Narrow screens widen the field of view just enough to keep half the reference width visible, and raise the horizon only as far as the view widens; landscape shapes keep the approved framing exactly. This is safe because sky, aurora, rivers and reflections are world-locked through the fixed reference mapping. Frame-capped and uncapped headless timings proved meaningless for cost; GPU time is measured with EXT_disjoint_timer_query_webgl2 in a throwaway build. Optimisations must show no visible change (pixel comparison) and are not credited with savings smaller than run-to-run variation.
+
+## 2026-11-26 — Bloom's music response is light-only; parallax is the only movement
+
+Owner chose light responses plus mouse parallax, with no music-driven motion of the monolith, crystals or camera; mountains and water geometry stay still (planar reflection needs flat water). One controller reads the analysis once per frame and feeds shared uniforms; hits must be fresh, same-session and new, and mid hits are routed by which mid band rose more. Idle keeps the approved pose; playback raises the monolith 3%. Parallax needs a real mouse (fine pointer with hover and mouse pointer events) and motion allowed.
+
+## 2026-11-26 — Bloom's lake looks up its reflection per pixel on a subdivided plane
+
+Owner reported the reflection splitting along a line and shifting sideways on an NVIDIA GTX 1660 (Brave, Hyprland), also with music off, the mouse still, on Low, under X11 and with ANGLE on Vulkan. Throwaway builds isolated it: a plain mirror still split, removing the reflection removed it, and a frozen frame kept it, so it came from Bloom's reflection pass, not the display. The cause: the lake was two huge triangles reaching behind the camera, and the projective lookup interpolated across GPU-clipped triangles was imprecise. The lookup is now computed in the fragment shader from the local position, and the plane is 96×48 cells. The owner confirmed the test build no longer splits. Headless Brave never reproduced it, so the owner's machine is the check.

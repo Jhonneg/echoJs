@@ -41,6 +41,7 @@ export const monolithFragmentShader = /* glsl */`
 uniform vec3 uSize; // width, height, depth
 uniform vec3 uStoneDark, uStoneLight, uKeyColor, uKeyDir, uAmbient, uSeam, uAuroraLeft, uAuroraRight;
 uniform float uAuroraGain;
+uniform float uSeamGain, uLightLift; // BR8: seam follows the high mids; scene light lift
 varying vec3 vLocal;
 varying vec3 vLocalNormal;
 varying vec3 vNormal;
@@ -85,7 +86,7 @@ void main() {
   float fromLeft = max(dot(n, normalize(vec3(-1.0, 0.35, 0.4))), 0.0);
   float fromRight = max(dot(n, normalize(vec3(1.0, 0.4, 0.3))), 0.0);
   vec3 light = uAmbient + key * uKeyColor + (uAuroraLeft * fromLeft + uAuroraRight * fromRight) * 0.22 * uAuroraGain;
-  vec3 color = stone * light;
+  vec3 color = stone * light * (1.0 + uLightLift);
   // Seam: thin bright core with smooth edges, a soft glow on the stone, faded at the ends.
   if (ln.z > 0.5) {
     float d = (uv.x - SEAM_U) * uSize.x;
@@ -93,7 +94,7 @@ void main() {
     float core = 1.0 - smoothstep(SEAM_HALF - aa, SEAM_HALF + aa, abs(d));
     float glow = exp(-abs(d) / 0.045);
     float ends = smoothstep(SEAM_TOP, SEAM_TOP + 0.02, uv.y) * smoothstep(SEAM_BOTTOM, SEAM_BOTTOM - 0.02, uv.y);
-    color += uSeam * (core * 1.6 + glow * 0.2) * ends;
+    color += uSeam * (core * 1.6 + glow * 0.2 * uSeamGain) * ends * mix(1.0, uSeamGain, 0.6);
   }
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
@@ -118,6 +119,7 @@ void main() {
 export const crystalFragmentShader = /* glsl */`
 uniform vec3 uBase, uKeyColor, uKeyDir, uAmbient, uAuroraLeft, uAuroraRight;
 uniform float uAuroraGain;
+uniform float uSparkle; // BR8: faint edge sparkle with the highs
 varying vec3 vNormal;
 varying vec3 vWorld;
 void main() {
@@ -125,7 +127,7 @@ void main() {
   float key = max(dot(n, normalize(uKeyDir)), 0.0);
   float rim = pow(1.0 - abs(dot(n, view)), 2.0);
   vec3 aurora = mix(uAuroraLeft, uAuroraRight, step(0.0, vWorld.x)) * uAuroraGain;
-  vec3 color = uBase * (uAmbient + key * uKeyColor) + aurora * rim * 0.35;
+  vec3 color = uBase * (uAmbient + key * uKeyColor) + aurora * rim * 0.35 * (1.0 + uSparkle * 2.0);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`

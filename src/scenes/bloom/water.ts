@@ -26,12 +26,17 @@ export function reflectionSize(width: number, height: number, quality: GraphicsQ
   return { width: Math.max(64, Math.round(width * s)), height: Math.max(64, Math.round(height * s)) }
 }
 
+// The lake is a few hundred units across and reaches behind the camera. Built from two huge
+// triangles, GPU clipping left errors in the interpolated reflection lookup on some cards
+// (seen on an NVIDIA GTX 1660: the reflection split along a line and shifted sideways). So
+// the plane is subdivided, and the lookup is computed per pixel from the local position.
+export const WATER_PLANE = { width: 2400, depth: 1200, segmentsX: 96, segmentsZ: 48 } as const
+
 export const waterVertexShader = /* glsl */`
-uniform mat4 textureMatrix;
-varying vec4 vUv;
+varying vec3 vLocal;
 varying vec3 vWorld;
 void main() {
-  vUv = textureMatrix * vec4(position, 1.0);
+  vLocal = position;
   vec4 world = modelMatrix * vec4(position, 1.0);
   vWorld = world.xyz;
   gl_Position = projectionMatrix * viewMatrix * world;
@@ -40,10 +45,12 @@ void main() {
 export const waterFragmentShader = /* glsl */`
 uniform vec3 color; // required by Reflector; unused
 uniform sampler2D tDiffuse;
+uniform mat4 textureMatrix;
 uniform vec4 uPhase; // waves x3, rings
 uniform vec2 uRingCenter;
 uniform vec3 uDeep, uMist, uSeamGlow;
-varying vec4 vUv;
+uniform vec2 uRingPulse; // BR8 bass hit: seconds since the hit, strength
+varying vec3 vLocal;
 varying vec3 vWorld;
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 float noise(vec2 p) {
@@ -51,6 +58,7 @@ float noise(vec2 p) {
   return mix(mix(hash(i), hash(i + vec2(1, 0)), u.x), mix(hash(i + vec2(0, 1)), hash(i + 1.0), u.x), u.y);
 }
 void main() {
+  vec4 vUv = textureMatrix * vec4(vLocal, 1.0); // reflection lookup, per pixel
   vec2 p = vWorld.xz;
   float dist = length(vWorld - cameraPosition);
   // Ripples vary mostly with depth (z), so each horizontal band samples a shifted row of the
@@ -68,6 +76,10 @@ void main() {
   // Concentric rings under the monolith, spreading outward and fading with distance.
   float r = length(p - uRingCenter);
   float ring = sin(r * 5.5 - uPhase.w) * exp(-r / 6.0) * smoothstep(0.25, 1.2, r);
+  // A bass hit sends one bright ring outward from under the monolith.
+  float front = (r - uRingPulse.x * 3.0) / 0.35;
+  float hit = exp(-front * front) * uRingPulse.y * exp(-uRingPulse.x / 2.0);
+  ring += hit * 1.5;
   vec2 offset = vec2(side * 0.5, w + ring * 1.6) * 0.012 * calm;
   vec3 sampled = texture2DProj(tDiffuse, vUv + vec4(offset * vUv.w, 0.0, 0.0)).rgb;
   // Darken the reflection overall but keep its highlights (seam, aurora) bright.
@@ -79,7 +91,7 @@ void main() {
   // Bright thin rings and a soft glow on the water where the seam's light meets it.
   float rings = pow(max(ring, 0.0), 3.0) * exp(-r / 5.0);
   float contact = exp(-abs(p.x - uRingCenter.x) / 0.9) * exp(-r / 7.0);
-  water += uSeamGlow * (rings * 2.2 + contact * 0.3);
+  water += uSeamGlow * (rings * 2.2 + contact * 0.3 + hit * 0.7 + contact * uRingPulse.y * exp(-uRingPulse.x / 0.4) * 0.6);
   // Luminous mist lying along the horizon.
   water = mix(water, uMist, smoothstep(16.0, 150.0, dist) * 0.62);
   gl_FragColor = vec4(water, 1.0);
@@ -90,7 +102,7 @@ export const WATER_SHADER = {
   name: 'BloomWater',
   uniforms: {
     color: { value: null }, tDiffuse: { value: null }, textureMatrix: { value: null },
-    uPhase: { value: null }, uRingCenter: { value: null },
+    uPhase: { value: null }, uRingCenter: { value: null }, uRingPulse: { value: null },
     uDeep: { value: null }, uMist: { value: null }, uSeamGlow: { value: null },
   },
   vertexShader: waterVertexShader,

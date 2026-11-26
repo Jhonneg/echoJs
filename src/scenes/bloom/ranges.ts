@@ -122,6 +122,7 @@ uniform vec3 uRockDark, uRockLit, uSnow, uHaze, uSkyFill, uGroundFill, uKeyColor
 uniform float uSnowLine, uHazeNear, uHazeFar, uHazeMax, uMistHeight;
 uniform vec3 uAuroraLeft, uAuroraRight;
 uniform float uAuroraGain;
+uniform float uLightLift; // BR8: the scene's light lifts gently as music builds
 ${riverGlsl}
 varying vec3 vNormal;
 varying vec3 vWorld;
@@ -162,6 +163,7 @@ void main() {
   float fx = 0.5 + 0.5 * vWorld.x / (max(1.0, ${CAMERA_Z.toFixed(3)} - vWorld.z) * cos(PITCH) * TAN_HALF_FOV * REF_ASPECT);
   vec3 aurora = mix(uAuroraLeft, uAuroraRight, smoothstep(0.3, 0.72, fx));
   lit += aurora * (0.025 + 0.14 * snow + 0.1 * mist) * uAuroraGain;
+  lit *= 1.0 + uLightLift;
   // Rivers (BR6): screen position from world position with the fixed camera, so the mirrored
   // pass puts them on the same terrain. They glow through the mist, a little dimmed.
   vec3 rel = vWorld - vec3(0.0, ${CAMERA_HEIGHT.toFixed(3)}, ${CAMERA_Z.toFixed(3)});

@@ -1,5 +1,12 @@
 # ECHO — current checkpoint
 
+## Bloom rebuild BR8 — IMPLEMENTED / CHECKS PASS; OWNER LISTENING REVIEW PENDING — 2026-11-26
+
+- Owner approved BR8. Owner chose mouse parallax as the only movement (no music-driven monolith, crystal or camera motion). New `music.ts` (controller) and `parallax.ts`; shader uniforms added to water/rivers/ranges/monolith/crystals; `BloomScene.tsx` wires them. **Deviation:** idle stays the approved pose and the monolith rises 3% while playing, instead of settling lower when stopped.
+- [Evidence](evidence/bloom/rebuild/br8/README.md): generated-track timeline through the real file adapter and analysis shows each band driving its own element, rings on bass hits, seam flashes on high-mid hits, settling after the end, and the reduced-motion rules. Parallax within ±2.5°/±1.2° with the fine pointer stubbed in the throwaway copy; touch 0; no frame-edge gaps on wide. PASS 319 tests (9 new), lint/typecheck/build, whitespace, BR8 browser checks, APP02/APP03 (committed APP evidence restored). GPU idle Standard 4.7 ms, Low 3.0 ms.
+- **Fix during review:** the owner saw the lake reflection split along a line and shift sideways (GTX 1660, Brave on Hyprland). Throwaway A–F builds traced it to the reflection pass. The lake now computes its reflection lookup per pixel on a subdivided plane (`WATER_PLANE`, 96×48); the owner confirmed no cuts in the test build. PASS 320 tests (1 new in `bloomWater.test.mjs`), lint, build, whitespace, BR8 browser checks rerun. See [DECISIONS](DECISIONS.md).
+- Not tested: real songs, listening feel, real-mouse feel, native shared tab. Owner declined the proposed `.claude/settings.local.json` change (allow all Bash); it was not made. Stop for review. BR8 uncommitted.
+
 ## Bloom rebuild BR7 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-26
 
 - Owner asks to commit BR7. BR7 (plus the earlier uncommitted owner performance note) committed on main; not pushed. BR8 (music response) not planned or started; awaiting owner direction.

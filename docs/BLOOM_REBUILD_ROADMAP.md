@@ -41,7 +41,7 @@ Measured from the reference (1672×941):
 | BR5 | Water: calm lake, coloured streaked reflections, ripples under the monolith, low mist | Owner approved 2026-11-26 ([evidence](evidence/bloom/rebuild/br5/README.md)) |
 | BR6 | Glowing valley rivers with slow flow (painted on the terrain by the mountain shader; see evidence for the change from ribbons) | Committed at owner request 2026-11-26 ([evidence](evidence/bloom/rebuild/br6/README.md)) |
 | BR7 | Quality (Standard/Low), portrait and wide framing, reduced motion, performance | Committed at owner request 2026-11-26 ([evidence](evidence/bloom/rebuild/br7/README.md)) |
-| BR8 | Music mapping (planned separately) | Not started |
+| BR8 | Music response (light only, per owner) and mouse parallax | Implemented; owner listening/feel review pending ([evidence](evidence/bloom/rebuild/br8/README.md)) |
 
 ## BR1 notes
 
