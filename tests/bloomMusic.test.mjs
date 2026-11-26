@@ -24,13 +24,14 @@ function fixture() {
   return { s, view, step, run, silence: () => Object.assign(six, Object.fromEntries(names.map(n => [n, 0]))) }
 }
 
-test('BR8: each band drives only its own element', () => {
-  const cases = { bass: 'aurora', subBass: 'aurora', highMids: 'seam', presence: 'shimmer', air: 'shimmer' }
-  for (const [band, element] of Object.entries(cases)) {
+test('BR8/BR9: each band drives only its own elements', () => {
+  // BR9: the seam follows the bass (it used to follow the high mids).
+  const cases = { bass: ['aurora', 'seam'], subBass: ['aurora', 'seam'], highMids: [], presence: ['shimmer'], air: ['shimmer'] }
+  for (const [band, elements] of Object.entries(cases)) {
     const f = fixture(); f.run(240, { energy: { [band]: 0.3 } })
     for (const other of ['aurora', 'seam', 'shimmer']) {
       // Shimmer averages presence and air, so one of them alone reaches about half.
-      if (other === element) assert.ok(f.s[other] > (other === 'shimmer' ? 0.3 : 0.5), `${band} should drive ${other}`)
+      if (elements.includes(other)) assert.ok(f.s[other] > (other === 'shimmer' ? 0.3 : 0.5), `${band} should drive ${other}`)
       else assert.ok(f.s[other] < 1e-9, `${band} must not drive ${other} (${f.s[other]})`)
     }
   }
@@ -41,12 +42,13 @@ test('BR8: each band drives only its own element', () => {
   assert.ok(g.s.river < 1e-9)
 })
 
-test('BR8: bass hits ring the water; high-mid hits flash the seam; low-mid hits pulse the rivers', () => {
+test('BR9: bass hits ring the water and flash the seam; mid hits pulse the rivers', () => {
   const a = fixture(); a.step({ event: 'low', strength: 0.8 })
   assert.equal(a.s.ringAge < 0.05, true); assert.ok(Math.abs(a.s.ringStrength - 0.8) < 1e-9)
-  assert.equal(a.s.seamAccent, 0); assert.equal(a.s.pulseStrength, 0)
+  assert.ok(a.s.seamAccent > 0.7); assert.equal(a.s.pulseStrength, 0)
+  // Mid hits go to the rivers whichever mids rose (BR8 sent high-mid hits to the seam).
   const b = fixture(); b.run(10); b.run(4, { energy: { highMids: 0.4 } }); b.step({ event: 'mid' })
-  assert.ok(b.s.seamAccent > 0.5); assert.equal(b.s.pulseStrength, 0)
+  assert.equal(b.s.seamAccent, 0); assert.ok(b.s.pulseStrength > 0.5)
   const c = fixture(); c.run(10, { energy: { highMids: 0.2 } }); c.run(4, { energy: { lowMids: 0.4 } }); c.step({ event: 'mid' })
   assert.ok(c.s.pulseStrength > 0.5 && c.s.pulseAlong < 0.05); assert.equal(c.s.seamAccent, 0)
   // The river pulse runs from source to mouth in RIVER_PULSE_SECONDS, then ends.
@@ -79,7 +81,7 @@ test('BR8: responses stay within their limits under sustained loud music and rep
   assert.ok(o.riverGain <= 1 + LIMITS.river + 1e-9)
   assert.ok(o.lightLift <= LIMITS.lightLift + 1e-9 && o.sparkle <= 1)
   assert.ok(o.liftFraction <= LIMITS.playLift * 1.05 + 1e-9)
-  assert.ok(f.s.history.length < 60, 'history stays bounded')
+  assert.ok(o.mood <= 1 && o.fog <= 1 && o.swell <= 1 && Math.abs(o.hue) <= LIMITS.hue && o.seamWarmth <= 1)
 })
 
 test('BR8: silence, stale audio and Reactivity 0 all settle back to the calm scene', () => {
@@ -111,7 +113,7 @@ test('BR8: playback raises the monolith smoothly (~4 s) and returns it to the ap
 
 test('BR8: the production analysis turns generated tones into the right Bloom response', async () => {
   const { createMusicAnalysis } = await import('../src/audio/music/analysis.ts')
-  for (const [label, frequency, element] of [['bass', 140.625, 'aurora'], ['highMids', 1500, 'seam']]) {
+  for (const [label, frequency, element] of [['bass', 140.625, 'aurora'], ['highMids', 1500, 'river']]) {
     const engine = createMusicAnalysis(), s = createBloomMusic(), bins = new Float32Array(1024)
     let peak = 0, other = 0
     for (let i = 1; i <= 420; i++) {
@@ -123,7 +125,7 @@ test('BR8: the production analysis turns generated tones into the right Bloom re
       const now = i / 60
       engine.update(bins, 48000, 2048, now * 1000, true)
       updateBloomMusic(s, engine.reader.read(), now, 1 / 60, 1, false, false)
-      peak = Math.max(peak, s[element]); other = Math.max(other, s[element === 'aurora' ? 'seam' : 'aurora'])
+      peak = Math.max(peak, s[element]); other = Math.max(other, s[element === 'aurora' ? 'river' : 'aurora'])
     }
     assert.ok(peak > 0.15, `${label}: ${element} peaked at ${peak.toFixed(3)}`)
     assert.ok(other < peak * 0.25, `${label}: the other element reached ${other.toFixed(3)}`)

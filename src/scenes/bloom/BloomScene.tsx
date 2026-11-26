@@ -9,7 +9,7 @@ import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import { CAMERA_HEIGHT, CAMERA_Z, CRYSTALS, FOV_DEGREES, MONOLITH, RANGES, cameraFor } from './composition'
 import { buildRange, rangeCells, rangeFragmentShader, rangeVertexShader } from './ranges'
-import { CURTAINS, SKY_DEFINES, auroraGain, curtainPhases, skyFragmentShader, skyVertexShader } from './sky'
+import { CURTAINS, SKY_DEFINES, auroraGain, curtainPhases, hueShift, skyFragmentShader, skyVertexShader } from './sky'
 import { MONOLITH_DEFINES, crystalFragmentShader, crystalPose, crystalVertexShader, monolithFragmentShader, monolithHover, monolithVertexShader } from './monolith'
 import { RING_CENTER, WATER_PLANE, WATER_SHADER, reflectionSize, waterPhases } from './water'
 import { RIVERS, riverBox, riverPath, riverPhases } from './rivers'
@@ -19,8 +19,9 @@ import { parallaxStep, pointerTarget } from './parallax'
 // Bloom rebuild from the Resonant Monolith reference. BR1 placed everything from measured
 // screen fractions; BR2 made the ranges real 3D terrain; BR3 added the sky dome and aurora,
 // whose light also falls on the ranges; BR4 added the stone monolith and crystals; BR5 added
-// the reflective lake; BR6 added glowing rivers; BR7 adaptive framing; BR8 adds the music
-// response (music.ts) and mouse parallax (parallax.ts).
+// the reflective lake; BR6 added glowing rivers; BR7 adaptive framing; BR8 added the music
+// response (music.ts) and mouse parallax (parallax.ts); BR9 adds song structure (night mood,
+// build fog, drop swell and ring burst), the warm bass seam and the aurora hue shift.
 
 const SKY_RADIUS = 450
 const SKY_TOP = '#3d3a68'
@@ -38,7 +39,21 @@ const RIVER_PHASE = { value: new Vector3() }
 const MUSIC = {
   uRiverGain: { value: 1 }, uRiverPulse: { value: new Vector2(99, 0) }, uLightLift: { value: 0 },
   uSeamGain: { value: 1 }, uSparkle: { value: 0 }, uRingPulse: { value: new Vector2(99, 0) },
+  // BR9
+  uMood: { value: 0 }, uFog: { value: 0 }, uSwell: { value: 0 }, uSeamWarmth: { value: 0 },
+  uRingBurst: { value: new Vector2(99, 0) },
   liftFraction: 0,
+}
+// Aurora colours (BR9: hue-shifted with the music each frame), shared by the sky curtains and
+// the aurora light on the ranges, monolith and crystals. AURORA_BASE holds the approved colours.
+const AURORA_BASE = CURTAINS.map(c => new Color(c.color))
+const AURORA_COLORS = CURTAINS.map(c => new Color(c.color))
+const AURORA_LIGHT = { uAuroraLeft: { value: AURORA_COLORS[0] }, uAuroraRight: { value: AURORA_COLORS[CURTAINS.length - 1] } }
+const hueTarget = new Color()
+function applyHue(hue: number) {
+  const shift = hueShift(hue)
+  hueTarget.set(shift.toward)
+  AURORA_COLORS.forEach((c, i) => c.copy(AURORA_BASE[i]).lerp(hueTarget, shift.mix))
 }
 
 // Camera position is fixed; field of view and tilt adapt to the screen shape (BR7). With a real
@@ -94,10 +109,10 @@ function Sky({ quality, aurora }: { quality: GraphicsQuality, aurora: AuroraUnif
     uniforms: {
       uTop: { value: new Color(SKY_TOP) }, uMid: { value: new Color('#6c5e98') },
       uHorizon: { value: new Color('#cdaed6') }, uHorizonPink: { value: new Color('#e6b2cf') },
-      uColor: { value: CURTAINS.map(c => new Color(c.color)) },
+      uColor: { value: AURORA_COLORS },
       uEdge: { value: CURTAINS.map(c => new Vector4(c.x0, c.y0, c.x1, c.y1)) },
       uShape: { value: CURTAINS.map(c => [c.height, c.strength]).flat() },
-      uPhase: aurora.uPhase, uGain: aurora.uAuroraGain,
+      uPhase: aurora.uPhase, uGain: aurora.uAuroraGain, uMood: MUSIC.uMood, uSwell: MUSIC.uSwell,
     },
   }), [quality, aurora])
   useEffect(() => () => material.dispose(), [material])
@@ -128,8 +143,8 @@ function useRangeMaterial(quality: GraphicsQuality, snowLine: number, mistHeight
       uSkyFill: { value: new Color('#857c9f') }, uGroundFill: { value: new Color('#3d3450') },
       uKeyColor: { value: new Color('#ece2f2') }, uKeyDir: { value: new Vector3(0.6, 0.5, 0.62) },
       uSnowLine: { value: snowLine }, uHazeNear: { value: 20 }, uHazeFar: { value: 220 }, uHazeMax: { value: 0.5 }, uMistHeight: { value: mistHeight },
-      uAuroraLeft: { value: new Color(CURTAINS[0].color) }, uAuroraRight: { value: new Color(CURTAINS[3].color) },
-      uAuroraGain: aurora.uAuroraGain, uLightLift: MUSIC.uLightLift,
+      ...AURORA_LIGHT,
+      uAuroraGain: aurora.uAuroraGain, uLightLift: MUSIC.uLightLift, uMood: MUSIC.uMood, uFog: MUSIC.uFog,
       ...riverUniforms(),
     },
   }), [quality, snowLine, mistHeight, aurora])
@@ -153,10 +168,7 @@ function Range({ index, quality, aurora }: { index: number, quality: GraphicsQua
   return <mesh geometry={geometry} material={material} />
 }
 
-const auroraLight = () => ({
-  uAuroraLeft: { value: new Color(CURTAINS[0].color) }, uAuroraRight: { value: new Color(CURTAINS[3].color) },
-  uAuroraGain: AURORA.uAuroraGain,
-})
+const auroraLight = () => ({ ...AURORA_LIGHT, uAuroraGain: AURORA.uAuroraGain })
 
 function Monolith({ quality, reducedMotion }: { quality: GraphicsQuality, reducedMotion: boolean }) {
   const mesh = useRef<Mesh>(null)
@@ -170,6 +182,7 @@ function Monolith({ quality, reducedMotion }: { quality: GraphicsQuality, reduce
       uKeyColor: { value: new Color('#f0d2e4') }, uKeyDir: { value: new Vector3(0.9, 0.3, 0.3) },
       uAmbient: { value: new Color('#8a80a3') }, uSeam: { value: new Color('#ffe0ef') },
       uSeamGain: MUSIC.uSeamGain, uLightLift: MUSIC.uLightLift,
+      uSeamWarm: { value: new Color('#ffcfa8') }, uSeamWarmth: MUSIC.uSeamWarmth, uMood: MUSIC.uMood,
       ...auroraLight(),
     },
   }), [quality])
@@ -221,6 +234,9 @@ function Water({ quality }: { quality: GraphicsQuality }) {
     material.uniforms.uPhase = WATER_PHASE
     material.uniforms.uRingCenter = { value: new Vector2(RING_CENTER[0], RING_CENTER[1]) }
     material.uniforms.uRingPulse = MUSIC.uRingPulse
+    material.uniforms.uRingBurst = MUSIC.uRingBurst
+    material.uniforms.uMood = MUSIC.uMood
+    material.uniforms.uFog = MUSIC.uFog
     material.uniforms.uDeep = { value: new Color('#2a2238') }
     material.uniforms.uMist = { value: new Color('#bba7cf') }
     material.uniforms.uSeamGlow = { value: new Color('#ffd6ea') }
@@ -259,6 +275,12 @@ function Composition({ onRenderTime, quality, reducedMotion, musicFeatures, reac
     MUSIC.uSparkle.value = out.sparkle
     MUSIC.uRingPulse.value.set(Math.min(out.ring.age, 99), out.ring.strength)
     MUSIC.liftFraction = out.liftFraction
+    MUSIC.uMood.value = out.mood
+    MUSIC.uFog.value = out.fog
+    MUSIC.uSwell.value = out.swell
+    MUSIC.uSeamWarmth.value = out.seamWarmth
+    MUSIC.uRingBurst.value.set(Math.min(out.burst.age, 99), out.burst.strength)
+    applyHue(out.hue)
     onRenderTime(now)
   })
   return <>

@@ -1,0 +1,54 @@
+{
+  "source": "Throwaway build exposing Bloom scene/renderer; headless Brave (ANGLE GL, this machine GPU), 1440×900. GPU ms per frame from EXT_disjoint_timer_query_webgl2: median over ~4 s, median of 3 samples. Relative costs; not native-window certification.",
+  "results": {
+    "Standard — full": {
+      "gpuMsPerFrame": 4.642,
+      "samples": [
+        4.577,
+        4.642,
+        4.724
+      ]
+    },
+    "Standard — no water/reflection": {
+      "gpuMsPerFrame": 4.499,
+      "samples": [
+        3.97,
+        4.499,
+        4.614
+      ]
+    },
+    "Standard — no rivers": {
+      "gpuMsPerFrame": 3.801,
+      "samples": [
+        3.588,
+        3.801,
+        4.088
+      ]
+    },
+    "Standard — no sky/aurora dome": {
+      "gpuMsPerFrame": 4.225,
+      "samples": [
+        4.155,
+        4.225,
+        4.281
+      ]
+    },
+    "Low — full": {
+      "gpuMsPerFrame": 3.057,
+      "samples": [
+        2.969,
+        3.057,
+        3.09
+      ]
+    }
+  },
+  "timerQuery": true,
+  "bloomMountMs": {
+    "samples": [
+      28,
+      30,
+      30
+    ],
+    "median": 30
+  }
+}

@@ -34,6 +34,20 @@ export function auroraGain(phases: readonly number[]) {
   return 0.925 + 0.075 * Math.sin(phases[0] * 2 + 0.6)
 }
 
+// BR9: the aurora's hue follows the music's brightness. Every curtain leans part of the way
+// toward the green (duller music) or the pink (brighter music); at most HUE_SHIFT.amount of
+// the way, so the left side stays greener and the right pinker. hue 0 = the approved colours.
+export const HUE_SHIFT = { amount: 0.4, green: '#79f0c6', pink: '#f29ad6' }
+export function hueShift(hue: number) {
+  const h = Number.isFinite(hue) ? Math.max(-1, Math.min(1, hue)) : 0
+  return { toward: h >= 0 ? HUE_SHIFT.pink : HUE_SHIFT.green, mix: Math.abs(h) * HUE_SHIFT.amount }
+}
+
+// BR9 night mood: at full mood the sky keeps NIGHT.sky of its light (bluer), and the aurora
+// grows more saturated and brighter. A drop's swell lifts the sky near the horizon by up to
+// NIGHT.swell, fading out higher up so the aurora stays visible.
+export const NIGHT = { sky: 0.8, auroraSaturation: 0.5, auroraBoost: 0.3, swell: 0.35 }
+
 // Shader constants derived from the camera, so the dome lines up with the layout.
 export const SKY_DEFINES = {
   TAN_HALF_FOV: Math.tan((FOV_DEGREES * Math.PI) / 360).toFixed(6),
@@ -58,6 +72,7 @@ uniform vec4 uEdge[4]; // x0, y0, x1, y1
 uniform vec2 uShape[4]; // height, strength
 uniform vec4 uPhase;
 uniform float uGain;
+uniform float uMood, uSwell; // BR9: night mood (0 = approved look), drop swell
 varying vec3 vWorld;
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 float noise(vec2 p) {
@@ -101,6 +116,12 @@ void main() {
   for (int i = 0; i < 4; i++) {
     glow += uColor[i] * curtain(f, i, uPhase[i]);
   }
-  gl_FragColor = vec4(sky + glow * uGain * 0.85, 1.0);
+  // BR9: loud sections and builds deepen the sky toward night; the aurora grows richer.
+  sky = mix(sky, sky * vec3(0.3, 0.26, 0.52), uMood * ${NIGHT.sky.toFixed(2)});
+  float lum = dot(glow, vec3(0.299, 0.587, 0.114));
+  glow = mix(vec3(lum), glow, 1.0 + ${NIGHT.auroraSaturation.toFixed(2)} * uMood) * (1.0 + ${NIGHT.auroraBoost.toFixed(2)} * uMood);
+  // A drop: one soft swell of light low in the sky (not a strobe; it rises and fades smoothly).
+  sky += uHorizon * uSwell * ${NIGHT.swell.toFixed(2)} * exp(-elevation * 3.0);
+  gl_FragColor = vec4(sky + max(glow, 0.0) * uGain * 0.85, 1.0);
   #include <colorspace_fragment>
 }`

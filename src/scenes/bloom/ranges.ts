@@ -115,6 +115,10 @@ void main() {
   gl_Position = projectionMatrix * viewMatrix * world;
 }`
 
+// BR9: night mood darkens the land toward deep indigo (aurora light and rivers are added after,
+// so they stay bright against it); build fog adds haze and thickens the mist.
+export const NIGHT_LAND = { amount: 0.85, fogHaze: 0.45, fogMist: 0.25 }
+
 // Snow on high, gentle ground and ridge lines; violet rock on steep faces; key light from the
 // upper right with a lavender sky/ground fill; haze grows with distance and near the water.
 export const rangeFragmentShader = /* glsl */`
@@ -123,6 +127,7 @@ uniform float uSnowLine, uHazeNear, uHazeFar, uHazeMax, uMistHeight;
 uniform vec3 uAuroraLeft, uAuroraRight;
 uniform float uAuroraGain;
 uniform float uLightLift; // BR8: the scene's light lifts gently as music builds
+uniform float uMood, uFog; // BR9: night mood and build fog (0 = approved look)
 ${riverGlsl}
 varying vec3 vNormal;
 varying vec3 vWorld;
@@ -151,13 +156,14 @@ void main() {
   vec3 color = mix(rock, uSnow, snow) * (fill + key * uKeyColor);
   float dist = length(vWorld - cameraPosition);
   // Haze stops short of the sky colour so the farthest ranges stay readable as pale shapes.
-  float haze = smoothstep(uHazeNear, uHazeFar, dist) * uHazeMax;
+  float haze = smoothstep(uHazeNear, uHazeFar, dist) * (uHazeMax + ${NIGHT_LAND.fogHaze.toFixed(2)} * uFog);
   // Nearer ranges hide the lower slopes of those behind, so only the top of each range
   // shows. Mist starts just below the crests (uMistHeight = rise where it is full), so peaks
   // rise out of luminous mist and each range separates from the one behind it.
   float mist = 1.0 - smoothstep(uMistHeight, uMistHeight + 0.28, vRise + (detail - 0.5) * 0.12);
   vec3 hazed = mix(color, uHaze, haze);
-  vec3 lit = mix(hazed, uHaze * 1.12, mist * mist * 0.75);
+  vec3 lit = mix(hazed, uHaze * 1.12, mist * mist * (0.75 + ${NIGHT_LAND.fogMist.toFixed(2)} * uFog));
+  lit = mix(lit, lit * vec3(0.3, 0.27, 0.52), uMood * ${NIGHT_LAND.amount.toFixed(2)});
   // Aurora light (BR3): green from the left curtains, pink from the right, by screen side.
   // Snow and mist catch it most; bare rock only a little.
   float fx = 0.5 + 0.5 * vWorld.x / (max(1.0, ${CAMERA_Z.toFixed(3)} - vWorld.z) * cos(PITCH) * TAN_HALF_FOV * REF_ASPECT);

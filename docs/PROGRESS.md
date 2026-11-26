@@ -1,6 +1,13 @@
 # ECHO — current checkpoint
 
-## Bloom rebuild BR8 — IMPLEMENTED / CHECKS PASS; OWNER LISTENING REVIEW PENDING — 2026-11-26
+## Bloom rebuild BR9 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner compared Bloom with their Monolith Lake sketch and approved BR9: song structure, a night mood that deepens with loud sections and builds, build fog, a drop swell and ring burst, the warm bass seam and the aurora hue shift. Fixed camera kept. New `structure.ts`; `music.ts`, the sky, range, water and monolith shaders and `BloomScene.tsx` extended. **Changes BR8 routing:** the seam follows the bass; mid hits always pulse the rivers.
+- Before BR9: the owner's BR8 commit (e535efc) had left out BR8's new files. At the owner's request they were committed unchanged as 91518db (not pushed).
+- [Evidence](evidence/bloom/rebuild/br9/README.md): one drop found at 30.13 s on a generated song through the real analysis; build, fog, mood and reduced-motion behaviour as intended. PASS 328 tests (8 new), lint/typecheck/build, whitespace, BR9 browser checks, APP02/APP03 (committed evidence restored). GPU Standard 4.642 ms, Low 3.057 ms (unchanged).
+- Not tested: real songs (thresholds are calibrated on generated songs), how dark the mood should get, native shared tab. Stop for review. BR9 uncommitted.
+
+## Bloom rebuild BR8 — COMMITTED BY OWNER (e535efc + 91518db) — 2026-11-26
 
 - Owner approved BR8. Owner chose mouse parallax as the only movement (no music-driven monolith, crystal or camera motion). New `music.ts` (controller) and `parallax.ts`; shader uniforms added to water/rivers/ranges/monolith/crystals; `BloomScene.tsx` wires them. **Deviation:** idle stays the approved pose and the monolith rises 3% while playing, instead of settling lower when stopped.
 - [Evidence](evidence/bloom/rebuild/br8/README.md): generated-track timeline through the real file adapter and analysis shows each band driving its own element, rings on bass hits, seam flashes on high-mid hits, settling after the end, and the reduced-motion rules. Parallax within ±2.5°/±1.2° with the fine pointer stubbed in the throwaway copy; touch 0; no frame-edge gaps on wide. PASS 319 tests (9 new), lint/typecheck/build, whitespace, BR8 browser checks, APP02/APP03 (committed APP evidence restored). GPU idle Standard 4.7 ms, Low 3.0 ms.

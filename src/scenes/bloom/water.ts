@@ -4,6 +4,7 @@
 // the monolith, a darker foreground and luminous mist along the horizon.
 import type { GraphicsQuality } from '../../engine/quality'
 import { MONOLITH } from './composition.ts'
+import { BURST } from './music.ts'
 
 const TAU = Math.PI * 2
 const wrap = (t: number, period: number) => ((t % period) + period) % period / period * TAU
@@ -32,6 +33,10 @@ export function reflectionSize(width: number, height: number, quality: GraphicsQ
 // the plane is subdivided, and the lookup is computed per pixel from the local position.
 export const WATER_PLANE = { width: 2400, depth: 1200, segmentsX: 96, segmentsZ: 48 } as const
 
+// BR9: night mood darkens the water and its mist; build fog thickens the mist; a drop sends a
+// burst of three rings (BURST in music.ts) out from under the monolith.
+export const NIGHT_WATER = { amount: 0.85, fogMist: 0.25 }
+
 export const waterVertexShader = /* glsl */`
 varying vec3 vLocal;
 varying vec3 vWorld;
@@ -50,6 +55,8 @@ uniform vec4 uPhase; // waves x3, rings
 uniform vec2 uRingCenter;
 uniform vec3 uDeep, uMist, uSeamGlow;
 uniform vec2 uRingPulse; // BR8 bass hit: seconds since the hit, strength
+uniform vec2 uRingBurst; // BR9 drop: seconds since the drop, strength
+uniform float uMood, uFog;
 varying vec3 vLocal;
 varying vec3 vWorld;
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
@@ -79,6 +86,13 @@ void main() {
   // A bass hit sends one bright ring outward from under the monolith.
   float front = (r - uRingPulse.x * 3.0) / 0.35;
   float hit = exp(-front * front) * uRingPulse.y * exp(-uRingPulse.x / 2.0);
+  // A drop sends three rings in quick succession.
+  for (int k = 0; k < ${BURST.rings}; k++) {
+    float age = uRingBurst.x - float(k) * ${BURST.spacing.toFixed(2)};
+    if (age < 0.0) continue;
+    float f = (r - age * 3.0) / 0.35;
+    hit += exp(-f * f) * uRingBurst.y * exp(-age / 2.0);
+  }
   ring += hit * 1.5;
   vec2 offset = vec2(side * 0.5, w + ring * 1.6) * 0.012 * calm;
   vec3 sampled = texture2DProj(tDiffuse, vUv + vec4(offset * vUv.w, 0.0, 0.0)).rgb;
@@ -86,14 +100,16 @@ void main() {
   vec3 reflection = sampled * 0.6 + max(sampled - 0.45, 0.0) * 0.9;
   // Foreground darker; at grazing angles toward the horizon, more reflection.
   float grazing = 1.0 - clamp(abs(normalize(cameraPosition - vWorld).y) * 6.0, 0.0, 1.0);
-  vec3 water = mix(uDeep, reflection, 0.42 + 0.38 * grazing);
-  water = mix(water, uDeep * 0.8, smoothstep(26.0, 3.0, dist) * 0.3);
+  vec3 deep = mix(uDeep, uDeep * vec3(0.3, 0.27, 0.52), uMood * ${NIGHT_WATER.amount.toFixed(2)});
+  vec3 mistColor = mix(uMist, uMist * vec3(0.3, 0.27, 0.52), uMood * ${NIGHT_WATER.amount.toFixed(2)});
+  vec3 water = mix(deep, reflection, 0.42 + 0.38 * grazing);
+  water = mix(water, deep * 0.8, smoothstep(26.0, 3.0, dist) * 0.3);
   // Bright thin rings and a soft glow on the water where the seam's light meets it.
   float rings = pow(max(ring, 0.0), 3.0) * exp(-r / 5.0);
   float contact = exp(-abs(p.x - uRingCenter.x) / 0.9) * exp(-r / 7.0);
   water += uSeamGlow * (rings * 2.2 + contact * 0.3 + hit * 0.7 + contact * uRingPulse.y * exp(-uRingPulse.x / 0.4) * 0.6);
   // Luminous mist lying along the horizon.
-  water = mix(water, uMist, smoothstep(16.0, 150.0, dist) * 0.62);
+  water = mix(water, mistColor, smoothstep(16.0, 150.0, dist) * (0.62 + ${NIGHT_WATER.fogMist.toFixed(2)} * uFog));
   gl_FragColor = vec4(water, 1.0);
   #include <colorspace_fragment>
 }`
@@ -102,7 +118,8 @@ export const WATER_SHADER = {
   name: 'BloomWater',
   uniforms: {
     color: { value: null }, tDiffuse: { value: null }, textureMatrix: { value: null },
-    uPhase: { value: null }, uRingCenter: { value: null }, uRingPulse: { value: null },
+    uPhase: { value: null }, uRingCenter: { value: null }, uRingPulse: { value: null }, uRingBurst: { value: null },
+    uMood: { value: null }, uFog: { value: null },
     uDeep: { value: null }, uMist: { value: null }, uSeamGlow: { value: null },
   },
   vertexShader: waterVertexShader,
