@@ -623,3 +623,7 @@ Owner asked to scrap the previous Bloom and start over from the reference, visua
 ## 2026-11-26 — Bloom ranges are full 3D terrain held under their approved crest line
 
 Owner chose full 3D (over painted 2.5D cards or a hybrid) for real light, snow, reflections and possible later camera motion. Each range is a height-map band in which every point stays below the camera's line of sight to its column's crest, so the approved BR1 silhouette is guaranteed and tested while ridges add relief underneath. Custom shaders must end with three.js's colour-space conversion; mist is placed relative to each range's crest because nearer ranges hide the lower slopes of the ones behind.
+
+## 2026-11-26 — Bloom sky is a direction-based dome sharing aurora state with the ranges
+
+The sky and aurora are computed from the world view direction (mirrored below the horizon), so BR5 reflections can render a correct mirrored sky without another pass. Curtain placement uses the reference's 16:9 screen fractions. Aurora phases and brightness live in one module-level uniform set shared by the sky and range materials, because only one Bloom exists at a time and React's lint rules forbid per-frame mutation of render-created values. Phases wrap per curtain, so motion loops seamlessly; reduced motion holds a fixed pose.

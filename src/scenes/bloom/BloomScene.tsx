@@ -1,19 +1,27 @@
 import './bloom.css'
 import { Component, useEffect, useLayoutEffect, useMemo, useSyncExternalStore, type ReactNode } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { BufferAttribute, BufferGeometry, Color, Float32BufferAttribute, ShaderMaterial, Vector3 } from 'three'
+import { BackSide, BufferAttribute, BufferGeometry, Color, ShaderMaterial, Vector3, Vector4 } from 'three'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
-import { CAMERA_HEIGHT, CAMERA_PITCH, CAMERA_Z, CRYSTALS, FOV_DEGREES, MONOLITH, RANGES, heightForScreen, xForScreen } from './composition'
+import { CAMERA_HEIGHT, CAMERA_PITCH, CAMERA_Z, CRYSTALS, FOV_DEGREES, MONOLITH, RANGES } from './composition'
 import { buildRange, rangeCells, rangeFragmentShader, rangeVertexShader } from './ranges'
+import { CURTAINS, SKY_DEFINES, auroraGain, curtainPhases, skyFragmentShader, skyVertexShader } from './sky'
 
 // Bloom rebuild from the Resonant Monolith reference. BR1 placed everything from measured
-// screen fractions; BR2 replaces the range silhouettes with real 3D terrain. Sky, monolith,
-// crystals and water are still BR1 placeholders.
+// screen fractions; BR2 made the ranges real 3D terrain; BR3 adds the sky dome and aurora,
+// whose light also falls on the ranges. Monolith, crystals and water are BR1 placeholders.
 
-const SKY_DISTANCE = 300
-const SKY_TOP = '#4b3d70', SKY_HORIZON = '#d4b2d6'
+const SKY_RADIUS = 450
+const SKY_TOP = '#3d3a68'
+
+// Aurora state shared by the sky and the ranges. Uniform objects are shared by reference, so
+// one per-frame update reaches every material.
+// Only one Bloom scene exists at a time, so this lives at module level and is rewritten each
+// frame (phases are recomputed from the clock, so nothing carries over between mounts).
+type AuroraUniforms = { uPhase: { value: Vector4 }, uAuroraGain: { value: number } }
+const AURORA: AuroraUniforms = { uPhase: { value: new Vector4() }, uAuroraGain: { value: 1 } }
 
 function FixedCamera() {
   const camera = useThree(state => state.camera)
@@ -25,43 +33,49 @@ function FixedCamera() {
   return null
 }
 
-// Vertical gradient card far behind everything, spanning ultra-wide and portrait frames.
-function Sky() {
-  const geometry = useMemo(() => {
-    const halfWidth = xForScreen(1, SKY_DISTANCE) * 1.8, top = heightForScreen(-0.1, SKY_DISTANCE)
-    const g = new BufferGeometry()
-    g.setAttribute('position', new Float32BufferAttribute([-halfWidth, -5, 0, halfWidth, -5, 0, halfWidth, top, 0, -halfWidth, top, 0], 3))
-    const [low, high] = [new Color(SKY_HORIZON), new Color(SKY_TOP)]
-    g.setAttribute('color', new Float32BufferAttribute([...low.toArray(), ...low.toArray(), ...high.toArray(), ...high.toArray()], 3))
-    g.setIndex([0, 1, 2, 0, 2, 3])
-    return g
-  }, [])
-  return <mesh geometry={geometry} position={[0, 0, CAMERA_Z - SKY_DISTANCE]}>
-    <meshBasicMaterial vertexColors depthWrite={false} />
+// Sky dome around the camera, drawn first and behind everything.
+function Sky({ quality, aurora }: { quality: GraphicsQuality, aurora: AuroraUniforms }) {
+  const material = useMemo(() => new ShaderMaterial({
+    vertexShader: skyVertexShader, fragmentShader: skyFragmentShader, side: BackSide, depthWrite: false, depthTest: false,
+    defines: { ...SKY_DEFINES, RAY_OCTAVES: quality === 'low' ? 2 : 4, LOW_QUALITY: quality === 'low' ? 1 : 0 },
+    uniforms: {
+      uTop: { value: new Color(SKY_TOP) }, uMid: { value: new Color('#6c5e98') },
+      uHorizon: { value: new Color('#cdaed6') }, uHorizonPink: { value: new Color('#e6b2cf') },
+      uColor: { value: CURTAINS.map(c => new Color(c.color)) },
+      uEdge: { value: CURTAINS.map(c => new Vector4(c.x0, c.y0, c.x1, c.y1)) },
+      uShape: { value: CURTAINS.map(c => [c.height, c.strength]).flat() },
+      uPhase: aurora.uPhase, uGain: aurora.uAuroraGain,
+    },
+  }), [quality, aurora])
+  useEffect(() => () => material.dispose(), [material])
+  return <mesh material={material} position={[0, CAMERA_HEIGHT, CAMERA_Z]} renderOrder={-1} frustumCulled={false}>
+    <sphereGeometry args={[SKY_RADIUS, 64, 32]} />
   </mesh>
 }
 
 // Per-range material with that range's snow line and mist depth. Identical shader source, so
 // three.js compiles one program for all five.
-function useRangeMaterial(quality: GraphicsQuality, snowLine: number, mistHeight: number) {
+function useRangeMaterial(quality: GraphicsQuality, snowLine: number, mistHeight: number, aurora: AuroraUniforms) {
   const material = useMemo(() => new ShaderMaterial({
     vertexShader: rangeVertexShader, fragmentShader: rangeFragmentShader,
-    defines: { OCTAVES: quality === 'low' ? 3 : 5 },
+    defines: { ...SKY_DEFINES, OCTAVES: quality === 'low' ? 3 : 5 },
     uniforms: {
       uRockDark: { value: new Color('#33283c') }, uRockLit: { value: new Color('#685571') },
       uSnow: { value: new Color('#f4f0fa') }, uHaze: { value: new Color('#a897c0') },
       uSkyFill: { value: new Color('#857c9f') }, uGroundFill: { value: new Color('#3d3450') },
       uKeyColor: { value: new Color('#ece2f2') }, uKeyDir: { value: new Vector3(0.6, 0.5, 0.62) },
       uSnowLine: { value: snowLine }, uHazeNear: { value: 20 }, uHazeFar: { value: 220 }, uHazeMax: { value: 0.5 }, uMistHeight: { value: mistHeight },
+      uAuroraLeft: { value: new Color(CURTAINS[0].color) }, uAuroraRight: { value: new Color(CURTAINS[3].color) },
+      uAuroraGain: aurora.uAuroraGain,
     },
-  }), [quality, snowLine, mistHeight])
+  }), [quality, snowLine, mistHeight, aurora])
   useEffect(() => () => material.dispose(), [material])
   return material
 }
 
-function Range({ index, quality }: { index: number, quality: GraphicsQuality }) {
+function Range({ index, quality, aurora }: { index: number, quality: GraphicsQuality, aurora: AuroraUniforms }) {
   const layer = RANGES[index]
-  const material = useRangeMaterial(quality, layer.snow, 0.56)
+  const material = useRangeMaterial(quality, layer.snow, 0.56, aurora)
   const geometry = useMemo(() => {
     const mesh = buildRange(layer, rangeCells(index, quality))
     const g = new BufferGeometry()
@@ -75,13 +89,20 @@ function Range({ index, quality }: { index: number, quality: GraphicsQuality }) 
   return <mesh geometry={geometry} material={material} />
 }
 
-function Composition({ onRenderTime, quality }: { onRenderTime: (now: number) => void, quality: GraphicsQuality }) {
-  useFrame(() => onRenderTime(performance.now()))
+function Composition({ onRenderTime, quality, reducedMotion }: { onRenderTime: (now: number) => void, quality: GraphicsQuality, reducedMotion: boolean }) {
+  const aurora = AURORA
+  useFrame(state => {
+    // Slow curtain drift; reduced motion holds a fixed pose. Not music-driven until BR8.
+    const phases = curtainPhases(state.clock.elapsedTime, reducedMotion)
+    AURORA.uPhase.value.set(phases[0], phases[1], phases[2], phases[3])
+    AURORA.uAuroraGain.value = auroraGain(phases)
+    onRenderTime(performance.now())
+  })
   return <>
     <color attach="background" args={[SKY_TOP]} />
     <FixedCamera />
-    <Sky />
-    {RANGES.map((_, i) => <Range key={i} index={i} quality={quality} />)}
+    <Sky quality={quality} aurora={aurora} />
+    {RANGES.map((_, i) => <Range key={i} index={i} quality={quality} aurora={aurora} />)}
     {/* Water: flat placeholder plane at y = 0 out to the far ranges. */}
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, CAMERA_Z - 150]}>
       <planeGeometry args={[2400, 320]} />
@@ -131,7 +152,7 @@ export default function BloomScene({ onRenderTime, quality, reactivity }: BloomS
         <LandscapeCanvas projection="perspective" camera={{ fov: FOV_DEGREES, near: 0.1, far: 600, position: [0, CAMERA_HEIGHT, CAMERA_Z] }}
           cameraTilt={false} reactivity={reactivity} quality={quality} reducedMotion={reducedMotion}
           fallback={<p className="bloom-fallback">Bloom can’t be shown because this browser can’t use WebGL. Audio still works: use the controls below to choose audio or another landscape.</p>}>
-          <Composition onRenderTime={onRenderTime} quality={quality} />
+          <Composition onRenderTime={onRenderTime} quality={quality} reducedMotion={reducedMotion} />
         </LandscapeCanvas>
       </SceneBoundary>
       <div className="bloom-brand" aria-hidden="true">Bloom</div>

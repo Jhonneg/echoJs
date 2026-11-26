@@ -1,5 +1,15 @@
 # ECHO — current checkpoint
 
+## Bloom rebuild BR3 — OWNER APPROVED ("commit and proceed"); BR4 PLAN PENDING — 2026-11-26
+
+- Owner approves BR3 as is, keeping the planned 29–53 s aurora cycles, and asks to commit and continue. BR3 committed on main; not pushed. BR4 (monolith + crystals) plan presented; BR4 unstarted.
+
+## Bloom rebuild BR3 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner approved the BR3 plan. New `src/scenes/bloom/sky.ts` (direction-based sky dome, four aurora curtains, seamless phase helpers); `ranges.ts` picks up green/pink aurora light; `BloomScene.tsx` wires a shared aurora state and reduced-motion freeze.
+- [Evidence](evidence/bloom/rebuild/br3/README.md): 3 look drafts plus a motion fix (drift reduced to about a third). PASS 293 tests (4 new), lint/typecheck/build, whitespace, BR3 capture (0 errors, motion present, reduced motion 0% change), APP02/APP03 browser checks (committed APP evidence restored). Frame timing is the headless cap only.
+- Open for owner: curtains visibly reshape over 8 s at the planned 29–53 s cycles; can be slowed. Stop for review. BR3 uncommitted.
+
 ## Bloom rebuild BR2 — OWNER APPROVED ("commit and proceed"); BR3 PLAN PENDING — 2026-11-26
 
 - Owner approves BR2 and asks to commit and continue. BR1+BR2 (plus the paused-APP05 note) committed together as one checkpoint on main; not pushed. BR3 (sky + aurora) plan presented for approval; BR3 unstarted.

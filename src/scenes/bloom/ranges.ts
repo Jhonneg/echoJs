@@ -108,6 +108,8 @@ void main() {
 export const rangeFragmentShader = /* glsl */`
 uniform vec3 uRockDark, uRockLit, uSnow, uHaze, uSkyFill, uGroundFill, uKeyColor, uKeyDir;
 uniform float uSnowLine, uHazeNear, uHazeFar, uHazeMax, uMistHeight;
+uniform vec3 uAuroraLeft, uAuroraRight;
+uniform float uAuroraGain;
 varying vec3 vNormal;
 varying vec3 vWorld;
 varying float vRise;
@@ -141,6 +143,12 @@ void main() {
   // rise out of luminous mist and each range separates from the one behind it.
   float mist = 1.0 - smoothstep(uMistHeight, uMistHeight + 0.28, vRise + (detail - 0.5) * 0.12);
   vec3 hazed = mix(color, uHaze, haze);
-  gl_FragColor = vec4(mix(hazed, uHaze * 1.12, mist * mist * 0.75), 1.0);
+  vec3 lit = mix(hazed, uHaze * 1.12, mist * mist * 0.75);
+  // Aurora light (BR3): green from the left curtains, pink from the right, by screen side.
+  // Snow and mist catch it most; bare rock only a little.
+  float fx = 0.5 + 0.5 * vWorld.x / (max(1.0, ${CAMERA_Z.toFixed(3)} - vWorld.z) * cos(PITCH) * TAN_HALF_FOV * REF_ASPECT);
+  vec3 aurora = mix(uAuroraLeft, uAuroraRight, smoothstep(0.3, 0.72, fx));
+  lit += aurora * (0.025 + 0.14 * snow + 0.1 * mist) * uAuroraGain;
+  gl_FragColor = vec4(lit, 1.0);
   #include <colorspace_fragment>
 }`
