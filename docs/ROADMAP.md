@@ -1,8 +1,8 @@
 # POC roadmap — one task at a time
 
-## Current checkpoint — APP01 owner review (2026-11-23)
+## Current checkpoint — Bloom 3D water visually approved (2026-11-24)
 
-Owner approved the application-experience plan. APP01 audio health/visible recovery is implemented and controlled checks pass; [roadmap](APPLICATION_EXPERIENCE_ROADMAP.md) and [evidence](evidence/application/app01/README.md). Approved landscapes remain unchanged, including the pre-existing Lavender startup adjustment. Await APP01 visual review before APP02. Bloom BL09 stays skipped. No commit/push/deploy.
+Owner approved the3°orthographic proposal. Focused water reconstruction and controlled checks now pass; [implementation/evidence](BLOOM_3D_WATER_RECONSTRUCTION.md) is visually approved by the owner (“looks good now”). Preserve this result and stop; native performance/real-song feel remain unverified. Other Bloom content, MI/other landscapes and APP01 sources are preserved; BL09 stays skipped, APP01 review pending, APP02 unstarted. No commit/push/deploy.
 
 Current order is intentional: validate external audio before investing in graphics. Plan/approve each task separately; mark actual status only in PROGRESS.md. Each gate requires owner sign-off. If a required check cannot run, record a blocker; do not mark the gate passed or silently expand scope.
 

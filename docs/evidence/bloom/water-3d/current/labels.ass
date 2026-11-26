@@ -1,0 +1,14 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX:1440
+PlayResY:900
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,BackColour,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV
+Style: Default,DejaVu Sans,24,&H00FFFFFF,&H90000000,3,1,0,8,20,20,85
+[Events]
+Format: Layer,Start,End,Style,Text
+Dialogue: 0,0:00:00.00,0:00:03.00,Default,Gentle ambient water — controlled test signals; fixed camera
+Dialogue: 0,0:00:03.00,0:00:06.00,Default,Strong aurora reflections — controlled test signals; fixed camera
+Dialogue: 0,0:00:06.00,0:00:09.00,Default,Expanding musical ripple — controlled test signals; fixed camera
+Dialogue: 0,0:00:09.00,0:00:12.00,Default,Neutral shading: displaced geometry — controlled test signals; fixed camera
+Dialogue: 0,0:00:12.00,0:00:15.00,Default,Wireframe: displaced geometry — controlled test signals; fixed camera

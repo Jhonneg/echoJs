@@ -1,0 +1,65 @@
+# Bloom — post-BL08 3D water reconstruction
+
+Date:2026-11-24. Owner explicitly reopens Bloom water; approved mountains, monolith, fragments, auroras and musical mappings remain fixed. Other landscapes/shared MI/application work are outside this task. **Owner approved the 3° orthographic proposal. Implementation and controlled verification are complete; owner visually approved the result (“looks good now”) on2026-11-24.**
+
+## Reference and current implementation
+
+Owner supplies `/home/jonee/Videos/screenrecording-2026-11-23_20-37-03.mp4` (15.5s,1800×848,60fps). Visual frames at2/6/10/14s show fine, spatially broken reflection highlights, gentle continuous variation, curved reflected shapes and broad concentric ripples. These visible properties are the target; the recording does not establish its underlying implementation. Its additional UI, stones, camera orbit/zoom and composition are not requested changes. No audio analysis or reference media is copied into production/evidence.
+
+Current Bloom lake is a two-triangle, screen-facing40×10card using a camera-neutral vertex shader. Most surface movement is fragment color/distortion; it has no wave-displaced surface or corresponding geometric normals. Aurora reflections are broad analytic fields. Four additional meshes reuse stone/beam/fragment source triangles but mirror them into screen coordinates with.82vertical compression; they are not reflections on a horizontal world-space lake. This explains the flat treatment independently of animation cadence.
+
+The neutral camera is orthographic at(0,0,20), looking horizontally toward the origin. A horizontal level plane at waterY−.02 projects to one line. Increasing its subdivisions alone cannot expose depth. Mouse orbit contributes±2.5°yaw/±1.2°pitch and cannot substitute for a stable downward viewing angle.
+
+## Camera proposal — owner approved
+
+[Desktop comparison](evidence/bloom/water-3d-camera-study/camera-comparison.png) · [Portrait comparison](evidence/bloom/water-3d-camera-study/portrait-camera-comparison.png) · [2°/5° alternatives](evidence/bloom/water-3d-camera-study/angle-options.png) · [Level versus tilted horizontal diagnostic grid](evidence/bloom/water-3d-camera-study/water-plane-visibility.png)
+
+Recommend retaining orthographic projection and current responsive zoom, with a3°downward neutral view. Preserve the pointer angle bounds around that baseline, leaving1.8°minimum downward view. The monolith's world dimensions/position/hover behavior stay unchanged. At1440×900/90px-per-unit, its tested top shifts0.52px and height compresses.137%; a representative mountain point at(−4,1.6,−6) rises28.06px. The authored horizon/card edge remains within.003px and the camera-neutral aurora image remains in place. The change in mountain framing is real and presented for approval, not silently compensated by moving mountains.
+
+The isolated study backs the orthographic eye away to radius512 and extends far clipping to572, so the new grazing-view foreground can fit in front of the camera. Orthographic apparent size does not depend on that distance. Fog near/far and backdrop depth are shifted by the same distance offset to preserve the existing depth-color treatment; this is rendering bookkeeping, not a scene brightness lift. Final water bounds must cover all tested pointer/aspect combinations; this distance is a study value, not a permission to alter global camera defaults.
+
+The study deliberately retains the rejected old lake/reflections to isolate framing, and its optional wire grid is static diagnostic geometry, not the proposed water. Small bank-cut edges become visible with the old card at3°. The reconstructed water must correctly occlude submerged closures; do not edit or replace mountain geometry to conceal them. Acceptance requires no exposed bank/mesh edges, including pointer extremes and portrait. If this cannot be resolved within water integration, report before expanding scope.
+
+## Approved implementation design
+
+- Replace the camera-neutral lake card with a bounded horizontal water mesh at the existing water level. Start with128×256segments Standard and96×192Low (65536/36864water triangles), with nonuniform spacing concentrated around the monolith, then validate the actual displaced surface and measured cost. Low remains genuine displaced geometry.
+- GPU vertex displacement: continuous layered, unequal-wavelength/direction waves with a restrained combined resting amplitude; no per-frame CPU buffer rebuilding. Use the same wave/ripple height field and analytic gradients for coherent surface normals. Fine detail must remain spatially/temporally coherent, without random flicker or harsh peaks.
+- Keep the approved lavender/rose/indigo/turquoise color sources. Apply restrained Fresnel/directional highlights, roughness and authored distance/depth coloration. Suppress wave amplitude near the authored far edge to stabilize the horizon. Avoid additive full-frame brightness or a few oversized reflection bands.
+- Replace screen-space source-triangle reflection cards with water-integrated world/camera-coherent reflections following the final monolith/fragment transforms. Start with one bounded planar-reflection prototype and compare its measured cost before adopting it. Reuse the existing Three.js reflection capability; no new dependencies, cube capture or screen-space ray tracing. Standard/Low use capped target sizes. Keep the camera-neutral sky out of an incorrectly mirrored capture; sample the existing aurora field consistently with surface normals/environment direction.
+- Preserve the existing MusicFeaturesV1 consumer and music.ts outputs. Ambient waves remain autonomous; existing final aurora/seam/trail values illuminate the water, and qualified low-event ringAge/ringStrength drive expanding geometric/normal ripples beneath the monolith. Do not infer playback from amplitude or introduce new detectors. Keep reduced-motion clocks/continuous-wave motion suppressed while retaining restrained illumination.
+- Connect the approved pointer camera to the reconstructed water/reflection projection; preserve leave/blur return and reduced/coarse gating. No edits to the shared rendering host or other landscapes unless separately authorized.
+
+## Verification and completion gate
+
+Capture matched rest, gentle ambient, strong aurora, expanding rings, moving monolith/reflections and mouse-camera footage at Standard/Low. Include neutral shading/wireframe views and measured vertex displacement to demonstrate actual geometry motion rather than color-only animation. Compare visually against the supplied reference without copying its extra objects/UI or framing.
+
+Verify horizon/hero prominence, mountain occlusion, reflection alignment at all pointer extremes, desktop/wide/portrait, playback lifecycle and reduced motion. Preserve hashes of protected sources/geometry constructors and the scene-local music controller. Run meaningful wave/normal/ripple/projection tests, full tests/lint/typecheck/build, resource cleanup and matched hardware/viewport/DPR frame samples; report GPU query timing where operational and distinguish unmeasured costs. No automatic performance claim for the proposed reflection pass. Stop for owner visual review after implementation; no commit/push.
+
+## Design-study evidence
+
+`scripts/verify-bloom-water-camera-study.mjs` creates a disposable source copy/build and changes only that copy for camera/grid/clock probes. Eight browser frames render successfully; every repository production-source hash is unchanged. The initial harness omitted one study-distance uniform and failed; `first-attempt.json` retains that diagnostic failure. It was corrected in the harness before the successful run. This study verifies projection feasibility, not completed water appearance/performance or native mouse feel.
+
+
+## Implemented reconstruction
+
+`water.ts` owns the deterministic GPU height field and its CPU verification reference. Four directional waves use amplitudes .035/.018/.010/.006 world units, different wavelengths/phases/speeds, a slow coherent domain warp and two small C2 noise layers. All temporal frequencies wrap continuously with the existing628.3185s clock. The actual horizontal mesh spans x±32,z−8..352 at waterY−.02. Standard33153vertices/65536triangles; Low18721/36864. Vertex spacing near the ripple origin is .125Standard/.167Low in both axes; increasingly coarse distant/side regions bound cost. Uniform subdivisions over the entire360unit depth failed the ripple sampling requirement and were replaced before acceptance.
+
+The vertex shader displaces geometry; the fragment shader evaluates the same analytic gradient for normals, restrained directional highlights, Fresnel reflection and depth coloration. Samples over actual mesh vertices and6s show Standard heights−.07269..+.07127 and maximum temporal travel.13026world (~11.72px at90px/unit); Low is comparable. This is measured geometric motion, independent of brightness. The GPU field/gradient is separately read back from a floating-point framebuffer and compared against the CPU reference. Neutral and wireframe footage make the surface visible without relying on reflection color changes.
+
+`WaterSurface.tsx` owns one installed Three0.186Reflector, capped half-float target, geometry and material. Standard target936×585 at1440×900; Low512×320. No MSAA/dynamic shadows/cubemap/SSR/postprocessing dependency. Quality changes, resize and unmount explicitly release/reallocate owned resources. The installed addon supports orthographic clipping. The old four source-triangle reflection draws and obsolete `reflection.ts` are removed. One mirrored scene capture now follows the actual finalized mountain/monolith/fragment/beam transforms. A bounded five-tap filter and surface-normal UV displacement soften/break it. This is a mean-plane reflection with wave distortion, not exact multiple-bounce or per-wave ray tracing.
+
+The sky card is camera-neutral, so it is excluded from the mirror capture. Existing final aurora fields are evaluated along reflected surface directions instead. Shore haze blends the finite far edge into the authored horizon. The new opaque physical lake correctly occludes submerged mountain closures; some formerly visible low foreground bank geometry was below water in world coordinates and is now submerged. No mountain vertices/material code are altered. This visibility consequence and the approved3°framing change are explicitly included in owner visual review.
+
+## Music, motion and preserved scope
+
+The existing `music.ts` is byte-for-byte unchanged. Existing `time`, qualified low-event `ringAge/ringStrength`, final aurora strength/color/expansion/detail, atmosphere, seam level and trail lights feed the new water material. Ring packets expand at1.575world units/s, have .45world width, .022maximum displacement coefficient, exponential decay and the existing2.1–3s taper. Their x/z center is the water foot beneath the monolith; vertical ascent never moves that anchor. No new onset detector, amplitude-derived playback or legacy AudioSignal is introduced. Reduced motion freezes the existing wave clock and suppresses event rings; playback lifecycle and pointer gating are retained.
+
+107existing production sources are preserved by SHA-256 against the pre-implementation camera study, including all other landscapes, Music Intelligence, Bloom mountain/stone/aurora/trail/lifecycle generators and application audio changes. Production edits are restricted to BloomScene, deletion of the obsolete reflection module, and the two new water files. Unit tests now exercise the installed reflection camera against mirrored source triangles across nine views/three heights, rather than testing the deleted screen-space compression.
+
+## Evidence and review
+
+[Evidence index](evidence/bloom/water-3d/README.md), [before/after](evidence/bloom/water-3d/comparison.png), [matched states](evidence/bloom/water-3d/matched-states.png), [quality comparison](evidence/bloom/water-3d/quality-comparison.png). These use controlled feature/state replay in disposable production builds, with identical input cases/pose; the original view is0° and new view is the approved3°. No probes/debug modes ship. Media contains rendered ECHO pixels and annotated synthetic test states, no owner audio or reference recording.
+
+Visual comparison with the supplied recording: the reconstructed surface has fine broken reflections, coherent moving surface normals, real relief and expanding rings instead of the original oversized color bands. Bloom retains its approved stylized terrain/sky; this does not claim a photorealistic match. Owner subsequently visually approved the result on2026-11-24. The reference's free orbit, additional objects, broad camera framing and UI were deliberately excluded.
+
+Owner visual review is accepted (“looks good now,”2026-11-24). Native-window performance/input feel and permitted real-music verification remain unobserved. Automated headless GPU timings are device-specific evidence, not universal performance certification. No other phase, commit or push is authorized.

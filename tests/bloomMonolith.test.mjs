@@ -14,7 +14,7 @@ test('reflection footprint matches the yawed solid corners and recessed seam',()
 test('static monolith replaces ring geometry and reflection without inherited bass motion',()=>{
  const source=readFileSync('src/scenes/bloom/BloomScene.tsx','utf8')
  assert.doesNotMatch(source,/torusGeometry|haloOffset|haloScale|haloRotation|distanceToRing|updateBassMotion|updateFragmentResponse/)
- assert.match(source,/name="bloom-monolith"/);assert.match(source,/monolithProjection\(\)/)
+ assert.match(source,/name="bloom-monolith"/);assert.match(source,/WaterSurface/)
  assert.match(source,/cameraTilt=\{false\}/)
  assert.doesNotMatch(source,/monolith.*\.position\.set|monolith.*\.scale\.set/)
 })
