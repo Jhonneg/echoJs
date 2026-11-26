@@ -1,7 +1,8 @@
 import './bloom.css'
 import { Component, useEffect, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { BackSide, BufferAttribute, BufferGeometry, Color, Mesh, OctahedronGeometry, ShaderMaterial, Vector3, Vector4 } from 'three'
+import { BackSide, BufferAttribute, BufferGeometry, Color, Mesh, OctahedronGeometry, PlaneGeometry, ShaderMaterial, Vector2, Vector3, Vector4 } from 'three'
+import { Reflector } from 'three/examples/jsm/objects/Reflector.js'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import type { GraphicsQuality } from '../../engine/quality'
@@ -10,11 +11,12 @@ import { CAMERA_HEIGHT, CAMERA_PITCH, CAMERA_Z, CRYSTALS, FOV_DEGREES, MONOLITH,
 import { buildRange, rangeCells, rangeFragmentShader, rangeVertexShader } from './ranges'
 import { CURTAINS, SKY_DEFINES, auroraGain, curtainPhases, skyFragmentShader, skyVertexShader } from './sky'
 import { MONOLITH_DEFINES, crystalFragmentShader, crystalPose, crystalVertexShader, monolithFragmentShader, monolithHover, monolithVertexShader } from './monolith'
+import { RING_CENTER, WATER_SHADER, reflectionSize, waterPhases } from './water'
 
 // Bloom rebuild from the Resonant Monolith reference. BR1 placed everything from measured
 // screen fractions; BR2 made the ranges real 3D terrain; BR3 added the sky dome and aurora,
-// whose light also falls on the ranges; BR4 adds the stone monolith and crystals. The water
-// is still a BR1 placeholder.
+// whose light also falls on the ranges; BR4 added the stone monolith and crystals; BR5 adds
+// the reflective lake.
 
 const SKY_RADIUS = 450
 const SKY_TOP = '#3d3a68'
@@ -25,6 +27,8 @@ const SKY_TOP = '#3d3a68'
 // frame (phases are recomputed from the clock, so nothing carries over between mounts).
 type AuroraUniforms = { uPhase: { value: Vector4 }, uAuroraGain: { value: number } }
 const AURORA: AuroraUniforms = { uPhase: { value: new Vector4() }, uAuroraGain: { value: 1 } }
+// Water wave/ring phases, shared the same way.
+const WATER_PHASE = { value: new Vector4() }
 
 function FixedCamera() {
   const camera = useThree(state => state.camera)
@@ -142,6 +146,32 @@ function Crystal({ index, reducedMotion }: { index: number, reducedMotion: boole
   return <mesh ref={mesh} geometry={geometry} material={material} position={crystal.position} />
 }
 
+// Reflective lake: three's Reflector renders the mirrored scene; WATER_SHADER samples it.
+// The reflection texture follows the drawing-buffer size and the quality setting.
+function Water({ quality }: { quality: GraphicsQuality }) {
+  const width = useThree(state => state.size.width), height = useThree(state => state.size.height)
+  const dpr = useThree(state => state.viewport.dpr)
+  const reflector = useMemo(() => {
+    const texture = reflectionSize(width * dpr, height * dpr, quality)
+    const water = new Reflector(new PlaneGeometry(2400, 1200), {
+      textureWidth: texture.width, textureHeight: texture.height, shader: WATER_SHADER,
+      multisample: quality === 'low' ? 0 : 4, clipBias: 0.003,
+    })
+    const material = water.material as ShaderMaterial
+    material.defines = { DETAIL: quality === 'low' ? 0 : 1 }
+    material.uniforms.uPhase = WATER_PHASE
+    material.uniforms.uRingCenter = { value: new Vector2(RING_CENTER[0], RING_CENTER[1]) }
+    material.uniforms.uDeep = { value: new Color('#2a2238') }
+    material.uniforms.uMist = { value: new Color('#bba7cf') }
+    material.uniforms.uSeamGlow = { value: new Color('#ffd6ea') }
+    water.rotation.x = -Math.PI / 2
+    water.position.set(0, 0, CAMERA_Z - 590) // from just behind the camera out past the far ranges
+    return water
+  }, [width, height, dpr, quality])
+  useEffect(() => () => { reflector.dispose(); reflector.geometry.dispose() }, [reflector])
+  return <primitive object={reflector} />
+}
+
 function Composition({ onRenderTime, quality, reducedMotion }: { onRenderTime: (now: number) => void, quality: GraphicsQuality, reducedMotion: boolean }) {
   const aurora = AURORA
   useFrame(state => {
@@ -149,6 +179,8 @@ function Composition({ onRenderTime, quality, reducedMotion }: { onRenderTime: (
     const phases = curtainPhases(state.clock.elapsedTime, reducedMotion)
     AURORA.uPhase.value.set(phases[0], phases[1], phases[2], phases[3])
     AURORA.uAuroraGain.value = auroraGain(phases)
+    const water = waterPhases(state.clock.elapsedTime, reducedMotion)
+    WATER_PHASE.value.set(water[0], water[1], water[2], water[3])
     onRenderTime(performance.now())
   })
   return <>
@@ -156,11 +188,7 @@ function Composition({ onRenderTime, quality, reducedMotion }: { onRenderTime: (
     <FixedCamera />
     <Sky quality={quality} aurora={aurora} />
     {RANGES.map((_, i) => <Range key={i} index={i} quality={quality} aurora={aurora} />)}
-    {/* Water: flat placeholder plane at y = 0 out to the far ranges. */}
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, CAMERA_Z - 150]}>
-      <planeGeometry args={[2400, 320]} />
-      <meshBasicMaterial color="#5a4c79" />
-    </mesh>
+    <Water quality={quality} />
     <Monolith quality={quality} reducedMotion={reducedMotion} />
     {CRYSTALS.map((_, i) => <Crystal key={i} index={i} reducedMotion={reducedMotion} />)}
   </>

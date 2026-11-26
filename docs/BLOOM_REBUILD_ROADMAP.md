@@ -38,7 +38,7 @@ Measured from the reference (1672×941):
 | BR2 | Mountain ranges as full 3D terrain (owner's choice): ridged layers, snow by height and slope, rock shading, haze with distance, mist between layers | Owner approved 2026-11-26 ([evidence](evidence/bloom/rebuild/br2/README.md)) |
 | BR3 | Sky + aurora curtains (green left, pink and violet right), slow ambient motion, colour spill onto snow and mist | Owner approved 2026-11-26 ([evidence](evidence/bloom/rebuild/br3/README.md)) |
 | BR4 | Monolith + two crystals: cracked stone, bright seam, gentle ambient hover | Owner approved 2026-11-26 ([evidence](evidence/bloom/rebuild/br4/README.md)) |
-| BR5 | Water: calm lake, coloured streaked reflections, ripples under the monolith, low mist | Not started |
+| BR5 | Water: calm lake, coloured streaked reflections, ripples under the monolith, low mist | Owner approved 2026-11-26 ([evidence](evidence/bloom/rebuild/br5/README.md)) |
 | BR6 | Glowing valley rivers with slow flow | Not started |
 | BR7 | Quality (Standard/Low), portrait and wide framing, reduced motion, performance | Not started |
 | BR8 | Music mapping (planned separately) | Not started |

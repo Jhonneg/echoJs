@@ -1,5 +1,15 @@
 # ECHO — current checkpoint
 
+## Bloom rebuild BR5 — OWNER APPROVED ("commit and proceed"); BR6 PLAN PENDING — 2026-11-26
+
+- Owner approves BR5 and asks to commit and continue. No owner report on native-GPU performance yet; the reflection cost remains unverified on real hardware. BR5 committed on main; not pushed. BR6 (glowing rivers) plan presented; BR6 unstarted.
+
+## Bloom rebuild BR5 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner approved the BR5 plan. New `src/scenes/bloom/water.ts` (water shader on three's bundled `Reflector`, wave/ring/resolution helpers). `BloomScene.tsx` replaces the flat placeholder; shared water phases follow the aurora pattern.
+- [Evidence](evidence/bloom/rebuild/br5/README.md): four drafts. PASS 301 tests (3 new), lint/typecheck/build, whitespace, mirror alignment (0.6 px), BR5 capture (0 errors, reduced motion still), resources identical after 24 switches, APP02/APP03 browser checks (committed APP evidence restored).
+- Cost: about 483k triangles per frame on Standard and 128k on Low (two passes). Headless timing is capped, so real-GPU impact is unverified. Known: reflected seam thinner and dimmer than the reference; reflected snow brighter; rings subtle. Stop for review. BR5 uncommitted.
+
 ## Bloom rebuild BR4 — OWNER APPROVED ("commit and proceed"); BR5 PLAN PENDING — 2026-11-26
 
 - Owner approves BR4 and asks to commit and continue. BR4 committed on main; not pushed. BR5 (water) plan presented; BR5 unstarted.
