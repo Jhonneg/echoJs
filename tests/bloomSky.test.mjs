@@ -16,7 +16,7 @@ test('BR3: curtains sit left and right of the monolith, leaving the sky behind i
   }
 })
 
-test('BR3: green on the left, violet-pink on the right; Low keeps one curtain per side', () => {
+test('BR3/BR7: green on the left, violet-pink on the right; one main curtain marked per side', () => {
   const rgb = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16))
   for (const c of CURTAINS) {
     const [r, g] = rgb(c.color)

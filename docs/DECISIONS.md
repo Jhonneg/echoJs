@@ -631,3 +631,7 @@ The sky and aurora are computed from the world view direction (mirrored below th
 ## 2026-11-26 — Bloom rivers are painted by the mountain shader, not separate meshes
 
 Planned ribbon meshes on single ranges were mostly hidden: flat ribbons were cut by the sloping terrain, and each range shows only a thin strip above the next. The mountain shader instead maps each fragment's world position to the reference's screen fractions with the fixed camera and adds glow near the river paths. Rivers then flow across ranges with natural occlusion and reflect correctly in the BR5 pass. Trade-off: they follow screen paths rather than individual valleys, and all terrain fragments pay the path-distance cost.
+
+## 2026-11-26 — Bloom framing adapts on narrow screens; GPU timers are the performance measure
+
+Narrow screens widen the field of view just enough to keep half the reference width visible, and raise the horizon only as far as the view widens; landscape shapes keep the approved framing exactly. This is safe because sky, aurora, rivers and reflections are world-locked through the fixed reference mapping. Frame-capped and uncapped headless timings proved meaningless for cost; GPU time is measured with EXT_disjoint_timer_query_webgl2 in a throwaway build. Optimisations must show no visible change (pixel comparison) and are not credited with savings smaller than run-to-run variation.

@@ -3,7 +3,7 @@
 // getDisplayMedia only; native picker, audibility and screen-reader speech stay manual.
 import {spawn,execFileSync} from 'node:child_process'
 import {createServer} from 'node:net'
-import {mkdtemp,mkdir,writeFile,readFile} from 'node:fs/promises'
+import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises'
 import {join} from 'node:path'
 import {tmpdir} from 'node:os'
 import assert from 'node:assert/strict'
@@ -130,4 +130,4 @@ try{
  const sceneDiff=execFileSync('git',['diff','-U0','HEAD','--','src/scenes',':(exclude)src/scenes/bloom',':(exclude)src/components/BloomDebugControls.tsx']).toString().split('\n').filter(l=>/^[+-][^+-]/.test(l))
  assert.ok(sceneDiff.every(l=>l.includes('-fallback">')),'scene change outside fallback text');report.sceneLinesChanged=sceneDiff.length
  assert.deepEqual(report.errors,[]);report.status='APP02 controlled browser checks PASS';console.log(report.status)
-}catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill()}
+}catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill();await new Promise(r=>setTimeout(r,500));await rm(temporary,{recursive:true,force:true}).catch(()=>{}) /* removeProfile */}

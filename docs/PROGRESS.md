@@ -1,5 +1,19 @@
 # ECHO — current checkpoint
 
+## Bloom rebuild BR7 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-26
+
+- Owner asks to commit BR7. BR7 (plus the earlier uncommitted owner performance note) committed on main; not pushed. BR8 (music response) not planned or started; awaiting owner direction.
+
+## Bloom rebuild BR7 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner approved the BR7 plan. Adaptive camera (`cameraFor` in `composition.ts`, applied in `BloomScene.tsx`): narrow screens widen to keep half the reference width and raise the horizon (53% on a phone); desktop/16:9/wide unchanged. Low keeps all four aurora curtains (was two, which looked broken). River bounding-box early-out (`riverBox`); pixel-identical still frame.
+- [Evidence](evidence/bloom/rebuild/br7/README.md): GPU timer queries (throwaway build, `scripts/measure-bloom-br7.mjs`) show Standard about 5–6.5 ms GPU per frame, rivers the largest part, Low about 3–5 ms; run-to-run variation up to about 1.2 ms, so the early-out saving isn't quantified. PASS 310 tests, lint/typecheck/build, whitespace, BR7 capture (7 shapes × 2 qualities), APP02/APP03 browser checks (committed APP evidence restored).
+- /tmp quota filled by leftover Brave profiles from session scripts; owner approved deletion; the scripts now clean up. Stop for review. BR7 uncommitted.
+
+## Bloom rebuild — owner native performance report — 2026-11-26
+
+- Owner reports Bloom (after BR6: reflection + rivers) "runs well" on their machine with `npm run dev`. Recorded as an owner observation on their hardware, not a measured frame-time result; quality setting, browser and GPU were not stated. BR7 still awaiting owner direction.
+
 ## Bloom rebuild BR6 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-26
 
 - Owner asks to commit BR6. BR6 committed on main; not pushed. BR7 (framing, quality, performance) not planned or started; awaiting owner direction. Real-GPU performance of Standard (reflection + river shading; one 33.5 ms headless frame) remains unverified.

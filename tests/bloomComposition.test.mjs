@@ -64,3 +64,41 @@ test('BR1: crystals sit left-high and right-low of the monolith, inside portrait
     assert.ok(p.x > 0 && p.x < 1, `crystal outside portrait: ${p.x}`)
   }
 })
+
+import { CAMERA_PITCH, FOV_DEGREES, cameraFor, projectForAspect } from '../src/scenes/bloom/composition.ts'
+
+const shapes = { portrait: 390 / 844, tabletPortrait: 768 / 1024, square: 1, tablet: 1024 / 768, desktop: 1440 / 900, reference: 16 / 9, shortLaptop: 1440 / 700, wide: 1920 / 810 }
+
+test('BR7: desktop, 16:9 and wide keep the approved framing exactly', () => {
+  for (const aspect of [shapes.desktop, shapes.reference, shapes.shortLaptop, shapes.wide]) {
+    const view = cameraFor(aspect)
+    assert.ok(Math.abs(view.fovDegrees - FOV_DEGREES) < 1e-9, `fov ${view.fovDegrees} at ${aspect}`)
+    assert.ok(Math.abs(view.pitch - CAMERA_PITCH) < 1e-9)
+  }
+})
+
+test('BR7: every screen shape shows the whole monolith, centred, with the horizon below it', () => {
+  for (const [name, aspect] of Object.entries(shapes)) {
+    const points = corners().map(([x, y, z]) => projectForAspect(x, y, z, aspect))
+    for (const p of points) assert.ok(p.x > 0.02 && p.x < 0.98 && p.y > 0.02 && p.y < 0.98, `${name}: ${JSON.stringify(p)}`)
+    const xs = points.map(p => p.x)
+    assert.ok(Math.abs((Math.min(...xs) + Math.max(...xs)) / 2 - 0.5) < 0.02, `${name}: not centred`)
+    const horizon = projectForAspect(0, 0, CAMERA_Z - 1e6, aspect).y
+    assert.ok(Math.abs(horizon - cameraFor(aspect).horizon) < 1e-3, `${name}: horizon ${horizon}`)
+    assert.ok(Math.max(...points.map(p => p.y)) < horizon, `${name}: monolith base below the horizon`)
+  }
+})
+
+test('BR7: portrait shrinks the monolith to about half and opens water above the controls', () => {
+  const height = aspect => { const ys = corners().map(([x, y, z]) => projectForAspect(x, y, z, aspect).y); return Math.max(...ys) - Math.min(...ys) }
+  const ratio = height(shapes.portrait) / height(shapes.desktop)
+  assert.ok(ratio > 0.4 && ratio < 0.65, `portrait monolith is ${ratio.toFixed(2)} of desktop`)
+  assert.ok(cameraFor(shapes.portrait).horizon <= 0.54, 'horizon raised for water above the controls')
+  // Narrower screens never show less of the reference width than the portrait target.
+  let previous = Infinity
+  for (const aspect of [0.4, 0.46, 0.6, 0.75, 1, 1.3, 1.6, 2.4]) {
+    const fov = cameraFor(aspect).fovDegrees
+    assert.ok(fov <= previous + 1e-9, 'field of view must not grow as screens get wider')
+    previous = fov
+  }
+})

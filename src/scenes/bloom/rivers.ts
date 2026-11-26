@@ -49,6 +49,15 @@ function curve(points: River['path'], samples: number): [number, number][] {
   return out
 }
 
+// Screen bounding box per river (min x, min y, max x, max y) grown by a margin wider than the
+// glow's halo (BR7): the shader skips a river entirely for pixels outside it.
+export const RIVER_BOX_MARGIN = 0.035
+export function riverBox(river: River): [number, number, number, number] {
+  const path = riverPath(river), xs = path.map(p => p[0]), ys = path.map(p => p[1])
+  const mx = RIVER_BOX_MARGIN / REFERENCE_ASPECT, my = RIVER_BOX_MARGIN
+  return [Math.min(...xs) - mx, Math.min(...ys) - my, Math.max(...xs) + mx, Math.max(...ys) + my]
+}
+
 // Flow pulse phase per river; reduced motion holds a steady glow.
 export const RIVER_STILL_TIME = 3
 export function riverPhases(seconds: number, reducedMotion: boolean) {
@@ -63,9 +72,12 @@ uniform vec2 uRiverPts[${RIVERS.length * RIVER_POINTS}];
 uniform vec3 uRiverColor[${RIVERS.length}];
 uniform vec3 uRiverStrength;
 uniform vec3 uRiverPhase;
+uniform vec4 uRiverBox[${RIVERS.length}];
 vec3 riverGlow(vec2 f) {
   vec3 glowSum = vec3(0.0);
   for (int r = 0; r < RIVER_COUNT; r++) {
+    vec4 box = uRiverBox[r];
+    if (f.x < box.x || f.y < box.y || f.x > box.z || f.y > box.w) continue; // far from this river
     float best = 1e3, along = 0.0, total = 0.0, at = 0.0;
     for (int i = 0; i < ${RIVER_POINTS - 1}; i++) {
       vec2 a = uRiverPts[r * ${RIVER_POINTS} + i], b = uRiverPts[r * ${RIVER_POINTS} + i + 1];

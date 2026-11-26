@@ -4,7 +4,7 @@
 // The reference is read from disk for this evidence only; ECHO never loads it at runtime.
 import {spawn} from 'node:child_process'
 import {createServer} from 'node:net'
-import {mkdtemp,mkdir,writeFile,readFile} from 'node:fs/promises'
+import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises'
 import {join} from 'node:path'
 import {tmpdir} from 'node:os'
 import assert from 'node:assert/strict'
@@ -80,4 +80,4 @@ try{
  for(const scene of ['nocturne','lavender-peaks','crimson-horizon','bloom']){await ev(`{const x=document.getElementById('scene-select');x.value='${scene}';x.dispatchEvent(new Event('change',{bubbles:true}))};true`);await wait(`!!document.querySelector('main section canvas')&&!document.querySelector('.scene-status')`);await pause(500)}
  await wait(`!!document.querySelector('.bloom-stage canvas')`);await pause(500);assert.equal(await ev('__live()'),1,'live WebGL contexts');report.checks.push('Switched Nocturne → Lavender → Crimson → Bloom: Bloom redraws, one live WebGL context.')
  const unexpected=report.errors.filter(Boolean);assert.deepEqual(unexpected,[]);report.status='BR6 capture PASS';console.log(report.status)
-}catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill()}
+}catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill();await new Promise(r=>setTimeout(r,500));await rm(temporary,{recursive:true,force:true}).catch(()=>{}) /* removeProfile */}

@@ -4,7 +4,7 @@
 // getDisplayMedia only. Firefox/Safari/real devices/native sharing are manual (see checklist).
 import {spawn} from 'node:child_process'
 import {createServer} from 'node:net'
-import {mkdtemp,mkdir,writeFile} from 'node:fs/promises'
+import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises'
 import {join} from 'node:path'
 import {tmpdir} from 'node:os'
 import assert from 'node:assert/strict'
@@ -131,4 +131,4 @@ try{
 
  const failed=Object.entries(report.results).filter(([,v])=>v.status==='FAIL');report.status=failed.length?'APP04 automated checks: FAILURES '+failed.map(f=>f[0]).join(', '):'APP04 automated checks PASS'
  const unexpected=report.errors.filter(e=>e);report.unexpectedErrors=unexpected;assert.deepEqual(unexpected,[]);console.log(report.status)
-}catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill()}
+}catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill();await new Promise(r=>setTimeout(r,500));await rm(temporary,{recursive:true,force:true}).catch(()=>{}) /* removeProfile */}

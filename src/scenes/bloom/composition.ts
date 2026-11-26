@@ -39,6 +39,37 @@ export function projectToScreen(x: number, y: number, z: number, aspect: number)
   return { x: (ndcX + 1) / 2, y: (1 - ndcY) / 2 }
 }
 
+// BR7: the actual camera adapts to the screen shape. Landscape screens keep the reference
+// framing above (fixed vertical field of view). Narrower screens widen the view so at least
+// `coverage` of the reference's width stays visible, and raise the horizon so open water
+// shows above the controls. Sky, aurora, rivers and reflections are tied to the world (they
+// map through the fixed reference camera above), so they stay correct whatever the camera.
+const smooth01 = (a: number, b: number, x: number) => {
+  const t = Math.min(1, Math.max(0, (x - a) / (b - a)))
+  return t * t * (3 - 2 * t)
+}
+export const ADAPTIVE = { coverage: 0.5, portraitHorizon: 0.53 }
+export function cameraFor(aspect: number) {
+  const a = Number.isFinite(aspect) && aspect > 0 ? aspect : REFERENCE_ASPECT
+  const tanRef = Math.tan(HALF_FOV)
+  // Widen only when the screen would show less than `coverage` of the reference width
+  // (narrower than about 0.89:1); smooth and never wider as the screen widens.
+  const tanHalf = Math.max(tanRef, (tanRef * REFERENCE_ASPECT * ADAPTIVE.coverage) / a)
+  // Raise the horizon only as far as the view has widened, so there is room above the monolith.
+  const widened = smooth01(1, (REFERENCE_ASPECT * ADAPTIVE.coverage) / 0.46, tanHalf / tanRef) // 1 at a phone
+  const horizon = HORIZON_FRACTION - (HORIZON_FRACTION - ADAPTIVE.portraitHorizon) * widened
+  return { fovDegrees: (Math.atan(tanHalf) * 360) / Math.PI, tanHalf, pitch: Math.atan((2 * horizon - 1) * tanHalf), horizon }
+}
+
+// Project a world point to screen fractions for the actual camera at a given aspect.
+export function projectForAspect(x: number, y: number, z: number, aspect: number) {
+  const cam = cameraFor(aspect)
+  const dy = y - CAMERA_HEIGHT, dz = z - CAMERA_Z
+  const cy = dy * Math.cos(cam.pitch) + dz * Math.sin(cam.pitch)
+  const depth = dy * Math.sin(cam.pitch) - dz * Math.cos(cam.pitch)
+  return { x: (x / depth / (cam.tanHalf * aspect) + 1) / 2, y: (1 - cy / depth / cam.tanHalf) / 2 }
+}
+
 // Monolith: centred, top 6.4% / bottom 62.7%, 9% of the frame wide including the side face
 // that shows because the slab is turned (BR4). Sized at its front (world z = 0); the box
 // extends back from there and turns about its own centre.

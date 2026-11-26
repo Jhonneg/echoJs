@@ -4,7 +4,7 @@
 // Headless Brave with a generated WAV; numbers are relative comparisons, not native-hardware claims.
 import {spawn} from 'node:child_process'
 import {createServer} from 'node:net'
-import {mkdtemp,mkdir,writeFile,readdir,stat} from 'node:fs/promises'
+import {mkdtemp,mkdir,writeFile,readdir,stat,rm} from 'node:fs/promises'
 import {join} from 'node:path'
 import {tmpdir} from 'node:os'
 import assert from 'node:assert/strict'
@@ -85,4 +85,4 @@ try{
  const assets=await readdir('dist/assets');report.assets=Object.fromEntries(await Promise.all(assets.map(async f=>[f,(await stat(join('dist/assets',f))).size])))
  delete report.requests;assert.deepEqual(report.errors,[]);report.status='measured'
  console.log(JSON.stringify({stall:report.longestSwitchFrameMs,cold:report.coldEntryMs,bytes:report.initialBytes,switch:report.switchMs,continuity:report.continuity,webgl:report.webgl.liveAfter.length,quality:report.quality,cadence:report.cadence},null,1))
-}catch(e){report.failure=String(e);console.error(e);process.exitCode=1}finally{await writeFile(join(output,`measure-${label}.json`),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill()}
+}catch(e){report.failure=String(e);console.error(e);process.exitCode=1}finally{await writeFile(join(output,`measure-${label}.json`),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill();await new Promise(r=>setTimeout(r,500));await rm(temporary,{recursive:true,force:true}).catch(()=>{}) /* removeProfile */}

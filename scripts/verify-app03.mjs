@@ -4,7 +4,7 @@
 // Generated WAV only. Native GPU resets and real network failures are not reproduced.
 import {spawn,execFileSync} from 'node:child_process'
 import {createServer} from 'node:net'
-import {mkdtemp,mkdir,writeFile} from 'node:fs/promises'
+import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises'
 import {join} from 'node:path'
 import {tmpdir} from 'node:os'
 import assert from 'node:assert/strict'
@@ -102,4 +102,4 @@ try{
  assert.ok(sceneDiff.every(l=>l.includes('-fallback">')),'scene changes beyond APP02 fallback text');report.sceneFilesChanged=changed
  const unexpected=report.errors.filter(e=>!/WebGL context|CONTEXT_LOST|ConnectionFailed|Failed to fetch dynamically imported module|net::ERR/.test(e??''));report.unexpectedErrors=unexpected
  assert.deepEqual(unexpected,[]);report.status='APP03 controlled browser checks PASS';console.log(report.status)
-}catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill()}
+}catch(e){report.failure=String(e);throw e}finally{await writeFile(join(output,'capture.json'),JSON.stringify(report,null,2));ws?.close();browser.kill();server.kill();await new Promise(r=>setTimeout(r,500));await rm(temporary,{recursive:true,force:true}).catch(()=>{}) /* removeProfile */}

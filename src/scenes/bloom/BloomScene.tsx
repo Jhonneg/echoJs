@@ -1,18 +1,18 @@
 import './bloom.css'
 import { Component, useEffect, useLayoutEffect, useMemo, useRef, useSyncExternalStore, type ReactNode } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { BackSide, BufferAttribute, BufferGeometry, Color, Mesh, OctahedronGeometry, PlaneGeometry, ShaderMaterial, Vector2, Vector3, Vector4 } from 'three'
+import { BackSide, BufferAttribute, BufferGeometry, Color, Mesh, OctahedronGeometry, PerspectiveCamera, PlaneGeometry, ShaderMaterial, Vector2, Vector3, Vector4 } from 'three'
 import { Reflector } from 'three/examples/jsm/objects/Reflector.js'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
 import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import type { GraphicsQuality } from '../../engine/quality'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
-import { CAMERA_HEIGHT, CAMERA_PITCH, CAMERA_Z, CRYSTALS, FOV_DEGREES, MONOLITH, RANGES } from './composition'
+import { CAMERA_HEIGHT, CAMERA_Z, CRYSTALS, FOV_DEGREES, MONOLITH, RANGES, cameraFor } from './composition'
 import { buildRange, rangeCells, rangeFragmentShader, rangeVertexShader } from './ranges'
 import { CURTAINS, SKY_DEFINES, auroraGain, curtainPhases, skyFragmentShader, skyVertexShader } from './sky'
 import { MONOLITH_DEFINES, crystalFragmentShader, crystalPose, crystalVertexShader, monolithFragmentShader, monolithHover, monolithVertexShader } from './monolith'
 import { RING_CENTER, WATER_SHADER, reflectionSize, waterPhases } from './water'
-import { RIVERS, riverPath, riverPhases } from './rivers'
+import { RIVERS, riverBox, riverPath, riverPhases } from './rivers'
 
 // Bloom rebuild from the Resonant Monolith reference. BR1 placed everything from measured
 // screen fractions; BR2 made the ranges real 3D terrain; BR3 added the sky dome and aurora,
@@ -32,13 +32,20 @@ const AURORA: AuroraUniforms = { uPhase: { value: new Vector4() }, uAuroraGain: 
 const WATER_PHASE = { value: new Vector4() }
 const RIVER_PHASE = { value: new Vector3() }
 
+// Camera position is fixed; field of view and tilt adapt to the screen shape (BR7).
 function FixedCamera() {
   const camera = useThree(state => state.camera)
+  const width = useThree(state => state.size.width), height = useThree(state => state.size.height)
   useLayoutEffect(() => {
+    const view = cameraFor(width / height)
+    if (camera instanceof PerspectiveCamera) {
+      Object.assign(camera, { fov: view.fovDegrees })
+      camera.updateProjectionMatrix()
+    }
     camera.position.set(0, CAMERA_HEIGHT, CAMERA_Z)
-    camera.rotation.set(CAMERA_PITCH, 0, 0)
+    camera.rotation.set(view.pitch, 0, 0)
     camera.updateMatrixWorld()
-  }, [camera])
+  }, [camera, width, height])
   return null
 }
 
@@ -46,7 +53,9 @@ function FixedCamera() {
 function Sky({ quality, aurora }: { quality: GraphicsQuality, aurora: AuroraUniforms }) {
   const material = useMemo(() => new ShaderMaterial({
     vertexShader: skyVertexShader, fragmentShader: skyFragmentShader, side: BackSide, depthWrite: false, depthTest: false,
-    defines: { ...SKY_DEFINES, RAY_OCTAVES: quality === 'low' ? 2 : 4, LOW_QUALITY: quality === 'low' ? 1 : 0 },
+    // Low keeps all four curtains (BR7: with two they thinned to faint lines); only the streak
+    // detail is simpler. The sky shader is cheap at Low's lower drawing resolution.
+    defines: { ...SKY_DEFINES, RAY_OCTAVES: quality === 'low' ? 3 : 4 },
     uniforms: {
       uTop: { value: new Color(SKY_TOP) }, uMid: { value: new Color('#6c5e98') },
       uHorizon: { value: new Color('#cdaed6') }, uHorizonPink: { value: new Color('#e6b2cf') },
@@ -68,6 +77,7 @@ const riverUniforms = () => ({
   uRiverColor: { value: RIVERS.map(r => new Color(r.color)) },
   uRiverStrength: { value: new Vector3(...RIVERS.map(r => r.strength)) },
   uRiverPhase: RIVER_PHASE,
+  uRiverBox: { value: RIVERS.map(r => new Vector4(...riverBox(r))) },
 })
 
 // Per-range material with that range's snow line and mist depth. Identical shader source, so

@@ -50,3 +50,14 @@ test('BR6: flow pulses loop seamlessly; reduced motion holds a steady glow', () 
   const still = riverPhases(RIVER_STILL_TIME, false)
   for (const t of [0, 7, 1e5]) assert.deepEqual(riverPhases(t, true), still)
 })
+
+import { RIVER_BOX_MARGIN, riverBox } from '../src/scenes/bloom/rivers.ts'
+
+test('BR7: each river box holds its whole path plus a margin wider than the visible glow', () => {
+  // Outer halo width is at most 0.0048 * 3.2 ≈ 0.015 (screen height); exp(-(margin/halo)^2) is negligible.
+  assert.ok(Math.exp(-((RIVER_BOX_MARGIN / 0.0154) ** 2)) < 0.01)
+  for (const river of RIVERS) {
+    const [x0, y0, x1, y1] = riverBox(river)
+    for (const [x, y] of riverPath(river)) assert.ok(x > x0 && x < x1 && y > y0 && y < y1)
+  }
+})

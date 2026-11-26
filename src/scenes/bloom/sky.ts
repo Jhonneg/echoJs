@@ -9,7 +9,7 @@ export interface Curtain {
   x0: number, y0: number, x1: number, y1: number
   height: number, color: string, strength: number, period: number
   side: 'left' | 'right'
-  lowQuality: boolean // kept on Low quality
+  lowQuality: boolean // BR3: kept on Low. Since BR7 Low keeps all curtains; this marks the main pair.
 }
 export const CURTAINS: readonly Curtain[] = [
   { x0: -0.25, y0: 0.12, x1: 0.44, y1: 0.36, height: 0.26, color: '#79f0c6', strength: 1, period: 41, side: 'left', lowQuality: true },
@@ -99,9 +99,6 @@ void main() {
   sky = mix(sky, uTop, smoothstep(0.4, 1.0, elevation));
   vec3 glow = vec3(0.0);
   for (int i = 0; i < 4; i++) {
-    #if LOW_QUALITY
-    if (i == 1 || i == 2) continue;
-    #endif
     glow += uColor[i] * curtain(f, i, uPhase[i]);
   }
   gl_FragColor = vec4(sky + glow * uGain * 0.85, 1.0);
