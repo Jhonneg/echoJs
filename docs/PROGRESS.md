@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Crimson Horizon foreground — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- Sun cut committed at the owner's request (8a20325, not pushed). Owner approved the foreground plan (review item 7) and chose option (b), clear crest lines. The quiet-valley rule (floor under 1 m) stays. Folds are broader (exponent 3, was 8) and stretched along the valley (`terrain.ts`). A thin antialiased crimson line follows each fold crest on the near and middle floor, at about half the mountain rims' strength (`material.ts`). No new music mapping.
+- [Evidence](evidence/crimson/foreground/README.md): two crimson lines sweep from left and right toward the sun's base. Averaged over 14 frames, the foreground crimson share is 1.02% → 1.55%; frames with almost none 4 → 2. The lines come and go along the journey. Tuned from a broad sheen (edge-on light) to screen-width crest lines, and from one line to two. GPU within noise. PASS 362 tests (3 new), lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: motion in a native window, real songs. Committed at the owner's request (not pushed); no explicit visual verdict recorded. Mountain-layers plan requested next.
+
 ## Crimson Horizon sun cut — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - Darker values committed at the owner's request (fab9072, not pushed). Owner approved the sun-cut plan (review item 6) and chose option (b), coverage like the reference. The sun stays 88 m ahead while the terrain streams past, so the flat far floor sliced the disc. A distant ridge 75 m ahead now travels with the camera (`ridgeline.ts`, new; `Ridge` mesh in `CrimsonHorizonScene.tsx`): peaks cover 25.1% of the visible disc with a V at the centre, top half clear, ends tucked behind the side mountains. Dark base, crimson rim, sun-base glow; follows the sun's activity, no new music mapping.

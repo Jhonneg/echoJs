@@ -699,3 +699,7 @@ The owner chose a moderate darkening (option a) after the steady rims and sun gl
 ## 2026-11-27 — Crimson's sun sits behind a camera-following far ridge
 
 The flat cut under Crimson's sun came from the far valley floor. The terrain streams past while the sun stays 88 m ahead, so terrain can't hold permanent peaks in front of it. A separate ridge strip 75 m ahead travels with the camera like the sun. Its profile is defined where it appears against the disc and projected onto its own plane, so coverage (owner option b: 25.1% of the visible disc, top half clear) is measured and tested. Its ends tuck behind the side mountains so it reads as part of the far range, and it carries the same crimson rim and sun-base glow as the terrain.
+
+## 2026-11-27 — Crimson's foreground gets leading lines from its folds, not taller dunes
+
+The approved quiet-valley rule keeps the floor under 1 m, so the empty foreground is solved with shape and light rather than height. The existing folds became broader and are stretched along the valley, so their crests converge on the sun in perspective. Each crest is drawn as a thin antialiased crimson line using the fold value's screen-space width; the mountains' edge-on backlight was tried first, but on a floor seen from above it gave a broad sheen. Because the folds come from noise, the lines come and go along the journey.

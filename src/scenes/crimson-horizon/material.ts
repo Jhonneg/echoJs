@@ -32,6 +32,9 @@ export const terrainFragment = `#define RIM_POWER 10.0
 #define RIM_ACTIVE 0.3
 #define FLOOR_VALUE 0.36
 #define MOUNTAIN_VALUE 0.32
+#define FLOOR_LINE_PIXELS 1.5
+#define FLOOR_RIM_REST 0.3
+#define FLOOR_RIM_ACTIVE 0.15
 uniform float atmosphereDensity;
 uniform float atmosphereWarmth;
 uniform float presenceAccent;
@@ -156,6 +159,14 @@ void main() {
   float rimMask = smoothstep(0.15, 0.6, vFeatures.z) * (1.0 - smoothstep(100.0, 130.0, depth));
   float rim = pow(max(edgeOn, 0.0), RIM_POWER) * sunward * rimMask * (RIM_REST + activity * RIM_ACTIVE);
   color += vec3(0.85, 0.02, 0.1) * rim;
+  // Foreground pass (owner option b): a thin crimson line along each valley-floor fold crest
+  // (where the fold value crosses 0), about 1.5 px wide and antialiased, at about half the mountain
+  // rims' strength, near and middle distance, so the folds read as lines leading to the sun.
+  float foldWidth = max(fwidth(vFold) * FLOOR_LINE_PIXELS, 0.00005);
+  float foldCrest = 1.0 - smoothstep(foldWidth * 0.5, foldWidth, abs(vFold));
+  float floorMaskRim = (1.0 - smoothstep(0.1, 0.4, vFeatures.z)) * (1.0 - smoothstep(35.0, 60.0, depth));
+  float floorRim = foldCrest * sunward * floorMaskRim * (FLOOR_RIM_REST + activity * FLOOR_RIM_ACTIVE);
+  color += vec3(0.85, 0.02, 0.1) * floorRim;
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`

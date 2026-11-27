@@ -4,6 +4,9 @@ export const CHUNK_LENGTH = 48
 export const CHUNK_WIDTH = 128
 export const CHUNK_COLUMNS = 128
 export const CHUNK_ROWS = 64
+// Fold frequency across (x) and along (z) the valley, and how sharp each fold's crest is.
+export const FOLD_FREQUENCY = { x: 0.12, z: 0.014 }
+export const FOLD_SHARPNESS = 3
 const smoothstep = (low: number, high: number, value: number) => {
   const t = Math.max(0, Math.min(1, (value - low) / (high - low)))
   return t * t * (3 - 2 * t)
@@ -22,9 +25,11 @@ export function sampleTerrain(x: number, z: number) {
   const depthVariation = 0.78 + 0.22 * gradientNoise(z * 0.025, x < center ? 1.7 : 9.3, seed + 37)
   const outerFalloff = 1 - smoothstep(24, 36, distance) * 0.35
   const mountains = bank * (1.3 + ridge.height * 8.5) * depthVariation * outerFalloff
-  const fold = gradientNoise(x * 0.04 + 4.7, z * 0.035 + 8.9, 101)
+  // Foreground pass: broad, rounded folds stretched along the valley, so their crests sweep in long
+  // curves toward the sun (leading lines). Same 0.7 m maximum: the quiet valley stays under 1 m.
+  const fold = gradientNoise(x * FOLD_FREQUENCY.x + 4.7, z * FOLD_FREQUENCY.z + 8.9, 101)
   const floor = 0.12 + gradientNoise(x * 0.055, z * 0.04, 41) * 0.16
-    + Math.pow(1 - Math.abs(fold), 8) * 0.7
+    + Math.pow(1 - Math.abs(fold), FOLD_SHARPNESS) * 0.7
   const selection = smoothstep(-0.1, 0.35, gradientNoise(wx * 0.065 + 15, wz * 0.04 + 21, seed + 53))
   return { height: floor + mountains, primary: ridge.primary, secondary: ridge.secondary, bank, selection, fold }
 }
