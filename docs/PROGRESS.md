@@ -1,10 +1,16 @@
 # ECHO — current checkpoint
 
-## Crimson Horizon glow band — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+## Owner review — CRIMSON APPROVED; NT23 LEFTOVERS SKIPPED — 2026-11-27
+
+- The owner reviewed Crimson Horizon in their own browser and answered "it looks good". That covers the passes since the review: defect fixes, sun glow, rim lines, darker values, foreground lines, mountain layers, ridge removal and glow band. The owner accepts the straight cut under the sun (review item 6 closed as accepted).
+- The owner chose to skip the remaining NT23 checks (on-screen measurement and checklist); they stay unmeasured, not passed. The owner will push manually; nothing has been pushed from this session.
+- No further task is authorized.
+
+## Crimson Horizon glow band — OWNER APPROVED, COMMITTED — 2026-11-27
 
 - Ridge removal committed at the owner's request (8813deb, not pushed). Owner approved the glow-band plan (review item 9) and chose option (b). The bands were music-driven valley waves seen edge-on far away and stacked in the drop. Waves now fade in with distance (none beyond 55 m, full by 35 m), and each launch briefly swells the sun-base glow (0.5 s decay) (`valley.ts`, `material.ts`, `CrimsonHorizonScene.tsx`). Launch timing and strength unchanged.
 - [Evidence](evidence/crimson/glow-band/README.md): no stacked slivers in the drop burst; bright pixels under the sun about −60% (the rest is the sun edge and base glow). **Finding:** the waves were never visible on the near floor (unchanged 13.8–13.9 before and after), so in practice the travelling fronts are now seen only briefly at 35–55 m, and the swell carries the bass at the horizon. GPU within noise. PASS 361 tests (2 new), lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored).
-- Not tested: real songs, swell timing feel. All nine review items have now been addressed (item 6 reopened after the ridge removal). Stop for owner review; uncommitted.
+- Not tested: real songs, swell timing feel. All nine review items have now been addressed (item 6 reopened after the ridge removal). Committed with the owner's review below.
 
 ## Crimson Horizon sun-cut ridge — REMOVED AND COMMITTED AT OWNER REQUEST — 2026-11-27
 
