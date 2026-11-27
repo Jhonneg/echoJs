@@ -675,3 +675,7 @@ NT21 adds three slow plumes at existing vents, each beside a different fixture, 
 ## 2026-11-27 — Nocturne's neon flicker: one strip, accepted treble hits, a soft fixed pattern
 
 NT22 makes one minor strip (far-left violet, owner's choice) stutter like failing neon. Group materials can only change together, so that strip got its own material that follows its group exactly, times a flicker factor. A stutter starts only on a treble hit the violet response already accepted, so it is gated like the approved treble response. To stay well clear of strobing, it is a fixed pattern of three eased dips over 0.35 s that never drops below 20%, at most three dips a second, at least 10 s apart, on a thin strip. The minimum hit strength is a quarter of full: the generated song's accepted hits never reached the planned half.
+
+## 2026-11-27 — Nocturne lifecycle checks use a real tab switch, not a forced freeze
+
+NT23 found that the debug protocol's forced page freeze leaves a headless page hidden after "resume", with no animation frames at all, and pauses the audio element, so it can't show whether a scene resumes. The review switches to another tab and back instead, which hides and re-shows the page as a real background tab does. The scene resumed at 60 fps with its effects. Instrumentation lives in a throwaway copy of the build, so the production sources stay untouched. Frame metrics count callbacks that share a frame timestamp as one frame.

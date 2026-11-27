@@ -1,5 +1,13 @@
 # ECHO — current checkpoint
 
+## Nocturne NT23 — AUTOMATED REVIEW PASS; ON-SCREEN AND OWNER CHECKS PENDING — 2026-11-27
+
+- NT22 committed at the owner's request (9ee5930, not pushed). Owner approved NT23, including an on-screen Brave window on this machine. No production code changed.
+- [Evidence](evidence/nocturne/nt23/README.md), `verify-nocturne-nt23.mjs` on an instrumented throwaway build. All automated checks PASS with 0 errors: lost graphics recovered with every effect; 5 scene switches (one live context, heap level); 5 quality switches (renderer memory and programs exactly level); real tab switch (hidden while away, 60 fps on return); reduced motion at Standard and Low (no rain, frozen steam, no ripples or flicker, lights still follow music); 3-minute soak (steady 60 fps, GPU p95 about 6.6 ms, flat heap).
+- The debug protocol's forced freeze leaves a headless page hidden with no frames at all, so a real tab switch replaced it.
+- Cumulative NT16–NT22 cost (headless, versus 0598044): Low idle about +0.85 ms (NT18's always-lit gate keeps the glow passes on), Standard idle about +0.6 ms (noisy), music unchanged.
+- **Pending:** the on-screen measurement did not complete (two attempts; the window was likely off-screen or covered; the owner chose to finish without it) and the owner checklist (real songs, smoothness, reduced-motion setting, tab/minimize, fullscreen Esc). PASS 355 tests, lint/typecheck/build, whitespace, APP02/APP03 (committed evidence restored). NT23 uncommitted. The NT17–NT23 roadmap is implemented; no further Nocturne phase is planned.
+
 ## Nocturne NT22 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - NT21 committed at the owner's request (dffb542, not pushed). Owner approved the NT22 plan and chose the far-left strip. That strip (z −30.3) now has its own material, following its group times a flicker factor (`ArchitectureDetails.tsx`, `LightingDriver.tsx`, `visualState.ts`). A treble hit already accepted by the violet response, at least a quarter strength and 10 s after the last stutter, starts three soft dips over 0.35 s, never below 20% (`flicker.ts`, new). None in Manual, at Reactivity 0 or with reduced motion; no new music mapping.
