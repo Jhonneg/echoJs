@@ -12,6 +12,7 @@ import { createIllumination, updateIllumination, skyIllumination, ridgeIlluminat
 import { createTerrainProfiles, PROFILE_WIDTH } from './terrainProfiles'
 import { createTraces, updateTraces, traceFragment, type Traces } from './traces'
 import { ridges, type Ridge } from './terrain'
+import { TREELINE, ridgeFringe } from './treeline'
 import { createSunPulse, updateSunPulse } from './sunPulse'
 import { createAtmosphere, updateAtmosphere, atmosphereSky, atmosphereRidge, type Atmosphere } from './atmosphere'
 import './lavender-peaks.css'
@@ -130,9 +131,11 @@ function RidgeLayer({ ridge, index, halfWidth, response, illumination, motion, p
   const shape = useMemo(() => {
     const outline = new Shape()
     outline.moveTo(-halfWidth, -100)
-    for (let step = 0; step <= halfWidth * 16; step++) {
-      const x = -halfWidth + step / 8
-      outline.lineTo(x, ridgeHeight(x, ridge.peaks, ridge.base, ridge.detail, index))
+    // Ridge-edge pass: sampled finely enough to draw a tree-line fringe on the authored outline.
+    const steps = Math.round(halfWidth * 2 / TREELINE.sample)
+    for (let step = 0; step <= steps; step++) {
+      const x = -halfWidth + step * TREELINE.sample
+      outline.lineTo(x, ridgeHeight(x, ridge.peaks, ridge.base, ridge.detail, index) + ridgeFringe(x, index))
     }
     outline.lineTo(halfWidth, -100)
     outline.closePath()

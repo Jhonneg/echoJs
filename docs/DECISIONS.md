@@ -719,3 +719,7 @@ The stacked bands under the sun were the music-driven valley waves: launched far
 ## 2026-11-27 — Lavender's layers separate with horizontal mist at each foot
 
 The reference separates its ranges with pale mist at the foot of each layer. Lavender's ridges were flat tones meeting with hard edges, and its only valley mist was music-driven and faint. A steady mist now rises from each ridge's own base line and fades upward, stronger on farther ridges and absent on the front one, with the nearer ridges hiding what lies below their outlines. Measuring from the nearer ridge's outline was tried first; on the steep, jagged flanks it drew vertical columns. Sky and ridges dither, as in Crimson, so the pastel gradients and the mist don't band.
+
+## 2026-11-27 — Lavender's crests carry a tree-line fringe on the authored outline
+
+The reference's ridges end in a fine, irregular fringe of trees, and Lavender's ended in smooth, faceted lines. The fringe is a separate, pure function added on top of `ridgeHeight`, not a change to the authored peaks. That keeps the approved silhouettes, the sun clearance and the outline used by the illumination and traces as they were. It's hashed per slot and periodic with the terrain tile, so it's steady and seamless. It's finer on farther ridges, for aerial perspective.

@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Lavender Peaks tree-line fringe — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+
+- This round covers item 1 of the Lavender review, ridge-edge detail. Every ridge crest now carries a fine, irregular tree-line fringe like the reference's (`treeline.ts`, new; the outline is sampled more finely in `LavenderPeaksScene.tsx`). The fringe is finer on farther ridges, has small breaks, repeats with the terrain tile and doesn't react to music. The authored outline, mist, sun, colours, camera and music mapping are unchanged.
+- [Evidence](evidence/lavender-peaks/treeline/README.md). PASS: 365 tests (3 new), lint, typecheck, build, whitespace, `verify-lavender-corona-noise.mjs` and its assessment, APP02/APP03 (committed evidence restored).
+- Not measured: GPU time (about 7.5 times as many outline vertices). Not tested: the owner's monitor, real songs, portrait framing. Remaining review items (front-layer colour, wider warm light, optional corona softening and grain) are the owner's call. Stop for owner review; the mist pass and this pass are both uncommitted.
+
 ## Lavender Peaks banding fix and layer mist — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
 
 - An owner-requested review of Lavender Peaks against its reference found mild sky banding and six art-direction gaps. The owner approved fixing the banding and adding mist between layers, option (b), like the reference. Sky and ridges now dither (`LavenderPeaksScene.tsx`). A steady pale mist lies in horizontal bands at each ridge's foot and fades upward: stronger on farther ridges, none on the front ridge (`atmosphere.ts`). The music-driven valley mist and all approved features are unchanged.
