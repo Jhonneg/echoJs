@@ -30,6 +30,8 @@ void main() {
 export const terrainFragment = `#define RIM_POWER 10.0
 #define RIM_REST 0.6
 #define RIM_ACTIVE 0.3
+#define FLOOR_VALUE 0.36
+#define MOUNTAIN_VALUE 0.32
 uniform float atmosphereDensity;
 uniform float atmosphereWarmth;
 uniform float presenceAccent;
@@ -67,6 +69,9 @@ void main() {
   float bankFill = middleDistance * vFeatures.z * (0.4 + 0.6 * max(normal.y, 0.0));
   color += vec3(.012, .0035, .013) * bankFill;
   color = mix(color, vec3(.028, .013, .04), smoothstep(40.0, 95.0, depth) * vFeatures.z * .32);
+  // Darker values (owner option a): only the base shading above is darkened, the valley floor and
+  // foreground most, the mountains less. Rims, glows, music lights and the far night fade are not.
+  color *= mix(FLOOR_VALUE, MOUNTAIN_VALUE, smoothstep(0.1, 0.6, vFeatures.z));
   float crests = clamp(ridgeLine(vFeatures.x) + ridgeLine(vFeatures.y) * 0.3, 0.0, 1.0);
   float slopes = 0.4 + 0.6 * smoothstep(0.05, 0.55, 1.0 - abs(normal.y));
   // The bank value is 0 on the valley floor; interpolation can dip a hair below 0 there, and pow()

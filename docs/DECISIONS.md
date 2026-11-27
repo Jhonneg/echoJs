@@ -691,3 +691,7 @@ The owner chose a brighter idle sun (20% of full, from C04's 5.5%) plus a dark-r
 ## 2026-11-27 — Crimson's crimson edges come from a backlit rim, not hairlines
 
 The reference's crimson ridge edges were faint in the scene: the public music style draws the crest lines at about 12% at rest, and they are one-pixel hairlines. Rather than brightening hairlines (which break up), a backlit rim term lights mountain surfaces turning edge-on to the camera while facing the sun behind the ranges. It follows the surface shape, so the edges are continuous and smooth. It is limited to the mountains, steady at rest, and applied after the night fade so distant outlines keep their rims. The music-driven contour lights stay on top unchanged.
+
+## 2026-11-27 — Crimson's terrain is darker than its sky; the rims carry readability
+
+The owner chose a moderate darkening (option a) after the steady rims and sun glow were added. Only the terrain's base shading is scaled (valley floor and foreground most, mountains less), leaving the rims, glows, music lights, haze and the far fade into the sky as they were. This reverses part of the 2026-11-16 readability lift: readability now comes from the crimson rims rather than broad fill, closer to the reference. The nightshade sky stays, so the mountains read as dark silhouettes against it.

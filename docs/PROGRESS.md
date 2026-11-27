@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Crimson Horizon darker values — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- Rim lines committed at the owner's request (6edd60d, not pushed). Owner approved the darker-values plan (review item 4) and chose option (a) moderate. Only the terrain's base shading is scaled (`material.ts`: floor 0.36, mountains 0.32 linear); rims, glows, music lights, haze, far fade and sky unchanged.
+- [Evidence](evidence/crimson/darker-values/README.md): valley floor and foreground 28 → about 13.5, mountains 32–34 → about 19, sky 26 unchanged; mountains now darker than the sky. Rim-pixel share fell about 15–20% because the rims sit on a darker base (unchanged rims, more contrast). GPU unchanged. PASS 356 tests, lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: the owner's monitor (owner once found this terrain too dark). Committed at the owner's request (not pushed); no explicit visual verdict recorded. Flat-sun-cut plan requested next.
+
 ## Crimson Horizon rim lines — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - Sun glow committed at the owner's request (855eec1, not pushed). Owner approved the rim-line plan (review item 5). The old crest lines were faint because the public music style draws them at about 12% at rest, as one-pixel hairlines. A backlit rim term in the terrain shader (`material.ts`) now lights mountain surfaces turning edge-on while facing the sun: continuous crimson edges, mountains only, steady at rest, a little stronger with the sun's activity, after the night fade. Existing music contours unchanged.

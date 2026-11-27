@@ -73,6 +73,8 @@ Crimson sun glow (2026-11-27): owner chose a clearer resting sun. At rest the su
 
 Crimson rim lines (2026-11-27): owner approved steady crimson rims on the mountains, superseding "selected thin crimson crest/slope highlights" as the resting look: a thin backlight along crests and outlines that turn edge-on while facing the sun, present at rest, slightly stronger with the sun's activity. The valley floor and foreground stay dark; music-driven contour lights remain on top.
 
+Crimson darker values (2026-11-27): owner chose a moderate darkening of the terrain's base shading, partly reversing the 2026-11-16 readability lift: valley floor and foreground about half their former brightness, mountains slightly less darkened, so the terrain is darker than the nightshade sky and reads as silhouettes. The rims, sun glow and music lights carry readability. Hue, sky and sun are unchanged.
+
 ## Nocturne — Industrial Crossing N01
 
 Owner-supplied Industrial Crossing board guides a genuine 3D narrow industrial alley with a stationary perspective view. N01 uses a 6 m alley, 52 m depth, 14–22 m building masses, camera height 1.6 m/FOV 50°, crossing underside clearance 4.5 m. Dim neutral fill is an approved temporary composition aid. Compare bridge prominence, converging walls, foreground road and distant gate before detail or reactive lighting. Later phases introduce magenta fixtures, cyan windows, violet accents, corresponding wet-floor reflections and atmospheric depth. No camera travel, pointer motion or bass roll.
