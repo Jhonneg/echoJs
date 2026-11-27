@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Crimson Horizon rim lines — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- Sun glow committed at the owner's request (855eec1, not pushed). Owner approved the rim-line plan (review item 5). The old crest lines were faint because the public music style draws them at about 12% at rest, as one-pixel hairlines. A backlit rim term in the terrain shader (`material.ts`) now lights mountain surfaces turning edge-on while facing the sun: continuous crimson edges, mountains only, steady at rest, a little stronger with the sun's activity, after the night fade. Existing music contours unchanged.
+- [Evidence](evidence/crimson/rim-lines/README.md): rim-pixel share roughly doubles (idle 1.0% → 2.2%, build 1.8% → 4.3%, drop 2.8% → 4.5%); sky and ground within 0.2. Tuned from a broad sheen (power 5) to thin edges (power 10). GPU about +0.2 ms at idle, music partly noise. PASS 356 tests, lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: native look, real songs. The biggest remaining gap to the reference is the overall darkness (item 4). Committed at the owner's request (not pushed); no explicit visual verdict recorded. Darker-values plan requested next.
+
 ## Crimson Horizon sun glow — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - Owner approved the sun-glow plan (review item 3) and chose option (b). The idle sun is 20% of full (was 5.5%, revising C04); a dark-red sky halo, present at rest and growing with the sun's activity (`CrimsonHorizonScene.tsx`); a hot magenta glow on the far slopes around the sun's base, applied after the night fade, never on the foreground (`material.ts`). Music mapping unchanged.

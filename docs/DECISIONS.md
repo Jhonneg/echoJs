@@ -687,3 +687,7 @@ The dotted lines on Crimson's valley floor were NaN pixels: `pow()` of an interp
 ## 2026-11-27 — Crimson's sun is a clear focal point at rest
 
 The owner chose a brighter idle sun (20% of full, from C04's 5.5%) plus a dark-red sky halo and a hot magenta glow on the far slopes at the sun's base, after reviewing the scene against its reference. Both glows follow the existing sun activity, so the music mapping is unchanged. The valley-base glow is applied after the terrain's fade into the night sky, because the slopes around the sun's base are about 100 m away, where that fade would hide it; it is masked to far terrain so the foreground stays dark.
+
+## 2026-11-27 — Crimson's crimson edges come from a backlit rim, not hairlines
+
+The reference's crimson ridge edges were faint in the scene: the public music style draws the crest lines at about 12% at rest, and they are one-pixel hairlines. Rather than brightening hairlines (which break up), a backlit rim term lights mountain surfaces turning edge-on to the camera while facing the sun behind the ranges. It follows the surface shape, so the edges are continuous and smooth. It is limited to the mountains, steady at rest, and applied after the night fade so distant outlines keep their rims. The music-driven contour lights stay on top unchanged.

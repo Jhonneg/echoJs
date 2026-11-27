@@ -27,7 +27,10 @@ void main() {
   vFold = terrainFold;
   gl_Position = projectionMatrix * viewMatrix * world;
 }`
-export const terrainFragment = `uniform float atmosphereDensity;
+export const terrainFragment = `#define RIM_POWER 10.0
+#define RIM_REST 0.6
+#define RIM_ACTIVE 0.3
+uniform float atmosphereDensity;
 uniform float atmosphereWarmth;
 uniform float presenceAccent;
 uniform vec4 valleyWaves[4];
@@ -140,6 +143,14 @@ void main() {
   float baseGlow = exp(-(offset.x * offset.x / 0.02 + offset.y * offset.y / 0.002)) * step(ray.z, -0.01)
     * smoothstep(45.0, 85.0, depth) * (0.12 + activity * 0.5);
   color += vec3(0.9, 0.06, 0.3) * baseGlow;
+  // Rim pass: mountain surfaces turning edge-on to the camera while facing the sun (behind the
+  // ranges) catch a thin crimson backlight, giving continuous edges along crests and outlines.
+  // Mountains only (bank), steady at rest, a little stronger when the sun is lit; fades far out.
+  float edgeOn = 1.0 - clamp(dot(normal, -ray), 0.0, 1.0);
+  float sunward = smoothstep(-0.1, 0.5, dot(normal, normalize(sunPosition - vWorld)));
+  float rimMask = smoothstep(0.15, 0.6, vFeatures.z) * (1.0 - smoothstep(100.0, 130.0, depth));
+  float rim = pow(max(edgeOn, 0.0), RIM_POWER) * sunward * rimMask * (RIM_REST + activity * RIM_ACTIVE);
+  color += vec3(0.85, 0.02, 0.1) * rim;
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`
