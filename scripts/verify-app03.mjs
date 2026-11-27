@@ -96,9 +96,9 @@ try{
  for(const scene of ['crimson-horizon','lavender-peaks']){await pick(scene);await wait(`__state().stage.startsWith('${scene.split('-')[0]}')&&__state().live===1&&__state().status===null`);await lose();await wait(`__state().status!==null`);await ev(`window.__lost.__lose.restoreContext(),true`);await wait(`__state().status===null`);await pause(400);await shot('restored-'+scene)}
  report.checks.push('Context loss/restore also clears on Crimson Horizon and Lavender Peaks.')
 
- // Bloom is being rebuilt (BR1+); these scope checks cover APP-phase files only.
- const changed=execFileSync('git',['diff','--name-only','HEAD','--','src/scenes',':(exclude)src/scenes/bloom',':(exclude)src/components/BloomDebugControls.tsx']).toString().trim().split('\n').filter(Boolean)
- const sceneDiff=execFileSync('git',['diff','-U0','HEAD','--','src/scenes',':(exclude)src/scenes/bloom',':(exclude)src/components/BloomDebugControls.tsx']).toString().split('\n').filter(l=>/^[+-][^+-]/.test(l))
+ // Bloom is being rebuilt (BR1+) and Nocturne refined (NT16+); these scope checks cover APP-phase files only.
+ const changed=execFileSync('git',['diff','--name-only','HEAD','--','src/scenes',':(exclude)src/scenes/bloom',':(exclude)src/scenes/nocturne',':(exclude)src/components/BloomDebugControls.tsx']).toString().trim().split('\n').filter(Boolean)
+ const sceneDiff=execFileSync('git',['diff','-U0','HEAD','--','src/scenes',':(exclude)src/scenes/bloom',':(exclude)src/scenes/nocturne',':(exclude)src/components/BloomDebugControls.tsx']).toString().split('\n').filter(l=>/^[+-][^+-]/.test(l))
  assert.ok(sceneDiff.every(l=>l.includes('-fallback">')),'scene changes beyond APP02 fallback text');report.sceneFilesChanged=changed
  const unexpected=report.errors.filter(e=>!/WebGL context|CONTEXT_LOST|ConnectionFailed|Failed to fetch dynamically imported module|net::ERR/.test(e??''));report.unexpectedErrors=unexpected
  assert.deepEqual(unexpected,[]);report.status='APP03 controlled browser checks PASS';console.log(report.status)

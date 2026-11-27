@@ -1,11 +1,22 @@
 # ECHO — current checkpoint
 
-## Bloom rebuild BR9 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+## Nocturne NT16 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
+
+- Owner approved NT16 (review items 1, 2 and 4): glow around the lights (`Glow.tsx`, new), streaked wet-floor reflections (`WetGround.tsx`), and gate and fixture haze (`Atmosphere.tsx`, `LightingDriver.tsx`). Shared settings and helpers in `effects.ts` (new). Camera, parallax, fixtures, colours, spill and music mapping unchanged.
+- [Evidence](evidence/nocturne/nt16/README.md): idle pixel-identical on Standard and Low. With music the glow, streaks and haze show (drop frame luma 9.4 → 12.8, gate 19.6 → 27.0; main magenta panel glare reduced after owner feedback). GPU: idle unchanged within noise; about +0.4 ms with music. PASS 333 tests (5 new), lint/typecheck/build, `verify-nocturne-nt16.mjs`, APP02/APP03 (scope check now excludes Nocturne; committed evidence restored).
+- Not tested: native look and real songs. Stop for owner review. NT16 uncommitted.
+
+## Nocturne visual review — NEXT PHASE CHOSEN — 2026-11-26
+
+- Owner asked for a review of Nocturne against the Industrial Crossing reference board. Rendered headless at idle and during a generated song (build and drop). Main gaps: (1) no glow around lights, (2) faint, short wet-floor reflections, (3) cyan underused, with the magenta spill washing the right side, (4) thin atmosphere around the gate, (5) a flat far end with no distant towers, (6) weak neon strips and bridge underside, (7) near-black idle with no focal point.
+- **Owner decision:** the next Nocturne phase will do 1, 2 and 4 together (glow, stronger streaked floor reflections, gate haze). Not planned or started; paused at owner request. Items 3 and 7 touch NT13-approved choices and need explicit approval if revisited.
+
+## Bloom rebuild BR9 — COMMITTED (0598044) — 2026-11-26
 
 - Owner compared Bloom with their Monolith Lake sketch and approved BR9: song structure, a night mood that deepens with loud sections and builds, build fog, a drop swell and ring burst, the warm bass seam and the aurora hue shift. Fixed camera kept. New `structure.ts`; `music.ts`, the sky, range, water and monolith shaders and `BloomScene.tsx` extended. **Changes BR8 routing:** the seam follows the bass; mid hits always pulse the rivers.
 - Before BR9: the owner's BR8 commit (e535efc) had left out BR8's new files. At the owner's request they were committed unchanged as 91518db (not pushed).
 - [Evidence](evidence/bloom/rebuild/br9/README.md): one drop found at 30.13 s on a generated song through the real analysis; build, fog, mood and reduced-motion behaviour as intended. PASS 328 tests (8 new), lint/typecheck/build, whitespace, BR9 browser checks, APP02/APP03 (committed evidence restored). GPU Standard 4.642 ms, Low 3.057 ms (unchanged).
-- Not tested: real songs (thresholds are calibrated on generated songs), how dark the mood should get, native shared tab. Stop for review. BR9 uncommitted.
+- Not tested: real songs (thresholds are calibrated on generated songs), how dark the mood should get, native shared tab. Committed at owner request; not pushed.
 
 ## Bloom rebuild BR8 — COMMITTED BY OWNER (e535efc + 91518db) — 2026-11-26
 

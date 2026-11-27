@@ -10,6 +10,7 @@ import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import type { GraphicsQuality } from '../../engine/quality'
 import { ArchitectureDetails } from './ArchitectureDetails'
+import { Glow } from './Glow'
 import './nocturne.css'
 
 // Metres; negative Z runs down the alley. Keep composition tuning local to Nocturne.
@@ -108,6 +109,7 @@ export default function NocturneScene({ musicFeatures, quality, lighting, lighti
           <pointLight name="violet-far-spill" position={[-2.6, 4.8, -14.3]} color={NOCTURNE_LIGHT_COLORS.violet} intensity={12} distance={7} decay={2} />
         </group>
         <LightingDriver musicFeatures={musicFeatures} mode={lightingMode} manual={lighting} reactivity={reactivity} reducedMotion={reducedMotion} />
+        <Glow quality={quality} />
       </LandscapeCanvas>
     </SceneBoundary>
     <div className="nocturne-brand" aria-hidden="true">Nocturne</div>
