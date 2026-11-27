@@ -703,3 +703,7 @@ The flat cut under Crimson's sun came from the far valley floor. The terrain str
 ## 2026-11-27 — Crimson's foreground gets leading lines from its folds, not taller dunes
 
 The approved quiet-valley rule keeps the floor under 1 m, so the empty foreground is solved with shape and light rather than height. The existing folds became broader and are stretched along the valley, so their crests converge on the sun in perspective. Each crest is drawn as a thin antialiased crimson line using the fold value's screen-space width; the mountains' edge-on backlight was tried first, but on a floor seen from above it gave a broad sheen. Because the folds come from noise, the lines come and go along the journey.
+
+## 2026-11-27 — Crimson's layers come from a darker near range, measured by distance band
+
+The owner chose pronounced mountain layers (near about 13, middle about 18, far about 23). A throwaway build painting mountain pixels by distance band, at the deterministic reduced-motion camera, gave per-band measurements. They showed the far ranges already lifted by the night fade and only the near layer missing, so the near mountains are darkened (easing out between 20 and 40 m) instead of adding haze to the far ones. The gradient is smooth with distance; distinct layers come from ridges overlapping at different distances, which avoids stepped tone lines across single slopes.

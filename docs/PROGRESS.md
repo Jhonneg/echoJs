@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Crimson Horizon mountain layers — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- Foreground committed at the owner's request (d442c95, not pushed). Owner approved the mountain-layers plan (review item 8) and chose option (b) pronounced. A throwaway distance-band mask measured the baseline: near 15.9, middle 17.9, far 23.1, so the middle and far ranges were already at target. **Deviation:** rather than hazing the far ranges lighter, the nearest mountains are darkened (×0.64 linear, easing out between 20 and 40 m) in `material.ts`. Near is now 12.8, middle 17.7, far 23.1, with steps of about 5 per layer.
+- [Evidence](evidence/crimson/mountain-layers/README.md): sky and sun unchanged; foreground band −0.5 (near mountain feet). GPU timings noisy this round; one multiply, no cost claimed. PASS 362 tests, lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: the owner's monitor while travelling, real songs. Committed at the owner's request (not pushed). The owner then reported the sun-cut ridge visibly following the sun as the terrain moves; fix (option A) requested.
+
 ## Crimson Horizon foreground — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - Sun cut committed at the owner's request (8a20325, not pushed). Owner approved the foreground plan (review item 7) and chose option (b), clear crest lines. The quiet-valley rule (floor under 1 m) stays. Folds are broader (exponent 3, was 8) and stretched along the valley (`terrain.ts`). A thin antialiased crimson line follows each fold crest on the near and middle floor, at about half the mountain rims' strength (`material.ts`). No new music mapping.

@@ -32,6 +32,7 @@ export const terrainFragment = `#define RIM_POWER 10.0
 #define RIM_ACTIVE 0.3
 #define FLOOR_VALUE 0.36
 #define MOUNTAIN_VALUE 0.32
+#define NEAR_LAYER_VALUE 0.64
 #define FLOOR_LINE_PIXELS 1.5
 #define FLOOR_RIM_REST 0.3
 #define FLOOR_RIM_ACTIVE 0.15
@@ -75,6 +76,10 @@ void main() {
   // Darker values (owner option a): only the base shading above is darkened, the valley floor and
   // foreground most, the mountains less. Rims, glows, music lights and the far night fade are not.
   color *= mix(FLOOR_VALUE, MOUNTAIN_VALUE, smoothstep(0.1, 0.6, vFeatures.z));
+  // Layers pass (owner option b): the nearest mountains are darker still, fading out between 20 and
+  // 40 m, so each farther range reads a step lighter (the far ranges are already lifted by the night
+  // fade) and nearer ridges stand out as dark silhouettes against the ones behind.
+  color *= mix(1.0, mix(NEAR_LAYER_VALUE, 1.0, smoothstep(20.0, 40.0, depth)), smoothstep(0.1, 0.6, vFeatures.z));
   float crests = clamp(ridgeLine(vFeatures.x) + ridgeLine(vFeatures.y) * 0.3, 0.0, 1.0);
   float slopes = 0.4 + 0.6 * smoothstep(0.05, 0.55, 1.0 - abs(normal.y));
   // The bank value is 0 on the valley floor; interpolation can dip a hair below 0 there, and pow()

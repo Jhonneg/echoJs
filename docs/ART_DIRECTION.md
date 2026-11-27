@@ -79,6 +79,8 @@ Crimson sun cut (2026-11-27): owner chose reference-like occlusion. A distant ri
 
 Crimson foreground (2026-11-27): owner chose clear leading lines. The valley floor's low folds are broader and run along the valley, with a thin crimson line on each crest at about half the mountain rims' strength, converging toward the sun. The quiet valley stays under 1 m; the floor between the lines stays dark.
 
+Crimson mountain layers (2026-11-27): owner chose pronounced layering. The nearest mountains are darkest (about 13 luma), the middle ranges about 18 and the far ranges about 23, still darker than the sky. Each farther range reads a step lighter, and nearer ridges stand out as silhouettes with crimson rims.
+
 ## Nocturne — Industrial Crossing N01
 
 Owner-supplied Industrial Crossing board guides a genuine 3D narrow industrial alley with a stationary perspective view. N01 uses a 6 m alley, 52 m depth, 14–22 m building masses, camera height 1.6 m/FOV 50°, crossing underside clearance 4.5 m. Dim neutral fill is an approved temporary composition aid. Compare bridge prominence, converging walls, foreground road and distant gate before detail or reactive lighting. Later phases introduce magenta fixtures, cyan windows, violet accents, corresponding wet-floor reflections and atmospheric depth. No camera travel, pointer motion or bass roll.
