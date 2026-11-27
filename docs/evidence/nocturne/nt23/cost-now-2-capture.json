@@ -1,0 +1,286 @@
+{
+  "label": "now-2",
+  "source": "Production build; headless Brave (ANGLE GL, this machine GPU), 1440×900; generated song through the real file adapter and analysis. GPU ms = median whole animation frame from EXT_disjoint_timer_query_webgl2 (relative costs, not native-window certification).",
+  "errors": [],
+  "luma": {
+    "idle": {
+      "frame": 3.59,
+      "walls": 2.36,
+      "floor": 4.72,
+      "gate": 15.55,
+      "bridge": 7.81,
+      "sky": 5.28,
+      "cyanPct": 0.32,
+      "magentaPct": 0,
+      "litPct": 0.36
+    },
+    "idle-low": {
+      "frame": 3.56,
+      "walls": 2.36,
+      "floor": 4.68,
+      "gate": 15.41,
+      "bridge": 7.75,
+      "sky": 5.22,
+      "cyanPct": 0.31,
+      "magentaPct": 0,
+      "litPct": 0.35
+    },
+    "manual-all-on": {
+      "frame": 64.85,
+      "walls": 28.38,
+      "floor": 48.41,
+      "gate": 169.58,
+      "bridge": 107.34,
+      "sky": 77.36,
+      "cyanPct": 24.96,
+      "magentaPct": 31.98,
+      "litPct": 82.23
+    },
+    "manual-all-on-later": {
+      "frame": 64.86,
+      "walls": 28.4,
+      "floor": 48.44,
+      "gate": 169.3,
+      "bridge": 107.81,
+      "sky": 77.15,
+      "cyanPct": 24.91,
+      "magentaPct": 32.08,
+      "litPct": 82.21
+    },
+    "manual-reduced-motion": {
+      "frame": 64.27,
+      "walls": 28.21,
+      "floor": 47.78,
+      "gate": 167.92,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.04,
+      "litPct": 82.12
+    },
+    "manual-reduced-motion-later": {
+      "frame": 64.27,
+      "walls": 28.21,
+      "floor": 47.78,
+      "gate": 167.92,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.04,
+      "litPct": 82.12
+    },
+    "intro": {
+      "frame": 7.3,
+      "walls": 3.73,
+      "floor": 5.84,
+      "gate": 16.23,
+      "bridge": 11.57,
+      "sky": 6.91,
+      "cyanPct": 2.1,
+      "magentaPct": 2.16,
+      "litPct": 4.31
+    },
+    "flicker-1": {
+      "frame": 8.31,
+      "walls": 4.17,
+      "floor": 6.47,
+      "gate": 17.44,
+      "bridge": 12.42,
+      "sky": 7.19,
+      "cyanPct": 2.62,
+      "magentaPct": 2.42,
+      "litPct": 5.13
+    },
+    "flicker-2": {
+      "frame": 8.46,
+      "walls": 4.21,
+      "floor": 6.54,
+      "gate": 17.49,
+      "bridge": 12.71,
+      "sky": 7.21,
+      "cyanPct": 2.69,
+      "magentaPct": 2.48,
+      "litPct": 5.33
+    },
+    "flicker-3": {
+      "frame": 8.57,
+      "walls": 4.27,
+      "floor": 6.6,
+      "gate": 17.43,
+      "bridge": 12.76,
+      "sky": 7.2,
+      "cyanPct": 2.69,
+      "magentaPct": 2.55,
+      "litPct": 5.38
+    },
+    "flicker-4": {
+      "frame": 8.47,
+      "walls": 4.22,
+      "floor": 6.52,
+      "gate": 17.48,
+      "bridge": 12.74,
+      "sky": 7.22,
+      "cyanPct": 2.72,
+      "magentaPct": 2.46,
+      "litPct": 5.36
+    },
+    "flicker-5": {
+      "frame": 8.61,
+      "walls": 4.29,
+      "floor": 6.58,
+      "gate": 17.45,
+      "bridge": 12.62,
+      "sky": 7.29,
+      "cyanPct": 2.72,
+      "magentaPct": 2.5,
+      "litPct": 5.38
+    },
+    "flicker-6": {
+      "frame": 8.88,
+      "walls": 4.35,
+      "floor": 6.79,
+      "gate": 17.54,
+      "bridge": 12.99,
+      "sky": 7.28,
+      "cyanPct": 2.82,
+      "magentaPct": 2.6,
+      "litPct": 5.65
+    },
+    "build": {
+      "frame": 11.89,
+      "walls": 4.65,
+      "floor": 6.98,
+      "gate": 18.98,
+      "bridge": 23.98,
+      "sky": 16.84,
+      "cyanPct": 6.13,
+      "magentaPct": 2.69,
+      "litPct": 9.1
+    },
+    "drop-hit": {
+      "frame": 11.05,
+      "walls": 4.97,
+      "floor": 8.08,
+      "gate": 21.12,
+      "bridge": 13.88,
+      "sky": 7.42,
+      "cyanPct": 2.56,
+      "magentaPct": 5.28,
+      "litPct": 8.23
+    },
+    "drop": {
+      "frame": 12.78,
+      "walls": 4.92,
+      "floor": 9.47,
+      "gate": 26.13,
+      "bridge": 15.62,
+      "sky": 8.07,
+      "cyanPct": 2.51,
+      "magentaPct": 8.81,
+      "litPct": 11.7
+    },
+    "ripple-1": {
+      "frame": 12.21,
+      "walls": 4.67,
+      "floor": 8.99,
+      "gate": 25.95,
+      "bridge": 14.88,
+      "sky": 7.9,
+      "cyanPct": 2.62,
+      "magentaPct": 7.67,
+      "litPct": 10.65
+    },
+    "ripple-2": {
+      "frame": 11.17,
+      "walls": 4.58,
+      "floor": 8.29,
+      "gate": 25.43,
+      "bridge": 13.8,
+      "sky": 7.4,
+      "cyanPct": 2.8,
+      "magentaPct": 5.82,
+      "litPct": 8.92
+    },
+    "ripple-3": {
+      "frame": 9.7,
+      "walls": 4.38,
+      "floor": 7.69,
+      "gate": 26.42,
+      "bridge": 12.96,
+      "sky": 7,
+      "cyanPct": 2.67,
+      "magentaPct": 3.93,
+      "litPct": 6.85
+    },
+    "ripple-4": {
+      "frame": 9.82,
+      "walls": 4.45,
+      "floor": 7.69,
+      "gate": 26.04,
+      "bridge": 12.88,
+      "sky": 6.96,
+      "cyanPct": 2.62,
+      "magentaPct": 4.3,
+      "litPct": 7.03
+    },
+    "ripple-5": {
+      "frame": 9,
+      "walls": 4.31,
+      "floor": 7.35,
+      "gate": 24.95,
+      "bridge": 12.5,
+      "sky": 6.98,
+      "cyanPct": 2.66,
+      "magentaPct": 3.5,
+      "litPct": 6.21
+    },
+    "ripple-6": {
+      "frame": 14.2,
+      "walls": 5.5,
+      "floor": 10.46,
+      "gate": 26.73,
+      "bridge": 16.55,
+      "sky": 8.43,
+      "cyanPct": 2.42,
+      "magentaPct": 11.21,
+      "litPct": 14.2
+    },
+    "breakdown": {
+      "frame": 6.03,
+      "walls": 3.27,
+      "floor": 5.47,
+      "gate": 16.17,
+      "bridge": 10.71,
+      "sky": 6.61,
+      "cyanPct": 1.63,
+      "magentaPct": 1.56,
+      "litPct": 3.23
+    }
+  },
+  "gpu": {
+    "Standard idle": {
+      "gpuMsPerFrame": 5.096,
+      "samples": [
+        5.018,
+        5.096,
+        5.187
+      ]
+    },
+    "Low idle": {
+      "gpuMsPerFrame": 3.987,
+      "samples": [
+        3.976,
+        3.987,
+        4.182
+      ]
+    },
+    "Standard with music": {
+      "gpuMsPerFrame": 4.224,
+      "samples": [
+        4.002,
+        4.224,
+        4.314
+      ]
+    }
+  }
+}

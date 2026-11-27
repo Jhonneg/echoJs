@@ -1,0 +1,286 @@
+{
+  "label": "now-1",
+  "source": "Production build; headless Brave (ANGLE GL, this machine GPU), 1440×900; generated song through the real file adapter and analysis. GPU ms = median whole animation frame from EXT_disjoint_timer_query_webgl2 (relative costs, not native-window certification).",
+  "errors": [],
+  "luma": {
+    "idle": {
+      "frame": 3.59,
+      "walls": 2.36,
+      "floor": 4.72,
+      "gate": 15.55,
+      "bridge": 7.81,
+      "sky": 5.28,
+      "cyanPct": 0.32,
+      "magentaPct": 0,
+      "litPct": 0.35
+    },
+    "idle-low": {
+      "frame": 3.56,
+      "walls": 2.36,
+      "floor": 4.68,
+      "gate": 15.41,
+      "bridge": 7.75,
+      "sky": 5.22,
+      "cyanPct": 0.31,
+      "magentaPct": 0,
+      "litPct": 0.35
+    },
+    "manual-all-on": {
+      "frame": 64.85,
+      "walls": 28.38,
+      "floor": 48.46,
+      "gate": 169.55,
+      "bridge": 107.25,
+      "sky": 77.36,
+      "cyanPct": 24.94,
+      "magentaPct": 31.99,
+      "litPct": 82.22
+    },
+    "manual-all-on-later": {
+      "frame": 64.86,
+      "walls": 28.39,
+      "floor": 48.39,
+      "gate": 169.33,
+      "bridge": 107.78,
+      "sky": 77.18,
+      "cyanPct": 24.92,
+      "magentaPct": 32.09,
+      "litPct": 82.22
+    },
+    "manual-reduced-motion": {
+      "frame": 64.27,
+      "walls": 28.21,
+      "floor": 47.78,
+      "gate": 167.92,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.04,
+      "litPct": 82.12
+    },
+    "manual-reduced-motion-later": {
+      "frame": 64.27,
+      "walls": 28.21,
+      "floor": 47.78,
+      "gate": 167.92,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.04,
+      "litPct": 82.12
+    },
+    "intro": {
+      "frame": 7.38,
+      "walls": 3.76,
+      "floor": 5.9,
+      "gate": 16.24,
+      "bridge": 11.61,
+      "sky": 6.9,
+      "cyanPct": 2.11,
+      "magentaPct": 2.22,
+      "litPct": 4.37
+    },
+    "flicker-1": {
+      "frame": 8.26,
+      "walls": 4.14,
+      "floor": 6.42,
+      "gate": 17.44,
+      "bridge": 12.41,
+      "sky": 7.19,
+      "cyanPct": 2.63,
+      "magentaPct": 2.38,
+      "litPct": 5.14
+    },
+    "flicker-2": {
+      "frame": 8.49,
+      "walls": 4.22,
+      "floor": 6.55,
+      "gate": 17.48,
+      "bridge": 12.7,
+      "sky": 7.21,
+      "cyanPct": 2.7,
+      "magentaPct": 2.49,
+      "litPct": 5.35
+    },
+    "flicker-3": {
+      "frame": 8.61,
+      "walls": 4.28,
+      "floor": 6.6,
+      "gate": 17.41,
+      "bridge": 12.76,
+      "sky": 7.19,
+      "cyanPct": 2.69,
+      "magentaPct": 2.57,
+      "litPct": 5.39
+    },
+    "flicker-4": {
+      "frame": 8.52,
+      "walls": 4.25,
+      "floor": 6.55,
+      "gate": 17.48,
+      "bridge": 12.74,
+      "sky": 7.23,
+      "cyanPct": 2.71,
+      "magentaPct": 2.47,
+      "litPct": 5.36
+    },
+    "flicker-5": {
+      "frame": 8.63,
+      "walls": 4.3,
+      "floor": 6.59,
+      "gate": 17.46,
+      "bridge": 12.63,
+      "sky": 7.28,
+      "cyanPct": 2.71,
+      "magentaPct": 2.52,
+      "litPct": 5.37
+    },
+    "flicker-6": {
+      "frame": 8.73,
+      "walls": 4.3,
+      "floor": 6.68,
+      "gate": 17.56,
+      "bridge": 12.88,
+      "sky": 7.28,
+      "cyanPct": 2.78,
+      "magentaPct": 2.54,
+      "litPct": 5.53
+    },
+    "build": {
+      "frame": 11.88,
+      "walls": 4.65,
+      "floor": 6.96,
+      "gate": 19.23,
+      "bridge": 23.86,
+      "sky": 16.76,
+      "cyanPct": 6.07,
+      "magentaPct": 2.68,
+      "litPct": 9.07
+    },
+    "drop-hit": {
+      "frame": 12.03,
+      "walls": 5.05,
+      "floor": 8.68,
+      "gate": 21.53,
+      "bridge": 14.84,
+      "sky": 7.81,
+      "cyanPct": 2.4,
+      "magentaPct": 6.79,
+      "litPct": 9.7
+    },
+    "drop": {
+      "frame": 13.63,
+      "walls": 5.11,
+      "floor": 9.97,
+      "gate": 27.61,
+      "bridge": 15.86,
+      "sky": 8.21,
+      "cyanPct": 2.35,
+      "magentaPct": 9.72,
+      "litPct": 12.78
+    },
+    "ripple-1": {
+      "frame": 11.71,
+      "walls": 4.58,
+      "floor": 8.82,
+      "gate": 27.35,
+      "bridge": 14.32,
+      "sky": 7.58,
+      "cyanPct": 2.42,
+      "magentaPct": 6.94,
+      "litPct": 9.9
+    },
+    "ripple-2": {
+      "frame": 13.06,
+      "walls": 4.99,
+      "floor": 9.71,
+      "gate": 26.28,
+      "bridge": 15.74,
+      "sky": 8.1,
+      "cyanPct": 2.58,
+      "magentaPct": 9.17,
+      "litPct": 12.18
+    },
+    "ripple-3": {
+      "frame": 9.22,
+      "walls": 4.4,
+      "floor": 7.46,
+      "gate": 25.02,
+      "bridge": 12.7,
+      "sky": 6.99,
+      "cyanPct": 2.72,
+      "magentaPct": 3.61,
+      "litPct": 6.4
+    },
+    "ripple-4": {
+      "frame": 9.04,
+      "walls": 4.36,
+      "floor": 7.42,
+      "gate": 25.03,
+      "bridge": 12.4,
+      "sky": 6.92,
+      "cyanPct": 2.53,
+      "magentaPct": 3.65,
+      "litPct": 6.26
+    },
+    "ripple-5": {
+      "frame": 8.47,
+      "walls": 4.04,
+      "floor": 6.94,
+      "gate": 24.9,
+      "bridge": 12.02,
+      "sky": 6.95,
+      "cyanPct": 2.69,
+      "magentaPct": 2.97,
+      "litPct": 5.72
+    },
+    "ripple-6": {
+      "frame": 15.49,
+      "walls": 5.83,
+      "floor": 11.57,
+      "gate": 29.24,
+      "bridge": 17.33,
+      "sky": 8.69,
+      "cyanPct": 1.67,
+      "magentaPct": 12.79,
+      "litPct": 15.9
+    },
+    "breakdown": {
+      "frame": 5.95,
+      "walls": 3.25,
+      "floor": 5.43,
+      "gate": 16.17,
+      "bridge": 10.69,
+      "sky": 6.61,
+      "cyanPct": 1.63,
+      "magentaPct": 1.53,
+      "litPct": 3.19
+    }
+  },
+  "gpu": {
+    "Standard idle": {
+      "gpuMsPerFrame": 5.276,
+      "samples": [
+        5.249,
+        5.276,
+        5.296
+      ]
+    },
+    "Low idle": {
+      "gpuMsPerFrame": 3.873,
+      "samples": [
+        3.476,
+        3.873,
+        3.981
+      ]
+    },
+    "Standard with music": {
+      "gpuMsPerFrame": 4.048,
+      "samples": [
+        3.998,
+        4.048,
+        4.597
+      ]
+    }
+  }
+}

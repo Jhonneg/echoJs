@@ -1,0 +1,286 @@
+{
+  "label": "pre16-2",
+  "source": "Production build; headless Brave (ANGLE GL, this machine GPU), 1440×900; generated song through the real file adapter and analysis. GPU ms = median whole animation frame from EXT_disjoint_timer_query_webgl2 (relative costs, not native-window certification).",
+  "errors": [],
+  "luma": {
+    "idle": {
+      "frame": 3.28,
+      "walls": 2.36,
+      "floor": 4.51,
+      "gate": 5.73,
+      "bridge": 7.91,
+      "sky": 4.71,
+      "cyanPct": 0,
+      "magentaPct": 0,
+      "litPct": 0.02
+    },
+    "idle-low": {
+      "frame": 3.27,
+      "walls": 2.35,
+      "floor": 4.51,
+      "gate": 5.72,
+      "bridge": 7.89,
+      "sky": 4.69,
+      "cyanPct": 0,
+      "magentaPct": 0,
+      "litPct": 0.02
+    },
+    "manual-all-on": {
+      "frame": 29.75,
+      "walls": 23.14,
+      "floor": 25.44,
+      "gate": 68.48,
+      "bridge": 34.06,
+      "sky": 11.91,
+      "cyanPct": 16.87,
+      "magentaPct": 16.04,
+      "litPct": 42.58
+    },
+    "manual-all-on-later": {
+      "frame": 29.75,
+      "walls": 23.14,
+      "floor": 25.44,
+      "gate": 68.48,
+      "bridge": 34.06,
+      "sky": 11.91,
+      "cyanPct": 16.87,
+      "magentaPct": 16.04,
+      "litPct": 42.58
+    },
+    "manual-reduced-motion": {
+      "frame": 29.75,
+      "walls": 23.14,
+      "floor": 25.44,
+      "gate": 68.48,
+      "bridge": 34.06,
+      "sky": 11.91,
+      "cyanPct": 16.87,
+      "magentaPct": 16.04,
+      "litPct": 42.58
+    },
+    "manual-reduced-motion-later": {
+      "frame": 29.75,
+      "walls": 23.14,
+      "floor": 25.44,
+      "gate": 68.48,
+      "bridge": 34.06,
+      "sky": 11.91,
+      "cyanPct": 16.87,
+      "magentaPct": 16.04,
+      "litPct": 42.57
+    },
+    "intro": {
+      "frame": 6.53,
+      "walls": 3.71,
+      "floor": 5.67,
+      "gate": 11.14,
+      "bridge": 10.78,
+      "sky": 5.87,
+      "cyanPct": 1.54,
+      "magentaPct": 2.16,
+      "litPct": 3.72
+    },
+    "flicker-1": {
+      "frame": 7.2,
+      "walls": 4.11,
+      "floor": 6.18,
+      "gate": 11.94,
+      "bridge": 11.32,
+      "sky": 6.06,
+      "cyanPct": 1.9,
+      "magentaPct": 2.36,
+      "litPct": 4.3
+    },
+    "flicker-2": {
+      "frame": 7.34,
+      "walls": 4.17,
+      "floor": 6.29,
+      "gate": 11.97,
+      "bridge": 11.54,
+      "sky": 6.07,
+      "cyanPct": 1.92,
+      "magentaPct": 2.39,
+      "litPct": 4.4
+    },
+    "flicker-3": {
+      "frame": 7.61,
+      "walls": 4.28,
+      "floor": 6.46,
+      "gate": 12.01,
+      "bridge": 11.68,
+      "sky": 6.09,
+      "cyanPct": 1.97,
+      "magentaPct": 2.51,
+      "litPct": 4.58
+    },
+    "flicker-4": {
+      "frame": 7.4,
+      "walls": 4.22,
+      "floor": 6.32,
+      "gate": 12.29,
+      "bridge": 11.56,
+      "sky": 6.09,
+      "cyanPct": 1.93,
+      "magentaPct": 2.42,
+      "litPct": 4.39
+    },
+    "flicker-5": {
+      "frame": 7.6,
+      "walls": 4.27,
+      "floor": 6.41,
+      "gate": 12.3,
+      "bridge": 11.56,
+      "sky": 6.09,
+      "cyanPct": 2,
+      "magentaPct": 2.5,
+      "litPct": 4.63
+    },
+    "flicker-6": {
+      "frame": 7.43,
+      "walls": 4.23,
+      "floor": 6.3,
+      "gate": 12.32,
+      "bridge": 11.47,
+      "sky": 6.1,
+      "cyanPct": 1.97,
+      "magentaPct": 2.42,
+      "litPct": 4.48
+    },
+    "build": {
+      "frame": 8.25,
+      "walls": 4.65,
+      "floor": 6.89,
+      "gate": 14.26,
+      "bridge": 12.39,
+      "sky": 6.27,
+      "cyanPct": 2.26,
+      "magentaPct": 2.59,
+      "litPct": 4.98
+    },
+    "drop-hit": {
+      "frame": 8.95,
+      "walls": 4.96,
+      "floor": 7.3,
+      "gate": 15.71,
+      "bridge": 12.33,
+      "sky": 6.16,
+      "cyanPct": 1.93,
+      "magentaPct": 3.63,
+      "litPct": 5.59
+    },
+    "drop": {
+      "frame": 9.81,
+      "walls": 5.11,
+      "floor": 7.98,
+      "gate": 19.61,
+      "bridge": 12.4,
+      "sky": 5.99,
+      "cyanPct": 2.18,
+      "magentaPct": 5.01,
+      "litPct": 7.23
+    },
+    "ripple-1": {
+      "frame": 8.98,
+      "walls": 4.6,
+      "floor": 7.4,
+      "gate": 19.61,
+      "bridge": 11.95,
+      "sky": 5.97,
+      "cyanPct": 2.12,
+      "magentaPct": 3.93,
+      "litPct": 6.15
+    },
+    "ripple-2": {
+      "frame": 9.26,
+      "walls": 4.75,
+      "floor": 7.56,
+      "gate": 19.67,
+      "bridge": 12.06,
+      "sky": 6.01,
+      "cyanPct": 2.28,
+      "magentaPct": 4.14,
+      "litPct": 6.51
+    },
+    "ripple-3": {
+      "frame": 8.92,
+      "walls": 4.58,
+      "floor": 7.32,
+      "gate": 19.62,
+      "bridge": 11.85,
+      "sky": 5.99,
+      "cyanPct": 2.18,
+      "magentaPct": 3.86,
+      "litPct": 6.1
+    },
+    "ripple-4": {
+      "frame": 9.07,
+      "walls": 4.7,
+      "floor": 7.47,
+      "gate": 19.64,
+      "bridge": 11.89,
+      "sky": 5.97,
+      "cyanPct": 2.08,
+      "magentaPct": 4.22,
+      "litPct": 6.33
+    },
+    "ripple-5": {
+      "frame": 8.38,
+      "walls": 4.3,
+      "floor": 7,
+      "gate": 19.62,
+      "bridge": 11.53,
+      "sky": 5.97,
+      "cyanPct": 2.17,
+      "magentaPct": 3.39,
+      "litPct": 5.58
+    },
+    "ripple-6": {
+      "frame": 11.61,
+      "walls": 6,
+      "floor": 9.2,
+      "gate": 19.65,
+      "bridge": 13.55,
+      "sky": 6.08,
+      "cyanPct": 2.45,
+      "magentaPct": 6.79,
+      "litPct": 9.88
+    },
+    "breakdown": {
+      "frame": 5.58,
+      "walls": 3.22,
+      "floor": 5.2,
+      "gate": 12.49,
+      "bridge": 10.06,
+      "sky": 5.68,
+      "cyanPct": 1.44,
+      "magentaPct": 1.52,
+      "litPct": 2.99
+    }
+  },
+  "gpu": {
+    "Standard idle": {
+      "gpuMsPerFrame": 5.024,
+      "samples": [
+        4.837,
+        5.024,
+        5.112
+      ]
+    },
+    "Low idle": {
+      "gpuMsPerFrame": 3.014,
+      "samples": [
+        2.968,
+        3.014,
+        3.115
+      ]
+    },
+    "Standard with music": {
+      "gpuMsPerFrame": 4.347,
+      "samples": [
+        2.916,
+        4.347,
+        4.71
+      ]
+    }
+  }
+}

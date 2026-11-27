@@ -1,0 +1,191 @@
+{
+  "mode": "lifecycle",
+  "os": "linux 7.2.11-arch1-1",
+  "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+  "source": "Instrumented throwaway copy of the production build (read-only probe); generated song only.",
+  "errors": [],
+  "checks": {
+    "effects live in the drop": {
+      "pass": true,
+      "detail": {
+        "rain": true,
+        "rippleFrames": 300,
+        "magenta": 0.314,
+        "steam": 2.2371300000004473
+      }
+    },
+    "context loss: status shown, then the scene recovers with every effect": {
+      "pass": true,
+      "detail": {
+        "lostStatus": "Graphics were interrupted — restoring…",
+        "framesIn700ms": 42,
+        "rain": true,
+        "steam": 3.7670100000008775,
+        "audio": {
+          "time": 42.66,
+          "paused": false
+        },
+        "geometries": [
+          132,
+          132
+        ],
+        "programs": [
+          41,
+          41
+        ]
+      }
+    },
+    "scene switching x5: one live context, heap level, scene renders": {
+      "pass": true,
+      "detail": {
+        "contexts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "heapMB": [
+          12.4,
+          14
+        ],
+        "audio": {
+          "time": 60.28,
+          "paused": false
+        }
+      }
+    },
+    "quality switching x5: renderer memory and programs stay level": {
+      "pass": true,
+      "detail": {
+        "start": [
+          132,
+          18,
+          41
+        ],
+        "after": [
+          [
+            132,
+            18,
+            41
+          ],
+          [
+            132,
+            18,
+            41
+          ],
+          [
+            132,
+            18,
+            41
+          ],
+          [
+            132,
+            18,
+            41
+          ],
+          [
+            132,
+            18,
+            41
+          ]
+        ]
+      }
+    },
+    "tab switch: the scene resumes with its effects when the tab is back": {
+      "pass": true,
+      "detail": {
+        "whileAway": {
+          "visibility": "hidden",
+          "frames": 0
+        },
+        "visibilityBack": "visible",
+        "sceneFramesIn700msAfter": 42,
+        "rawRafPerSecondAfter": 60,
+        "steam": 9.12185999999973,
+        "flicker": 1,
+        "audio": {
+          "time": 25.92,
+          "paused": false
+        }
+      }
+    },
+    "reduced motion (standard)": {
+      "pass": true,
+      "detail": {
+        "rain": false,
+        "steam": [
+          1.65,
+          1.65
+        ],
+        "newRippleFrames": 0,
+        "newFlickerFrames": 0,
+        "magenta": 0.207
+      }
+    },
+    "reduced motion (low)": {
+      "pass": true,
+      "detail": {
+        "rain": false,
+        "steam": [
+          1.65,
+          1.65
+        ],
+        "newRippleFrames": 0,
+        "newFlickerFrames": 0,
+        "magenta": 0.211
+      }
+    },
+    "soak 3 min: no errors, steady frames and heap, flicker seen": {
+      "pass": true,
+      "detail": {
+        "firstMinute": {
+          "frameMs": {
+            "samples": 3600,
+            "mean": 16.666,
+            "p50": 16.7,
+            "p95": 16.7,
+            "max": 16.8
+          },
+          "fps": 60,
+          "gpuMs": {
+            "samples": 3599,
+            "mean": 5.506,
+            "p50": 5.394,
+            "p95": 6.636,
+            "max": 9.447
+          }
+        },
+        "lastMinute": {
+          "frameMs": {
+            "samples": 3603,
+            "mean": 16.666,
+            "p50": 16.7,
+            "p95": 16.8,
+            "max": 16.8
+          },
+          "fps": 60,
+          "gpuMs": {
+            "samples": 3603,
+            "mean": 5.486,
+            "p50": 5.346,
+            "p95": 6.543,
+            "max": 10.097
+          }
+        },
+        "heapMB": [
+          14.6,
+          14.8
+        ],
+        "ripplesFrames": 2304,
+        "flickerFrames": 97,
+        "errors": 0
+      }
+    },
+    "no runtime errors": {
+      "pass": true,
+      "detail": []
+    }
+  },
+  "native": []
+}

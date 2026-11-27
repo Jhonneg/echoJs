@@ -1,0 +1,10 @@
+{
+  "mode": "native",
+  "os": "linux 7.2.11-arch1-1",
+  "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+  "source": "Instrumented throwaway copy of the production build (read-only probe); generated song only.",
+  "errors": [],
+  "checks": {},
+  "native": [],
+  "failure": "Error: Timed out: !!window.__nt23&&window.__nt23.frames>30\n    at wait (file:///home/jonee/Work/echojs/scripts/verify-nocturne-nt23.mjs:56:122)\n    at async file:///home/jonee/Work/echojs/scripts/verify-nocturne-nt23.mjs:73:42"
+}
