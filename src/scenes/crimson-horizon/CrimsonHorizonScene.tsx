@@ -44,12 +44,15 @@ void main() {
   gl_FragColor = vec4(mix(vec3(0.65, 0.012, 0.09), vec3(1.0, .2, .4), ring / max(.001, glow + ring)), glow + ring + exp(-ringDistance * ringDistance) * airAccent * .12 * (0.5 + 0.5 * sin(atan(vLocal.y, vLocal.x) * 43.0)));
   #include <colorspace_fragment>
 }`
+// The sky dithers its output (three.js's built-in dithering), so the dark gradient doesn't band.
 const skyFragment = `uniform float atmosphereDensity;
 uniform float atmosphereWarmth;
 uniform float airAccent;
 uniform float detailDensity;
 varying vec3 vLocal;
+#include <common>
 ${nightshade}
+#include <dithering_pars_fragment>
 void main() {
   vec3 ray = normalize(vLocal);
   vec2 coordinate = ray.xy * 95.0;
@@ -59,6 +62,7 @@ void main() {
   float band = smoothstep(-.02, .04, ray.y) * (1.0 - smoothstep(.22, .4, ray.y));
   gl_FragColor = vec4(atmosphericNight(ray, atmosphereDensity, atmosphereWarmth) + vec3(.7, .22, .45) * speck * step(1.0-detailDensity, pick) * band * (.018 + airAccent * 2.5), 1.0);
   #include <colorspace_fragment>
+  #include <dithering_fragment>
 }`
 
 type SceneStatus = 'loading' | 'ready' | 'waiting' | 'error'
@@ -199,7 +203,7 @@ function Composition({ quality, target, reducedMotion, signal, reactivity, attem
     <color attach="background" args={['#221A32']} />
     <mesh ref={sky} name="crimson-sky">
       <sphereGeometry args={[160, 24, 16]} />
-      <shaderMaterial ref={skyMaterial} uniforms={skyUniforms} vertexShader={sunVertex} fragmentShader={skyFragment} side={BackSide} toneMapped={false} depthWrite={false} />
+      <shaderMaterial ref={skyMaterial} uniforms={skyUniforms} vertexShader={sunVertex} fragmentShader={skyFragment} side={BackSide} toneMapped={false} depthWrite={false} dithering />
     </mesh>
     {snapshot.chunks.map(entry => <TerrainChunk key={entry.index} entry={entry} meshes={meshes} materials={materials} />)}
     <mesh ref={sun} name="crimson-sun">

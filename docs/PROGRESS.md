@@ -1,5 +1,13 @@
 # ECHO — current checkpoint
 
+## Crimson Horizon defects — FIXED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+
+- An owner-requested review of Crimson Horizon against its reference found two defects, plus seven art-direction gaps (unaddressed; owner's call). The owner approved fixing the two defects.
+- **Dotted floor lines:** `pow()` on the bank value, which interpolation can push just below 0, gave NaN pixels. It is now clamped in both places (`material.ts`). **Sky banding:** three.js dithering added to the sky shader (`CrimsonHorizonScene.tsx`).
+- [Evidence](evidence/crimson/defects/README.md): dots 142 → 0; sky within 1 level, bands gone; only 27 pixels in the frame change by more than 2 levels. A first dithering attempt broke sky compilation (missing `<common>`); caught by the capture, fixed before the checks.
+- PASS 356 tests (1 new: every terrain `pow()` input guarded), lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored). **Deviation:** the APP02/APP03 scope checks now ignore `src/scenes/crimson-horizon`, like Bloom and Nocturne.
+- Not tested: other GPUs. NT23 is still uncommitted (separate). Stop for owner review; uncommitted.
+
 ## Nocturne NT23 — AUTOMATED REVIEW PASS; ON-SCREEN AND OWNER CHECKS PENDING — 2026-11-27
 
 - NT22 committed at the owner's request (9ee5930, not pushed). Owner approved NT23, including an on-screen Brave window on this machine. No production code changed.

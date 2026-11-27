@@ -679,3 +679,7 @@ NT22 makes one minor strip (far-left violet, owner's choice) stutter like failin
 ## 2026-11-27 — Nocturne lifecycle checks use a real tab switch, not a forced freeze
 
 NT23 found that the debug protocol's forced page freeze leaves a headless page hidden after "resume", with no animation frames at all, and pauses the audio element, so it can't show whether a scene resumes. The review switches to another tab and back instead, which hides and re-shows the page as a real background tab does. The scene resumed at 60 fps with its effects. Instrumentation lives in a throwaway copy of the build, so the production sources stay untouched. Frame metrics count callbacks that share a frame timestamp as one frame.
+
+## 2026-11-27 — Crimson shaders guard pow() inputs and dither the sky
+
+The dotted lines on Crimson's valley floor were NaN pixels: `pow()` of an interpolated feature that can dip just below zero. Both uses are now clamped, and a unit test requires every `pow()` in the terrain shader to take a guarded input. The sky's dark gradient banded in 8-bit output, so it uses three.js's built-in dithering (which needs the `<common>` chunk for `rand()`). Both fixes leave the approved look unchanged apart from the defects.

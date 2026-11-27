@@ -66,7 +66,9 @@ void main() {
   color = mix(color, vec3(.028, .013, .04), smoothstep(40.0, 95.0, depth) * vFeatures.z * .32);
   float crests = clamp(ridgeLine(vFeatures.x) + ridgeLine(vFeatures.y) * 0.3, 0.0, 1.0);
   float slopes = 0.4 + 0.6 * smoothstep(0.05, 0.55, 1.0 - abs(normal.y));
-  float highlights = crests * pow(vFeatures.z, 1.5) * vFeatures.w * slopes;
+  // The bank value is 0 on the valley floor; interpolation can dip a hair below 0 there, and pow()
+  // of a negative number is NaN on GPUs (dark dotted lines). Clamp before every pow.
+  float highlights = crests * pow(max(vFeatures.z, 0.0), 1.5) * vFeatures.w * slopes;
   highlights *= 0.35 + 0.65 * smoothstep(-0.15, 0.7, facing);
   float foreground = ridgeLine(vFold) * (1.0 - vFeatures.z) * 0.12;
   vec3 legacyContours = vec3(0.8, 0.004, 0.038) * (highlights + foreground) * (0.85 + activity * 0.15);
@@ -79,7 +81,7 @@ void main() {
   color = mix(color, vec3(.04, .011, .034) + vec3(.012, .004, .001) * atmosphereWarmth,
     atmosphereDepth * (.08 + atmosphereDensity * .22));
   // Selected primary contours carry the light; secondary details mostly stay resting.
-  float bankMask = pow(vFeatures.z, 1.5) * slopes * (0.35 + 0.65 * smoothstep(-0.15, 0.7, facing));
+  float bankMask = pow(max(vFeatures.z, 0.0), 1.5) * slopes * (0.35 + 0.65 * smoothstep(-0.15, 0.7, facing));
   float primarySelection = smoothstep(0.55, 0.85, vFeatures.w);
   float secondarySelection = smoothstep(0.88, 0.99, vFeatures.w) * 0.12;
   float selectedCore = (ridgeLine(vFeatures.x) * primarySelection + ridgeLine(vFeatures.y) * secondarySelection) * bankMask;
