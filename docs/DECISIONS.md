@@ -671,3 +671,7 @@ NT20 adds ripples without a new music mapping. A ring starts only on a bass hit 
 ## 2026-11-27 — Nocturne's steam is lit like the rain and freezes with reduced motion
 
 NT21 adds three slow plumes at existing vents, each beside a different fixture, so they take its colour. They use the rain's approach (their own shader summing the spill lights and gate), so the light-gathering code moved into a shared `sceneLights.ts` rather than being copied. The noise lattice repeats every 64 cells and the upward scroll wraps on that period, so long sessions stay precise without a seam. The owner chose to freeze the plumes with reduced motion: slow steam held still isn't motion, and the scene keeps its atmosphere.
+
+## 2026-11-27 — Nocturne's neon flicker: one strip, accepted treble hits, a soft fixed pattern
+
+NT22 makes one minor strip (far-left violet, owner's choice) stutter like failing neon. Group materials can only change together, so that strip got its own material that follows its group exactly, times a flicker factor. A stutter starts only on a treble hit the violet response already accepted, so it is gated like the approved treble response. To stay well clear of strobing, it is a fixed pattern of three eased dips over 0.35 s that never drops below 20%, at most three dips a second, at least 10 s apart, on a thin strip. The minimum hit strength is a quarter of full: the generated song's accepted hits never reached the planned half.

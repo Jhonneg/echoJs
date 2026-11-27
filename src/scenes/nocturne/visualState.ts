@@ -10,6 +10,7 @@ import { createVioletResponse, updateVioletResponse } from './violet.ts'
 import { createBridgeResponse, updateBridgeResponse } from './bridge.ts'
 import { createMidrangeResponse, updateMidrangeResponse } from './midrange.ts'
 import { createRippleState, updateRipples } from './ripples.ts'
+import { createFlickerState, updateFlicker } from './flicker.ts'
 
 export const NOCTURNE_VISUAL_CHANNELS = [
   'magentaMain', 'magentaSecondary', 'cyanWindows', 'cyanDetails', 'cyanPanel', 'violet', 'violetSecondary', 'bridge',
@@ -29,6 +30,8 @@ export type NocturneVisualState = {
   midrange: ReturnType<typeof createMidrangeResponse>,
   // NT20: puddle rings started by accepted bass hits.
   ripples: ReturnType<typeof createRippleState>,
+  // NT22: the far-left violet strip's rare stutter (brightness factor, normally 1).
+  flicker: ReturnType<typeof createFlickerState>,
   channels: Record<NocturneVisualChannel, NocturneVisualEnvelope>,
   // Derived source-light levels. The existing planar reflection renders the real fixtures.
   reflections: Record<NocturneVisualChannel, number>,
@@ -41,7 +44,7 @@ export function createNocturneVisualState(): NocturneVisualState {
     environment: { depthLight: 0 },
     spatial: createSpatialResponse(),
     instances: { magentaSecondary: new Float64Array(5), cyanWindows: new Float64Array(5), cyanDetails: new Float64Array(6) },
-    context: createAtmosphereResponse(), broad: createNocturneResponse(), panel: createCyanPanelResponse(), magenta: createMagentaResponse(), midrange: createMidrangeResponse(), ripples: createRippleState(), bridge: createBridgeResponse(), violet: createVioletResponse(),
+    context: createAtmosphereResponse(), broad: createNocturneResponse(), panel: createCyanPanelResponse(), magenta: createMagentaResponse(), midrange: createMidrangeResponse(), ripples: createRippleState(), flicker: createFlickerState(), bridge: createBridgeResponse(), violet: createVioletResponse(),
     channels: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, { sustainTarget: 0, accent: 0, level: 0 }])) as NocturneVisualState['channels'],
     reflections: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, 0])) as NocturneVisualState['reflections'],
     spill: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, 0])) as NocturneVisualState['spill'],
@@ -81,6 +84,9 @@ export function updateNocturneVisualState(state: NocturneVisualState, reader: Mu
     output.accent = state.violet.accents[i]
     output.level = mode === 'manual' ? clampSignal(manual.violet) : state.violet.levels[i]
   }
+  // NT22: an accepted treble hit can start the far-left strip's stutter (rare; see flicker.ts).
+  updateFlicker(state.flicker, state.violet.startedAt, state.violet.peak, nowSeconds,
+    mode !== 'manual' && !reducedMotion && clampSignal(reactivity) > 0)
   updateMagentaResponse(state.magenta, view, deltaSeconds, nowSeconds, reactivity, reducedMotion, mode === 'manual')
   const main = state.channels.magentaMain, secondary = state.channels.magentaSecondary
   main.sustainTarget = state.magenta.mainTarget
@@ -151,12 +157,13 @@ export function updateNocturneVisualState(state: NocturneVisualState, reader: Mu
 
 // This adapter writes final values only; it has no audio or browser-capture dependencies.
 export type NocturneVisualTargets = {
-  emitters: readonly { channel: NocturneVisualChannel, segment?: number, instances?: { channel: SpatialChannel | 'bridge', scale?: number, indices: Uint8Array, attribute: { array: Float32Array, needsUpdate: boolean } }, material: { emissiveIntensity: number } }[],
+  emitters: readonly { channel: NocturneVisualChannel, segment?: number, flicker?: boolean, instances?: { channel: SpatialChannel | 'bridge', scale?: number, indices: Uint8Array, attribute: { array: Float32Array, needsUpdate: boolean } }, material: { emissiveIntensity: number } }[],
   lights: readonly { channel: NocturneVisualChannel, light: { intensity: number }, full: number }[],
 }
 export function applyNocturneVisualState(targets: NocturneVisualTargets, state: NocturneVisualState) {
-  for (const { channel, segment, material, instances } of targets.emitters) {
+  for (const { channel, segment, material, instances, flicker } of targets.emitters) {
     material.emissiveIntensity = instances ? 1.3 : (segment === undefined ? state.channels[channel].level : state.bridge.levels[segment]) * 1.3
+      * (flicker ? state.flicker.factor : 1)
     if (instances) {
       const levels = instances.channel === 'bridge' ? state.bridge.levels : state.instances[instances.channel]
       for (let i = 0; i < instances.indices.length; i++) {

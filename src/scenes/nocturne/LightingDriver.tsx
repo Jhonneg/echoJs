@@ -54,6 +54,8 @@ export function LightingDriver({ musicFeatures, mode, manual, reactivity, reduce
           instances: { channel: 'bridge', scale: .16,
             indices: scene.getObjectByName('nocturne-steel')!.userData.nocturneSpatialIndices as Uint8Array,
             attribute: (scene.getObjectByName('nocturne-steel') as Mesh).geometry.getAttribute('nocturneLevel') as InstancedBufferAttribute & { array: Float32Array } } },
+        // NT22: the far-left violet strip follows its group, times the flicker factor.
+        { channel: 'violetSecondary', flicker: true, material: (scene.getObjectByName('nocturne-violetFlicker') as Mesh).material as MeshStandardMaterial },
         ...Array.from({ length: BRIDGE_SEGMENTS }, (_, segment) => ({ channel: 'bridge' as const, segment,
           material: (scene.getObjectByName(`nocturne-bridge${segment}`) as Mesh).material as MeshStandardMaterial })),
       ],

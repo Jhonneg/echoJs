@@ -19,7 +19,7 @@ Original procedural geometry and GLSL only; no new dependencies without approval
 | NT19 | **Light rain.** Thin falling streaks lit by the neon and brighter near lights; hidden with reduced motion | No | Committed at owner request 2026-11-27 ([evidence](evidence/nocturne/nt19/README.md)) |
 | NT20 | **Puddle ripples on bass hits.** Small rings in the puddles that bend the streaked reflections | No (adds motion to the floor's reflections) | Committed at owner request 2026-11-27 ([evidence](evidence/nocturne/nt20/README.md)) |
 | NT21 | **Vent steam.** Slow, soft plumes from a few wall vents, lit by nearby fixtures | No | Committed at owner request 2026-11-27 ([evidence](evidence/nocturne/nt21/README.md)) |
-| NT22 | **Neon flicker.** A rare, soft failing-neon stutter on one minor strip, tied to the treble; never a strobe | No | Planned |
+| NT22 | **Neon flicker.** A rare, soft failing-neon stutter on one minor strip, tied to the treble; never a strobe | No | Committed at owner request 2026-11-27 ([evidence](evidence/nocturne/nt22/README.md)) |
 | NT23 | **Performance, accessibility and lifecycle review** (the skipped NT14): native window on the owner's GTX 1660 at 1080p, Low quality, reduced motion, tab switching and context loss with all the new passes | No | Planned |
 
 ## Checks for every phase

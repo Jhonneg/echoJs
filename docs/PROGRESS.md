@@ -1,5 +1,12 @@
 # ECHO — current checkpoint
 
+## Nocturne NT22 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- NT21 committed at the owner's request (dffb542, not pushed). Owner approved the NT22 plan and chose the far-left strip. That strip (z −30.3) now has its own material, following its group times a flicker factor (`ArchitectureDetails.tsx`, `LightingDriver.tsx`, `visualState.ts`). A treble hit already accepted by the violet response, at least a quarter strength and 10 s after the last stutter, starts three soft dips over 0.35 s, never below 20% (`flicker.ts`, new). None in Manual, at Reactivity 0 or with reduced motion; no new music mapping.
+- **Deviation from plan:** the planned half-strength minimum never fired, because the generated song's accepted hits peak at 0.04–0.124 (throwaway logging build, not kept). Quarter strength fires two stutters in the song, about 17 s apart.
+- [Evidence](evidence/nocturne/nt22/README.md): reduced-motion frames pixel-identical before/after (the strip split changes nothing). The 0.35 s stutter isn't caught by screenshots; it rests on the tests and the logging run. GPU unchanged. PASS 355 tests (5 new), lint/typecheck/build, whitespace, `verify-nocturne-nt22.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: the stutter's look in a native window with real music; very soft treble may never trigger it. Committed at the owner's request (not pushed); no explicit visual verdict recorded. NT23 plan requested next.
+
 ## Nocturne NT21 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - NT20 committed at the owner's request (1858951, not pushed). Owner approved the NT21 plan and chose that plumes **freeze** with reduced motion. Three slow plumes from existing wall vents (z −8.9 left by the cyan panel, −20.9 right and −28.9 left by magenta fixtures), lit by the nearby lights (`steam.ts`, `Steam.tsx`, new). Out of the reflection and glow passes. No new music mapping.

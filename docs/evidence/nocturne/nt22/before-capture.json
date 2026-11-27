@@ -1,0 +1,286 @@
+{
+  "label": "before",
+  "source": "Production build; headless Brave (ANGLE GL, this machine GPU), 1440×900; generated song through the real file adapter and analysis. GPU ms = median whole animation frame from EXT_disjoint_timer_query_webgl2 (relative costs, not native-window certification).",
+  "errors": [],
+  "luma": {
+    "idle": {
+      "frame": 3.59,
+      "walls": 2.36,
+      "floor": 4.72,
+      "gate": 15.55,
+      "bridge": 7.82,
+      "sky": 5.27,
+      "cyanPct": 0.32,
+      "magentaPct": 0,
+      "litPct": 0.36
+    },
+    "idle-low": {
+      "frame": 3.56,
+      "walls": 2.36,
+      "floor": 4.68,
+      "gate": 15.42,
+      "bridge": 7.75,
+      "sky": 5.22,
+      "cyanPct": 0.31,
+      "magentaPct": 0,
+      "litPct": 0.35
+    },
+    "manual-all-on": {
+      "frame": 64.86,
+      "walls": 28.48,
+      "floor": 48.43,
+      "gate": 169.3,
+      "bridge": 107.34,
+      "sky": 77.24,
+      "cyanPct": 24.92,
+      "magentaPct": 32.01,
+      "litPct": 82.21
+    },
+    "manual-all-on-later": {
+      "frame": 64.86,
+      "walls": 28.47,
+      "floor": 48.41,
+      "gate": 168.94,
+      "bridge": 107.55,
+      "sky": 77.43,
+      "cyanPct": 24.92,
+      "magentaPct": 32.05,
+      "litPct": 82.22
+    },
+    "manual-reduced-motion": {
+      "frame": 64.27,
+      "walls": 28.21,
+      "floor": 47.78,
+      "gate": 167.92,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.04,
+      "litPct": 82.12
+    },
+    "manual-reduced-motion-later": {
+      "frame": 64.27,
+      "walls": 28.21,
+      "floor": 47.78,
+      "gate": 167.92,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.04,
+      "litPct": 82.12
+    },
+    "intro": {
+      "frame": 7.38,
+      "walls": 3.74,
+      "floor": 5.88,
+      "gate": 16.26,
+      "bridge": 11.61,
+      "sky": 6.89,
+      "cyanPct": 2.12,
+      "magentaPct": 2.2,
+      "litPct": 4.36
+    },
+    "flicker-1": {
+      "frame": 8.27,
+      "walls": 4.12,
+      "floor": 6.41,
+      "gate": 17.55,
+      "bridge": 12.37,
+      "sky": 7.18,
+      "cyanPct": 2.63,
+      "magentaPct": 2.39,
+      "litPct": 5.15
+    },
+    "flicker-2": {
+      "frame": 8.43,
+      "walls": 4.18,
+      "floor": 6.52,
+      "gate": 17.45,
+      "bridge": 12.64,
+      "sky": 7.17,
+      "cyanPct": 2.67,
+      "magentaPct": 2.48,
+      "litPct": 5.28
+    },
+    "flicker-3": {
+      "frame": 8.6,
+      "walls": 4.26,
+      "floor": 6.61,
+      "gate": 17.49,
+      "bridge": 12.73,
+      "sky": 7.26,
+      "cyanPct": 2.68,
+      "magentaPct": 2.57,
+      "litPct": 5.36
+    },
+    "flicker-4": {
+      "frame": 8.49,
+      "walls": 4.24,
+      "floor": 6.5,
+      "gate": 17.45,
+      "bridge": 12.7,
+      "sky": 7.25,
+      "cyanPct": 2.7,
+      "magentaPct": 2.47,
+      "litPct": 5.34
+    },
+    "flicker-5": {
+      "frame": 8.62,
+      "walls": 4.32,
+      "floor": 6.57,
+      "gate": 17.55,
+      "bridge": 12.65,
+      "sky": 7.24,
+      "cyanPct": 2.7,
+      "magentaPct": 2.52,
+      "litPct": 5.33
+    },
+    "flicker-6": {
+      "frame": 8.63,
+      "walls": 4.28,
+      "floor": 6.59,
+      "gate": 17.55,
+      "bridge": 12.78,
+      "sky": 7.26,
+      "cyanPct": 2.73,
+      "magentaPct": 2.53,
+      "litPct": 5.43
+    },
+    "build": {
+      "frame": 12.07,
+      "walls": 4.66,
+      "floor": 7.04,
+      "gate": 19.08,
+      "bridge": 25.04,
+      "sky": 16.56,
+      "cyanPct": 5.98,
+      "magentaPct": 3.09,
+      "litPct": 9.51
+    },
+    "drop-hit": {
+      "frame": 12.01,
+      "walls": 5.05,
+      "floor": 8.63,
+      "gate": 21.5,
+      "bridge": 14.75,
+      "sky": 7.84,
+      "cyanPct": 2.41,
+      "magentaPct": 6.75,
+      "litPct": 9.67
+    },
+    "drop": {
+      "frame": 13.75,
+      "walls": 5.21,
+      "floor": 9.97,
+      "gate": 26.51,
+      "bridge": 18.16,
+      "sky": 8.41,
+      "cyanPct": 2.53,
+      "magentaPct": 10.48,
+      "litPct": 13.49
+    },
+    "ripple-1": {
+      "frame": 11.8,
+      "walls": 4.6,
+      "floor": 8.91,
+      "gate": 27.5,
+      "bridge": 14.59,
+      "sky": 7.57,
+      "cyanPct": 2.4,
+      "magentaPct": 7.1,
+      "litPct": 10.04
+    },
+    "ripple-2": {
+      "frame": 11.93,
+      "walls": 4.66,
+      "floor": 8.87,
+      "gate": 25.94,
+      "bridge": 14.59,
+      "sky": 7.77,
+      "cyanPct": 2.68,
+      "magentaPct": 7.17,
+      "litPct": 10.15
+    },
+    "ripple-3": {
+      "frame": 9.21,
+      "walls": 4.36,
+      "floor": 7.42,
+      "gate": 24.94,
+      "bridge": 12.57,
+      "sky": 7,
+      "cyanPct": 2.75,
+      "magentaPct": 3.57,
+      "litPct": 6.4
+    },
+    "ripple-4": {
+      "frame": 9.15,
+      "walls": 4.4,
+      "floor": 7.48,
+      "gate": 25.04,
+      "bridge": 12.67,
+      "sky": 6.97,
+      "cyanPct": 2.64,
+      "magentaPct": 3.63,
+      "litPct": 6.34
+    },
+    "ripple-5": {
+      "frame": 16.43,
+      "walls": 6.09,
+      "floor": 12.09,
+      "gate": 28.59,
+      "bridge": 18.38,
+      "sky": 9.11,
+      "cyanPct": 1.93,
+      "magentaPct": 14.47,
+      "litPct": 17.71
+    },
+    "ripple-6": {
+      "frame": 12.98,
+      "walls": 4.93,
+      "floor": 9.61,
+      "gate": 26.55,
+      "bridge": 15.45,
+      "sky": 8.07,
+      "cyanPct": 2.61,
+      "magentaPct": 8.97,
+      "litPct": 12
+    },
+    "breakdown": {
+      "frame": 5.95,
+      "walls": 3.23,
+      "floor": 5.42,
+      "gate": 16.15,
+      "bridge": 10.66,
+      "sky": 6.6,
+      "cyanPct": 1.63,
+      "magentaPct": 1.53,
+      "litPct": 3.19
+    }
+  },
+  "gpu": {
+    "Standard idle": {
+      "gpuMsPerFrame": 4.828,
+      "samples": [
+        4.605,
+        4.828,
+        5.142
+      ]
+    },
+    "Low idle": {
+      "gpuMsPerFrame": 3.84,
+      "samples": [
+        3.755,
+        3.84,
+        3.877
+      ]
+    },
+    "Standard with music": {
+      "gpuMsPerFrame": 4.04,
+      "samples": [
+        3.726,
+        4.04,
+        4.137
+      ]
+    }
+  }
+}

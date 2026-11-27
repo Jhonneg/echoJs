@@ -7,7 +7,7 @@ type Triple = [number, number, number]
 type Part = { position: Triple, size: Triple, rotation?: Triple }
 type BridgeFinish = `bridge${number}`
 const bridgeFinishes = Array.from({ length: BRIDGE_SEGMENTS }, (_, i) => `bridge${i}` as BridgeFinish)
-type Finish = BridgeFinish | 'steel' | 'frame' | 'recess' | 'cyan' | 'cyanDetails' | 'cyanPanel' | 'magenta' | 'magentaSecondary' | 'violet' | 'violetSecondary' | 'asphalt'
+type Finish = BridgeFinish | 'steel' | 'frame' | 'recess' | 'cyan' | 'cyanDetails' | 'cyanPanel' | 'magenta' | 'magentaSecondary' | 'violet' | 'violetSecondary' | 'violetFlicker' | 'asphalt'
 const finishes: Record<Finish, { color: string, roughness: number, metalness: number }> = {
   steel: { color: '#343e46', roughness: 0.72, metalness: 0.45 },
   frame: { color: '#222c34', roughness: 0.8, metalness: 0.35 },
@@ -20,10 +20,11 @@ const finishes: Record<Finish, { color: string, roughness: number, metalness: nu
   ...Object.fromEntries(bridgeFinishes.map(name => [name, { color: '#30343c', roughness: .6, metalness: .35 }])),
   violet: { color: '#13121a', roughness: 0.7, metalness: 0.1 },
   violetSecondary: { color: '#13121a', roughness: 0.7, metalness: 0.1 },
+  violetFlicker: { color: '#13121a', roughness: 0.7, metalness: 0.1 },
   asphalt: { color: '#151c21', roughness: 0.98, metalness: 0 },
 }
 // All repeated facade parts share a unit box and one material per finish.
-const parts: Record<Finish, Part[]> = { steel: [], frame: [], recess: [], cyan: [], cyanDetails: [], cyanPanel: [], magenta: [], magentaSecondary: [], ...Object.fromEntries(bridgeFinishes.map(name => [name, []])), violet: [], violetSecondary: [], asphalt: [] }
+const parts: Record<Finish, Part[]> = { steel: [], frame: [], recess: [], cyan: [], cyanDetails: [], cyanPanel: [], magenta: [], magentaSecondary: [], ...Object.fromEntries(bridgeFinishes.map(name => [name, []])), violet: [], violetSecondary: [], violetFlicker: [], asphalt: [] }
 function box(finish: Finish, position: Triple, size: Triple, rotation?: Triple) {
   parts[finish].push({ position, size, rotation })
 }
@@ -71,7 +72,8 @@ for (const side of [-1, 1]) {
     wall(side, side === 1 && z === -3 ? 'magenta' : 'magentaSecondary', 0.46, 2.75, z, [0.06, 2.95, 0.96])
     // NT17: the treble strips run about 5 m (were 3.05 m) and are wider, so they read with the glow.
     wall(side, 'steel', 0.08, 5.9, z - 1.3, [0.16, 5.15, 0.14])
-    wall(side, side === 1 ? 'violet' : 'violetSecondary', 0.17, 5.9, z - 1.3, [0.04, 5, 0.09])
+    // NT22: the far-left strip has its own material so it alone can stutter (flicker.ts).
+    wall(side, side === 1 ? 'violet' : z === -29 ? 'violetFlicker' : 'violetSecondary', 0.17, 5.9, z - 1.3, [0.04, 5, 0.09])
     // NT17: a short angled neon accent between the window rows, on the same channel.
     const tilt = (z % 2 === 0 ? 1 : -1) * side * 0.6
     box('steel', [side * 2.92, 8.35, z + 1.6], [0.12, 1.45, 0.13], [tilt, 0, 0])
@@ -146,7 +148,7 @@ function Boxes({ finish }: { finish: Finish }) {
     mesh.current.computeBoundingSphere()
   }, [items, spatial, finish])
   // NT18: window panes are black under their glow, so magenta spill no longer tints them pink.
-  const group = finish === 'magenta' || finish === 'cyan' || finish === 'violet' ? finish : finish === 'cyanPanel' || finish === 'cyanDetails' ? 'cyan' : finish === 'magentaSecondary' || finish.startsWith('bridge') ? 'magenta' : finish === 'violetSecondary' ? 'violet' : null
+  const group = finish === 'magenta' || finish === 'cyan' || finish === 'violet' ? finish : finish === 'cyanPanel' || finish === 'cyanDetails' ? 'cyan' : finish === 'magentaSecondary' || finish.startsWith('bridge') ? 'magenta' : finish === 'violetSecondary' || finish === 'violetFlicker' ? 'violet' : null
   return <instancedMesh name={`nocturne-${finish}`} ref={mesh} args={[undefined, undefined, items.length]}>
     <boxGeometry args={[1, 1, 1]} />
     <meshStandardMaterial {...finishes[finish]} {...(spatial ? { onBeforeCompile: spatialFixtureShader, customProgramCacheKey: spatialShaderKey } : {})} color={finish === 'cyan' ? '#000000' : group ? '#070a0f' : finishes[finish].color}
