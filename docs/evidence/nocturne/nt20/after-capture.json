@@ -1,0 +1,198 @@
+{
+  "label": "after",
+  "source": "Production build; headless Brave (ANGLE GL, this machine GPU), 1440×900; generated song through the real file adapter and analysis. GPU ms = median whole animation frame from EXT_disjoint_timer_query_webgl2 (relative costs, not native-window certification).",
+  "errors": [],
+  "luma": {
+    "idle": {
+      "frame": 3.58,
+      "walls": 2.36,
+      "floor": 4.7,
+      "gate": 15.51,
+      "bridge": 7.82,
+      "sky": 5.27,
+      "cyanPct": 0.32,
+      "magentaPct": 0,
+      "litPct": 0.36
+    },
+    "idle-low": {
+      "frame": 3.55,
+      "walls": 2.36,
+      "floor": 4.65,
+      "gate": 15.37,
+      "bridge": 7.76,
+      "sky": 5.23,
+      "cyanPct": 0.31,
+      "magentaPct": 0,
+      "litPct": 0.35
+    },
+    "manual-all-on": {
+      "frame": 64.73,
+      "walls": 28.48,
+      "floor": 48.46,
+      "gate": 169.17,
+      "bridge": 107.35,
+      "sky": 77.21,
+      "cyanPct": 24.94,
+      "magentaPct": 32.06,
+      "litPct": 82.23
+    },
+    "manual-reduced-motion": {
+      "frame": 64.19,
+      "walls": 28.21,
+      "floor": 47.77,
+      "gate": 167.91,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.06,
+      "litPct": 82.12
+    },
+    "intro": {
+      "frame": 7.37,
+      "walls": 3.75,
+      "floor": 5.87,
+      "gate": 16.25,
+      "bridge": 11.62,
+      "sky": 6.91,
+      "cyanPct": 2.1,
+      "magentaPct": 2.22,
+      "litPct": 4.37
+    },
+    "build": {
+      "frame": 11.83,
+      "walls": 4.63,
+      "floor": 7,
+      "gate": 18.69,
+      "bridge": 23.85,
+      "sky": 16.59,
+      "cyanPct": 6,
+      "magentaPct": 2.71,
+      "litPct": 9
+    },
+    "drop-hit": {
+      "frame": 11.91,
+      "walls": 5.06,
+      "floor": 8.6,
+      "gate": 21.39,
+      "bridge": 14.68,
+      "sky": 7.85,
+      "cyanPct": 2.43,
+      "magentaPct": 6.64,
+      "litPct": 9.56
+    },
+    "drop": {
+      "frame": 12.82,
+      "walls": 4.94,
+      "floor": 9.6,
+      "gate": 26.2,
+      "bridge": 15.47,
+      "sky": 8.12,
+      "cyanPct": 2.44,
+      "magentaPct": 9.08,
+      "litPct": 11.9
+    },
+    "ripple-1": {
+      "frame": 12.56,
+      "walls": 4.69,
+      "floor": 9.4,
+      "gate": 27.7,
+      "bridge": 15.3,
+      "sky": 7.95,
+      "cyanPct": 2.28,
+      "magentaPct": 8.31,
+      "litPct": 11.25
+    },
+    "ripple-2": {
+      "frame": 11.94,
+      "walls": 4.67,
+      "floor": 8.85,
+      "gate": 25.75,
+      "bridge": 14.78,
+      "sky": 7.7,
+      "cyanPct": 2.74,
+      "magentaPct": 7.1,
+      "litPct": 10.14
+    },
+    "ripple-3": {
+      "frame": 9.37,
+      "walls": 4.45,
+      "floor": 7.52,
+      "gate": 24.9,
+      "bridge": 12.79,
+      "sky": 6.95,
+      "cyanPct": 2.76,
+      "magentaPct": 3.66,
+      "litPct": 6.57
+    },
+    "ripple-4": {
+      "frame": 13.97,
+      "walls": 5.48,
+      "floor": 10.51,
+      "gate": 26.48,
+      "bridge": 16.54,
+      "sky": 8.38,
+      "cyanPct": 2.19,
+      "magentaPct": 11.33,
+      "litPct": 14.01
+    },
+    "ripple-5": {
+      "frame": 9.08,
+      "walls": 4.33,
+      "floor": 7.35,
+      "gate": 24.87,
+      "bridge": 12.38,
+      "sky": 6.97,
+      "cyanPct": 2.7,
+      "magentaPct": 3.5,
+      "litPct": 6.27
+    },
+    "ripple-6": {
+      "frame": 15.13,
+      "walls": 5.68,
+      "floor": 11.22,
+      "gate": 28.76,
+      "bridge": 17.11,
+      "sky": 8.52,
+      "cyanPct": 1.77,
+      "magentaPct": 12.22,
+      "litPct": 15.3
+    },
+    "breakdown": {
+      "frame": 5.94,
+      "walls": 3.25,
+      "floor": 5.37,
+      "gate": 16.08,
+      "bridge": 10.69,
+      "sky": 6.61,
+      "cyanPct": 1.63,
+      "magentaPct": 1.53,
+      "litPct": 3.2
+    }
+  },
+  "gpu": {
+    "Standard idle": {
+      "gpuMsPerFrame": 5.041,
+      "samples": [
+        5.03,
+        5.041,
+        5.376
+      ]
+    },
+    "Low idle": {
+      "gpuMsPerFrame": 3.697,
+      "samples": [
+        3.656,
+        3.697,
+        4.039
+      ]
+    },
+    "Standard with music": {
+      "gpuMsPerFrame": 4.251,
+      "samples": [
+        3.525,
+        4.251,
+        4.498
+      ]
+    }
+  }
+}

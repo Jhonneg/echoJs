@@ -10,6 +10,7 @@ import {
   type NocturneVisualChannel, type NocturneVisualTargets,
 } from './visualState'
 import { GLOW_IDLE, glowActivity, hazeLevels, sceneLightLevel } from './effects'
+import { rippleField } from './ripples'
 
 type FixtureHaze = { material: ShaderMaterial, color: Color }
 type LightingTargets = NocturneVisualTargets & { gate: MeshStandardMaterial, haze: ShaderMaterial, fog: Fog, depth: PointLight,
@@ -88,6 +89,8 @@ export function LightingDriver({ musicFeatures, mode, manual, reactivity, reduce
     bound.fog.far = state.atmosphere.fogFar
     bound.fog.color.copy(glow).multiplyScalar(0.018).add(palette.baseline)
     glowActivity.level = sceneLightLevel(state)
+    rippleField.rings.set(state.ripples.out)
+    rippleField.active = state.ripples.active
     // NT16 haze adds nothing while every light is off; skip drawing it then.
     const hazeOn = glowActivity.level >= GLOW_IDLE
     for (const mesh of bound.hazeMeshes) Object.assign(mesh, { visible: hazeOn })

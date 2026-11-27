@@ -1,9 +1,10 @@
 import { useLayoutEffect, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { PlaneGeometry, ShaderMaterial, Vector2 } from 'three'
+import { PlaneGeometry, ShaderMaterial, Vector2, Vector4 } from 'three'
 import { Reflector } from 'three/addons/objects/Reflector.js'
 import type { GraphicsQuality } from '../../engine/quality'
 import { GLOW_IDLE, STREAK, glowActivity, streakGlsl } from './effects'
+import { RIPPLE, rippleField } from './ripples'
 
 // NT16: bright reflections (the lit fixtures) also smear into long vertical streaks, as on wet
 // asphalt, and make the floor more reflective where they land. Dim reflections (all the idle
@@ -14,6 +15,8 @@ const wetShader = (quality: GraphicsQuality) => ({
     color: { value: null }, tDiffuse: { value: null }, textureMatrix: { value: null },
     texel: { value: new Vector2(1 / 512, 1 / 512) },
     streakOn: { value: 0 }, // NT16: 0 while every light is off (nothing bright to streak)
+    rippleOn: { value: 0 }, // NT20: 0 while no ring is active (the floor is then unchanged)
+    ripples: { value: Array.from({ length: RIPPLE.slots }, () => new Vector4()) }, // x, z, radius, amplitude
   },
   vertexShader: `uniform mat4 textureMatrix;
     varying vec4 vReflection;
@@ -26,6 +29,8 @@ const wetShader = (quality: GraphicsQuality) => ({
   fragmentShader: `uniform sampler2D tDiffuse;
     uniform vec2 texel;
     uniform float streakOn;
+    uniform float rippleOn;
+    uniform vec4 ripples[${RIPPLE.slots}];
     varying vec4 vReflection;
     varying vec3 vWorld;
     ${streakGlsl(STREAK[quality].taps)}
@@ -46,6 +51,23 @@ const wetShader = (quality: GraphicsQuality) => ({
       // Static surface irregularity: no water animation or temporal jitter.
       uv.x += (noise(p * vec2(3.0, 12.0)) - 0.5) * 0.0025;
       uv.y += (breakup - 0.5) * 0.001;
+      // NT20: rings from bass hits bend the reflection where they pass, strongest in puddles.
+      float crest = 0.0;
+      if (rippleOn > 0.5) {
+        vec2 bend = vec2(0.0);
+        for (int i = 0; i < ${RIPPLE.slots}; i++) {
+          vec4 ring = ripples[i];
+          if (ring.w <= 0.0) continue;
+          vec2 d = p - ring.xy;
+          float r = length(d), w = r - ring.z;
+          float wave = sin(w * 40.0) * exp(-w * w / 0.012) * ring.w;
+          bend += d / max(r, 1e-3) * wave;
+          crest += max(wave, 0.0);
+        }
+        float water = mix(0.3, 1.0, puddle) * edges;
+        uv += bend * water * 0.014;
+        crest *= water;
+      }
       vec2 spread = texel * mix(1.8, 0.65, puddle);
       vec3 reflected = texture2D(tDiffuse, uv).rgb * 0.4;
       reflected += texture2D(tDiffuse, uv + vec2(spread.x, 0)).rgb * 0.15;
@@ -68,8 +90,10 @@ const wetShader = (quality: GraphicsQuality) => ({
       float glint = clamp(dot(bright, vec3(0.2126, 0.7152, 0.0722)) * 6.0, 0.0, 1.0);
       // Bright reflections run closer to the walls than the base film (wall fixtures land there).
       float glintEdges = 1.0 - smoothstep(2.5, 2.68, abs(p.x));
-      strength = min(1.0, strength + glint * 0.6 * glintEdges * mix(0.45, 1.0, puddle));
-      gl_FragColor = vec4(reflected * 0.9 + highlights * 0.2 + bright * 2.4, strength);
+      strength = min(1.0, strength + glint * 0.6 * glintEdges * mix(0.45, 1.0, puddle) + crest * 0.4);
+      // NT20: a ring's crest catches the light it reflects (nothing on unlit water).
+      vec3 crestLight = crest * (reflected * 1.5 + bright * 2.0);
+      gl_FragColor = vec4(reflected * 0.9 + highlights * 0.2 + bright * 2.4 + crestLight, strength);
       #include <tonemapping_fragment>
       #include <colorspace_fragment>
     }`,
@@ -111,7 +135,12 @@ export function WetGround({ quality }: { quality: GraphicsQuality }) {
   }, [quality, size.width, size.height])
   useFrame(() => {
     const floor = reflector.current
-    if (floor) (floor.material as ShaderMaterial).uniforms.streakOn.value = glowActivity.level >= GLOW_IDLE ? 1 : 0
+    if (!floor) return
+    const uniforms = (floor.material as ShaderMaterial).uniforms
+    uniforms.streakOn.value = glowActivity.level >= GLOW_IDLE ? 1 : 0
+    uniforms.rippleOn.value = rippleField.active ? 1 : 0
+    const rings = uniforms.ripples.value as Vector4[]
+    for (let i = 0; i < RIPPLE.slots; i++) rings[i].fromArray(rippleField.rings, i * 4)
   }, -1)
   return null
 }

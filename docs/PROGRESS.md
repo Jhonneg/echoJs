@@ -1,5 +1,12 @@
 # ECHO — current checkpoint
 
+## Nocturne NT20 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- Owner approved the NT20 plan. Puddle ripples: bass hits already accepted by the magenta response (at least 35% of full strength) start 2–3 rings at near floor spots on the fixtures' reflections (`ripples.ts`, new; `visualState.ts`, `LightingDriver.tsx`). The floor shader bends the reflection around each ring, strongest in puddles (`WetGround.tsx`). None in Manual, at Reactivity 0 or with reduced motion; no new music mapping.
+- During tuning, throwaway logging builds (not kept) showed weak bass-line onsets crowding kick rings out of the pool, and far rings flattening to a few pixels. Hence the minimum hit strength and near spots.
+- [Evidence](evidence/nocturne/nt20/README.md): `after-ripple-1.png` shows a fresh ring bending the magenta reflection. Idle unchanged; reduced-motion frame pixel-identical to before. GPU within noise. PASS 347 tests (4 new), lint/typecheck/build, whitespace, `verify-nocturne-nt20.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: timing feel with real music, motion in a native window; weaker real kicks may start fewer rings. Committed at the owner's request (not pushed); no explicit visual verdict recorded. NT21 plan requested next.
+
 ## Nocturne NT19 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - Owner approved NT18 (committed f5a405d, not pushed) and the NT19 plan ("plan and approve"). Light rain: 1,800 streaks on Standard and 700 on Low, falling on the GPU from one time uniform, lit by the seven spill lights and the gate (`rain.ts`, `Rain.tsx`, new; `NocturneScene.tsx`). Hidden with reduced motion. On its own layer, so it isn't in the wet-floor reflection; `Glow.tsx` hides it in the glow pass. No new music mapping.

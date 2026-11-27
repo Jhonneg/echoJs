@@ -663,3 +663,7 @@ NT18 (owner-approved change to NT13 choices). Cyan was underused because the win
 ## 2026-11-27 — Nocturne's rain is lit by the scene's lights in its own shader, not by three.js lighting
 
 NT19 adds light rain. One instanced mesh of thin quads falls on the GPU from a time uniform, so the CPU does no per-streak work. Each streak sums the current colour and intensity of the seven spill lights and the gate with three.js's point-light falloff, so rain shows only near lit fixtures, as on the reference board, and follows the lights rather than adding a music mapping. The rain is on its own layer seen only by the main camera, which keeps it out of the wet-floor reflection, and the glow pass hides it like the haze, so it adds no passes. It is hidden with reduced motion.
+
+## 2026-11-27 — Nocturne's puddle ripples reuse the magenta response's accepted bass hits
+
+NT20 adds ripples without a new music mapping. A ring starts only on a bass hit that the main magenta response has already accepted, so it is gated exactly like the approved bass pulse (freshness, Reactivity, Manual, reduced motion) and lands with it. Two findings shaped it. Weak bass-line onsets also pass that gate and crowded the kicks' rings out of the small pool, so rings need at least 35% of full strength. The floor beyond about 15 m is seen too flat for a ring to read, so rings start only on the near reflections of the wall fixtures, where they visibly bend the streaks. The floor shader skips the ring loop when none is active.

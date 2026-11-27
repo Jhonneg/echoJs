@@ -9,6 +9,7 @@ import { createAtmosphereResponse, updateAtmosphereResponse } from './atmosphere
 import { createVioletResponse, updateVioletResponse } from './violet.ts'
 import { createBridgeResponse, updateBridgeResponse } from './bridge.ts'
 import { createMidrangeResponse, updateMidrangeResponse } from './midrange.ts'
+import { createRippleState, updateRipples } from './ripples.ts'
 
 export const NOCTURNE_VISUAL_CHANNELS = [
   'magentaMain', 'magentaSecondary', 'cyanWindows', 'cyanDetails', 'cyanPanel', 'violet', 'violetSecondary', 'bridge',
@@ -26,6 +27,8 @@ export type NocturneVisualState = {
   violet: ReturnType<typeof createVioletResponse>,
   bridge: ReturnType<typeof createBridgeResponse>,
   midrange: ReturnType<typeof createMidrangeResponse>,
+  // NT20: puddle rings started by accepted bass hits.
+  ripples: ReturnType<typeof createRippleState>,
   channels: Record<NocturneVisualChannel, NocturneVisualEnvelope>,
   // Derived source-light levels. The existing planar reflection renders the real fixtures.
   reflections: Record<NocturneVisualChannel, number>,
@@ -38,7 +41,7 @@ export function createNocturneVisualState(): NocturneVisualState {
     environment: { depthLight: 0 },
     spatial: createSpatialResponse(),
     instances: { magentaSecondary: new Float64Array(5), cyanWindows: new Float64Array(5), cyanDetails: new Float64Array(6) },
-    context: createAtmosphereResponse(), broad: createNocturneResponse(), panel: createCyanPanelResponse(), magenta: createMagentaResponse(), midrange: createMidrangeResponse(), bridge: createBridgeResponse(), violet: createVioletResponse(),
+    context: createAtmosphereResponse(), broad: createNocturneResponse(), panel: createCyanPanelResponse(), magenta: createMagentaResponse(), midrange: createMidrangeResponse(), ripples: createRippleState(), bridge: createBridgeResponse(), violet: createVioletResponse(),
     channels: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, { sustainTarget: 0, accent: 0, level: 0 }])) as NocturneVisualState['channels'],
     reflections: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, 0])) as NocturneVisualState['reflections'],
     spill: Object.fromEntries(NOCTURNE_VISUAL_CHANNELS.map(name => [name, 0])) as NocturneVisualState['spill'],
@@ -86,6 +89,9 @@ export function updateNocturneVisualState(state: NocturneVisualState, reader: Mu
   secondary.sustainTarget = state.magenta.secondaryTarget
   secondary.accent = 0
   secondary.level = mode === 'manual' ? clampSignal(manual.magenta) : state.magenta.secondaryBody
+  // NT20: the magenta response's accepted bass hits also start puddle ripples.
+  updateRipples(state.ripples, state.magenta.emittedAt, state.magenta.peak, reactivity, nowSeconds,
+    mode !== 'manual' && !reducedMotion && clampSignal(reactivity) > 0)
   updateMidrangeResponse(state.midrange, view, deltaSeconds, nowSeconds, reactivity, reducedMotion, mode === 'manual')
   const windows = state.channels.cyanWindows, details = state.channels.cyanDetails
   windows.sustainTarget = state.midrange.windowTarget
