@@ -727,3 +727,7 @@ The reference's ridges end in a fine, irregular fringe of trees, and Lavender's 
 ## 2026-11-27 — Lavender's front layers lighten; its warm light widens
 
 The reference keeps even its nearest ranges pale and spreads a soft peach light across the low sky. Lavender's front ridge was much darker than the rest (a step of 38 in brightness against about 10 between the others), and its warmth stayed near the centre. The three nearest ridges were lightened by less the farther they are, keeping the front ridge the strongest silhouette, as the art direction asks. The front ridge's upper colour was held clearly darker than ridge 5's, because their crests carry no mist to separate them. The sky glow and the mist's warm tint now share one `WARM_LIGHT` setting, so the haze picks up the same warmth as the sky across the whole width.
+
+## 2026-11-27 — Lavender's sun glow softens at rest only; grain is static
+
+The reference's sun light fades out with no ring, and Lavender's resting corona strands drew a thin ring. Softening them at all times would change the approved music response, and a first version that restored the crisp strands only gradually failed the corona onset assessment. So the extra width and dimming apply at rest and are cleared at about a quarter of full activity, and the approved music-time values stay. The owner chose static, screen-fixed grain over changing grain: it adds no motion or flicker and needs nothing for reduced motion. The ridges slide under it when they travel, which at this faintness isn't yet checked in motion.

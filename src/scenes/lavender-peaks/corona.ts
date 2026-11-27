@@ -7,6 +7,9 @@ export const CORONA_SETTINGS = {
   bassReference: .45, onsetReference: .22, onsetDuration: .65,
   restingOpacity: .16, maximumOpacity: .46, reducedOpacity: .10,
   sustainSensitivity: 1, accentSensitivity: 2.5,
+  // Softening (owner review item 6), at rest only: wider, fainter strands so the resting ring reads
+  // as a soft halo. Music activity quickly restores the approved crisp, full-strength strands.
+  restingSoftness: .05, restingDim: .45, softeningRelease: 4,
 } as const
 // Angular advection and periodic noise time both join continuously at this wrap.
 export const CORONA_TIME_PERIOD = Math.PI * 2 * 100
@@ -119,7 +122,8 @@ vec3 applyCorona(vec3 color, vec2 offset, float radius, float antialias) {
   float highLobe = pow(max(0.0, cos(angle - 2.35 - 0.15 * sin(t * 0.12))), 12.0);
   float amplitude = min(coronaMaxAmplitude, coronaBaseAmplitude + coronaMotion *
     (0.202 * coronaEnvelope + 0.045 * coronaDetail));
-  float width = 0.01 + antialias * 0.65;
+  float activity = clamp((coronaEnvelope + coronaDetail + coronaLowAccent) * ${CORONA_SETTINGS.softeningRelease.toFixed(1)}, 0.0, 1.0);
+  float width = 0.01 + ${CORONA_SETTINGS.restingSoftness.toFixed(3)} * (1.0 - activity) + antialias * 0.65;
   float sum = 0.0;
   float sumDerivative = 0.0;
   for (int j = 0; j < 3; j++) {
@@ -149,9 +153,10 @@ vec3 applyCorona(vec3 color, vec2 offset, float radius, float antialias) {
     float distanceToEdge = (radius - edge) / strandWidth;
     strands += exp(-distanceToEdge * distanceToEdge) * (0.8 - layer * 0.12);
   }
-  float opacity = coronaBaseOpacity + 0.25 * coronaEnvelope + 0.14 * coronaDetail
+  float opacity = coronaBaseOpacity * mix(${CORONA_SETTINGS.restingDim.toFixed(3)}, 1.0, activity) + 0.25 * coronaEnvelope + 0.14 * coronaDetail
     + 0.15 * coronaLowAccent + 0.18 * coronaMidAccent * midLobe + 0.2 * coronaHighAccent * highLobe;
-  float fade = 1.0 - smoothstep(limit - 0.035, limit, radius);
+  // A longer outer fade, so the softened rest glow has no visible boundary (item 6).
+  float fade = 1.0 - smoothstep(limit - 0.12, limit, radius);
   float alpha = min(coronaMaxOpacity, strands * opacity) * fade;
   return mix(color, vec3(1.0, 0.91, 0.87), alpha);
 }

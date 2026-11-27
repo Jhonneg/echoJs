@@ -14,6 +14,7 @@ import { createTraces, updateTraces, traceFragment, type Traces } from './traces
 import { ridges, type Ridge } from './terrain'
 import { TREELINE, ridgeFringe } from './treeline'
 import { createSunPulse, updateSunPulse } from './sunPulse'
+import { grainFragment } from './grain'
 import { createAtmosphere, updateAtmosphere, atmosphereSky, atmosphereRidge, WARM_LIGHT, warmSkyHalo, warmSkyColor, type Atmosphere } from './atmosphere'
 import './lavender-peaks.css'
 
@@ -28,6 +29,7 @@ uniform float sunPulse;
 ${coronaFragment}
 ${skyIllumination}
 ${atmosphereSky}
+${grainFragment}
 void main() {
   float height = smoothstep(-5.8, 5.8, vPosition.y);
   vec3 cream = vec3(1.0, 0.87, 0.84);
@@ -40,14 +42,17 @@ void main() {
   vec2 sunOffset = vPosition - vec2(1.6, 1.9);
   float sunDistance = length(sunOffset);
   float pulsedSunDistance = sunDistance / (1.0 + sunPulse * 0.24);
-  float sunDisc = 1.0 - smoothstep(0.68, 0.75, pulsedSunDistance);
-  float sunHaze = exp(-pow(pulsedSunDistance / 1.1, 2.0)) * (0.055 + sunPulse * 0.02);
+  // Softened edge and wider haze (owner review item 6), so the light fades out gradually.
+  float sunDisc = 1.0 - smoothstep(0.65, 0.78, pulsedSunDistance);
+  float sunHaze = exp(-pow(pulsedSunDistance / 1.65, 2.0)) * (0.06 + sunPulse * 0.02);
   color = mix(color, vec3(1.0, 0.94, 0.83), sunDisc * (0.38 + sunPulse * 0.08) + sunHaze);
   // Derivatives are evaluated before the localized branch, keeping Low quality soft.
   color = applyCorona(color, sunOffset, sunDistance, max(fwidth(sunDistance), 0.006));
   color = mix(color, vec3(1.0, 0.84, 0.76), coronaLight * coronaSkyMask(vPosition) * 0.16);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
+  // Faint static grain, kept off the sun disc.
+  gl_FragColor.rgb += grain(1.0 - sunDisc);
   #include <dithering_fragment>
 }`
 
@@ -69,6 +74,7 @@ uniform float phase;
 ${ridgeIllumination}
 ${atmosphereRidge}
 ${traceFragment}
+${grainFragment}
 void main() {
   float blend = smoothstep(bottom, top, vPosition.y);
   vec3 color = mix(lowerColor, upperColor, blend);
@@ -87,6 +93,7 @@ void main() {
   color = illuminateTrace(color, vPosition);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
+  gl_FragColor.rgb += grain(1.0);
   #include <dithering_fragment>
 }`
 

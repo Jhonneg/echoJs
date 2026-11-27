@@ -1,10 +1,16 @@
 # ECHO — current checkpoint
 
+## Lavender Peaks softer sun glow at rest and static grain — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+
+- This round covers review items 6 and 7, both approved with static grain. At rest, the sun's corona strands are wider and fainter with a longer outer fade, and its haze is wider with a softer disc edge, so the thin ring becomes a soft halo. Music activity quickly restores the approved crisp strands; music-time values are unchanged (`corona.ts`, `LavenderPeaksScene.tsx`). A faint static screen-fixed mottle (at most ±1.8 levels, kept off the sun disc) covers the sky and ridges (`grain.ts`, new). The ring goes from a +2.6 bump 4 px wide to +1.9 over 16 px. Grain fine texture is 0.48 (reference 0.43, before 0.21).
+- [Evidence](evidence/lavender-peaks/softening/README.md). PASS: 369 tests (2 new), lint, typecheck, build, whitespace, APP02/APP03. Lavender corona check and assessment: failed with a first gradual version, then once more unexplained just after the fix, then passed twice in a row with the final code (committed evidence restored).
+- Not tested: static grain while the ridges travel (stills only), the owner's monitor, real songs, portrait, pixel ratio 2, GPU time. All Lavender review items are now addressed. Stop for owner review; uncommitted.
+
 ## Lavender Peaks paler front layers and wider warm light — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
 
 - This round covers review items 4 and 5, approved together with the plan. The three nearest ridges are paler and softer (`terrain.ts`). The front ridge's brightness goes from 130 to 145 (0–255). It's still the darkest, strongest layer, and every farther ridge is paler. The low-sky peach glow is wider, taller and slightly warmer, and the layer mist is warm across its whole width (`WARM_LIGHT` in `atmosphere.ts`, used by the sky in `LavenderPeaksScene.tsx`). The low sky goes from cool at the sides (red minus blue −6) to warm everywhere (+2 to +7). The sun, corona, music response, mist strength, tree line and camera are unchanged.
 - [Evidence](evidence/lavender-peaks/light/README.md). PASS: 367 tests (2 new), lint, typecheck, build, whitespace, `verify-lavender-corona-noise.mjs` and its assessment, APP02/APP03 (committed evidence restored).
-- Not captured: song screenshots. Not tested: the owner's monitor, real songs, portrait framing. Remaining review items (optional corona softening and grain) are the owner's call. Stop for owner review; uncommitted.
+- Not captured: song screenshots. Not tested: the owner's monitor, real songs, portrait framing. Committed as `9c2d776`; owner visual review pending.
 
 ## Lavender Peaks tree-line fringe — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
 
