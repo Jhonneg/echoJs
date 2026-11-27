@@ -715,3 +715,7 @@ The camera-following ridge in front of the sun (see "Crimson's sun sits behind a
 ## 2026-11-27 — Crimson's far valley waves become one swell at the sun's base
 
 The stacked bands under the sun were the music-driven valley waves: launched far ahead, they are thin slivers while the floor is seen edge-on, and several stack in dense passages. The waves now fade in with distance, and each launch briefly swells the existing sun-base glow, so the bass still reads at the horizon as one soft pulse (owner option b). Launches are unchanged, so the music mapping is the same. Measurement showed the waves never visibly reached the near floor even before, so their travelling fronts are now only briefly visible mid-distance. Making them roll visibly toward the camera would be separate tuning.
+
+## 2026-11-27 — Lavender's layers separate with horizontal mist at each foot
+
+The reference separates its ranges with pale mist at the foot of each layer. Lavender's ridges were flat tones meeting with hard edges, and its only valley mist was music-driven and faint. A steady mist now rises from each ridge's own base line and fades upward, stronger on farther ridges and absent on the front one, with the nearer ridges hiding what lies below their outlines. Measuring from the nearer ridge's outline was tried first; on the steep, jagged flanks it drew vertical columns. Sky and ridges dither, as in Crimson, so the pastel gradients and the mist don't band.

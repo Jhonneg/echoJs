@@ -47,3 +47,19 @@ test('context is copied during the single borrowed MI read, clamped and invalida
  updateLavenderResponse(r,reader,1/60,2,1,false)
  assert.deepEqual(r.context,{intensity:0,activity:0,brightness:0,brightnessValid:false})
 })
+
+test('layer mist: farther ridges get more, the frontmost none, fading upward from each base', async () => {
+  const { LAYER_MIST, layerMist, atmosphereRidge } = await import('../src/scenes/lavender-peaks/atmosphere.ts')
+  const { ridges } = await import('../src/scenes/lavender-peaks/terrain.ts')
+  assert.equal(LAYER_MIST.strength.length, ridges.length)
+  for (let i = 1; i < LAYER_MIST.strength.length; i++) assert.ok(LAYER_MIST.strength[i] < LAYER_MIST.strength[i - 1], 'less mist on nearer ridges')
+  assert.equal(layerMist(ridges.length - 1, 0), 0, 'the frontmost ridge has no mist')
+  for (let i = 0; i < ridges.length - 1; i++) {
+    assert.equal(layerMist(i, 0), LAYER_MIST.strength[i], 'full at the base band')
+    let previous = Infinity
+    for (let above = 0; above <= 5; above += 0.25) { const m = layerMist(i, above); assert.ok(m <= previous && m >= 0); previous = m }
+    assert.ok(layerMist(i, 4) < LAYER_MIST.strength[i] * 0.1, 'mostly gone a few units up')
+  }
+  assert.equal(layerMist(0, Number.NaN), 0)
+  assert.ok(atmosphereRidge.includes('layerMistColor'), 'the ridge shader applies the mist')
+})

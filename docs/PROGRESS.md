@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Lavender Peaks banding fix and layer mist — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+
+- An owner-requested review of Lavender Peaks against its reference found mild sky banding and six art-direction gaps. The owner approved fixing the banding and adding mist between layers, option (b), like the reference. Sky and ridges now dither (`LavenderPeaksScene.tsx`). A steady pale mist lies in horizontal bands at each ridge's foot and fades upward: stronger on farther ridges, none on the front ridge (`atmosphere.ts`). The music-driven valley mist and all approved features are unchanged.
+- [Evidence](evidence/lavender-peaks/mist/README.md): per-ridge foot vs upper brightness now differs by 20–30 (before 7–12); front ridge unchanged; sky within 1 level, bands gone. Tuned from columns following steep flanks to horizontal bands. GPU noisy, no consistent change. PASS 362 tests (1 new), lint/typecheck/build, whitespace, `verify-lavender-corona-noise.mjs` and its assessment (committed evidence restored), APP02/APP03 (scope now ignores the Lavender folder; committed evidence restored).
+- Not tested: the owner's monitor, real songs. Remaining review items (ridge-edge detail, front-layer colour, wider warm light, optional corona softening and grain) are the owner's call. Stop for owner review; uncommitted.
+
 ## Owner review — CRIMSON APPROVED; NT23 LEFTOVERS SKIPPED — 2026-11-27
 
 - The owner reviewed Crimson Horizon in their own browser and answered "it looks good". That covers the passes since the review: defect fixes, sun glow, rim lines, darker values, foreground lines, mountain layers, ridge removal and glow band. The owner accepts the straight cut under the sun (review item 6 closed as accepted).

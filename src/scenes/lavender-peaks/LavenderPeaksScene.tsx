@@ -19,7 +19,10 @@ import './lavender-peaks.css'
 const vertex = `varying vec2 vPosition;
 void main() { vPosition = position.xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`
 
-const skyFragment = `varying vec2 vPosition;
+// The sky dithers its output (three.js's built-in dithering), so the pastel gradient doesn't band.
+const skyFragment = `#include <common>
+#include <dithering_pars_fragment>
+varying vec2 vPosition;
 uniform float sunPulse;
 ${coronaFragment}
 ${skyIllumination}
@@ -44,9 +47,13 @@ void main() {
   color = mix(color, vec3(1.0, 0.84, 0.76), coronaLight * coronaSkyMask(vPosition) * 0.16);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
+  #include <dithering_fragment>
 }`
 
-const ridgeFragment = `varying vec2 vPosition;
+// Ridges dither too: the layer mist adds smooth gradients that would otherwise band.
+const ridgeFragment = `#include <common>
+#include <dithering_pars_fragment>
+varying vec2 vPosition;
 uniform vec3 upperColor;
 uniform vec3 lowerColor;
 uniform float bottom;
@@ -79,6 +86,7 @@ void main() {
   color = illuminateTrace(color, vPosition);
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
+  #include <dithering_fragment>
 }`
 
 function RidgeLayer({ ridge, index, halfWidth, response, illumination, motion, profiles, traces, atmosphere }: {
@@ -133,7 +141,7 @@ function RidgeLayer({ ridge, index, halfWidth, response, illumination, motion, p
   return (
     <mesh position={[0, 0, ridge.z]}>
       <shapeGeometry args={[shape]} />
-      <shaderMaterial ref={material} vertexShader={vertex} fragmentShader={ridgeFragment} uniforms={uniforms} toneMapped={false} />
+      <shaderMaterial ref={material} vertexShader={vertex} fragmentShader={ridgeFragment} uniforms={uniforms} toneMapped={false} dithering />
     </mesh>
   )
 }
@@ -216,7 +224,7 @@ function Composition({ musicFeatures, reactivity, reducedMotion }: MotionProps) 
   }, -1)
   return <>
     <Framing />
-    <mesh position={[0, 0, -10]}><planeGeometry args={[skyWidth, skyHeight]} /><shaderMaterial ref={sky} uniforms={skyUniforms} vertexShader={vertex} fragmentShader={skyFragment} toneMapped={false} /></mesh>
+    <mesh position={[0, 0, -10]}><planeGeometry args={[skyWidth, skyHeight]} /><shaderMaterial ref={sky} uniforms={skyUniforms} vertexShader={vertex} fragmentShader={skyFragment} toneMapped={false} dithering /></mesh>
     {ridges.map((ridge, index) => <group key={index} ref={group => { groups.current[index] = group }}>
       <RidgeLayer ridge={ridge} index={index} halfWidth={halfWidth} response={response} illumination={illumination} motion={motion} profiles={profiles} traces={traces} atmosphere={atmosphere} />
     </group>)}

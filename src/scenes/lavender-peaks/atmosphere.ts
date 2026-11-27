@@ -38,10 +38,36 @@ vec3 atmosphereSkyColor(vec3 color, vec2 position) {
 }
 `
 
+// Layer-mist pass (owner option b): a steady pale mist lies in horizontal bands at the foot of each
+// layer and fades upward, so each farther layer dissolves into haze where the nearer ones cross it,
+// as in the reference. Measured from the ridge's own base line (following the nearer outline instead
+// drew tall columns up every steep flank). Farther layers get more (aerial perspective); the
+// frontmost ridge gets none. Strength per ridge, far to near:
+export const LAYER_MIST = { strength: [0.62, 0.56, 0.48, 0.4, 0.32, 0], height: 1.1, lift: 0.3 } as const
+// The mist at a ridge pixel `above` world units over the ridge's base line (mirrors the shader).
+export function layerMist(index: number, above: number) {
+  const strength = LAYER_MIST.strength[Math.round(index)] ?? 0
+  if (!(strength > 0) || !Number.isFinite(above)) return 0
+  return strength * Math.exp(-Math.max(above - LAYER_MIST.lift, 0) / LAYER_MIST.height)
+}
+const mistStrengthGlsl = LAYER_MIST.strength.map((s, i) => `ridgeIndex < ${i}.5 ? ${s.toFixed(3)} : `).join('') + '0.0'
+
 export const atmosphereRidge = `
 uniform float atmosphereDensity;
 uniform float atmosphereWarmth;
+vec3 layerMistColor(vec3 color, vec2 position) {
+  float strength = ${mistStrengthGlsl};
+  if (strength <= 0.0) return color;
+  float worldX = position.x + terrainOffset;
+  // The ridge's base line is bottom + 2.2 (see the ridge uniforms).
+  float above = position.y - (bottom + 2.2);
+  float mist = strength * exp(-max(above - ${LAYER_MIST.lift.toFixed(3)}, 0.0) / ${LAYER_MIST.height.toFixed(3)});
+  // Pale lavender, a touch warmer toward the sun.
+  vec3 mistColor = mix(vec3(0.91, 0.85, 0.95), vec3(0.99, 0.91, 0.90), exp(-pow((worldX - 1.6) / 6.0, 2.0)) * 0.5);
+  return mix(color, mistColor, mist);
+}
 vec3 atmosphereRidgeColor(vec3 color, vec2 position, float blend) {
+  color = layerMistColor(color, position);
   float depth = ridgeIndex / 5.0;
   // Distant softness against restrained lower foreground contrast.
   color = mix(color, vec3(0.87, 0.77, 0.90), atmosphereDensity * (1.0 - depth) * 0.055);
