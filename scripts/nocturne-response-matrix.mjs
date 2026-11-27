@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict'
 import {emptySixBands} from '../src/audio/signal.ts'
 import {createMusicFeatureStore} from '../src/audio/musicFeatures.ts'
-import {createNocturneVisualState,updateNocturneVisualState,applyNocturneVisualState,NOCTURNE_VISUAL_CHANNELS} from '../src/scenes/nocturne/visualState.ts'
+import {createNocturneVisualState,updateNocturneVisualState,applyNocturneVisualState,NOCTURNE_VISUAL_CHANNELS,GATE_FLOOR} from '../src/scenes/nocturne/visualState.ts'
 const manual={magenta:.2,cyan:.3,cyanPanel:.4,violet:.5}
 function fixture(hz,rows){
  const store=createMusicFeatureStore(),state=createNocturneVisualState()
@@ -35,7 +35,7 @@ export function runNocturneResponseMatrix({trace=false}={}){
  const rows=trace?[]:null,cases=[]
  function check(name,hz,expected,run){const f=fixture(hz,rows);f.label(name);const observed=run(f);cases.push({name,hz,expected,observed,status:'passed'})}
  for(const hz of [30,60,120]){
-  check('silence',hz,'Every fixture and atmospheric level0',f=>{f.advance(2);assert.ok(Object.values(f.state.channels).every(x=>x.level===0));assert.equal(f.state.atmosphere.level,0);return f.snapshot()})
+  check('silence',hz,'Every fixture level0; atmosphere at the NT18 gate floor',f=>{f.advance(2);assert.ok(Object.values(f.state.channels).every(x=>x.level===0));assert.equal(f.state.atmosphere.level,GATE_FLOOR);return f.snapshot()})
   for(const [name,band,allowed]of [['bass', 'bass',['magentaMain','magentaSecondary']],['low-mid','lowMids',['cyanWindows','cyanDetails']],['high-mid','highMids',['cyanWindows','cyanPanel']],['air','air',['violet','violetSecondary']]]){
    check('sustain-'+name,hz,'Only own sustained roles; no invented accents or bridge travel',f=>{f.energy({[band]:.2});f.advance(4);for(const [n,x]of Object.entries(f.state.channels)){if(allowed.includes(n))assert.ok(x.level>.01,n);else assert.equal(x.level,0,n);assert.equal(x.accent,0,n)}return f.snapshot()})
   }

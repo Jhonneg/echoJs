@@ -1,7 +1,7 @@
 // NT16: glow around the lights, streaked wet-floor reflections and gate haze. Pure settings and
 // helpers (testable without three.js). Everything here follows levels Nocturne already
-// computes (visualState.ts); nothing adds a new music mapping. With all lights off (idle in
-// silence) the glow and haze are exactly zero, so the approved resting view is unchanged.
+// computes (visualState.ts); nothing adds a new music mapping. In silence only the NT18 gate
+// floor is lit: the gate glows faintly and the fixture glows and haze stay at zero.
 import type { NocturneVisualState } from './visualState.ts'
 
 // --- Glow -------------------------------------------------------------------------------
@@ -20,10 +20,12 @@ export const GLOW = {
 // so the black architecture stays black, as on the reference board.
 export const GLOW_BLUR_WEIGHTS = [1, 0.55, 0.25, 0.1, 0.04]
 // Per-source glow strength (1 = full). The main right magenta panel is large and close, so
-// its full glow read as glare (owner feedback); it glows at a reduced level.
-export const GLOW_SOURCE_GAIN: Record<string, number> = { 'nocturne-magenta': 0.55 }
+// its full glow read as glare (owner feedback); it glows at a reduced level. NT18: the cyan window
+// panes glow less too, so their glow doesn't fill the mullions and merge each grid into one slab.
+export const GLOW_SOURCE_GAIN: Record<string, number> = { 'nocturne-magenta': 0.55, 'nocturne-cyan': 0.6 }
 // How lit the scene is (highest fixture, bridge or gate level), written by LightingDriver each
-// frame. With everything off the glow passes are skipped entirely (no cost at idle).
+// frame. With everything off the glow passes are skipped entirely; since NT18 the gate floor
+// keeps them running at idle.
 export const glowActivity = { level: 0 }
 export const GLOW_IDLE = 1e-3
 export function sceneLightLevel(state: Pick<NocturneVisualState, 'atmosphere' | 'channels' | 'bridge'>) {

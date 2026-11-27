@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 import { emptySixBands } from '../src/audio/signal.ts'
-import { createNocturneVisualState, updateNocturneVisualState } from '../src/scenes/nocturne/visualState.ts'
+import { GATE_FLOOR, createNocturneVisualState, updateNocturneVisualState } from '../src/scenes/nocturne/visualState.ts'
 import {
   GLOW, GLOW_BLUR_WEIGHTS, GLOW_IDLE, GLOW_SOURCE_GAIN, GLOW_THRESHOLD, HAZE, STREAK, hazeLevels, isGlowSource, sceneLightLevel, streakGlsl, streakWeights,
 } from '../src/scenes/nocturne/effects.ts'
@@ -21,10 +21,14 @@ function run(seconds, six = {}, mode = 'audio') {
   return state
 }
 
-test('NT16: in silence nothing glows and there is no haze, so the approved idle view is unchanged', () => {
+test('NT16/NT18: in silence only the gate floor glows; the fixtures and their haze stay off', () => {
   const state = run(3)
-  assert.ok(sceneLightLevel(state) < GLOW_IDLE, `scene light ${sceneLightLevel(state)}`)
-  for (const [name, level] of Object.entries(hazeLevels(state))) assert.equal(level, 0, name)
+  // NT18 replaced the fully dark idle with a faint, constant gate glow (owner-approved).
+  assert.equal(sceneLightLevel(state), GATE_FLOOR)
+  assert.ok(GATE_FLOOR >= GLOW_IDLE)
+  const haze = hazeLevels(state)
+  assert.equal(haze.gate, GATE_FLOOR)
+  for (const name of ['magenta', 'cyan', 'bridge']) assert.equal(haze[name], 0, name)
   assert.equal(sceneLightLevel(createNocturneVisualState()), 0)
 })
 
@@ -52,7 +56,7 @@ test('NT16 glow: only light sources glow, close to each light, and cheaper on Lo
   for (let i = 1; i < GLOW_BLUR_WEIGHTS.length; i++) assert.ok(GLOW_BLUR_WEIGHTS[i] < GLOW_BLUR_WEIGHTS[i - 1], 'wider blurs weigh less')
   assert.ok(GLOW_BLUR_WEIGHTS.at(-1) <= 0.05)
   // The main magenta panel glows at a reduced level (owner: its glare was too high).
-  assert.ok(GLOW_SOURCE_GAIN['nocturne-magenta'] > 0 && GLOW_SOURCE_GAIN['nocturne-magenta'] < 1)
+  for (const gain of Object.values(GLOW_SOURCE_GAIN)) assert.ok(gain > 0 && gain < 1)
 })
 
 test('NT16 streaks: normalised, symmetric weights; fewer taps on Low', () => {

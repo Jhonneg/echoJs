@@ -54,6 +54,15 @@ export function calibrateNocturneLevel(level: number) {
 }
 
 const audioSpillGains: Partial<Record<NocturneVisualChannel, number>> = { magentaMain: 1.5, cyanWindows: 2, cyanDetails: 2 }
+// NT18 (owner-approved change to the NT13 balance): in Audio the cyan window grids glow brighter,
+// capped just below where the untonemapped cyan clips (1.3 x level x blue > 1), so near panes keep
+// their shading and grid. A level already above the cap is left as it was. Only their own emission
+// rises: their spill, timing and response are unchanged.
+export const CYAN_WINDOW_EMISSION_GAIN = 2
+export const CYAN_WINDOW_EMISSION_CAP = .7
+// NT18: the gate keeps a faint, constant glow in every mode, so the resting view has a lit
+// focal point. The music raises it exactly as before; the colour is the gate's usual cool mix.
+export const GATE_FLOOR = .08
 const violetChannels = ['violet', 'violetSecondary'] as const
 export function updateNocturneVisualState(state: NocturneVisualState, reader: MusicFeatureReader,
   mode: NocturneLightingMode, manual: NocturneLighting, reactivity: number, reducedMotion: boolean,
@@ -101,8 +110,9 @@ export function updateNocturneVisualState(state: NocturneVisualState, reader: Mu
     const body = name === 'magentaSecondary' ? state.magenta.secondaryBody : name === 'cyanWindows' ? state.midrange.windowBody : state.midrange.detailBody
     let total = 0, accentTotal = 0
     for (let i = 0; i < SPATIAL_COUNTS[name]; i++) {
-      values[i] = mode === 'manual' ? output.level : calibrateNocturneLevel(body + accents[i])
-      total += values[i]; accentTotal += accents[i]
+      const level = mode === 'manual' ? output.level : calibrateNocturneLevel(body + accents[i])
+      values[i] = mode !== 'manual' && name === 'cyanWindows' ? Math.max(level, Math.min(CYAN_WINDOW_EMISSION_CAP, level * CYAN_WINDOW_EMISSION_GAIN)) : level
+      total += level; accentTotal += accents[i]
     }
     if (mode !== 'manual') output.level = total / values.length
     output.accent = accentTotal / values.length
@@ -123,10 +133,10 @@ export function updateNocturneVisualState(state: NocturneVisualState, reader: Mu
   const atmosphere = state.atmosphere, manualMode = mode === 'manual'
   updateAtmosphereResponse(state.context, view, deltaSeconds, nowSeconds, reactivity, reducedMotion, manualMode)
   const { level, density, tint } = state.context
-  atmosphere.level = level
-  atmosphere.magenta = manualMode ? state.broad.magenta * .24 : level * (.24 - .04 * tint)
-  atmosphere.cyan = manualMode ? state.broad.cyan * .85 : level * (.85 + .03 * tint)
-  atmosphere.violet = manualMode ? state.broad.violet * .16 : level * (.16 + .04 * tint)
+  atmosphere.level = Math.max(level, GATE_FLOOR)
+  atmosphere.magenta = Math.max(GATE_FLOOR * .24, manualMode ? state.broad.magenta * .24 : level * (.24 - .04 * tint))
+  atmosphere.cyan = Math.max(GATE_FLOOR * .85, manualMode ? state.broad.cyan * .85 : level * (.85 + .03 * tint))
+  atmosphere.violet = Math.max(GATE_FLOOR * .16, manualMode ? state.broad.violet * .16 : level * (.16 + .04 * tint))
   atmosphere.fogNear = 17
   atmosphere.fogFar = 74 - 8 * density
   state.environment.depthLight = manualMode ? .65 * Math.max(clampSignal(manual.magenta), clampSignal(manual.cyan), clampSignal(manual.violet)) : level

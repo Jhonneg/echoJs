@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 import { emptySixBands } from '../src/audio/signal.ts'
 import {
-  calibrateNocturneLevel, NOCTURNE_VISUAL_CHANNELS, createNocturneVisualState, updateNocturneVisualState, applyNocturneVisualState,
+  calibrateNocturneLevel, NOCTURNE_VISUAL_CHANNELS, createNocturneVisualState, updateNocturneVisualState, applyNocturneVisualState, GATE_FLOOR,
 } from '../src/scenes/nocturne/visualState.ts'
 
 const manual = { magenta: .2, cyan: .4, cyanPanel: .6, violet: .8 }
@@ -63,7 +63,7 @@ test('Manual preview shares final outputs and atmosphere weights without corrupt
   const viewBefore=JSON.stringify(f.store.reader.read())
   updateNocturneVisualState(f.state,f.reader,'manual',manual,0,false,1/60,f.input.updatedAtSeconds)
   assert.deepEqual(levels(f.state),[.2,.2,.4,.4,.6,.8,.8,.2])
-  assert.deepEqual(f.state.atmosphere,{level:0,magenta:.2*.24,cyan:.4*.85,violet:.8*.16,fogNear:17,fogFar:74})
+  assert.deepEqual(f.state.atmosphere,{level:GATE_FLOOR,magenta:.2*.24,cyan:.4*.85,violet:.8*.16,fogNear:17,fogFar:74})
   assert.equal(JSON.stringify(f.store.reader.read()),viewBefore)
   f.event();f.step({mode:'manual'});f.step()
   assert.equal(f.state.panel.accent,0);assert.equal(f.state.broad.accents.cyan,0)
@@ -79,7 +79,7 @@ test('sustain, qualified accents and atmosphere remain separate',()=>{
   f.advance(3)
   assert.equal(f.state.channels.cyanPanel.accent,0)
   assert.equal(f.state.channels.cyanWindows.accent,0)
-  assert.equal(f.state.atmosphere.level,0)
+  assert.equal(f.state.atmosphere.level,GATE_FLOOR)
   f.input.energy.mid=0;f.input.energy.six.highMids=0;f.input.context.intensity=1;f.advance(5)
   assert.deepEqual(levels(f.state),NOCTURNE_VISUAL_CHANNELS.map(()=>0))
   assert.ok(f.state.atmosphere.level>.59&&f.state.atmosphere.level<.65)

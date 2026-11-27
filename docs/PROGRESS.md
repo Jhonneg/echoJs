@@ -1,5 +1,13 @@
 # ECHO — current checkpoint
 
+## Nocturne NT18 — OWNER APPROVED ("approved", after the review fix) — 2026-11-27
+
+- Owner approved the NT18 plan (changes NT13's colour balance and resting view) and chose that the gate floor also shows in Manual "All off". NT17 committed as ac0c90c (not pushed).
+- `visualState.ts`: in Audio the cyan window grids' own glow is 2×, capped at 0.7; spill, timing and Manual levels unchanged. A constant gate floor (`GATE_FLOOR` 0.08, the gate's cool mix) in every mode; music lifts it as before. `ArchitectureDetails.tsx`: window panes black, so magenta spill no longer tints them. **Deviation:** the floor lives in `visualState.ts`, not `LightingDriver.tsx`/`effects.ts` as planned (same behaviour).
+- **Review fix (owner request):** the near upper panes clipped to flat slabs and their glow filled the mullions. The window boost is now capped at 0.7 (below clipping) and the windows' NT16 glow is at 60%; the grid is back (pane 255 → 213), at the cost of a smaller cyan gain by area. An 80% glow trial clipped again.
+- [Evidence](evidence/nocturne/nt18/README.md): idle gate region 5.7 → 15.3 luma with halo and floor reflection; panes much brighter but cyan area only clearly up in the build (3.01% → 5.89%); magenta unchanged; Manual levels unchanged (cyan area 27.8% → 25.0% from the lower window glow). GPU idle Low about +1 ms (glow passes now run at idle), Standard within noise; music unchanged within noise. PASS 339 tests (3 new; four dark-idle assertions updated to the floor), lint/typecheck/build, whitespace, `verify-nocturne-nt18.mjs`, APP02/APP03 (committed evidence restored).
+- Owner approved NT18 with the review fix and it was committed at the owner's request (not pushed). Still not tested: native look, real songs, owner GPU (NT23). NT19 (light rain) not started; needs a plan and owner approval.
+
 ## Nocturne NT17 — OWNER APPROVED ("looks good") — 2026-11-27
 
 - Before NT17: the owner's commit e42a6e9 had left out NT16's new files (`Glow.tsx`, `effects.ts`, its test, script and evidence). At the owner's request they were committed unchanged as 426d92f (not pushed).

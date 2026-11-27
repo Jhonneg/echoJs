@@ -145,10 +145,11 @@ function Boxes({ finish }: { finish: Finish }) {
     mesh.current.computeBoundingBox()
     mesh.current.computeBoundingSphere()
   }, [items, spatial, finish])
+  // NT18: window panes are black under their glow, so magenta spill no longer tints them pink.
   const group = finish === 'magenta' || finish === 'cyan' || finish === 'violet' ? finish : finish === 'cyanPanel' || finish === 'cyanDetails' ? 'cyan' : finish === 'magentaSecondary' || finish.startsWith('bridge') ? 'magenta' : finish === 'violetSecondary' ? 'violet' : null
   return <instancedMesh name={`nocturne-${finish}`} ref={mesh} args={[undefined, undefined, items.length]}>
     <boxGeometry args={[1, 1, 1]} />
-    <meshStandardMaterial {...finishes[finish]} {...(spatial ? { onBeforeCompile: spatialFixtureShader, customProgramCacheKey: spatialShaderKey } : {})} color={group ? '#070a0f' : finishes[finish].color}
+    <meshStandardMaterial {...finishes[finish]} {...(spatial ? { onBeforeCompile: spatialFixtureShader, customProgramCacheKey: spatialShaderKey } : {})} color={finish === 'cyan' ? '#000000' : group ? '#070a0f' : finishes[finish].color}
       metalness={group ? 0 : finishes[finish].metalness} roughness={group ? 0.95 : finishes[finish].roughness} emissive={group ? NOCTURNE_LIGHT_COLORS[group] : finish === 'steel' ? NOCTURNE_LIGHT_COLORS.magenta : '#000000'}
       emissiveIntensity={0} toneMapped={!group} />
   </instancedMesh>
