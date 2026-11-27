@@ -40,7 +40,7 @@ export function Glow({ quality }: { quality: GraphicsQuality }) {
     parts.bloom.setSize(w, h)
   }, [parts, settings, width, height, dpr])
   // Light sources also render on the glow layer (their materials and per-fixture levels
-  // unchanged). The wet floor, additive haze and NT19 rain stay out of the glow pass.
+  // unchanged). The wet floor, additive haze, NT19 rain and NT21 steam stay out of the glow pass.
   useLayoutEffect(() => {
     const marked: Object3D[] = []
     scene.traverse(object => {
@@ -59,7 +59,7 @@ export function Glow({ quality }: { quality: GraphicsQuality }) {
     // 2. Light sources only, small: first everything black (occluders), then the sources on top.
     const hidden: Object3D[] = []
     scene.traverse(object => {
-      if (object.visible && (object.name === 'nocturne-wet-ground' || object.name.startsWith('nocturne-haze') || object.name === 'nocturne-gate-haze' || object.name === 'nocturne-rain')) {
+      if (object.visible && (object.name === 'nocturne-wet-ground' || object.name.startsWith('nocturne-haze') || object.name === 'nocturne-gate-haze' || object.name === 'nocturne-rain' || object.name === 'nocturne-steam')) {
         object.visible = false; hidden.push(object)
       }
     })

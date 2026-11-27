@@ -13,6 +13,7 @@ import { ArchitectureDetails } from './ArchitectureDetails'
 import { Glow } from './Glow'
 import { Skyline } from './Skyline'
 import { Rain } from './Rain'
+import { Steam } from './Steam'
 import './nocturne.css'
 
 // Metres; negative Z runs down the alley. Keep composition tuning local to Nocturne.
@@ -103,6 +104,7 @@ export default function NocturneScene({ musicFeatures, quality, lighting, lighti
         <Atmosphere />
         <WetGround quality={quality} />
         <Rain quality={quality} reducedMotion={reducedMotion} />
+        <Steam quality={quality} reducedMotion={reducedMotion} />
         <group name="nocturne-light-spill">
           <pointLight name="magenta-fixture-spill" position={[2.1, 2.8, -3]} color={NOCTURNE_LIGHT_COLORS.magenta} intensity={50} distance={13} decay={2} />
           <pointLight name="magenta-bridge-spill" position={[0, 3.9, -7.1]} color={NOCTURNE_LIGHT_COLORS.magenta} intensity={40} distance={13} decay={2} />

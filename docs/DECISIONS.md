@@ -667,3 +667,7 @@ NT19 adds light rain. One instanced mesh of thin quads falls on the GPU from a t
 ## 2026-11-27 — Nocturne's puddle ripples reuse the magenta response's accepted bass hits
 
 NT20 adds ripples without a new music mapping. A ring starts only on a bass hit that the main magenta response has already accepted, so it is gated exactly like the approved bass pulse (freshness, Reactivity, Manual, reduced motion) and lands with it. Two findings shaped it. Weak bass-line onsets also pass that gate and crowded the kicks' rings out of the small pool, so rings need at least 35% of full strength. The floor beyond about 15 m is seen too flat for a ring to read, so rings start only on the near reflections of the wall fixtures, where they visibly bend the streaks. The floor shader skips the ring loop when none is active.
+
+## 2026-11-27 — Nocturne's steam is lit like the rain and freezes with reduced motion
+
+NT21 adds three slow plumes at existing vents, each beside a different fixture, so they take its colour. They use the rain's approach (their own shader summing the spill lights and gate), so the light-gathering code moved into a shared `sceneLights.ts` rather than being copied. The noise lattice repeats every 64 cells and the upward scroll wraps on that period, so long sessions stay precise without a seam. The owner chose to freeze the plumes with reduced motion: slow steam held still isn't motion, and the scene keeps its atmosphere.

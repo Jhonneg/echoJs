@@ -1,11 +1,13 @@
 import { useLayoutEffect, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { AdditiveBlending, Color, Float32BufferAttribute, InstancedBufferAttribute, InstancedBufferGeometry, Mesh, MeshStandardMaterial, PointLight, ShaderMaterial, Vector3 } from 'three'
+import { AdditiveBlending, Float32BufferAttribute, InstancedBufferAttribute, InstancedBufferGeometry, Mesh, ShaderMaterial } from 'three'
 import type { GraphicsQuality } from '../../engine/quality'
 import { RAIN, rainDrops, rainVisible } from './rain'
+import { createSceneLightUniforms, findSceneLights, sceneLightGlsl, updateSceneLightUniforms, type SceneLightUniforms, type SceneLights } from './sceneLights'
 
 // NT19 rain (see rain.ts). One instanced quad per streak; the fall is computed on the GPU from
-// one time uniform. Each streak is lit by the lights near it, mirroring rainLightFalloff.
+// one time uniform. Each streak is lit by the lights near it (sceneLights.ts, the same falloff
+// as rainLightFalloff).
 const vertex = `
   attribute vec4 drop; // x, starting height, z, speed
   attribute float dropLength;
@@ -28,18 +30,11 @@ const vertex = `
     gl_Position = projectionMatrix * viewMatrix * vec4(world, 1.0);
   }`
 const fragment = `
-  uniform vec3 lightPosition[${RAIN.maxLights}];
-  uniform vec3 lightColor[${RAIN.maxLights}]; // colour x current intensity
-  uniform float lightRange[${RAIN.maxLights}];
+  ${sceneLightGlsl(RAIN.maxLights, RAIN.lightGain)}
   varying vec3 vWorld;
   varying vec2 vQuad;
   void main() {
-    vec3 lit = vec3(${RAIN.base.toFixed(4)}, ${(RAIN.base * 1.15).toFixed(4)}, ${(RAIN.base * 1.35).toFixed(4)});
-    for (int i = 0; i < ${RAIN.maxLights}; i++) {
-      float d = distance(vWorld, lightPosition[i]);
-      float cut = max(0.0, 1.0 - pow(d / max(lightRange[i], 1e-3), 4.0));
-      lit += lightColor[i] * ${RAIN.lightGain.toFixed(5)} * cut * cut / (1.0 + d * d);
-    }
+    vec3 lit = vec3(${RAIN.base.toFixed(4)}, ${(RAIN.base * 1.15).toFixed(4)}, ${(RAIN.base * 1.35).toFixed(4)}) + sceneLight(vWorld);
     // Brightest at the head, fading along the tail and toward the streak's edges.
     float alpha = (1.0 - vQuad.y) * (1.0 - smoothstep(0.2, 0.5, abs(vQuad.x)));
     float fade = 1.0 - smoothstep(${RAIN.fade.start.toFixed(1)}, ${RAIN.fade.end.toFixed(1)}, distance(cameraPosition, vWorld));
@@ -51,7 +46,7 @@ const fragment = `
 export function Rain({ quality, reducedMotion }: { quality: GraphicsQuality, reducedMotion: boolean }) {
   const scene = useThree(state => state.scene), camera = useThree(state => state.camera)
   const rain = useRef<Mesh | null>(null)
-  const lights = useRef<{ points: PointLight[], gate: MeshStandardMaterial | null }>({ points: [], gate: null })
+  const lights = useRef<SceneLights>({ points: [], gate: null })
   // Allocate in the effect so StrictMode setup/cleanup owns every GPU resource (as WetGround does).
   // The streak count depends on quality, so a quality change rebuilds the rain.
   useLayoutEffect(() => {
@@ -66,9 +61,7 @@ export function Rain({ quality, reducedMotion }: { quality: GraphicsQuality, red
     const material = new ShaderMaterial({
       uniforms: {
         time: { value: 0 },
-        lightPosition: { value: Array.from({ length: RAIN.maxLights }, () => new Vector3()) },
-        lightColor: { value: Array.from({ length: RAIN.maxLights }, () => new Color(0, 0, 0)) },
-        lightRange: { value: new Array<number>(RAIN.maxLights).fill(0) },
+        ...createSceneLightUniforms(RAIN.maxLights),
       },
       vertexShader: vertex, fragmentShader: fragment,
       blending: AdditiveBlending, transparent: true, depthWrite: false,
@@ -81,12 +74,7 @@ export function Rain({ quality, reducedMotion }: { quality: GraphicsQuality, red
     scene.add(mesh)
     camera.layers.enable(RAIN.layer)
     rain.current = mesh
-    const points: PointLight[] = []
-    scene.getObjectByName('nocturne-light-spill')?.traverse(object => { if (object instanceof PointLight) points.push(object) })
-    lights.current = {
-      points: points.slice(0, RAIN.maxLights - 1),
-      gate: ((scene.getObjectByName('nocturne-gate-light') as Mesh | undefined)?.material as MeshStandardMaterial | undefined) ?? null,
-    }
+    lights.current = findSceneLights(scene, RAIN.maxLights)
     return () => {
       rain.current = null
       scene.remove(mesh)
@@ -102,17 +90,7 @@ export function Rain({ quality, reducedMotion }: { quality: GraphicsQuality, red
     if (!mesh.visible) return
     const uniforms = (mesh.material as ShaderMaterial).uniforms
     uniforms.time.value = clock.elapsedTime
-    const positions = uniforms.lightPosition.value as Vector3[], colors = uniforms.lightColor.value as Color[], ranges = uniforms.lightRange.value as number[]
-    const { points, gate } = lights.current
-    points.forEach((light, i) => {
-      light.getWorldPosition(positions[i])
-      colors[i].copy(light.color).multiplyScalar(light.intensity)
-      ranges[i] = light.distance
-    })
-    const g = points.length
-    positions[g].set(...RAIN.gate.position)
-    if (gate) colors[g].copy(gate.emissive).multiplyScalar(RAIN.gate.intensity)
-    ranges[g] = RAIN.gate.distance
+    updateSceneLightUniforms(uniforms as unknown as SceneLightUniforms, lights.current, RAIN.gate)
   })
   return null
 }

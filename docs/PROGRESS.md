@@ -1,5 +1,12 @@
 # ECHO — current checkpoint
 
+## Nocturne NT21 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- NT20 committed at the owner's request (1858951, not pushed). Owner approved the NT21 plan and chose that plumes **freeze** with reduced motion. Three slow plumes from existing wall vents (z −8.9 left by the cyan panel, −20.9 right and −28.9 left by magenta fixtures), lit by the nearby lights (`steam.ts`, `Steam.tsx`, new). Out of the reflection and glow passes. No new music mapping.
+- The rain's light gathering moved into the new shared `sceneLights.ts` (same math).
+- [Evidence](evidence/nocturne/nt21/README.md): visible drift in Manual all-on (two frames 4 s apart differ); reduced-motion frames 3 s apart pixel-identical (frozen). GPU within noise (Standard idle perhaps +0.2 ms). PASS 350 tests (3 new), lint/typecheck/build, whitespace, `verify-nocturne-nt21.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: drift in a native window, real songs. Committed at the owner's request (not pushed); no explicit visual verdict recorded. NT22 plan requested next.
+
 ## Nocturne NT20 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - Owner approved the NT20 plan. Puddle ripples: bass hits already accepted by the magenta response (at least 35% of full strength) start 2–3 rings at near floor spots on the fixtures' reflections (`ripples.ts`, new; `visualState.ts`, `LightingDriver.tsx`). The floor shader bends the reflection around each ring, strongest in puddles (`WetGround.tsx`). None in Manual, at Reactivity 0 or with reduced motion; no new music mapping.
