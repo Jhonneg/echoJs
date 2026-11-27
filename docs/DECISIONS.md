@@ -683,3 +683,7 @@ NT23 found that the debug protocol's forced page freeze leaves a headless page h
 ## 2026-11-27 — Crimson shaders guard pow() inputs and dither the sky
 
 The dotted lines on Crimson's valley floor were NaN pixels: `pow()` of an interpolated feature that can dip just below zero. Both uses are now clamped, and a unit test requires every `pow()` in the terrain shader to take a guarded input. The sky's dark gradient banded in 8-bit output, so it uses three.js's built-in dithering (which needs the `<common>` chunk for `rand()`). Both fixes leave the approved look unchanged apart from the defects.
+
+## 2026-11-27 — Crimson's sun is a clear focal point at rest
+
+The owner chose a brighter idle sun (20% of full, from C04's 5.5%) plus a dark-red sky halo and a hot magenta glow on the far slopes at the sun's base, after reviewing the scene against its reference. Both glows follow the existing sun activity, so the music mapping is unchanged. The valley-base glow is applied after the terrain's fade into the night sky, because the slopes around the sun's base are about 100 m away, where that fade would hide it; it is masked to far terrain so the foreground stays dark.

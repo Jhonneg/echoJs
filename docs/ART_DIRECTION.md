@@ -69,6 +69,8 @@ Crimson gray-fill correction (2026-11-16): owner rejected the cool brightness li
 
 Owner acceptance (2026-11-16): “looks good now” confirms the corrected burgundy/crimson terrain palette and readability. Retain this treatment as the current visual baseline.
 
+Crimson sun glow (2026-11-27): owner chose a clearer resting sun. At rest the sun shows at 20% of its full colour (superseding C04's faint 5.5%), with a soft dark-red sky halo and a hot magenta glow on the far slopes around its base, both growing with the existing sun activity. The foreground stays dark; the sun remains the brightest shape.
+
 ## Nocturne — Industrial Crossing N01
 
 Owner-supplied Industrial Crossing board guides a genuine 3D narrow industrial alley with a stationary perspective view. N01 uses a 6 m alley, 52 m depth, 14–22 m building masses, camera height 1.6 m/FOV 50°, crossing underside clearance 4.5 m. Dim neutral fill is an approved temporary composition aid. Compare bridge prominence, converging walls, foreground road and distant gate before detail or reactive lighting. Later phases introduce magenta fixtures, cyan windows, violet accents, corresponding wet-floor reflections and atmospheric depth. No camera travel, pointer motion or bass roll.

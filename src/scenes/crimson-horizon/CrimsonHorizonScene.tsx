@@ -26,7 +26,8 @@ ${nightshade}
 void main() {
   float gradient = clamp(vLocal.y / 18.4 + 0.5, 0.0, 1.0);
   vec3 fullSun = mix(vec3(0.82, 0.055, 0.27), vec3(1.0, 0.34, 0.61), gradient);
-  vec3 dimSun = mix(nightColor(normalize(vWorld - cameraPosition)), fullSun, 0.055);
+  // Sun glow pass (owner option b): at rest the sun is a clear soft disc (was 5.5% of full).
+  vec3 dimSun = mix(nightColor(normalize(vWorld - cameraPosition)), fullSun, 0.2);
   gl_FragColor = vec4(mix(dimSun, fullSun, activity) * (1.0 + pulse * 0.2), 1.0);
   #include <colorspace_fragment>
 }`
@@ -41,6 +42,10 @@ void main() {
   float radius = length(vLocal.xy);
   float ringDistance = (radius - coronaRadius - (1.0 - corona) * 1.4) / .4;
   float ring = exp(-ringDistance * ringDistance) * corona * .42;
+  // Sun glow pass: a soft dark-red halo just outside the disc (radius about 10 here), present at
+  // rest and growing with the existing sun activity.
+  float halo = exp(-pow(max(radius - 9.5, 0.0) / 7.0, 2.0)) * (0.08 + glowActivity * 0.12);
+  glow += halo;
   gl_FragColor = vec4(mix(vec3(0.65, 0.012, 0.09), vec3(1.0, .2, .4), ring / max(.001, glow + ring)), glow + ring + exp(-ringDistance * ringDistance) * airAccent * .12 * (0.5 + 0.5 * sin(atan(vLocal.y, vLocal.x) * 43.0)));
   #include <colorspace_fragment>
 }`

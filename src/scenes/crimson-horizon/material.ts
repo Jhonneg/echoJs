@@ -132,6 +132,14 @@ void main() {
   color += vec3(1.0, .35, .58) * glint * presenceAccent * musicWeight * 3.5;
   // Full nightshade fade is reached before the streamed window's far boundary.
   color = mix(color, atmosphericNight(ray, atmosphereDensity, atmosphereWarmth), smoothstep(70.0, 108.0, depth));
+  // Sun glow pass: far slopes seen just around the sun's base catch a hot magenta light (after the
+  // night fade, which would otherwise hide it). A wide, flat ellipse around the base in view
+  // direction; present at rest, stronger with the sun's activity; never on the foreground.
+  vec3 toBase = normalize(sunPosition - vec3(0.0, 8.5, 0.0) - cameraPosition);
+  vec2 offset = vec2(ray.x / -ray.z - toBase.x / -toBase.z, ray.y / -ray.z - toBase.y / -toBase.z);
+  float baseGlow = exp(-(offset.x * offset.x / 0.02 + offset.y * offset.y / 0.002)) * step(ray.z, -0.01)
+    * smoothstep(45.0, 85.0, depth) * (0.12 + activity * 0.5);
+  color += vec3(0.9, 0.06, 0.3) * baseGlow;
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>
 }`

@@ -1,12 +1,18 @@
 # ECHO — current checkpoint
 
-## Crimson Horizon defects — FIXED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+## Crimson Horizon sun glow — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- Owner approved the sun-glow plan (review item 3) and chose option (b). The idle sun is 20% of full (was 5.5%, revising C04); a dark-red sky halo, present at rest and growing with the sun's activity (`CrimsonHorizonScene.tsx`); a hot magenta glow on the far slopes around the sun's base, applied after the night fade, never on the foreground (`material.ts`). Music mapping unchanged.
+- [Evidence](evidence/crimson/sun-glow/README.md): sun region at idle 39 → 56, drop 92 → 97; sky and ground unchanged elsewhere; GPU within noise. Comparison with the reference included. PASS 356 tests, lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: native look, real songs. Committed at the owner's request (not pushed); no explicit visual verdict recorded. Rim-line plan requested next. Remaining review items (darker values, rim lines, flat sun cut, foreground, depth layers, drop glow bands) are the owner's call.
+
+## Crimson Horizon defects — COMMITTED AT OWNER REQUEST — 2026-11-27
 
 - An owner-requested review of Crimson Horizon against its reference found two defects, plus seven art-direction gaps (unaddressed; owner's call). The owner approved fixing the two defects.
 - **Dotted floor lines:** `pow()` on the bank value, which interpolation can push just below 0, gave NaN pixels. It is now clamped in both places (`material.ts`). **Sky banding:** three.js dithering added to the sky shader (`CrimsonHorizonScene.tsx`).
 - [Evidence](evidence/crimson/defects/README.md): dots 142 → 0; sky within 1 level, bands gone; only 27 pixels in the frame change by more than 2 levels. A first dithering attempt broke sky compilation (missing `<common>`); caught by the capture, fixed before the checks.
 - PASS 356 tests (1 new: every terrain `pow()` input guarded), lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored). **Deviation:** the APP02/APP03 scope checks now ignore `src/scenes/crimson-horizon`, like Bloom and Nocturne.
-- Not tested: other GPUs. NT23 is still uncommitted (separate). Stop for owner review; uncommitted.
+- Not tested: other GPUs. Committed at the owner's request (0497078, not pushed), together with NT23 (1302a77).
 
 ## Nocturne NT23 — AUTOMATED REVIEW PASS; ON-SCREEN AND OWNER CHECKS PENDING — 2026-11-27
 
