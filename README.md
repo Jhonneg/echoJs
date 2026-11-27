@@ -19,6 +19,19 @@ Pick a landscape from the toolbar at the bottom of the screen. You can switch wh
 | ![Lavender Peaks](docs/images/lavender-peaks.jpg) | ![Crimson Horizon](docs/images/crimson-horizon.jpg) |
 | **Lavender Peaks.** Six misty ridges in soft lavender, one for each frequency band from deep bass at the back to high treble at the front. They slide sideways with the music beneath a warm sun that pulses with the bass. | **Crimson Horizon.** An endless 3D valley that you travel through at a steady pace under a pink sun and a nightshade sky. The sun follows the energy of the music and flares on strong bass hits, and your mouse moves the viewpoint gently. |
 
+## Videos 
+
+https://github.com/user-attachments/assets/03625f8e-48e8-4406-8363-0666c1adacd8
+
+
+https://github.com/user-attachments/assets/e2fb5331-7b07-42f6-a838-31e85877cdfb
+
+
+https://github.com/user-attachments/assets/ba12ad9d-8a6c-4321-9f54-3ca76c6ece26
+
+
+
+
 ## How it works
 
 1. **Choose a source.** Either *Share a tab* (a browser tab that is playing music) or *Open audio file* (a file from your computer).
@@ -65,13 +78,6 @@ npm run dev -- --host 127.0.0.1
 
 Open the address Vite prints (normally <http://127.0.0.1:5173/>), choose a landscape, then use **Open audio file** or **Share a tab**.
 
-### No music handy?
-
-Generate a short test tone file and open it with *Open audio file*:
-
-```sh
-npm run fixture
-```
 
 ### Scripts
 
@@ -115,11 +121,5 @@ The `docs/` folder holds the project's working record:
 ## Status
 
 ECHO is a work in progress and a proof of concept. It has been checked with automated tests and in a headless browser, but not on a range of real hardware, so frame rate on your machine may vary. Try *Low* graphics quality if it runs slowly.
+I may add more landscapes in the future, who knows.
 
-## Privacy
-
-Audio is analysed locally in your browser. ECHO never records, uploads or stores media, and it only reads audio you explicitly share through the browser's own picker. Stopping the share, or choosing *Disconnect*, ends the connection.
-
-## License
-
-No license has been chosen yet, so all rights are reserved by default. Add a `LICENSE` file before reusing or redistributing the code.
