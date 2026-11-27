@@ -77,6 +77,8 @@ Crimson darker values (2026-11-27): owner chose a moderate darkening of the terr
 
 Crimson sun cut (2026-11-27): owner chose reference-like occlusion. A distant ridge in front of the sun overlaps about a quarter of its visible disc with irregular peaks and a V where the valley opens, never covering its top half, replacing the straight cut by the far valley floor. It shares the far mountains' dark base, crimson rim and sun-base glow.
 
+Crimson sun-cut ridge removed (2026-11-27): owner withdrew the ridge above; the sun stays at its original placement and the far valley floor meets its lower edge again.
+
 Crimson foreground (2026-11-27): owner chose clear leading lines. The valley floor's low folds are broader and run along the valley, with a thin crimson line on each crest at about half the mountain rims' strength, converging toward the sun. The quiet valley stays under 1 m; the floor between the lines stays dark.
 
 Crimson mountain layers (2026-11-27): owner chose pronounced layering. The nearest mountains are darkest (about 13 luma), the middle ranges about 18 and the far ranges about 23, still darker than the sky. Each farther range reads a step lighter, and nearer ridges stand out as silhouettes with crimson rims.

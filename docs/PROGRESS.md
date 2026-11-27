@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Crimson Horizon sun-cut ridge — REMOVED AND COMMITTED AT OWNER REQUEST — 2026-11-27
+
+- Mountain layers committed at the owner's request (1f67c4f, not pushed). The owner saw the sun-cut ridge (8a20325) "following the globe": at 75 m it travelled with the camera in front of clearly visible moving terrain. A backdrop fix (sun, glow and ridge scaled out to 124–163 m) was implemented and captured but not kept. The owner chose to remove the ridge completely, with the sun back at 88 m.
+- The ridge mesh and shader are reverse-applied from `CrimsonHorizonScene.tsx`, which is now identical to fab9072; `ridgeline.ts` and `tests/crimsonRidgeline.test.mjs` are deleted. The uncommitted backdrop work and its evidence are discarded. The straight cut under the sun returns (review item 6 reopened, owner's call). Sun-cut evidence stays in history (`docs/evidence/crimson/sun-cut/`).
+- The still view matches the owner-approved preview pixel for pixel. PASS 359 tests (3 ridge tests removed), lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored). Committed at the owner's request (not pushed). Glow-band plan requested next.
+
 ## Crimson Horizon mountain layers — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - Foreground committed at the owner's request (d442c95, not pushed). Owner approved the mountain-layers plan (review item 8) and chose option (b) pronounced. A throwaway distance-band mask measured the baseline: near 15.9, middle 17.9, far 23.1, so the middle and far ranges were already at target. **Deviation:** rather than hazing the far ranges lighter, the nearest mountains are darkened (×0.64 linear, easing out between 20 and 40 m) in `material.ts`. Near is now 12.8, middle 17.7, far 23.1, with steps of about 5 per layer.

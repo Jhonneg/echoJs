@@ -707,3 +707,7 @@ The approved quiet-valley rule keeps the floor under 1 m, so the empty foregroun
 ## 2026-11-27 — Crimson's layers come from a darker near range, measured by distance band
 
 The owner chose pronounced mountain layers (near about 13, middle about 18, far about 23). A throwaway build painting mountain pixels by distance band, at the deterministic reduced-motion camera, gave per-band measurements. They showed the far ranges already lifted by the night fade and only the near layer missing, so the near mountains are darkened (easing out between 20 and 40 m) instead of adding haze to the far ones. The gradient is smooth with distance; distinct layers come from ridges overlapping at different distances, which avoids stepped tone lines across single slopes.
+
+## 2026-11-27 — Crimson's sun-cut ridge is removed
+
+The camera-following ridge in front of the sun (see "Crimson's sun sits behind a camera-following far ridge") is withdrawn at the owner's request. At 75 m it moved with the sun in front of visibly moving terrain, which read as stuck to the globe. Pushing it and the sun beyond the terrain fixed the motion, but the owner preferred no ridge, with the sun at its original 88 m. Lesson for camera-following elements: they need to sit beyond everything visible that moves, and they need checking in motion, not only in still frames.
