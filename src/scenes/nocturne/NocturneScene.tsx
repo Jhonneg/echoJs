@@ -11,6 +11,7 @@ import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import type { GraphicsQuality } from '../../engine/quality'
 import { ArchitectureDetails } from './ArchitectureDetails'
 import { Glow } from './Glow'
+import { Skyline } from './Skyline'
 import './nocturne.css'
 
 // Metres; negative Z runs down the alley. Keep composition tuning local to Nocturne.
@@ -96,6 +97,7 @@ export default function NocturneScene({ musicFeatures, quality, lighting, lighti
         fallback={<p className="nocturne-fallback">Nocturne can’t be shown because this browser can’t use WebGL. Audio still works: use the controls below to choose audio or another landscape.</p>}>
         <MouseCamera target={target} reducedMotion={reducedMotion} />
         <Architecture />
+        <Skyline />
         <ArchitectureDetails />
         <Atmosphere />
         <WetGround quality={quality} />

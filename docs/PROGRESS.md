@@ -1,5 +1,12 @@
 # ECHO — current checkpoint
 
+## Nocturne NT17 — OWNER APPROVED ("looks good") — 2026-11-27
+
+- Before NT17: the owner's commit e42a6e9 had left out NT16's new files (`Glow.tsx`, `effects.ts`, its test, script and evidence). At the owner's request they were committed unchanged as 426d92f (not pushed).
+- Owner approved the NT17 plan ([roadmap NT17–NT23](NOCTUNE_NT17_ROADMAP.md)). Distant skyline: six static towers beyond the back wall with 18% lit windows (fixed hash) and a faint sky glow (`skyline.ts`, `Skyline.tsx`, new). Violet strips 5 m (were 3.05 m) and wider, plus one angled accent per fixture bay on the same violet groups. Bridge diffusers 2.6 m (were 1.15 m) plus a front-edge tube, in the same six travel sections (`ArchitectureDetails.tsx`). Music mapping, colours, camera and NT16 effects unchanged.
+- [Evidence](evidence/nocturne/nt17/README.md): idle changes only in the sky strip (luma 4.71 → 5.16) and behind the bridge railing; Manual all-on bridge region 107 → 118. GPU unchanged within run-to-run noise. PASS 336 tests (3 new), lint/typecheck/build, whitespace, `verify-nocturne-nt17.mjs`, APP02/APP03 (committed evidence restored).
+- Owner reviewed the captures and answered "looks good" (2026-11-27). Still not tested: native look, real songs, owner GPU (NT23). NT17 uncommitted; NT18 not started and needs explicit approval (changes NT13 choices).
+
 ## Nocturne NT16 — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-26
 
 - Owner approved NT16 (review items 1, 2 and 4): glow around the lights (`Glow.tsx`, new), streaked wet-floor reflections (`WetGround.tsx`), and gate and fixture haze (`Atmosphere.tsx`, `LightingDriver.tsx`). Shared settings and helpers in `effects.ts` (new). Camera, parallax, fixtures, colours, spill and music mapping unchanged.

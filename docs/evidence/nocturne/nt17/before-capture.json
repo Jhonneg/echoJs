@@ -1,0 +1,97 @@
+{
+  "label": "before",
+  "source": "Production build; headless Brave (ANGLE GL, this machine GPU), 1440×900; generated song through the real file adapter and analysis. GPU ms = median whole animation frame from EXT_disjoint_timer_query_webgl2 (relative costs, not native-window certification).",
+  "errors": [],
+  "luma": {
+    "idle": {
+      "frame": 3.28,
+      "walls": 2.36,
+      "floor": 4.51,
+      "gate": 5.73,
+      "bridge": 7.91,
+      "sky": 4.71
+    },
+    "idle-low": {
+      "frame": 3.27,
+      "walls": 2.35,
+      "floor": 4.51,
+      "gate": 5.72,
+      "bridge": 7.89,
+      "sky": 4.69
+    },
+    "manual-all-on": {
+      "frame": 66.08,
+      "walls": 28.82,
+      "floor": 48.26,
+      "gate": 168.99,
+      "bridge": 107.29,
+      "sky": 87.18
+    },
+    "intro": {
+      "frame": 6.91,
+      "walls": 3.68,
+      "floor": 5.67,
+      "gate": 12.33,
+      "bridge": 10.8,
+      "sky": 5.87
+    },
+    "build": {
+      "frame": 8.82,
+      "walls": 4.54,
+      "floor": 6.75,
+      "gate": 18.33,
+      "bridge": 12.31,
+      "sky": 6.31
+    },
+    "drop-hit": {
+      "frame": 12.67,
+      "walls": 5.2,
+      "floor": 9.28,
+      "gate": 20.18,
+      "bridge": 14.94,
+      "sky": 7.11
+    },
+    "drop": {
+      "frame": 12.76,
+      "walls": 4.81,
+      "floor": 9.26,
+      "gate": 27,
+      "bridge": 14.57,
+      "sky": 6.96
+    },
+    "breakdown": {
+      "frame": 5.72,
+      "walls": 3.24,
+      "floor": 5.28,
+      "gate": 13.77,
+      "bridge": 10.1,
+      "sky": 5.68
+    }
+  },
+  "gpu": {
+    "Standard idle": {
+      "gpuMsPerFrame": 4.347,
+      "samples": [
+        4.317,
+        4.347,
+        4.372
+      ]
+    },
+    "Low idle": {
+      "gpuMsPerFrame": 3.247,
+      "samples": [
+        3.008,
+        3.247,
+        3.276
+      ]
+    },
+    "Standard with music": {
+      "gpuMsPerFrame": 3.681,
+      "samples": [
+        3.656,
+        3.681,
+        3.902
+      ]
+    }
+  }
+}

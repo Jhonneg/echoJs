@@ -69,8 +69,13 @@ for (const side of [-1, 1]) {
   for (const z of (side === 1 ? [-3, -18, -34] : [-13, -29, -44])) {
     wall(side, 'frame', 0.22, 2.75, z, [0.44, 3.3, 1.25])
     wall(side, side === 1 && z === -3 ? 'magenta' : 'magentaSecondary', 0.46, 2.75, z, [0.06, 2.95, 0.96])
-    wall(side, 'steel', 0.08, 5.7, z - 1.3, [0.16, 3.2, 0.1])
-    wall(side, side === 1 ? 'violet' : 'violetSecondary', 0.17, 5.7, z - 1.3, [0.025, 3.05, 0.045])
+    // NT17: the treble strips run about 5 m (were 3.05 m) and are wider, so they read with the glow.
+    wall(side, 'steel', 0.08, 5.9, z - 1.3, [0.16, 5.15, 0.14])
+    wall(side, side === 1 ? 'violet' : 'violetSecondary', 0.17, 5.9, z - 1.3, [0.04, 5, 0.09])
+    // NT17: a short angled neon accent between the window rows, on the same channel.
+    const tilt = (z % 2 === 0 ? 1 : -1) * side * 0.6
+    box('steel', [side * 2.92, 8.35, z + 1.6], [0.12, 1.45, 0.13], [tilt, 0, 0])
+    box(side === 1 ? 'violet' : 'violetSecondary', [side * 2.85, 8.35, z + 1.6], [0.04, 1.35, 0.09], [tilt, 0, 0])
     wall(side, side === 1 ? 'violet' : 'violetSecondary', 0.13, 0.32, z, [0.04, 0.045, 2.1])
     wall(side, 'frame', 0.18, 4.75, z + 3, [0.36, 0.7, 1.6])
     wall(side, 'cyanDetails', 0.38, 4.75, z + 3, [0.05, 0.5, 1.35])
@@ -91,12 +96,15 @@ for (let i = 0; i < 16; i++) {
 }
 // Bridge underside ribs, fasteners and unlit luminaire housings.
 for (let i = 0; i < 9; i++) box('steel', [-2.8 + i * 0.7, 4.39, -8], [0.09, 0.22, 1.8])
-for (const x of [-1.8, 1.8]) {
-  box('frame', [x, 4.22, -7.1], [1.35, 0.14, 0.36])
-  // Contiguous thirds retain the existing diffuser footprint and its two housings.
+// NT17: the two diffusers are longer (2.6 m each, were 1.15 m), still split into thirds so the
+// bridge travel runs left to right as before.
+for (const x of [-1.5, 1.5]) {
+  box('frame', [x, 4.22, -7.1], [2.8, 0.14, 0.36])
   for (let j = 0; j < 3; j++) box(bridgeFinishes[(x < 0 ? 0 : 3) + j],
-    [x - 1.15 / 2 + (j + .5) * 1.15 / 3, 4.13, -7.1], [1.15 / 3, .035, .22])
+    [x - 2.6 / 2 + (j + .5) * 2.6 / 3, 4.13, -7.1], [2.6 / 3, .035, .22])
 }
+// NT17: a thin tube along the bridge's front edge, in the same six sections.
+for (let j = 0; j < BRIDGE_SEGMENTS; j++) box(bridgeFinishes[j], [-3 + (j + .5) * 1, 4.47, -6.92], [.96, .04, .04])
 // Slender metal gate bars retain the distant focal opening.
 for (let i = 0; i < 10; i++) box('steel', [-1.02 + i * 0.226, 1.9, -51.25], [0.035, 3.65, 0.055])
 
