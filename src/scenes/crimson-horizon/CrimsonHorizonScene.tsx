@@ -12,6 +12,7 @@ import { createJourney, updateJourney, type Journey } from './journey'
 import { createTerrainStream, chunkIndexAt, localCameraZ, chunkRenderZ, type TerrainEntry, type TerrainSnapshot } from './terrainStream'
 import { terrainVertex, terrainFragment, nightshade } from './material'
 import { createViewMotion, updateViewMotion } from './cameraMotion'
+import { RIDGE, ridgeStrip } from './ridgeline'
 import './crimson-horizon.css'
 
 const sunVertex = `varying vec3 vLocal;
@@ -70,6 +71,38 @@ void main() {
   #include <dithering_fragment>
 }`
 
+// Sun-cut pass: the distant ridge in front of the sun (ridgeline.ts). Dark like the far mountains,
+// a thin crimson backlit rim on its outline and the magenta glow at the sun's base, both following
+// the sun's existing activity.
+const ridgeVertex = `attribute float edge;
+varying float vEdge;
+varying float vX;
+void main() { vEdge = edge; vX = position.x; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`
+const ridgeFragment = `uniform float activity;
+varying float vEdge;
+varying float vX;
+void main() {
+  vec3 color = vec3(0.014, 0.0035, 0.0095);
+  color += vec3(0.85, 0.02, 0.1) * exp(-max(vEdge, 0.0) / 0.1) * (0.6 + activity * 0.3);
+  color += vec3(0.9, 0.06, 0.3) * exp(-vX * vX / 72.0) * exp(-max(vEdge, 0.0) / 0.8) * (0.12 + activity * 0.5);
+  gl_FragColor = vec4(color, 1.0);
+  #include <colorspace_fragment>
+}`
+function Ridge({ mesh }: { mesh: RefObject<Mesh | null> }) {
+  const uniforms = useMemo(() => ({ activity: { value: 0 } }), [])
+  const geometry = useMemo(() => {
+    const strip = ridgeStrip(), value = new BufferGeometry()
+    value.setAttribute('position', new BufferAttribute(strip.positions, 3))
+    value.setAttribute('edge', new BufferAttribute(strip.edges, 1))
+    value.setIndex(strip.index)
+    return value
+  }, [])
+  useEffect(() => () => geometry.dispose(), [geometry])
+  return <mesh ref={mesh} name="crimson-ridge" geometry={geometry} frustumCulled={false}>
+    <shaderMaterial uniforms={uniforms} vertexShader={ridgeVertex} fragmentShader={ridgeFragment} toneMapped={false} />
+  </mesh>
+}
+
 type SceneStatus = 'loading' | 'ready' | 'waiting' | 'error'
 export type CrimsonPilotInput = { reader: MusicFeatureReader; profile: CrimsonProfile
   inspect?: (journey: Journey, music: MusicPilot, scene: Scene, camera: Camera, renderer: WebGLRenderer) => void }
@@ -113,7 +146,7 @@ function Composition({ quality, target, reducedMotion, signal, reactivity, attem
   const view = useRef(createViewMotion())
   const meshes = useRef(new Map<number, Mesh>())
   const materials = useRef(new Map<number, ShaderMaterial>())
-  const sun = useRef<Mesh>(null), glow = useRef<Mesh>(null), sky = useRef<Mesh>(null)
+  const sun = useRef<Mesh>(null), glow = useRef<Mesh>(null), sky = useRef<Mesh>(null), ridge = useRef<Mesh>(null)
   const sunMaterial = useRef<ShaderMaterial>(null), glowMaterial = useRef<ShaderMaterial>(null)
   const sunUniforms = useMemo(() => ({ activity: { value: 0 }, pulse: { value: 0 } }), [])
   const glowUniforms = useMemo(() => ({ airAccent: { value: 0 }, corona: { value: 0 }, coronaRadius: { value: 10.35 }, glowActivity: { value: 0 }, pulse: { value: 0 } }), [])
@@ -172,6 +205,10 @@ function Composition({ quality, target, reducedMotion, signal, reactivity, attem
       material.uniforms.sunPosition.value.set(0, 6, z - 88)
     }
     const candidateScale = 1 + (response?.body ?? 0) * .15 + (response?.low ?? 0) * .05
+    if (ridge.current) {
+      ridge.current.position.set(0, 0, z - RIDGE.distance)
+      ;(ridge.current.material as ShaderMaterial).uniforms.activity.value = state.sun
+    }
     if (sun.current) {
       sun.current.position.set(0, 6, z - 88)
       sun.current.scale.setScalar((1 + state.sunPulse * .05) * (1 - (response?.weight ?? 0)) + candidateScale * (response?.weight ?? 0))
@@ -211,6 +248,7 @@ function Composition({ quality, target, reducedMotion, signal, reactivity, attem
       <shaderMaterial ref={skyMaterial} uniforms={skyUniforms} vertexShader={sunVertex} fragmentShader={skyFragment} side={BackSide} toneMapped={false} depthWrite={false} dithering />
     </mesh>
     {snapshot.chunks.map(entry => <TerrainChunk key={entry.index} entry={entry} meshes={meshes} materials={materials} />)}
+    <Ridge mesh={ridge} />
     <mesh ref={sun} name="crimson-sun">
       <sphereGeometry args={[9.2, 48, 32]} />
       <shaderMaterial ref={sunMaterial} uniforms={sunUniforms} vertexShader={sunVertex} fragmentShader={sunFragment} toneMapped={false} />

@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Crimson Horizon sun cut — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- Darker values committed at the owner's request (fab9072, not pushed). Owner approved the sun-cut plan (review item 6) and chose option (b), coverage like the reference. The sun stays 88 m ahead while the terrain streams past, so the flat far floor sliced the disc. A distant ridge 75 m ahead now travels with the camera (`ridgeline.ts`, new; `Ridge` mesh in `CrimsonHorizonScene.tsx`): peaks cover 25.1% of the visible disc with a V at the centre, top half clear, ends tucked behind the side mountains. Dark base, crimson rim, sun-base glow; follows the sun's activity, no new music mapping.
+- [Evidence](evidence/crimson/sun-cut/README.md): the straight cut is replaced by overlapping peaks; sun-region mean −9% (covered part); everything else unchanged; GPU within noise. The drop's glow bands (item 9) are now partly hidden. PASS 359 tests (3 new), lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: native window with mouse parallax, real songs. Committed at the owner's request (not pushed); no explicit visual verdict recorded. Empty-foreground plan requested next.
+
 ## Crimson Horizon darker values — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
 
 - Rim lines committed at the owner's request (6edd60d, not pushed). Owner approved the darker-values plan (review item 4) and chose option (a) moderate. Only the terrain's base shading is scaled (`material.ts`: floor 0.36, mountains 0.32 linear); rims, glows, music lights, haze, far fade and sky unchanged.

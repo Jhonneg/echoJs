@@ -695,3 +695,7 @@ The reference's crimson ridge edges were faint in the scene: the public music st
 ## 2026-11-27 — Crimson's terrain is darker than its sky; the rims carry readability
 
 The owner chose a moderate darkening (option a) after the steady rims and sun glow were added. Only the terrain's base shading is scaled (valley floor and foreground most, mountains less), leaving the rims, glows, music lights, haze and the far fade into the sky as they were. This reverses part of the 2026-11-16 readability lift: readability now comes from the crimson rims rather than broad fill, closer to the reference. The nightshade sky stays, so the mountains read as dark silhouettes against it.
+
+## 2026-11-27 — Crimson's sun sits behind a camera-following far ridge
+
+The flat cut under Crimson's sun came from the far valley floor. The terrain streams past while the sun stays 88 m ahead, so terrain can't hold permanent peaks in front of it. A separate ridge strip 75 m ahead travels with the camera like the sun. Its profile is defined where it appears against the disc and projected onto its own plane, so coverage (owner option b: 25.1% of the visible disc, top half clear) is measured and tested. Its ends tuck behind the side mountains so it reads as part of the far range, and it carries the same crimson rim and sun-base glow as the terrain.
