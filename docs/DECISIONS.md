@@ -711,3 +711,7 @@ The owner chose pronounced mountain layers (near about 13, middle about 18, far 
 ## 2026-11-27 — Crimson's sun-cut ridge is removed
 
 The camera-following ridge in front of the sun (see "Crimson's sun sits behind a camera-following far ridge") is withdrawn at the owner's request. At 75 m it moved with the sun in front of visibly moving terrain, which read as stuck to the globe. Pushing it and the sun beyond the terrain fixed the motion, but the owner preferred no ridge, with the sun at its original 88 m. Lesson for camera-following elements: they need to sit beyond everything visible that moves, and they need checking in motion, not only in still frames.
+
+## 2026-11-27 — Crimson's far valley waves become one swell at the sun's base
+
+The stacked bands under the sun were the music-driven valley waves: launched far ahead, they are thin slivers while the floor is seen edge-on, and several stack in dense passages. The waves now fade in with distance, and each launch briefly swells the existing sun-base glow, so the bass still reads at the horizon as one soft pulse (owner option b). Launches are unchanged, so the music mapping is the same. Measurement showed the waves never visibly reached the near floor even before, so their travelling fronts are now only briefly visible mid-distance. Making them roll visibly toward the camera would be separate tuning.

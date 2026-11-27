@@ -1,3 +1,4 @@
+import { WAVE_FADE } from './valley.ts'
 export const nightshade = `vec3 nightColor(vec3 ray) {
   float horizon = 1.0 - smoothstep(0.0, 0.65, ray.y);
   return mix(vec3(0.0052, 0.0044, 0.0144), vec3(0.016, 0.0103, 0.032), horizon);
@@ -27,7 +28,8 @@ void main() {
   vFold = terrainFold;
   gl_Position = projectionMatrix * viewMatrix * world;
 }`
-export const terrainFragment = `#define RIM_POWER 10.0
+export const terrainFragment = `#define BASE_SWELL 0.6
+#define RIM_POWER 10.0
 #define RIM_REST 0.6
 #define RIM_ACTIVE 0.3
 #define FLOOR_VALUE 0.36
@@ -41,6 +43,7 @@ uniform float atmosphereWarmth;
 uniform float presenceAccent;
 uniform vec4 valleyWaves[4];
 uniform float valleyGlow;
+uniform float baseSwell;
 varying vec2 vGround;
 uniform vec3 sunPosition;
 uniform float activity;
@@ -139,8 +142,10 @@ void main() {
     waveTailLight = max(waveTailLight, wave.y * tail * footprint);
   }
   vec3 groundLight = vec3(.35, .002, .025) * channel * (.012 + valleyGlow * .09);
-  groundLight += vec3(1.0, .12, .29) * waveHeadLight * 3.5;
-  groundLight += vec3(.7, .018, .09) * waveTailLight * .65;
+  // Glow-band pass: waves fade in with distance (valley.ts WAVE_FADE), so no far slivers stack.
+  float waveFade = 1.0 - smoothstep(${WAVE_FADE.near.toFixed(1)}, ${WAVE_FADE.far.toFixed(1)}, depth);
+  groundLight += vec3(1.0, .12, .29) * waveHeadLight * 3.5 * waveFade;
+  groundLight += vec3(.7, .018, .09) * waveTailLight * .65 * waveFade;
   color += musicWeight * floorMask * groundLight;
   float glintCell = floor(vContourCoordinate * 24.0);
   float glintPick = fract(sin(glintCell * 127.1 + floor(vWorld.x * .45) * 311.7) * 43758.5453);
@@ -154,7 +159,7 @@ void main() {
   vec3 toBase = normalize(sunPosition - vec3(0.0, 8.5, 0.0) - cameraPosition);
   vec2 offset = vec2(ray.x / -ray.z - toBase.x / -toBase.z, ray.y / -ray.z - toBase.y / -toBase.z);
   float baseGlow = exp(-(offset.x * offset.x / 0.02 + offset.y * offset.y / 0.002)) * step(ray.z, -0.01)
-    * smoothstep(45.0, 85.0, depth) * (0.12 + activity * 0.5);
+    * smoothstep(45.0, 85.0, depth) * (0.12 + activity * 0.5 + baseSwell * BASE_SWELL);
   color += vec3(0.9, 0.06, 0.3) * baseGlow;
   // Rim pass: mountain surfaces turning edge-on to the camera while facing the sun (behind the
   // ranges) catch a thin crimson backlight, giving continuous edges along crests and outlines.

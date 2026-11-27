@@ -90,7 +90,7 @@ function TerrainChunk({ entry, meshes, materials }: { entry: TerrainEntry, meshe
   }, [entry.data])
   useEffect(() => () => geometry.dispose(), [geometry])
   const uniforms = useMemo(() => ({ atmosphereDensity: { value: 0 }, atmosphereWarmth: { value: 0 }, presenceAccent: { value: 0 }, activity: { value: 0 }, contourLight: { value: 0 }, contourStreak: { value: 0 },
-    valleyWaves: { value: new Float32Array(16) }, valleyGlow: { value: 0 }, valleyOrigin: { value: valleyOrigin(entry.index) },
+    valleyWaves: { value: new Float32Array(16) }, valleyGlow: { value: 0 }, baseSwell: { value: 0 }, valleyOrigin: { value: valleyOrigin(entry.index) },
     contourProgress: { value: 0 }, contourOrigin: { value: contourOrigin(entry.index) },
     musicHaze: { value: 0 }, musicWeight: { value: 0 }, sunPosition: { value: new Vector3(0, 6, -64) } }), [entry.index])
   return <mesh name={`crimson-chunk-${entry.index}`} ref={mesh => {
@@ -160,6 +160,7 @@ function Composition({ quality, target, reducedMotion, signal, reactivity, attem
     for (const [index, material] of materials.current) {
       writeValleyUniforms(valley.current, index, now / 1000, reactivity, material.uniforms.valleyWaves.value)
       material.uniforms.valleyGlow.value = valley.current.glow
+      material.uniforms.baseSwell.value = valley.current.swell * Math.min(1, Math.max(0, reactivity))
       material.uniforms.atmosphereDensity.value = (response?.atmosphere.density ?? 0) * (response?.weight ?? 0)
       material.uniforms.atmosphereWarmth.value = (response?.atmosphere.warmth ?? 0) * (response?.weight ?? 0)
       material.uniforms.presenceAccent.value = (response?.presence ?? 0)

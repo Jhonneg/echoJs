@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Crimson Horizon glow band — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+
+- Ridge removal committed at the owner's request (8813deb, not pushed). Owner approved the glow-band plan (review item 9) and chose option (b). The bands were music-driven valley waves seen edge-on far away and stacked in the drop. Waves now fade in with distance (none beyond 55 m, full by 35 m), and each launch briefly swells the sun-base glow (0.5 s decay) (`valley.ts`, `material.ts`, `CrimsonHorizonScene.tsx`). Launch timing and strength unchanged.
+- [Evidence](evidence/crimson/glow-band/README.md): no stacked slivers in the drop burst; bright pixels under the sun about −60% (the rest is the sun edge and base glow). **Finding:** the waves were never visible on the near floor (unchanged 13.8–13.9 before and after), so in practice the travelling fronts are now seen only briefly at 35–55 m, and the swell carries the bass at the horizon. GPU within noise. PASS 361 tests (2 new), lint/typecheck/build, whitespace, `verify-crimson-candidate.mjs`, APP02/APP03 (committed evidence restored).
+- Not tested: real songs, swell timing feel. All nine review items have now been addressed (item 6 reopened after the ridge removal). Stop for owner review; uncommitted.
+
 ## Crimson Horizon sun-cut ridge — REMOVED AND COMMITTED AT OWNER REQUEST — 2026-11-27
 
 - Mountain layers committed at the owner's request (1f67c4f, not pushed). The owner saw the sun-cut ridge (8a20325) "following the globe": at 75 m it travelled with the camera in front of clearly visible moving terrain. A backdrop fix (sun, glow and ridge scaled out to 124–163 m) was implemented and captured but not kept. The owner chose to remove the ridge completely, with the sun back at 88 m.

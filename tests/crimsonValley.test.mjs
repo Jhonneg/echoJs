@@ -1,7 +1,8 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
-import { createValley, updateValley, writeValleyUniforms, valleyOrigin, VALLEY_LIFETIME, VALLEY_SPEED, VALLEY_ORIGIN_DISTANCE } from '../src/scenes/crimson-horizon/valley.ts'
+import { createValley, updateValley, writeValleyUniforms, valleyOrigin, VALLEY_LIFETIME, VALLEY_SPEED, VALLEY_ORIGIN_DISTANCE, WAVE_FADE, waveVisibility, SWELL_DECAY } from '../src/scenes/crimson-horizon/valley.ts'
+import { terrainFragment } from '../src/scenes/crimson-horizon/material.ts'
 function harness() {
   const store=createMusicFeatureStore(),state=createValley(),out=new Float32Array(16)
   let now=1,sequence=0,session=1,events=[]
@@ -43,4 +44,22 @@ test('polished wave begins deep in world space, reaches foreground and expires a
   for(let i=0;i<150;i++)h.step(1/60)
   assert.ok(h.out[0]>0);assert.ok(h.out[1]>0)
   h.step(VALLEY_LIFETIME);assert.equal(h.out[1],0)
+})
+test('glow band: waves fade in with distance, so no far slivers stack under the sun',()=>{
+  assert.equal(waveVisibility(10),1);assert.equal(waveVisibility(WAVE_FADE.near),1)
+  assert.equal(waveVisibility(WAVE_FADE.far),0);assert.equal(waveVisibility(80),0);assert.equal(waveVisibility(Number.NaN),0)
+  let previous=1
+  for(let d=WAVE_FADE.near;d<=WAVE_FADE.far;d+=.5){const v=waveVisibility(d);assert.ok(v<=previous+1e-12&&v>=0);previous=v}
+  // Waves launch beyond the fade, so they are invisible at launch and appear as they approach.
+  assert.ok(VALLEY_ORIGIN_DISTANCE>WAVE_FADE.far)
+  assert.ok(terrainFragment.includes(`smoothstep(${WAVE_FADE.near.toFixed(1)}, ${WAVE_FADE.far.toFixed(1)}, depth)`),'the shader uses the same fade')
+})
+test('glow band: each launch swells the sun-base glow briefly; silence, zero gain and reduced motion keep it off',()=>{
+  const h=harness();assert.equal(h.state.swell,0)
+  h.event(.6);h.step();const peak=h.state.swell
+  assert.ok(peak>0,'a launch swells');assert.ok(Math.abs(peak-h.state.waves.find(w=>w.start>-Infinity).strength*Math.exp(-(1/60)/SWELL_DECAY))<1e-9)
+  for(let i=0;i<30;i++)h.step();assert.ok(h.state.swell<peak*.5,'decays within half a second')
+  for(let i=0;i<180;i++)h.step();assert.equal(h.state.swell,0,'settles to zero')
+  for(const options of [{gain:0},{reduced:true},{candidate:false}]){const g=harness();g.event(1);g.step(1/60,options);assert.equal(g.state.swell,0,JSON.stringify(options))}
+  const r=harness();r.event(1);r.step();assert.ok(r.state.swell>0);r.step(1/60,{reduced:true});assert.equal(r.state.swell,0,'switching to reduced motion clears it')
 })
