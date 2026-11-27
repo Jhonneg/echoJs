@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Nocturne NT19 — COMMITTED AT OWNER REQUEST ("commit") — 2026-11-27
+
+- Owner approved NT18 (committed f5a405d, not pushed) and the NT19 plan ("plan and approve"). Light rain: 1,800 streaks on Standard and 700 on Low, falling on the GPU from one time uniform, lit by the seven spill lights and the gate (`rain.ts`, `Rain.tsx`, new; `NocturneScene.tsx`). Hidden with reduced motion. On its own layer, so it isn't in the wet-floor reflection; `Glow.tsx` hides it in the glow pass. No new music mapping.
+- [Evidence](evidence/nocturne/nt19/README.md): light rain in front of lit fixtures and the gate; faint drizzle at the gate at idle. Reduced-motion frame pixel-identical to before. GPU within noise (Standard idle about +0.25 ms). PASS 343 tests (4 new), lint/typecheck/build, whitespace, `verify-nocturne-nt19.mjs`, APP02/APP03 (committed evidence restored).
+- Committed at the owner's request (not pushed); no explicit visual verdict recorded. Not tested: motion and feel in a native window, real songs, owner GPU (NT23). NT20 plan requested next.
+
 ## Nocturne NT18 — OWNER APPROVED ("approved", after the review fix) — 2026-11-27
 
 - Owner approved the NT18 plan (changes NT13's colour balance and resting view) and chose that the gate floor also shows in Manual "All off". NT17 committed as ac0c90c (not pushed).

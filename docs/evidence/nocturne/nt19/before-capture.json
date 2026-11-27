@@ -1,0 +1,132 @@
+{
+  "label": "before",
+  "source": "Production build; headless Brave (ANGLE GL, this machine GPU), 1440×900; generated song through the real file adapter and analysis. GPU ms = median whole animation frame from EXT_disjoint_timer_query_webgl2 (relative costs, not native-window certification).",
+  "errors": [],
+  "luma": {
+    "idle": {
+      "frame": 3.55,
+      "walls": 2.36,
+      "floor": 4.64,
+      "gate": 15.33,
+      "bridge": 7.77,
+      "sky": 5.21,
+      "cyanPct": 0.31,
+      "magentaPct": 0,
+      "litPct": 0.35
+    },
+    "idle-low": {
+      "frame": 3.54,
+      "walls": 2.35,
+      "floor": 4.63,
+      "gate": 15.32,
+      "bridge": 7.74,
+      "sky": 5.2,
+      "cyanPct": 0.31,
+      "magentaPct": 0,
+      "litPct": 0.34
+    },
+    "manual-all-on": {
+      "frame": 64.19,
+      "walls": 28.21,
+      "floor": 47.77,
+      "gate": 167.91,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.06,
+      "litPct": 82.12
+    },
+    "manual-reduced-motion": {
+      "frame": 64.19,
+      "walls": 28.21,
+      "floor": 47.77,
+      "gate": 167.91,
+      "bridge": 106.32,
+      "sky": 75.89,
+      "cyanPct": 24.97,
+      "magentaPct": 32.06,
+      "litPct": 82.12
+    },
+    "intro": {
+      "frame": 7.27,
+      "walls": 3.71,
+      "floor": 5.76,
+      "gate": 15.93,
+      "bridge": 11.49,
+      "sky": 6.78,
+      "cyanPct": 2.09,
+      "magentaPct": 2.18,
+      "litPct": 4.31
+    },
+    "build": {
+      "frame": 12.24,
+      "walls": 4.7,
+      "floor": 7.03,
+      "gate": 18.54,
+      "bridge": 26.13,
+      "sky": 16.79,
+      "cyanPct": 5.95,
+      "magentaPct": 3.37,
+      "litPct": 9.87
+    },
+    "drop-hit": {
+      "frame": 11.03,
+      "walls": 5.02,
+      "floor": 7.97,
+      "gate": 20.66,
+      "bridge": 14.39,
+      "sky": 7.27,
+      "cyanPct": 2.56,
+      "magentaPct": 5.3,
+      "litPct": 8.21
+    },
+    "drop": {
+      "frame": 13.13,
+      "walls": 5.11,
+      "floor": 9.74,
+      "gate": 25.9,
+      "bridge": 15.81,
+      "sky": 7.99,
+      "cyanPct": 2.45,
+      "magentaPct": 9.66,
+      "litPct": 12.48
+    },
+    "breakdown": {
+      "frame": 5.97,
+      "walls": 3.24,
+      "floor": 5.33,
+      "gate": 15.81,
+      "bridge": 10.62,
+      "sky": 6.51,
+      "cyanPct": 1.61,
+      "magentaPct": 1.56,
+      "litPct": 3.21
+    }
+  },
+  "gpu": {
+    "Standard idle": {
+      "gpuMsPerFrame": 4.564,
+      "samples": [
+        4.528,
+        4.564,
+        4.598
+      ]
+    },
+    "Low idle": {
+      "gpuMsPerFrame": 3.909,
+      "samples": [
+        3.827,
+        3.909,
+        3.961
+      ]
+    },
+    "Standard with music": {
+      "gpuMsPerFrame": 3.927,
+      "samples": [
+        3.797,
+        3.927,
+        3.982
+      ]
+    }
+  }
+}
