@@ -25,6 +25,19 @@ export function updateAtmosphere(state: Atmosphere, response: LavenderResponse, 
   return state
 }
 
+// Wide warm light (owner review item 5): the low sky's peach glow spans most of the view, as in the
+// reference, and the layer mist picks up the same warmth across its width. Shared by sky and mist.
+export const WARM_LIGHT = {
+  sky: { width: 10.5, height: 5.2, strength: 0.62, color: [1.0, 0.89, 0.8] }, // was 5.8 x 3.7, [1, .94, .86]
+  mist: { base: 0.2, peak: 0.4, width: 11.0 }, // was no base, 0.5 peak, 6.0 wide
+} as const
+// The warm share of the mist colour at world x (mirrors the shader).
+export const mistWarmth = (worldX: number) =>
+  WARM_LIGHT.mist.base + WARM_LIGHT.mist.peak * Math.exp(-(((worldX - 1.6) / WARM_LIGHT.mist.width) ** 2))
+const glsl = (v: number) => v.toFixed(3)
+export const warmSkyHalo = `exp(-pow(vPosition.x / ${glsl(WARM_LIGHT.sky.width)}, 2.0) - pow((vPosition.y + 0.9) / ${glsl(WARM_LIGHT.sky.height)}, 2.0))`
+export const warmSkyColor = `vec3(${WARM_LIGHT.sky.color.map(glsl).join(', ')})`
+
 export const atmosphereSky = `
 uniform float atmosphereDensity;
 uniform float atmosphereWarmth;
@@ -62,8 +75,8 @@ vec3 layerMistColor(vec3 color, vec2 position) {
   // The ridge's base line is bottom + 2.2 (see the ridge uniforms).
   float above = position.y - (bottom + 2.2);
   float mist = strength * exp(-max(above - ${LAYER_MIST.lift.toFixed(3)}, 0.0) / ${LAYER_MIST.height.toFixed(3)});
-  // Pale lavender, a touch warmer toward the sun.
-  vec3 mistColor = mix(vec3(0.91, 0.85, 0.95), vec3(0.99, 0.91, 0.90), exp(-pow((worldX - 1.6) / 6.0, 2.0)) * 0.5);
+  // Pale lavender, warmed across its width and most toward the sun.
+  vec3 mistColor = mix(vec3(0.91, 0.85, 0.95), vec3(0.99, 0.91, 0.90), ${glsl(WARM_LIGHT.mist.base)} + ${glsl(WARM_LIGHT.mist.peak)} * exp(-pow((worldX - 1.6) / ${glsl(WARM_LIGHT.mist.width)}, 2.0)));
   return mix(color, mistColor, mist);
 }
 vec3 atmosphereRidgeColor(vec3 color, vec2 position, float blend) {

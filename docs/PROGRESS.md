@@ -1,16 +1,22 @@
 # ECHO — current checkpoint
 
+## Lavender Peaks paler front layers and wider warm light — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+
+- This round covers review items 4 and 5, approved together with the plan. The three nearest ridges are paler and softer (`terrain.ts`). The front ridge's brightness goes from 130 to 145 (0–255). It's still the darkest, strongest layer, and every farther ridge is paler. The low-sky peach glow is wider, taller and slightly warmer, and the layer mist is warm across its whole width (`WARM_LIGHT` in `atmosphere.ts`, used by the sky in `LavenderPeaksScene.tsx`). The low sky goes from cool at the sides (red minus blue −6) to warm everywhere (+2 to +7). The sun, corona, music response, mist strength, tree line and camera are unchanged.
+- [Evidence](evidence/lavender-peaks/light/README.md). PASS: 367 tests (2 new), lint, typecheck, build, whitespace, `verify-lavender-corona-noise.mjs` and its assessment, APP02/APP03 (committed evidence restored).
+- Not captured: song screenshots. Not tested: the owner's monitor, real songs, portrait framing. Remaining review items (optional corona softening and grain) are the owner's call. Stop for owner review; uncommitted.
+
 ## Lavender Peaks tree-line fringe — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
 
 - This round covers item 1 of the Lavender review, ridge-edge detail. Every ridge crest now carries a fine, irregular tree-line fringe like the reference's (`treeline.ts`, new; the outline is sampled more finely in `LavenderPeaksScene.tsx`). The fringe is finer on farther ridges, has small breaks, repeats with the terrain tile and doesn't react to music. The authored outline, mist, sun, colours, camera and music mapping are unchanged.
 - [Evidence](evidence/lavender-peaks/treeline/README.md). PASS: 365 tests (3 new), lint, typecheck, build, whitespace, `verify-lavender-corona-noise.mjs` and its assessment, APP02/APP03 (committed evidence restored).
-- Not measured: GPU time (about 7.5 times as many outline vertices). Not tested: the owner's monitor, real songs, portrait framing. Remaining review items (front-layer colour, wider warm light, optional corona softening and grain) are the owner's call. Stop for owner review; the mist pass and this pass are both uncommitted.
+- Not measured: GPU time (about 7.5 times as many outline vertices). Not tested: the owner's monitor, real songs, portrait framing. Remaining review items (front-layer colour, wider warm light, optional corona softening and grain) are the owner's call. Committed as `c6779c8`; owner visual review pending.
 
 ## Lavender Peaks banding fix and layer mist — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
 
 - An owner-requested review of Lavender Peaks against its reference found mild sky banding and six art-direction gaps. The owner approved fixing the banding and adding mist between layers, option (b), like the reference. Sky and ridges now dither (`LavenderPeaksScene.tsx`). A steady pale mist lies in horizontal bands at each ridge's foot and fades upward: stronger on farther ridges, none on the front ridge (`atmosphere.ts`). The music-driven valley mist and all approved features are unchanged.
 - [Evidence](evidence/lavender-peaks/mist/README.md): per-ridge foot vs upper brightness now differs by 20–30 (before 7–12); front ridge unchanged; sky within 1 level, bands gone. Tuned from columns following steep flanks to horizontal bands. GPU noisy, no consistent change. PASS 362 tests (1 new), lint/typecheck/build, whitespace, `verify-lavender-corona-noise.mjs` and its assessment (committed evidence restored), APP02/APP03 (scope now ignores the Lavender folder; committed evidence restored).
-- Not tested: the owner's monitor, real songs. Remaining review items (ridge-edge detail, front-layer colour, wider warm light, optional corona softening and grain) are the owner's call. Stop for owner review; uncommitted.
+- Not tested: the owner's monitor, real songs. Remaining review items (ridge-edge detail, front-layer colour, wider warm light, optional corona softening and grain) are the owner's call. Committed as `0e3c734`; owner visual review pending.
 
 ## Owner review — CRIMSON APPROVED; NT23 LEFTOVERS SKIPPED — 2026-11-27
 

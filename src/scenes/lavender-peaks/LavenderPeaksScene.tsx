@@ -14,7 +14,7 @@ import { createTraces, updateTraces, traceFragment, type Traces } from './traces
 import { ridges, type Ridge } from './terrain'
 import { TREELINE, ridgeFringe } from './treeline'
 import { createSunPulse, updateSunPulse } from './sunPulse'
-import { createAtmosphere, updateAtmosphere, atmosphereSky, atmosphereRidge, type Atmosphere } from './atmosphere'
+import { createAtmosphere, updateAtmosphere, atmosphereSky, atmosphereRidge, WARM_LIGHT, warmSkyHalo, warmSkyColor, type Atmosphere } from './atmosphere'
 import './lavender-peaks.css'
 
 const vertex = `varying vec2 vPosition;
@@ -33,8 +33,8 @@ void main() {
   vec3 cream = vec3(1.0, 0.87, 0.84);
   vec3 lavender = vec3(0.62, 0.42, 0.85);
   vec3 color = mix(cream, lavender, height);
-  float halo = exp(-pow(vPosition.x / 5.8, 2.0) - pow((vPosition.y + 0.9) / 3.7, 2.0));
-  color = mix(color, vec3(1.0, 0.94, 0.86), halo * 0.55);
+  float halo = ${warmSkyHalo};
+  color = mix(color, ${warmSkyColor}, halo * ${WARM_LIGHT.sky.strength.toFixed(3)});
   color = atmosphereSkyColor(color, vPosition);
   // Fixed behind the first large peak; opaque ridges reveal it as they travel.
   vec2 sunOffset = vPosition - vec2(1.6, 1.9);

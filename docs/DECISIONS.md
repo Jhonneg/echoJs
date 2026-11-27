@@ -723,3 +723,7 @@ The reference separates its ranges with pale mist at the foot of each layer. Lav
 ## 2026-11-27 — Lavender's crests carry a tree-line fringe on the authored outline
 
 The reference's ridges end in a fine, irregular fringe of trees, and Lavender's ended in smooth, faceted lines. The fringe is a separate, pure function added on top of `ridgeHeight`, not a change to the authored peaks. That keeps the approved silhouettes, the sun clearance and the outline used by the illumination and traces as they were. It's hashed per slot and periodic with the terrain tile, so it's steady and seamless. It's finer on farther ridges, for aerial perspective.
+
+## 2026-11-27 — Lavender's front layers lighten; its warm light widens
+
+The reference keeps even its nearest ranges pale and spreads a soft peach light across the low sky. Lavender's front ridge was much darker than the rest (a step of 38 in brightness against about 10 between the others), and its warmth stayed near the centre. The three nearest ridges were lightened by less the farther they are, keeping the front ridge the strongest silhouette, as the art direction asks. The front ridge's upper colour was held clearly darker than ridge 5's, because their crests carry no mist to separate them. The sky glow and the mist's warm tint now share one `WARM_LIGHT` setting, so the haze picks up the same warmth as the sky across the whole width.
