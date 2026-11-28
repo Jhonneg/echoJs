@@ -1,3 +1,4 @@
+import { SUN } from '../src/scenes/lavender-peaks/corona.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { ridges } from '../src/scenes/lavender-peaks/terrain.ts'
@@ -24,7 +25,7 @@ test('warm light: a wide low-sky glow, and warmth across the whole mist width, s
   const [r, g, b] = WARM_LIGHT.sky.color
   assert.ok(r >= g && g > b, 'peach, not lavender')
   assert.ok(warmSkyHalo.includes(WARM_LIGHT.sky.width.toFixed(3)) && warmSkyColor.startsWith('vec3('))
-  assert.ok(mistWarmth(1.6) > mistWarmth(-10) && mistWarmth(1.6) > mistWarmth(12), 'warmest at the sun')
+  assert.ok(mistWarmth(SUN.x) > mistWarmth(-10) && mistWarmth(SUN.x) > mistWarmth(12) && mistWarmth(SUN.x) >= mistWarmth(SUN.x + 0.5), 'warmest at the sun')
   for (const x of [-20, -12, 0, 12, 20]) {
     assert.ok(mistWarmth(x) >= WARM_LIGHT.mist.base && mistWarmth(x) <= WARM_LIGHT.mist.base + WARM_LIGHT.mist.peak + 1e-12)
   }

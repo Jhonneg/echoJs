@@ -77,7 +77,7 @@ sceneText=sceneText.replace('sunPulse.current, response.current, delta, reactivi
 sceneText=sceneText.replace('coronaTime: { value: 0 },', 'reviewCoronaOnly:{value:0},reviewOuterOnly:{value:0},reviewFlatOpacity:{value:0},reviewCoronaOff:{value:0},coronaTime: { value: 0 },')
 sceneText=sceneText.replace('void main() {\n  float height =', `uniform float reviewCoronaOnly;
 void main() {
-  if(reviewCoronaOnly>0.5){vec2 p=vPosition-vec2(1.6,1.9);float r=length(p);gl_FragColor=vec4(applyCorona(vec3(0.0),p,r,max(fwidth(r),0.006)),1.0);return;}
+  if(reviewCoronaOnly>0.5){vec2 p=vPosition-vec2(0.0,1.9);float r=length(p);gl_FragColor=vec4(applyCorona(vec3(0.0),p,r,max(fwidth(r),0.006)),1.0);return;}
   float height =`)
 sceneText=sceneText.replace('float pulsedSunDistance = sunDistance / (1.0 + sunPulse * 0.2);', 'float pulsedSunDistance = sunDistance;')
 sceneText=sceneText.replace('  return <>', `  useFrame(({gl,scene,camera},dt)=>{

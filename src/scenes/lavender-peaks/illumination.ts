@@ -1,3 +1,4 @@
+import { SUN_CENTER_GLSL, SUN_SHAPE } from './corona.ts'
 import { clampSignal, smooth } from '../../audio/signal.ts'
 import type { Corona } from './corona.ts'
 
@@ -60,10 +61,10 @@ export function updateIllumination(state: Illumination, corona: Corona, fresh: b
 export const skyIllumination = `
 uniform float coronaLight;
 float coronaSkyMask(vec2 position) {
-  vec2 p = (position - vec2(1.6, 1.9)) / vec2(3.8, 2.7);
+  vec2 p = (position - ${SUN_CENTER_GLSL}) / (vec2(3.8, 2.7) * ${SUN_SHAPE.lightReach.toFixed(3)});
   float radius = length(p);
   float emitter = coronaSunRadius * coronaRadiusRatio;
-  float outsideEmitter = smoothstep(emitter, emitter + 0.3, length(position - vec2(1.6, 1.9)));
+  float outsideEmitter = smoothstep(emitter, emitter + 0.3, length(position - ${SUN_CENTER_GLSL}));
   return exp(-dot(p,p) * 1.8) * (1.0 - smoothstep(0.95, 1.35, radius)) * outsideEmitter;
 }
 `
@@ -87,7 +88,7 @@ float profileHeight(float x, float row) {
 vec3 illuminateRidge(vec3 color, vec2 localPosition) {
   if (ridgeIndex > 3.5 || coronaLight + mistLight + glintLight <= 0.0) return color;
   vec2 position = vec2(localPosition.x + terrainOffset, localPosition.y);
-  vec2 p = (position - vec2(1.6, 1.9)) / vec2(3.8, 4.8);
+  vec2 p = (position - ${SUN_CENTER_GLSL}) / (vec2(3.8, 4.8) * ${SUN_SHAPE.lightReach.toFixed(3)});
   float radius = length(p);
   float field = exp(-dot(p,p) * 1.25) * (1.0 - smoothstep(1.1, 1.5, radius));
   if (field <= 0.0) return color;

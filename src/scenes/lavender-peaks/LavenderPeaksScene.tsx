@@ -7,7 +7,7 @@ import type { MusicFeatureReader } from '../../audio/musicFeatures'
 import { createLayerMotion, updateLayerMotion, ridgeHeight, TERRAIN_PERIOD } from './motion'
 import { createLavenderResponse, updateLavenderResponse, type LavenderResponse } from './response'
 import { RIDGE_SHADING } from './shading'
-import { CORONA_SETTINGS, coronaFragment, createCorona, updateCorona } from './corona'
+import { CORONA_SETTINGS, SUN_CENTER_GLSL, SUN_SHAPE, coronaFragment, createCorona, updateCorona } from './corona'
 import { createIllumination, updateIllumination, skyIllumination, ridgeIllumination, type Illumination } from './illumination'
 import { createTerrainProfiles, PROFILE_WIDTH } from './terrainProfiles'
 import { createTraces, updateTraces, traceFragment, type Traces } from './traces'
@@ -38,13 +38,13 @@ void main() {
   float halo = ${warmSkyHalo};
   color = mix(color, ${warmSkyColor}, halo * ${WARM_LIGHT.sky.strength.toFixed(3)});
   color = atmosphereSkyColor(color, vPosition);
-  // Fixed behind the first large peak; opaque ridges reveal it as they travel.
-  vec2 sunOffset = vPosition - vec2(1.6, 1.9);
+  // Fixed, centred (SUN in corona.ts); opaque ridges reveal it as they travel.
+  vec2 sunOffset = vPosition - ${SUN_CENTER_GLSL};
   float sunDistance = length(sunOffset);
   float pulsedSunDistance = sunDistance / (1.0 + sunPulse * 0.24);
   // Softened edge and wider haze (owner review item 6), so the light fades out gradually.
-  float sunDisc = 1.0 - smoothstep(0.65, 0.78, pulsedSunDistance);
-  float sunHaze = exp(-pow(pulsedSunDistance / 1.65, 2.0)) * (0.06 + sunPulse * 0.02);
+  float sunDisc = 1.0 - smoothstep(${SUN_SHAPE.discInner.toFixed(3)}, ${SUN_SHAPE.discOuter.toFixed(3)}, pulsedSunDistance);
+  float sunHaze = exp(-pow(pulsedSunDistance / ${SUN_SHAPE.haze.toFixed(3)}, 2.0)) * (0.06 + sunPulse * 0.02);
   color = mix(color, vec3(1.0, 0.94, 0.83), sunDisc * (0.38 + sunPulse * 0.08) + sunHaze);
   // Derivatives are evaluated before the localized branch, keeping Low quality soft.
   color = applyCorona(color, sunOffset, sunDistance, max(fwidth(sunDistance), 0.006));

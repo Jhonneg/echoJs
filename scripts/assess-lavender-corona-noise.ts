@@ -1,6 +1,7 @@
 import {readFile,writeFile} from 'node:fs/promises'
 import {spawnSync} from 'node:child_process'
 import assert from 'node:assert/strict'
+import {SUN,CORONA_SETTINGS} from '../src/scenes/lavender-peaks/corona.ts'
 const directory='docs/evidence/lavender-peaks/corona-noise',root=directory+'/current'
 const capture=JSON.parse(await readFile(root+'/capture.json','utf8'))
 const baseline=JSON.parse(await readFile(directory+'/baseline/capture.json','utf8'))
@@ -10,7 +11,8 @@ const percentile=(v,p)=>{v=v.toSorted((a,b)=>a-b);return v[Math.round((v.length-
 const mean=v=>v.reduce((a,b)=>a+b,0)/v.length
 const deviation=v=>{const m=mean(v);return Math.sqrt(mean(v.map(x=>(x-m)**2)))}
 const decode=name=>{const r=spawnSync('ffmpeg',['-v','error','-i',root+'/'+name,'-f','rawvideo','-pix_fmt','rgb24','-'],{maxBuffer:5e6});assert.equal(r.status,0);return r.stdout}
-const radius=1.65*.75,restRadius=.75*1.125*1.15,zoom=67.5,center=[828,276.75]
+// Sun geometry from the scene (centred and 2× since 2026-11-28; was centre x 828, core radius .75).
+const core=CORONA_SETTINGS.sunRadius,radius=1.65*core,restRadius=core*1.125*1.15,zoom=67.5,center=[720+SUN.x*zoom,405-SUN.y*zoom]
 function contour(name){
  const pixels=decode(name)
  const sample=(x,y)=>{
@@ -21,7 +23,7 @@ function contour(name){
  const result:any[]=[]
  for(let angle=0;angle<360;angle++){
   const a=angle*Math.PI/180,cs=Math.cos(a),sn=Math.sin(a),values:any[]=[]
-  for(let r=.76*zoom;r<=radius*zoom;r+=.2)values.push({r,v:sample(center[0]+cs*r,center[1]-sn*r)})
+  for(let r=.76*SUN.scale*zoom;r<=radius*zoom;r+=.2)values.push({r,v:sample(center[0]+cs*r,center[1]-sn*r)})
   const peak=values.reduce((a,b)=>b.v>a.v?b:a);assert.ok(peak.v>5,'Missing outer contour '+name+' '+angle)
   const around=values.filter(x=>Math.abs(x.r-peak.r)<=2.5),weight=around.reduce((a,x)=>a+x.v,0)
   result.push(around.reduce((a,x)=>a+x.r*x.v,0)/weight/zoom)
@@ -49,7 +51,7 @@ for(const label of Object.keys(shapes)){
   maximumDisplacement:Math.max(...shapes[label].flatMap(r=>r.map(v=>Math.abs(v-restRadius)))),
   maximumRadius:Math.max(...shapes[label].flat()),temporalP99Per100ms:percentile(temporal,.99)}
  geometry[label].maximumDisplacementFractionOfRestRadius=geometry[label].maximumDisplacement/restRadius
- geometry[label].maximumDisplacementFractionOfCoreRadius=geometry[label].maximumDisplacement/.75
+ geometry[label].maximumDisplacementFractionOfCoreRadius=geometry[label].maximumDisplacement/core
 }
 const thresholds={moderateRms:geometry.moderate.rmsFractionOfRestRadius>=.04,strongRms:geometry.strong.rmsFractionOfRestRadius>=.06,
  strongOverModerate:geometry.strong.meanRadialRms>=1.3*geometry.moderate.meanRadialRms,
@@ -83,7 +85,7 @@ for(const [label,a,b]of [['moderate',6,9],['strong',16,19],['bass-free',41,43.5]
  signals[label]={bass:stats(rows.map(r=>r.features.energy.six.bass)),subBass:stats(rows.map(r=>r.features.energy.six.subBass)),envelope:stats(rows.map(r=>r.corona.envelope)),maximumAccent:Math.max(...rows.map(r=>r.corona.lowAccent))}
 }
 const report:Record<string,any>={status:Object.values(thresholds).every(Boolean)?'Silhouette acceptance targets passed':'Silhouette acceptance targets need review',
- geometry,thresholds,coreRadius:.75,restingOuterStrandRadius:restRadius,hardOuterRadius:radius,maximumRadiusRatio:1.65,signals,onset,attacks,performance,
+ geometry,thresholds,coreRadius:core,restingOuterStrandRadius:restRadius,hardOuterRadius:radius,maximumRadiusRatio:1.65,signals,onset,attacks,performance,
  resources:capture.resources,renderer:capture.renderer,method:'Actual rendered outer-strand centerline,360polar rays at24matched phases; equal opacity, isolated outer strand and no mountain occlusion in development-only diagnostics. Normal videos retain occlusion and all three strands.'}
 const lightOn=decode('environment-on.png'),lightOff=decode('environment-off.png')
 let changedLightPixels=0,maximumLightDifference=0,protectedChanges=0

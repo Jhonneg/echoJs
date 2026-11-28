@@ -1,8 +1,17 @@
 import { clampSignal, smooth } from '../../audio/signal.ts'
 import type { LavenderResponse } from './response.ts'
 
+// The sun: centred and twice its first size (owner request, 2026-11-28; was (1.6, 1.9), radius .75).
+// Every shader that places light around the sun reads its centre from here.
+export const SUN = { x: 0, y: 1.9, scale: 2 } as const
+export const SUN_CENTER_GLSL = `vec2(${SUN.x.toFixed(3)}, ${SUN.y.toFixed(3)})`
+// Disc edge, soft-haze radius and how much wider the light on sky and ridges reaches (1.4× for 2×).
+export const SUN_SHAPE = { discInner: .65 * SUN.scale, discOuter: .78 * SUN.scale, haze: 1.65 * SUN.scale, lightReach: 1.4 } as const
+
 export const CORONA_SETTINGS = {
-  sunRadius: .75, maximumRadiusRatio: 1.65, strandRadiusScale: 1.15,
+  sunRadius: .75 * SUN.scale, maximumRadiusRatio: 1.65, strandRadiusScale: 1.15,
+  // Amplitudes are for the first sun size: the shader scales every strand displacement by
+  // SUN.scale. Line widths stay the same, so strands stay crisp.
   baseAmplitude: .018, maximumAmplitude: .22,
   bassReference: .45, onsetReference: .22, onsetDuration: .65,
   restingOpacity: .16, maximumOpacity: .46, reducedOpacity: .10,
@@ -142,13 +151,13 @@ vec3 applyCorona(vec3 color, vec2 offset, float radius, float antialias) {
       + 0.3 * coronaNoise(angle - phase, t, 11.0 + layer * 2.0, 29.0 + layer * 9.0);
     float upperAccent = 0.081 * coronaMidAccent * midLobe + 0.117 * coronaHighAccent * highLobe;
     float weight = 0.65 + layer * 0.175;
-    float displacement = amplitude * wave.x * weight + coronaMotion * (localized + upperAccent);
+    float displacement = (amplitude * wave.x * weight + coronaMotion * (localized + upperAccent)) * ${SUN.scale.toFixed(3)};
     float base = coronaSunRadius * (1.025 + layer * 0.05) * ${CORONA_SETTINGS.strandRadiusScale};
     // Smooth bounded compression preserves waves instead of clipping flat crests.
     float room = displacement >= 0.0 ? limit - 0.045 - base : base - coronaSunRadius - 0.025;
     float compression = sqrt(1.0 + pow(displacement / room, 2.0));
     float edge = base + displacement / compression;
-    float derivative = (amplitude * wave.y * weight + coronaMotion * 0.09 * sumDerivative / pow(denominator, 3.0)) / pow(compression, 3.0);
+    float derivative = (amplitude * wave.y * weight + coronaMotion * 0.09 * sumDerivative / pow(denominator, 3.0)) * ${SUN.scale.toFixed(3)} / pow(compression, 3.0);
     float strandWidth = width * sqrt(1.0 + pow(derivative / max(edge, 0.1), 2.0));
     float distanceToEdge = (radius - edge) / strandWidth;
     strands += exp(-distanceToEdge * distanceToEdge) * (0.8 - layer * 0.12);

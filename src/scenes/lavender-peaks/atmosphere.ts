@@ -1,3 +1,4 @@
+import { SUN, SUN_CENTER_GLSL } from './corona.ts'
 import { clampSignal, smooth } from '../../audio/signal.ts'
 import { lavenderDrive, type LavenderResponse } from './response.ts'
 
@@ -33,7 +34,7 @@ export const WARM_LIGHT = {
 } as const
 // The warm share of the mist colour at world x (mirrors the shader).
 export const mistWarmth = (worldX: number) =>
-  WARM_LIGHT.mist.base + WARM_LIGHT.mist.peak * Math.exp(-(((worldX - 1.6) / WARM_LIGHT.mist.width) ** 2))
+  WARM_LIGHT.mist.base + WARM_LIGHT.mist.peak * Math.exp(-(((worldX - SUN.x) / WARM_LIGHT.mist.width) ** 2))
 const glsl = (v: number) => v.toFixed(3)
 export const warmSkyHalo = `exp(-pow(vPosition.x / ${glsl(WARM_LIGHT.sky.width)}, 2.0) - pow((vPosition.y + 0.9) / ${glsl(WARM_LIGHT.sky.height)}, 2.0))`
 export const warmSkyColor = `vec3(${WARM_LIGHT.sky.color.map(glsl).join(', ')})`
@@ -44,7 +45,7 @@ uniform float atmosphereWarmth;
 vec3 atmosphereSkyColor(vec3 color, vec2 position) {
   // Protect the approved emitter; broad changes live in its surrounding sky.
   float outside = smoothstep(coronaSunRadius * coronaRadiusRatio + 0.08,
-    coronaSunRadius * coronaRadiusRatio + 0.45, length(position - vec2(1.6, 1.9)));
+    coronaSunRadius * coronaRadiusRatio + 0.45, length(position - ${SUN_CENTER_GLSL}));
   float horizon = exp(-pow((position.y - 0.4) / 3.3, 2.0));
   color = mix(color, vec3(0.88, 0.78, 0.91), atmosphereDensity * outside * horizon * 0.09);
   return mix(color, vec3(1.0, 0.82, 0.80), atmosphereWarmth * outside * (0.045 + 0.065 * horizon));
@@ -76,7 +77,7 @@ vec3 layerMistColor(vec3 color, vec2 position) {
   float above = position.y - (bottom + 2.2);
   float mist = strength * exp(-max(above - ${LAYER_MIST.lift.toFixed(3)}, 0.0) / ${LAYER_MIST.height.toFixed(3)});
   // Pale lavender, warmed across its width and most toward the sun.
-  vec3 mistColor = mix(vec3(0.91, 0.85, 0.95), vec3(0.99, 0.91, 0.90), ${glsl(WARM_LIGHT.mist.base)} + ${glsl(WARM_LIGHT.mist.peak)} * exp(-pow((worldX - 1.6) / ${glsl(WARM_LIGHT.mist.width)}, 2.0)));
+  vec3 mistColor = mix(vec3(0.91, 0.85, 0.95), vec3(0.99, 0.91, 0.90), ${glsl(WARM_LIGHT.mist.base)} + ${glsl(WARM_LIGHT.mist.peak)} * exp(-pow((worldX - ${SUN.x.toFixed(3)}) / ${glsl(WARM_LIGHT.mist.width)}, 2.0)));
   return mix(color, mistColor, mist);
 }
 vec3 atmosphereRidgeColor(vec3 color, vec2 position, float blend) {

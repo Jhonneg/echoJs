@@ -1,16 +1,21 @@
 # ECHO — current checkpoint
 
+## Lavender Peaks bigger, centred sun — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-28
+
+- Owner request, 2× chosen. The sun moves from (1.6, 1.9) to the horizontal centre (0, 1.9) and doubles in size (disc, haze, corona radius and strand displacement); the cast light reaches 1.4× wider. One `SUN` definition in `corona.ts` replaces the centre repeated in 7 places. Files: `corona.ts`, `illumination.ts`, `atmosphere.ts`, `LavenderPeaksScene.tsx`, `lavenderCorona.test.ts`, `lavenderLight.test.ts`, `verify-lavender-corona-noise.ts` and `assess-lavender-corona-noise.ts` (now read the new geometry), new `scripts/capture-lavender-sun.ts`.
+- [Evidence](evidence/lavender-peaks/big-sun/README.md): before/after desktop and portrait, opening and reduced motion. PASS: 377 tests, lint, typecheck, build, whitespace, Lavender corona check and assessment (strand movement 7.1% of the ring vs 7.0% committed; corona-noise committed evidence restored afterwards). First attempt failed the assessment (movement halved) and was fixed by scaling displacement in the shader. Not tested: real songs, owner's screen. Uncommitted.
+
 ## Bloom bass flash over the landscape and stronger rivers — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-28
 
 - Owner request, approved: bass hits flood every range surface with a short aurora-tinted flash (curtains and their light up to +40%); the rivers follow the louder mid band at double sensitivity, faster, up to +250% and 2× halo, flash with bass hits, and the mid-hit pulse is 2.5× brighter. Files: `music.ts`, `ranges.ts`, `rivers.ts`, `BloomScene.tsx`, `bloomMusic.test.ts`, new `scripts/verify-bloom-bass-flash.ts`.
 - [Evidence](evidence/bloom/bass-flash/README.md): fresh before/after captures. At a hit the land is ~30 levels brighter (141 → 170); loud-chord river brightness ×1.18 → ×1.97; idle and after-silence frames unchanged. Sensitivities were doubled after the first after-capture (hits read ~0.35, mids ~0.06 raw). PASS: 377 tests (2 new), lint, typecheck, build, whitespace, level-bar browser check rerun (its evidence refreshed).
-- Not tested: real songs, owner's eye (strength, pinkness), GPU time. Uncommitted, together with the level-bars change below.
+- Not tested: real songs, owner's eye (strength, pinkness), GPU time. Committed by the owner with the level bars as `31492f6`.
 
 ## Bloom seam and crystals as level bars — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-28
 
 - Owner request, approved with the defaults: while music plays, the monolith seam fills from the bottom with the overall level, with a peak cap and a dim groove above; the left crystal rises with the bass, the right with the highs (up to 12% of the monolith's height). At rest the seam is fully lit and the crystals sit still (approved look). Reduced motion: slow bars, no cap, a third of the crystal travel. Files: `music.ts`, `monolith.ts`, `BloomScene.tsx`, tests in `bloomMusic.test.ts`/`bloomMonolith.test.ts`, new `scripts/verify-bloom-level-bars.ts`.
 - [Evidence](evidence/bloom/level-bars/README.md). PASS: 375 tests (6 new), lint, typecheck, build, whitespace, browser check with a generated song (8/8). Reweighted once: a plain band average reached only 0.28 on a loud beat; now 0.46 average, 0.56 peak.
-- Found: `scripts/verify-bloom-br9.ts` and 3 other throwaway-build scripts don't copy `tsconfig.scripts.json`/`tsconfig.tests.json` (added in Stage B), which the root `tsconfig.json` references, so their copied builds fail. Fixed only in the new script. Not tested: real songs, owner's eye, GPU time. Uncommitted.
+- Found: `scripts/verify-bloom-br9.ts` and 3 other throwaway-build scripts don't copy `tsconfig.scripts.json`/`tsconfig.tests.json` (added in Stage B), which the root `tsconfig.json` references, so their copied builds fail. Fixed only in the new script. Not tested: real songs, owner's eye, GPU time. Committed by the owner as `31492f6`.
 
 ## Tests type-checked with full strict (Stage B) — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-28
 

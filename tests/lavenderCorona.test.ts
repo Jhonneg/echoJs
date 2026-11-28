@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
-import {createCorona,updateCorona,CORONA_SETTINGS,CORONA_TIME_PERIOD} from '../src/scenes/lavender-peaks/corona.ts'
+import {createCorona,updateCorona,CORONA_SETTINGS,CORONA_TIME_PERIOD,SUN} from '../src/scenes/lavender-peaks/corona.ts'
 import {createLavenderResponse} from '../src/scenes/lavender-peaks/response.ts'
 
 function fixture(){const response=createLavenderResponse();response.session=1;response.fresh=true;return {response,state:createCorona()}}
@@ -69,7 +69,7 @@ test('production uses the existing sky plane with bounded configurable corona an
  assert.match(source,/position=\{\[0, 0, -10\]\}/);assert.match(source,/updateCorona\(corona.current, response.current/)
  assert.match(source,/float pulsedSunDistance = sunDistance \/ \(1\.0 \+ sunPulse \* 0\.24\);/)
  assert.match(source,/applyCorona\(color, sunOffset, sunDistance,/)
- assert.equal(CORONA_SETTINGS.maximumRadiusRatio,1.65);assert.equal(CORONA_SETTINGS.sunRadius,.75)
+ assert.equal(CORONA_SETTINGS.maximumRadiusRatio,1.65);assert.equal(CORONA_SETTINGS.sunRadius,.75*SUN.scale);assert.equal(SUN.scale,2);assert.equal(SUN.x,0)
  assert.ok(CORONA_SETTINGS.maximumOpacity<.5);assert.ok(CORONA_SETTINGS.maximumAmplitude<CORONA_SETTINGS.sunRadius*.3)
 })
 
