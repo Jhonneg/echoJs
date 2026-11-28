@@ -13,7 +13,7 @@ function harness() {
     updateValley(state,store.reader,candidate,distance,now,dt,gain,reduced);writeValleyUniforms(state,0,now,gain,out)
   }
   step()
-  return {state,out,step,event(strength=1,band='low'){events.push({session,sequence:++sequence,band,timeSeconds:now,emittedAtSeconds:now,strength})},reset(){session++;step()},at(index){const a=new Float32Array(16);writeValleyUniforms(state,index,now,1,a);return a}}
+  return {state,out,step,event(strength=1,band='low'){events.push({session,sequence:++sequence,band,timeSeconds:now,emittedAtSeconds:now,strength})},reset(){session++;step()},at(index:number){const a=new Float32Array(16);writeValleyUniforms(state,index,now,1,a);return a}}
 }
 test('valley consumes each low onset once; sustain and other bands cannot retrigger',()=>{
   const h=harness();h.event(.5);h.step();assert.equal(h.state.launched,1)

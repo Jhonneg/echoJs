@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 import { stripTypeScriptTypes } from 'node:module'
 import { fixtures, generateFixture, wav } from '../src/dev/audioLab/fixtures.ts'
-import { rms, dbfs, createDiagnosticObserver } from '../src/dev/audioLab/diagnostics.ts'
+import { rms, dbfs, createDiagnosticObserver, type DiagnosticSnapshot } from '../src/dev/audioLab/diagnostics.ts'
 import { createReplay, summarize } from '../src/dev/audioLab/baseline.ts'
 import { silentSignal, emptyBands } from '../src/audio/signal.ts'
 
@@ -46,9 +46,9 @@ test('replay uses time-domain metadata, preserves priming, deterministic cadence
 })
 
 test('diagnostic reset clears numeric scratch and isolates consumer failures', () => {
-  let snapshot
+  let snapshot!: DiagnosticSnapshot
   const observer = createDiagnosticObserver(value => { snapshot = structuredClone(value); throw Error('consumer') })
-  const analyser = { fftSize: 2048, context: { sampleRate: 48000, currentTime: 1 }, getFloatTimeDomainData: values => values.fill(.5) } as unknown as AnalyserNode
+  const analyser = { fftSize: 2048, context: { sampleRate: 48000, currentTime: 1 }, getFloatTimeDomainData: (values: Float32Array) => values.fill(.5) } as unknown as AnalyserNode
   observer.read(analyser, new Float32Array(1024).fill(-20), silentSignal(), { bass: 1, midrange: 2, treble: 3 }, undefined, true, 1000, .016)
   assert.equal(snapshot.rms, .5)
   observer.reset()
@@ -66,10 +66,10 @@ test('diagnostic reset clears numeric scratch and isolates consumer failures', (
 const source = (await readFile(new URL('../src/audio/analysis.ts', import.meta.url), 'utf8'))
   .replaceAll('import.meta.env.DEV', 'true')
   .replace(/from '([^']+)'/g, (_, relative) => `from '${pathToFileURL(new URL(`../src/audio/${relative}.ts`, import.meta.url).pathname).href}'`)
-const { createAnalysis } = await import(`data:text/javascript,${encodeURIComponent(stripTypeScriptTypes(source))}`)
+const { createAnalysis }: typeof import('../src/audio/analysis.ts') = await import(`data:text/javascript,${encodeURIComponent(stripTypeScriptTypes(source))}`)
 test('live observer enabled/disabled yields identical legacy output and no extra reads when off', () => {
   let next = 0, reads = 0
-  const callbacks = new Map()
+  const callbacks = new Map<number, FrameRequestCallback>()
   globalThis.requestAnimationFrame = fn => { callbacks.set(++next, fn); return next }
   globalThis.cancelAnimationFrame = id => callbacks.delete(id)
   ;(globalThis as any).AudioContext = class {
@@ -78,15 +78,18 @@ test('live observer enabled/disabled yields identical legacy output and no extra
     close() { this.state = 'closed'; return Promise.resolve() }
     createMediaElementSource() { return { connect() {}, disconnect() {} } }
     createAnalyser() { return { context: this, fftSize: 4096, frequencyBinCount: 2048,
-      connect() {}, disconnect() {}, getFloatFrequencyData(bins) { bins.fill(-Infinity); bins[4] = -30 },
-      getFloatTimeDomainData(time) { reads++; time.fill(.1) } } }
+      connect() {}, disconnect() {}, getFloatFrequencyData(bins: Float32Array) { bins.fill(-Infinity); bins[4] = -30 },
+      getFloatTimeDomainData(time: Float32Array) { reads++; time.fill(.1) } } }
   }
-  let snapshot
+  let snapshot!: DiagnosticSnapshot
   const off = createAnalysis(), on = createAnalysis({ diagnostics: value => { snapshot = structuredClone(value) } }), candidate = createAnalysis({ musicIntelligence: true })
-  const element = Object.assign(new EventTarget(), { paused: false, ended: false })
+  const features = candidate.musicFeatures
+  assert.ok(features)
+  // Only listeners and the paused/ended flags are used.
+  const element = Object.assign(new EventTarget(), { paused: false, ended: false }) as unknown as HTMLAudioElement
   off.prepare(); on.prepare(); candidate.prepare(); off.startElement(element); on.startElement(element); candidate.startElement(element)
   // Both contexts use performance.now at startup; establish an identical prior tick first.
-  const step = now => { const queue = [...callbacks.values()]; callbacks.clear(); queue.forEach(fn => fn(now)) }
+  const step = (now: number) => { const queue = [...callbacks.values()]; callbacks.clear(); queue.forEach(fn => fn(now)) }
   step(1000); step(1100)
   // Reset both, then control the startup clock for exact parity.
   off.stop(); on.stop(); candidate.stop()
@@ -96,24 +99,25 @@ test('live observer enabled/disabled yields identical legacy output and no extra
     step(10); step(30); step(100); step(200)
     assert.deepEqual(off.signal, on.signal)
     assert.deepEqual(off.signal, candidate.signal)
-    assert.equal(candidate.musicFeatures.read().status, 'active')
+    assert.equal(features.read().status, 'active')
     const replay = createReplay(96000, 4096)
     const bins = new Float32Array(2048).fill(-Infinity); bins[4] = -30
     for (const time of [.01, .03, .1, .2]) replay.step({ time, bins, rms: .1 })
-    for (const key of ['levels', 'fast', 'slow', 'transient', 'flux', 'sixBands']) {
-      for (const band of Object.keys(off.signal[key])) assert.ok(Math.abs(off.signal[key][band] - replay.signal[key][band]) < 1e-14, key)
+    for (const key of ['levels', 'fast', 'slow', 'transient', 'flux', 'sixBands'] as const) {
+      const live: Record<string, number> = off.signal[key], replayed: Record<string, number> = replay.signal[key]
+      for (const band of Object.keys(live)) assert.ok(Math.abs(live[band] - replayed[band]) < 1e-14, key)
     }
     assert.equal(reads, 6)
     assert.equal(snapshot.sampleRate, 96000)
     const beforeSeek = structuredClone(on.signal), session = snapshot.onsets.session
     const contextSession = snapshot.context.session
-    const candidateSession = candidate.musicFeatures.read().session
+    const candidateSession = features.read().session
     assert.ok(snapshot.context.intensity > 0)
     element.dispatchEvent(new Event('seeking'))
     assert.ok(snapshot.onsets.session > session)
-    assert.ok(candidate.musicFeatures.read().session > candidateSession)
-    assert.equal(candidate.musicFeatures.read().events.length, 0)
-    assert.equal(candidate.musicFeatures.read().status, 'inactive')
+    assert.ok(features.read().session > candidateSession)
+    assert.equal(features.read().events.length, 0)
+    assert.equal(features.read().status, 'inactive')
     assert.ok(snapshot.context.session > contextSession)
     assert.equal(snapshot.context.intensity, 0)
     assert.equal(snapshot.context.activity, 0)
@@ -124,7 +128,7 @@ test('live observer enabled/disabled yields identical legacy output and no extra
     assert.equal(on.signal.fast, ref)
     assert.deepEqual(on.signal, silentSignal())
     assert.equal(snapshot.state, 'reset')
-    assert.equal(candidate.musicFeatures.read().status, 'inactive')
+    assert.equal(features.read().status, 'inactive')
     assert.deepEqual(snapshot.raw, emptyBands())
     const stoppedSession = snapshot.onsets.session
     element.dispatchEvent(new Event('seeked'))

@@ -5,7 +5,7 @@ import { silentSignal, emptySixBands } from '../src/audio/signal.ts'
 import { createMusicPilot, updateMusicPilot } from '../src/scenes/crimson-horizon/musicPilot.ts'
 import { createJourney, updateJourney } from '../src/scenes/crimson-horizon/journey.ts'
 import { createValley, updateValley, writeValleyUniforms } from '../src/scenes/crimson-horizon/valley.ts'
-function run(energy,strength,hz=60){
+function run(energy:number,strength:number,hz=60){
   const store=createMusicFeatureStore(),pilot=createMusicPilot(),journey=createJourney(),valley=createValley(),signal=silentSignal(),out=new Float32Array(16)
   let now=1,events:any[]=[],sequence=0
   const step=()=>{now+=1/hz;const six=emptySixBands();six.bass=energy
@@ -22,7 +22,7 @@ function run(energy,strength,hz=60){
   for(let i=0;i<hz*5;i++)step()
   const sustained=step()
   events=[Object.freeze({session:1,sequence:++sequence,band:'low',timeSeconds:now,emittedAtSeconds:now,strength})]
-  const frames:any[]=[];for(let i=0;i<hz*5;i++)frames.push(step())
+  const frames=[];for(let i=0;i<hz*5;i++)frames.push(step())
   return {sustained,frames,launched:valley.launched}
 }
 test('quiet/loud sun states remain ordered at multiple cadences and sustained input does not repeat accents',()=>{
@@ -31,7 +31,7 @@ test('quiet/loud sun states remain ordered at multiple cadences and sustained in
     assert.ok(loud.sustained.scale>soft.sustained.scale)
     assert.ok(Math.max(...loud.frames.map(f=>f.scale))>Math.max(...soft.frames.map(f=>f.scale)))
     assert.equal(soft.launched,1);assert.equal(loud.launched,1)
-    assert.equal(loud.frames.at(-1).pulse,0);assert.equal(loud.frames.at(-1).waveAmplitude,0)
+    assert.equal(loud.frames.at(-1)!.pulse,0);assert.equal(loud.frames.at(-1)!.waveAmplitude,0)
   }
 })
 test('one low event gives an immediate sun accent followed by independently traveling ground light',()=>{

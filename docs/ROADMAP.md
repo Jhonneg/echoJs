@@ -155,6 +155,8 @@ Owner explicitly approved forward travel during music, a sun driven by the numbe
 
 ## Nocturne — Industrial Crossing
 
+2026-11-27 asset-detail follow-up: owner approved one bounded pass for doors, vents, pipework/utility boxes, bridge construction, surface wear, curb drains and pavement seams. Implemented for owner review; current status and evidence are in PROGRESS. Preserve existing composition, lighting and music response. This is separate from NT16–NT22 and owner-skipped NT23 checks; no next phase is authorized.
+
 Owner approved N01 and subsequently N02 on 2026-11-16 ("lets move" after the bounded N02 proposal). N02 approval permits progressing from the base composition. Owner subsequently approved the bounded N03 lighting/manual-controls plan; Owner approved the bounded N04 shared-reflection/puddles/haze/gate plan on 2026-11-17. Owner approved the bounded N05 existing-audio/manual-mode integration plan on 2026-11-17. Owner approved N06 verification with “go ahead” on 2026-11-17; actual results and remaining manual checks are in PROGRESS and NOCTURNE_N06.md. No later feature or deployment task is authorized.
 
 - **N01 — Architectural blockout:** selectable stationary perspective 3D alley, building masses, crossing/railings, road and distant gate. Dim neutral review fill; desktop reference comparison and responsive/integration checks. Stop for owner composition review.

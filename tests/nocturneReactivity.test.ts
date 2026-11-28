@@ -20,19 +20,19 @@ function fixture() {
   step()
   return {view, reader, state, step, advance, event}
 }
-const outputs = state => ['magenta', 'cyan', 'violet', 'atmosphere'].map(k => state[k])
+const outputs = (state: ReturnType<typeof createNocturneResponse>) => (['magenta', 'cyan', 'violet', 'atmosphere'] as const).map(k => state[k])
 test('calibrated bands stay independent, proportional and bounded during sustain', () => {
-  for (const [band, group] of [['low','magenta'],['mid','cyan'],['high','violet']]) {
+  for (const [band, group] of [['low','magenta'],['mid','cyan'],['high','violet']] as const) {
     const f = fixture(); f.view.energy[band] = .1; f.advance()
     const quiet = f.state[group]; assert.ok(Math.abs(quiet - .13) < .001)
     f.view.energy[band] = .4; f.advance(); assert.ok(Math.abs(f.state[group] - quiet * 4) < .001)
-    for (const g of ['magenta','cyan','violet']) if (g !== group) assert.equal(f.state[g],0)
+    for (const g of ['magenta','cyan','violet'] as const) if (g !== group) assert.equal(f.state[g],0)
     f.advance(5); assert.equal(f.state.accents[group],0)
     f.view.energy[band] = 1;f.advance();assert.ok(f.state[group] <= .65)
   }
 })
 test('fresh events add finite proportional accents and duplicates never retrigger', () => {
-  for (const [band, group] of [['low','magenta'],['mid','cyan'],['high','violet']]) {
+  for (const [band, group] of [['low','magenta'],['mid','cyan'],['high','violet']] as const) {
     const f = fixture(); f.view.energy[band] = .1;f.advance()
     f.event(band,.5); f.step(); assert.equal(f.state.accents[group],.15)
     assert.ok(f.state[group] > .13)
@@ -48,7 +48,7 @@ test('manual, zero gain and reduced motion consume suppressed events without rep
   }
 })
 test('stale, future, priming and inactive data release to zero, sessions skip retained events', () => {
-  for (const kind of ['stale','future','priming','inactive','invalid']) {
+  for (const kind of ['stale','future','priming','inactive','invalid'] as const) {
     const f=fixture(); f.view.energy.low=.5;f.view.context.intensity=.8;f.advance()
     if(['priming','inactive'].includes(kind))f.view.status=kind
     const now=kind==='stale'?100:kind==='future'?0:kind==='invalid'?NaN:undefined

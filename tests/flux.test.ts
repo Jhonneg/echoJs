@@ -5,7 +5,7 @@ import { emptyBands, silentSignal } from '../src/audio/signal.ts'
 import { updateSignalFeatures } from '../src/audio/features.ts'
 
 const ranges = { bass: [0, 2], midrange: [2, 4], treble: [4, 6] } as const
-const db = (magnitudes) => new Float32Array(magnitudes.map((m) => m > 0 ? 20 * Math.log10(m) : -Infinity))
+const db = (magnitudes: number[]) => new Float32Array(magnitudes.map((m) => m > 0 ? 20 * Math.log10(m) : -Infinity))
 test('bin-first flux finds an attack hidden by constant aggregate energy', () => {
   const processor = createSpectralFlux(6, ranges), out = emptyBands(), signal = silentSignal()
   const before = db([0, 0, 0.04, 0, 0, 0]), after = db([0, 0, Math.sqrt(0.0012), 0.02, 0, 0])
@@ -81,7 +81,7 @@ test('a resolved attack/release shape stays comparable across update cadences', 
     }
     return { peak, area }
   })
-  for (const key of ['peak', 'area']) {
+  for (const key of ['peak', 'area'] as const) {
     const values = measurements.map((m) => m[key])
     assert.ok(Math.max(...values) / Math.min(...values) < 1.2, JSON.stringify(measurements))
   }

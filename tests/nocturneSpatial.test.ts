@@ -15,7 +15,7 @@ function fixture(hz=120){
  function event(band='low',strength=.3){input.sequence=++sequence;input.events.push({session:input.session,sequence,band,strength,timeSeconds:now,emittedAtSeconds:now})}
  step();return {state,input,step,advance,event}
 }
-for(const [role,band,energy] of [['magentaSecondary','low','bass'],['cyanWindows','mid','lowMids'],['cyanDetails','mid','lowMids']]){
+for(const [role,band,energy] of [['magentaSecondary','low','bass'],['cyanWindows','mid','lowMids'],['cyanDetails','mid','lowMids']] as const){
  test(`${role} moves near to far once at30/60/120Hz and expires`,()=>{
   for(const hz of [30,60,120]){
    const f=fixture(hz),storage=f.state.instances[role],peaks=Array(storage.length).fill(0),times=Array(storage.length).fill(0)

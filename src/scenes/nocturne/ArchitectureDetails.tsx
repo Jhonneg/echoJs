@@ -65,6 +65,52 @@ for (const side of [-1, 1]) {
     // Junction boxes and wall conduit, offset from the doors.
     wall(side, 'frame', 0.15, 3.75, z + 2.8, [0.3, 0.62, 0.48])
     wall(side, 'steel', 0.1, 4.1, z, [0.13, 0.11, 8.7])
+    // Construction detail is concentrated in the first three bays. Farther bays keep their
+    // simple silhouettes; all hardware joins the existing non-emitting instance batches.
+    if (bay < 3) {
+      // Sheet behind the shutter ribs, or a recessed two-panel service door.
+      wall(side, 'frame', 0.052, 1.5, z, [0.025, 2.72, 1.53])
+      if (bay % 2 === 1) {
+        for (const y of [0.8, 2.1]) {
+          wall(side, 'steel', 0.078, y, z, [0.025, 1.06, 1.31])
+          wall(side, 'frame', 0.094, y, z, [0.018, 0.93, 1.18])
+        }
+      }
+      // Hinges sit on the projecting jamb; the latch has a backplate and a return grip.
+      for (const y of [0.55, 1.55, 2.65]) {
+        wall(side, 'frame', 0.39, y, z + side * 0.94, [0.03, 0.25, 0.16])
+        wall(side, 'steel', 0.42, y, z + side * 0.94, [0.065, 0.18, 0.055])
+      }
+      wall(side, 'steel', 0.145, 1.35, z - side * 0.52, [0.025, 0.38, 0.15])
+      wall(side, 'recess', 0.161, 1.25, z - side * 0.52, [0.012, 0.055, 0.035])
+      for (const y of [1.34, 1.49]) wall(side, 'steel', 0.21, y, z - side * 0.52, [0.13, 0.035, 0.045])
+      wall(side, 'steel', 0.27, 1.415, z - side * 0.52, [0.035, 0.19, 0.045])
+      wall(side, 'steel', 0.12, 0.23, z, [0.035, 0.22, 1.47])
+      // Header seam and jamb fixings catch small highlights without outlining the whole door.
+      wall(side, 'frame', 0.396, 3.17, z, [0.018, 0.035, 1.82])
+      for (const edge of [-0.94, 0.94]) for (const y of [0.27, 2.93]) {
+        wall(side, 'steel', 0.395, y, z + edge, [0.04, 0.065, 0.065])
+      }
+      // Folded vent rim, angled louver lips and four screw heads.
+      for (const edge of [-0.7, 0.7]) wall(side, 'steel', 0.405, 1.6, ventZ + edge, [0.07, 1.3, 0.065])
+      for (const y of [0.98, 2.22]) wall(side, 'steel', 0.405, y, ventZ, [0.09, 0.065, 1.47])
+      for (let slat = 0; slat < 7; slat++) {
+        box('steel', [side * 2.55, 1.13 + slat * 0.16, ventZ], [0.09, 0.025, 1.27], [0, 0, side * 0.35])
+      }
+      for (const edge of [-0.69, 0.69]) for (const y of [1.06, 2.14]) {
+        wall(side, 'frame', 0.452, y, ventZ + edge, [0.025, 0.055, 0.055])
+      }
+      // Junction-box lid, gasket, hinge tabs, latch and a short feed into the existing conduit.
+      wall(side, 'recess', 0.307, 3.75, z + 2.8, [0.018, 0.55, 0.41])
+      wall(side, 'steel', 0.326, 3.75, z + 2.8, [0.025, 0.5, 0.36])
+      wall(side, 'frame', 0.35, 3.72, z + 2.91, [0.03, 0.13, 0.045])
+      for (const y of [3.57, 3.93]) wall(side, 'steel', 0.33, y, z + 2.59, [0.045, 0.09, 0.07])
+      wall(side, 'steel', 0.13, 4.13, z + 2.8, [0.08, 0.18, 0.08])
+      for (const dz of [-3.7, -1.8, 0.6, 3.8]) {
+        wall(side, 'frame', 0.085, 4.1, z + dz, [0.17, 0.27, 0.11])
+        wall(side, 'steel', 0.18, 4.1, z + dz, [0.035, 0.15, 0.09])
+      }
+    }
   }
   // Large fixture bodies, panel housings and thin strip channels for N03.
   for (const z of (side === 1 ? [-3, -18, -34] : [-13, -29, -44])) {
@@ -86,6 +132,17 @@ for (const side of [-1, 1]) {
   for (let i = 0; i < 28; i++) {
     box('recess', [side * 2.72, 0.245, 3 - i * 2], [0.19, 0.012, 0.5])
     box('frame', [side * 2.85, 0.245, 4 - i * 2], [0.3, 0.012, 0.035])
+    if (i < 10) {
+      // Narrow crossbars bridge the dark drain opening; keep the central wet lane clear.
+      for (let bar = 0; bar < 5; bar++) box('steel', [side * 2.72, 0.256, 2.8 - i * 2 + bar * 0.1], [0.18, 0.018, 0.025])
+      box('frame', [side * 2.635, 0.256, 3 - i * 2], [0.025, 0.018, 0.52])
+    }
+  }
+  // Pipe saddle plates and paired bolts. These support the existing downpipes and collars.
+  for (const z of [-4.8, -24.8]) for (const y of [0.8, 3.5, 6.5]) {
+    wall(side, 'frame', 0.13, y, z, [0.24, 0.32, 0.44])
+    wall(side, 'steel', 0.29, y, z, [0.09, 0.1, 0.36])
+    for (const dz of [-0.17, 0.17]) wall(side, 'steel', 0.26, y, z + dz, [0.04, 0.065, 0.065])
   }
 }
 // One slim, recessed left fixture. Its lower position brings the wet ground into the spill.
@@ -96,8 +153,30 @@ wall(-1, 'cyanPanel', 0.38, 2.65, -7.3, [0.05, 1.75, 0.5])
 for (let i = 0; i < 16; i++) {
   box('asphalt', [Math.sin(i * 2.7) * 1.5, 0.003, 3 - i * 3.3], [1.1 + (i % 3) * 0.3, 0.006, 0.75 + (i % 2) * 0.3], [0, i * 0.61, 0])
 }
+// Broken repair joints beneath the wet film, close to the curbs rather than across the vista.
+for (const side of [-1, 1]) for (let i = 0; i < 9; i++) {
+  const z = 3 - i * 1.85
+  box('recess', [side * (2.3 + Math.sin(i * 2.1) * 0.08), 0.009, z], [0.022, 0.008, 1.15], [0, side * (0.08 + Math.sin(i) * 0.1), 0])
+  if (i % 3 === 0) box('asphalt', [side * 2.15, 0.01, z - 0.35], [0.44, 0.006, 0.025], [0, side * 0.6, 0])
+}
 // Bridge underside ribs, fasteners and unlit luminaire housings.
 for (let i = 0; i < 9; i++) box('steel', [-2.8 + i * 0.7, 4.39, -8], [0.09, 0.22, 1.8])
+// Flanged front beam, bolted splice plates and rail footings. Keep the six light segments clear.
+for (const y of [4.59, 4.92]) box('steel', [0, y, -6.93], [6.15, 0.045, 0.11])
+for (const x of [-2.8, -1.4, 0, 1.4, 2.8]) {
+  box('frame', [x, 4.755, -6.915], [0.23, 0.28, 0.065])
+  for (const dx of [-0.065, 0.065]) for (const y of [4.68, 4.83]) box('steel', [x + dx, y, -6.87], [0.045, 0.045, 0.035])
+}
+for (const x of [-3, -2, -1, 0, 1, 2, 3]) {
+  box('steel', [x, 5.015, -7.04], [0.2, 0.13, 0.16])
+  box('frame', [x, 5.2, -6.995], [0.14, 0.24, 0.025])
+}
+for (const side of [-1, 1]) {
+  // Bracing only in the two outer rail bays leaves the central view open.
+  box('steel', [side * 2.5, 5.56, -7.06], [0.045, 1.22, 0.045], [0, 0, side * 0.79])
+  box('frame', [side * 2.88, 4.2, -8], [0.24, 0.4, 1.6])
+  for (const z of [-8.6, -7.4]) wall(side, 'steel', 0.26, 4.2, z, [0.055, 0.09, 0.09])
+}
 // NT17: the two diffusers are longer (2.6 m each, were 1.15 m), still split into thirds so the
 // bridge travel runs left to right as before.
 for (const x of [-1.5, 1.5]) {

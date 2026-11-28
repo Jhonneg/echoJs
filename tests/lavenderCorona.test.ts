@@ -5,7 +5,7 @@ import {createCorona,updateCorona,CORONA_SETTINGS,CORONA_TIME_PERIOD} from '../s
 import {createLavenderResponse} from '../src/scenes/lavender-peaks/response.ts'
 
 function fixture(){const response=createLavenderResponse();response.session=1;response.fresh=true;return {response,state:createCorona()}}
-function run(f,n=180,gain=1,reduced=false,hz=60){for(let i=0;i<n;i++)updateCorona(f.state,f.response,1/hz,gain,reduced);return f.state}
+function run(f:ReturnType<typeof fixture>,n=180,gain=1,reduced=false,hz=60){for(let i=0;i<n;i++)updateCorona(f.state,f.response,1/hz,gain,reduced);return f.state}
 
 test('rest has intrinsic continuous motion without musical input, even at gain0',()=>{
  const f=fixture();f.response.fresh=false;run(f,120,0)
@@ -55,7 +55,7 @@ test('reduced motion freezes geometry phase and removes attacks but permits calm
  run(f,1);assert.ok(f.state.time>before);assert.equal(f.state.motion,1)
 })
 test('intrinsic clock is bounded and cadence independent; stalled/invalid delta cannot jump',()=>{
- const times:any[]=[]
+ const times=[]
  for(const hz of [30,60,120]){const f=fixture();run(f,hz*3,1,false,hz);times.push(f.state.time)}
  assert.ok(Math.max(...times)-Math.min(...times)<1e-10)
  const f=fixture();f.state.time=CORONA_TIME_PERIOD-.01;run(f,1);assert.ok(f.state.time>=0&&f.state.time<.01)
@@ -73,7 +73,7 @@ test('production uses the existing sky plane with bounded configurable corona an
  assert.ok(CORONA_SETTINGS.maximumOpacity<.5);assert.ok(CORONA_SETTINGS.maximumAmplitude<CORONA_SETTINGS.sunRadius*.3)
 })
 
-function notice(f,sequence,strength=.15){
+function notice(f:ReturnType<typeof fixture>,sequence:number,strength=.15){
  Object.assign(f.response.ridges[4],{onsetSequence:sequence,onsetTimeSeconds:1,onsetStrength:strength})
  f.response.sampleTime=1
 }

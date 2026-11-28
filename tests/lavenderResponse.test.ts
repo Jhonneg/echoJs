@@ -91,7 +91,7 @@ test('session reset and scene re-entry discard retained onsets and old scalar hi
 })
 
 test('stale, inactive, priming and future publications clear accents and release sustained response',()=>{
-  for(const invalid of ['stale','inactive','priming','future']){
+  for(const invalid of ['stale','inactive','priming','future'] as const){
     const f=fixture();f.run(120,{energy:{bass:.4}});f.step({event:'low'})
     if(invalid==='inactive'||invalid==='priming')f.view.status=invalid
     else f.view.updatedAtSeconds=f.now()+(invalid==='future'?1:-1)
@@ -128,7 +128,7 @@ test('borrowed publication reuse cannot rewrite retained scalar history',()=>{
 })
 
 test('sustained response is comparable at30/60/120Hz and invalid inputs stay finite',()=>{
-  const levels:any[]=[]
+  const levels=[]
   for(const hz of [30,60,120]){
     const f=fixture();f.view.energy.six.highMids=.2
     for(let i=0;i<hz;i++){f.view.frame++;f.view.updatedAtSeconds=2+i/hz;updateLavenderResponse(f.state,f.reader,1/hz,2+i/hz,1,false)}
@@ -150,7 +150,7 @@ test('equal-band rises have distinct depth dynamics without changing zero-input 
 test('Lavender retains its MI input alongside the migrated Bloom and existing Crimson delivery',()=>{
   const app=readFileSync('src/App.tsx','utf8')
   assert.match(app,/<LavenderPeaksScene quality=\{quality\} musicFeatures=\{analysis.musicFeatures!\}/)
-  for(const file of ['LavenderPeaksScene.tsx','motion.ts','response.ts']){
+  for(const file of ['LavenderPeaksScene.tsx','motion.ts','response.ts'] as const){
     const source=readFileSync('src/scenes/lavender-peaks/'+file,'utf8')
     assert.doesNotMatch(source,/AudioSignal|signal\.(fast|slow|transient|flux|intensity|sixBands)|signal=\{/)
   }

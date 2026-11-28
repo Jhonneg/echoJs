@@ -33,7 +33,7 @@ test('BR8/BR9: each band drives only its own elements', () => {
   const cases:Record<string,string[]>={ bass: ['aurora', 'seam'], subBass: ['aurora', 'seam'], highMids: [], presence: ['shimmer'], air: ['shimmer'] }
   for (const [band, elements] of Object.entries(cases)) {
     const f = fixture(); f.run(240, { energy: { [band]: 0.3 } })
-    for (const other of ['aurora', 'seam', 'shimmer']) {
+    for (const other of ['aurora', 'seam', 'shimmer'] as const) {
       // Shimmer averages presence and air, so one of them alone reaches about half.
       if (elements.includes(other)) assert.ok(f.s[other] > (other === 'shimmer' ? 0.3 : 0.5), `${band} should drive ${other}`)
       else assert.ok(f.s[other] < 1e-9, `${band} must not drive ${other} (${f.s[other]})`)
@@ -90,7 +90,7 @@ test('BR8: responses stay within their limits under sustained loud music and rep
 
 test('BR8: silence, stale audio and Reactivity 0 all settle back to the calm scene', () => {
   const loud = () => { const f = fixture(); f.run(300, { energy: Object.fromEntries(names.map(n => [n, 0.5])), intensity: 0.8 }); return f }
-  const calm = s => ['aurora', 'seam', 'river', 'shimmer', 'intensity'].every(k => s[k] < 0.01)
+  const calm = (s: ReturnType<typeof createBloomMusic>) => (['aurora', 'seam', 'river', 'shimmer', 'intensity'] as const).every(k => s[k] < 0.01)
   const a = loud(); a.silence(); a.run(60 * 20, { intensity: 0 }); assert.ok(calm(a.s), 'silence')
   const b = loud(); b.run(60 * 20, { fresh: false }); assert.ok(calm(b.s), 'stale')
   const c = loud(); c.run(60 * 20, { gain: 0 }); assert.ok(calm(c.s), 'reactivity 0')

@@ -6,7 +6,7 @@ function setup() {
   const requests:any[]=[], elements:any[]=[], states:any[]=[], calls:any[]=[], revoked:any[]=[]
   Object.defineProperty(globalThis, 'isSecureContext', { value: true, configurable: true })
   Object.defineProperty(globalThis, 'navigator', { value: { mediaDevices: {
-    getDisplayMedia(options) {
+    getDisplayMedia(options: DisplayMediaStreamOptions) {
       assert.deepEqual(options, { video: true, audio: true })
       return new Promise<any>((resolve, reject) => requests.push({ resolve, reject }))
     },
@@ -22,8 +22,8 @@ function setup() {
   let urls=0
   URL.createObjectURL = () => `blob:synthetic-${++urls}`
   URL.revokeObjectURL = value => revoked.push(value)
-  const analysis = { prepare() { calls.push('prepare'); return {ok:true} }, start(stream) { calls.push(stream); return {ok:true} },
-    startElement(element) { calls.push(element); return true }, resume() { calls.push('resume') }, stop() { calls.push('stop') } } as unknown as Parameters<typeof createLabSources>[0]
+  const analysis = { prepare() { calls.push('prepare'); return {ok:true} }, start(stream: MediaStream) { calls.push(stream); return {ok:true} },
+    startElement(element: HTMLAudioElement) { calls.push(element); return true }, resume() { calls.push('resume') }, stop() { calls.push('stop') } } as unknown as Parameters<typeof createLabSources>[0]
   const sources = createLabSources(analysis, state => states.push(state))
   const stream = (audio = true) => {
     const tracks = (audio ? ['audio', 'video'] : ['video']).map(kind => Object.assign(new EventTarget(), {

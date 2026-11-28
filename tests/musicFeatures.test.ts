@@ -6,6 +6,7 @@ import { createMusicBridge } from '../src/dev/audioLab/musicBridge.ts'
 import { createMusicPilot, updateMusicPilot, onsetEnvelope, type CrimsonProfile } from '../src/scenes/crimson-horizon/musicPilot.ts'
 import { createJourney, updateJourney } from '../src/scenes/crimson-horizon/journey.ts'
 import { silentSignal } from '../src/audio/signal.ts'
+import type { OnsetBand } from '../src/audio/musicFeatures.ts'
 function setup() {
   const snapshot = createSnapshot(), bridge = createMusicBridge()
   snapshot.state = 'running'; snapshot.timestamp = 1000; snapshot.sampleRate = 48000; snapshot.fftSize = 2048
@@ -13,7 +14,7 @@ function setup() {
   bridge.publish(snapshot)
   return { snapshot, bridge }
 }
-function event(snapshot, band, strength, time) {
+function event(snapshot: ReturnType<typeof createSnapshot>, band: OnsetBand, strength: number, time: number) {
   snapshot.onsets.events.push(Object.freeze({ session: snapshot.onsets.session, sequence: ++snapshot.onsets.sequence,
     band, strength, timeSeconds: time - .04, emittedAtSeconds: time }))
 }
@@ -34,7 +35,7 @@ test('reader publishes exact validated controls once, reused reads do not drain 
 })
 test('independent consumers prime retained events, consume hidden events, never replay, and reject stale/reset input', () => {
   const { snapshot, bridge } = setup(), a = createMusicPilot(), b = createMusicPilot()
-  const tick = (s, now, profile: CrimsonProfile = 'candidate') => updateMusicPilot(s, bridge.reader, profile, 1/60, now, 1, false)
+  const tick = (s: ReturnType<typeof createMusicPilot>, now: number, profile: CrimsonProfile = 'candidate') => updateMusicPilot(s, bridge.reader, profile, 1/60, now, 1, false)
   event(snapshot,'low',1,1); bridge.publish(snapshot)
   tick(a,1); tick(b,1); assert.equal(a.low,0)
   event(snapshot,'low',.5,1.05); snapshot.timestamp=1050;bridge.publish(snapshot)
@@ -45,10 +46,10 @@ test('independent consumers prime retained events, consume hidden events, never 
   snapshot.timestamp=1500;snapshot.onsets.session++;bridge.publish(snapshot);tick(a,1.5);assert.equal(a.low,0)
 })
 test('isolated strengths proportional, bands independent, cadence peak variation below ten percent', () => {
-  for (const band of ['low','mid','high']) {
-    const peaks:any[]=[]
+  for (const band of ['low','mid','high'] as const) {
+    const peaks=[]
     for (const hz of [30,60,120]) {
-      const levels:any[]=[]
+      const levels=[]
       for (const strength of [.1,.3,.6,1]) {
         const { snapshot, bridge }=setup(), s=createMusicPilot()
         updateMusicPilot(s,bridge.reader,'candidate',.05,1,1,false)

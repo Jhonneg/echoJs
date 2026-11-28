@@ -4,7 +4,7 @@ import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 import { createMusicPilot, updateMusicPilot, upperAccentEnvelope, onsetEnvelope } from '../src/scenes/crimson-horizon/musicPilot.ts'
 import { emptySixBands } from '../src/audio/signal.ts'
 test('upper accents require high onsets and own energy; proportional and no sustain retrigger',()=>{
-  for(const band of ['presence','air'])for(const strength of [.2,.8]){
+  for(const band of ['presence','air'] as const)for(const strength of [.2,.8]){
     const state=createMusicPilot(),store=createMusicFeatureStore();let now=1,sequence=0,events:any[]=[]
     const step=(gain=1,reduced=false)=>{now+=1/60;const six=emptySixBands();six[band]=1
       store.publish({session:1,updatedAtSeconds:now,status:'active',sampleRate:48000,fftSize:2048,energy:{low:1,mid:1,high:1,overall:1,six},sequence,events,context:{intensity:1,brightness:1,brightnessValid:true,activity:1}})

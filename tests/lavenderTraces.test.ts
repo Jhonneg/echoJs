@@ -20,7 +20,7 @@ function fixture(){
  function run(n:number,options?:StepOptions){for(let i=0;i<n;i++)step(options)}
  step();return {response,traces,motion,view,step,run,now:()=>time}
 }
-const active=f=>f.traces.slots.filter(x=>x.active)
+const active=(f:ReturnType<typeof fixture>)=>f.traces.slots.filter(x=>x.active)
 
 test('all six actual qualified notices route to their assigned ridge and move in its direction',()=>{
  for(let ridge=0;ridge<6;ridge++){
@@ -61,7 +61,7 @@ test('global pool stays at3, one stroke per ridge, and simultaneous events start
  assert.equal(active(f).length,3);assert.equal(new Set(active(f).map(x=>x.ridge)).size,3)
 })
 test('strength orders opacity without changing geometry or saturating quiet input',()=>{
- const values:any[]=[]
+ const values=[]
  for(const strength of [.1,.4,1]){
   const f=fixture();f.run(12);f.run(4,{energy:{bass:.4}});f.step({event:'low',strength});f.run(8)
   values.push(active(f)[0].opacity)
@@ -69,7 +69,7 @@ test('strength orders opacity without changing geometry or saturating quiet inpu
  assert.ok(values[0]>0&&values[1]>values[0]&&values[2]>=values[1]);assert.ok(values[2]<=.45)
 })
 test('stale, gain0, reduced, session changes and controller re-entry consume old notices',()=>{
- for(const mode of ['stale','gain0','reduced','session']){
+ for(const mode of ['stale','gain0','reduced','session'] as const){
   const f=fixture();f.run(12);f.run(4,{energy:{bass:.4}});f.step({event:'low'});assert.equal(active(f).length,1)
   if(mode==='stale')f.response.fresh=false
   if(mode==='session')f.response.session++

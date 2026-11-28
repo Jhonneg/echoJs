@@ -6,7 +6,7 @@ import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 import { emptySixBands } from '../src/audio/signal.ts'
 import { terrainVertex, terrainFragment } from '../src/scenes/crimson-horizon/material.ts'
 
-function tick(state, now, low=0, high=0, gain=1, active=true, reduced=false,hz=60,session=1) {
+function tick(state: ReturnType<typeof createContourLighting>, now: number, low=0, high=0, gain=1, active=true, reduced=false,hz=60,session=1) {
   updateContourLighting(state,low,high,session,Math.round(now*hz),now,now,1/hz,gain,active,reduced)
 }
 test('low mids gradually illuminate, high mids launch brief travelling streaks without sustain retriggers',()=>{
@@ -20,16 +20,16 @@ test('low mids gradually illuminate, high mids launch brief travelling streaks w
   for(let i=361;i<=480;i++){tick(s,i/60,.25,.6);assert.equal(s.streak,0)}
 })
 test('strengths are ordered, cadence stable, partial gain linear and high-only works without low mids',()=>{
-  const peaks:any[]=[]
+  const peaks=[]
   for(const hz of [30,60,120]) {
-    const row:any[]=[]
+    const row=[]
     for(const high of [.1,.3,.6,1]) {
       const full=createContourLighting(),half=createContourLighting();tick(full,0,0,0,1,true,false,hz);tick(half,0,0,0,.5,true,false,hz)
       let peak=0
       for(let i=1;i<=hz;i++){tick(full,i/hz,0,high,1,true,false,hz);tick(half,i/hz,0,high,.5,true,false,hz);peak=Math.max(peak,full.streak);assert.ok(Math.abs(half.streak-full.streak*.5)<1e-12);assert.equal(full.light,0)}
       row.push(peak)
     }
-    for(let i=1;i<row.length;i++)assert.ok(row[i]>row[i-1]);peaks.push(row.at(-1))
+    for(let i=1;i<row.length;i++)assert.ok(row[i]>row[i-1]);peaks.push(row.at(-1)!)
   }
   assert.ok(Math.max(...peaks)/Math.min(...peaks)<1.1)
 })

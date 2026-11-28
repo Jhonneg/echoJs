@@ -20,7 +20,7 @@ test('synthetic FFT isolates low/mid/high tones across sample rates', () => {
   }
 })
 test('normalization is bounded, amplitude-based and silent at floor', () => {
-  const value = (db) => bandLevel(new Float32Array([db]), 0, 1)
+  const value = (db: number) => bandLevel(new Float32Array([db]), 0, 1)
   assert.equal(value(-Infinity), 0)
   assert.equal(value(NaN), 0)
   assert.equal(value(-80), 0)

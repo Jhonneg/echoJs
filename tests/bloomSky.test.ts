@@ -17,12 +17,12 @@ test('BR3: curtains sit left and right of the monolith, leaving the sky behind i
 })
 
 test('BR3/BR7: green on the left, violet-pink on the right; one main curtain marked per side', () => {
-  const rgb = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16))
+  const rgb = (hex: string) => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16))
   for (const c of CURTAINS) {
     const [r, g] = rgb(c.color)
     assert.ok(c.side === 'left' ? g > r : r > g, `${c.side} curtain colour ${c.color}`)
   }
-  for (const side of ['left', 'right']) assert.equal(CURTAINS.filter(c => c.side === side && c.lowQuality).length, 1)
+  for (const side of ['left', 'right'] as const) assert.equal(CURTAINS.filter(c => c.side === side && c.lowQuality).length, 1)
 })
 
 test('BR3: motion loops seamlessly and slowly (20–60 s per curtain)', () => {

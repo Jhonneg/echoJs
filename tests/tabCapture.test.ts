@@ -7,7 +7,7 @@ function setup() {
   const requests:any[]=[]
   Object.defineProperty(globalThis, 'isSecureContext', { value: true, configurable: true })
   Object.defineProperty(globalThis, 'navigator', { value: { mediaDevices: {
-    getDisplayMedia(options) {
+    getDisplayMedia(options: DisplayMediaStreamOptions) {
       assert.deepEqual(options, { video: true, audio: true })
       return new Promise<any>((resolve, reject) => requests.push({ resolve, reject }))
     },
@@ -20,7 +20,7 @@ function stream(audio = true) {
   })
   return { getTracks: () => tracks, getAudioTracks: () => tracks.filter((t) => t.kind === 'audio') }
 }
-function stopped(value) { assert.ok(value.getTracks().every((t) => t.readyState === 'ended')) }
+function stopped(value: ReturnType<typeof stream>) { assert.ok(value.getTracks().every((t) => t.readyState === 'ended')) }
 
 test('connect, duplicate connect, disconnect and reconnect cleanly', async () => {
   const { capture, requests, states } = setup()
@@ -113,7 +113,7 @@ test('unsupported context and error labels', async () => {
   assert.equal(states.at(-1).status, 'unsupported')
   assert.equal(requests.length, 0)
   Object.defineProperty(globalThis, 'isSecureContext', { value: true, configurable: true })
-  for (const name of ['InvalidStateError', 'NotFoundError', 'NotReadableError', 'AbortError', 'TypeError']) {
+  for (const name of ['InvalidStateError', 'NotFoundError', 'NotReadableError', 'AbortError', 'TypeError'] as const) {
     const pending = capture.connect()
     requests.at(-1).reject(new DOMException('failure', name))
     await pending
@@ -124,12 +124,12 @@ test('unsupported context and error labels', async () => {
 
 test('analysis starts with acquired stream and stops with capture lifecycle', async () => {
   setup()
-  let resolve
+  let resolve!: (value: unknown) => void
   navigator.mediaDevices.getDisplayMedia = () => new Promise<any>((done) => { resolve = done })
   const calls:any[]=[]
   const capture = createTabCapture(() => {}, {
     prepare() { calls.push('prepare'); return {ok:true} },
-    start(stream) { assert.equal(stream.getAudioTracks().length, 1); calls.push('start'); return {ok:true} },
+    start(stream: MediaStream) { assert.equal(stream.getAudioTracks().length, 1); calls.push('start'); return {ok:true} },
     stop() { calls.push('stop') },
   })
   const pending = capture.connect()

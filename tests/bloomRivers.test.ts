@@ -34,7 +34,7 @@ test('BR6: the meander stays small and vanishes at the ends', () => {
 })
 
 test('BR6: pink on the left, teal and violet on the right; Low keeps the two main rivers', () => {
-  const rgb = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16))
+  const rgb = (hex: string) => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16))
   const [pink, teal, violet] = RIVERS
   assert.ok(pink.path[0][0] < 0.5 && rgb(pink.color)[0] > rgb(pink.color)[1])
   assert.ok(teal.path[0][0] > 0.5 && rgb(teal.color)[1] > rgb(teal.color)[0])

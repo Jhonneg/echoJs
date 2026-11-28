@@ -28,7 +28,7 @@ test('NT16/NT18: in silence only the gate floor glows; the fixtures and their ha
   assert.ok(GATE_FLOOR >= GLOW_IDLE)
   const haze = hazeLevels(state)
   assert.equal(haze.gate, GATE_FLOOR)
-  for (const name of ['magenta', 'cyan', 'bridge']) assert.equal(haze[name], 0, name)
+  for (const name of ['magenta', 'cyan', 'bridge'] as const) assert.equal(haze[name], 0, name)
   assert.equal(sceneLightLevel(createNocturneVisualState()), 0)
 })
 

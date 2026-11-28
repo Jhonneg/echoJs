@@ -1,0 +1,74 @@
+{
+  "steel": {
+    "before": 203,
+    "after": 564
+  },
+  "frame": {
+    "before": 239,
+    "after": 373
+  },
+  "recess": {
+    "before": 105,
+    "after": 135
+  },
+  "cyan": {
+    "before": 336,
+    "after": 336
+  },
+  "cyanDetails": {
+    "before": 6,
+    "after": 6
+  },
+  "cyanPanel": {
+    "before": 1,
+    "after": 1
+  },
+  "magenta": {
+    "before": 1,
+    "after": 1
+  },
+  "magentaSecondary": {
+    "before": 5,
+    "after": 5
+  },
+  "bridge0": {
+    "before": 2,
+    "after": 2
+  },
+  "bridge1": {
+    "before": 2,
+    "after": 2
+  },
+  "bridge2": {
+    "before": 2,
+    "after": 2
+  },
+  "bridge3": {
+    "before": 2,
+    "after": 2
+  },
+  "bridge4": {
+    "before": 2,
+    "after": 2
+  },
+  "bridge5": {
+    "before": 2,
+    "after": 2
+  },
+  "violet": {
+    "before": 9,
+    "after": 9
+  },
+  "violetSecondary": {
+    "before": 8,
+    "after": 8
+  },
+  "violetFlicker": {
+    "before": 1,
+    "after": 1
+  },
+  "asphalt": {
+    "before": 16,
+    "after": 22
+  }
+}

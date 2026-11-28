@@ -1,0 +1,91 @@
+{
+  "label": "after",
+  "source": "Production build; static asset review, headless Brave (ANGLE GL), 1440×900; idle and Manual only. GPU ms = median whole animation frame from EXT_disjoint_timer_query_webgl2 (relative costs, not native-window certification).",
+  "errors": [],
+  "luma": {
+    "idle": {
+      "frame": 3.5,
+      "walls": 2.34,
+      "floor": 4.63,
+      "gate": 15.5,
+      "bridge": 7.19,
+      "sky": 5.19,
+      "cyanPct": 0.32,
+      "magentaPct": 0,
+      "litPct": 0.36
+    },
+    "idle-low": {
+      "frame": 3.47,
+      "walls": 2.34,
+      "floor": 4.58,
+      "gate": 15.36,
+      "bridge": 7.11,
+      "sky": 5.14,
+      "cyanPct": 0.31,
+      "magentaPct": 0,
+      "litPct": 0.35
+    },
+    "manual-all-on": {
+      "frame": 64.12,
+      "walls": 28.37,
+      "floor": 47.33,
+      "gate": 169.35,
+      "bridge": 106.6,
+      "sky": 76.64,
+      "cyanPct": 25.15,
+      "magentaPct": 31.93,
+      "litPct": 81.83
+    },
+    "manual-all-on-later": {
+      "frame": 64.08,
+      "walls": 28.45,
+      "floor": 47.3,
+      "gate": 169.32,
+      "bridge": 106.99,
+      "sky": 76,
+      "cyanPct": 25.18,
+      "magentaPct": 32,
+      "litPct": 81.81
+    },
+    "manual-reduced-motion": {
+      "frame": 63.49,
+      "walls": 28.2,
+      "floor": 46.62,
+      "gate": 167.83,
+      "bridge": 105.5,
+      "sky": 75.22,
+      "cyanPct": 25.19,
+      "magentaPct": 31.95,
+      "litPct": 81.69
+    },
+    "manual-reduced-motion-later": {
+      "frame": 63.49,
+      "walls": 28.2,
+      "floor": 46.62,
+      "gate": 167.83,
+      "bridge": 105.5,
+      "sky": 75.22,
+      "cyanPct": 25.19,
+      "magentaPct": 31.95,
+      "litPct": 81.69
+    }
+  },
+  "gpu": {
+    "Standard idle": {
+      "gpuMsPerFrame": 4.672,
+      "samples": [
+        4.534,
+        4.672,
+        5.138
+      ]
+    },
+    "Low idle": {
+      "gpuMsPerFrame": 4.186,
+      "samples": [
+        4.159,
+        4.186,
+        4.242
+      ]
+    }
+  }
+}

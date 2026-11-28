@@ -27,7 +27,7 @@ test('one high event accents one side briefly, next accepted event alternates si
  f.advance(1);assert.deepEqual([...f.state.accents],[0,0])
 })
 test('quiet/loud attacks and gain are proportional, peaks stable at30/60/120Hz',()=>{
- const peak=(strength,gain=1,hz=120)=>{const f=fixture();f.event(strength);let p=0;for(let i=0;i<hz;i++){f.step({gain,hz});p=Math.max(p,...f.state.accents)}return p}
+ const peak=(strength:number,gain=1,hz=120)=>{const f=fixture();f.event(strength);let p=0;for(let i=0;i<hz;i++){f.step({gain,hz});p=Math.max(p,...f.state.accents)}return p}
  assert.ok(Math.abs(peak(.2)-2*peak(.1))<1e-10);assert.ok(Math.abs(peak(.2,.5)-peak(.1))<1e-10)
  const peaks=[30,60,120].map(hz=>peak(.2,1,hz));assert.ok(Math.max(...peaks)-Math.min(...peaks)<.001)
  assert.equal(violetAccentEnvelope(.24),0)
@@ -45,9 +45,9 @@ test('dense high events have one bounded accent, no restart/stack or queued late
  f.advance(1);assert.deepEqual([...f.state.accents],[0,0]);assert.ok(f.state.body<=.16)
 })
 test('bass/low-mid/high-mid energy, overall intensity and non-high/invalid events do not create violet',()=>{
- const f=fixture();for(const band of ['subBass','bass','lowMids','highMids'])f.view.energy.six[band]=1
+ const f=fixture();for(const band of ['subBass','bass','lowMids','highMids'] as const)f.view.energy.six[band]=1
  f.view.context={intensity:1};f.advance(2);assert.equal(f.state.body,0)
- for(const [band,strength,extra] of [['low',1,{}],['mid',1,{}],['high',.039,{}],['high',NaN,{}],['high',1,{session:2}],['high',1,{emittedAtSeconds:99}],['high',1,{emittedAtSeconds:0}]] as ['low'|'mid'|'high',number,object][]){
+ for(const [band,strength,extra] of [['low',1,{}],['mid',1,{}],['high',.039,{}],['high',NaN,{}],['high',1,{session:2}],['high',1,{emittedAtSeconds:99}],['high',1,{emittedAtSeconds:0}]] as const as ['low'|'mid'|'high',number,object][]){
   f.event(strength,band,extra);f.step();assert.equal(f.state.peak,0)
  }
 })

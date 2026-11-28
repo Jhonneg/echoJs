@@ -6,8 +6,8 @@ import {onsetFixtures,compareOnsets,assessOnsets} from '../src/dev/audioLab/onse
 
 const silence=()=>new Float32Array(1024).fill(-Infinity)
 function setup(){const detector=createOnsetDetector(48000,2048),meter=createEnergyMeter(48000,2048),energy=createEnergy();let time=0;return {detector,step(bins=silence(),dt=1/60,active=true){time+=dt;meter.update(bins,energy);return detector.update(bins,energy.rms,time,active)}}}
-const bin=(value)=>{const bins=silence();if(value>0)bins[43]=20*Math.log10(value);return bins}
-function median(values){const sorted=[...values].sort((a,b)=>a-b);return sorted.length%2?sorted[Math.floor(sorted.length/2)]:(sorted[sorted.length/2-1]+sorted[sorted.length/2])/2}
+const bin=(value:number)=>{const bins=silence();if(value>0)bins[43]=20*Math.log10(value);return bins}
+function median(values:number[]){const sorted=[...values].sort((a,b)=>a-b);return sorted.length%2?sorted[Math.floor(sorted.length/2)]:(sorted[sorted.length/2-1]+sorted[sorted.length/2])/2}
 test('adaptive median/MAD excludes current novelty and expires history in seconds',()=>{
   const x=setup(),prior:{time:number,value:number}[]=[];let magnitude=0,time=0
   for(let i=0;i<180;i++){
@@ -63,8 +63,8 @@ test('falling energy and quiet noise do not become attacks; reset/invalid/gap pr
   assert.equal(y.detector.view.primed,false)
 })
 test('attack window rejects weak release sidebands but retains dominant decays and weak attacks over a steady bed',()=>{
-  function mixture(low,mid){const bins=silence();if(low)bins[4]=20*Math.log10(low);if(mid)bins[43]=20*Math.log10(mid);return bins}
-  for(const [peak,confirmationLow,confirmationMid,rejected] of [[.003,.03,.003,true],[.1,.03,.03,false],[.003,.1,.003,false]]){
+  function mixture(low:number,mid:number){const bins=silence();if(low)bins[4]=20*Math.log10(low);if(mid)bins[43]=20*Math.log10(mid);return bins}
+  for(const [peak,confirmationLow,confirmationMid,rejected] of [[.003,.03,.003,true],[.1,.03,.03,false],[.003,.1,.003,false]] as const){
     const x=setup()
     // Prime a stable bass bed without producing an initial event.
     for(let i=0;i<30;i++)x.step(mixture(.1,0))
@@ -82,7 +82,7 @@ test('attack window rejects weak release sidebands but retains dominant decays a
   // its suppression is an explicit limitation, not evidence of music accuracy.
 })
 test('40 ms observation preserves peak identity and uses pre-rise baseline across cadences',()=>{
-  const strengths:any[]=[]
+  const strengths=[]
   for(const cadence of [30,60,120]){
     const d=createOnsetDetector(48000,2048),meter=createEnergyMeter(48000,2048),energy=createEnergy()
     let firstPeak:number|null=null

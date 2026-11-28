@@ -37,7 +37,7 @@ test('high-mid attack over stationary low-mid sustain does not borrow an old ris
  assert.equal(f.state.detailAccent,0)
 })
 test('bass, high-only, wrong-band/session and invalid-time events do not create detail accents',()=>{
- for(const extra of [{band:'low'},{band:'high'},{session:2},{emittedAtSeconds:99},{emittedAtSeconds:0},{emittedAtSeconds:NaN}]){
+ for(const extra of [{band:'low'},{band:'high'},{session:2},{emittedAtSeconds:99},{emittedAtSeconds:0},{emittedAtSeconds:NaN}] as const){
   const f=fixture();f.advance(.3);f.view.energy.six.lowMids=.3;f.step();f.event(1,extra);f.step();assert.equal(f.state.detailAccent,0)
  }
  const f=fixture();f.view.energy.six.bass=f.view.energy.six.air=1;f.advance()

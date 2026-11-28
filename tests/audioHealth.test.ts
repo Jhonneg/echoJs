@@ -47,7 +47,7 @@ test('resume rejection is recoverable and a late rejection cannot poison a repla
  contexts[0].state='suspended';contexts[0].rejectResume=true;a.resume();await Promise.resolve();await Promise.resolve()
  assert.equal(a.health.status,'suspended');assert.match(a.health.message,/could not resume/)
  contexts[0].rejectResume=false;a.resume();await Promise.resolve();assert.equal(a.health.status,'running')
- let reject;contexts[0].resume=()=>new Promise<any>((_,r)=>{reject=r});a.resume()
+ let reject!:(reason:unknown)=>void;contexts[0].resume=()=>new Promise<any>((_,r)=>{reject=r});a.resume()
  a.prepare();a.start({});reject(Error('late blocked'));await Promise.resolve();await Promise.resolve()
  assert.equal(a.health.status,'running');a.stop()
 })

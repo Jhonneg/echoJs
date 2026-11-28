@@ -39,7 +39,7 @@ test('silence, bass, low mids and overall intensity do not illuminate the panel'
 
 test('quiet and loud sustained high mids deliver ordered material and point-light brightness', () => {
   const f = fixture()
-  let quiet, loud
+  let quiet!: ReturnType<typeof f.step>, loud!: ReturnType<typeof f.step>
   for (let i = 0; i < 90; i++) quiet = f.step(.1)
   for (let i = 0; i < 90; i++) loud = f.step(.4)
   assert.ok(quiet.level > 0 && loud.level > quiet.level * 3)

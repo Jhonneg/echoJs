@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { createLayerMotion, updateLayerMotion, ridgeHeight, TERRAIN_PERIOD, DRIFT_SPEEDS, type Peak } from '../src/scenes/lavender-peaks/motion.ts'
 import { ridges } from '../src/scenes/lavender-peaks/terrain.ts'
 
-function advance(depth, seconds, hz = 60) {
+function advance(depth: number, seconds: number, hz = 60) {
   const motion = createLayerMotion()
   for (let i = 0; i < seconds * hz; i++) updateLayerMotion(motion, depth, false, 1 / hz)
   return motion
@@ -43,7 +43,7 @@ test('reduced motion freezes in place; resume continues without resetting and in
 
 test('periodic ridges agree across repeated tiles and boundary slopes', () => {
   const peaks: Peak[] = [[-10, 1.4, 2.6], [1.6, 4.8, 2.2], [10.5, 2.2, 2]]
-  const height = x => ridgeHeight(x, peaks, -1.4, 0.08, 0)
+  const height = (x: number) => ridgeHeight(x, peaks, -1.4, 0.08, 0)
   for (const x of [-20, -19.99, 0, 19.99, 20]) assert.ok(Math.abs(height(x) - height(x + TERRAIN_PERIOD)) < 1e-10)
   const epsilon = 0.0001
   const edge = TERRAIN_PERIOD / 2
@@ -55,7 +55,7 @@ test('periodic ridges agree across repeated tiles and boundary slopes', () => {
 
 test('every authored mountain sequence returns identically through many full cycles', () => {
   for (const [index, ridge] of ridges.entries()) {
-    const height = x => ridgeHeight(x, ridge.peaks, ridge.base, ridge.detail, index)
+    const height = (x: number) => ridgeHeight(x, ridge.peaks, ridge.base, ridge.detail, index)
     for (let x = -TERRAIN_PERIOD / 2; x <= TERRAIN_PERIOD / 2; x += 0.125) {
       for (const cycle of [-12, -3, 1, 4, 20]) {
         assert.ok(Math.abs(height(x) - height(x + cycle * TERRAIN_PERIOD)) < 1e-9)
@@ -70,7 +70,7 @@ test('every authored mountain sequence returns identically through many full cyc
 
 test('authored sequences keep broad variation and continuous seams over their whole loop', () => {
   for (const [index, ridge] of ridges.entries()) {
-    const height = x => ridgeHeight(x, ridge.peaks, ridge.base, 0, index)
+    const height = (x: number) => ridgeHeight(x, ridge.peaks, ridge.base, 0, index)
     for (let start = -12; start < 12; start += 0.5) {
       const heights = Array.from({ length: 41 }, (_, i) => height(start + i / 8))
       assert.ok(Math.max(...heights) - Math.min(...heights) > 0.3)

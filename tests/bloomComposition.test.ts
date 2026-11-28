@@ -90,7 +90,7 @@ test('BR7: every screen shape shows the whole monolith, centred, with the horizo
 })
 
 test('BR7: portrait shrinks the monolith to about half and opens water above the controls', () => {
-  const height = aspect => { const ys = corners().map(([x, y, z]) => projectForAspect(x, y, z, aspect).y); return Math.max(...ys) - Math.min(...ys) }
+  const height = (aspect: number) => { const ys = corners().map(([x, y, z]) => projectForAspect(x, y, z, aspect).y); return Math.max(...ys) - Math.min(...ys) }
   const ratio = height(shapes.portrait) / height(shapes.desktop)
   assert.ok(ratio > 0.4 && ratio < 0.65, `portrait monolith is ${ratio.toFixed(2)} of desktop`)
   assert.ok(cameraFor(shapes.portrait).horizon <= 0.54, 'horizon raised for water above the controls')

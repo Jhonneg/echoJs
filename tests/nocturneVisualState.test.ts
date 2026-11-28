@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { createMusicFeatureStore } from '../src/audio/musicFeatures.ts'
 import { emptySixBands } from '../src/audio/signal.ts'
 import {
-  calibrateNocturneLevel, NOCTURNE_VISUAL_CHANNELS, createNocturneVisualState, updateNocturneVisualState, applyNocturneVisualState, GATE_FLOOR, type NocturneVisualTargets,
+  calibrateNocturneLevel, NOCTURNE_VISUAL_CHANNELS, createNocturneVisualState, updateNocturneVisualState, applyNocturneVisualState, GATE_FLOOR, type NocturneVisualTargets, type NocturneVisualState, type NocturneVisualChannel,
 } from '../src/scenes/nocturne/visualState.ts'
 
 const manual = { magenta: .2, cyan: .4, cyanPanel: .6, violet: .8 }
@@ -25,7 +25,7 @@ function fixture() {
   step()
   return {state,input,store,reader,step,advance,event,reads:()=>reads}
 }
-const levels = state => NOCTURNE_VISUAL_CHANNELS.map(name=>state.channels[name].level)
+const levels = (state: NocturneVisualState) => NOCTURNE_VISUAL_CHANNELS.map(name=>state.channels[name].level)
 
 test('one borrowed read per update and stable scene output/history storage',()=>{
   const f=fixture(), channels=f.state.channels, reflections=f.state.reflections, history=f.state.panel.energies
@@ -41,7 +41,7 @@ test('one borrowed read per update and stable scene output/history storage',()=>
 test('each named output and physical reflection source can be exercised without WebGL',()=>{
   const f=fixture();f.input.energy.low=.2;f.input.energy.six.bass=.2;f.input.energy.mid=.3;f.input.energy.six.lowMids=.3;f.input.energy.high=.1;f.input.energy.six.presence=.1;f.input.energy.six.air=.1;f.input.energy.six.highMids=.4;f.advance(5)
   const expected={magentaMain:.2285714286,magentaSecondary:.0822857143,bridge:0,cyanWindows:.1697142857,cyanDetails:.24,violet:.0457142857,violetSecondary:.0457142857,cyanPanel:.52}
-  const emitters:any[]=[],lights:any[]=[]
+  const emitters:{channel:NocturneVisualChannel,material:{emissiveIntensity:number}}[]=[],lights:{channel:NocturneVisualChannel,light:{intensity:number},full:number}[]=[]
   for(const name of NOCTURNE_VISUAL_CHANNELS){
     assert.ok(Math.abs(f.state.channels[name].level-calibrateNocturneLevel(expected[name]))<.001,name)
     assert.equal(f.state.reflections[name],f.state.channels[name].level)
@@ -54,8 +54,8 @@ test('each named output and physical reflection source can be exercised without 
   assert.notEqual(f.state.channels.magentaMain,f.state.channels.magentaSecondary)
   f.state.channels.bridge.level=.05;f.state.spill.bridge=.05
   applyNocturneVisualState({emitters,lights},f.state)
-  assert.equal(lights.find(x=>x.channel==='bridge').light.intensity,2)
-  assert.ok(lights.find(x=>x.channel==='magentaMain').light.intensity>8)
+  assert.equal(lights.find(x=>x.channel==='bridge')!.light.intensity,2)
+  assert.ok(lights.find(x=>x.channel==='magentaMain')!.light.intensity>8)
 })
 
 test('Manual preview shares final outputs and atmosphere weights without corrupting MI',()=>{
@@ -113,8 +113,8 @@ test('cadence, quiet/loud and silence keep every final output bounded',()=>{
 test('violet high events reach only the alternating bank and its point light',()=>{
  const f=fixture();f.input.energy.six.presence=.1;f.advance(1)
  f.event('high',.3);f.step();f.step()
- const targets={emitters:['violet','violetSecondary'].map(channel=>({channel,material:{emissiveIntensity:0}})),lights:['violet','violetSecondary'].map(channel=>({channel,light:{intensity:0},full:12}))}
- applyNocturneVisualState(targets as unknown as NocturneVisualTargets,f.state)
+ const targets={emitters:(['violet','violetSecondary'] as const).map(channel=>({channel,material:{emissiveIntensity:0}})),lights:(['violet','violetSecondary'] as const).map(channel=>({channel,light:{intensity:0},full:12}))}
+ applyNocturneVisualState(targets,f.state)
  assert.ok(f.state.channels.violet.accent>.2);assert.equal(f.state.channels.violetSecondary.accent,0)
  for(const {channel,material}of targets.emitters)assert.equal(material.emissiveIntensity,f.state.channels[channel].level*1.3)
  for(const {channel,light}of targets.lights)assert.equal(light.intensity,f.state.channels[channel].level*12)
@@ -127,7 +127,7 @@ test('violet high events reach only the alternating bank and its point light',()
 
 test('approved Audio spill lift is bounded, independent and absent from Manual/zero',()=>{
  const f=fixture();f.input.energy.six.bass=f.input.energy.six.lowMids=f.input.energy.six.highMids=.4;f.advance(3)
- const expected={magentaMain:1.5,cyanWindows:2,cyanDetails:2}
+ const expected:Partial<Record<NocturneVisualChannel,number>>={magentaMain:1.5,cyanWindows:2,cyanDetails:2}
  for(const name of NOCTURNE_VISUAL_CHANNELS)assert.equal(f.state.spill[name],Math.min(1,f.state.channels[name].level*(expected[name]??1)))
  const panel=f.state.channels.cyanPanel.level;assert.equal(f.state.spill.cyanPanel,panel)
  f.event('low',1);f.step();f.step();assert.equal(f.state.spill.magentaMain,1);assert.ok(f.state.channels.magentaMain.level<1)

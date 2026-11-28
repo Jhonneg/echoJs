@@ -23,13 +23,22 @@ function createMaps(finish: Finish): Maps {
     const panel = panelValues[Math.floor(v) * columns + Math.floor(u)]
     const grain = random() - 0.5
     const streak = streaks[x] * 0.5 + streaks[(x + 1) % SIZE] * 0.3 + streaks[(x + 2) % SIZE] * 0.2
+    // Coherent runoff bands and patchy seam wear, in the existing four-metre tile. Periodic
+    // functions meet at the repeat boundary; fine grain alone reads as a uniformly clean wall.
+    const tau = Math.PI * 2
+    const run = Math.pow(0.5 + 0.5 * Math.sin(x / SIZE * tau * 11 + Math.sin(x / SIZE * tau * 3)), 8)
+    const runoff = run * (0.5 + 0.5 * Math.cos(y / SIZE * tau + Math.sin(x / SIZE * tau * 5)))
+    const mottle = Math.sin(x / SIZE * tau * 3 + Math.cos(y / SIZE * tau * 2)) * Math.sin(y / SIZE * tau * 5 + x / SIZE * tau)
+    const wornEdge = Math.max(0, 1 - Math.abs(edge - 0.02) / 0.012) * Math.max(0, mottle)
     const value = 0.83 + panel * 0.1 + grain * 0.055 - seam * 0.3 - streak * 0.045
+      - runoff * 0.12 + mottle * 0.025 + wornEdge * 0.065
     const i = (y * SIZE + x) * 4
-    color[i] = color[i + 1] = color[i + 2] = Math.round(value * 255)
+    color[i] = color[i + 1] = color[i + 2] = Math.round(Math.min(1, value) * 255)
     color[i + 3] = 255
     // Red is bump height; green is the standard material roughness channel.
     surface[i] = Math.round((0.55 - seam * 0.25 + grain * (finish === 'metal' ? 0.07 : 0.2)) * 255)
-    surface[i + 1] = Math.round((finish === 'metal' ? 0.52 + panel * 0.2 + streak * 0.08 : 0.86 + panel * 0.1 + grain * 0.04) * 255)
+    surface[i + 1] = Math.round(Math.min(1, (finish === 'metal' ? 0.52 + panel * 0.2 + streak * 0.08 : 0.86 + panel * 0.1 + grain * 0.04)
+      + runoff * 0.05 - wornEdge * 0.08) * 255)
     surface[i + 2] = 0
     surface[i + 3] = 255
   }

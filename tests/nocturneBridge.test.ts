@@ -25,7 +25,7 @@ test('sustained energy and intensity never start a sweep without an event',()=>{
  assert.equal(f.state.level,0);assert.equal(f.state.peak,0)
 })
 test('strength and Reactivity remain proportional; peak stable at30/60/120Hz',()=>{
- const peak=(strength,gain=1,dt=1/120)=>{const f=fixture();f.event(strength);let p=0;for(let i=0;i<2/dt;i++){f.step({dt,gain});p=Math.max(p,...f.state.levels)}return p}
+ const peak=(strength:number,gain=1,dt=1/120)=>{const f=fixture();f.event(strength);let p=0;for(let i=0;i<2/dt;i++){f.step({dt,gain});p=Math.max(p,...f.state.levels)}return p}
  assert.ok(Math.abs(peak(.2)-2*peak(.1))<1e-10)
  assert.ok(Math.abs(peak(.2,.5)-peak(.1))<1e-10)
  assert.ok(peak(1)<=.48)
@@ -40,7 +40,7 @@ test('dense events neither restart nor stack, dropped events are not queued',()=
  dense.advance(2);assert.equal(dense.state.level,0)
 })
 test('mid/low/subthreshold/malformed/wrong session/stale/future events are ignored',()=>{
- for(const [band,strength,extra] of [['mid',1,{}],['high',1,{}],['high',.039,{}],['high',NaN,{}],['high',1,{session:9}],['high',1,{emittedAtSeconds:0}],['high',1,{emittedAtSeconds:100}]] as [string,number,object][]){
+ for(const [band,strength,extra] of [['mid',1,{}],['high',1,{}],['high',.039,{}],['high',NaN,{}],['high',1,{session:9}],['high',1,{emittedAtSeconds:0}],['high',1,{emittedAtSeconds:100}]] as const as [string,number,object][]){
   const f=fixture();f.event(strength,band,extra);f.advance(1);assert.equal(f.state.peak,0)
  }
 })

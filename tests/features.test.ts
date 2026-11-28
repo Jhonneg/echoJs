@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { bandMagnitude, emptyBands, resetSignal, silentSignal } from '../src/audio/signal.ts'
+import { bandMagnitude, emptyBands, resetSignal, silentSignal, type AudioSignal, type BandValues } from '../src/audio/signal.ts'
 import { FEATURE_SETTINGS, updateSignalFeatures } from '../src/audio/features.ts'
 
-function feed(signal, raw, seconds, fps = 100, settings = FEATURE_SETTINGS) {
+function feed(signal: AudioSignal, raw: BandValues, seconds: number, fps = 100, settings = FEATURE_SETTINGS) {
   for (let i = 0; i < Math.round(seconds * fps); i++) updateSignalFeatures(signal, raw, 1 / fps, (i + 1) * 1000 / fps, settings)
 }
 test('integrated band magnitude accounts for distributed energy without early clipping', () => {
@@ -14,12 +14,12 @@ test('integrated band magnitude accounts for distributed energy without early cl
   assert.equal(bandMagnitude(new Float32Array([-Infinity, NaN, -80]), 0, 3), 0)
 })
 test('short hits survive the fast path and remain isolated by band', () => {
-  for (const band of ['bass', 'midrange', 'treble']) {
+  for (const band of ['bass', 'midrange', 'treble'] as const) {
     const signal = silentSignal(), raw = { ...emptyBands(), [band]: 0.025 }
     updateSignalFeatures(signal, raw, 0.01, 10)
     assert.ok(signal.fast[band] > signal.levels[band] * 0.7)
     assert.ok(signal.transient[band] > 0.1)
-    for (const other of ['bass', 'midrange', 'treble'].filter((b) => b !== band)) {
+    for (const other of (['bass', 'midrange', 'treble'] as const).filter((b) => b !== band)) {
       assert.equal(signal.fast[other], 0)
       assert.equal(signal.transient[other], 0)
     }

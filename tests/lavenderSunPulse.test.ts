@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import {createSunPulse,updateSunPulse} from '../src/scenes/lavender-peaks/sunPulse.ts'
 import {createLavenderResponse} from '../src/scenes/lavender-peaks/response.ts'
 const fixture=()=>{const r=createLavenderResponse();r.session=1;r.fresh=true;return {r,s:createSunPulse()}}
-function run(f,n=120,gain=1,reduced=false){for(let i=0;i<n;i++)updateSunPulse(f.s,f.r,1/60,gain,reduced);return f.s.value}
+function run(f:ReturnType<typeof fixture>,n=120,gain=1,reduced=false){for(let i=0;i<n;i++)updateSunPulse(f.s,f.r,1/60,gain,reduced);return f.s.value}
 test('sun body and attacks follow low bands only, with original weighted blend',()=>{
  for(let i=0;i<6;i++){const f=fixture();f.r.ridges[i].target=.5;assert.equal(run(f)>.09,i>=4)}
  const f=fixture();f.r.ridges[4].target=.5;const body=run(f);f.r.ridges[4].accent=.5

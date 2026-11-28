@@ -2,14 +2,14 @@ import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {createAdaptiveScaling,createAdaptiveView,applyAdaptive,resetAdaptiveView,RANGE_SETTINGS} from '../src/dev/audioLab/adaptive.ts'
 import {createEnergy} from '../src/dev/audioLab/energy.ts'
-import {createDiagnosticObserver} from '../src/dev/audioLab/diagnostics.ts'
+import {createDiagnosticObserver,type DiagnosticSnapshot} from '../src/dev/audioLab/diagnostics.ts'
 import {silentSignal,emptyBands} from '../src/audio/signal.ts'
 import {rangeFixtures,compareRange,assessRange} from '../src/dev/audioLab/rangeComparison.ts'
 import {generateFixture} from '../src/dev/audioLab/fixtures.ts'
 
-function feed(scaling,rms,seconds,hz=60) {for(let i=0;i<seconds*hz;i++)scaling.update(rms,1/hz)}
+function feed(scaling:ReturnType<typeof createAdaptiveScaling>,rms:number,seconds:number,hz=60) {for(let i=0;i<seconds*hz;i++)scaling.update(rms,1/hz)}
 test('two-second unity hold and five-second rise use elapsed seconds at all test cadences',()=>{
-  const gains:any[]=[]
+  const gains=[]
   for(const hz of [30,60,120]) {
     const scaling=createAdaptiveScaling()
     feed(scaling,.02,2,hz);assert.ok(Math.abs(scaling.state.gain-1)<1e-12)
@@ -53,9 +53,9 @@ test('source inactivity, discontinuities and invalid values reset gain and histo
     assert.equal(scaling.state,reference)
     assert.equal(reference.gain,1);assert.equal(reference.elapsed,0);assert.equal(reference.slowRms,0)
   }
-  let view
+  let view!:Readonly<DiagnosticSnapshot>
   const observer=createDiagnosticObserver(s=>{view=s})
-  const analyser={fftSize:2048,context:{sampleRate:48000,currentTime:0},getFloatTimeDomainData(v){v.fill(.02)}} as unknown as AnalyserNode
+  const analyser={fftSize:2048,context:{sampleRate:48000,currentTime:0},getFloatTimeDomainData(v:Float32Array){v.fill(.02)}} as unknown as AnalyserNode
   const bins=new Float32Array(1024).fill(-Infinity)
   for(let i=0;i<1200;i++)observer.read(analyser,bins,silentSignal(),emptyBands(),undefined,true,i*1000/60,1/60)
   assert.ok(view.adaptive.gain>1.9)

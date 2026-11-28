@@ -3,10 +3,10 @@ import assert from 'node:assert/strict'
 import {createAtmosphere,updateAtmosphere} from '../src/scenes/lavender-peaks/atmosphere.ts'
 import {createLavenderResponse,updateLavenderResponse} from '../src/scenes/lavender-peaks/response.ts'
 const fixture=()=>{const r=createLavenderResponse();r.session=1;r.fresh=true;return {r,s:createAtmosphere()}}
-function run(f,n=600,gain=1,reduced=false,hz=60){for(let i=0;i<n;i++)updateAtmosphere(f.s,f.r,1/hz,gain,reduced);return f.s}
+function run(f:ReturnType<typeof fixture>,n=600,gain=1,reduced=false,hz=60){for(let i=0;i<n;i++)updateAtmosphere(f.s,f.r,1/hz,gain,reduced);return f.s}
 test('quiet stays unchanged; quiet/loud and sparse/busy context stay distinguishable and bounded',()=>{
  const quiet=fixture();run(quiet);assert.equal(quiet.s.density+quiet.s.warmth,0)
- const values:any[]=[]
+ const values=[]
  for(const intensity of [.02,.12,.5]){const f=fixture();f.r.context.intensity=intensity;f.r.context.brightnessValid=true;f.r.context.brightness=.6;run(f);values.push(f.s.density);assert.ok(f.s.warmth>0&&f.s.warmth<1)}
  assert.ok(values[0]<values[1]&&values[1]<values[2])
  const sparse=fixture(),busy=fixture();sparse.r.context.intensity=busy.r.context.intensity=.2;busy.r.context.activity=1
@@ -28,7 +28,7 @@ test('stale releases smoothly; gain0 and sessions clear; gain applied once',()=>
 test('reduced response is slower, cadence independent, invalid deltas do not jump; response not mutated',()=>{
  const normal=fixture(),reduced=fixture();normal.r.context.intensity=reduced.r.context.intensity=.4
  run(normal,60);run(reduced,60,1,true);assert.ok(reduced.s.density<normal.s.density)
- const levels:any[]=[]
+ const levels=[]
  for(const hz of [30,60,120]){const f=fixture();f.r.context.intensity=.3;run(f,hz*3,1,false,hz);levels.push(f.s.density)}
  assert.ok(Math.max(...levels)-Math.min(...levels)<1e-10)
  const f=fixture();f.r.context.intensity=.4;const before=structuredClone(f.r)

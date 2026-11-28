@@ -15,7 +15,7 @@ test('terrain chunks are finite three-dimensional meshes with open matching ends
   const bounds = Array.from({ length: 3 }, () => [Infinity, -Infinity])
   const edges = new Map()
   for (let triangle = 0; triangle < positions.length; triangle += 9) {
-    const vertices:any[]=[]
+    const vertices=[]
     for (let offset = 0; offset < 9; offset += 3) {
       const vertex = Array.from(positions.slice(triangle + offset, triangle + offset + 3))
       vertices.push(vertex.join(','))
@@ -36,7 +36,7 @@ test('terrain chunks are finite three-dimensional meshes with open matching ends
   for (const [edge, count] of edges) {
     assert.ok(count === 1 || count === 2)
     if (count === 1) {
-      const [a, b] = edge.split('|').map(point => point.split(',').map(Number))
+      const [a, b] = edge.split('|').map((point: string) => point.split(',').map(Number))
       assert.ok((a[0] === b[0] && Math.abs(a[0]) === CHUNK_WIDTH / 2)
         || (a[2] === b[2] && [0, -CHUNK_LENGTH].includes(a[2])), 'only outer boundaries may be open')
     }
@@ -73,7 +73,7 @@ test('seeded ridged noise is bounded, coherent and repeatable in world coordinat
 })
 
 test('pointer movement is smooth, bounded and independent of frame cadence', () => {
-  const results:any[]=[]
+  const results=[]
   for (const hz of [30, 60, 120]) {
     const view = createViewMotion()
     updateViewMotion(view, { x: 1, y: 1 }, 1 / hz, false)
@@ -92,7 +92,7 @@ test('pointer movement is smooth, bounded and independent of frame cadence', () 
 
 
 test('neighboring chunk boundaries share exact height, normals and shader features', () => {
-  function boundary(data, z) {
+  function boundary(data: ReturnType<typeof createTerrainChunk>, z: number) {
     const result = new Map()
     for (let vertex = 0; vertex < data.positions.length / 3; vertex++) {
       const i = vertex * 3

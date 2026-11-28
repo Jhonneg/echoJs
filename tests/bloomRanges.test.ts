@@ -2,8 +2,9 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { CAMERA_HEIGHT, CAMERA_Z, HORIZON_FRACTION, RANGES, projectToScreen, rangeTop } from '../src/scenes/bloom/composition.ts'
 import { buildRange, crestFraction, rangeCells } from '../src/scenes/bloom/ranges.ts'
+import type { GraphicsQuality } from '../src/engine/quality.ts'
 
-const meshes = quality => RANGES.map((layer, i) => buildRange(layer, rangeCells(i, quality)))
+const meshes = (quality: GraphicsQuality) => RANGES.map((layer, i) => buildRange(layer, rangeCells(i, quality)))
 
 test('BR2: every vertex is finite, indices are in range, and the front edge sinks under the water', () => {
   for (const m of meshes('standard')) {
@@ -46,7 +47,7 @@ test('BR2: crest detail only adds small craggy variation', () => {
 })
 
 test('BR2: triangle budgets — about 250k on Standard, about 60k on Low; mesh build stays fast', () => {
-  const tris = list => list.reduce((n, m) => n + m.indices.length / 3, 0)
+  const tris = (list: ReturnType<typeof meshes>) => list.reduce((n, m) => n + m.indices.length / 3, 0)
   const start = performance.now(), standard = meshes('standard'), buildMs = performance.now() - start
   assert.ok(tris(standard) <= 260000, `standard ${tris(standard)}`)
   assert.ok(tris(meshes('low')) <= 70000, `low ${tris(meshes('low'))}`)

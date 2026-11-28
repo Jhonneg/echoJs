@@ -43,7 +43,7 @@ test('manual/zero reset immediately; stale/inactive release; session clears prio
 })
 test('30/60/120Hz agree; malformed deltas cannot jump, and outputs stay bounded',()=>{
  const states=[30,60,120].map(hz=>{const f=fixture();f.view.context.intensity=f.view.context.activity=f.view.context.brightness=1;f.advance(5,{hz});return f.state})
- for(const field of ['level','density','tint'])assert.ok(Math.abs(states[0][field]-states[2][field])<1e-10)
+ for(const field of ['level','density','tint'] as const)assert.ok(Math.abs(states[0][field]-states[2][field])<1e-10)
  const f=fixture();f.view.context.intensity=f.view.context.activity=9
  updateAtmosphereResponse(f.state,f.view,NaN,f.view.updatedAtSeconds,1,false,false);assert.equal(f.state.level,0)
  updateAtmosphereResponse(f.state,f.view,100,f.view.updatedAtSeconds,1,false,false);assert.ok(f.state.level<.02)

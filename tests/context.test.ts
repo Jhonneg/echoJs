@@ -13,7 +13,7 @@ test('intensity follows the analytical continuous exponential and preserves fixe
   assert.ok(x.engine.view.intensity<=.005)
 })
 test('centroid uses bin power, brightness is level-invariant and confidence does not gate quiet intensity',()=>{
-  const values:any[]=[]
+  const values=[]
   for(const db of [-36,-24,-12,-6]){const x=harness();x.spectrum[40]=db;x.spectrum[80]=db-6
     for(let i=0;i<360;i++)x.step(rms(0,.1))
     const expected=(40*48000/2048+80*48000/2048*10**(-.6))/(1+10**(-.6))
@@ -37,7 +37,7 @@ test('accepted event rate matches an independent timestamp-window oracle without
   assert.ok(x.engine.view.eventCount<x.onsets.events.length)
 })
 test('activity increases with event frequency and strength without using BPM',()=>{
-  function activity(interval,strength){const x=harness();for(let i=1;i<900;i++){if(i%interval===0)x.onsets.events.push({session:1,sequence:++x.onsets.sequence,band:'mid' as const,timeSeconds:i/60,emittedAtSeconds:i/60,strength});x.step()}return x.engine.view.activity}
+  function activity(interval:number,strength:number){const x=harness();for(let i=1;i<900;i++){if(i%interval===0)x.onsets.events.push({session:1,sequence:++x.onsets.sequence,band:'mid' as const,timeSeconds:i/60,emittedAtSeconds:i/60,strength});x.step()}return x.engine.view.activity}
   const slow=activity(60,.25),fast=activity(30,.25),strong=activity(30,.5)
   assert.ok(slow<fast&&fast<strong&&strong<1)
 })

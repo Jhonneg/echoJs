@@ -1,10 +1,28 @@
 # ECHO — current checkpoint
 
+## Tests type-checked with full strict (Stage B) — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-28
+
+- Owner approved Stage B for tests only; scripts stay at Stage A. The config is split into `tsconfig.scripts.json` (was `tsconfig.tools.json`) and `tsconfig.tests.json` (strict, Vite types), both included in `typecheck`/`build`. 225 strict errors went to 0 with real types: fixture option and helper signatures, `as const` keys, inferred arrays instead of the Stage A `any[]`, typed Nocturne targets in place of casts. `scripts/nocturne-response-matrix.ts`, which a test imports, is also strict. No runtime change intended.
+- PASS: 369 tests, lint, typecheck, build, `node --check` on all 224 files. 45 explicit `any` remain in tests (fake feature views, browser stand-ins); typing the feature views would need a shared test helper, not done. Stage A commit: `6f22745`. This round is uncommitted.
+
 ## Tests and scripts converted to TypeScript (Stage A) — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-28
 
 - Owner approved converting `tests/` and `scripts/` from `.mjs` to `.ts` with type checking, Stage A. All 224 files renamed (69 tests, 155 scripts), and imports and spawned script paths updated. `npm test` now runs `tests/*.test.ts`. New `tsconfig.tools.json` (untyped parameters allowed, otherwise strict) is included in `typecheck`/`build`. Type errors went from 3,419 to 0, with no runtime change intended: mostly annotations for empty arrays and report objects, typed fixture options, `as const` tuples, casts on test stand-ins, `'utf8'` on JSON reads and `.href` on dynamic imports. One type-only annotation in `src/scenes/crimson-horizon/terrain.ts`. Active docs updated (`VERIFICATION.md`, `docs/README.md`); past entries, reports and evidence untouched.
 - PASS: 369 tests, lint, typecheck, build, `node --check` on all 224 files, `check-doc-links.ts`, fixture generators. Not run: browser verify/compare scripts (they type-check and parse, but were not executed).
 - Found: `scripts/assess-bloom-water.ts` imports exports removed in ec92ba0 and already failed to load as `.mjs`. Marked with `@ts-expect-error`, not fixed. Stage B (typing all parameters, about 2,900 errors) not started. No commit or push.
+
+## Nocturne upper-panel restoration — FIXED; OWNER REVIEW PENDING — 2026-11-27
+
+- Owner reported missing upper panels beyond the bridge after the detail pass. Restoring the original steel/frame/downpipe materials restores the full cyan panel faces in a fresh production capture. Removed the shared hardware maps and their helper; retained added geometry and wall detail. The previous emitter-transform check missed this rendered regression; the earlier visual-pass claim was insufficient.
+- PASS lint, typecheck, build, all 69 test files, whitespace and production static Standard/Low/Manual/reduced-motion captures. [Restored view](evidence/nocturne/asset-detail/restored-manual-all-on.png). The exact renderer interaction is not isolated; restoring the original materials is the bounded verified correction. Prior resource counts and hardware-map descriptions are historical. Owner visual confirmation pending; no commit/push.
+
+
+## Nocturne industrial asset detail — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
+
+- Owner approved the proposed asset-detail pass. Added shutter backing and door hardware, folded vent rims/lips, junction-box lids and conduit connections, pipe saddle brackets, bridge beam joints/bolts, curb grilles and broken pavement joints (`ArchitectureDetails.tsx`). Detail is concentrated in the first three bays. The existing batches carry 531 additional boxes; all emitter transforms are unchanged.
+- Shared 128×128 color/roughness maps give the hardware restrained wear (`hardwareSurface.ts`, new); existing wall maps gain runoff and patchy seam wear (`WallSurface.tsx`). The first hardware texture was too dark and was lightened. No lighting, camera, music response, dependency or other-landscape changes.
+- [Evidence and verification](evidence/nocturne/asset-detail/README.md): PASS all 69 test files, lint, typecheck, build, whitespace; Playwright Standard/Low, desktop/portrait and three quality/scene-switch cycles. Both new maps dispose on every scene exit; resource counts remain level. Generated-song smoke passed on the first material candidate; final materials have static production captures. Headless idle GPU: Standard 4.75 → 4.67 ms, Low 4.10 → 4.19 ms (within noise). Existing bundle-size/Clock warnings and software-browser readback warnings remain.
+- Owner appearance, real-song/native-window feel and native hardware performance remain unverified. No scope deviation, commit or push. Next action: owner review of this detail pass. Suggested commit if authorized: `Refine Nocturne industrial asset detail`.
 
 ## Lavender Peaks softer sun glow at rest and static grain — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
 

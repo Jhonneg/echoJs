@@ -1,17 +1,17 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { silentSignal, SIX_BAND_NAMES } from '../src/audio/signal.ts'
+import { silentSignal, SIX_BAND_NAMES, type AudioSignal } from '../src/audio/signal.ts'
 import { createJourney, updateJourney } from '../src/scenes/crimson-horizon/journey.ts'
 import { createTerrainStream, localCameraZ, chunkRenderZ } from '../src/scenes/crimson-horizon/terrainStream.ts'
 
-function feed(state, signal, seconds, gain = 1, reduced = false, hz = 60, limit = Infinity) {
+function feed(state: ReturnType<typeof createJourney>, signal: AudioSignal, seconds: number, gain = 1, reduced = false, hz = 60, limit = Infinity) {
   for (let i = 1; i <= seconds * hz; i++) {
     const now = i * 1000 / hz + 1
     signal.updatedAt = now
     updateJourney(state, signal, gain, reduced, 1 / hz, now, limit)
   }
 }
-function signalWith(count, level = 0.6) {
+function signalWith(count: number, level = 0.6) {
   const signal = silentSignal()
   signal.isPlaying = true
   for (const band of SIX_BAND_NAMES.slice(0, count)) signal.sixBands[band] = level
@@ -87,7 +87,7 @@ test('band hysteresis holds brief gaps and releases sustained silence', () => {
   assert.ok(state.sun < 0.01)
 })
 test('only reduced motion freezes travel; pause, stale input and zero Reactivity keep constant progress', () => {
-  for (const mode of ['pause', 'stale', 'zero', 'reduced']) {
+  for (const mode of ['pause', 'stale', 'zero', 'reduced'] as const) {
     const state = createJourney(), signal = signalWith(6)
     feed(state, signal, 1)
     const previous = state.distance
@@ -100,7 +100,7 @@ test('only reduced motion freezes travel; pause, stale input and zero Reactivity
   }
 })
 test('forward integration is consistent at common render cadences and never crosses unloaded terrain', () => {
-  const distances:any[]=[]
+  const distances=[]
   for (const hz of [30, 60, 120]) {
     const state = createJourney()
     feed(state, signalWith(6), 10, 1, false, hz)

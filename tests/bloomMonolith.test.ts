@@ -40,7 +40,7 @@ test('BR4: seam sits a little left of centre on the front face, faded short of t
 
 test('BR4: the turn shows the right side face at about a fifth of the visible width', () => {
   const [cx, cy, cz] = MONOLITH.center, c = Math.cos(MONOLITH.yaw), s = Math.sin(MONOLITH.yaw)
-  const at = (x, z) => projectToScreen(cx + x * c + z * s, cy, cz - x * s + z * c, 16 / 9).x
+  const at = (x: number, z: number) => projectToScreen(cx + x * c + z * s, cy, cz - x * s + z * c, 16 / 9).x
   const hw = MONOLITH.width / 2, hd = MONOLITH.depth / 2
   const frontLeft = at(-hw, hd), frontRight = at(hw, hd), backRight = at(hw, -hd)
   const share = (backRight - frontRight) / (backRight - frontLeft)

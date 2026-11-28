@@ -7,7 +7,7 @@ import {ridgeHeight,TERRAIN_PERIOD} from '../src/scenes/lavender-peaks/motion.ts
 import {ridges} from '../src/scenes/lavender-peaks/terrain.ts'
 
 function fixture(){const corona=createCorona();corona.session=1;return {corona,state:createIllumination()}}
-function run(f,n=180,{gain=1,reduced=false,fresh=true,hz=60}={}){for(let i=0;i<n;i++)updateIllumination(f.state,f.corona,fresh,1/hz,gain,reduced);return f.state}
+function run(f:ReturnType<typeof fixture>,n=180,{gain=1,reduced=false,fresh=true,hz=60}:{gain?:number,reduced?:boolean,fresh?:boolean,hz?:number}={}){for(let i=0;i<n;i++)updateIllumination(f.state,f.corona,fresh,1/hz,gain,reduced);return f.state}
 
 test('quiet adds no light; source strength proportionally controls bounded sky/slopes/mist',()=>{
  const zero=fixture();run(zero);assert.equal(zero.state.coronaLight+zero.state.mist,0)
@@ -51,7 +51,7 @@ test('fresh recovery of a held source does not manufacture a history-edge glint'
  for(let frame=0;frame<120;frame++){run(f,1);assert.ok(f.state.glints.every(x=>x===0))}
 })
 test('bounded storage, invalid-delta safety and comparable sustained levels at30/60/120Hz',()=>{
- const values:any[]=[]
+ const values=[]
  for(const hz of [30,60,120]){const f=fixture();f.corona.envelope=.4;run(f,hz*3,{hz});values.push(f.state.coronaLight);assert.ok(f.state.count<=256);assert.equal(f.state.levels.length,256)}
  assert.ok(Math.max(...values)-Math.min(...values)<1e-10)
  const f=fixture();for(const dt of [NaN,Infinity,-1])updateIllumination(f.state,f.corona,true,dt,1,false)

@@ -95,6 +95,8 @@ Nocturne parallax reduction (2026-11-16): owner found the full Crimson offsets e
 
 ## Nocturne N02 — industrial geometry and static materials
 
+2026-11-27 approved asset-detail follow-up: emphasize construction on the near three bays with door panels/hinges/latches, folded vent rims, utility-box lids and feeds, pipe saddles, bridge splice plates/bolts, and curb drain grilles. Keep the distant bays simple and the wet central lane open. Dark steel gains restrained rubbed edges and roughness variation; the existing metal/concrete walls gain coherent runoff and patchy seam wear. All detail is static and lit by the existing fixtures. This pass awaits owner visual review.
+
 Owner approved recessed service door bays/shutters, window matrices, vents, selective pipes/conduit, sagging overhead cables and unlit fixture housings. Add bridge underside ribs, curb drains, gate bars and restrained asphalt repair patches. Use dark rough steel, darker recesses and muted blue-black glass, all non-emissive. Repeated parts are instanced by finish. Preserve accepted alley/camera proportions and subtle parallax; neutral review lighting remains until N03. Wet reflective puddles, haze and postprocessing belong to N04.
 
 ## Nocturne N03 — independent manual lighting

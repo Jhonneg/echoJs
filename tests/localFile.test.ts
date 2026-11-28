@@ -33,7 +33,7 @@ function setup() {
   URL.revokeObjectURL = (url) => revoked.push(url)
   const analysis = {
     prepare() { calls.push('prepare'); return {ok:true} },
-    startElement(element) { calls.push(element); return true },
+    startElement(element: HTMLAudioElement) { calls.push(element); return true },
     resume() { calls.push('resume') },
     stop() { calls.push('stop') },
   } as unknown as Parameters<typeof createLocalFile>[1]
@@ -104,7 +104,7 @@ test('decode error releases resources and allows another file', () => {
 test('late play rejection after replacement does not overwrite new state', async () => {
   const { file, elements, states } = setup()
   file.select(fakeFile('first.wav'))
-  let reject
+  let reject!: (reason: unknown) => void
   elements[0].play = () => new Promise<any>((_, fail) => { reject = fail })
   const pending = file.play()
   file.select(fakeFile('second.wav'))

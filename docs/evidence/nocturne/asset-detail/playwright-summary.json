@@ -1,0 +1,147 @@
+{
+  "source": "Measured by Playwright MCP using playwright-check.js, dev build, SwiftShader, Manual all-on, reduced motion. Compact transcription of the returned report.",
+  "checks": "passed",
+  "samples": [
+    {
+      "label": "standard-start",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1440,
+        900
+      ]
+    },
+    {
+      "label": "low-0",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1080,
+        675
+      ]
+    },
+    {
+      "label": "standard-0",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1440,
+        900
+      ]
+    },
+    {
+      "label": "low-1",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1080,
+        675
+      ]
+    },
+    {
+      "label": "standard-1",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1440,
+        900
+      ]
+    },
+    {
+      "label": "low-2",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1080,
+        675
+      ]
+    },
+    {
+      "label": "standard-2",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1440,
+        900
+      ]
+    },
+    {
+      "label": "returned-0",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1440,
+        900
+      ]
+    },
+    {
+      "label": "returned-1",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1440,
+        900
+      ]
+    },
+    {
+      "label": "returned-2",
+      "geometries": 131,
+      "textures": 20,
+      "programs": 45,
+      "invalidMatrices": 0,
+      "unassignedEmitting": 0,
+      "buffer": [
+        1440,
+        900
+      ]
+    }
+  ],
+  "disposal": [
+    [
+      "nocturne-hardware-color",
+      "nocturne-hardware-roughness"
+    ],
+    [
+      "nocturne-hardware-color",
+      "nocturne-hardware-roughness"
+    ],
+    [
+      "nocturne-hardware-color",
+      "nocturne-hardware-roughness"
+    ]
+  ],
+  "layout": {
+    "width": 390,
+    "contentWidth": 390,
+    "height": 844,
+    "contentHeight": 844,
+    "canvases": 1
+  }
+}

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { createEnergy, createEnergyMeter, resetEnergy, spectralRms, linearEnergy, softKneeEnergy, ENERGY_REFERENCE_RMS } from '../src/dev/audioLab/energy.ts'
-import { createDiagnosticObserver } from '../src/dev/audioLab/diagnostics.ts'
+import { createDiagnosticObserver, type DiagnosticSnapshot } from '../src/dev/audioLab/diagnostics.ts'
 import { emptyBands, silentSignal } from '../src/audio/signal.ts'
 import { compareEnergy, energyFixtures, assessEnergy } from '../src/dev/audioLab/energyComparison.ts'
 
@@ -50,11 +50,12 @@ test('energy comparison measures steady calibration separately from legacy contr
   assert.ok(assessEnergy([]).curves.every(curve=>!curve.checks.monotonic))
 })
 test('observer exposes isolated reusable candidate values, resets them and rebuilds format ranges', () => {
-  let view
+  let view!:Readonly<DiagnosticSnapshot>
   const observer=createDiagnosticObserver(snapshot=>{view=snapshot})
-  const analyser={fftSize:2048,context:{sampleRate:48000,currentTime:1},getFloatTimeDomainData(data){data.fill(.1)}} as any
+  // A mutable stand-in: the test changes the context's sample rate later.
+  const analyser={fftSize:2048,context:{sampleRate:48000,currentTime:1},getFloatTimeDomainData(data:Float32Array){data.fill(.1)}}
   const signal=silentSignal(), bins=spectrum(.25)
-  observer.read(analyser,bins,signal,emptyBands(),undefined,true,1000,.016)
+  observer.read(analyser as unknown as AnalyserNode,bins,signal,emptyBands(),undefined,true,1000,.016)
   assert.ok(view.energy.linear.midrange>0)
   assert.deepEqual(signal,silentSignal())
   const reference=view.energy.six.rms
@@ -62,7 +63,7 @@ test('observer exposes isolated reusable candidate values, resets them and rebui
   assert.equal(view.energy.six.rms,reference)
   assert.ok(Object.values(view.energy.linear).every(v=>v===0))
   analyser.context.sampleRate=44100
-  observer.read(analyser,bins,signal,emptyBands(),undefined,true,1016,.016)
+  observer.read(analyser as unknown as AnalyserNode,bins,signal,emptyBands(),undefined,true,1016,.016)
   assert.equal(view.sampleRate,44100)
   const energy=createEnergy();createEnergyMeter(48000,2048).update(bins,energy);resetEnergy(energy)
   assert.deepEqual(energy,createEnergy())

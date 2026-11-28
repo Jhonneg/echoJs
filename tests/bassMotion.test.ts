@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { createBassMotion, resetBassMotion, updateBassMotion } from '../src/engine/bassMotion.ts'
 
-function pulseAt(frameRate, damping = 16) {
+function pulseAt(frameRate: number, damping = 16) {
   const motion = createBassMotion()
   let positive = 0
   let negative = 0

@@ -9,7 +9,7 @@ test('production processor exactly matches validated diagnostic features without
   for(const rate of [44100,48000,96000]) {
     const fft=rate>48000?4096:2048, bins=new Float32Array(fft/2), signal=silentSignal(), raw=emptyBands()
     const production=createMusicAnalysis(), bridge=createMusicBridge(), observer=createDiagnosticObserver(snapshot=>bridge.publish(snapshot))
-    const analyser={fftSize:fft,context:{sampleRate:rate,currentTime:0},getFloatTimeDomainData(time){time.fill(0)}} as unknown as AnalyserNode
+    const analyser={fftSize:fft,context:{sampleRate:rate,currentTime:0},getFloatTimeDomainData(time:Float32Array){time.fill(0)}} as unknown as AnalyserNode
     for(let i=1;i<=1200;i++) {
       bins.fill(-Infinity)
       const phase=i%120, db=phase<60?-12:-60

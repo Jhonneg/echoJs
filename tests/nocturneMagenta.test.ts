@@ -41,7 +41,7 @@ test('a low event punches above sustain once, scales with strength and expires',
  assert.ok(peaks[0]<peaks[1]&&peaks[1]<peaks[2])
 })
 test('mid/high and invalid low events never trigger a main accent',()=>{
- for(const [band,strength,extra] of [['mid',1,{}],['high',1,{}],['low',NaN,{}],['low',0,{}],['low',1,{session:2}],['low',1,{emittedAtSeconds:99}],['low',1,{emittedAtSeconds:0}]] as ['low'|'mid'|'high',number,object][]){
+ for(const [band,strength,extra] of [['mid',1,{}],['high',1,{}],['low',NaN,{}],['low',0,{}],['low',1,{session:2}],['low',1,{emittedAtSeconds:99}],['low',1,{emittedAtSeconds:0}]] as const as ['low'|'mid'|'high',number,object][]){
   const f=fixture();f.event(strength,band,extra);f.step();f.step();assert.equal(f.state.mainAccent,0)
  }
  const f=fixture();f.view.energy.six.highMids=f.view.energy.six.lowMids=1;f.advance()
