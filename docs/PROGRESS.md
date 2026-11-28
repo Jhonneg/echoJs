@@ -1,5 +1,11 @@
 # ECHO — current checkpoint
 
+## Tests and scripts converted to TypeScript (Stage A) — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-28
+
+- Owner approved converting `tests/` and `scripts/` from `.mjs` to `.ts` with type checking, Stage A. All 224 files renamed (69 tests, 155 scripts), and imports and spawned script paths updated. `npm test` now runs `tests/*.test.ts`. New `tsconfig.tools.json` (untyped parameters allowed, otherwise strict) is included in `typecheck`/`build`. Type errors went from 3,419 to 0, with no runtime change intended: mostly annotations for empty arrays and report objects, typed fixture options, `as const` tuples, casts on test stand-ins, `'utf8'` on JSON reads and `.href` on dynamic imports. One type-only annotation in `src/scenes/crimson-horizon/terrain.ts`. Active docs updated (`VERIFICATION.md`, `docs/README.md`); past entries, reports and evidence untouched.
+- PASS: 369 tests, lint, typecheck, build, `node --check` on all 224 files, `check-doc-links.ts`, fixture generators. Not run: browser verify/compare scripts (they type-check and parse, but were not executed).
+- Found: `scripts/assess-bloom-water.ts` imports exports removed in ec92ba0 and already failed to load as `.mjs`. Marked with `@ts-expect-error`, not fixed. Stage B (typing all parameters, about 2,900 errors) not started. No commit or push.
+
 ## Lavender Peaks softer sun glow at rest and static grain — IMPLEMENTED / CHECKS PASS; OWNER REVIEW PENDING — 2026-11-27
 
 - This round covers review items 6 and 7, both approved with static grain. At rest, the sun's corona strands are wider and fainter with a longer outer fade, and its haze is wider with a softer disc edge, so the thin ring becomes a soft halo. Music activity quickly restores the approved crisp strands; music-time values are unchanged (`corona.ts`, `LavenderPeaksScene.tsx`). A faint static screen-fixed mottle (at most ±1.8 levels, kept off the sun disc) covers the sky and ridges (`grain.ts`, new). The ring goes from a +2.6 bump 4 px wide to +1.9 over 16 px. Grain fine texture is 0.48 (reference 0.43, before 0.21).

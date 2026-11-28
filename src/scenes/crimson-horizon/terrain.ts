@@ -44,7 +44,7 @@ export function sampleNormal(x: number, z: number): [number, number, number] {
 }
 
 export function createTerrainChunk(index: number) {
-  const vertices = []
+  const vertices: { position: number[], normal: number[], feature: number[], fold: number }[] = []
   for (let row = 0; row <= CHUNK_ROWS; row++) {
     for (let column = 0; column <= CHUNK_COLUMNS; column++) {
       const x = -CHUNK_WIDTH / 2 + column * CHUNK_WIDTH / CHUNK_COLUMNS
