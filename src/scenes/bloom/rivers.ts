@@ -75,6 +75,7 @@ uniform vec3 uRiverPhase;
 uniform vec4 uRiverBox[${RIVERS.length}];
 uniform float uRiverGain; // BR8: brighter with the mids
 uniform vec2 uRiverPulse; // BR8 mid hit: position along the rivers (0 source … 1 mouth), strength
+uniform float uRiverWidth, uRiverFlash; // halo widening with the mids (1–2); bass flash (0–1)
 vec3 riverGlow(vec2 f) {
   vec3 glowSum = vec3(0.0);
   for (int r = 0; r < RIVER_COUNT; r++) {
@@ -91,12 +92,13 @@ vec3 riverGlow(vec2 f) {
     }
     along = at / max(total, 1e-4);
     float w = mix(0.0022, 0.0048, along); // thin at the source, wider toward the mouth
-    float glow = exp(-pow(best / w, 2.0)) * 1.15 + exp(-pow(best / (w * 3.2), 2.0)) * 0.3;
+    float core = exp(-pow(best / (w * mix(1.0, uRiverWidth, 0.35)), 2.0));
+    float glow = core * 1.15 + exp(-pow(best / (w * 3.2 * uRiverWidth), 2.0)) * 0.3;
     float flow = 0.72 + 0.28 * sin(along * 22.0 - uRiverPhase[r]);
     float ends = smoothstep(0.0, 0.08, along) * smoothstep(1.0, 0.8, along);
-    float pd = (along - uRiverPulse.x) / 0.06;
-    float pulse = exp(-pd * pd) * uRiverPulse.y * exp(-pow(best / w, 2.0)) * 1.4;
-    glowSum += uRiverColor[r] * (glow * flow * uRiverGain + pulse) * ends * uRiverStrength[r];
+    float pd = (along - uRiverPulse.x) / 0.08;
+    float pulse = exp(-pd * pd) * uRiverPulse.y * core * 3.5;
+    glowSum += uRiverColor[r] * (glow * (flow * uRiverGain + 2.0 * uRiverFlash) + pulse) * ends * uRiverStrength[r];
   }
   return glowSum;
 }`

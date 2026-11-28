@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { LIMITS, RIVER_PULSE_SECONDS, bloomMusicOutputs, createBloomMusic, knee, updateBloomMusic } from '../src/scenes/bloom/music.ts'
+import { FLASH, LIMITS, RIVER_PULSE_SECONDS, bloomMusicOutputs, createBloomMusic, knee, updateBloomMusic } from '../src/scenes/bloom/music.ts'
 import { PARALLAX, parallaxStep, pointerTarget } from '../src/scenes/bloom/parallax.ts'
 import type { OnsetBand } from '../src/audio/musicFeatures.ts'
 import type { SixBandValues } from '../src/audio/signal.ts'
@@ -80,7 +80,8 @@ test('BR8: responses stay within their limits under sustained loud music and rep
   const f = fixture()
   for (let i = 0; i < 1800; i++) f.step({ energy: Object.fromEntries(names.map(n => [n, 1])), intensity: 1, playing: true, event: (['low', 'mid', 'high'] as const)[i % 3], strength: 1 })
   const o = bloomMusicOutputs(f.s)
-  assert.ok(o.auroraFactor <= 1 + LIMITS.aurora + 1e-9)
+  assert.ok(o.auroraFactor <= 1 + LIMITS.aurora + LIMITS.flashCurtain + 1e-9)
+  assert.ok(o.flash <= 1 && o.riverWidth <= 1 + LIMITS.riverWidth + 1e-9)
   assert.ok(o.seamGain <= 1 + LIMITS.seam + LIMITS.seamAccent + 1e-9)
   assert.ok(o.riverGain <= 1 + LIMITS.river + 1e-9)
   assert.ok(o.lightLift <= LIMITS.lightLift + 1e-9 && o.sparkle <= 1)
@@ -145,4 +146,74 @@ test('BR8 parallax: follows the mouse within ±2.5° / ±1.2° and returns to ce
   assert.deepEqual(pointerTarget(5, 5, 0, 0), { x: 0, y: 0 })
   const far = parallaxStep({ yaw: 0, pitch: 0 }, { x: 50, y: -50 }, 10)
   assert.ok(Math.abs(far.yaw) <= PARALLAX.maxYaw + 1e-12 && Math.abs(far.pitch) <= PARALLAX.maxPitch + 1e-12)
+})
+
+const all = (v: number) => Object.fromEntries(names.map(n => [n, v]))
+
+test('Level bars: at rest the seam is fully lit and the crystals sit in place', () => {
+  const f = fixture(), o = bloomMusicOutputs(f.s)
+  assert.equal(o.seamFill, 1); assert.equal(o.seamPeakShow, 0); assert.deepEqual(o.crystalLift, [0, 0])
+  // Loud but not playing (e.g. paused source still analysed): no bar mode.
+  f.run(120, { energy: all(0.5) })
+  assert.ok(bloomMusicOutputs(f.s).seamFill > 0.999)
+})
+
+test('Level bars: the seam fills with the overall level while playing and rises with louder music', () => {
+  const fill = (v: number) => { const f = fixture(); f.run(180, { energy: all(v), playing: true }); return bloomMusicOutputs(f.s).seamFill }
+  const quiet = fill(0.05), loud = fill(0.5)
+  assert.ok(quiet < 0.35 && loud > 0.7 && loud < 1, `quiet ${quiet.toFixed(3)}, loud ${loud.toFixed(3)}`)
+  assert.ok(fill(0) < 0.01, 'silence while playing empties the bar')
+  // Paused, the seam eases back to fully lit.
+  const f = fixture(); f.run(180, { energy: all(0.1), playing: true }); f.run(300, { playing: false })
+  assert.ok(bloomMusicOutputs(f.s).seamFill > 0.999)
+})
+
+test('Level bars: the peak cap holds after the level drops, then falls', () => {
+  const f = fixture(); f.run(120, { energy: all(0.5), playing: true })
+  const top = f.s.peak; f.silence()
+  f.run(20, { playing: true }) // 0.33 s: still holding
+  assert.equal(f.s.peak, top); assert.ok(f.s.barLevel < top * 0.5)
+  assert.ok(bloomMusicOutputs(f.s).seamPeak > bloomMusicOutputs(f.s).seamFill)
+  f.run(60, { playing: true }); assert.ok(f.s.peak < top - 0.1 && f.s.peak >= f.s.barLevel)
+})
+
+test('Level bars: left crystal follows the bass, right crystal the highs, independently', () => {
+  const a = fixture(); a.run(120, { energy: { bass: 0.4 } })
+  assert.ok(a.s.crystalLevels[0] > 0.5 && a.s.crystalLevels[1] < 1e-9)
+  const b = fixture(); b.run(120, { energy: { presence: 0.4, air: 0.4 } })
+  assert.ok(b.s.crystalLevels[1] > 0.5 && b.s.crystalLevels[0] < 1e-9)
+  b.silence(); b.run(60); assert.ok(b.s.crystalLevels[1] < 0.03, 'falls back within a second')
+  const c = fixture(); c.run(120, { energy: all(0.5), gain: 0 }); assert.deepEqual(bloomMusicOutputs(c.s).crystalLift, [0, 0])
+})
+
+test('Level bars: reduced motion moves slowly and shows no peak cap', () => {
+  const fast = fixture(), slow = fixture()
+  fast.run(6, { energy: all(0.5), playing: true }); slow.run(6, { energy: all(0.5), playing: true, reduced: true })
+  assert.ok(slow.s.barLevel < fast.s.barLevel * 0.3 && slow.s.crystalLevels[0] < fast.s.crystalLevels[0] * 0.3)
+  slow.run(300, { energy: all(0.5), playing: true, reduced: true })
+  assert.equal(slow.s.peak, 0); assert.equal(bloomMusicOutputs(slow.s).seamPeakShow, 0)
+})
+
+test('Bass flash: a fresh bass hit lights the land quickly and fades within about a second', () => {
+  const f = fixture()
+  assert.equal(bloomMusicOutputs(f.s).flash, 0, 'none at rest')
+  f.step({ event: 'low', strength: 0.4 }) // a typical detected kick
+  let peak = 0, peakAt = 0
+  for (let i = 1; i <= 90; i++) { f.step(); const v = bloomMusicOutputs(f.s).flash; if (v > peak) { peak = v; peakAt = i / 60 } }
+  assert.ok(peak > 0.45 && peak <= 0.8, `peak ${peak.toFixed(3)}`)
+  assert.ok(peakAt < 0.2, `peaks at ${peakAt.toFixed(2)} s`)
+  assert.ok(bloomMusicOutputs(f.s).flash < 0.05, 'faded after 1.5 s')
+  assert.ok(FLASH.decay < 0.5)
+  // Mid hits do not flash; reduced motion and Reactivity 0 never do.
+  const m = fixture(); m.step({ event: 'mid' }); m.run(6); assert.equal(m.s.bassFlash, 0)
+  const r = fixture(); r.step({ event: 'low', reduced: true }); r.run(6, { reduced: true }); assert.equal(r.s.bassFlash, 0)
+  const g = fixture(); g.step({ event: 'low', gain: 0 }); g.run(6, { gain: 0 }); assert.equal(g.s.bassFlash, 0)
+})
+
+test('Bass flash: rivers follow the louder mid band quickly, brighter and wider', () => {
+  const f = fixture(); f.run(30, { energy: { highMids: 0.3 } }) // half a second
+  const o = bloomMusicOutputs(f.s)
+  assert.ok(f.s.river > 0.55, `river after 0.5 s: ${f.s.river.toFixed(3)}`)
+  assert.ok(o.riverGain > 2.4 && o.riverWidth > 1.55)
+  f.silence(); f.run(90); assert.ok(f.s.river < 0.1, 'falls back within 1.5 s')
 })

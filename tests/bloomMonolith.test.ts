@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { CRYSTALS, MONOLITH, SEAM, projectToScreen } from '../src/scenes/bloom/composition.ts'
-import { HOVER, crystalPose, monolithHover } from '../src/scenes/bloom/monolith.ts'
+import { CRYSTAL_TRAVEL, HOVER, crystalBarLift, crystalPose, monolithHover } from '../src/scenes/bloom/monolith.ts'
 
 test('BR4: hover stays within 1% of the height and never nears the water', () => {
   let low = Infinity
@@ -45,4 +45,14 @@ test('BR4: the turn shows the right side face at about a fifth of the visible wi
   const frontLeft = at(-hw, hd), frontRight = at(hw, hd), backRight = at(hw, -hd)
   const share = (backRight - frontRight) / (backRight - frontLeft)
   assert.ok(share > 0.15 && share < 0.3, `side face share ${share.toFixed(3)}`)
+})
+
+test('Level bars: crystals rise up to 12% of the monolith height, a third under reduced motion', () => {
+  assert.equal(crystalBarLift(0, false), 0); assert.equal(crystalBarLift(Number.NaN, false), 0)
+  assert.equal(crystalBarLift(1, false), CRYSTAL_TRAVEL); assert.equal(crystalBarLift(5, false), CRYSTAL_TRAVEL)
+  assert.ok(Math.abs(crystalBarLift(1, true) - CRYSTAL_TRAVEL / 3) < 1e-12)
+  for (const c of CRYSTALS) {
+    const top = projectToScreen(c.position[0], c.position[1] + CRYSTAL_TRAVEL + c.size, c.position[2], 16 / 9)
+    assert.ok(top.y > 0.05, `raised crystal stays in frame (${top.y.toFixed(3)})`)
+  }
 })

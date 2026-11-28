@@ -199,3 +199,11 @@ Base monolith float/playback/parallax rules above remain unchanged. Fragment ind
 ### Bloom physical lake (2026-11-24)
 
 Post-BL08 water uses the existing reduced-aware628.3185s clock for four unequal GPU waves, continuous domain warp and small coherent C2 noise. Amplitudes.035/.018/.010/.006world yield measured ~.13world local peak-to-peak travel over6s; no uniform monolith motion or new musical detector. Existing qualified low ring age/strength now drive radial geometric/normal packets at1.575world units/s, width.45, max displacement coefficient.022, decay.45/s and2.1–3s terminal taper. Origin remains directly beneath the moving monolith on the world water plane. Reduced freezes the wave clock and suppresses impulses through the unchanged controller; existing playback float and pointer easing/gates are preserved. Approved neutral view is3°downward; no shared bass tilt.
+
+## Bloom level bars (2026-11-28)
+
+While playing, the seam's lit height = knee(0.6·max band + 0.4·mean of six bands) × Reactivity, rise 0.03 s, fall 0.25 s; above it the seam is a 12% groove. Peak cap holds 0.6 s, then falls 0.5/s. Bar mode eases in/out over 0.6 s; out of it the seam is fully lit. Crystals rise by up to 0.12 × monolith height: left with max(subBass, bass), right with max(presence, air), same envelopes, on top of their bob. Reduced motion: 0.8 s / 2.5 s envelopes, no cap, one third of the crystal travel.
+
+## Bloom bass flash and rivers (2026-11-28)
+
+Fresh low hit (not reduced, Reactivity > 0): kick = max(kick, min(1, 2·strength·Reactivity)), decaying with τ 0.3 s; flash follows kick with τ 0.04 s. Ranges: lit += (lit·0.9 + aurora·0.25)·flash·(0.75 + 0.25·max(n.y, 0)). Curtains and aurora light ×(1 + 0.4·flash). Rivers: level = knee(min(1, 2·max(lowMids, highMids)))·Reactivity, rise 0.15 s / fall 0.6 s; gain 1 + 2.5·level; halo width ×(1 + level), core ×(1 + 0.35·level); + 2·flash on the glow; mid-hit pulse ×3.5 (was 1.4), half-width 0.08 (was 0.06).

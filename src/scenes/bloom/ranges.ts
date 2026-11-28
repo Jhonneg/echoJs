@@ -118,6 +118,9 @@ void main() {
 // BR9: night mood darkens the land toward deep indigo (aurora light and rivers are added after,
 // so they stay bright against it); build fog adds haze and thickens the mist.
 export const NIGHT_LAND = { amount: 0.85, fogHaze: 0.45, fogMist: 0.25 }
+// Bass flash on the land (linear light, at a full-strength flash): lift multiplies what is
+// already there, tint adds the aurora colour on top.
+export const LAND_FLASH = { lift: 0.9, tint: 0.25 }
 
 // Snow on high, gentle ground and ridge lines; violet rock on steep faces; key light from the
 // upper right with a lavender sky/ground fill; haze grows with distance and near the water.
@@ -128,6 +131,7 @@ uniform vec3 uAuroraLeft, uAuroraRight;
 uniform float uAuroraGain;
 uniform float uLightLift; // BR8: the scene's light lifts gently as music builds
 uniform float uMood, uFog; // BR9: night mood and build fog (0 = approved look)
+uniform float uAuroraFlash; // bass flash: aurora light over the whole landscape (0 at rest)
 ${riverGlsl}
 varying vec3 vNormal;
 varying vec3 vWorld;
@@ -169,6 +173,9 @@ void main() {
   float fx = 0.5 + 0.5 * vWorld.x / (max(1.0, ${CAMERA_Z.toFixed(3)} - vWorld.z) * cos(PITCH) * TAN_HALF_FOV * REF_ASPECT);
   vec3 aurora = mix(uAuroraLeft, uAuroraRight, smoothstep(0.3, 0.72, fx));
   lit += aurora * (0.025 + 0.14 * snow + 0.1 * mist) * uAuroraGain;
+  // Bass flash: every surface (rock, snow, mist) brightens and takes the aurora's tint; faces
+  // turned to the sky catch a little more, so it reads as light from above.
+  lit += (lit * ${LAND_FLASH.lift.toFixed(2)} + aurora * ${LAND_FLASH.tint.toFixed(2)}) * uAuroraFlash * (0.75 + 0.25 * max(n.y, 0.0));
   lit *= 1.0 + uLightLift;
   // Rivers (BR6): screen position from world position with the fixed camera, so the mirrored
   // pass puts them on the same terrain. They glow through the mist, a little dimmed.

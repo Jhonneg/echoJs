@@ -21,6 +21,14 @@ export function crystalPose(index: number, seconds: number, reducedMotion: boole
   return { y: m.bob * Math.sin(wrap(seconds, m.period) + m.phase), spin: wrap(seconds, m.spin) + m.phase }
 }
 
+// Level bars: each crystal rises with its band by up to 12% of the monolith's height (about 7%
+// of the frame); a third of that under reduced motion. `level` is 0–1 from music.ts.
+export const CRYSTAL_TRAVEL = MONOLITH.height * 0.12
+export function crystalBarLift(level: number, reducedMotion: boolean) {
+  const l = Number.isFinite(level) ? Math.min(1, Math.max(0, level)) : 0
+  return l * CRYSTAL_TRAVEL * (reducedMotion ? 1 / 3 : 1)
+}
+
 export const monolithVertexShader = /* glsl */`
 varying vec3 vLocal;
 varying vec3 vLocalNormal;
@@ -43,6 +51,7 @@ uniform vec3 uStoneDark, uStoneLight, uKeyColor, uKeyDir, uAmbient, uSeam, uAuro
 uniform float uAuroraGain;
 uniform float uSeamGain, uLightLift; // BR8 seam brightness (BR9: follows the bass); scene light lift
 uniform vec3 uSeamWarm; uniform float uSeamWarmth, uMood; // BR9: warm throbbing seam; night mood
+uniform float uSeamFill, uSeamPeak, uSeamPeakShow; // level bar: lit height and peak cap (0–1); 1 = fully lit
 varying vec3 vLocal;
 varying vec3 vLocalNormal;
 varying vec3 vNormal;
@@ -95,8 +104,16 @@ void main() {
     float core = 1.0 - smoothstep(SEAM_HALF - aa, SEAM_HALF + aa, abs(d));
     float glow = exp(-abs(d) / 0.045);
     float ends = smoothstep(SEAM_TOP, SEAM_TOP + 0.02, uv.y) * smoothstep(SEAM_BOTTOM, SEAM_BOTTOM - 0.02, uv.y);
+    // Level bar: lit from the bottom up to the fill height, with a soft top; above it the
+    // seam is a dim groove. A fill of 1 puts the top past the faded end (the approved look).
+    float span = SEAM_BOTTOM - SEAM_TOP + 0.03;
+    float fillY = SEAM_TOP + uSeamFill * span;
+    float lit = 1.0 - smoothstep(fillY - 0.012, fillY + 0.012, uv.y);
+    float peakY = SEAM_TOP + uSeamPeak * span;
+    float cap = (1.0 - smoothstep(0.003, 0.003 + fwidth(uv.y) + 1e-4, abs(uv.y - peakY))) * uSeamPeakShow;
     vec3 seam = mix(uSeam, uSeamWarm, uSeamWarmth);
-    color += seam * (core * 1.6 + glow * 0.2 * uSeamGain) * ends * mix(1.0, uSeamGain, 0.6);
+    color += seam * (core * 1.6 + glow * 0.2 * uSeamGain) * ends * mix(1.0, uSeamGain, 0.6) * mix(0.12, 1.0, lit);
+    color += seam * core * 1.6 * cap * ends * (1.0 - lit);
   }
   gl_FragColor = vec4(color, 1.0);
   #include <colorspace_fragment>

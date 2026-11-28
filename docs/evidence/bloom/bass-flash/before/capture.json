@@ -1,0 +1,159 @@
+{
+  "source": "Throwaway build exposing Bloom music state; production file adapter and analysis; generated 24 s song (quiet pad 0–6 s, kick with loud mid chords 6–20 s, silence); headless Brave 1440×900.",
+  "errors": [],
+  "checks": {},
+  "shots": {
+    "idle": {
+      "rightRanges": {
+        "mean": 145.32,
+        "top1": 241.17
+      },
+      "leftRanges": {
+        "mean": 142.24,
+        "top1": 248.99
+      },
+      "tealRiver": {
+        "mean": 139.59,
+        "top1": 248.22
+      },
+      "sky": {
+        "mean": 103.07,
+        "top1": 148.67
+      }
+    },
+    "quiet-4s": {
+      "rightRanges": {
+        "mean": 145.44,
+        "top1": 241.79
+      },
+      "leftRanges": {
+        "mean": 142.64,
+        "top1": 250.12
+      },
+      "tealRiver": {
+        "mean": 140,
+        "top1": 247.65
+      },
+      "sky": {
+        "mean": 104.48,
+        "top1": 154.71
+      }
+    },
+    "hit-1": {
+      "rightRanges": {
+        "mean": 141.03,
+        "top1": 235.78
+      },
+      "leftRanges": {
+        "mean": 138.43,
+        "top1": 245.21
+      },
+      "tealRiver": {
+        "mean": 136.09,
+        "top1": 246.11
+      },
+      "sky": {
+        "mean": 109.83,
+        "top1": 173.48
+      }
+    },
+    "between-1": {
+      "rightRanges": {
+        "mean": 137.71,
+        "top1": 232.37
+      },
+      "leftRanges": {
+        "mean": 134.99,
+        "top1": 243.29
+      },
+      "tealRiver": {
+        "mean": 133.33,
+        "top1": 244.48
+      },
+      "sky": {
+        "mean": 109.18,
+        "top1": 178.73
+      }
+    },
+    "hit-2": {
+      "rightRanges": {
+        "mean": 130.55,
+        "top1": 225.56
+      },
+      "leftRanges": {
+        "mean": 127.08,
+        "top1": 239.88
+      },
+      "tealRiver": {
+        "mean": 128.72,
+        "top1": 239.35
+      },
+      "sky": {
+        "mean": 108.59,
+        "top1": 190.41
+      }
+    },
+    "between-2": {
+      "rightRanges": {
+        "mean": 129.2,
+        "top1": 224.76
+      },
+      "leftRanges": {
+        "mean": 125.63,
+        "top1": 238.7
+      },
+      "tealRiver": {
+        "mean": 128.18,
+        "top1": 238.39
+      },
+      "sky": {
+        "mean": 107.85,
+        "top1": 187.57
+      }
+    },
+    "after-silence": {
+      "rightRanges": {
+        "mean": 126.36,
+        "top1": 219.86
+      },
+      "leftRanges": {
+        "mean": 122.48,
+        "top1": 232.95
+      },
+      "tealRiver": {
+        "mean": 128.22,
+        "top1": 238.3
+      },
+      "sky": {
+        "mean": 96.74,
+        "top1": 152.6
+      }
+    }
+  },
+  "shotState": {
+    "hit-1": {
+      "ringAge": 0.016599999999627472,
+      "river": 0.22153095382828691,
+      "flash": null,
+      "riverGain": 1.1772247630626296
+    },
+    "between-1": {
+      "ringAge": 0.3852999999988824,
+      "river": 0.21635155160699243,
+      "flash": null,
+      "riverGain": 1.173081241285594
+    },
+    "hit-2": {
+      "ringAge": 0.016599999999627472,
+      "river": 0.20159489931153662,
+      "flash": null,
+      "riverGain": 1.1612759194492293
+    },
+    "between-2": {
+      "ringAge": 0.38369999999925486,
+      "river": 0.1988903163483916,
+      "flash": null,
+      "riverGain": 1.1591122530787132
+    }
+  }
+}

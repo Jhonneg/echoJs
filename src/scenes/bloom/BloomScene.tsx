@@ -10,7 +10,7 @@ import { LandscapeCanvas } from '../../engine/LandscapeCanvas'
 import { CAMERA_HEIGHT, CAMERA_Z, CRYSTALS, FOV_DEGREES, MONOLITH, RANGES, cameraFor } from './composition'
 import { buildRange, rangeCells, rangeFragmentShader, rangeVertexShader } from './ranges'
 import { CURTAINS, SKY_DEFINES, auroraGain, curtainPhases, hueShift, skyFragmentShader, skyVertexShader } from './sky'
-import { MONOLITH_DEFINES, crystalFragmentShader, crystalPose, crystalVertexShader, monolithFragmentShader, monolithHover, monolithVertexShader } from './monolith'
+import { MONOLITH_DEFINES, crystalBarLift, crystalFragmentShader, crystalPose, crystalVertexShader, monolithFragmentShader, monolithHover, monolithVertexShader } from './monolith'
 import { RING_CENTER, WATER_PLANE, WATER_SHADER, reflectionSize, waterPhases } from './water'
 import { RIVERS, riverBox, riverPath, riverPhases } from './rivers'
 import { bloomMusicOutputs, createBloomMusic, updateBloomMusic } from './music'
@@ -37,12 +37,14 @@ const WATER_PHASE = { value: new Vector4() }
 const RIVER_PHASE = { value: new Vector3() }
 // Music response values (BR8), shared the same way. Ages start far in the past (no ring/pulse).
 const MUSIC = {
-  uRiverGain: { value: 1 }, uRiverPulse: { value: new Vector2(99, 0) }, uLightLift: { value: 0 },
+  uRiverGain: { value: 1 }, uRiverWidth: { value: 1 }, uAuroraFlash: { value: 0 }, uRiverPulse: { value: new Vector2(99, 0) }, uLightLift: { value: 0 },
   uSeamGain: { value: 1 }, uSparkle: { value: 0 }, uRingPulse: { value: new Vector2(99, 0) },
   // BR9
   uMood: { value: 0 }, uFog: { value: 0 }, uSwell: { value: 0 }, uSeamWarmth: { value: 0 },
   uRingBurst: { value: new Vector2(99, 0) },
-  liftFraction: 0,
+  // Level bars (seam fill and peak; 1 = fully lit) and the crystals' 0–1 levels
+  uSeamFill: { value: 1 }, uSeamPeak: { value: 1 }, uSeamPeakShow: { value: 0 },
+  liftFraction: 0, crystalLift: [0, 0],
 }
 // Aurora colours (BR9: hue-shifted with the music each frame), shared by the sky curtains and
 // the aurora light on the ranges, monolith and crystals. AURORA_BASE holds the approved colours.
@@ -129,6 +131,7 @@ const riverUniforms = () => ({
   uRiverPhase: RIVER_PHASE,
   uRiverBox: { value: RIVERS.map(r => new Vector4(...riverBox(r))) },
   uRiverGain: MUSIC.uRiverGain, uRiverPulse: MUSIC.uRiverPulse,
+  uRiverWidth: MUSIC.uRiverWidth, uRiverFlash: MUSIC.uAuroraFlash,
 })
 
 // Per-range material with that range's snow line and mist depth. Identical shader source, so
@@ -145,6 +148,7 @@ function useRangeMaterial(quality: GraphicsQuality, snowLine: number, mistHeight
       uSnowLine: { value: snowLine }, uHazeNear: { value: 20 }, uHazeFar: { value: 220 }, uHazeMax: { value: 0.5 }, uMistHeight: { value: mistHeight },
       ...AURORA_LIGHT,
       uAuroraGain: aurora.uAuroraGain, uLightLift: MUSIC.uLightLift, uMood: MUSIC.uMood, uFog: MUSIC.uFog,
+      uAuroraFlash: MUSIC.uAuroraFlash,
       ...riverUniforms(),
     },
   }), [quality, snowLine, mistHeight, aurora])
@@ -183,6 +187,7 @@ function Monolith({ quality, reducedMotion }: { quality: GraphicsQuality, reduce
       uAmbient: { value: new Color('#8a80a3') }, uSeam: { value: new Color('#ffe0ef') },
       uSeamGain: MUSIC.uSeamGain, uLightLift: MUSIC.uLightLift,
       uSeamWarm: { value: new Color('#ffcfa8') }, uSeamWarmth: MUSIC.uSeamWarmth, uMood: MUSIC.uMood,
+      uSeamFill: MUSIC.uSeamFill, uSeamPeak: MUSIC.uSeamPeak, uSeamPeakShow: MUSIC.uSeamPeakShow,
       ...auroraLight(),
     },
   }), [quality])
@@ -212,7 +217,7 @@ function Crystal({ index, reducedMotion }: { index: number, reducedMotion: boole
   useFrame(state => {
     const pose = crystalPose(index, state.clock.elapsedTime, reducedMotion), m = mesh.current
     if (!m) return
-    m.position.y = crystal.position[1] + pose.y
+    m.position.y = crystal.position[1] + pose.y + crystalBarLift(MUSIC.crystalLift[index], reducedMotion)
     m.rotation.set(0.25, pose.spin, 0.1)
   })
   return <mesh ref={mesh} geometry={geometry} material={material} position={crystal.position} />
@@ -269,6 +274,8 @@ function Composition({ onRenderTime, quality, reducedMotion, musicFeatures, reac
     const rivers = riverPhases(music.current.riverClock, reducedMotion)
     RIVER_PHASE.value.set(rivers[0], rivers[1], rivers[2])
     MUSIC.uRiverGain.value = out.riverGain
+    MUSIC.uRiverWidth.value = out.riverWidth
+    MUSIC.uAuroraFlash.value = out.flash
     MUSIC.uRiverPulse.value.set(Math.min(out.pulse.along, 99), out.pulse.strength)
     MUSIC.uLightLift.value = out.lightLift
     MUSIC.uSeamGain.value = out.seamGain
@@ -280,6 +287,10 @@ function Composition({ onRenderTime, quality, reducedMotion, musicFeatures, reac
     MUSIC.uSwell.value = out.swell
     MUSIC.uSeamWarmth.value = out.seamWarmth
     MUSIC.uRingBurst.value.set(Math.min(out.burst.age, 99), out.burst.strength)
+    MUSIC.uSeamFill.value = out.seamFill
+    MUSIC.uSeamPeak.value = out.seamPeak
+    MUSIC.uSeamPeakShow.value = out.seamPeakShow
+    MUSIC.crystalLift = out.crystalLift
     applyHue(out.hue)
     onRenderTime(now)
   })
